@@ -19,3 +19,4 @@ Paths in the docs that look like `../graph/graphgen/...` are relative to this re
 | `instructions_hamilton.md` | Hamilton altruism game parameters, data format, figures |
 | `prisoners.md` | Analysis of PD partner choice results (s07) |
 | `hamilton.md` | Analysis of Hamilton partner choice results (s07) |
+| `analyze_single_run.py` | Script used to analyze `_1run` temporal dynamics |
