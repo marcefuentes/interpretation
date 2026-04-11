@@ -148,7 +148,11 @@ For mechanism `P`, typical traits per column: P1, Choose (= C1P1), qBSeen, wmean
 
 ## 9. Key Findings
 
-See `hamilton.md` for full analysis. Summary:
+See `hamilton.md` for full analysis.
+
+### Single-run variant
+
+The `hamilton_1run` study uses the same parameters and path structure but runs a single simulation instead of averaging over multiple runs. Use it to track temporal dynamics — e.g., whether cooperation and defection cycle over time — that are smoothed out in the main study's averaged results. Summary:
 
 1. **P1 hitchhiking (all populations)**: P1 peaks at lower R−P than C1P1 because neutral C0P1 carriers inflate P1 in the transition zone. Same mechanism as PD.
 

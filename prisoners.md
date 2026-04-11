@@ -84,6 +84,8 @@ As R−P increases, cooperation (qBSeen) rises — but partner choice (P1) **dec
 
 C1P0 individuals cooperate (C1) but don't choose partners (P0). They benefit from the cooperative environment that C1P1 creates — getting R from abundant cooperators — without paying the (negligible) cost of the choice allele. Since partner choice is rarely exercised when cooperation already dominates, P0 is effectively neutral in C1, and C1P0 accumulates via mutation.
 
+Single-run data (`prisoners_1run`) reveals that this displacement is **oscillatory, not monotonic**: C1P0 fluctuates around ~0.17–0.23 while C1P1 stays dominant at ~0.72–0.80. C1P0 never overtakes C1P1 in any cell at any timestep. The high C1P0 fractions in the averaged data (up to 62% of cooperators) likely reflect variation across runs rather than within-run dynamics. Within a single run, C1P1 and C1P0 maintain a **dynamic frequency-dependent coexistence**: C1P0 gains when the cooperative environment is strong (making partner choice dispensable), but C1P1 pushes back when C1P0 encroachment threatens to weaken cooperation. Total cooperation (qBSeen) remains nearly constant throughout these oscillations.
+
 ### Quantitative evidence (pop_1)
 
 | R−P | P1 | C1P1 | C1P0 | C1P0/qBSeen | qBSeen |
@@ -163,6 +165,8 @@ The more successful cooperation is in the evolving population (higher C1), the *
 
 C1(F) benefits because C1P1(E) **retains them as partners** through choice, so they mostly get R rather than S.
 
+Single-run data (`prisoners_1run`) confirms that the cooperation jump in the evolving population is a **single tipping event**: all transition-zone cells show cooperation jumping from 0 to ~0.78–0.94 at the very first checkpoint (t = 131072), then oscillating narrowly (±0.03) around that plateau. Cooperation never crashes back down. The positive-feedback cascade ignites once and locks in — there is no cycling between cooperative and defective phases.
+
 ## Emergent Asymmetry in Two Coevolving Populations (pop_2)
 
 ### The pattern (panels a-d)
@@ -194,6 +198,8 @@ At R >> P:
 - The cooperating population gets exploited (gets S from defector partners)
 - The defecting population exploits (gets T from cooperator partners)
 - Correlation between "more choosers" and "lower fitness": **−0.99**
+
+Single-run data (`prisoners_1run`) confirms that the asymmetry is a **true absorbing state**: once roles are assigned, they never flip. Only 2 of 91 high-R−P cells show even a single-timestep sign change in the cooperation gap. However, which population becomes the cooperator is **stochastic** — in any single run, either population is equally likely to end up as the exploited cooperator (40/91 cells have fset_1 as cooperator, 51/91 have fset_0). The averaged multi-run data always labels fset_1 as the higher-qBSeen population because it sorts after averaging.
 
 ### The chooser's dilemma
 
@@ -265,6 +271,8 @@ At P ≥ 0.30 (136 cells), the distribution has a clear gap:
 **Why R−P determines the threshold**: When a C1P1 successfully swaps, it upgrades from getting S to getting R. Meanwhile, defectors get P (paired with other defectors after the swap). The net fitness advantage of a cooperator who has swapped vs a defector scales with **R−P**. When R−P is too small, even successful swaps don't produce enough advantage to outcompete defectors and sustain the feedback loop.
 
 **Why the transition is sharp**: The feedback loop creates bistability — the system has two stable attractors (all-defection and cooperative equilibrium) separated by an unstable saddle point. There is no stable intermediate. The mutation-driven trickle of cooperators either crosses the tipping point or it doesn't. One grid step in R−P (≈ 0.041) is the difference between "never enough cooperators to ignite the cascade" and "just enough to tip over."
+
+Single-run data (`prisoners_1run`) confirms that the low-cooperation values near R ≈ P are **genuine equilibria, not time-averages of cycling**. Boundary cells (R−P ∈ [0.04, 0.15]) show mild fluctuation (qBSeen 0.01–0.16) but no dramatic oscillation between cooperative and defective basins. The mean oscillation range is 0.126 at the boundary vs 0.094 in the cooperative region — boundary cells are slightly noisier, but no cell cycles between the two attractors. The bimodal distribution in the averaged data reflects true bistability, not averaging over oscillations.
 
 ### Temporal dynamics confirm the mechanism
 
@@ -342,15 +350,15 @@ This is **allele frequency inflation by neutral hitchhiking** — the P1 allele 
 
 ### C1P0 free-riders (pop_1, pop_3)
 
-At high R−P, cooperation is so prevalent that partner choice becomes unnecessary — C1P0 free-riders accumulate because P0 is neutral in a cooperating population. C1P0/qBSeen correlates +0.972 with R−P (pop_1). Together with hitchhiking, this creates a two-force model: **hitchhiking from below** (C0P1) and **free-riding from above** (C1P0) bracket the P1 peak.
+At high R−P, cooperation is so prevalent that partner choice becomes unnecessary — C1P0 free-riders accumulate because P0 is neutral in a cooperating population. C1P0/qBSeen correlates +0.972 with R−P (pop_1). Together with hitchhiking, this creates a two-force model: **hitchhiking from below** (C0P1) and **free-riding from above** (C1P0) bracket the P1 peak. Single-run data shows that C1P1 and C1P0 maintain a **dynamic frequency-dependent coexistence** — they oscillate in anti-phase while total cooperation stays constant.
 
 ### Emergent asymmetry (pop_2)
 
-Two symmetric coevolving populations spontaneously break symmetry at R >> P: one becomes cooperator-heavy (exploited, low fitness dragged by S) while the other becomes defector-heavy (exploiter, high fitness pulled by T). The correlation between more choosers and lower fitness is −0.99.
+Two symmetric coevolving populations spontaneously break symmetry at R >> P: one becomes cooperator-heavy (exploited, low fitness dragged by S) while the other becomes defector-heavy (exploiter, high fitness pulled by T). The correlation between more choosers and lower fitness is −0.99. Single-run data confirms this is an **absorbing state** — roles lock in early and never switch. Which population becomes the cooperator is stochastic.
 
 ### Sharp phase transition (pop_2)
 
-Cooperation near the R ≈ P diagonal shows an all-or-nothing transition driven by a positive feedback loop. The critical parameter is R−P, not absolute P. When R−P < 0.041, the required swap probability for cooperators to invade (>83–94%) is unattainable from rare mutants. When R−P ≥ 0.123, the loop reliably ignites. The transition is bimodal — no stable intermediate exists. At the critical R−P = 0.082, the outcome also depends on T−R: cooperation fails when T−R < 0.25 (high absolute payoffs) but succeeds when T−R > 0.33 (lower absolute payoffs). Hamilton's constant T−R = 2 prevents this bistability entirely.
+Cooperation near the R ≈ P diagonal shows an all-or-nothing transition driven by a positive feedback loop. The critical parameter is R−P, not absolute P. When R−P < 0.041, the required swap probability for cooperators to invade (>83–94%) is unattainable from rare mutants. When R−P ≥ 0.123, the loop reliably ignites. The transition is bimodal — no stable intermediate exists. Single-run data confirms that the low-cooperation values near R ≈ P are **genuine equilibria, not time-averages of cycling** between basins. At the critical R−P = 0.082, the outcome also depends on T−R: cooperation fails when T−R < 0.25 (high absolute payoffs) but succeeds when T−R > 0.33 (lower absolute payoffs). Hamilton's constant T−R = 2 prevents this bistability entirely.
 
 ### No phase transition in pop_1
 

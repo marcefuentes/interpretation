@@ -99,7 +99,11 @@ Each panel is a **heatmap** with R on the y-axis and P on the x-axis (imshow ren
 
 ## 7. Key Findings
 
-See `prisoners.md` for full analysis. Summary:
+See `prisoners.md` for full analysis.
+
+### Single-run variant
+
+The `prisoners_1run` study uses the same parameters and path structure but runs a single simulation instead of averaging over multiple runs. Use it to track temporal dynamics — e.g., whether cooperation and defection cycle over time — that are smoothed out in the main study's averaged results. Summary:
 
 1. **P1 hitchhiking (pop_3)**: P1 frequency peaks at intermediate R−P, not where selection is strongest, because C0P1 accumulates as a neutral carrier via mutation from C1P1.
 

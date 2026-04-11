@@ -117,6 +117,10 @@ All studies live under `~/results/{study}/`:
 
 The common path template is `{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}`. See the game-specific instructions for concrete examples.
 
+#### Single-run variants (`_1run`)
+
+The studies `hamilton_1run` and `prisoners_1run` are single-run versions of `hamilton` and `prisoners`. The main studies average over multiple simulation runs, which smooths out stochastic variation. The `_1run` variants track a single population through time, making it possible to observe temporal dynamics that averaging would obscure — for example, whether cooperation and defection cycle (phases where partner choosers dominate alternating with phases where AllD does). These temporal patterns can help explain features of the averaged results from the main studies.
+
 ### 4.2 Data files
 
 | File | Contents |
