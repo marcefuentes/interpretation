@@ -6,6 +6,12 @@ Documentation and analysis for interpreting TRPS evolutionary simulation outputs
 
 **Always read `instructions.md` first** — it defines the shared simulation model, mechanisms, population scenarios, and data format used by all studies.
 
+## Repo Layout
+
+- Keep human-facing analysis and reference docs at the repository root.
+- Keep active Copilot instructions in `.github/copilot-instructions.md`.
+- Put any additional agent-only support material under `ai/` so it stays separate from the docs intended for human reading.
+
 ## Related Repositories (same machine)
 
 - `../graph/graphgen/` — figure pipeline, study manifests, `mech_trait_map.csv`
@@ -17,7 +23,7 @@ Paths like `../graph/graphgen/...` are relative to this repo root.
 ## Running the Analysis Script
 
 ```bash
-python3 analyze_single_run.py
+python3 ai/analyze_single_run.py
 ```
 
 This script reads from `~/results/prisoners_1run/shuffle_cost12_128/P/1.0` — the `BASE` path must exist with populated data. No arguments; edit `BASE` at the top to target a different study/condition.

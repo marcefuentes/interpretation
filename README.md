@@ -10,18 +10,26 @@ This material sits alongside other checkouts on one machine:
 
 Paths in the docs that look like `../graph/graphgen/...` are relative to this repository root.
 
+## Repository layout
+
+- **Repository root**: human-facing analysis and reference docs
+- **`.github/copilot-instructions.md`**: active GitHub Copilot repository guidance
+- **`ai/`**: agent-only support material, including analysis scripts
+
 ## Contents
 
-| File                        | Description                                                  |
-|-----------------------------|--------------------------------------------------------------|
-| `instructions.md`           | Shared simulation model reference (read first)               |
-| `instructions_prisoners.md` | Prisoner's Dilemma game parameters, data format, figures     |
-| `instructions_hamilton.md`  | Hamilton altruism game parameters, data format, figures      |
-| `instructions_mutualism.md` | Mutualism game parameters, cross-benefit payoffs, data format |
-| `prisoners.md`          | Analysis of PD partner choice results (s07)                  |
-| `hamilton.md`           | Analysis of Hamilton partner choice results (s07)            |
-| `mutualism.md`          | Analysis of mutualism partner choice results (s07)           |
-| `analyze_single_run.py` | Script used to analyze `_1run` temporal dynamics             |
+| File                          | Description                                                    |
+| ----------------------------- | -------------------------------------------------------------- |
+| `instructions.md`             | Shared simulation model reference (read first)                 |
+| `instructions_prisoners.md`   | Prisoner's Dilemma game parameters, data format, figures       |
+| `instructions_hamilton.md`    | Hamilton altruism game parameters, data format, figures        |
+| `instructions_mutualism.md`   | Mutualism game parameters, cross-benefit payoffs, data format  |
+| `prisoners.md`                | Analysis of PD partner choice results (s07)                    |
+| `hamilton.md`                 | Analysis of Hamilton partner choice results (s07)              |
+| `mutualism.md`                | Analysis of mutualism partner choice results (s07)             |
+| `.github/`                    | Active Copilot repository instructions                         |
+| `ai/analyze_single_run.py`    | Script used to analyze `_1run` temporal dynamics               |
+| `ai/`                         | Additional agent-only support material and analysis scripts    |
 
 ## Documentation conventions
 

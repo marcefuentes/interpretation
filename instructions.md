@@ -11,10 +11,10 @@
 
 All studies use a symmetric 2×2 game with payoffs T > R > P > S:
 
-|  | Partner C | Partner D |
-|--|-----------|-----------|
-| Focal C | R | S |
-| Focal D | T | P |
+|         | Partner C   | Partner D   |
+| ------- | ----------- | ----------- |
+| Focal C | R           | S           |
+| Focal D | T           | P           |
 
 How T, R, P, S are parameterized differs by study — see the game-specific instructions.
 
@@ -26,14 +26,14 @@ How T, R, P, S are parameterized differs by study — see the game-specific inst
 
 Each individual carries alleles at up to 6 loci. Some studies use 4 loci (C, P, M, I → 16 genotypes); others use all 6 (C, I, J, M, P, Q → 64 genotypes).
 
-| Locus | 0 allele | 1 allele | What the 1-allele does |
-|-------|----------|----------|------------------------|
-| **C** | Defect first | Cooperate first | Determines initial cooperation decision |
-| **P** | — | Choose by recent qBSeen | Partner choice using the **most recent** qBSeen of potential partners |
-| **Q** | — | Choose by avg qBSeen | Partner choice using the **average lifetime** qBSeen of potential partners |
-| **M** | — | Tit-for-tat | Direct reciprocity |
-| **I** | — | Use recent qBSeen | Indirect reciprocity using the **most recent** qBSeen of the current partner (including new partners) |
-| **J** | — | Use avg qBSeen | Indirect reciprocity using the **average lifetime** qBSeen of the current partner (its "image score") |
+| Locus   | 0 allele     | 1 allele                | What the 1-allele does                                                                                |
+| ------- | ------------ | ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| **C**   | Defect first | Cooperate first         | Determines initial cooperation decision                                                               |
+| **P**   | —            | Choose by recent qBSeen | Partner choice using the **most recent** qBSeen of potential partners                                 |
+| **Q**   | —            | Choose by avg qBSeen    | Partner choice using the **average lifetime** qBSeen of potential partners                            |
+| **M**   | —            | Tit-for-tat             | Direct reciprocity                                                                                    |
+| **I**   | —            | Use recent qBSeen       | Indirect reciprocity using the **most recent** qBSeen of the current partner (including new partners) |
+| **J**   | —            | Use avg qBSeen          | Indirect reciprocity using the **average lifetime** qBSeen of the current partner (its "image score") |
 
 **Critical**: P1 (and Q1) are phenotypically silent in defectors. A C0P1 individual carries the chooser allele but never uses it — only C1P1 individuals actually choose partners.
 
@@ -41,15 +41,15 @@ Each individual carries alleles at up to 6 loci. Some studies use 4 loci (C, P, 
 
 Each simulation run activates a subset of cooperation modules. The mechanism name corresponds to the active loci (folder name in results path):
 
-| Mechanism folder | Active loci | Modules enabled |
-|-----------------|-------------|-----------------|
-| `_` | All 6 (but only C is expressed) | None (control — P, Q, M, I, J drift neutrally with a small cost) |
-| `P` | C, P | Partner choice |
-| `M` | C, M | Direct reciprocity |
-| `MP` | C, M, P | Reciprocity + partner choice |
-| `IM` | C, I, M | Direct + indirect reciprocity |
-| `IMP` | C, I, M, P | All three |
-| `IJMPQ` | All 6 | All three, with lifetime variants |
+| Mechanism folder  | Active loci                     | Modules enabled                                                  |
+| ----------------- | ------------------------------- | ---------------------------------------------------------------- |
+| `_`               | All 6 (but only C is expressed) | None (control — P, Q, M, I, J drift neutrally with a small cost) |
+| `P`               | C, P                            | Partner choice                                                   |
+| `M`               | C, M                            | Direct reciprocity                                               |
+| `MP`              | C, M, P                         | Reciprocity + partner choice                                     |
+| `IM`              | C, I, M                         | Direct + indirect reciprocity                                    |
+| `IMP`             | C, I, M, P                      | All three                                                        |
+| `IJMPQ`           | All 6                           | All three, with lifetime variants                                |
 
 Full mapping: `../graph/graphgen/studies/trps/mech_trait_map.csv` — defines which alleles are evolvable and how derived traits (AllC, AllD, Choose, dTFT, iTFT, etc.) map to genotype sums for each mechanism.
 
@@ -71,15 +71,15 @@ ind->partner->qBSeen == 0  // current partner is a defector
 
 Source: `~/code/trps/code/src/`. Main loop in `modules_common/simulation.c`, executed **per time step** in this order:
 
-| Step | What happens | Source file |
-|------|-------------|-------------|
-| 1. Fitness | Compute payoffs from game with current partners | `modules/fitness.c` |
-| 2. Analyze | Record statistics (genotype frequencies, qBSeen, wmean) | `modules/stats.c`, `modules/write.c` |
-| 3. Update scores | Update lifetime qBSeen averages (if Q/J loci enabled) | `modules/individual_tools.c` → `update_scores()` |
-| 4. Shuffle | Randomly reassign partners within groups | `modules_common/shuffle_partners.c` |
-| 5. Partner choice | C1P1 swap away from defector partners | `modules/choose_partner.c` |
-| 6. Recruitment | Death, fitness-proportional reproduction, mutation | `modules/recruits.c` → `handle_recruitment()` |
-| 7. Decide qB | Update cooperation decision (reciprocity) | `modules/decide_qB.c` |
+| Step              | What happens                                            | Source file                                      |
+| ----------------- | ------------------------------------------------------- | ------------------------------------------------ |
+| 1. Fitness        | Compute payoffs from game with current partners         | `modules/fitness.c`                              |
+| 2. Analyze        | Record statistics (genotype frequencies, qBSeen, wmean) | `modules/stats.c`, `modules/write.c`             |
+| 3. Update scores  | Update lifetime qBSeen averages (if Q/J loci enabled)   | `modules/individual_tools.c` → `update_scores()` |
+| 4. Shuffle        | Randomly reassign partners within groups                | `modules_common/shuffle_partners.c`              |
+| 5. Partner choice | C1P1 swap away from defector partners                   | `modules/choose_partner.c`                       |
+| 6. Recruitment    | Death, fitness-proportional reproduction, mutation      | `modules/recruits.c` → `handle_recruitment()`    |
+| 7. Decide qB      | Update cooperation decision (reciprocity)               | `modules/decide_qB.c`                            |
 
 Other files: `main.c` (entry point), `modules/individual_tools.c` (allocation, initial pairing via `initial_pairs_1`/`initial_pairs_2`, fixed-population setup), `modules/read_globals.c` (parameters), `modules/calculate_derived_globals.c` (derived parameters).
 
@@ -123,12 +123,12 @@ The studies `hamilton_1run` and `prisoners_1run` are single-run versions of `ham
 
 ### 4.2 Data files
 
-| File | Contents |
-|------|----------|
+| File                  | Contents                                                         |
+| --------------------- | ---------------------------------------------------------------- |
 | `csv_0_for_image.con` | Final-timestep data for file_set _0 (one row per parameter cell) |
-| `csv_1_for_image.con` | Final-timestep data for file_set _1 |
-| `csv_0_for_movie.con` | Multi-timestep data for _0 (9 snapshots: t=1 to t=1048576) |
-| `csv_1_for_movie.con` | Multi-timestep data for _1 |
+| `csv_1_for_image.con` | Final-timestep data for file_set _1                              |
+| `csv_0_for_movie.con` | Multi-timestep data for _0 (9 snapshots: t=1 to t=1048576)       |
+| `csv_1_for_movie.con` | Multi-timestep data for _1                                       |
 
 ### 4.3 .con file columns (common)
 
@@ -163,9 +163,9 @@ For the full mapping of mechanisms to derived traits, see `../graph/graphgen/stu
 
 ## 5. graphgen Files
 
-| File | Purpose |
-|------|---------|
-| `../graph/graphgen/studies/{study}/manifest.py` | Study config, figure definitions, MAIN_ROWS |
-| `../graph/graphgen/studies/trps/config.py` | Shared TRPS trait definitions, figure structure |
-| `../graph/graphgen/studies/trps/mech_trait_map.csv` | Mechanism → trait mapping (see §2.2) |
-| `../graph/graphgen/studies/common/shared.py` | Common path template |
+| File                                                | Purpose                                         |
+| --------------------------------------------------- | ----------------------------------------------- |
+| `../graph/graphgen/studies/{study}/manifest.py`     | Study config, figure definitions, MAIN_ROWS     |
+| `../graph/graphgen/studies/trps/config.py`          | Shared TRPS trait definitions, figure structure |
+| `../graph/graphgen/studies/trps/mech_trait_map.csv` | Mechanism → trait mapping (see §2.2)            |
+| `../graph/graphgen/studies/common/shared.py`        | Common path template                            |

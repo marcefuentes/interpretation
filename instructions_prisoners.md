@@ -12,10 +12,10 @@ Standard Prisoner's Dilemma with **T = 1.0** and **S = 0.1** fixed. R and P vary
 - Valid cells satisfy T > R > P > S, forming a triangle in (R, P) space
 - The diagonal R = P is the boundary where cooperation and defection pay equally
 
-| Gap | Range | Interpretation |
-|-----|-------|----------------|
-| T − R | 0.0 – 0.9 | Temptation to defect (varies) |
-| P − S | 0.0 – 0.9 | Sucker penalty (varies) |
+| Gap   | Range      | Interpretation                          |
+| ----- | ---------- | --------------------------------------- |
+| T − R | 0.0 – 0.9  | Temptation to defect (varies)           |
+| P − S | 0.0 – 0.9  | Sucker penalty (varies)                 |
 | R − P | −0.9 – 0.9 | Cooperation benefit (varies, both axes) |
 
 Three independent gaps vary simultaneously, making the PD a 2D parameter exploration.
@@ -83,13 +83,13 @@ print(df['TRAIT'].corr(df['R_minus_P']))
 
 MAIN_ROWS in `manifest.py` defines 5 rows:
 
-| Row | Panels | Population | File_set | Notes |
-|-----|--------|------------|----------|-------|
-| 0 | a, b | pop_2 | _1 | Higher qBSeen pop |
-| 1 | c, d | pop_2 | _0 | Lower qBSeen pop |
-| 2 | e, f | pop_3 | _0 | Evolving population |
-| 3 | g, h | pop_3 | _1 | Fixed population |
-| 4 | i, j | pop_1 | _0 | Single population |
+| Row   | Panels   | Population   | File_set   | Notes               |
+| ----- | -------- | ------------ | ---------- | ------------------- |
+| 0     | a, b     | pop_2        | _1         | Higher qBSeen pop   |
+| 1     | c, d     | pop_2        | _0         | Lower qBSeen pop    |
+| 2     | e, f     | pop_3        | _0         | Evolving population |
+| 3     | g, h     | pop_3        | _1         | Fixed population    |
+| 4     | i, j     | pop_1        | _0         | Single population   |
 
 For mechanism `P`, typical traits per column: P1, Choosers, qBSeen, wmean.
 

@@ -8,15 +8,15 @@
 
 The mutualism game uses the same Hamilton altruism payoff structure but allows the two coevolving populations to have **different** benefit-cost parameters. Each population *i* has its own *b*_*i* − *c*, while the cost *c* = 1.0 is shared.
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| *b*₀ − *c* | 0.008 – 8.0 | Net benefit-cost for population 0 (x-axis, log₂ scale: 2⁻⁷ to 2³) |
-| *b*₁ − *c* | 0.008 – 8.0 | Net benefit-cost for population 1 (y-axis, same scale) |
-| *c* | 1.0 | Cost (fixed; C_MIN) |
-| *g* | 1.0 | Given parameter (full dilemma) |
-| *K* | 2.0 | Baseline fitness (k0 = k1) |
-| *B*_max | 9.0 | Maximum benefit (for fitness normalization) |
-| groupsize | 128 | Individuals per group from each population |
+| Parameter   | Value       | Description                                                       |
+| ----------- | ----------- | ----------------------------------------------------------------- |
+| *b*₀ − *c*  | 0.008 – 8.0 | Net benefit-cost for population 0 (x-axis, log₂ scale: 2⁻⁷ to 2³) |
+| *b*₁ − *c*  | 0.008 – 8.0 | Net benefit-cost for population 1 (y-axis, same scale)            |
+| *c*         | 1.0         | Cost (fixed; C_MIN)                                               |
+| *g*         | 1.0         | Given parameter (full dilemma)                                    |
+| *K*         | 2.0         | Baseline fitness (k0 = k1)                                        |
+| *B*_max     | 9.0         | Maximum benefit (for fitness normalization)                       |
+| groupsize   | 128         | Individuals per group from each population                        |
 
 The parameter space is a **triangular matrix**: only cells where *b*₁ − *c* ≥ *b*₀ − *c* are simulated (21 × 21 grid, 231 cells). The **diagonal** (*b*₀ − *c* = *b*₁ − *c*) is the Hamilton-equivalent special case where both populations face the same game.
 
@@ -32,29 +32,29 @@ From `calculate_derived_globals.c`, at *g* = 1.0, with *b*₀ = *K* + (*b*₀ �
 
 ### Population 0's payoff matrix (receives *b*₁ from partner)
 
-| Payoff | Formula | Value |
-|--------|---------|-------|
-| **T₀** | *K* + *b*₁ | 4 + (*b*₁ − *c*) |
-| **R₀** | *K* + (*b*₁ − *c*) | 2 + (*b*₁ − *c*) |
-| **P₀** | *K* | 2 |
-| **S₀** | 0 | 0 |
+| Payoff   | Formula            | Value            |
+| -------- | ------------------ | ---------------- |
+| **T₀**   | *K* + *b*₁         | 4 + (*b*₁ − *c*) |
+| **R₀**   | *K* + (*b*₁ − *c*) | 2 + (*b*₁ − *c*) |
+| **P₀**   | *K*                | 2                |
+| **S₀**   | 0                  | 0                |
 
 ### Population 1's payoff matrix (receives *b*₀ from partner)
 
-| Payoff | Formula | Value |
-|--------|---------|-------|
-| **T₁** | *K* + *b*₀ | 4 + (*b*₀ − *c*) |
-| **R₁** | *K* + (*b*₀ − *c*) | 2 + (*b*₀ − *c*) |
-| **P₁** | *K* | 2 |
-| **S₁** | 0 | 0 |
+| Payoff   | Formula            | Value            |
+| -------- | ------------------ | ---------------- |
+| **T₁**   | *K* + *b*₀         | 4 + (*b*₀ − *c*) |
+| **R₁**   | *K* + (*b*₀ − *c*) | 2 + (*b*₀ − *c*) |
+| **P₁**   | *K*                | 2                |
+| **S₁**   | 0                  | 0                |
 
 ### Key relationships
 
-| | Pop 0 | Pop 1 |
-|--|-------|-------|
+|           | Pop 0                  | Pop 1                  |
+| --------- | ---------------------- | ---------------------- |
 | **R − P** | *b*₁ − *c* (partner's) | *b*₀ − *c* (partner's) |
-| **T − R** | 2 (constant) | 2 (constant) |
-| **P − S** | 2 (constant) | 2 (constant) |
+| **T − R** | 2 (constant)           | 2 (constant)           |
+| **P − S** | 2 (constant)           | 2 (constant)           |
 
 Since *b*₁ − *c* ≥ *b*₀ − *c* by construction (triangular matrix), **population 0 always has R − P ≥ population 1's R − P**. This asymmetry in cooperation incentives is the central feature of the mutualism study.
 
@@ -138,10 +138,10 @@ pivot = pivot.reindex(index=sorted(pivot.index, reverse=True))
 
 MAIN_ROWS in `manifest.py` defines 2 rows:
 
-| Row | Panels | Population | File_set | Notes |
-|-----|--------|------------|----------|-------|
-| 0 | a, b | pop_2 | _1 | Population 1 (higher *b*₁ − *c*) |
-| 1 | c, d | pop_2 | _0 | Population 0 (lower *b*₀ − *c*) |
+| Row   | Panels   | Population   | File_set   | Notes                            |
+| ----- | -------- | ------------ | ---------- | -------------------------------- |
+| 0     | a, b     | pop_2        | _1         | Population 1 (higher *b*₁ − *c*) |
+| 1     | c, d     | pop_2        | _0         | Population 0 (lower *b*₀ − *c*)  |
 
 Each panel is a **heatmap** with *b*₀ − *c* on the x-axis and *b*₁ − *c* on the y-axis (triangular matrix, imshow renderer).
 

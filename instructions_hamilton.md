@@ -8,15 +8,15 @@
 
 The Hamilton altruism game is parameterized by benefit *b*, cost *c*, and given parameter *g*. With *g* = 1.0 (full dilemma), a cooperator gives all of its production *b* to its partner and pays cost *c*.
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| *b* − *c* | 0.008 – 8.0 | Net benefit of mutual cooperation (x-axis, log₂ scale: 2⁻⁷ to 2³) |
-| *c* | 1.0 | Cost (fixed throughout; C_MIN) |
-| *b* | 1.008 – 9.0 | Benefit (*c* + x-axis value) |
-| *g* | 1.0 | Given parameter (full dilemma) |
-| *K* | 2.0 | Baseline fitness (k0 = k1) |
-| *B*_max | 9.0 | Maximum benefit (for fitness normalization) |
-| groupsize | 128 | Individuals per group from each population |
+| Parameter   | Value       | Description                                                       |
+| ----------- | ----------- | ----------------------------------------------------------------- |
+| *b* − *c*   | 0.008 – 8.0 | Net benefit of mutual cooperation (x-axis, log₂ scale: 2⁻⁷ to 2³) |
+| *c*         | 1.0         | Cost (fixed throughout; C_MIN)                                    |
+| *b*         | 1.008 – 9.0 | Benefit (*c* + x-axis value)                                      |
+| *g*         | 1.0         | Given parameter (full dilemma)                                    |
+| *K*         | 2.0         | Baseline fitness (k0 = k1)                                        |
+| *B*_max     | 9.0         | Maximum benefit (for fitness normalization)                       |
+| groupsize   | 128         | Individuals per group from each population                        |
 
 Constants defined in `../graph/graphgen/studies/hamilton/theory.py`: B_MAX = 9.0, C_MIN = 1.0, K = 2.0.
 
@@ -26,31 +26,31 @@ Constants defined in `../graph/graphgen/studies/hamilton/theory.py`: B_MAX = 9.0
 
 From `calculate_derived_globals.c`, the Hamilton game at *g* = 1.0 maps exactly to a Prisoner's Dilemma. With `b0 = K + (b−c)` and `given = 1`:
 
-| Payoff | Formula | Derivation |
-|--------|---------|------------|
-| **T** (Temptation) | 4 + (*b* − *c*) | K + b0 · given = 2 + (2 + x) |
-| **R** (Reward) | 2 + (*b* − *c*) | K + b0·(1−g) + b0·g − K = 2 + x |
-| **P** (Punishment) | 2 | K |
-| **S** (Sucker) | 0 | K + b0·(1−g) − K = 0 |
+| Payoff             | Formula         | Derivation                      |
+| ------------------ | --------------- | ------------------------------- |
+| **T** (Temptation) | 4 + (*b* − *c*) | K + b0 · given = 2 + (2 + x)    |
+| **R** (Reward)     | 2 + (*b* − *c*) | K + b0·(1−g) + b0·g − K = 2 + x |
+| **P** (Punishment) | 2               | K                               |
+| **S** (Sucker)     | 0               | K + b0·(1−g) − K = 0            |
 
 Key relationships (all constant except R − P):
 
-| Relationship | Value | Interpretation |
-|-------------|-------|----------------|
-| **R − P** | *b* − *c* | Cooperation benefit (= x-axis, varies) |
-| **T − R** | 2 | Temptation premium (constant) |
-| **P − S** | 2 | Sucker penalty (constant) |
+| Relationship  | Value     | Interpretation                         |
+| ------------- | --------- | -------------------------------------- |
+| **R − P**     | *b* − *c* | Cooperation benefit (= x-axis, varies) |
+| **T − R**     | 2         | Temptation premium (constant)          |
+| **P − S**     | 2         | Sucker penalty (constant)              |
 
 Concrete values:
 
-| *b* − *c* | T | R | P | S | R − P |
-|-----------|-------|-------|---|---|-------|
-| 0.008 | 4.008 | 2.008 | 2 | 0 | 0.008 |
-| 0.125 | 4.125 | 2.125 | 2 | 0 | 0.125 |
-| 0.250 | 4.250 | 2.250 | 2 | 0 | 0.250 |
-| 1.000 | 5.000 | 3.000 | 2 | 0 | 1.000 |
-| 4.000 | 8.000 | 6.000 | 2 | 0 | 4.000 |
-| 8.000 | 12.000 | 10.000 | 2 | 0 | 8.000 |
+| *b* − *c*   | T       | R       | P   | S   | R − P   |
+| ----------- | ------- | ------- | --- | --- | ------- |
+| 0.008       | 4.008   | 2.008   | 2   | 0   | 0.008   |
+| 0.125       | 4.125   | 2.125   | 2   | 0   | 0.125   |
+| 0.250       | 4.250   | 2.250   | 2   | 0   | 0.250   |
+| 1.000       | 5.000   | 3.000   | 2   | 0   | 1.000   |
+| 4.000       | 8.000   | 6.000   | 2   | 0   | 4.000   |
+| 8.000       | 12.000  | 10.000  | 2   | 0   | 8.000   |
 
 ### Comparison with the PD study parameter space
 
@@ -134,11 +134,11 @@ plt.semilogx(df['b_c_0'], df['qBSeen'], label='qBSeen')
 
 MAIN_ROWS in `manifest.py` defines 3 rows. Hamilton uses multi-line sources (both file sets plotted as separate lines per panel):
 
-| Row | Panels | Population | Lines | Colors |
-|-----|--------|------------|-------|--------|
-| 0 | a, b | pop_2 | fset_0 (orange) + fset_1 (red) | Higher coop = orange, lower = red |
-| 1 | c, d | pop_3 | fset_0 (orange) + fset_1 (lightblue) | Evolving = orange, fixed = lightblue |
-| 2 | e, f | pop_1 | fset_0 (orange) | Single population |
+| Row   | Panels   | Population   | Lines                                | Colors                               |
+| ----- | -------- | ------------ | ------------------------------------ | ------------------------------------ |
+| 0     | a, b     | pop_2        | fset_0 (orange) + fset_1 (red)       | Higher coop = orange, lower = red    |
+| 1     | c, d     | pop_3        | fset_0 (orange) + fset_1 (lightblue) | Evolving = orange, fixed = lightblue |
+| 2     | e, f     | pop_1        | fset_0 (orange)                      | Single population                    |
 
 Each panel is a **line plot** (plot renderer) with *b* − *c* on the x-axis (log scale).
 

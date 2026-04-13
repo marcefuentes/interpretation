@@ -14,15 +14,15 @@ How can the P1 allele be most frequent somewhere other than where it's most stro
 
 ## Key Definitions
 
-| Term | Definition |
-|------|------------|
-| C1P1 | Cooperators who choose partners ("Choosers") |
-| C0P1 | Defectors carrying P1 (but P1 is **silent** — they don't actually choose) |
-| P1 | Total frequency of P1 allele = C0P1 + C1P1 |
-| R | Reward for mutual cooperation |
-| P | Punishment for mutual defection |
-| T | Temptation to defect (T = 1.0 in these simulations) |
-| S | Sucker's payoff (S = 0.1 in these simulations) |
+| Term   | Definition                                                                |
+| ------ | ------------------------------------------------------------------------- |
+| C1P1   | Cooperators who choose partners ("Choosers")                              |
+| C0P1   | Defectors carrying P1 (but P1 is **silent** — they don't actually choose) |
+| P1     | Total frequency of P1 allele = C0P1 + C1P1                                |
+| R      | Reward for mutual cooperation                                             |
+| P      | Punishment for mutual defection                                           |
+| T      | Temptation to defect (T = 1.0 in these simulations)                       |
+| S      | Sucker's payoff (S = 0.1 in these simulations)                            |
 
 ## The Resolution
 
@@ -42,10 +42,10 @@ An individual can only choose if they:
 
 ### Where the maxima occur (simulation data, pop_3 evolving population)
 
-| Metric | R | P | R−P | Value |
-|--------|---|---|-----|-------|
-| C1P1 max | 0.96 | 0.35 | 0.61 | 0.755 |
-| P1 max | 0.80 | 0.30 | 0.49 | 0.884 |
+| Metric   | R    | P    | R−P   | Value   |
+| -------- | ---- | ---- | ----- | ------- |
+| C1P1 max | 0.96 | 0.35 | 0.61  | 0.755   |
+| P1 max   | 0.80 | 0.30 | 0.49  | 0.884   |
 
 The P1 maximum occurs at **smaller** R−P than the C1P1 maximum.
 
@@ -88,13 +88,13 @@ Single-run data (`prisoners_1run`) reveals that this displacement is **oscillato
 
 ### Quantitative evidence (pop_1)
 
-| R−P | P1 | C1P1 | C1P0 | C1P0/qBSeen | qBSeen |
-|-----|------|------|------|-------------|--------|
-| 0.041 | 0.867 | 0.609 | 0.026 | 4.2% | 0.635 |
-| 0.082 | 0.906 | 0.763 | 0.059 | 7.2% | 0.822 |
-| 0.164 | 0.869 | 0.795 | 0.115 | 12.6% | 0.909 |
-| 0.410 | 0.656 | 0.597 | 0.366 | 37.6% | 0.963 |
-| 0.820 | 0.399 | 0.367 | 0.610 | 62.3% | 0.978 |
+| R−P   | P1     | C1P1   | C1P0   | C1P0/qBSeen   | qBSeen   |
+| ----- | ------ | ------ | ------ | ------------- | -------- |
+| 0.041 | 0.867  | 0.609  | 0.026  | 4.2%          | 0.635    |
+| 0.082 | 0.906  | 0.763  | 0.059  | 7.2%          | 0.822    |
+| 0.164 | 0.869  | 0.795  | 0.115  | 12.6%         | 0.909    |
+| 0.410 | 0.656  | 0.597  | 0.366  | 37.6%         | 0.963    |
+| 0.820 | 0.399  | 0.367  | 0.610  | 62.3%         | 0.978    |
 
 - C1P0/qBSeen correlation with R−P: **+0.972**
 - P1 correlation with R−P: **−0.961**
@@ -147,11 +147,11 @@ The direction of exploitation depends on which strategy dominates in the evolvin
 
 When cooperation evolves (high C1 in E):
 
-| Population | Genotype | Payoff | Explanation |
-|------------|----------|--------|-------------|
-| Fixed | C0(F) | ~0.96 | Gets T from abundant C1(E) |
-| Fixed | C1(F) | ~0.91 | Gets R from C1(E); retained by C1P1(E) |
-| Evolving | C1P1(E) | ~0.54 | Gets S from C0(F) half the time |
+| Population   | Genotype   | Payoff   | Explanation                            |
+| ------------ | ---------- | -------- | -------------------------------------- |
+| Fixed        | C0(F)      | ~0.96    | Gets T from abundant C1(E)             |
+| Fixed        | C1(F)      | ~0.91    | Gets R from C1(E); retained by C1P1(E) |
+| Evolving     | C1P1(E)    | ~0.54    | Gets S from C0(F) half the time        |
 
 **Partner choice has limited benefit** (only ~2% of C1P1 successfully swap) when cooperation dominates because:
 - C1P1(E) wants to swap away from C0(F)
@@ -173,17 +173,17 @@ Single-run data (`prisoners_1run`) confirms that the cooperation jump in the evo
 
 Even though both populations can evolve symmetrically, one becomes the **exploiter** and the other the **exploited**:
 
-| Region | Symmetry | C1P1 difference | Fitness difference |
-|--------|----------|-----------------|-------------------|
-| R ≈ P | Symmetric | ~0.02 | ~0.02 |
-| R >> P | **Asymmetric** | ~0.53 | ~0.55 |
+| Region   | Symmetry       | C1P1 difference   | Fitness difference  |
+| -------- | -------------- | ----------------- | ------------------- |
+| R ≈ P    | Symmetric      | ~0.02             | ~0.02               |
+| R >> P   | **Asymmetric** | ~0.53             | ~0.55               |
 
 ### Fitness bounds at R >> P (low P)
 
-| Population | Mean fitness | Interpretation |
-|------------|--------------|----------------|
-| Exploited (_1) | 0.26 | Dragged toward S; cooperators exploited by defectors from other pop |
-| Exploiter (_0) | 0.92 | Pulled by T; exceeds R in ~69% of cells at P < 0.30 |
+| Population     | Mean fitness   | Interpretation                                                      |
+| -------------- | -------------- | ------------------------------------------------------------------- |
+| Exploited (_1) | 0.26           | Dragged toward S; cooperators exploited by defectors from other pop |
+| Exploiter (_0) | 0.92           | Pulled by T; exceeds R in ~69% of cells at P < 0.30                 |
 
 ### Why asymmetry emerges
 
@@ -220,10 +220,10 @@ Cooperation in pop_2 exhibits a sharp all-or-nothing transition near the R ≈ P
 
 Representative jumps across a single grid step in R−P:
 
-| P | R (defection) | qBSeen | R (cooperation) | qBSeen | ΔR |
-|---|---------------|--------|-----------------|--------|----|
-| 0.51 | 0.55 | 0.026 | 0.59 | 0.479 | 0.041 |
-| 0.67 | 0.75 | 0.028 | 0.80 | 0.687 | 0.041 |
+| P    | R (defection)   | qBSeen   | R (cooperation)   | qBSeen   | ΔR    |
+| ---- | --------------- | -------- | ----------------- | -------- | ----- |
+| 0.51 | 0.55            | 0.026    | 0.59              | 0.479    | 0.041 |
+| 0.67 | 0.75            | 0.028    | 0.80              | 0.687    | 0.041 |
 
 ### The phase boundary
 
@@ -237,16 +237,16 @@ The boundary is remarkably clean in (R, P) space. For each R, as P increases tow
 
 At R−P = 0.082 the outcome depends not only on R−P but also on absolute payoff levels. Since T = 1.0 is fixed, higher R means smaller T−R (temptation premium). A cell-by-cell breakdown at R−P = 0.082:
 
-| R | P | T−R | P−S | qBSeen | Outcome |
-|------|------|------|------|--------|---------|
-| 0.96 | 0.88 | 0.04 | 0.78 | 0.025 | Defection |
-| 0.80 | 0.71 | 0.20 | 0.61 | 0.033 | Defection |
-| 0.75 | 0.67 | 0.25 | 0.57 | 0.040 | Defection |
-| 0.71 | 0.63 | 0.29 | 0.53 | 0.211 | Transition |
-| 0.67 | 0.59 | 0.33 | 0.49 | 0.573 | Cooperation |
-| 0.55 | 0.47 | 0.45 | 0.37 | 0.474 | Cooperation |
-| 0.30 | 0.22 | 0.70 | 0.12 | 0.235 | Declining |
-| 0.22 | 0.14 | 0.78 | 0.04 | 0.171 | Declining |
+| R      | P      | T−R    | P−S    | qBSeen   | Outcome     |
+| ------ | ------ | ------ | ------ | -------- | ----------- |
+| 0.96   | 0.88   | 0.04   | 0.78   | 0.025    | Defection   |
+| 0.80   | 0.71   | 0.20   | 0.61   | 0.033    | Defection   |
+| 0.75   | 0.67   | 0.25   | 0.57   | 0.040    | Defection   |
+| 0.71   | 0.63   | 0.29   | 0.53   | 0.211    | Transition  |
+| 0.67   | 0.59   | 0.33   | 0.49   | 0.573    | Cooperation |
+| 0.55   | 0.47   | 0.45   | 0.37   | 0.474    | Cooperation |
+| 0.30   | 0.22   | 0.70   | 0.12   | 0.235    | Declining   |
+| 0.22   | 0.14   | 0.78   | 0.04   | 0.171    | Declining   |
 
 The sharp jump at T−R ≈ 0.29 (between R = 0.75 and R = 0.71) marks where cooperation first invades. Below R = 0.67, qBSeen declines gradually — cooperation persists but weakens as absolute payoffs shrink (R = 0.22 means even cooperators earn little).
 
@@ -256,11 +256,11 @@ The sharp jump at T−R ≈ 0.29 (between R = 0.75 and R = 0.71) marks where coo
 
 At P ≥ 0.30 (136 cells), the distribution has a clear gap:
 
-| qBSeen range | Count |
-|-------------|-------|
-| 0.00–0.05 | 22 |
-| 0.05–0.15 | 1 (the single transitional cell at R=0.71, P=0.63) |
-| 0.20–0.90 | 113 |
+| qBSeen range  | Count                                              |
+| ------------- | -------------------------------------------------- |
+| 0.00–0.05     | 22                                                 |
+| 0.05–0.15     | 1 (the single transitional cell at R=0.71, P=0.63) |
+| 0.20–0.90     | 113                                                |
 
 ### The mechanism: positive feedback with a tipping point
 
@@ -278,12 +278,12 @@ Single-run data (`prisoners_1run`) confirms that the low-cooperation values near
 
 From the movie data (csv_0_for_movie.con), all cells start at qBSeen=0, C0=1.0:
 
-| R | P | R−P | Trajectory | Outcome |
-|---|---|-----|-----------|---------|
-| 0.67 | 0.59 | 0.082 | 0→0.18→0.41→0.45→0.49→0.53→0.54→0.54→0.55 | Invasion succeeds |
+| R    | P    | R−P   | Trajectory                                | Outcome                |
+| ---- | ---- | ----- | ----------------------------------------- | ---------------------- |
+| 0.67 | 0.59 | 0.082 | 0→0.18→0.41→0.45→0.49→0.53→0.54→0.54→0.55 | Invasion succeeds      |
 | 0.71 | 0.63 | 0.082 | 0→0.05→0.06→0.07→0.07→0.11→0.13→0.14→0.12 | Stuck at tipping point |
-| 0.75 | 0.67 | 0.082 | 0→0.03→0.03→0.03→0.03→0.03→0.03→0.03→0.03 | Never invades |
-| 0.75 | 0.63 | 0.123 | 0→0.67→0.67→0.64→0.65→0.65→0.63→0.64→0.66 | Rapid invasion |
+| 0.75 | 0.67 | 0.082 | 0→0.03→0.03→0.03→0.03→0.03→0.03→0.03→0.03 | Never invades          |
+| 0.75 | 0.63 | 0.123 | 0→0.67→0.67→0.64→0.65→0.65→0.63→0.64→0.66 | Rapid invasion         |
 
 The cooperative invasion at R−P = 0.123 is almost instantaneous (qBSeen=0.67 by t=131072). At R−P = 0.082, it either slowly builds (R=0.67) or stalls (R=0.75). The transitional cell (R=0.71, P=0.63) oscillates near qBSeen ≈ 0.12 — right at the saddle point.
 
@@ -291,11 +291,11 @@ The cooperative invasion at R−P = 0.123 is almost instantaneous (qBSeen=0.67 b
 
 For a C1P1 cooperator to have higher fitness than a C0 defector, it must swap partners with probability p > (P−S)/(R−S). When R−P is small, this threshold is prohibitively high:
 
-| P | R (at R−P=0.041) | Required p_swap |
-|---|-------------------|-----------------|
-| 0.30 | 0.341 | > 83% |
-| 0.50 | 0.541 | > 91% |
-| 0.70 | 0.741 | > 94% |
+| P    | R (at R−P=0.041)    | Required p_swap   |
+| ---- | ------------------- | ----------------- |
+| 0.30 | 0.341               | > 83%             |
+| 0.50 | 0.541               | > 91%             |
+| 0.70 | 0.741               | > 94%             |
 
 Since simulations start from all-defection, cooperators are initially rare and actual swap probability is near zero. The feedback loop cannot ignite because cooperators would need to already be common to achieve the swap rates required to overcome the tiny R−P advantage. (Note: this threshold governs *invasion*. Once cooperation is established, most partners are already cooperators and swap rates drop to ~2–14% — swapping becomes unnecessary because the default pairing is already favorable.)
 
@@ -307,12 +307,12 @@ At low P with R−P = 0.041 (e.g., R=0.22, P=0.18), qBSeen ≈ 0.10 persists as 
 
 Unlike pop_2, the single population shows **no bistability**. The qBSeen distribution is continuous, ranging from 0.49 to 0.98 with no gap:
 
-| qBSeen range | Count (of 210 cells) |
-|-------------|------|
-| 0.40–0.50 | 1 |
-| 0.50–0.70 | 19 |
-| 0.70–0.90 | 40 |
-| 0.90–1.00 | 150 |
+| qBSeen range  | Count (of 210 cells) |
+| ------------- | -------------------- |
+| 0.40–0.50     | 1                    |
+| 0.50–0.70     | 19                   |
+| 0.70–0.90     | 40                   |
+| 0.90–1.00     | 150                  |
 
 The minimum qBSeen (0.49 at R = 0.18, P = 0.14) is far above the defection basin. Even at R−P = 0.041 — where pop_2 never achieves cooperation — pop_1 sustains mean qBSeen = 0.635.
 

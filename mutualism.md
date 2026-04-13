@@ -56,13 +56,13 @@ Pop_1's low R − P (= *b*₀ − *c*) means pop_1 evolves few C1P1 individuals.
 
 This explains why **cooperation scales primarily with the smaller of the two *b* − *c* values**:
 
-| *b*₀ − *c* effect (at fixed *b*₁ − *c* = 8.0) | |
-|---|---|
-| *b*₀ − *c* = 0.008 | qBSeen₀ = 0.32, qBSeen₁ = 0.05 |
-| *b*₀ − *c* = 0.25 | qBSeen₀ = 0.40, qBSeen₁ = 0.06 |
-| *b*₀ − *c* = 1.0 | qBSeen₀ = 0.60, qBSeen₁ = 0.09 |
-| *b*₀ − *c* = 4.0 | qBSeen₀ = 0.85, qBSeen₁ = 0.14 |
-| *b*₀ − *c* = 5.66 | qBSeen₀ = 0.90, qBSeen₁ = 0.17 |
+| *b*₀ − *c* effect (at fixed *b*₁ − *c* = 8.0) |                                |
+| --------------------------------------------- | ------------------------------ |
+| *b*₀ − *c* = 0.008                            | qBSeen₀ = 0.32, qBSeen₁ = 0.05 |
+| *b*₀ − *c* = 0.25                             | qBSeen₀ = 0.40, qBSeen₁ = 0.06 |
+| *b*₀ − *c* = 1.0                              | qBSeen₀ = 0.60, qBSeen₁ = 0.09 |
+| *b*₀ − *c* = 4.0                              | qBSeen₀ = 0.85, qBSeen₁ = 0.14 |
+| *b*₀ − *c* = 5.66                             | qBSeen₀ = 0.90, qBSeen₁ = 0.17 |
 
 Pop_0's cooperation rises from 0.32 to 0.90 as *b*₀ − *c* increases — not because pop_0's own incentive changes (*b*₁ − *c* = 8.0 throughout), but because pop_1's C1P1 frequency rises with *b*₀ − *c*, relieving the bottleneck.
 
