@@ -12,13 +12,17 @@ Paths in the docs that look like `../graph/graphgen/...` are relative to this re
 
 ## Contents
 
-| File | Description |
-|------|-------------|
-| `instructions.md` | Shared simulation model reference (read first) |
-| `instructions_prisoners.md` | Prisoner's Dilemma game parameters, data format, figures |
-| `instructions_hamilton.md` | Hamilton altruism game parameters, data format, figures |
+| File                        | Description                                                  |
+|-----------------------------|--------------------------------------------------------------|
+| `instructions.md`           | Shared simulation model reference (read first)               |
+| `instructions_prisoners.md` | Prisoner's Dilemma game parameters, data format, figures     |
+| `instructions_hamilton.md`  | Hamilton altruism game parameters, data format, figures      |
 | `instructions_mutualism.md` | Mutualism game parameters, cross-benefit payoffs, data format |
-| `prisoners.md` | Analysis of PD partner choice results (s07) |
-| `hamilton.md` | Analysis of Hamilton partner choice results (s07) |
-| `mutualism.md` | Analysis of mutualism partner choice results (s07) |
-| `analyze_single_run.py` | Script used to analyze `_1run` temporal dynamics |
+| `prisoners.md`          | Analysis of PD partner choice results (s07)                  |
+| `hamilton.md`           | Analysis of Hamilton partner choice results (s07)            |
+| `mutualism.md`          | Analysis of mutualism partner choice results (s07)           |
+| `analyze_single_run.py` | Script used to analyze `_1run` temporal dynamics             |
+
+## Documentation conventions
+
+For Markdown files intended for human reading (for example `prisoners.md`, `hamilton.md`, and `mutualism.md`), format tables for source readability as well as rendered output. Prefer aligned pipe tables with consistent spacing when practical, so the raw `.md` remains easy to scan and edit in a terminal or text editor.
