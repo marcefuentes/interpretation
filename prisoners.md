@@ -17,7 +17,7 @@ How can the P1 allele be most frequent somewhere other than where it's most stro
 | Term | Definition                                                                |
 | ---- | ------------------------------------------------------------------------- |
 | C1P1 | Cooperators who choose partners ("Choosers")                              |
-| C0P1 | Defectors carrying P1 (but P1 is **silent** — they don't actually choose) |
+| C0P1 | Defectors carrying P1 (but P1 is **silent** — they don't actually choose)     |
 | P1   | Total frequency of P1 allele = C0P1 + C1P1                                |
 | R    | Reward for mutual cooperation                                             |
 | P    | Punishment for mutual defection                                           |
@@ -176,14 +176,14 @@ Even though both populations can evolve symmetrically, one becomes the **exploit
 | Region | Symmetry       | C1P1 difference | Fitness difference |
 | ------ | -------------- | --------------- | ------------------ |
 | R ≈ P  | Symmetric      | ~0.02           | ~0.02              |
-| R >> P | **Asymmetric** | ~0.53           | ~0.55              |
+| R >> P | **Asymmetric**     | ~0.53           | ~0.55              |
 
 ### Fitness bounds at R >> P (low P)
 
 | Population     | Mean fitness | Interpretation                                                      |
 | -------------- | ------------ | ------------------------------------------------------------------- |
-| Exploited (_0) | 0.23         | Dragged toward S; cooperators exploited by defectors from other pop |
-| Exploiter (_1) | 0.61         | Pulled by T; exceeds R in ~70% of cells at P < 0.30                 |
+| Exploited (0)  | 0.23         | Dragged toward S; cooperators exploited by defectors from other pop |
+| Exploiter (1)  | 0.61         | Pulled by T; exceeds R in ~70% of cells at P < 0.30                 |
 
 ### Why asymmetry emerges
 

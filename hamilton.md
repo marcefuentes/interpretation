@@ -10,12 +10,12 @@ The Hamilton altruism game is parameterized by benefit *b*, cost *c*, and given 
 
 | Parameter | Value                           | Description                                |
 | --------- | ------------------------------- | ------------------------------------------ |
-| *b* − *c* | 0.008 – 8.0 (log scale)         | Net benefit of mutual cooperation (x-axis) |
-| *c*       | 1.0                             | Cost (fixed throughout; C_MIN)             |
-| *b*       | *c* + (*b* − *c*) = 1.008 – 9.0 | Benefit (varies with x-axis)               |
-| *g*       | 1.0                             | Given parameter (full dilemma)             |
-| *K*       | 2.0                             | Baseline fitness (k0 = k1)                 |
-| *B*_max   | 9.0                             | Maximum benefit (normalization)            |
+| *b* − *c*     | 0.008 – 8.0 (log scale)         | Net benefit of mutual cooperation (x-axis) |
+| *c*         | 1.0                             | Cost (fixed throughout; C_MIN)             |
+| *b*         | *c* + (*b* − *c*) = 1.008 – 9.0       | Benefit (varies with x-axis)               |
+| *g*         | 1.0                             | Given parameter (full dilemma)             |
+| *K*         | 2.0                             | Baseline fitness (k0 = k1)                 |
+| *B*\_max    | 9.0                             | Maximum benefit (normalization)            |
 | groupsize | 128                             | Individuals per group from each population |
 
 ### Equivalent Prisoner's Dilemma payoffs
@@ -24,10 +24,10 @@ From `calculate_derived_globals.c`, the Hamilton game at *g* = 1.0 maps exactly 
 
 | Payoff             | Formula         | Meaning                         |
 | ------------------ | --------------- | ------------------------------- |
-| **T** (Temptation) | 4 + (*b* − *c*) | Defect while partner cooperates |
-| **R** (Reward)     | 2 + (*b* − *c*) | Both cooperate                  |
-| **P** (Punishment) | 2               | Both defect                     |
-| **S** (Sucker)     | 0               | Cooperate while partner defects |
+| **T** (Temptation)     | 4 + (*b* − *c*)     | Defect while partner cooperates |
+| **R** (Reward)         | 2 + (*b* − *c*)     | Both cooperate                  |
+| **P** (Punishment)     | 2               | Both defect                     |
+| **S** (Sucker)         | 0               | Cooperate while partner defects |
 
 Derivation: with `b0 = K + (b−c)`, `given = 1`:  T = K + b0 · given = 2 + (2 + x) = 4 + x;  R = K + b0·(1−g) + b0·g − K = 2 + x;  S = K + b0·(1−g) − K = 0;  P = K = 2.
 
@@ -35,13 +35,13 @@ The key relationships are:
 
 | Relationship | Value     | Interpretation                 |
 | ------------ | --------- | ------------------------------ |
-| **R − P**    | *b* − *c* | Cooperation benefit (= x-axis) |
-| **T − R**    | 2         | Temptation premium (constant)  |
-| **P − S**    | 2         | Sucker penalty (constant)      |
+| **R − P**        | *b* − *c*     | Cooperation benefit (= x-axis) |
+| **T − R**        | 2         | Temptation premium (constant)  |
+| **P − S**        | 2         | Sucker penalty (constant)      |
 
 Concrete values at selected x-axis points:
 
-| *b* − *c* | T      | R      | P   | S   |
+| *b* − *c*     | T      | R      | P   | S   |
 | --------- | ------ | ------ | --- | --- |
 | 0.008     | 4.008  | 2.008  | 2   | 0   |
 | 0.125     | 4.125  | 2.125  | 2   | 0   |
@@ -64,19 +64,19 @@ In Hamilton, only **R − P varies** (= *b* − *c*), while T − R = P − S = 
 2. **The sucker penalty is fixed and severe** (P − S = 2). A cooperator paired with a defector gets fitness 0, which is 2 below mutual defection.
 3. **R − P spans a much wider range** (0.008 to 8.0 vs PD's −0.9 to 0.9). At high *b* − *c*, mutual cooperation is enormously more profitable than mutual defection.
 
-Fitness is normalized as (*K* + *w*) / (*K* + *B*_max) = (*K* + *w*) / 11. Without any cooperation mechanisms, the theoretical prediction at *g* = 1.0 is zero cooperation: the condition (1−*g*)·*b* > *c* is never satisfied. Partner choice must bootstrap cooperation from scratch.
+Fitness is normalized as (*K* + *w*) / (*K* + *B*\_max) = (*K* + *w*) / 11. Without any cooperation mechanisms, the theoretical prediction at *g* = 1.0 is zero cooperation: the condition (1−*g*)·*b* > *c* is never satisfied. Partner choice must bootstrap cooperation from scratch.
 
 ## Key Definitions
 
 | Term   | Definition                                                            |
 | ------ | --------------------------------------------------------------------- |
 | C1P1   | Cooperators who choose partners ("Choosers")                          |
-| C0P1   | Defectors carrying P1 (P1 is **silent** — they don't actually choose) |
+| C0P1   | Defectors carrying P1 (P1 is **silent** — they don't actually choose)     |
 | C1P0   | Cooperators who don't choose partners ("non-chooser cooperators")     |
 | P1     | Total frequency of P1 allele = C0P1 + C1P1                            |
 | qBSeen | Frequency of cooperators (= C1P1 + C1P0)                              |
 | AllC   | Frequency of C1P0 (cooperators without partner choice)                |
-| *w̄*   | Normalized mean fitness                                               |
+| *w̄*      | Normalized mean fitness                                               |
 
 From `choose_partner.c`, partner choice requires:
 ```c
@@ -90,7 +90,7 @@ Only C1P1 individuals use partner choice. C0P1 individuals carry P1 but never ac
 
 In pop_1 (within-population pairing), cooperation is present from the lowest *b* − *c* values and rises monotonically:
 
-| *b* − *c* | qBSeen | P1    | C1P1  | C1P0  | C1P0/qBSeen |
+| *b* − *c*     | qBSeen | P1    | C1P1  | C1P0  | C1P0/qBSeen |
 | --------- | ------ | ----- | ----- | ----- | ----------- |
 | 0.008     | 0.132  | 0.585 | 0.120 | 0.012 | 9%          |
 | 0.063     | 0.380  | 0.724 | 0.360 | 0.021 | 5%          |
@@ -118,7 +118,7 @@ This C1P0 invasion explains why **P1 frequency declines at high *b* − *c***: t
 
 P1 frequency peaks at a *lower* *b* − *c* than C1P1 frequency. This occurs in all three population structures:
 
-| Population       | P1 max *b* − *c* | P1    | C1P1 max *b* − *c* | C1P1  |
+| Population       | P1 max *b* − *c*     | P1    | C1P1 max *b* − *c*     | C1P1  |
 | ---------------- | ---------------- | ----- | ------------------ | ----- |
 | pop_1            | 0.25             | 0.887 | 0.50               | 0.772 |
 | pop_2 (fset_0)   | 2.00             | 0.893 | 5.66               | 0.769 |
@@ -158,7 +158,7 @@ In pop_1, the P1 maximum occurs at *b* − *c* = 0.25 — very early in the *b* 
 
 Two symmetric populations spontaneously break symmetry as *b* − *c* increases. One becomes the **cooperator** population (fset_0, orange) and the other the **defector** population (fset_1, red):
 
-| *b* − *c* | qBSeen_0 | qBSeen_1 | Δ_qBSeen | *w̄*_0 | *w̄*_1 | Δ_*w̄* |
+| *b* − *c*     | qBSeen_0 | qBSeen_1 | Δ_qBSeen  | *w̄*\_0 | *w̄*\_1 | Δ_*w̄*     |
 | --------- | -------- | -------- | -------- | ------ | ------ | ------ |
 | 0.008     | 0.045    | 0.039    | +0.006   | 0.181  | 0.182  | −0.001 |
 | 0.177     | 0.376    | 0.355    | +0.020   | 0.186  | 0.190  | −0.004 |
@@ -181,7 +181,7 @@ The cooperative population pays costs to benefit the defecting population's indi
 
 In unnormalized terms at *b* − *c* = 8.0:
 - fset_0 fitness: 0.259 × 11 = 2.84 (barely above baseline *k* = 2)
-- fset_1 fitness: 0.922 × 11 = 10.14 (near maximum *k* + *B*_max = 11)
+- fset_1 fitness: 0.922 × 11 = 10.14 (near maximum *k* + *B*\_max = 11)
 
 ### The asymmetry onset
 
@@ -201,12 +201,12 @@ Single-run data confirms that the asymmetry is an **absorbing state** at high *b
 
 In pop_3, the evolving population adapts to a fixed population with 25% each of C0P0, C0P1, C1P0, C1P1 (qBSeen = 0.50, P1 = 0.50 constant). The evolving population shows a sharp cooperation transition:
 
-| *b* − *c* | qBSeen (evolving) | P1        | C1P1      |
+| *b* − *c*     | qBSeen (evolving) | P1        | C1P1      |
 | --------- | ----------------- | --------- | --------- |
 | 0.250     | 0.047             | 0.517     | 0.034     |
 | 0.354     | 0.053             | 0.538     | 0.040     |
 | 0.500     | 0.071             | 0.526     | 0.056     |
-| **0.707** | **0.408**         | **0.746** | **0.383** |
+| **0.707**     | **0.408**             | **0.746**     | **0.383**     |
 | 1.000     | 0.487             | 0.782     | 0.459     |
 | 1.414     | 0.585             | 0.827     | 0.545     |
 | 2.000     | 0.702             | 0.858     | 0.641     |
@@ -226,7 +226,7 @@ In pop_1, cooperation is 13.2% even at *b* − *c* = 0.008, and rises smoothly. 
 
 The direction of exploitation reverses as cooperation increases in the evolving population:
 
-| *b* − *c* | *w̄*_evolving | *w̄*_fixed | Δ_*w̄* | qBSeen_evolving |
+| *b* − *c*     | *w̄*\_evolving   | *w̄*\_fixed   | Δ\_*w̄*   | qBSeen_evolving |
 | --------- | ------------- | ---------- | ------ | --------------- |
 | 0.354     | 0.238         | 0.143      | +0.096 | 0.053           |
 | 0.500     | 0.243         | 0.146      | +0.097 | 0.071           |

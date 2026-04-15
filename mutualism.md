@@ -56,8 +56,8 @@ Pop_1's low R − P (= *b*₀ − *c*) means pop_1 evolves few C1P1 individuals.
 
 This explains why **cooperation scales primarily with the smaller of the two *b* − *c* values**:
 
-| *b*₀ − *c* effect (at fixed *b*₁ − *c* = 8.0) | Observed cooperation           |
-| --------------------------------------------- | ------------------------------ |
+| *b*₀ − *c* effect (at fixed *b*₁ − *c* = 8.0)     | Observed cooperation           |
+| ----------------------------------------- | ------------------------------ |
 | *b*₀ − *c* = 0.008                            | qBSeen₀ = 0.32, qBSeen₁ = 0.05 |
 | *b*₀ − *c* = 0.25                             | qBSeen₀ = 0.40, qBSeen₁ = 0.06 |
 | *b*₀ − *c* = 1.0                              | qBSeen₀ = 0.60, qBSeen₁ = 0.09 |
