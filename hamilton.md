@@ -191,9 +191,9 @@ Single-run data (`hamilton_1run`) confirms that this gradual transition is **gen
 
 ### The paradox of success
 
-The more successful cooperation is in one population, the more exploitable that population becomes. The correlation between "more choosers" and "lower fitness" is −0.92, matching the pattern found in the Prisoner's Dilemma (where the correlation was −0.99).
+The more successful cooperation is in one population, the more exploitable that population becomes. The correlation between "more choosers" and "lower fitness" is −0.92, matching the pattern found in the Prisoner's Dilemma (where the correlation was −1.00).
 
-Single-run data confirms that the asymmetry is an **absorbing state** at high *b* − *c*: zero role flips occur across all 9 timesteps. Which population becomes the cooperator is **stochastic** — at *b* − *c* = 2.0 and 4.0, fset_0 is the cooperator, but at *b* − *c* = 2.83, 5.66, and 8.0, fset_1 is the cooperator instead. Each cell's symmetry breaking is an independent stochastic event; the averaged data always labels fset_0 as the higher-qBSeen population because it sorts after averaging. At low *b* − *c*, roles flip frequently (2–5 times per cell), consistent with cooperation being too weak to lock in. The weaker averaged correlation in Hamilton (−0.92 vs PD's −0.99) likely reflects this low-*b* − *c* noise rather than role switching at high *b* − *c*.
+Single-run data confirms that the asymmetry is an **absorbing state** at high *b* − *c*: zero role flips occur across all 9 timesteps. Which population becomes the cooperator is **stochastic** — at *b* − *c* = 2.0 and 4.0, fset_0 is the cooperator, but at *b* − *c* = 2.83, 5.66, and 8.0, fset_1 is the cooperator instead. Each cell's symmetry breaking is an independent stochastic event; the averaged data always labels fset_0 as the higher-qBSeen population because it sorts after averaging. At low *b* − *c*, roles flip frequently (2–5 times per cell), consistent with cooperation being too weak to lock in. The weaker averaged correlation in Hamilton (−0.92 vs PD's −1.00) likely reflects this low-*b* − *c* noise rather than role switching at high *b* − *c*.
 
 ## Evolving vs Fixed Population (pop_3, panels c-d)
 
@@ -257,14 +257,14 @@ Both studies share the same underlying game structure (T > R > P > S) and the sa
 ### Same phenomena
 
 1. **P1 hitchhiking**: P1 allele frequency inflated by neutral C0P1 carriers, peaking before the C1P1 maximum. The mechanism is identical.
-2. **pop_2 emergent asymmetry**: Spontaneous symmetry breaking between two coevolving populations, with the more cooperative population being exploited. Correlation of −0.92 (PD: −0.99).
+2. **pop_2 emergent asymmetry**: Spontaneous symmetry breaking between two coevolving populations, with the more cooperative population being exploited. Correlation of −0.92 (PD: −1.00).
 3. **pop_3 exploitation crossover**: The evolving population exploits the fixed population when defection dominates, but gets exploited when cooperation dominates.
 4. **Partner choice limitations**: Mutual swapping requires cooperators on both sides. In between-population pairing, cooperators in one population cannot escape defector partners from the other population if that population lacks cooperators.
 
 ### Different phenomena
 
 1. **No bimodal phase transition in pop_2**: In the PD, cooperation shows a sharp all-or-nothing jump near R ≈ P. In Hamilton, asymmetry builds gradually as R − P increases. Single-run data confirms this is a genuine property of individual runs — stable intermediate cooperation levels at each *b* − *c* — not an averaging artifact. In the PD, the temptation gap T − R varies across the parameter space (approaching zero when R → T = 1.0), creating a sharp bistability boundary. In Hamilton, T − R = 2 is constant and large, so there is no region where temptation vanishes — the transition is always gradual.
-2. **Pop_1 sustains cooperation at the lowest R − P**: In the PD, pop_1 starts from near-zero cooperation at low R − P. In Hamilton, pop_1 maintains 13% cooperation even at R − P = 0.008 (R = 2.008, T = 4.008). Despite the constant temptation premium of 2, the continuous nature of the R − P axis and the large absolute payoffs allow partner choice to sustain some cooperation at any R − P > 0.
+2. **Pop_1 cooperation at the lowest R − P**: Both PD and Hamilton sustain cooperation in pop_1 at their lowest R − P values (PD: qBSeen ≈ 0.49 at R − P = 0.041; Hamilton: qBSeen = 0.13 at R − P = 0.008). However, PD pop_1 cooperates more at comparable R − P because its T − R can approach zero (when R → T = 1.0), reducing the temptation to defect. Hamilton's constant T − R = 2 makes cooperation harder at any given R − P, which is why Hamilton pop_1 has only 13% cooperation at R − P = 0.008 while PD pop_1 already reaches ~49% at R − P = 0.041.
 3. **C1P0 free-rider growth**: At high R − P, cooperators without partner choice (C1P0) grow to 31% of the population in pop_1, actively displacing P1. When R − P = 8.0 (R = 10, T = 12, P = 2, S = 0), mutual cooperation is so profitable (R/P = 5×) that even cooperators who cannot sort away from defectors achieve high enough fitness to persist.
 4. **Pop_2 exploitation magnitude**: At R − P = 8.0, the fitness ratio between defecting and cooperating populations is 3.54×. The absolute payoffs dwarf the PD: the defecting population earns fitness near T = 12 while the cooperating population earns near S = 0 when mismatched. In the PD (where T = 1.0, S = 0.1), the absolute range is compressed.
 
@@ -280,7 +280,7 @@ At large R − P, cooperation no longer requires partner choice. Non-chooser coo
 
 ### Emergent asymmetry (pop_2)
 
-Two symmetric coevolving populations spontaneously break symmetry: one becomes cooperator-heavy (exploited, *w̄* = 0.259 at R − P = 8) while the other becomes defector-heavy (exploiter, *w̄* = 0.918). The correlation between more choosers and lower fitness is −0.92. Single-run data confirms this is an **absorbing state** — roles lock in early and never switch at high *b* − *c*. Which population becomes the cooperator is stochastic. The gradual transition (unlike the PD's sharp phase boundary) is genuine, not an averaging artifact — individual runs show stable intermediate cooperation at each *b* − *c*. The weaker correlation (−0.92 vs PD's −0.99) reflects noisy role-flipping at low *b* − *c*, not instability at high *b* − *c*.
+Two symmetric coevolving populations spontaneously break symmetry: one becomes cooperator-heavy (exploited, *w̄* = 0.259 at R − P = 8) while the other becomes defector-heavy (exploiter, *w̄* = 0.918). The correlation between more choosers and lower fitness is −0.92. Single-run data confirms this is an **absorbing state** — roles lock in early and never switch at high *b* − *c*. Which population becomes the cooperator is stochastic. The gradual transition (unlike the PD's sharp phase boundary) is genuine, not an averaging artifact — individual runs show stable intermediate cooperation at each *b* − *c*. The weaker correlation (−0.92 vs PD's −1.00) reflects noisy role-flipping at low *b* − *c*, not instability at high *b* − *c*.
 
 ### Sharp transition and exploitation reversal (pop_3)
 

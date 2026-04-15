@@ -115,7 +115,7 @@ In pop_1 and pop_3, **P1 peaks before C1P1** — the hitchhiking contribution sh
 
 ### Comparison with Hamilton
 
-In the Hamilton study, the same C1P0 dispensability pattern appears: C1P0/qBSeen grows from 3.5% at b−c = 0.01 to 46% at b−c = 8.0. The correlation (+0.998) is even tighter because Hamilton's parameter space is wider (b−c spans 0.01–8.0 vs R−P spanning 0.041–0.82). See `hamilton.md` §C1P0 Dispensability for details.
+In the Hamilton study, the same C1P0 dispensability pattern appears: C1P0/qBSeen grows from 9% at b−c = 0.008 to 33% at b−c = 8.0. The correlation with log₂(b−c) is +0.89, reflecting the same trend over Hamilton's wider parameter range (b−c spans 0.008–8.0 vs R−P spanning 0.041–0.82). See `hamilton.md` §C1P0 Dispensability for details.
 
 ## The Two-Population Dynamics
 
