@@ -92,21 +92,21 @@ In pop_1 (within-population pairing), cooperation is present from the lowest *b*
 
 | *b* − *c*   | qBSeen   | P1    | C1P1   | C1P0   | C1P0/qBSeen   |
 | ----------- | -------- | ----- | ------ | ------ | ------------- |
-| 0.008       | 0.132    | 0.562 | 0.119  | 0.013  | 10%           |
-| 0.063       | 0.338    | 0.710 | 0.320  | 0.018  | 5%            |
-| 0.250       | 0.810    | 0.888 | 0.739  | 0.072  | 9%            |
-| 0.500       | 0.891    | 0.851 | 0.766  | 0.125  | 14%           |
-| 1.000       | 0.939    | 0.798 | 0.752  | 0.188  | 20%           |
-| 4.000       | 0.969    | 0.719 | 0.697  | 0.272  | 28%           |
-| 8.000       | 0.974    | 0.687 | 0.668  | 0.305  | 31%           |
+| 0.008       | 0.132    | 0.585 | 0.120  | 0.012  | 9%            |
+| 0.063       | 0.380    | 0.724 | 0.360  | 0.021  | 5%            |
+| 0.250       | 0.801    | 0.887 | 0.727  | 0.074  | 9%            |
+| 0.500       | 0.894    | 0.854 | 0.772  | 0.122  | 14%           |
+| 1.000       | 0.936    | 0.806 | 0.756  | 0.180  | 19%           |
+| 4.000       | 0.970    | 0.697 | 0.677  | 0.293  | 30%           |
+| 8.000       | 0.973    | 0.674 | 0.656  | 0.317  | 33%           |
 
-At *b* − *c* = 0.008, 13.2% of the population cooperates. This is strikingly higher than in pop_2 (4.4%) or pop_3 (3.7%) at the same *b* − *c* value. The reason is that pop_1 uses **within-population pairing**: cooperators encounter other cooperators from the same population, so partner choice can operate effectively even when cooperators are rare. A C1P1 individual paired with a defector can swap with another C1P1 also paired with a defector, and both upgrade to cooperator partners. This only requires two C1P1 individuals in the same group — achievable by mutation even at the lowest *b* − *c*.
+At *b* − *c* = 0.008, 13.2% of the population cooperates. This is strikingly higher than in pop_2 (4.5%) or pop_3 (3.6%) at the same *b* − *c* value. The reason is that pop_1 uses **within-population pairing**: cooperators encounter other cooperators from the same population, so partner choice can operate effectively even when cooperators are rare. A C1P1 individual paired with a defector can swap with another C1P1 also paired with a defector, and both upgrade to cooperator partners. This only requires two C1P1 individuals in the same group — achievable by mutation even at the lowest *b* − *c*.
 
 ### C1P0 free-riders increase at high *b* − *c*
 
 As *b* − *c* grows, an increasing fraction of cooperators lack the P1 allele (C1P0). These "non-chooser cooperators" are free-riders within the cooperator class: they benefit from the cooperative environment created by C1P1 choosers without paying whatever information costs partner choice entails.
 
-At *b* − *c* = 0.25, only 9% of cooperators are C1P0. By *b* − *c* = 8.0, this rises to 31%. This happens because at high *b* − *c*, cooperation is so profitable that it is self-sustaining without partner choice — even cooperators who can't sort away from defectors still achieve high enough fitness to persist. Partner choice becomes dispensable.
+At *b* − *c* = 0.25, only 9% of cooperators are C1P0. By *b* − *c* = 8.0, this rises to 33%. This happens because at high *b* − *c*, cooperation is so profitable that it is self-sustaining without partner choice — even cooperators who can't sort away from defectors still achieve high enough fitness to persist. Partner choice becomes dispensable.
 
 Single-run data (`hamilton_1run`) reveals that C1P1 and C1P0 maintain a **dynamic frequency-dependent coexistence** through clear anti-phase oscillation: when C1P1 rises, C1P0 falls, and vice versa (5–6 of 7 consecutive timestep pairs show opposite-direction movements). C1P0 reaches 25–36% of cooperators (consistent with the ~31% prediction), but the displacement is not monotonic — it is a perpetual tug-of-war. Crucially, total cooperation (qBSeen) remains nearly constant at 0.93–0.97 throughout these oscillations. The C1P1–C1P0 balance is frequency-dependent: C1P0 gains when cooperation is abundant (making partner choice dispensable), but C1P1 recovers whenever C1P0 encroachment threatens to weaken the cooperative environment.
 
@@ -120,9 +120,9 @@ P1 frequency peaks at a *lower* *b* − *c* than C1P1 frequency. This occurs in 
 
 | Population       | P1 max *b* − *c*  | P1     | C1P1 max *b* − *c*  | C1P1    |
 | ---------------- | ----------------- | ------ | ------------------- | ------- |
-| pop_1            | 0.25              | 0.888  | 0.50                | 0.766   |
-| pop_2 (fset_0)   | 2.00              | 0.886  | 5.66                | 0.760   |
-| pop_3 (evolving) | 2.83              | 0.860  | 4.00                | 0.736   |
+| pop_1            | 0.25              | 0.887  | 0.50                | 0.772   |
+| pop_2 (fset_0)   | 2.00              | 0.893  | 5.66                | 0.769   |
+| pop_3 (evolving) | 2.00              | 0.858  | 4.00                | 0.736   |
 
 ### The mechanism
 
@@ -133,24 +133,24 @@ This is the same neutral hitchhiking observed in the Prisoner's Dilemma analysis
 3. Mutation from C1P1 → C0P1 creates a reservoir of neutral P1 carriers
 
 At the P1 maximum in pop_1 (*b* − *c* = 0.25):
-- C1P1 = 0.739 (high — cooperation is well-established)
-- C0P1 = 0.149 (substantial — 19% of the population are defectors carrying P1)
-- P1 = 0.888
+- C1P1 = 0.727 (high — cooperation is well-established)
+- C0P1 = 0.160 (substantial — 16% of the population are defectors carrying P1)
+- P1 = 0.887
 
 At the C1P1 maximum (*b* − *c* = 0.50):
-- C1P1 = 0.766 (highest)
-- C0P1 = 0.085 (low — defection is suppressed)
-- P1 = 0.851 (lower than at *b* − *c* = 0.25)
+- C1P1 = 0.772 (highest)
+- C0P1 = 0.082 (low — defection is suppressed)
+- P1 = 0.854 (lower than at *b* − *c* = 0.25)
 
 As *b* − *c* increases from the P1 max:
-- C1P1 increases slowly (0.739 → 0.766, Δ = +0.027)
-- C0P1 decreases faster (0.149 → 0.085, Δ = −0.064)
+- C1P1 increases slowly (0.727 → 0.772, Δ = +0.044)
+- C0P1 decreases faster (0.160 → 0.082, Δ = −0.078)
 
 The net effect: P1 = C1P1 + C0P1 **decreases** because the loss of neutral carriers outpaces the gain in selected carriers.
 
 ### Why the P1 max shifts across population structures
 
-In pop_1, the P1 maximum occurs at *b* − *c* = 0.25 — very early in the *b* − *c* range, because cooperation takes hold at low *b* − *c* in single populations. In pop_2 and pop_3, the P1 maximum shifts to *b* − *c* ≈ 2.0–2.8 because cooperation requires higher *b* − *c* to establish in between-population pairing. The P1 peak always occurs in the transition zone where C1P1 is abundant but defection has not yet been fully suppressed.
+In pop_1, the P1 maximum occurs at *b* − *c* = 0.25 — very early in the *b* − *c* range, because cooperation takes hold at low *b* − *c* in single populations. In pop_2 and pop_3, the P1 maximum shifts to *b* − *c* ≈ 2.0 because cooperation requires higher *b* − *c* to establish in between-population pairing. The P1 peak always occurs in the transition zone where C1P1 is abundant but defection has not yet been fully suppressed.
 
 ## Two Coevolving Populations (pop_2, panels a-b)
 
@@ -160,32 +160,32 @@ Two symmetric populations spontaneously break symmetry as *b* − *c* increases.
 
 | *b* − *c*   | qBSeen_0   | qBSeen_1   | Δ_qBSeen    | *w̄*_0  | *w̄*_1  | Δ_*w̄*   |
 | ----------- | ---------- | ---------- | ----------- | ------- | ------- | -------- |
-| 0.008       | 0.044      | 0.040      | +0.004      | 0.181   | 0.182   | −0.001   |
-| 0.177       | 0.359      | 0.341      | +0.018      | 0.186   | 0.189   | −0.004   |
-| 0.500       | 0.614      | 0.448      | +0.167      | 0.187   | 0.225   | −0.038   |
-| 1.000       | 0.675      | 0.388      | +0.288      | 0.191   | 0.269   | −0.078   |
-| 2.000       | 0.747      | 0.306      | +0.442      | 0.197   | 0.358   | −0.161   |
-| 4.000       | 0.855      | 0.228      | +0.627      | 0.208   | 0.550   | −0.342   |
-| 8.000       | 0.922      | 0.197      | +0.725      | 0.259   | 0.918   | −0.659   |
+| 0.008       | 0.045      | 0.039      | +0.006      | 0.181   | 0.182   | −0.001   |
+| 0.177       | 0.376      | 0.355      | +0.020      | 0.186   | 0.190   | −0.004   |
+| 0.500       | 0.610      | 0.459      | +0.151      | 0.189   | 0.223   | −0.034   |
+| 1.000       | 0.652      | 0.362      | +0.290      | 0.188   | 0.267   | −0.079   |
+| 2.000       | 0.767      | 0.310      | +0.457      | 0.197   | 0.363   | −0.166   |
+| 4.000       | 0.845      | 0.241      | +0.604      | 0.215   | 0.544   | −0.330   |
+| 8.000       | 0.926      | 0.197      | +0.729      | 0.259   | 0.922   | −0.663   |
 
 Correlation between Δ_qBSeen and Δ_fitness: **−0.92**
 
 ### The exploitation pattern
 
 At *b* − *c* = 8.0:
-- The cooperative population (fset_0) has qBSeen = 0.922 but fitness = 0.259
-- The defecting population (fset_1) has qBSeen = 0.197 but fitness = 0.918
-- The defecting population has **3.54× higher fitness**
+- The cooperative population (fset_0) has qBSeen = 0.926 but fitness = 0.259
+- The defecting population (fset_1) has qBSeen = 0.197 but fitness = 0.922
+- The defecting population has **3.56× higher fitness**
 
 The cooperative population pays costs to benefit the defecting population's individuals, who receive benefits without paying. Partner choice cannot resolve this because the mechanism operates through **mutual swapping**: a C1P1 wanting to leave a defector partner needs another C1P1 in the same group who also has a defector partner. Since pairing is between populations and the defecting population has few cooperators, swap partners are scarce.
 
 In unnormalized terms at *b* − *c* = 8.0:
-- fset_0 fitness: 0.259 × 11 = 2.85 (barely above baseline *k* = 2)
-- fset_1 fitness: 0.918 × 11 = 10.10 (near maximum *k* + *B*_max = 11)
+- fset_0 fitness: 0.259 × 11 = 2.84 (barely above baseline *k* = 2)
+- fset_1 fitness: 0.922 × 11 = 10.14 (near maximum *k* + *B*_max = 11)
 
 ### The asymmetry onset
 
-At low *b* − *c* (< 0.125), both populations are symmetric: mostly defectors with ~4–5% cooperation. The asymmetry grows continuously and is already pronounced by *b* − *c* = 0.5 (Δ_qBSeen = 0.167). There is no sharp threshold — unlike the Prisoner's Dilemma where cooperation shows a bimodal phase transition near R ≈ P. Instead, the Hamilton game produces a **gradual** symmetry breaking as *b* − *c* increases.
+At low *b* − *c* (< 0.125), both populations are symmetric: mostly defectors with ~4–5% cooperation. The asymmetry grows continuously and is already pronounced by *b* − *c* = 0.5 (Δ_qBSeen = 0.151). There is no sharp threshold — unlike the Prisoner's Dilemma where cooperation shows a bimodal phase transition near R ≈ P. Instead, the Hamilton game produces a **gradual** symmetry breaking as *b* − *c* increases.
 
 Single-run data (`hamilton_1run`) confirms that this gradual transition is **genuine, not an averaging artifact**: each *b* − *c* value shows a stable intermediate cooperation level that persists across all 9 timesteps (std typically 2–8%), not all-or-nothing jumps that average into a gradient. The cooperation rises smoothly from ~0.04 at low *b* − *c* through ~0.34 at *b* − *c* = 0.18 to 0.58–0.85 at high *b* − *c*. Hamilton's constant T − R = 2 produces genuinely stable intermediate equilibria at each parameter value, unlike the PD where varying T − R creates bistability.
 
@@ -203,15 +203,15 @@ In pop_3, the evolving population adapts to a fixed population with 25% each of 
 
 | *b* − *c*   | qBSeen (evolving)   | P1        | C1P1      |
 | ----------- | ------------------- | --------- | --------- |
-| 0.250       | 0.047               | 0.522     | 0.034     |
-| 0.354       | 0.052               | 0.511     | 0.038     |
-| 0.500       | 0.070               | 0.536     | 0.056     |
-| **0.707**   | **0.415**           | **0.755** | **0.389** |
-| 1.000       | 0.487               | 0.788     | 0.456     |
-| 1.414       | 0.587               | 0.828     | 0.549     |
-| 2.000       | 0.703               | 0.859     | 0.642     |
+| 0.250       | 0.047               | 0.517     | 0.034     |
+| 0.354       | 0.053               | 0.538     | 0.040     |
+| 0.500       | 0.071               | 0.526     | 0.056     |
+| **0.707**   | **0.408**           | **0.746** | **0.383** |
+| 1.000       | 0.487               | 0.782     | 0.459     |
+| 1.414       | 0.585               | 0.827     | 0.545     |
+| 2.000       | 0.702               | 0.858     | 0.641     |
 
-Between *b* − *c* = 0.5 and *b* − *c* = 0.707, cooperation jumps from 7.0% to 41.5% — a **6× increase** in one step. This is the same positive-feedback tipping point seen in the Prisoner's Dilemma: once enough cooperators exist, partner choice activates → cooperators sort together → higher fitness → more cooperators.
+Between *b* − *c* = 0.5 and *b* − *c* = 0.707, cooperation jumps from 7.1% to 40.8% — a **~6× increase** in one step. This is the same positive-feedback tipping point seen in the Prisoner's Dilemma: once enough cooperators exist, partner choice activates → cooperators sort together → higher fitness → more cooperators.
 
 Single-run data (`hamilton_1run`) confirms this is a **sharp one-time transition**: cooperation jumps at the first measured timestep (t = 131072) and remains stable throughout (std ≈ 0.02). No cycling is observed — the positive-feedback cascade ignites once and persists, identical to the pattern in `prisoners_1run` pop_3.
 
@@ -228,13 +228,13 @@ The direction of exploitation reverses as cooperation increases in the evolving 
 
 | *b* − *c*   | *w̄*_evolving | *w̄*_fixed  | Δ_*w̄*   | qBSeen_evolving   |
 | ----------- | ------------- | ----------- | -------- | ----------------- |
-| 0.354       | 0.239         | 0.143       | +0.096   | 0.052             |
-| 0.500       | 0.243         | 0.146       | +0.097   | 0.070             |
-| 0.707       | 0.222         | 0.201       | +0.022   | 0.415             |
+| 0.354       | 0.238         | 0.143       | +0.096   | 0.053             |
+| 0.500       | 0.243         | 0.146       | +0.097   | 0.071             |
+| 0.707       | 0.222         | 0.200       | +0.023   | 0.408             |
 | 1.000       | 0.229         | 0.225       | +0.004   | 0.487             |
-| 1.414       | 0.239         | 0.265       | −0.026   | 0.587             |
-| 2.000       | 0.254         | 0.328       | −0.074   | 0.703             |
-| 4.000       | 0.325         | 0.550       | −0.225   | 0.909             |
+| 1.414       | 0.238         | 0.265       | −0.027   | 0.585             |
+| 2.000       | 0.254         | 0.328       | −0.073   | 0.702             |
+| 4.000       | 0.327         | 0.548       | −0.221   | 0.907             |
 
 The crossover occurs near **b − c ≈ 1.0** (Δ_*w̄* ≈ +0.004), precisely where the evolving population's cooperation level (~0.49) matches the fixed population's (0.50).
 
@@ -242,7 +242,7 @@ The crossover occurs near **b − c ≈ 1.0** (Δ_*w̄* ≈ +0.004), precisely w
 
 **When *b* − *c* > 1.0**: The evolving population is mostly cooperators. Its cooperators pay costs to benefit both cooperators and defectors in the fixed population. The fixed population's defectors get a free ride. Partner choice has limited power because swapping requires cooperators on both sides, and the fixed population has only 25% C1P1.
 
-At *b* − *c* = 8.0, the fitness gap is large: *w̄*_evolving = 0.505 vs *w̄*_fixed = 0.922 (the fixed population's fitness is 1.83× higher).
+At *b* − *c* = 8.0, the fitness gap is large: *w̄*_evolving = 0.504 vs *w̄*_fixed = 0.920 (the fixed population's fitness is 1.82× higher).
 
 ## Shuffle Effect
 
@@ -265,23 +265,23 @@ Both studies share the same underlying game structure (T > R > P > S) and the sa
 
 1. **No bimodal phase transition in pop_2**: In the PD, cooperation shows a sharp all-or-nothing jump near R ≈ P. In Hamilton, asymmetry builds gradually as R − P increases. Single-run data confirms this is a genuine property of individual runs — stable intermediate cooperation levels at each *b* − *c* — not an averaging artifact. In the PD, the temptation gap T − R varies across the parameter space (approaching zero when R → T = 1.0), creating a sharp bistability boundary. In Hamilton, T − R = 2 is constant and large, so there is no region where temptation vanishes — the transition is always gradual.
 2. **Pop_1 cooperation at the lowest R − P**: Both PD and Hamilton sustain cooperation in pop_1 at their lowest R − P values (PD: qBSeen ≈ 0.49 at R − P = 0.041; Hamilton: qBSeen = 0.13 at R − P = 0.008). However, PD pop_1 cooperates more at comparable R − P because its T − R can approach zero (when R → T = 1.0), reducing the temptation to defect. Hamilton's constant T − R = 2 makes cooperation harder at any given R − P, which is why Hamilton pop_1 has only 13% cooperation at R − P = 0.008 while PD pop_1 already reaches ~49% at R − P = 0.041.
-3. **C1P0 free-rider growth**: At high R − P, cooperators without partner choice (C1P0) grow to 31% of the population in pop_1, actively displacing P1. When R − P = 8.0 (R = 10, T = 12, P = 2, S = 0), mutual cooperation is so profitable (R/P = 5×) that even cooperators who cannot sort away from defectors achieve high enough fitness to persist.
-4. **Pop_2 exploitation magnitude**: At R − P = 8.0, the fitness ratio between defecting and cooperating populations is 3.54×. The absolute payoffs dwarf the PD: the defecting population earns fitness near T = 12 while the cooperating population earns near S = 0 when mismatched. In the PD (where T = 1.0, S = 0.1), the absolute range is compressed.
+3. **C1P0 free-rider growth**: At high R − P, cooperators without partner choice (C1P0) grow to 33% of the population in pop_1, actively displacing P1. When R − P = 8.0 (R = 10, T = 12, P = 2, S = 0), mutual cooperation is so profitable (R/P = 5×) that even cooperators who cannot sort away from defectors achieve high enough fitness to persist.
+4. **Pop_2 exploitation magnitude**: At R − P = 8.0, the fitness ratio between defecting and cooperating populations is 3.56×. The absolute payoffs dwarf the PD: the defecting population earns fitness near T = 12 while the cooperating population earns near S = 0 when mismatched. In the PD (where T = 1.0, S = 0.1), the absolute range is compressed.
 
 ## Summary
 
 ### P1 hitchhiking (all populations)
 
-P1 frequency is maximized not where selection for it is strongest, but at an intermediate R − P where C1P1 is abundant and defectors (C0P1) serve as neutral carriers. This is identical to the Prisoner's Dilemma finding. In pop_1, P1 peaks at R − P = 0.25 (P1 = 0.888); in pop_2, at R − P = 2.0 (P1 = 0.886).
+P1 frequency is maximized not where selection for it is strongest, but at an intermediate R − P where C1P1 is abundant and defectors (C0P1) serve as neutral carriers. This is identical to the Prisoner's Dilemma finding. In pop_1, P1 peaks at R − P = 0.25 (P1 = 0.887); in pop_2, at R − P = 2.0 (P1 = 0.893).
 
 ### P1 dispensability at high R − P (pop_1)
 
-At large R − P, cooperation no longer requires partner choice. Non-chooser cooperators (C1P0) free-ride on the cooperative environment maintained by C1P1, growing from 9% to 31% of cooperators as R − P increases from 0.25 to 8.0. This dilutes P1 frequency from above — P1 declines not because selection weakens, but because P0 cooperators can invade. Single-run data reveals this is a **dynamic frequency-dependent coexistence**: C1P1 and C1P0 oscillate in anti-phase (5–6 of 7 timestep pairs move in opposite directions) while total cooperation remains constant at 0.93–0.97. Partner choice is never fully displaced.
+At large R − P, cooperation no longer requires partner choice. Non-chooser cooperators (C1P0) free-ride on the cooperative environment maintained by C1P1, growing from 9% to 33% of cooperators as R − P increases from 0.25 to 8.0. This dilutes P1 frequency from above — P1 declines not because selection weakens, but because P0 cooperators can invade. Single-run data reveals this is a **dynamic frequency-dependent coexistence**: C1P1 and C1P0 oscillate in anti-phase (5–6 of 7 timestep pairs move in opposite directions) while total cooperation remains constant at 0.93–0.97. Partner choice is never fully displaced.
 
 ### Emergent asymmetry (pop_2)
 
-Two symmetric coevolving populations spontaneously break symmetry: one becomes cooperator-heavy (exploited, *w̄* = 0.259 at R − P = 8) while the other becomes defector-heavy (exploiter, *w̄* = 0.918). The correlation between more choosers and lower fitness is −0.92. Single-run data confirms this is an **absorbing state** — roles lock in early and never switch at high *b* − *c*. Which population becomes the cooperator is stochastic. The gradual transition (unlike the PD's sharp phase boundary) is genuine, not an averaging artifact — individual runs show stable intermediate cooperation at each *b* − *c*. The weaker correlation (−0.92 vs PD's −1.00) reflects noisy role-flipping at low *b* − *c*, not instability at high *b* − *c*.
+Two symmetric coevolving populations spontaneously break symmetry: one becomes cooperator-heavy (exploited, *w̄* = 0.259 at R − P = 8) while the other becomes defector-heavy (exploiter, *w̄* = 0.922). The correlation between more choosers and lower fitness is −0.92. Single-run data confirms this is an **absorbing state** — roles lock in early and never switch at high *b* − *c*. Which population becomes the cooperator is stochastic. The gradual transition (unlike the PD's sharp phase boundary) is genuine, not an averaging artifact — individual runs show stable intermediate cooperation at each *b* − *c*. The weaker correlation (−0.92 vs PD's −1.00) reflects noisy role-flipping at low *b* − *c*, not instability at high *b* − *c*.
 
 ### Sharp transition and exploitation reversal (pop_3)
 
-The evolving population shows a sharp cooperation jump between R − P = 0.5 (qBSeen = 0.07) and R − P = 0.71 (qBSeen = 0.42). Single-run data confirms this is a **one-time tipping event** — cooperation jumps at the first timestep and never crashes back. Below the transition, the evolving defectors exploit the fixed population. Above it, the fixed population exploits the evolving cooperators. The crossover occurs near R − P ≈ 1.0, where cooperation levels in both populations are equal (~0.50).
+The evolving population shows a sharp cooperation jump between R − P = 0.5 (qBSeen = 0.07) and R − P = 0.71 (qBSeen = 0.41). Single-run data confirms this is a **one-time tipping event** — cooperation jumps at the first timestep and never crashes back. Below the transition, the evolving defectors exploit the fixed population. Above it, the fixed population exploits the evolving cooperators. The crossover occurs near R − P ≈ 1.0, where cooperation levels in both populations are equal (~0.50).

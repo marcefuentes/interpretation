@@ -333,7 +333,7 @@ The offset (P1 peak at ~two-thirds the R−P of C1P1 peak) is the same qualitati
 
 ### Comparison with Hamilton pop_1
 
-Hamilton's pop_1 shows the same qualitative behavior: cooperation everywhere (min qBSeen = 0.48 at b−c = 0.01), no phase transition, and P1 peaking before C1P1. The quantitative similarity is striking — both games sustain ≥48% cooperation at the lowest parameter value. See `hamilton.md` §pop_1 for details.
+Hamilton's pop_1 shows the same qualitative behavior: cooperation everywhere, no phase transition, and P1 peaking before C1P1. However, PD pop_1 cooperates substantially more at its lowest parameter (qBSeen = 0.49 at R−P = 0.041) than Hamilton pop_1 (qBSeen = 0.13 at b−c = 0.008), because PD pop_1's low T−R (approaching zero) reduces the temptation to defect. See `hamilton.md` §pop_1 for details.
 
 ## Summary
 

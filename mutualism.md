@@ -20,7 +20,7 @@ Cooperation (qBSeen) in pop_0 increases with both *b*₀ − *c* and *b*₁ − 
 
 The heatmap for pop_0 shows a smooth gradient from ~0.04 (both *b* − *c* low) to ~0.90 (both high), with most of the variation concentrated along the diagonal and near-diagonal region. Far from the diagonal (large asymmetry), cooperation plateaus at moderate levels (0.2–0.4).
 
-Pop_1's qBSeen stays low across most of the grid (<0.10 off-diagonal), reaching substantial values only near the diagonal.
+Pop_1's qBSeen stays low across most of the grid (typically below 0.15 off-diagonal), reaching substantial values only near the diagonal.
 
 ### The control baseline
 
@@ -66,7 +66,7 @@ This explains why **cooperation scales primarily with the smaller of the two *b*
 
 Pop_0's cooperation rises from 0.32 to 0.90 as *b*₀ − *c* increases — not because pop_0's own incentive changes (*b*₁ − *c* = 8.0 throughout), but because pop_1's C1P1 frequency rises with *b*₀ − *c*, relieving the bottleneck.
 
-Within-slice correlations confirm this: at fixed *b*₁ − *c*, the correlation between qBSeen₀ and log₂(*b*₀ − *c*) is 0.85–0.91. At fixed *b*₀ − *c*, the correlation with log₂(*b*₁ − *c*) is weaker and can even be negative (−0.63 at *b*₀ − *c* = 0.25), because increasing the asymmetry locks in the cooperator/defector roles more firmly rather than raising overall cooperation.
+Within-slice correlations confirm this: at fixed *b*₁ − *c*, the correlation between qBSeen₀ and log₂(*b*₀ − *c*) is 0.79–0.92. At fixed *b*₀ − *c*, the correlation with log₂(*b*₁ − *c*) is weaker and can even be negative (−0.46 at *b*₀ − *c* = 0.25), because increasing the asymmetry locks in the cooperator/defector roles more firmly rather than raising overall cooperation.
 
 ---
 
@@ -83,7 +83,7 @@ As *b*₀ − *c* increases toward the diagonal, C1P0 grows from ~0.02 (at *b*�
 
 ### Pop_1 (defector)
 
-Pop_1 is dominated by defectors: C0P1 (mean 0.44) and C0P0 (mean 0.39). The P1 allele in pop_1 is phenotypically silent (C0P1 = defector carrying chooser allele = hitchhiker), consistent with neutral drift of the P allele in a defecting population.
+Pop_1 is dominated by defectors: C0P1 (mean 0.46) and C0P0 (mean 0.43). The P1 allele in pop_1 is phenotypically silent (C0P1 = defector carrying chooser allele = hitchhiker), consistent with neutral drift of the P allele in a defecting population.
 
 ---
 
