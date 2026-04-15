@@ -160,7 +160,7 @@ In pop_1, the P1 maximum occurs at *b* − *c* = 0.25 — very early in the *b* 
 
 Two symmetric populations spontaneously break symmetry as *b* − *c* increases. One becomes the **cooperator** population (fset_0, orange) and the other the **defector** population (fset_1, red):
 
-| *b* − *c*     | qBSeen_0 | qBSeen_1 | Δ_qBSeen  | w̄_0 | w̄_1 | Δw̄     |
+| *b* − *c*     | qBSeen_0 | qBSeen_1 | ΔqBSeen  | w̄_0    | w̄_1    | Δw̄     |
 | --------- | -------- | -------- | -------- | ------ | ------ | ------ |
 | 0.008     | 0.045    | 0.039    | +0.006   | 0.181  | 0.182  | −0.001 |
 | 0.177     | 0.376    | 0.355    | +0.020   | 0.186  | 0.190  | −0.004 |
@@ -187,7 +187,7 @@ In unnormalized terms at *b* − *c* = 8.0:
 
 ### The asymmetry onset
 
-At low *b* − *c* (< 0.125), both populations are symmetric: mostly defectors with ~4–5% cooperation. The asymmetry grows continuously and is already pronounced by *b* − *c* = 0.5 (Δ_qBSeen = 0.151). There is no sharp threshold — unlike the Prisoner's Dilemma where cooperation shows a bimodal phase transition near R ≈ P. Instead, the Hamilton game produces a **gradual** symmetry breaking as *b* − *c* increases.
+At low *b* − *c* (< 0.125), both populations are symmetric: mostly defectors with ~4–5% cooperation. The asymmetry grows continuously and is already pronounced by *b* − *c* = 0.5 (ΔqBSeen = 0.151). There is no sharp threshold — unlike the Prisoner's Dilemma where cooperation shows a bimodal phase transition near R ≈ P. Instead, the Hamilton game produces a **gradual** symmetry breaking as *b* − *c* increases.
 
 Single-run data (`hamilton_1run`) confirms that this gradual transition is **genuine, not an averaging artifact**: each *b* − *c* value shows a stable intermediate cooperation level that persists across all 9 timesteps (std typically 2–8%), not all-or-nothing jumps that average into a gradient. The cooperation rises smoothly from ~0.04 at low *b* − *c* through ~0.34 at *b* − *c* = 0.18 to 0.58–0.85 at high *b* − *c*. Hamilton's constant T − R = 1 keeps a persistent temptation to defect at every parameter value, unlike the PD where varying T − R can approach zero and create sharper bistability boundaries.
 
@@ -228,7 +228,7 @@ In pop_1, cooperation is 13.2% even at *b* − *c* = 0.008, and rises smoothly. 
 
 The direction of exploitation reverses as cooperation increases in the evolving population:
 
-| *b* − *c*     | w̄_evolving | w̄_fixed | Δw̄   | qBSeen_evolving |
+| *b* − *c*     | w̄_evolving    | w̄_fixed    | Δw̄     | qBSeen_evolving |
 | --------- | ------------- | ---------- | ------ | --------------- |
 | 0.354     | 0.238         | 0.143      | +0.096 | 0.053           |
 | 0.500     | 0.243         | 0.146      | +0.097 | 0.071           |
