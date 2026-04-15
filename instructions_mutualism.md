@@ -28,33 +28,33 @@ Constants: same as Hamilton — `B_MAX = 9.0`, `C_MIN = 1.0`, `K = 2.0` (from `t
 
 The critical difference from Hamilton is that the two populations exchange **different** benefits. When population *i* cooperates, it produces benefit *b*_*i* and gives it to its partner from the other population. Each population's payoff therefore depends on the **partner's** *b* − *c*, not its own.
 
-From `calculate_derived_globals.c`, at *g* = 1.0, with *b*₀ = *K* + (*b*₀ − *c*) and *b*₁ = *K* + (*b*₁ − *c*):
+From `calculate_derived_globals.c`, at *g* = 1.0, with `x0 = b0−c`, `x1 = b1−c`, `b0 = k1 + x0`, and `b1 = k1 + x1`:
 
 ### Population 0's payoff matrix (receives *b*₁ from partner)
 
 | Payoff   | Formula            | Value            |
 | -------- | ------------------ | ---------------- |
-| **T₀**   | *K* + *b*₁         | 4 + (*b*₁ − *c*) |
+| **T₀**   | *k0* + *b*₁        | 3 + (*b*₁ − *c*) |
 | **R₀**   | *K* + (*b*₁ − *c*) | 2 + (*b*₁ − *c*) |
 | **P₀**   | *K*                | 2                |
-| **S₀**   | 0                  | 0                |
+| **S₀**   | *k0* − *k1*        | 1                |
 
 ### Population 1's payoff matrix (receives *b*₀ from partner)
 
 | Payoff   | Formula            | Value            |
 | -------- | ------------------ | ---------------- |
-| **T₁**   | *K* + *b*₀         | 4 + (*b*₀ − *c*) |
+| **T₁**   | *k0* + *b*₀        | 3 + (*b*₀ − *c*) |
 | **R₁**   | *K* + (*b*₀ − *c*) | 2 + (*b*₀ − *c*) |
 | **P₁**   | *K*                | 2                |
-| **S₁**   | 0                  | 0                |
+| **S₁**   | *k0* − *k1*        | 1                |
 
 ### Key relationships
 
 |           | Pop 0                  | Pop 1                  |
 | --------- | ---------------------- | ---------------------- |
 | **R − P** | *b*₁ − *c* (partner's) | *b*₀ − *c* (partner's) |
-| **T − R** | 2 (constant)           | 2 (constant)           |
-| **P − S** | 2 (constant)           | 2 (constant)           |
+| **T − R** | 1 (constant)           | 1 (constant)           |
+| **P − S** | 1 (constant)           | 1 (constant)           |
 
 Since *b*₁ − *c* ≥ *b*₀ − *c* by construction (triangular matrix), **population 0 always has R − P ≥ population 1's R − P**. This asymmetry in cooperation incentives is the central feature of the mutualism study.
 

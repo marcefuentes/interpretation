@@ -250,7 +250,7 @@ At R−P = 0.082 the outcome depends not only on R−P but also on absolute payo
 
 The sharp jump at T−R ≈ 0.29 (between R = 0.75 and R = 0.71) marks where cooperation first invades. Below R = 0.67, qBSeen declines gradually — cooperation persists but weakens as absolute payoffs shrink (R = 0.22 means even cooperators earn little).
 
-**Why this matters**: In the PD, T−R = 1 − R varies across the grid, creating a second axis of variation orthogonal to R−P. The phase boundary at R−P = 0.082 exists precisely because high-P cells also have low T−R — defection becomes hard to invade when the temptation premium is tiny and all payoffs are compressed near 1.0. In the Hamilton study, T−R = 2 is constant everywhere, which eliminates this secondary axis and produces a smooth, monotonic transition instead of a sharp phase boundary. This comparison confirms that PD bistability requires **both** marginal R−P and small T−R simultaneously.
+**Why this matters**: In the PD, T−R = 1 − R varies across the grid, creating a second axis of variation orthogonal to R−P. The phase boundary at R−P = 0.082 exists precisely because high-P cells also have low T−R — defection becomes hard to invade when the temptation premium is tiny and all payoffs are compressed near 1.0. In the Hamilton study, T−R = 1 is constant everywhere, which removes this secondary axis and produces a smooth, monotonic transition instead of a sharp phase boundary. This comparison confirms that PD bistability requires **both** marginal R−P and small T−R simultaneously.
 
 ### qBSeen distribution is bimodal at high P
 
@@ -358,7 +358,7 @@ Two symmetric coevolving populations spontaneously break symmetry at R >> P: one
 
 ### Sharp phase transition (pop_2)
 
-Cooperation near the R ≈ P diagonal shows an all-or-nothing transition driven by a positive feedback loop. The critical parameter is R−P, not absolute P. When R−P < 0.041, the required swap probability for cooperators to invade (>83–94%) is unattainable from rare mutants. When R−P ≥ 0.123, the loop reliably ignites. The transition is bimodal — no stable intermediate exists. Single-run data confirms that the low-cooperation values near R ≈ P are **genuine equilibria, not time-averages of cycling** between basins. At the critical R−P = 0.082, the outcome also depends on T−R: cooperation fails when T−R < 0.25 (high absolute payoffs) but succeeds when T−R > 0.33 (lower absolute payoffs). Hamilton's constant T−R = 2 prevents this bistability entirely.
+Cooperation near the R ≈ P diagonal shows an all-or-nothing transition driven by a positive feedback loop. The critical parameter is R−P, not absolute P. When R−P < 0.041, the required swap probability for cooperators to invade (>83–94%) is unattainable from rare mutants. When R−P ≥ 0.123, the loop reliably ignites. The transition is bimodal — no stable intermediate exists. Single-run data confirms that the low-cooperation values near R ≈ P are **genuine equilibria, not time-averages of cycling** between basins. At the critical R−P = 0.082, the outcome also depends on T−R: cooperation fails when T−R < 0.25 (high absolute payoffs) but succeeds when T−R > 0.33 (lower absolute payoffs). Hamilton's constant T−R = 1 removes this extra degree of freedom and is consistent with the smoother transition seen there.
 
 ### No phase transition in pop_1
 

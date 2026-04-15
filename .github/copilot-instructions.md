@@ -44,13 +44,24 @@ This script reads from `~/results/prisoners_1run/shuffle_cost12_128/P/1.0` — t
 | `hamilton` | b−c (1D, log scale) | 21 points | 6 loci → 64 genotypes | pop_1, pop_2, pop_3 |
 | `mutualism` | b₀−c × b₁−c (2D triangular, b₁≥b₀) | 21×21 triangle, 231 cells | 6 loci → 64 genotypes | pop_2 only |
 
-Hamilton is a 1D slice through PD parameter space with fixed T−R = P−S = 2 (much stronger than PD's max 0.9). Mutualism diagonal (b₀−c = b₁−c) reproduces Hamilton results.
+Hamilton is a 1D slice through PD parameter space with fixed T−R = P−S = 1 (slightly stronger than PD's max 0.9). Mutualism diagonal (b₀−c = b₁−c) reproduces Hamilton results.
 
 ### `_1run` Study Variants
 
 `hamilton_1run` and `prisoners_1run` run a single simulation instead of averaging over multiple runs. Same parameters and path structure as the main studies. Use these to observe **temporal dynamics** (cycling, tipping events) that multi-run averaging smooths out.
 
 ## Key Conventions
+
+### Markdown Table Formatting
+
+When editing Markdown tables, keep raw-source alignment readable in plain text editors (especially Vim with conceal enabled):
+
+- Treat `*`, `**`, and backticks as formatting markers, not visible cell content.
+- Treat escape backslashes (for example in `\_`) as visible characters for raw-source alignment unless your editor conceal settings explicitly hide them.
+- Pad cells based on the **visible rendered text width**, not raw character count including formatting markers.
+- Keep each column width consistent across header, separator, and body rows.
+- Prefer simple ASCII separators in table text (`-` vs `−`) when alignment is sensitive.
+- After editing a table, quickly re-check the raw Markdown in a monospaced editor to confirm columns still line up.
 
 ### Data File Layout
 

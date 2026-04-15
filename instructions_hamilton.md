@@ -24,42 +24,42 @@ Constants defined in `../graph/graphgen/studies/hamilton/theory.py`: B_MAX = 9.0
 
 ## 2. Equivalent Prisoner's Dilemma Payoffs
 
-From `calculate_derived_globals.c`, the Hamilton game at *g* = 1.0 maps exactly to a Prisoner's Dilemma. With `b0 = K + (b−c)` and `given = 1`:
+From `calculate_derived_globals.c`, the Hamilton game at *g* = 1.0 maps exactly to a Prisoner's Dilemma. With `x = b−c`, `b0 = k1 + x`, and `given = 1`:
 
-| Payoff             | Formula         | Derivation                      |
-| ------------------ | --------------- | ------------------------------- |
-| **T** (Temptation) | 4 + (*b* − *c*) | K + b0 · given = 2 + (2 + x)    |
-| **R** (Reward)     | 2 + (*b* − *c*) | K + b0·(1−g) + b0·g − K = 2 + x |
-| **P** (Punishment) | 2               | K                               |
-| **S** (Sucker)     | 0               | K + b0·(1−g) − K = 0            |
+| Payoff             | Formula         | Derivation                               |
+| ------------------ | --------------- | ---------------------------------------- |
+| **T** (Temptation) | 3 + (*b* − *c*) | k0 + b0 = 2 + (1 + x)                    |
+| **R** (Reward)     | 2 + (*b* − *c*) | k0 + b0 − k1 = 2 + (1 + x) − 1 = 2 + x   |
+| **P** (Punishment) | 2               | k0                                       |
+| **S** (Sucker)     | 1               | k0 − k1 = 2 − 1                          |
 
 Key relationships (all constant except R − P):
 
 | Relationship  | Value     | Interpretation                         |
 | ------------- | --------- | -------------------------------------- |
 | **R − P**     | *b* − *c* | Cooperation benefit (= x-axis, varies) |
-| **T − R**     | 2         | Temptation premium (constant)          |
-| **P − S**     | 2         | Sucker penalty (constant)              |
+| **T − R**     | 1         | Temptation premium (constant)          |
+| **P − S**     | 1         | Sucker penalty (constant)              |
 
 Concrete values:
 
 | *b* − *c*   | T       | R       | P   | S   | R − P   |
 | ----------- | ------- | ------- | --- | --- | ------- |
-| 0.008       | 4.008   | 2.008   | 2   | 0   | 0.008   |
-| 0.125       | 4.125   | 2.125   | 2   | 0   | 0.125   |
-| 0.250       | 4.250   | 2.250   | 2   | 0   | 0.250   |
-| 1.000       | 5.000   | 3.000   | 2   | 0   | 1.000   |
-| 4.000       | 8.000   | 6.000   | 2   | 0   | 4.000   |
-| 8.000       | 12.000  | 10.000  | 2   | 0   | 8.000   |
+| 0.008       | 3.008   | 2.008   | 2   | 1   | 0.008   |
+| 0.125       | 3.125   | 2.125   | 2   | 1   | 0.125   |
+| 0.250       | 3.250   | 2.250   | 2   | 1   | 0.250   |
+| 1.000       | 4.000   | 3.000   | 2   | 1   | 1.000   |
+| 4.000       | 7.000   | 6.000   | 2   | 1   | 4.000   |
+| 8.000       | 11.000  | 10.000  | 2   | 1   | 8.000   |
 
 ### Comparison with the PD study parameter space
 
 In the PD study, T = 1.0 and S = 0.1 are fixed while R and P vary on a 2D grid. Three gaps vary simultaneously: T−R ∈ [0, 0.9], P−S ∈ [0, 0.9], R−P ∈ [−0.9, 0.9].
 
-In Hamilton, only **R − P varies** (= *b* − *c*) while T−R = P−S = 2 are constant:
+In Hamilton, only **R − P varies** (= *b* − *c*) while T−R = P−S = 1 are constant:
 
-1. **Fixed, strong temptation** (T−R = 2) vs PD's variable, weaker temptation (max 0.9)
-2. **Fixed, severe sucker penalty** (P−S = 2) vs PD's variable penalty (max 0.9)
+1. **Fixed temptation premium** (T−R = 1) vs PD's variable temptation (max 0.9)
+2. **Fixed sucker penalty** (P−S = 1) vs PD's variable penalty (max 0.9)
 3. **Much wider R−P range** (0.008 – 8.0) vs PD's (−0.9 – 0.9)
 
 Hamilton is a 1D slice through PD space with fixed temptation/sucker costs and varying cooperation benefit.
@@ -164,4 +164,4 @@ The `hamilton_1run` study uses the same parameters and path structure but runs a
 
 5. **Shuffle effect**: Negligible throughout (< 0.02 difference in qBSeen).
 
-6. **Key PD comparison**: Hamilton has constant T−R = P−S = 2 (strong temptation, severe sucker cost), producing gradual rather than bimodal transitions. Pop_1 sustains 13% cooperation even at R−P = 0.008.
+6. **Key PD comparison**: Hamilton has constant T−R = P−S = 1, producing gradual rather than bimodal transitions. Pop_1 sustains 13% cooperation even at R−P = 0.008.

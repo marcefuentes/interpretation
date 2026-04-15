@@ -34,7 +34,7 @@ From the simulation source (`calculate_derived_globals.c`), at *g* = 1.0 the pay
 
 - Pop_0: R₀ − P₀ = *b*₁ − *c* (partner's parameter)
 - Pop_1: R₁ − P₁ = *b*₀ − *c* (partner's parameter)
-- T − R = P − S = 2 for both (constant)
+- T − R = P − S = 1 for both (constant)
 
 Since *b*₁ − *c* ≥ *b*₀ − *c*, **population 0 always has at least as high a cooperation incentive as population 1**. This breaks the symmetry that exists in Hamilton and produces a deterministic outcome:
 
