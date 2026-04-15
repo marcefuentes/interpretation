@@ -140,7 +140,7 @@ All formats share:
 - Genotype frequency columns (16 or 64 depending on active loci)
 - Each genotype column has a corresponding `SD` column
 
-> **⚠ Data version note**: `hamilton` and `hamilton_1run` use the **current** format (64 genotypes, 6 loci). All other studies (prisoners, snowdrift, cgnr, mgnr, etc.) still use the **legacy** format (16 genotypes, 4 loci). See the game-specific instructions for column details.
+> **⚠ Data version note**: `hamilton`, `hamilton_1run`, `prisoners`, and `prisoners_1run` use the **current** format (64 genotypes, 6 loci). Other studies (snowdrift, cgnr, mgnr, etc.) still use the **legacy** format (16 genotypes, 4 loci). See the game-specific instructions for column details.
 
 ### 4.4 Computing derived traits from genotypes
 

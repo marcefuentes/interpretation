@@ -24,7 +24,7 @@ Three independent gaps vary simultaneously, making the PD a 2D parameter explora
 
 ## 2. Loci and Genotypes
 
-The prisoners study uses **4 loci** (C, P, M, I) → **16 genotype columns** per .con file. Genotype column names: `C0P0M0I0` through `C1P1M1I1`.
+The prisoners study uses **6 loci** (C, I, J, M, P, Q) → **64 genotype columns** per .con file. Genotype column names: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1` (alphabetical order after C).
 
 ---
 
@@ -38,18 +38,17 @@ Example: `~/results/prisoners/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con
 
 ---
 
-## 4. Data Format (Legacy)
+## 4. Data Format (Current)
 
 CSV columns:
-- `T, R, P, S` — payoff matrix parameters (T=1.0, S=0.1 constant; R, P vary)
+- `T0, R0, P0, S0, T1, R1, P1, S1` — payoff matrix parameters per population (T0=T1=1.0, S0=S1=0.1 constant; R0=R1, P0=P1 vary)
 - `Time` — simulation timestep
-- `wmean, wsd` — population mean fitness and stdev
-- `qBDefault, qBSeen` — cooperation probabilities
-- Deprecated derived trait columns: `C1hoose`, `C1hoose_lt`, `Mimic`, `Imimic`, `Imimic_lt`, `C0`, `C1`, `C0Choose`, `C1Choose`, `dSTFT`, `dTFT`, `iSTFT`, `iTFT`
-- 16 genotype columns — 4 loci in order C, P, M, I: `C0P0M0I0` through `C1P1M1I1`
+- `wmean, wmeanSD, wsd, wsdSD` — population mean fitness and stdev (with SD columns)
+- `qBSeen, qBSeenSD` — cooperation probability
+- 64 genotype columns — 6 loci in alphabetical order C, I, J, M, P, Q: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1`
 - Each genotype column has a corresponding `SD` column
 
-**Caution**: The legacy `C0` and `C1` columns equal `C0P0M0I0` and `C1P0M0I0` respectively (the bare genotype with all other loci at 0), **not** allele frequencies. To get true allele frequencies, sum all genotypes starting with C0 or C1.
+**Note**: The column `P1` (8th column) is a game parameter (population 1's P payoff), not to be confused with the P1 allele frequency. To compute allele frequencies, sum genotype columns — see §5.
 
 ---
 
@@ -60,20 +59,30 @@ import pandas as pd
 
 df = pd.read_csv('csv_0_for_image.con')
 # Keep only final timestep per (R, P) cell
-df = df.sort_values('Time').groupby(['R', 'P']).last().reset_index()
+df = df.sort_values('Time').groupby(['R0', 'P0']).last().reset_index()
+
+# Compute derived traits from genotype columns
+geno = [c for c in df.columns if c[0] == 'C' and not c.endswith('SD') and len(c) == 12]
+c1p1 = [c for c in geno if c.startswith('C1') and 'P1' in c]
+c0p1 = [c for c in geno if c.startswith('C0') and 'P1' in c]
+c1p0 = [c for c in geno if c.startswith('C1') and 'P0' in c]
+df['C1P1_t'] = df[c1p1].sum(axis=1)  # cooperators who choose
+df['C0P1_t'] = df[c0p1].sum(axis=1)  # defectors carrying P1
+df['C1P0_t'] = df[c1p0].sum(axis=1)  # cooperators who don't choose
+df['P1_t'] = df['C1P1_t'] + df['C0P1_t']  # total P1 allele frequency
 
 # Heatmap view (R vs P): high R at top, low P at left
-r_vals = sorted(df['R'].unique(), reverse=True)
-p_vals = sorted(df['P'].unique())
-pivot = df.pivot(index='R', columns='P', values='TRAIT')
+r_vals = sorted(df['R0'].unique(), reverse=True)
+p_vals = sorted(df['P0'].unique())
+pivot = df.pivot(index='R0', columns='P0', values='TRAIT')
 pivot = pivot.reindex(index=r_vals, columns=p_vals)
 
 # Find maximum location
 row = df.loc[df['TRAIT'].idxmax()]
-print(f"Max at R={row['R']:.2f}, P={row['P']:.2f}")
+print(f"Max at R={row['R0']:.2f}, P={row['P0']:.2f}")
 
 # Correlation with R-P
-df['R_minus_P'] = df['R'] - df['P']
+df['R_minus_P'] = df['R0'] - df['P0']
 print(df['TRAIT'].corr(df['R_minus_P']))
 ```
 
@@ -85,8 +94,8 @@ MAIN_ROWS in `manifest.py` defines 5 rows:
 
 | Row   | Panels   | Population   | File_set   | Notes               |
 | ----- | -------- | ------------ | ---------- | ------------------- |
-| 0     | a, b     | pop_2        | _1         | Higher qBSeen pop   |
-| 1     | c, d     | pop_2        | _0         | Lower qBSeen pop    |
+| 0     | a, b     | pop_2        | _0         | Higher qBSeen pop   |
+| 1     | c, d     | pop_2        | _1         | Lower qBSeen pop    |
 | 2     | e, f     | pop_3        | _0         | Evolving population |
 | 3     | g, h     | pop_3        | _1         | Fixed population    |
 | 4     | i, j     | pop_1        | _0         | Single population   |
@@ -109,7 +118,7 @@ The `prisoners_1run` study uses the same parameters and path structure but runs 
 
 2. **Exploitation asymmetry (pop_3)**: Direction flips at R = (T+P)/2. Above threshold: fixed defectors exploit evolving cooperators. Below: evolving defectors exploit fixed cooperators.
 
-3. **Emergent symmetry breaking (pop_2)**: Two identical coevolving populations spontaneously diverge — one becomes cooperator-heavy (exploited, low fitness) and the other defector-heavy (exploiter, high fitness). Correlation: more choosers = lower fitness (r = −0.99).
+3. **Emergent symmetry breaking (pop_2)**: Two identical coevolving populations spontaneously diverge — one becomes cooperator-heavy (exploited, low fitness) and the other defector-heavy (exploiter, high fitness). Correlation: more choosers = lower fitness (r = −1.00).
 
 4. **Partner choice bottleneck**: Swaps require C1P1 on BOTH sides. When defectors are rare in your population, partner choice provides little benefit.
 

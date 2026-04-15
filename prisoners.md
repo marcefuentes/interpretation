@@ -44,26 +44,26 @@ An individual can only choose if they:
 
 | Metric   | R    | P    | R−P   | Value   |
 | -------- | ---- | ---- | ----- | ------- |
-| C1P1 max | 0.96 | 0.35 | 0.61  | 0.755   |
-| P1 max   | 0.80 | 0.30 | 0.49  | 0.884   |
+| C1P1 max | 0.84 | 0.26 | 0.573 | 0.758   |
+| P1 max   | 0.96 | 0.43 | 0.532 | 0.888   |
 
 The P1 maximum occurs at **smaller** R−P than the C1P1 maximum.
 
 ### Why P1 peaks at intermediate R−P
 
-At the P1 maximum (R=0.80, P=0.30):
-- C1P1 = 0.711 (still high — cooperation is favored)
-- C0P1 = 0.173 (substantial — some defection persists)
-- P1 = 0.884
+At the P1 maximum (R=0.96, P=0.43):
+- C1P1 = 0.709 (still high — cooperation is favored)
+- C0P1 = 0.179 (substantial — some defection persists)
+- P1 = 0.888
 
-At the C1P1 maximum (R=0.96, P=0.35):
-- C1P1 = 0.755 (highest)
-- C0P1 = 0.087 (low — defection is suppressed)
-- P1 = 0.842 (lower than at intermediate R−P!)
+At the C1P1 maximum (R=0.84, P=0.26):
+- C1P1 = 0.758 (highest)
+- C0P1 = 0.085 (low — defection is suppressed)
+- P1 = 0.843 (lower than at intermediate R−P!)
 
 **The key**: As R−P decreases from extreme values:
-- C1P1 decreases **slowly** (0.755 → 0.711, Δ = −0.044)
-- C0P1 increases **faster** (0.087 → 0.173, Δ = +0.086)
+- C1P1 decreases **slowly** (0.758 → 0.709, Δ = −0.049)
+- C0P1 increases **faster** (0.085 → 0.179, Δ = +0.094)
 
 The net effect: P1 = C1P1 + C0P1 **increases** until the marginal gain in C0P1 equals the marginal loss in C1P1.
 
@@ -72,7 +72,7 @@ The net effect: P1 = C1P1 + C0P1 **increases** until the marginal gain in C0P1 e
 1. **P1 is selectively neutral in C0** — defectors don't use partner choice
 2. **When R ≈ P**, defection is nearly as good as cooperation, so **C0 persists**
 3. **Mutation from C1P1 → C0P1** maintains P1 in the C0 subpopulation
-4. C0P1/C0 fraction reflects mutation pressure from abundant C1P1 (correlation: +0.91)
+4. C0P1/C0 fraction reflects mutation pressure from abundant C1P1 (correlation: +0.99)
 
 Evidence: When C1P1 is abundant (R >> P), C0P1 > C0P0 because mutation from C1P1 creates more C0P1 than C0P0.
 
@@ -84,20 +84,20 @@ As R−P increases, cooperation (qBSeen) rises — but partner choice (P1) **dec
 
 C1P0 individuals cooperate (C1) but don't choose partners (P0). They benefit from the cooperative environment that C1P1 creates — getting R from abundant cooperators — without paying the (negligible) cost of the choice allele. Since partner choice is rarely exercised when cooperation already dominates, P0 is effectively neutral in C1, and C1P0 accumulates via mutation.
 
-Single-run data (`prisoners_1run`) reveals that this displacement is **oscillatory, not monotonic**: C1P0 fluctuates around ~0.17–0.23 while C1P1 stays dominant at ~0.72–0.80. C1P0 never overtakes C1P1 in any cell at any timestep. The high C1P0 fractions in the averaged data (up to 62% of cooperators) likely reflect variation across runs rather than within-run dynamics. Within a single run, C1P1 and C1P0 maintain a **dynamic frequency-dependent coexistence**: C1P0 gains when the cooperative environment is strong (making partner choice dispensable), but C1P1 pushes back when C1P0 encroachment threatens to weaken cooperation. Total cooperation (qBSeen) remains nearly constant throughout these oscillations.
+Single-run data (`prisoners_1run`) reveals that this displacement is **oscillatory, not monotonic**: C1P0 fluctuates around ~0.23–0.33 while C1P1 stays dominant at ~0.64–0.74. C1P0 never overtakes C1P1 in any cell at any timestep. The C1P0 fractions in the averaged data (up to 33% of cooperators) are consistent with the single-run fractions (~29%), confirming that the displacement reflects a genuine within-run equilibrium, not an artifact of averaging across runs. Within a single run, C1P1 and C1P0 maintain a **dynamic frequency-dependent coexistence**: C1P0 gains when the cooperative environment is strong (making partner choice dispensable), but C1P1 pushes back when C1P0 encroachment threatens to weaken cooperation. Total cooperation (qBSeen) remains nearly constant throughout these oscillations.
 
 ### Quantitative evidence (pop_1)
 
 | R−P   | P1     | C1P1   | C1P0   | C1P0/qBSeen   | qBSeen   |
 | ----- | ------ | ------ | ------ | ------------- | -------- |
-| 0.041 | 0.867  | 0.609  | 0.026  | 4.2%          | 0.635    |
-| 0.082 | 0.906  | 0.763  | 0.059  | 7.2%          | 0.822    |
-| 0.164 | 0.869  | 0.795  | 0.115  | 12.6%         | 0.909    |
-| 0.410 | 0.656  | 0.597  | 0.366  | 37.6%         | 0.963    |
-| 0.820 | 0.399  | 0.367  | 0.610  | 62.3%         | 0.978    |
+| 0.041 | 0.850  | 0.573  | 0.025  | 4.1%          | 0.598    |
+| 0.082 | 0.903  | 0.737  | 0.055  | 6.9%          | 0.792    |
+| 0.164 | 0.874  | 0.796  | 0.110  | 12.1%         | 0.905    |
+| 0.410 | 0.756  | 0.727  | 0.234  | 24.3%         | 0.961    |
+| 0.820 | 0.671  | 0.655  | 0.320  | 32.8%         | 0.976    |
 
-- C1P0/qBSeen correlation with R−P: **+0.972**
-- P1 correlation with R−P: **−0.961**
+- C1P0/qBSeen correlation with R−P: **+0.973**
+- P1 correlation with R−P: **−0.962**
 
 ### The P1 peak explained by two forces
 
@@ -107,11 +107,11 @@ P1 is shaped by two opposing forces:
 2. **Free-riding from above** (C1P0 displacement): dominant at high R−P where cooperation is universal and P0 is neutral in C1
 
 P1 peaks where these forces balance:
-- **Pop_1**: P1 max at R−P = 0.082, C1P1 max at R−P = 0.164
-- **Pop_3**: P1 max at R−P = 0.451, C1P1 max at R−P = 0.574
-- **Pop_2**: P1 max at R−P = 0.492, C1P1 max at R−P = 0.615
+- **Pop_1**: P1 max at R−P = 0.082, C1P1 max at R−P = 0.123
+- **Pop_3**: P1 max at R−P = 0.532, C1P1 max at R−P = 0.573
+- **Pop_2**: P1 and C1P1 both peak near the phase boundary (R−P ≈ 0.12–0.21) and decline at higher R−P; the surface is flat, so the offset between P1 and C1P1 maxima is not well defined
 
-In every population, **P1 peaks before C1P1** — the hitchhiking contribution shifts the P1 maximum toward lower R−P. This is consistent across all three population structures, confirming that the offset is a general property of the allele dynamics, not an artifact of any particular pairing regime.
+In pop_1 and pop_3, **P1 peaks before C1P1** — the hitchhiking contribution shifts the P1 maximum toward lower R−P. In pop_2, the sharp phase transition compresses both peaks into the narrow cooperative zone just above the transition boundary, preventing the two forces from separating them clearly. The hitchhiking mechanism is the same in all three populations, but pop_2's abrupt onset of cooperation masks the gradual offset seen in the single- and fixed-population settings.
 
 ### Comparison with Hamilton
 
@@ -182,8 +182,8 @@ Even though both populations can evolve symmetrically, one becomes the **exploit
 
 | Population     | Mean fitness   | Interpretation                                                      |
 | -------------- | -------------- | ------------------------------------------------------------------- |
-| Exploited (_1) | 0.26           | Dragged toward S; cooperators exploited by defectors from other pop |
-| Exploiter (_0) | 0.92           | Pulled by T; exceeds R in ~69% of cells at P < 0.30                 |
+| Exploited (_0) | 0.23           | Dragged toward S; cooperators exploited by defectors from other pop |
+| Exploiter (_1) | 0.61           | Pulled by T; exceeds R in ~70% of cells at P < 0.30                 |
 
 ### Why asymmetry emerges
 
@@ -197,9 +197,9 @@ At R >> P:
 - **Symmetry breaking**: one population becomes cooperators/choosers, the other defectors
 - The cooperating population gets exploited (gets S from defector partners)
 - The defecting population exploits (gets T from cooperator partners)
-- Correlation between "more choosers" and "lower fitness": **−0.99**
+- Correlation between "more choosers" and "lower fitness": **−1.00**
 
-Single-run data (`prisoners_1run`) confirms that the asymmetry is a **true absorbing state**: once roles are assigned, they never flip. Only 2 of 91 high-R−P cells show even a single-timestep sign change in the cooperation gap. However, which population becomes the cooperator is **stochastic** — in any single run, either population is equally likely to end up as the exploited cooperator (40/91 cells have fset_1 as cooperator, 51/91 have fset_0). The averaged multi-run data always labels fset_1 as the higher-qBSeen population because it sorts after averaging.
+Single-run data (`prisoners_1run`) confirms that the asymmetry is a **true absorbing state**: once roles are assigned, they never flip. Only 2 of 91 high-R−P cells show even a single-timestep sign change in the cooperation gap (after the initial transient). However, which population becomes the cooperator is **stochastic** — in any single run, either population is equally likely to end up as the exploited cooperator. The averaged multi-run data always labels fset_0 as the higher-qBSeen population because it sorts after averaging.
 
 ### The chooser's dilemma
 
@@ -222,15 +222,15 @@ Representative jumps across a single grid step in R−P:
 
 | P    | R (defection)   | qBSeen   | R (cooperation)   | qBSeen   | ΔR    |
 | ---- | --------------- | -------- | ----------------- | -------- | ----- |
-| 0.51 | 0.55            | 0.026    | 0.59              | 0.479    | 0.041 |
-| 0.67 | 0.75            | 0.028    | 0.80              | 0.687    | 0.041 |
+| 0.51 | 0.55            | 0.028    | 0.59              | 0.530    | 0.041 |
+| 0.67 | 0.75            | 0.034    | 0.80              | 0.759    | 0.041 |
 
 ### The phase boundary
 
 The boundary is remarkably clean in (R, P) space. For each R, as P increases toward R:
 
-- **R−P ≥ 0.123**: cooperation always succeeds, regardless of absolute P
-- **R−P ≈ 0.082**: cooperation succeeds at P < 0.59 but collapses at P ≥ 0.63
+- **R−P ≥ 0.123**: cooperation always succeeds (18/18 cells cooperative)
+- **R−P ≈ 0.082**: cooperation succeeds at P < 0.63 but collapses at P ≥ 0.67
 - **R−P ≈ 0.041**: cooperation never establishes (all P values)
 
 ### The role of T−R at the transition boundary
@@ -239,14 +239,14 @@ At R−P = 0.082 the outcome depends not only on R−P but also on absolute payo
 
 | R      | P      | T−R    | P−S    | qBSeen   | Outcome     |
 | ------ | ------ | ------ | ------ | -------- | ----------- |
-| 0.96   | 0.88   | 0.04   | 0.78   | 0.025    | Defection   |
+| 0.96   | 0.88   | 0.04   | 0.78   | 0.026    | Defection   |
 | 0.80   | 0.71   | 0.20   | 0.61   | 0.033    | Defection   |
-| 0.75   | 0.67   | 0.25   | 0.57   | 0.040    | Defection   |
-| 0.71   | 0.63   | 0.29   | 0.53   | 0.211    | Transition  |
-| 0.67   | 0.59   | 0.33   | 0.49   | 0.573    | Cooperation |
-| 0.55   | 0.47   | 0.45   | 0.37   | 0.474    | Cooperation |
-| 0.30   | 0.22   | 0.70   | 0.12   | 0.235    | Declining   |
-| 0.22   | 0.14   | 0.78   | 0.04   | 0.171    | Declining   |
+| 0.75   | 0.67   | 0.25   | 0.57   | 0.034    | Defection   |
+| 0.71   | 0.63   | 0.29   | 0.53   | 0.275    | Cooperation |
+| 0.67   | 0.59   | 0.33   | 0.49   | 0.598    | Cooperation |
+| 0.55   | 0.47   | 0.45   | 0.37   | 0.471    | Cooperation |
+| 0.30   | 0.22   | 0.70   | 0.12   | 0.245    | Declining   |
+| 0.22   | 0.14   | 0.78   | 0.04   | 0.169    | Declining   |
 
 The sharp jump at T−R ≈ 0.29 (between R = 0.75 and R = 0.71) marks where cooperation first invades. Below R = 0.67, qBSeen declines gradually — cooperation persists but weakens as absolute payoffs shrink (R = 0.22 means even cooperators earn little).
 
@@ -256,11 +256,11 @@ The sharp jump at T−R ≈ 0.29 (between R = 0.75 and R = 0.71) marks where coo
 
 At P ≥ 0.30 (136 cells), the distribution has a clear gap:
 
-| qBSeen range  | Count                                              |
-| ------------- | -------------------------------------------------- |
-| 0.00–0.05     | 22                                                 |
-| 0.05–0.15     | 1 (the single transitional cell at R=0.71, P=0.63) |
-| 0.20–0.90     | 113                                                |
+| qBSeen range  | Count   |
+| ------------- | ------- |
+| 0.00–0.05     | 21      |
+| 0.05–0.15     | 1       |
+| 0.20–1.00     | 114     |
 
 ### The mechanism: positive feedback with a tipping point
 
@@ -278,14 +278,14 @@ Single-run data (`prisoners_1run`) confirms that the low-cooperation values near
 
 From the movie data (csv_0_for_movie.con), all cells start at qBSeen=0, C0=1.0:
 
-| R    | P    | R−P   | Trajectory                                | Outcome                |
-| ---- | ---- | ----- | ----------------------------------------- | ---------------------- |
-| 0.67 | 0.59 | 0.082 | 0→0.18→0.41→0.45→0.49→0.53→0.54→0.54→0.55 | Invasion succeeds      |
-| 0.71 | 0.63 | 0.082 | 0→0.05→0.06→0.07→0.07→0.11→0.13→0.14→0.12 | Stuck at tipping point |
-| 0.75 | 0.67 | 0.082 | 0→0.03→0.03→0.03→0.03→0.03→0.03→0.03→0.03 | Never invades          |
-| 0.75 | 0.63 | 0.123 | 0→0.67→0.67→0.64→0.65→0.65→0.63→0.64→0.66 | Rapid invasion         |
+| R    | P    | R−P   | Trajectory                                     | Outcome                |
+| ---- | ---- | ----- | ---------------------------------------------- | ---------------------- |
+| 0.67 | 0.59 | 0.082 | 0→0.34→0.46→0.52→0.57→0.56→0.57→0.57→0.60     | Invasion succeeds      |
+| 0.71 | 0.63 | 0.082 | 0→0.06→0.13→0.13→0.14→0.15→0.19→0.24→0.28     | Slow invasion          |
+| 0.75 | 0.67 | 0.082 | 0→0.04→0.03→0.03→0.04→0.03→0.03→0.03→0.03     | Never invades          |
+| 0.75 | 0.63 | 0.123 | 0→0.73→0.71→0.73→0.70→0.71→0.73→0.72→0.74     | Rapid invasion         |
 
-The cooperative invasion at R−P = 0.123 is almost instantaneous (qBSeen=0.67 by t=131072). At R−P = 0.082, it either slowly builds (R=0.67) or stalls (R=0.75). The transitional cell (R=0.71, P=0.63) oscillates near qBSeen ≈ 0.12 — right at the saddle point.
+The cooperative invasion at R−P = 0.123 is almost instantaneous (qBSeen=0.73 by t=131072). At R−P = 0.082, it either builds steadily (R=0.67) or remains near the tipping point (R=0.71, slowly climbing toward the cooperative basin). At R=0.75, cooperation never invades.
 
 ### Why R−P ≈ 0.041 always fails
 
@@ -311,10 +311,10 @@ Unlike pop_2, the single population shows **no bistability**. The qBSeen distrib
 | ------------- | -------------------- |
 | 0.40–0.50     | 1                    |
 | 0.50–0.70     | 19                   |
-| 0.70–0.90     | 40                   |
-| 0.90–1.00     | 150                  |
+| 0.70–0.90     | 39                   |
+| 0.90–1.00     | 151                  |
 
-The minimum qBSeen (0.49 at R = 0.18, P = 0.14) is far above the defection basin. Even at R−P = 0.041 — where pop_2 never achieves cooperation — pop_1 sustains mean qBSeen = 0.635.
+The minimum qBSeen (0.49 at R = 0.18, P = 0.14) is far above the defection basin. Even at R−P = 0.041 — where pop_2 never achieves cooperation — pop_1 sustains mean qBSeen = 0.632.
 
 ### Why pop_1 avoids bistability
 
@@ -325,11 +325,11 @@ In pop_1, all pairing is within the same population. A cooperator's swap partner
 ### P1 hitchhiking in pop_1
 
 The same allele dynamics appear in pop_1:
-- P1 max at R−P = 0.082 (P1 = 0.906)
-- C1P1 max at R−P = 0.164 (C1P1 = 0.795)
+- P1 max at R−P = 0.082 (P1 = 0.911)
+- C1P1 max at R−P = 0.123 (C1P1 = 0.810)
 - P1 peaks **before** C1P1 due to C0P1 hitchhiking at low R−P
 
-The offset (P1 peak at ~half the R−P of C1P1 peak) is the same qualitative pattern as pop_3 and pop_2, confirming that the hitchhiking mechanism is universal across population structures.
+The offset (P1 peak at ~two-thirds the R−P of C1P1 peak) is the same qualitative pattern as pop_3, confirming that the hitchhiking mechanism is universal across population structures.
 
 ### Comparison with Hamilton pop_1
 
@@ -346,15 +346,15 @@ Hamilton's pop_1 shows the same qualitative behavior: cooperation everywhere (mi
 3. Mutation from C1P1 → C0P1 creates a reservoir of neutral P1 carriers
 4. The sum C1P1 + C0P1 is maximized at this intermediate point
 
-This is **allele frequency inflation by neutral hitchhiking** — the P1 allele reaches higher total frequency at intermediate selection strength because it accumulates in a neutral context (C0) while still being positively selected in another context (C1). The pattern is universal: P1 peaks before C1P1 in pop_1, pop_2, and pop_3.
+This is **allele frequency inflation by neutral hitchhiking** — the P1 allele reaches higher total frequency at intermediate selection strength because it accumulates in a neutral context (C0) while still being positively selected in another context (C1). The pattern is clear in pop_1 and pop_3, where P1 peaks before C1P1. In pop_2, the sharp phase transition compresses both peaks into the narrow zone just above the transition boundary, preventing a clean separation.
 
 ### C1P0 free-riders (pop_1, pop_3)
 
-At high R−P, cooperation is so prevalent that partner choice becomes unnecessary — C1P0 free-riders accumulate because P0 is neutral in a cooperating population. C1P0/qBSeen correlates +0.972 with R−P (pop_1). Together with hitchhiking, this creates a two-force model: **hitchhiking from below** (C0P1) and **free-riding from above** (C1P0) bracket the P1 peak. Single-run data shows that C1P1 and C1P0 maintain a **dynamic frequency-dependent coexistence** — they oscillate in anti-phase while total cooperation stays constant.
+At high R−P, cooperation is so prevalent that partner choice becomes unnecessary — C1P0 free-riders accumulate because P0 is neutral in a cooperating population. C1P0/qBSeen correlates +0.973 with R−P (pop_1). Together with hitchhiking, this creates a two-force model: **hitchhiking from below** (C0P1) and **free-riding from above** (C1P0) bracket the P1 peak. Single-run data shows that C1P1 and C1P0 maintain a **dynamic frequency-dependent coexistence** — they oscillate in anti-phase while total cooperation stays constant. The averaged and single-run C1P0 fractions are consistent (~33% and ~29% of cooperators at R−P ≈ 0.82), confirming that the displacement is a genuine within-run equilibrium.
 
 ### Emergent asymmetry (pop_2)
 
-Two symmetric coevolving populations spontaneously break symmetry at R >> P: one becomes cooperator-heavy (exploited, low fitness dragged by S) while the other becomes defector-heavy (exploiter, high fitness pulled by T). The correlation between more choosers and lower fitness is −0.99. Single-run data confirms this is an **absorbing state** — roles lock in early and never switch. Which population becomes the cooperator is stochastic.
+Two symmetric coevolving populations spontaneously break symmetry at R >> P: one becomes cooperator-heavy (exploited, low fitness dragged by S) while the other becomes defector-heavy (exploiter, high fitness pulled by T). The correlation between more choosers and lower fitness is −1.00. Single-run data confirms this is an **absorbing state** — roles lock in early and never switch. Which population becomes the cooperator is stochastic.
 
 ### Sharp phase transition (pop_2)
 
