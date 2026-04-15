@@ -63,27 +63,18 @@ Results live at `~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/
 | `csv_0_for_movie.con` | Multi-timestep data, _0 (9 snapshots: t=1 to t=1048576) |
 | `csv_1_for_movie.con` | Multi-timestep data, _1 |
 
-### Data Format: Legacy vs Current
+### Data Format
 
-**Critical distinction** — do not mix these up:
-
-- **Legacy** (16 genotypes, 4 loci C,P,M,I): `snowdrift`, `cgnr`, `mgnr`, etc.
-  - Genotype columns: `C0P0M0I0` through `C1P1M1I1`
-  - Has deprecated derived trait columns (`C0`, `C1`, `C0Choose`, `C1Choose`, etc.)
-  - ⚠️ `C0`/`C1` columns equal bare `C0P0M0I0`/`C1P0M0I0` genotypes — **not allele frequencies**
-  - Game parameter columns: `T, R, P, S`
-
-- **Current** (64 genotypes, 6 loci C,I,J,M,P,Q): `prisoners`, `hamilton`, `mutualism`
-  - Genotype columns: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1` (alphabetical)
-  - No pre-computed derived trait columns — compute everything from genotypes
-  - Game parameter columns: `T0, R0, P0, S0, T1, R1, P1, S1` (prisoners) or `k, b_c_0, b_c_1` (hamilton/mutualism)
+All studies use **64 genotypes** from **6 loci** (C, I, J, M, P, Q):
+- Genotype columns: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1` (alphabetical)
+- No pre-computed derived trait columns — compute everything from genotypes
+- Game parameter columns: `T0, R0, P0, S0, T1, R1, P1, S1` (prisoners, snowdrift) or `k, b_c_0, b_c_1` (hamilton, mutualism)
 
 ### Computing Derived Traits from Genotypes
 
-Never use raw `C0`/`C1` legacy columns for allele frequencies. Always sum genotypes:
+Always sum genotypes to get allele frequencies:
 
 ```python
-# Works for both legacy (4-locus) and current (6-locus) formats
 c1p1_cols = [c for c in df.columns if c.startswith('C1') and 'P1' in c and not c.endswith('SD')]
 c0p1_cols = [c for c in df.columns if c.startswith('C0') and 'P1' in c and not c.endswith('SD')]
 c1p0_cols = [c for c in df.columns if c.startswith('C1') and 'P0' in c and not c.endswith('SD')]

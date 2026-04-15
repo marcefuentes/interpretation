@@ -24,7 +24,7 @@ How T, R, P, S are parameterized differs by study — see the game-specific inst
 
 ### 2.1 Alleles
 
-Each individual carries alleles at up to 6 loci. Some studies use 4 loci (C, P, M, I → 16 genotypes); others use all 6 (C, I, J, M, P, Q → 64 genotypes).
+Each individual carries alleles at **6 loci** (C, I, J, M, P, Q) → **64 genotypes**.
 
 | Locus   | 0 allele     | 1 allele                | What the 1-allele does                                                                                |
 | ------- | ------------ | ----------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -135,12 +135,12 @@ The studies `hamilton_1run` and `prisoners_1run` are single-run versions of `ham
 All formats share:
 - Game parameter columns (varies by study — see game-specific instructions)
 - `Time` — simulation timestep
-- `wmean, wsd` — population mean fitness and stdev
-- `qBSeen` — cooperation probability (legacy format also includes `qBDefault`)
-- Genotype frequency columns (16 or 64 depending on active loci)
+- `wmean, wmeanSD, wsd, wsdSD` — population mean fitness and stdev
+- `qBSeen, qBSeenSD` — cooperation probability
+- 64 genotype frequency columns (6 loci: C, I, J, M, P, Q)
 - Each genotype column has a corresponding `SD` column
 
-> **⚠ Data version note**: `hamilton`, `hamilton_1run`, `prisoners`, and `prisoners_1run` use the **current** format (64 genotypes, 6 loci). Other studies (snowdrift, cgnr, mgnr, etc.) still use the **legacy** format (16 genotypes, 4 loci). See the game-specific instructions for column details.
+> **Note**: The column `P1` is a game parameter in studies with per-population payoffs (prisoners, snowdrift). Do not confuse it with the P1 allele frequency, which must be computed from genotype sums.
 
 ### 4.4 Computing derived traits from genotypes
 
