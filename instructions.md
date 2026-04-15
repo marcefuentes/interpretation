@@ -136,7 +136,7 @@ All formats share:
 - Game parameter columns (varies by study — see game-specific instructions)
 - `Time` — simulation timestep
 - `wmean, wsd` — population mean fitness and stdev
-- `qBDefault, qBSeen` — cooperation probabilities
+- `qBSeen` — cooperation probability (legacy format also includes `qBDefault`)
 - Genotype frequency columns (16 or 64 depending on active loci)
 - Each genotype column has a corresponding `SD` column
 

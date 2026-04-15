@@ -38,13 +38,16 @@ def get_RP(rows):
     return rows[0]["R0"], rows[0]["P0"]
 
 def compute_C1P1(row):
-    return row["C1P1M0I0"] + row["C1P1M0I1"] + row["C1P1M1I0"] + row["C1P1M1I1"]
+    geno = [k for k in row if k[0] == 'C' and not k.endswith('SD') and len(k) == 12]
+    return sum(row[c] for c in geno if c.startswith('C1') and 'P1' in c)
 
 def compute_C1P0(row):
-    return row["C1P0M0I0"] + row["C1P0M0I1"] + row["C1P0M1I0"] + row["C1P0M1I1"]
+    geno = [k for k in row if k[0] == 'C' and not k.endswith('SD') and len(k) == 12]
+    return sum(row[c] for c in geno if c.startswith('C1') and 'P0' in c)
 
 def compute_C0P1(row):
-    return row["C0P1M0I0"] + row["C0P1M0I1"] + row["C0P1M1I0"] + row["C0P1M1I1"]
+    geno = [k for k in row if k[0] == 'C' and not k.endswith('SD') and len(k) == 12]
+    return sum(row[c] for c in geno if c.startswith('C0') and 'P1' in c)
 
 def fmt_traj(values, width=7):
     return " -> ".join(f"{v:{width}.4f}" for v in values)

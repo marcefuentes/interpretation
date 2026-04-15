@@ -96,7 +96,7 @@ CSV columns:
 - `k, b_c_0, b_c_1` — game parameters (k = baseline fitness; b_c_0, b_c_1 = benefit − cost for each population)
 - `Time` — simulation timestep
 - `wmean, wsd` — population mean fitness and stdev
-- `qBDefault, qBSeen` — cooperation probabilities
+- `qBSeen, qBSeenSD` — cooperation probability
 - 64 genotype columns — all combinations of 6 loci, alphabetical: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1`
 - Each genotype column has a corresponding `SD` column
 - **No derived trait columns** — compute from genotypes (see `instructions.md` §4.4)

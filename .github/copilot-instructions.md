@@ -40,7 +40,7 @@ This script reads from `~/results/prisoners_1run/shuffle_cost12_128/P/1.0` — t
 
 | Study | Parameter axes | Grid shape | Loci/Genotypes | Pop scenarios |
 |-------|---------------|-----------|----------------|---------------|
-| `prisoners` | R × P (2D, triangle in T>R>P>S space) | ~24×24 triangle | 4 loci → 16 genotypes | pop_1, pop_2, pop_3 |
+| `prisoners` | R × P (2D, triangle in T>R>P>S space) | ~24×24 triangle | 6 loci → 64 genotypes | pop_1, pop_2, pop_3 |
 | `hamilton` | b−c (1D, log scale) | 21 points | 6 loci → 64 genotypes | pop_1, pop_2, pop_3 |
 | `mutualism` | b₀−c × b₁−c (2D triangular, b₁≥b₀) | 21×21 triangle, 231 cells | 6 loci → 64 genotypes | pop_2 only |
 
@@ -67,16 +67,16 @@ Results live at `~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/
 
 **Critical distinction** — do not mix these up:
 
-- **Legacy** (16 genotypes, 4 loci C,P,M,I): `prisoners`, `snowdrift`, `cgnr`, `mgnr`, etc.
+- **Legacy** (16 genotypes, 4 loci C,P,M,I): `snowdrift`, `cgnr`, `mgnr`, etc.
   - Genotype columns: `C0P0M0I0` through `C1P1M1I1`
   - Has deprecated derived trait columns (`C0`, `C1`, `C0Choose`, `C1Choose`, etc.)
   - ⚠️ `C0`/`C1` columns equal bare `C0P0M0I0`/`C1P0M0I0` genotypes — **not allele frequencies**
   - Game parameter columns: `T, R, P, S`
 
-- **Current** (64 genotypes, 6 loci C,I,J,M,P,Q): `hamilton`, `mutualism`
+- **Current** (64 genotypes, 6 loci C,I,J,M,P,Q): `prisoners`, `hamilton`, `mutualism`
   - Genotype columns: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1` (alphabetical)
   - No pre-computed derived trait columns — compute everything from genotypes
-  - Game parameter columns: `k, b_c_0, b_c_1`
+  - Game parameter columns: `T0, R0, P0, S0, T1, R1, P1, S1` (prisoners) or `k, b_c_0, b_c_1` (hamilton/mutualism)
 
 ### Computing Derived Traits from Genotypes
 
