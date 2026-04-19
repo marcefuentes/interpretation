@@ -121,7 +121,7 @@ Full mechanism → trait mapping: `../graph/graphgen/studies/trps/mech_trait_map
 
 ### Partner Choice Bottleneck
 
-Swaps require `C1P1` on **both** sides. Two `C1P1` individuals paired with C0s can swap so both get cooperator partners. When cooperators are rare, swap opportunities are scarce — this creates a positive feedback threshold (see sharp phase transition in prisoners pop_2).
+Swaps require `C1P1` on **both** sides. The code **mutually** rematches two choosers: each trades a C0 partner for partnership with the **other** `C1P1` (not an undirected “abandonment” to a random C1). The two defectors end up paired with each other. When such chooser pairs are rare, swap opportunities are scarce — this creates a positive feedback threshold (see sharp phase transition in prisoners pop_2).
 
 ### Mutualism Payoff Asymmetry
 

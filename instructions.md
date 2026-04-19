@@ -63,9 +63,9 @@ ind->qBSeen != 0 &&        // is a cooperator (C1)
 ind->partner->qBSeen == 0  // current partner is a defector
 ```
 
-**Swapping**: Two C1P1 individuals both paired with C0 can swap partners. After the swap, both C1P1 have cooperator partners (get R), both C0 have defector partners (get P).
+**Swapping (not abandonment).** Choosers do **not** simply drop a defector for an arbitrary cooperator. In `choose_partner_L0P1`, individuals in the swap pool satisfy `can_improve_L0_partner` (C1P1 paired with C0). The code **mutually pairs two such choosers with each other** (`swap_partners`): after the swap, each chooser’s new partner is the **other chooser**—both are **C1P1**, so each trades a C0 partner for partnership with a **C1P1** (mutual *R*). The two defectors that were released end up paired with each other (C0–C0, *P*). C1P0 never enters this pool (`Choose == 0`).
 
-**Key constraint**: Swaps require C1P1 on BOTH sides. When cooperators are rare, swap opportunities are scarce.
+**Key constraint**: A successful upgrade requires another C1P1 in the same group who is also stuck with a defector (so both sides of the mutual swap exist). When choosers or pairings are rare, swap opportunities are scarce.
 
 ### 2.4 Simulation Loop
 
@@ -77,7 +77,7 @@ Source: `~/code/trps/code/src/`. Main loop in `modules_common/simulation.c`, exe
 | 2. Analyze        | Record statistics (genotype frequencies, qBSeen, wmean) | `modules/stats.c`, `modules/write.c`             |
 | 3. Update scores  | Update lifetime qBSeen averages (if Q/J loci enabled)   | `modules/individual_tools.c` → `update_scores()` |
 | 4. Shuffle        | Randomly reassign partners within groups                | `modules_common/shuffle_partners.c`              |
-| 5. Partner choice | C1P1 swap away from defector partners                   | `modules/choose_partner.c`                       |
+| 5. Partner choice | C1P1 mutually swap so each pairs with another C1P1 (not lone “abandonment”) | `modules/choose_partner.c`                       |
 | 6. Recruitment    | Death, fitness-proportional reproduction, mutation      | `modules/recruits.c` → `handle_recruitment()`    |
 | 7. Decide qB      | Update cooperation decision (reciprocity)               | `modules/decide_qB.c`                            |
 

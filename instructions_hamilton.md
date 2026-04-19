@@ -156,7 +156,7 @@ The `hamilton_1run` study uses the same parameters and path structure but runs a
 
 1. **P1 hitchhiking (all populations)**: P1 peaks at lower R−P than C1P1 because neutral C0P1 carriers inflate P1 in the transition zone. Same mechanism as PD.
 
-2. **P1 dispensability at high R−P (pop_1)**: C1P0 free-riders grow from 9% to 31% of cooperators. When R−P = 8 (R = 10), cooperation self-sustains without partner choice.
+2. **Sparse choosers and P1 dilution (pop_1)**: C1P0 grow from 9% to 31% of cooperators; P1 falls because few C1P1 can still maintain a high-cooperation pool (partner choice is not redundant at high R−P, but a small chooser share suffices).
 
 3. **Emergent asymmetry (pop_2)**: Gradual symmetry breaking (not bimodal like PD). Cooperating population exploited 3.54× at R−P = 8. Correlation: −0.92.
 

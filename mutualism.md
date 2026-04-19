@@ -8,9 +8,11 @@ Reference: `instructions_mutualism.md` for game parameters and payoff structure;
 
 ## Overview
 
-The mutualism study generalizes Hamilton from a 1D axis (*b* − *c*) to a 2D triangular grid where the two coevolving populations can have **different** benefit-cost parameters (*b*₀ − *c* and *b*₁ − *c*). The diagonal (*b*₀ − *c* = *b*₁ − *c*) recovers Hamilton exactly.
+The mutualism study generalizes Hamilton from a 1D axis (*b* − *c*) to a 2D triangular grid where the two coevolving populations can have **different** benefit-cost parameters (*b*₀ − *c* and *b*₁ − *c*). The diagonal (*b*₀ − *c* = *b*₁ − *c*) **is** Hamilton (same game — **Diagonal: Consistency with Hamilton**).
 
-The key structural difference: each population's cooperation benefit (R − P) is set by the **partner's** *b* − *c*, not its own (cross-benefit payoffs). Since *b*₁ − *c* ≥ *b*₀ − *c* by construction, population 0 always faces a cooperation incentive at least as strong as population 1's.
+**Cross-benefit payoffs** and the **bottleneck** story are developed once in the next sections; the **Summary** table lists the main **percentages and correlations** for quick reference. For **P**-mechanism definitions, see **`instructions.md`** and **`instructions_mutualism.md`**.
+
+The key structural difference: each population's **R − P** is set by the **partner's** *b* − *c*. Since *b*₁ − *c* ≥ *b*₀ − *c*, population 0 always has at least as strong a cooperation incentive as population 1.
 
 ---
 
@@ -76,10 +78,12 @@ Within-slice correlations confirm this: at fixed *b*₁ − *c*, the correlation
 
 In the high-cooperation region (*b*₀ − *c* ≥ 1.0, off-diagonal):
 - **C1P1** (cooperating choosers): mean 0.654 — dominant genotype
-- **C1P0** (cooperating free-riders): mean 0.057 (7.7% of cooperators)
+- **C1P0** (cooperators without partner choice — behavioral free-riders who do not sort partners): mean 0.057 (7.7% of cooperators)
 - C0P1 + C0P0 (defectors): remainder
 
-As *b*₀ − *c* increases toward the diagonal, C1P0 grows from ~0.02 (at *b*₀ − *c* = 0.008) to ~0.14 (at *b*₀ − *c* = 5.66), matching Hamilton's pattern: when cooperation can partly self-sustain (high R − P), the chooser allele becomes dispensable and free-riders accumulate.
+As *b*₀ − *c* increases toward the diagonal, C1P0 grows from ~0.02 (at *b*₀ − *c* = 0.008) to ~0.14 (at *b*₀ − *c* = 5.66), matching Hamilton's pattern: at high *R* − *P*, a small chooser subpopulation can support a high-cooperation regime, so the P1 allele is **diluted** (many C1P0) even though partner choice still underwrites the pool.
+
+**Grid averages only** here (no full **`*_1run`** triangle). The **diagonal** is **`hamilton_1run`** territory for dynamics; off-diagonal **mutualism** would need its own timed runs mainly for **bottleneck** timing — **`hamilton.md`** / **`prisoners.md`** for invasion vs equilibrium methodology; **end-of-run–only** dense output if timestep count grows.
 
 ### Pop_1 (defector)
 
@@ -114,14 +118,11 @@ The fitness gap widens with asymmetry. At extreme parameter ratios (*b*₁ − *
 
 ## Summary
 
-1. **Cross-benefit payoffs** determine the mutualism game structure: each population's R − P equals the partner's *b* − *c*. Pop_0 (lower *b* − *c*) has higher cooperation incentive because its partner provides larger benefits.
-
-2. **Deterministic role assignment**: unlike Hamilton (stochastic), the payoff asymmetry causes pop_0 to cooperate in 97% of off-diagonal cells. The diagonal recovers Hamilton's random ~50/50 split.
-
-3. **Partner choice bottleneck**: cooperation level scales primarily with the *smaller* of the two *b* − *c* values, because pop_1's low R − P limits the C1P1 individuals available for swaps. Pop_0's own high incentive cannot be realized without sufficient pop_1 cooperators.
-
-4. **Genotype composition** matches Hamilton: C1P1 dominates the cooperating population, with C1P0 free-riders accumulating at high *b* − *c* (up to 7.7% of cooperators).
-
-5. **Exploitation**: the cooperating population has lower fitness in 93.3% of off-diagonal cells, consistent with Hamilton's asymmetry pattern.
-
-6. **Diagonal consistency**: mutualism's diagonal reproduces Hamilton's cooperation levels and transition threshold. Apparent differences in asymmetry magnitude are an artifact of unsorted vs sorted file set assignment.
+| Topic | Headline figures (detail above) |
+| ----- | --------------------------------- |
+| **Cross-benefit** | Pop_0's **R − P** = partner's *b*₁ − *c*; pop_1's = *b*₀ − *c*; **T − R = P − S = 1** |
+| **Roles** | Pop_0 cooperates **97.1%** (204/210) off-diagonal cells; diagonal ~**50/50** like Hamilton |
+| **Bottleneck** | **qBSeen₀** rises **0.32 → 0.90** as *b*₀ − *c* rises (fixed *b*₁ − *c* = 8.0 table); **log₂**(*b*₀ − *c*) vs **qBSeen₀** **0.79–0.92** at fixed *b*₁ − *c* |
+| **Fitness** | Cooperating pop lower fitness **93.3%** off-diagonal; mean deficit **0.31** |
+| **Genotypes (pop_0)** | **C1P1** mean **0.654**; **C1P0** **7.7%** of cooperators (high-*b* region); **C1P0** up to **~14%** along diagonal slice |
+| **Diagonal vs Hamilton** | *b* − *c* = 8: sorted Hamilton **0.93 / 0.20** vs mutualism unsorted **0.49 / 0.63** — assignment artifact (**Diagonal** section) |
