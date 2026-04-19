@@ -12,6 +12,8 @@ The mutualism study generalizes Hamilton from a 1D axis (*b* − *c*) to a 2D tr
 
 **Cross-benefit payoffs** and the **bottleneck** story are developed once in the next sections; the **Summary** table lists the main **percentages and correlations** for quick reference. For **P**-mechanism definitions, see **`instructions.md`** and **`instructions_mutualism.md`**.
 
+**Groupsize.** Grid cooperation levels and tables below use **`shuffle_cost12_128`**. **`shuffle_cost12_4`** collapses **`qBSeen`** relative to **128** on the same parameter grid (cross-benefit and **bottleneck** logic still apply; **numeric** claims do not). See **`hamilton.md`** for **`hamilton_1run`** end-state and **movie** detail.
+
 The key structural difference: each population's **R − P** is set by the **partner's** *b* − *c*. Since *b*₁ − *c* ≥ *b*₀ − *c*, population 0 always has at least as strong a cooperation incentive as population 1.
 
 ---

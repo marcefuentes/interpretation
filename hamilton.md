@@ -116,6 +116,8 @@ Conceptually: partner choice still underwrites the pool; at high *b* − *c* a *
 
 **Single-run (`hamilton_1run`, pop_1, `shuffle_cost12_128`, P, given = 1.0, 9 timesteps/cell):** **C1P1** and **C1P0** move opposite in most adjacent pairs; with **qBSeen** ~flat at high *b* − *c*, anti-phase is **mostly** **C1P1 + C1P0 = qBSeen**, plus **P0**/**P1** turnover among cooperators.
 
+**Groupsize 4 vs 128 (`hamilton_1run`, same 21 cells, movie `csv_0_for_movie.con`, pop_1):** **`shuffle_cost12_4`** yields **narrow, nearly flat `qBSeen` trajectories** across the nine snapshots—typical within-cell range **~0.07** vs **~0.67** at **`shuffle_cost12_128`**, with **large last-interval moves rare at 4 (~5% of cells vs ~62% at 128)**—so **groupsize 4** matches **low end-state cooperation** as a **different regime**, not **128 slowed down**.
+
 **Invasion vs late tail (partition timesteps within each cell):** **Invasion** (first three Δ after *t* = 1): **r**(C0, ΔP1) ≈ **+0.71**, **r**(C0, ΔC0) ≈ **−0.62**; high C0 at *t* pairs with large positive **ΔP1** and negative **ΔC0**. **Late** (*t* index ≥ 3): **r**(C0, ΔP1) ≈ **+0.08** — tiny stepwise Δ’s; **no** reliable one-step **P1** ↔ **P0** cycle at nine snapshots (longer period, smaller amplitude, or both). Sharper tail inference: **many replicates** at fixed *b* − *c* and/or **dense checkpoints only near run end** (limits CSV growth vs uniform dense output). High **C1P0**/qBSeen at *t* → slightly positive mean next-step Δ(C1P1/qBSeen) (**suggestive**).
 
 **P1 down at high *b* − *c***: dilution by **C1P0**, not loss of partner choice as the sustaining process.

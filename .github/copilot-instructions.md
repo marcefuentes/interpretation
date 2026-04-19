@@ -14,7 +14,7 @@ Documentation and analysis for interpreting TRPS evolutionary simulation outputs
 
 ## Related Repositories (same machine)
 
-- `../graph/graphgen/` — figure pipeline, study manifests, `mech_trait_map.csv`
+- `~/code/graph/graphgen/` (same as `../graph/graphgen/` from this repo) — figure pipeline, study manifests, `mech_trait_map.csv`. Run **`graphgen`** here to **regenerate** `csv_*_for_image.con` (final timestep) and `csv_*_for_movie.con` (multi-timestep) whenever those exports are missing from `~/results/`.
 - `../trps/` or `~/code/trps/` — C simulation source code
 - `~/results/` — simulation output data
 
