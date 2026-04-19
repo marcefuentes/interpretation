@@ -318,7 +318,7 @@ The minimum qBSeen (0.49 at R = 0.18, P = 0.14) is far above the defection basin
 
 In pop_2, cooperators pair with the **other** population's defectors. Partner choice cannot help because there are no same-population C1P1 partners to swap into. Cooperation must ignite in **both** populations simultaneously.
 
-In pop_1, all pairing is within the same population. A cooperator's swap partner candidates are also from their own population, and a modest cooperator density is enough for partner choice to function. The tipping point that creates pop_2's bistability does not exist — any cooperator density above mutation-selection balance allows some successful swaps, which feed back into more cooperation.
+In pop_1, all pairing is within the **same** population (well-mixed—no geography). Swap counterpart candidates are **draws from that pool**; the contrast with pop_2 is **matching structure** (who may be paired with whom), not physical proximity or shared ancestry between two C1P1. A modest cooperator density is enough for partner choice to function. The tipping point that creates pop_2's bistability does not exist — any cooperator density above mutation-selection balance allows some successful swaps, which feed back into more cooperation.
 
 ### P1 hitchhiking in pop_1
 

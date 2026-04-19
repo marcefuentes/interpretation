@@ -52,7 +52,7 @@ The result is initially counterintuitive: the population whose organisms produce
 
 ## The Partner Choice Bottleneck
 
-Despite pop_0's high cooperation incentive, its actual cooperation level is limited by a bottleneck: partner choice requires C1P1 individuals on **both** sides of the swap.
+Despite pop_0's high cooperation incentive, its actual cooperation level is limited by a bottleneck: partner choice requires C1P1 individuals on **both** sides of the swap (well-mixed simulations—**cross-population matching**, not distance or neighborhoods).
 
 Pop_1's low R − P (= *b*₀ − *c*) means pop_1 evolves few C1P1 individuals. Without pop_1 C1P1s, pop_0 cannot execute swaps — even though pop_0 has strong incentive to cooperate.
 

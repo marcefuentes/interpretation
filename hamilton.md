@@ -108,7 +108,7 @@ In pop_1 (within-population pairing), cooperation is present from the lowest *b*
 | 4.000     | 0.970  | 0.697 | 0.677 | 0.293 | 30%         |
 | 8.000     | 0.973  | 0.674 | 0.656 | 0.317 | 33%         |
 
-At *b* − *c* = 0.008, 13.2% of the population cooperates — far above pop_2 (4.5%) or pop_3 (3.6%) at the same axis value. **Within-population pairing** makes swap counterparts easy to find (Key Definitions); two eligible **C1P1** in one group suffice even at the lowest *b* − *c*.
+At *b* − *c* = 0.008, 13.2% of the population cooperates — far above pop_2 (4.5%) or pop_3 (3.6%) at the same axis value. **Within-population pairing** means both interaction partners are drawn from the **same** population (well-mixed—no geography); swap counterparts are just **other individuals in that pool** (Key Definitions). Two eligible **C1P1** there suffice even at the lowest *b* − *c*.
 
 ### C1P0 share rises at high *b* − *c* (choosers can be few but are not optional)
 
@@ -227,7 +227,7 @@ Single-run data (`hamilton_1run`) confirms this is a **sharp one-time transition
 
 In pop_1, cooperation is 13.2% even at *b* − *c* = 0.008, and rises smoothly. In pop_3, cooperation stays below 7% until *b* − *c* ≈ 0.7, then jumps. The difference is the pairing structure:
 
-- **pop_1** (within-population): Pairing stays inside one population (so swap counterparts are nearby). A rare C1P1 paired with a defector can mutually swap with another such C1P1 and immediately gain a C1P1 partner. Partner choice works at any cooperator frequency.
+- **pop_1** (within-population): Both partners at an interaction come from the **same** population (still well-mixed—no spatial layout). Mutual swaps only need another **C1P1** from **that** pool, not coordinated rare types across two populations. A rare C1P1 paired with a defector can mutually swap with another such C1P1 and immediately gain a C1P1 partner. Partner choice works at any cooperator frequency. **This is pairing/matching structure (one pool of interaction partners), not “two C1P1 are likelier because they share ancestry.”** Finite-population relatedness is secondary here.
 - **pop_3** (between-population): The evolving population pairs only with the fixed population. For a mutual swap, a C1P1 in the evolving population stuck with a defector in the fixed population needs **another C1P1** in the evolving population who is also stuck with a defector from the fixed population (`choose_partner_L0P2` pairs choosers across populations the same way). When cooperators are rare in the evolving population, such pairs are unlikely. Cooperation must cross a threshold density before the swap cascade ignites.
 
 ### Exploitation crossover
