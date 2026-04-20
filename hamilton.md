@@ -278,6 +278,43 @@ Both studies share T > R > P > S and `choose_partner.c` (Hamilton = mechanism **
 3. **High R − P**: C1P0 share **~33%** of cooperators at **R − P = 8** vs **9%** at 0.25 — sparse choosers (**pop_1** table); **R/P = 5** at *b* − *c* = 8 (payoffs in **The Game**).
 4. **Exploitation ratio at R − P = 8**: **3.56×** fitness (Hamilton **T** up to **11** vs PD’s compressed scale).
 
+## Given = 0.5: Correct Game-Type Classification
+
+Using the exact Hamilton branch equations from `calculate_derived_globals.c` (`given < 1.5`), with `k0 = 2`, `k1 = 1`, and `x = b - c`:
+
+- `b = k1 + x = 1 + x`
+- `T = k0 + g*b = 2 + g(1 + x)`
+- `R = k0 + b - k1 = 2 + x`
+- `P = k0 = 2`
+- `S = k0 + (1-g)b - k1 = 1 + (1-g)(1 + x)`
+
+At `g = 0.5`, this becomes:
+
+- `T = 2.5 + 0.5x`
+- `R = 2 + x`
+- `P = 2`
+- `S = 1.5 + 0.5x`
+
+So `T - R = P - S = 0.5(1 - x)`, giving a clean regime split at `x = 1`:
+
+- `x < 1`: `T > R > P > S` (PD)
+- `x = 1`: `T = R > P = S` (boundary)
+- `x > 1`: `R > T > S > P` (harmony-like)
+
+On the 21-point Hamilton grid (`shuffle_cost12_128`, mechanism `P`, `given = 0.5`), the cells are:
+
+| Regime | Cells |
+| ------ | ----- |
+| `T > R > P > S` (PD) | 14 |
+| `T = R > P = S` (boundary) | 1 |
+| `R > T > S > P` (harmony-like) | 6 |
+
+## Why `g = 0.5` Helps Interpret `g = 1.0`
+
+The `g = 0.5` sweep provides an internal calibration for interpretation: the same model and mechanism (`P`) traverses both PD-like and harmony-like local games, with the transition exactly where the payoff ordering predicts (`b-c = 1`). Observed shifts in `qBSeen`, fitness asymmetry, and chooser composition follow that regime boundary, supporting that the analysis logic is causal (payoff structure -> partner-choice bottleneck/exploitation -> outcomes), not a plotting artifact.
+
+This strengthens confidence in the `g = 1.0` reading: although `g = 1.0` stays in the dilemma family, the same bottleneck and exploitation logic explains the observed gradients and asymmetries there as well. For reusable validation steps (payoff derivation, regime map, signature checks, movie confirmation), see `instructions.md` §6.
+
 ## Summary
 
 | Topic | Main numbers (detail in sections above) |

@@ -169,3 +169,78 @@ For the full mapping of mechanisms to derived traits, see `../graph/graphgen/stu
 | `../graph/graphgen/studies/trps/config.py`          | Shared TRPS trait definitions, figure structure |
 | `../graph/graphgen/studies/trps/mech_trait_map.csv` | Mechanism → trait mapping (see §2.2)            |
 | `../graph/graphgen/studies/common/shared.py`        | Common path template                            |
+
+---
+
+## 6. Interpretation Checklist for Any `given` Value
+
+Use this workflow whenever analyzing a new `given` (for example `0.5`, `1.0`, `1.5`) so conclusions stay tied to the actual payoff structure.
+
+### 6.1 Re-generate exact inputs
+
+1. Regenerate static and movie outputs with the target `given`:
+   - `python -m graphgen.main --study <study> --figure s07 --given-focal <g>`
+   - `python -m graphgen.main --study <study> --figure s07 --given-focal <g> --movie`
+2. Confirm `.con` sources exist under:
+   - `~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/`
+3. If temporal interpretation is needed, include `_1run` movie files (`csv_*_for_movie.con`) rather than only final snapshots.
+
+### 6.2 Compute payoffs from source equations (not assumptions)
+
+Always derive payoffs from `~/code/trps/code/src/modules/calculate_derived_globals.c`.
+
+For the Hamilton branch (`given < 1.5`), with `x_i = b_i - c`, `b_i = k1 + x_i`:
+
+- Population 0:
+  - `T0 = k0 + b1*given`
+  - `R0 = k0 + b0*(1-given) + b1*given - k1`
+  - `P0 = k0`
+  - `S0 = k0 + b0*(1-given) - k1`
+- Population 1 swaps `b0` and `b1`.
+
+Do not classify game type until these values are computed for the exact cell (`x0`, `x1`).
+
+### 6.3 Build a local game-regime map
+
+For each parameter cell, classify payoff ordering (allowing ties at boundaries), e.g.:
+
+- `T > R > P > S` (PD)
+- `R > T > S > P` (harmony-like)
+- `R > S > T > P` (possible in asymmetric cross-benefit settings)
+- boundary forms such as `T = R > P = S`
+
+For 2D studies (prisoners, mutualism, snowdrift), report counts per ordering for each population and for important subsets (off-diagonal, diagonal, high/low regions).
+
+### 6.4 Check expected signatures in outputs
+
+Given the mapped regimes, test whether observed patterns match expected dynamics:
+
+1. `qBSeen`:
+   - PD-heavy regions should resist cooperation unless mechanisms bootstrap it.
+   - Harmony-like regions should allow broad cooperation.
+2. `wmean`:
+   - Verify exploitation patterns (cooperator-rich side can have lower fitness).
+   - Locate crossover points where fitness advantage changes sign.
+3. Genotype decomposition:
+   - Separate `C1P1`, `C1P0`, `C0P1` (P1-silent carriers).
+   - Check for chooser bottlenecks and P1 hitchhiking.
+
+### 6.5 Validate against time dynamics
+
+Use movie snapshots to confirm whether spatial/parameter gradients are true dynamics or averaging artifacts:
+
+- Stable intermediate states vs rapid flips
+- Early invasion vs late equilibrium behavior
+- Role-locking vs frequent reversals in coevolving populations
+
+If only final snapshots are used, mark dynamic claims as provisional.
+
+### 6.6 Minimum reporting block for docs
+
+For each new `given`, include:
+
+1. Exact payoff equations used (with source file reference)
+2. Regime map summary (counts/tables)
+3. Key observed signatures (`qBSeen`, `wmean`, genotype splits)
+4. One short consistency statement:
+   - "Observed patterns are/are not consistent with local payoff regimes, with caveats ..."

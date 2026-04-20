@@ -118,6 +118,52 @@ The fitness gap widens with asymmetry. At extreme parameter ratios (*b*₁ − *
 
 ---
 
+## Given = 0.5: Correct Game-Type Classification
+
+Using the exact Hamilton-branch payoffs from `calculate_derived_globals.c` (`given < 1.5`), for a focal population with own `x_self = b-c` and partner `x_partner`:
+
+- `T = 2 + 0.5(1 + x_partner)`
+- `R = 2 + 0.5(x_self + x_partner)`
+- `P = 2`
+- `S = 1 + 0.5(1 + x_self)`
+
+Equivalent differences:
+
+- `T - R = 0.5(1 - x_self)`
+- `P - S = 0.5(1 - x_self)`
+- `R - S = 0.5(1 + x_partner)`
+
+So the focal game family is controlled by `x_self` around 1.0, while cross-population asymmetry (`x_partner` vs `x_self`) can yield additional orderings beyond simple PD/harmony.
+
+On the triangular mutualism grid (`shuffle_cost12_128`, mechanism `P`, `given = 0.5`, 231 cells):
+
+### Population 0 (`x_self = x0`, `x_partner = x1`, with `x1 >= x0`)
+
+| Ordering | Cells |
+| -------- | ----- |
+| `T > R > P > S` | 203 |
+| `R > T > S > P` | 21 |
+| `T = R > P = S` | 6 |
+| `R = T > P = S` | 1 |
+
+### Population 1 (`x_self = x1`, `x_partner = x0`)
+
+| Ordering | Cells |
+| -------- | ----- |
+| `T > R > P > S` | 105 |
+| `R > S > T > P` | 68 |
+| `R > T > S > P` | 42 |
+| `T = R > P = S` | 15 |
+| `R > T = S > P` | 1 |
+
+This corrects the simplified two-regime view: at `given = 0.5`, mutualism includes a large `R > S > T > P` region (especially for population 1) created by cross-benefit asymmetry.
+
+## Why `g = 0.5` Helps Interpret `g = 1.0`
+
+The `g = 0.5` results show directly that mutualism cannot be interpreted as one global game type across the triangle: local orderings differ by cell and by population. Once those local regimes are mapped, the observed cooperation and fitness asymmetries become predictable from the cross-benefit structure and chooser bottleneck. This provides a stronger causal baseline for reading `g = 1.0`, where the same mechanisms operate but with a different regime mix.
+
+In short, `g = 0.5` functions as a diagnostic case that validates the interpretation framework used at `g = 1.0` (local payoff ordering -> genotype bottlenecks -> `qBSeen`/`wmean` patterns). For the reusable workflow, see `instructions.md` §6.
+
 ## Summary
 
 | Topic | Headline figures (detail above) |
