@@ -34,8 +34,8 @@ From calculate_derived_globals.c, the Hamilton game at *g* = 1.0 maps exactly to
 | **S** (Sucker)     | 1                | Cooperate while partner defects |
 
 Derivation from calculate_derived_globals.c with given = 1 and symmetric populations (b0 = b1):
-b0 = k1 + (b - c), T = k0 + b0 = k0 + k1 + (b - c), R = k0 + b0 - k1 = k0 + (b - c), S = k0 - k1, P = k0.
-For the Hamilton study constants (k0 = 2, k1 = 1), this gives T = 3 + (b - c), R = 2 + (b - c), P = 2, S = 1.
+b0 = k1 + (*b* − *c*), **T** = k0 + b0 = k0 + k1 + (*b* − *c*), **R** = k0 + b0 - k1 = k0 + (*b* − *c*), **S** = k0 - k1, **P** = k0.
+For the Hamilton study constants (k0 = 2, k1 = 1), this gives **T** = 3 + (*b* − *c*), **R** = 2 + (*b* − *c*), **P** = 2, **S** = 1.
 
 The key relationships are:
 
@@ -47,7 +47,7 @@ The key relationships are:
 
 Concrete values at selected *b* − *c* points:
 
-| *b* − *c*     | T      | R      | P   | S   |
+| *b* − *c*     | **T**      | **R**      | **P**   | **S**   |
 | ----------| ------ | ------ | --- | --- |
 | 0.008     | 3.008  | 2.008  | 2   | 1   |
 | 0.125     | 3.125  | 2.125  | 2   | 1   |
@@ -58,16 +58,16 @@ Concrete values at selected *b* − *c* points:
 
 ### Comparison with the PD study parameter space
 
-In the PD study (prisoners), T = 1.0 and S = 0.1 are fixed while R and P vary across a 2D grid (R, P ∈ [0.1, 1.0]). Three independent gaps vary simultaneously:
+In the PD study (prisoners), **T** = 1.0 and **S** = 0.1 are fixed while **R** and **P** vary across a 2D grid (**R**, **P** ∈ [0.1, 1.0]). Three independent gaps vary simultaneously:
 
-- T − R ∈ [0, 0.9] — temptation to defect from mutual cooperation
-- P − S ∈ [0, 0.9] — cost of being suckered vs mutual defection
-- R − P ∈ [−0.9, 0.9] — benefit of mutual cooperation vs mutual defection
+- **T − R** ∈ [0, 0.9] — temptation to defect from mutual cooperation
+- **P − S** ∈ [0, 0.9] — cost of being suckered vs mutual defection
+- **R − P** ∈ [−0.9, 0.9] — benefit of mutual cooperation vs mutual defection
 
-In Hamilton, only **R − P varies** (= *b* − *c*), while T − R = P − S = 1 are constant. This means:
+In Hamilton, only **R − P varies** (= *b* − *c*), while **T − R = P − S = 1** are constant. This means:
 
-1. **The Hamilton game has a fixed temptation premium** (T − R = 1) compared to the PD's variable temptation (max 0.9). A defector always gains 1 fitness unit by exploiting a cooperator, regardless of *b* − *c*.
-2. **The sucker penalty is fixed** (P − S = 1). A cooperator paired with a defector gets fitness 1, which is 1 below mutual defection.
+1. **The Hamilton game has a fixed temptation premium** (**T − R = 1**) compared to the PD's variable temptation (max 0.9). A defector always gains 1 fitness unit by exploiting a cooperator, regardless of *b* − *c*.
+2. **The sucker penalty is fixed** (**P − S = 1**). A cooperator paired with a defector gets fitness 1, which is 1 below mutual defection.
 3. **R − P spans a much wider range** (0.008 to 8.0 vs PD's −0.9 to 0.9). At high *b* − *c*, mutual cooperation is enormously more profitable than mutual defection.
 
 Fitness is normalized as (*K* + *w*) / (*K* + *B*\_max) = (*K* + *w*) / 11. Without any cooperation mechanisms, the theoretical prediction at *g* = 1.0 is zero cooperation: the condition (1−*g*)·*b* > *c* is never satisfied. Partner choice must bootstrap cooperation from scratch.
@@ -88,7 +88,7 @@ Fitness is normalized as (*K* + *w*) / (*K* + *B*\_max) = (*K* + *w*) / 11. With
 
 From choose_partner.c (choose_partner_L0P1), a chooser is **eligible** to upgrade when:
 ind->Choose != 0 && ind->qBSeen != 0 && ind->partner->qBSeen == 0
-Under **P** alone, C1P1 individuals leave a C0 partner for a C1P1. The two C1P1 upgrade their fitness from S to R. The two C0 end up paired with each other and downgrade their fitness from T to P. C0P1 individuals carry P1 but never activate it; C1P0 are absent from this pool.
+Under **P** alone, C1P1 individuals leave a C0 partner for a C1P1. The two C1P1 upgrade their fitness from **S** to **R**. The two C0 end up paired with each other and downgrade their fitness from **T** to **P**. C0P1 individuals carry P1 but never activate it; C1P0 are absent from this pool.
 
 ## Single Population (pop_1, panels e-f)
 
@@ -193,9 +193,9 @@ In unnormalized terms at *b* − *c* = 8.0:
 
 ### The asymmetry onset
 
-At low *b* − *c* (< 0.125), both populations are symmetric: mostly defectors with ~4–5% cooperation. The asymmetry grows continuously and is already pronounced by *b* − *c* = 0.5 (ΔqBSeen = 0.151). There is no sharp threshold — unlike the Prisoner's Dilemma where cooperation shows a bimodal phase transition near R ≈ P. Instead, the Hamilton game produces a **gradual** symmetry breaking as *b* − *c* increases.
+At low *b* − *c* (< 0.125), both populations are symmetric: mostly defectors with ~4–5% cooperation. The asymmetry grows continuously and is already pronounced by *b* − *c* = 0.5 (ΔqBSeen = 0.151). There is no sharp threshold — unlike the Prisoner's Dilemma where cooperation shows a bimodal phase transition near **R ≈ P**. Instead, the Hamilton game produces a **gradual** symmetry breaking as *b* − *c* increases.
 
-Single-run data (hamilton_1run) confirms that this gradual transition is **genuine, not an averaging artifact**: each *b* − *c* value shows a stable intermediate cooperation level that persists across all 9 timesteps (std typically 2–8%), not all-or-nothing jumps that average into a gradient. The cooperation rises smoothly from ~0.04 at low *b* − *c* through ~0.34 at *b* − *c* = 0.18 to 0.58–0.85 at high *b* − *c*. Hamilton's constant T − R = 1 keeps a persistent temptation to defect at every parameter value, unlike the PD where varying T − R can approach zero and create sharper bistability boundaries.
+Single-run data (hamilton_1run) confirms that this gradual transition is **genuine, not an averaging artifact**: each *b* − *c* value shows a stable intermediate cooperation level that persists across all 9 timesteps (std typically 2–8%), not all-or-nothing jumps that average into a gradient. The cooperation rises smoothly from ~0.04 at low *b* − *c* through ~0.34 at *b* − *c* = 0.18 to 0.58–0.85 at high *b* − *c*. Hamilton's constant **T − R = 1** keeps a persistent temptation to defect at every parameter value, unlike the PD where varying **T − R** can approach zero and create sharper bistability boundaries.
 
 ### The paradox of success
 
@@ -244,7 +244,7 @@ The direction of exploitation reverses as cooperation increases in the evolving 
 | 2.000     | 0.254         | 0.328      | −0.073 | 0.702           |
 | 4.000     | 0.327         | 0.548      | −0.221 | 0.907           |
 
-The crossover occurs near **b − c ≈ 1.0** (Δw̄ ≈ +0.004), precisely where the evolving population's cooperation level (~0.49) matches the fixed population's (0.50).
+The crossover occurs near *b* − *c* ≈ 1.0 (Δw̄ ≈ +0.004), precisely where the evolving population's cooperation level (~0.49) matches the fixed population's (0.50).
 
 **When *b* − *c* < 1.0**: The evolving population is mostly defectors. Its defectors exploit the fixed population's cooperators (who are 50% of the fixed pop). The evolving population has higher fitness.
 
@@ -260,7 +260,7 @@ Shuffle matters little: the next step re-applies the same swap logic (Key Defini
 
 ## Comparison with Prisoner's Dilemma
 
-Both studies share T > R > P > S and choose_partner.c (Hamilton = mechanism **P** only; binary qBSeen — Overview). Hamilton fixes **T − R = P − S = 1** and varies only **R − P = *b* − *c***.
+Both studies share **T > R > P > S** and choose_partner.c (Hamilton = mechanism **P** only; binary qBSeen — Overview). Hamilton fixes **T − R = P − S = 1** and varies only **R − P = *b* − *c***.
 
 ### Same phenomena
 
@@ -280,38 +280,38 @@ Both studies share T > R > P > S and choose_partner.c (Hamilton = mechanism **P*
 
 Using the Hamilton branch equations from calculate_derived_globals.c (given < 1.5), with k0 = 2 and k1 = 1:
 
-- b = k1 + (b - c) = 1 + (b - c)
-- T = k0 + g*b = 2 + g(1 + (b - c))
-- R = k0 + b - k1 = 2 + (b - c)
-- P = k0 = 2
-- S = k0 + (1-g)b - k1 = 1 + (1-g)(1 + (b - c))
+- *b* = k1 + (*b* − *c*) = 1 + (*b* − *c*)
+- **T** = k0 + g * *b* = 2 + g(1 + (*b* − *c*))
+- **R** = k0 + *b* - k1 = 2 + (*b* − *c*)
+- **P** = k0 = 2
+- **S** = k0 + (1-g)*b* - k1 = 1 + (1-g)(1 + (*b* − *c*))
 
 At g = 0.5, this becomes:
 
 | Payoff         | Formula           |
 | -------------- | ----------------- |
-| **T** (Temptation) | 2.5 + 0.5(b - c)  |
-| **R** (Reward)     | 2 + (b - c)       |
+| **T** (Temptation) | 2.5 + 0.5(*b* − *c*)  |
+| **R** (Reward)     | 2 + (*b* − *c*)       |
 | **P** (Punishment) | 2                 |
-| **S** (Sucker)     | 1.5 + 0.5(b - c)  |
+| **S** (Sucker)     | 1.5 + 0.5(*b* − *c*)  |
 
-So T - R = P - S = 0.5(1 - (b - c)), giving a clean regime split at b - c = 1:
+So **T − R = P − S = 0.5(1 − (*b* − *c*))**, giving a clean regime split at *b* − *c* = 1:
 
-- b - c < 1: T > R > P > S (PD)
-- b - c = 1: T = R > P = S (boundary)
-- b - c > 1: R > T > S > P (harmony-like)
+- *b* − *c* < 1: **T > R > P > S** (PD)
+- *b* − *c* = 1: **T = R > P = S** (boundary)
+- *b* − *c* > 1: **R > T > S > P** (harmony-like)
 
 On the 21-point Hamilton grid (shuffle_cost12_128, mechanism P, given = 0.5), the cells are:
 
 | Regime                       | Cells |
 | ---------------------------- | ----- |
-| T > R > P > S (PD)           | 14    |
-| T = R > P = S (boundary)     | 1     |
-| R > T > S > P (harmony-like) | 6     |
+| **T > R > P > S** (PD)           | 14    |
+| **T = R > P = S** (boundary)     | 1     |
+| **R > T > S > P** (harmony-like) | 6     |
 
 ## Why g = 0.5 Helps Interpret g = 1.0
 
-The g = 0.5 sweep provides an internal calibration for interpretation: the same model and mechanism (P) traverses both PD-like and harmony-like local games, with the transition exactly where the payoff ordering predicts (b-c = 1). Observed shifts in qBSeen, fitness asymmetry, and chooser composition follow that regime boundary, supporting that the analysis logic is causal (payoff structure -> partner-choice bottleneck/exploitation -> outcomes), not a plotting artifact.
+The g = 0.5 sweep provides an internal calibration for interpretation: the same model and mechanism (P) traverses both PD-like and harmony-like local games, with the transition exactly where the payoff ordering predicts (*b* − *c* = 1). Observed shifts in qBSeen, fitness asymmetry, and chooser composition follow that regime boundary, supporting that the analysis logic is causal (payoff structure -> partner-choice bottleneck/exploitation -> outcomes), not a plotting artifact.
 
 This strengthens confidence in the g = 1.0 reading: although g = 1.0 stays in the dilemma family, the same bottleneck and exploitation logic explains the observed gradients and asymmetries there as well. For reusable validation steps (payoff derivation, regime map, signature checks, movie confirmation), see instructions.md §6.
 
