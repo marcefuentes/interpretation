@@ -1,8 +1,8 @@
 # Mutualism — Partner Choice (P) Analysis
 
-Study: `mutualism`, mechanism `P`, given = 1.0, pop_2 only.
+Study: mutualism, mechanism P, given = 1.0, pop_2 only.
 
-Reference: `instructions_mutualism.md` for game parameters and payoff structure; `instructions.md` for shared model.
+Reference: instructions_mutualism.md for game parameters and payoff structure; instructions.md for shared model.
 
 ---
 
@@ -10,9 +10,9 @@ Reference: `instructions_mutualism.md` for game parameters and payoff structure;
 
 The mutualism study generalizes Hamilton from a 1D axis (*b* − *c*) to a 2D triangular grid where the two coevolving populations can have **different** benefit-cost parameters (*b*₀ − *c* and *b*₁ − *c*). The diagonal (*b*₀ − *c* = *b*₁ − *c*) **is** Hamilton (same game — **Diagonal: Consistency with Hamilton**).
 
-**Cross-benefit payoffs** and the **bottleneck** story are developed once in the next sections; the **Summary** table lists the main **percentages and correlations** for quick reference. For **P**-mechanism definitions, see **`instructions.md`** and **`instructions_mutualism.md`**.
+**Cross-benefit payoffs** and the **bottleneck** story are developed once in the next sections; the **Summary** table lists the main **percentages and correlations** for quick reference. For **P**-mechanism definitions, see **instructions.md** and **instructions_mutualism.md**.
 
-**Groupsize.** Grid cooperation levels and tables below use **`shuffle_cost12_128`**. **`shuffle_cost12_4`** collapses **`qBSeen`** relative to **128** on the same parameter grid (cross-benefit and **bottleneck** logic still apply; **numeric** claims do not). See **`hamilton.md`** for **`hamilton_1run`** end-state and **movie** detail.
+**Groupsize.** Grid cooperation levels and tables below use **shuffle_cost12_128**. **shuffle_cost12_4** collapses **qBSeen** relative to **128** on the same parameter grid (cross-benefit and **bottleneck** logic still apply; **numeric** claims do not). See **hamilton.md** for **hamilton_1run** end-state and **movie** detail.
 
 The key structural difference: each population's **R − P** is set by the **partner's** *b* − *c*. Since *b*₁ − *c* ≥ *b*₀ − *c*, population 0 always has at least as strong a cooperation incentive as population 1.
 
@@ -28,13 +28,13 @@ Pop_1's qBSeen stays low across most of the grid (typically below 0.15 off-diago
 
 ### The control baseline
 
-Without mechanisms (control `_`), mean qBSeen ≈ 0.02 for both populations across the entire grid — cooperation cannot self-sustain at *g* = 1.0. All cooperation in the P mechanism is driven by partner choice.
+Without mechanisms (control _), mean qBSeen ≈ 0.02 for both populations across the entire grid — cooperation cannot self-sustain at *g* = 1.0. All cooperation in the P mechanism is driven by partner choice.
 
 ---
 
 ## Cross-Benefit Payoffs and Deterministic Role Assignment
 
-From the simulation source (`calculate_derived_globals.c`), at *g* = 1.0 the payoff structure is:
+From the simulation source (calculate_derived_globals.c), at *g* = 1.0 the payoff structure is:
 
 - Pop_0: R₀ − P₀ = *b*₁ − *c* (partner's parameter)
 - Pop_1: R₁ − P₁ = *b*₀ − *c* (partner's parameter)
@@ -85,7 +85,7 @@ In the high-cooperation region (*b*₀ − *c* ≥ 1.0, off-diagonal):
 
 As *b*₀ − *c* increases toward the diagonal, C1P0 grows from ~0.02 (at *b*₀ − *c* = 0.008) to ~0.14 (at *b*₀ − *c* = 5.66), matching Hamilton's pattern: at high *R* − *P*, a small chooser subpopulation can support a high-cooperation regime, so the P1 allele is **diluted** (many C1P0) even though partner choice still underwrites the pool.
 
-**Grid averages only** here (no full **`*_1run`** triangle). The **diagonal** is **`hamilton_1run`** territory for dynamics; off-diagonal **mutualism** would need its own timed runs mainly for **bottleneck** timing — **`hamilton.md`** / **`prisoners.md`** for invasion vs equilibrium methodology; **end-of-run–only** dense output if timestep count grows.
+**Grid averages only** here (no full ***_1run** triangle). The **diagonal** is **hamilton_1run** territory for dynamics; off-diagonal **mutualism** would need its own timed runs mainly for **bottleneck** timing — **hamilton.md** / **prisoners.md** for invasion vs equilibrium methodology; **end-of-run–only** dense output if timestep count grows.
 
 ### Pop_1 (defector)
 
@@ -97,8 +97,8 @@ Pop_1 is dominated by defectors: C0P1 (mean 0.46) and C0P0 (mean 0.43). The P1 a
 
 On the diagonal (*b*₀ − *c* = *b*₁ − *c*), the game is identical to Hamilton. However, direct comparison of averaged qBSeen values is misleading because the file set assignment differs:
 
-- **Hamilton**: `_0` = higher qBSeen (post-hoc sorted) → artificially separates cooperator and defector across runs
-- **Mutualism**: `_0` and `_1` assigned randomly → averaging over runs blurs the asymmetry
+- **Hamilton**: _0 = higher qBSeen (post-hoc sorted) → artificially separates cooperator and defector across runs
+- **Mutualism**: _0 and _1 assigned randomly → averaging over runs blurs the asymmetry
 
 At *b* − *c* = 8.0:
 - Hamilton (sorted): qBSeen₀ = 0.93, qBSeen₁ = 0.20
@@ -120,49 +120,49 @@ The fitness gap widens with asymmetry. At extreme parameter ratios (*b*₁ − *
 
 ## Given = 0.5: Correct Game-Type Classification
 
-Using the exact Hamilton-branch payoffs from `calculate_derived_globals.c` (`given < 1.5`), for a focal population with own `x_self = b-c` and partner `x_partner`:
+Using the exact Hamilton-branch payoffs from calculate_derived_globals.c (given < 1.5), for a focal population with own x_self = b − c and partner x_partner:
 
-- `T = 2 + 0.5(1 + x_partner)`
-- `R = 2 + 0.5(x_self + x_partner)`
-- `P = 2`
-- `S = 1 + 0.5(1 + x_self)`
+- T = 2 + 0.5(1 + x_partner)
+- R = 2 + 0.5(x_self + x_partner)
+- P = 2
+- S = 1 + 0.5(1 + x_self)
 
 Equivalent differences:
 
-- `T - R = 0.5(1 - x_self)`
-- `P - S = 0.5(1 - x_self)`
-- `R - S = 0.5(1 + x_partner)`
+- T − R = 0.5(1 - x_self)
+- P − S = 0.5(1 - x_self)
+- R − S = 0.5(1 + x_partner)
 
-So the focal game family is controlled by `x_self` around 1.0, while cross-population asymmetry (`x_partner` vs `x_self`) can yield additional orderings beyond simple PD/harmony.
+So the focal game family is controlled by x_self around 1.0, while cross-population asymmetry (x_partner vs x_self) can yield additional orderings beyond simple PD/harmony.
 
-On the triangular mutualism grid (`shuffle_cost12_128`, mechanism `P`, `given = 0.5`, 231 cells):
+On the triangular mutualism grid (shuffle_cost12_128, mechanism P, given = 0.5, 231 cells):
 
-### Population 0 (`x_self = x0`, `x_partner = x1`, with `x1 >= x0`)
-
-| Ordering | Cells |
-| -------- | ----- |
-| `T > R > P > S` | 203 |
-| `R > T > S > P` | 21 |
-| `T = R > P = S` | 6 |
-| `R = T > P = S` | 1 |
-
-### Population 1 (`x_self = x1`, `x_partner = x0`)
+### Population 0 (x_self = x0, x_partner = x1, with x1 >= x0)
 
 | Ordering | Cells |
 | -------- | ----- |
-| `T > R > P > S` | 105 |
-| `R > S > T > P` | 68 |
-| `R > T > S > P` | 42 |
-| `T = R > P = S` | 15 |
-| `R > T = S > P` | 1 |
+| T > R > P > S | 203 |
+| R > T > S > P | 21 |
+| T = R > P = S | 6 |
+| R = T > P = S | 1 |
 
-This corrects the simplified two-regime view: at `given = 0.5`, mutualism includes a large `R > S > T > P` region (especially for population 1) created by cross-benefit asymmetry.
+### Population 1 (x_self = x1, x_partner = x0)
 
-## Why `g = 0.5` Helps Interpret `g = 1.0`
+| Ordering | Cells |
+| -------- | ----- |
+| T > R > P > S | 105 |
+| R > S > T > P | 68 |
+| R > T > S > P | 42 |
+| T = R > P = S | 15 |
+| R > T = S > P | 1 |
 
-The `g = 0.5` results show directly that mutualism cannot be interpreted as one global game type across the triangle: local orderings differ by cell and by population. Once those local regimes are mapped, the observed cooperation and fitness asymmetries become predictable from the cross-benefit structure and chooser bottleneck. This provides a stronger causal baseline for reading `g = 1.0`, where the same mechanisms operate but with a different regime mix.
+This corrects the simplified two-regime view: at given = 0.5, mutualism includes a large R > S > T > P region (especially for population 1) created by cross-benefit asymmetry.
 
-In short, `g = 0.5` functions as a diagnostic case that validates the interpretation framework used at `g = 1.0` (local payoff ordering -> genotype bottlenecks -> `qBSeen`/`wmean` patterns). For the reusable workflow, see `instructions.md` §6.
+## Why g = 0.5 Helps Interpret g = 1.0
+
+The g = 0.5 results show directly that mutualism cannot be interpreted as one global game type across the triangle: local orderings differ by cell and by population. Once those local regimes are mapped, the observed cooperation and fitness asymmetries become predictable from the cross-benefit structure and chooser bottleneck. This provides a stronger causal baseline for reading g = 1.0, where the same mechanisms operate but with a different regime mix.
+
+In short, g = 0.5 functions as a diagnostic case that validates the interpretation framework used at g = 1.0 (local payoff ordering -> genotype bottlenecks -> qBSeen/wmean patterns). For the reusable workflow, see instructions.md §6.
 
 ## Summary
 

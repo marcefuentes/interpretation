@@ -1,6 +1,6 @@
 # Prisoner's Dilemma — Game-Specific Instructions
 
-**Prerequisite**: Read `instructions.md` first for the shared simulation model.
+**Prerequisite**: Read instructions.md first for the shared simulation model.
 
 ---
 
@@ -24,37 +24,37 @@ Three independent gaps vary simultaneously, making the PD a 2D parameter explora
 
 ## 2. Loci and Genotypes
 
-The prisoners study uses **6 loci** (C, I, J, M, P, Q) → **64 genotype columns** per .con file. Genotype column names: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1` (alphabetical order after C).
+The prisoners study uses **6 loci** (C, I, J, M, P, Q) → **64 genotype columns** per .con file. Genotype column names: C0I0J0M0P0Q0 through C1I1J1M1P1Q1 (alphabetical order after C).
 
 ---
 
 ## 3. Results Path
 
-```
-~/results/prisoners/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
-```
 
-Example: `~/results/prisoners/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con`
+~/results/prisoners/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
+
+
+Example: ~/results/prisoners/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con
 
 ---
 
 ## 4. Data Format (Current)
 
 CSV columns:
-- `T0, R0, P0, S0, T1, R1, P1, S1` — payoff matrix parameters per population (T0=T1=1.0, S0=S1=0.1 constant; R0=R1, P0=P1 vary)
-- `Time` — simulation timestep
-- `wmean, wmeanSD, wsd, wsdSD` — population mean fitness and stdev (with SD columns)
-- `qBSeen, qBSeenSD` — cooperation probability
-- 64 genotype columns — 6 loci in alphabetical order C, I, J, M, P, Q: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1`
-- Each genotype column has a corresponding `SD` column
+- T0, R0, P0, S0, T1, R1, P1, S1 — payoff matrix parameters per population (T0=T1=1.0, S0=S1=0.1 constant; R0=R1, P0=P1 vary)
+- Time — simulation timestep
+- wmean, wmeanSD, wsd, wsdSD — population mean fitness and stdev (with SD columns)
+- qBSeen, qBSeenSD — cooperation probability
+- 64 genotype columns — 6 loci in alphabetical order C, I, J, M, P, Q: C0I0J0M0P0Q0 through C1I1J1M1P1Q1
+- Each genotype column has a corresponding SD column
 
-**Note**: The column `P1` (8th column) is a game parameter (population 1's P payoff), not to be confused with the P1 allele frequency. To compute allele frequencies, sum genotype columns — see §5.
+**Note**: The column P1 (8th column) is a game parameter (population 1's P payoff), not to be confused with the P1 allele frequency. To compute allele frequencies, sum genotype columns — see §5.
 
 ---
 
 ## 5. Loading and Analysis
 
-```python
+python
 import pandas as pd
 
 df = pd.read_csv('csv_0_for_image.con')
@@ -84,13 +84,13 @@ print(f"Max at R={row['R0']:.2f}, P={row['P0']:.2f}")
 # Correlation with R-P
 df['R_minus_P'] = df['R0'] - df['P0']
 print(df['TRAIT'].corr(df['R_minus_P']))
-```
+
 
 ---
 
 ## 6. Figure Panel Mapping (s07)
 
-MAIN_ROWS in `manifest.py` defines 5 rows:
+MAIN_ROWS in manifest.py defines 5 rows:
 
 | Row   | Panels   | Population   | File_set   | Notes               |
 | ----- | -------- | ------------ | ---------- | ------------------- |
@@ -100,7 +100,7 @@ MAIN_ROWS in `manifest.py` defines 5 rows:
 | 3     | g, h     | pop_3        | _1         | Fixed population    |
 | 4     | i, j     | pop_1        | _0         | Single population   |
 
-For mechanism `P`, typical traits per column: P1, Choosers, qBSeen, wmean.
+For mechanism P, typical traits per column: P1, Choosers, qBSeen, wmean.
 
 Each panel is a **heatmap** with R on the y-axis and P on the x-axis (imshow renderer).
 
@@ -108,11 +108,11 @@ Each panel is a **heatmap** with R on the y-axis and P on the x-axis (imshow ren
 
 ## 7. Key Findings
 
-See `prisoners.md` for full analysis.
+See prisoners.md for full analysis.
 
 ### Single-run variant
 
-The `prisoners_1run` study uses the same parameters and path structure but runs a single simulation instead of averaging over multiple runs. Use it to track temporal dynamics — e.g., whether cooperation and defection cycle over time — that are smoothed out in the main study's averaged results. Summary:
+The prisoners_1run study uses the same parameters and path structure but runs a single simulation instead of averaging over multiple runs. Use it to track temporal dynamics — e.g., whether cooperation and defection cycle over time — that are smoothed out in the main study's averaged results. Summary:
 
 1. **P1 hitchhiking (pop_3)**: P1 frequency peaks at intermediate R−P, not where selection is strongest, because C0P1 accumulates as a neutral carrier via mutation from C1P1.
 

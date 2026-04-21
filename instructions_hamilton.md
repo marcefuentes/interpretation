@@ -1,6 +1,6 @@
 # Hamilton Altruism Game — Game-Specific Instructions
 
-**Prerequisite**: Read `instructions.md` first for the shared simulation model.
+**Prerequisite**: Read instructions.md first for the shared simulation model.
 
 ---
 
@@ -18,13 +18,13 @@ The Hamilton altruism game is parameterized by benefit *b*, cost *c*, and given 
 | *B*_max     | 9.0         | Maximum benefit (for fitness normalization)                       |
 | groupsize   | 128         | Individuals per group from each population                        |
 
-Constants defined in `../graph/graphgen/studies/hamilton/theory.py`: B_MAX = 9.0, C_MIN = 1.0, K = 2.0.
+Constants defined in ../graph/graphgen/studies/hamilton/theory.py: B_MAX = 9.0, C_MIN = 1.0, K = 2.0.
 
 ---
 
 ## 2. Equivalent Prisoner's Dilemma Payoffs
 
-From `calculate_derived_globals.c`, the Hamilton game at *g* = 1.0 maps exactly to a Prisoner's Dilemma. With `x = b−c`, `b0 = k1 + x`, and `given = 1`:
+From calculate_derived_globals.c, the Hamilton game at *g* = 1.0 maps exactly to a Prisoner's Dilemma. With x = b−c, b0 = k1 + x, and given = 1:
 
 | Payoff             | Formula         | Derivation                               |
 | ------------------ | --------------- | ---------------------------------------- |
@@ -76,40 +76,40 @@ Without mechanisms at *g* = 1.0, theory predicts zero cooperation: (1−*g*)·*b
 
 ## 4. Loci and Genotypes
 
-The Hamilton study uses **6 loci** (C, I, J, M, P, Q) → **64 genotype columns** per .con file. Genotype column names: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1` (alphabetical order).
+The Hamilton study uses **6 loci** (C, I, J, M, P, Q) → **64 genotype columns** per .con file. Genotype column names: C0I0J0M0P0Q0 through C1I1J1M1P1Q1 (alphabetical order).
 
 ---
 
 ## 5. Results Path
 
-```
-~/results/hamilton/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
-```
 
-Example: `~/results/hamilton/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con`
+~/results/hamilton/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
+
+
+Example: ~/results/hamilton/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con
 
 ---
 
 ## 6. Data Format (Current)
 
 CSV columns:
-- `k, b_c_0, b_c_1` — game parameters (k = baseline fitness; b_c_0, b_c_1 = benefit − cost for each population)
-- `Time` — simulation timestep
-- `wmean, wsd` — population mean fitness and stdev
-- `qBSeen, qBSeenSD` — cooperation probability
-- 64 genotype columns — all combinations of 6 loci, alphabetical: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1`
-- Each genotype column has a corresponding `SD` column
-- **No derived trait columns** — compute from genotypes (see `instructions.md` §4.4)
+- k, b_c_0, b_c_1 — game parameters (k = baseline fitness; b_c_0, b_c_1 = benefit − cost for each population)
+- Time — simulation timestep
+- wmean, wsd — population mean fitness and stdev
+- qBSeen, qBSeenSD — cooperation probability
+- 64 genotype columns — all combinations of 6 loci, alphabetical: C0I0J0M0P0Q0 through C1I1J1M1P1Q1
+- Each genotype column has a corresponding SD column
+- **No derived trait columns** — compute from genotypes (see instructions.md §4.4)
 
 ---
 
 ## 7. Loading and Analysis
 
-```python
+python
 import pandas as pd
 
 df = pd.read_csv('csv_0_for_image.con')
-# Keep only final timestep per b-c cell
+# Keep only final timestep per b − c cell
 df = df.sort_values('Time').groupby(['b_c_0']).last().reset_index()
 
 # Compute derived traits (64-genotype format, 6 loci)
@@ -123,16 +123,16 @@ df['C1P0'] = df[c1p0_cols].sum(axis=1)  # cooperators who don't choose
 df['P1'] = df['C1P1'] + df['C0P1']
 df['AllC'] = df['C1P0']  # = qBSeen - C1P1
 
-# Line plot (b-c on x-axis, log scale)
+# Line plot (b − c on x-axis, log scale)
 import matplotlib.pyplot as plt
 plt.semilogx(df['b_c_0'], df['qBSeen'], label='qBSeen')
-```
+
 
 ---
 
 ## 8. Figure Panel Mapping (s07)
 
-MAIN_ROWS in `manifest.py` defines 3 rows. Hamilton uses multi-line sources (both file sets plotted as separate lines per panel):
+MAIN_ROWS in manifest.py defines 3 rows. Hamilton uses multi-line sources (both file sets plotted as separate lines per panel):
 
 | Row   | Panels   | Population   | Lines                                | Colors                               |
 | ----- | -------- | ------------ | ------------------------------------ | ------------------------------------ |
@@ -142,17 +142,17 @@ MAIN_ROWS in `manifest.py` defines 3 rows. Hamilton uses multi-line sources (bot
 
 Each panel is a **line plot** (plot renderer) with *b* − *c* on the x-axis (log scale).
 
-For mechanism `P`, typical traits per column: P1, Choose (= C1P1), qBSeen, wmean.
+For mechanism P, typical traits per column: P1, Choose (= C1P1), qBSeen, wmean.
 
 ---
 
 ## 9. Key Findings
 
-See `hamilton.md` for full analysis.
+See hamilton.md for full analysis.
 
 ### Single-run variant
 
-The `hamilton_1run` study uses the same parameters and path structure but runs a single simulation instead of averaging over multiple runs. Use it to track temporal dynamics — e.g., whether cooperation and defection cycle over time — that are smoothed out in the main study's averaged results. Summary:
+The hamilton_1run study uses the same parameters and path structure but runs a single simulation instead of averaging over multiple runs. Use it to track temporal dynamics — e.g., whether cooperation and defection cycle over time — that are smoothed out in the main study's averaged results. Summary:
 
 1. **P1 hitchhiking (all populations)**: P1 peaks at lower R−P than C1P1 because neutral C0P1 carriers inflate P1 in the transition zone. Same mechanism as PD.
 

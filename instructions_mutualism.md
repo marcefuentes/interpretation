@@ -1,6 +1,6 @@
 # Mutualism Game — Game-Specific Instructions
 
-**Prerequisite**: Read `instructions.md` first for the shared simulation model.
+**Prerequisite**: Read instructions.md first for the shared simulation model.
 
 ---
 
@@ -20,7 +20,7 @@ The mutualism game uses the same Hamilton altruism payoff structure but allows t
 
 The parameter space is a **triangular matrix**: only cells where *b*₁ − *c* ≥ *b*₀ − *c* are simulated (21 × 21 grid, 231 cells). The **diagonal** (*b*₀ − *c* = *b*₁ − *c*) is the Hamilton-equivalent special case where both populations face the same game.
 
-Constants: same as Hamilton — `B_MAX = 9.0`, `C_MIN = 1.0`, `K = 2.0` (from `theory.py`).
+Constants: same as Hamilton — B_MAX = 9.0, C_MIN = 1.0, K = 2.0 (from theory.py).
 
 ---
 
@@ -28,7 +28,7 @@ Constants: same as Hamilton — `B_MAX = 9.0`, `C_MIN = 1.0`, `K = 2.0` (from `t
 
 The critical difference from Hamilton is that the two populations exchange **different** benefits. When population *i* cooperates, it produces benefit *b*_*i* and gives it to its partner from the other population. Each population's payoff therefore depends on the **partner's** *b* − *c*, not its own.
 
-From `calculate_derived_globals.c`, at *g* = 1.0, with `x0 = b0−c`, `x1 = b1−c`, `b0 = k1 + x0`, and `b1 = k1 + x1`:
+From calculate_derived_globals.c, at *g* = 1.0, with x0 = b0−c, x1 = b1−c, b0 = k1 + x0, and b1 = k1 + x1:
 
 ### Population 0's payoff matrix (receives *b*₁ from partner)
 
@@ -60,7 +60,7 @@ Since *b*₁ − *c* ≥ *b*₀ − *c* by construction (triangular matrix), **p
 
 ### Comparison with Hamilton
 
-Hamilton is the diagonal of mutualism: *b*₀ − *c* = *b*₁ − *c*, so both populations face identical payoffs and R − P is equal. In Hamilton, which population cooperates is random (stochastic symmetry breaking). In mutualism off-diagonal, the payoff asymmetry makes role assignment deterministic (§3 of `mutualism.md`).
+Hamilton is the diagonal of mutualism: *b*₀ − *c* = *b*₁ − *c*, so both populations face identical payoffs and R − P is equal. In Hamilton, which population cooperates is random (stochastic symmetry breaking). In mutualism off-diagonal, the payoff asymmetry makes role assignment deterministic (§3 of mutualism.md).
 
 ---
 
@@ -68,23 +68,23 @@ Hamilton is the diagonal of mutualism: *b*₀ − *c* = *b*₁ − *c*, so both 
 
 Mutualism uses **only pop_2** (two coevolving populations). No pop_1 or pop_3 scenarios.
 
-**File set assignment**: Unlike Hamilton (where `_0` = higher qBSeen, `_1` = lower qBSeen), mutualism assigns `_0` and `_1` **randomly** — they are not sorted by cooperation level. The manifest labels them as "Population 0" and "Population 1", with population 1 having higher *b*₁ − *c* values.
+**File set assignment**: Unlike Hamilton (where _0 = higher qBSeen, _1 = lower qBSeen), mutualism assigns _0 and _1 **randomly** — they are not sorted by cooperation level. The manifest labels them as "Population 0" and "Population 1", with population 1 having higher *b*₁ − *c* values.
 
 ---
 
 ## 4. Loci and Genotypes
 
-Same as Hamilton: **6 loci** (C, I, J, M, P, Q) → **64 genotype columns**. Column names: `C0I0J0M0P0Q0` through `C1I1J1M1P1Q1`.
+Same as Hamilton: **6 loci** (C, I, J, M, P, Q) → **64 genotype columns**. Column names: C0I0J0M0P0Q0 through C1I1J1M1P1Q1.
 
 ---
 
 ## 5. Results Path
 
-```
-~/results/mutualism/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
-```
 
-Example: `~/results/mutualism/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con`
+~/results/mutualism/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
+
+
+Example: ~/results/mutualism/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con
 
 Available given values: 0.5, 1.0, 1.5 (only *g* = 1.0 analyzed here).
 
@@ -93,10 +93,10 @@ Available given values: 0.5, 1.0, 1.5 (only *g* = 1.0 analyzed here).
 ## 6. Data Format
 
 Same as Hamilton (current 64-genotype format). CSV columns:
-- `k, b_c_0, b_c_1` — game parameters
-- `Time` — simulation timestep
-- `wmean, wsd` — population mean fitness and stdev
-- `qBSeen` — cooperation probability
+- k, b_c_0, b_c_1 — game parameters
+- Time — simulation timestep
+- wmean, wsd — population mean fitness and stdev
+- qBSeen — cooperation probability
 - 64 genotype columns + SD columns
 
 231 rows per file (triangular matrix, one per parameter cell).
@@ -105,7 +105,7 @@ Same as Hamilton (current 64-genotype format). CSV columns:
 
 ## 7. Loading and Analysis
 
-```python
+python
 import pandas as pd
 import numpy as np
 
@@ -130,13 +130,13 @@ m = d0[['b_c_0','b_c_1','qBSeen','wmean','C1P1','C1P0']].merge(
 # Heatmap (b_c_1 on y-axis descending, b_c_0 on x-axis)
 pivot = m.pivot(index='b_c_1', columns='b_c_0', values='qBSeen_0')
 pivot = pivot.reindex(index=sorted(pivot.index, reverse=True))
-```
+
 
 ---
 
 ## 8. Figure Panel Mapping (s07)
 
-MAIN_ROWS in `manifest.py` defines 2 rows:
+MAIN_ROWS in manifest.py defines 2 rows:
 
 | Row   | Panels   | Population   | File_set   | Notes                            |
 | ----- | -------- | ------------ | ---------- | -------------------------------- |
@@ -151,4 +151,4 @@ Legend footer: "Population 1 has higher values of (*b* − *c*)."
 
 ## 9. Key Findings
 
-See `mutualism.md` for full analysis.
+See mutualism.md for full analysis.
