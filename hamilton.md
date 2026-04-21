@@ -290,10 +290,12 @@ Using the Hamilton branch equations from `calculate_derived_globals.c` (`given <
 
 At `g = 0.5`, this becomes:
 
-- `T = 2.5 + 0.5(b - c)`
-- `R = 2 + (b - c)`
-- `P = 2`
-- `S = 1.5 + 0.5(b - c)`
+| Payoff | Formula |
+| ------ | ------- |
+| **T** (Temptation) | `2.5 + 0.5(b - c)` |
+| **R** (Reward) | `2 + (b - c)` |
+| **P** (Punishment) | `2` |
+| **S** (Sucker) | `1.5 + 0.5(b - c)` |
 
 So `T - R = P - S = 0.5(1 - (b - c))`, giving a clean regime split at `b - c = 1`:
 
