@@ -78,9 +78,9 @@ Fitness is normalized as (*K* + *w*) / (*K* + *B*\_max) = (*K* + *w*) / 11. With
 | ------ | --------------------------------------------------------------------- |
 | C1P1   | Cooperators who choose partners ("Choosers")                          |
 | C0P1   | Defectors carrying P1 (P1 is **silent** — they don't actually choose)     |
-| C1P0   | Cooperators who don't choose partners ("non-chooser cooperators"); **free-riders** in the behavioral sense below |
+| C1P0   | Cooperators who don't choose partners ("non-chooser cooperators")     |
 | P1     | Total frequency of P1 allele = C0P1 + C1P1                            |
-| qBSeen | **In tables and figures:** population cooperation rate (= C1P1 + C1P0). **Per individual (P only):** fixed 1 if C1, 0 if C0 — no reciprocity, so it never drifts between rounds. |
+| qBSeen | **In tables and figures:** population cooperation rate (= C1P1 + C1P0).   |
 | AllC   | Frequency of C1P0 (cooperators without partner choice)                |
 | w̄      | Normalized mean fitness                                               |
 
@@ -278,9 +278,9 @@ Both studies share T > R > P > S and `choose_partner.c` (Hamilton = mechanism **
 3. **High R − P**: C1P0 share **~33%** of cooperators at **R − P = 8** vs **9%** at 0.25 — sparse choosers (**pop_1** table); **R/P = 5** at *b* − *c* = 8 (payoffs in **The Game**).
 4. **Exploitation ratio at R − P = 8**: **3.56×** fitness (Hamilton **T** up to **11** vs PD’s compressed scale).
 
-## Given = 0.5: Correct Game-Type Classification
+## Given = 0.5: Game-Type Classification
 
-Using the exact Hamilton branch equations from `calculate_derived_globals.c` (`given < 1.5`), with `k0 = 2`, `k1 = 1`, and `x = b - c`:
+Using the Hamilton branch equations from `calculate_derived_globals.c` (`given < 1.5`), with `k0 = 2`, `k1 = 1`, and `x = b - c`:
 
 - `b = k1 + x = 1 + x`
 - `T = k0 + g*b = 2 + g(1 + x)`
