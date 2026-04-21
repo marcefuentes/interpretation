@@ -189,6 +189,8 @@ Use this workflow whenever analyzing a new given (for example 0.5, 1.0, 1.5) so 
 
 Always derive payoffs from ~/code/trps/code/src/modules/calculate_derived_globals.c.
 
+Important scope rule: do not assume the biological meaning of given is universal across branches. In the Hamilton benefit branch (given < 1.5), given is part of the biological payoff weighting; in the snowdrift/cost branch (given >= 1.5), the equations change and given primarily selects a different payoff parameterization.
+
 For the Hamilton branch (given < 1.5), with x_i = b_i - c, b_i = k1 + x_i:
 
 - Population 0:

@@ -315,6 +315,8 @@ The g = 0.5 sweep provides an internal calibration for interpretation: the same 
 
 This strengthens confidence in the g = 1.0 reading: although g = 1.0 stays in the dilemma family, the same bottleneck and exploitation logic explains the observed gradients and asymmetries there as well. For reusable validation steps (payoff derivation, regime map, signature checks, movie confirmation), see instructions.md §6.
 
+Scope note from the snowdrift extension: these g-based biological interpretations apply to the Hamilton benefit branch (given < 1.5), where g directly weights how much partner benefit enters T/R/S. At given >= 1.5, the code switches to the cost/snowdrift branch with different equations; there, given functions as a branch selector rather than the same biological mixing parameter used in this document.
+
 ## Summary
 
 | Topic                  | Main numbers (detail in sections above)                                                            |

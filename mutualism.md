@@ -164,6 +164,8 @@ The g = 0.5 results show directly that mutualism cannot be interpreted as one gl
 
 In short, g = 0.5 functions as a diagnostic case that validates the interpretation framework used at g = 1.0 (local payoff ordering -> genotype bottlenecks -> qBSeen/wmean patterns). For the reusable workflow, see instructions.md §6.
 
+Scope note from the snowdrift extension: the interpretation above is specific to the Hamilton/mutualism benefit branch (given < 1.5), where g has direct biological meaning in the payoff construction. In the snowdrift branch (given >= 1.5), calculate_derived_globals.c uses different cost-based equations and removes this same cross-benefit g interpretation, so conclusions must be re-derived rather than transferred.
+
 ## Summary
 
 | Topic | Headline figures (detail above) |
