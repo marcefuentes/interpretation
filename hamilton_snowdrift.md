@@ -63,8 +63,8 @@ On the 21-point Hamilton grid (shuffle_cost12_128, mechanism P, given = 1.5):
 
 ## First-Pass Outcomes (from raw per-cell finals)
 
-Data source for this draft: final row of each 000*_*.csv file in
-~/results/hamilton/shuffle_cost12_128/P/1.5/ (no csv_*_for_image.con present yet).
+Data source for this draft: `~/results/hamilton/shuffle_cost12_128/P/1.5/` summary exports
+(`csv_*_for_image.con`).
 
 ### Population means by scenario
 

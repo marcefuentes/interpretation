@@ -20,6 +20,17 @@ Documentation and analysis for interpreting TRPS evolutionary simulation outputs
 
 Paths like ../graph/graphgen/... are relative to this repo root.
 
+### Missing summary exports policy (for AI agents)
+
+- Before analysis, verify that required summary exports exist in the target results folder:
+  - `csv_*_for_image.con` for final-state summaries
+  - `csv_*_for_movie.con` for time-series summaries
+- If required exports are missing, run `graphgen` from `~/code/graph/graphgen/` to generate them before continuing interpretation.
+- Use the study/given-specific invocation, for example:
+  - `python -m graphgen.main --study <study> --figure s07 --given-focal <g>`
+  - `python -m graphgen.main --study <study> --figure s07 --given-focal <g> --movie`
+- Treat missing `*image.con` or `*movie.con` summary files as a data-prep step, not an analysis failure.
+
 ## Running the Analysis Script
 
 bash

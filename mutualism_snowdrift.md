@@ -72,8 +72,8 @@ On the 231-cell triangular grid (shuffle_cost12_128, mechanism P, given = 1.5):
 
 ## First-Pass Outcomes (from raw per-cell finals)
 
-Data source for this draft: final row of each 000*_*.csv file in
-~/results/mutualism/shuffle_cost12_128/P/1.5/pop_2/ (no csv_*_for_image.con present yet).
+Data source for this draft: `~/results/mutualism/shuffle_cost12_128/P/1.5/pop_2/` summary exports
+(`csv_*_for_image.con`).
 
 | Population | qBSeen mean | qBSeen min-max | wmean mean | C1P1 mean | C1P0 mean | P1 mean |
 | ---------- | ----------- | -------------- | ---------- | --------- | --------- | ------- |

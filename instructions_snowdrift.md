@@ -6,57 +6,46 @@
 
 ## 1. Game Parameters
 
-The snowdrift payoff construction is activated in calculate_derived_globals.c when:
+For the exported `snowdrift` study used in this repository (`graphgen --study snowdrift --figure s07`), the payoff columns in `csv_*_for_image.con` are:
 
-- globals->hamilton == 1
-- globals->given >= 1.5
+- `T0 = T1 = 1.0` (constant)
+- `P0 = P1 = 0.1` (constant)
+- `R` and `S` vary by cell with valid ordering `T > R > S > P`
 
-In this branch, b_c_0 and b_c_1 are treated as **cost-encoded parameters**, not the Hamilton benefit-minus-cost values used for given < 1.5.
-
----
-
-## 2. Payoff Equations (given >= 1.5)
-
-Source: ~/code/trps/code/src/modules/calculate_derived_globals.c (else branch under if (globals->given < 1.5)).
-
-Definitions:
-- c0 = k1 - b_c_0
-- c1 = k1 - b_c_1
-
-Population-specific payoffs:
-
-| Population | T                 | R                        | P    | S                    |
-| ---------- | ----------------- | ------------------------ | ---- | -------------------- |
-| pop_0      | k0 + k1         | k0 + k1 - c0/2         | k0 | k0 + k1 - c0       |
-| pop_1      | k0 + k1         | k0 + k1 - c1/2         | k0 | k0 + k1 - c1       |
-
-Equivalent gap form:
-
-| Population | T - R | R - S | S - P | R - P   |
-| ---------- | ------- | ------- | ------- | --------- |
-| pop_0      | c0/2  | c0/2  | k1-c0 | k1-c0/2 |
-| pop_1      | c1/2  | c1/2  | k1-c1 | k1-c1/2 |
-
-With study constants k0 = 2, k1 = 1, and x_i = b_c_i:
-- c_i = 1 - x_i
-- T_i = 3
-- R_i = 2.5 + 0.5x_i
-- P_i = 2
-- S_i = 2 + x_i
+This is a snowdrift/Hawk-Dove style sweep in `(R, S)` space. It is distinct from the Hamilton cost-branch formulation used in `given >= 1.5` runs of other studies.
 
 ---
 
-## 3. Regime Split by Local x = b_c
+## 2. Payoff Form in Current Exports
 
-For each population independently:
+For each population (`pop_1`, `pop_2`, `pop_3`) in the current snowdrift exports:
 
-- x < 1: T > R > S > P (Snowdrift/Hawk-Dove ordering)
-- x = 1: T = R = S > P (boundary)
-- x > 1: S > R > T > P (post-boundary ordering with high S)
+| Parameter | Value/range |
+| --------- | ----------- |
+| `T`       | `1.0`       |
+| `P`       | `0.1`       |
+| `R`       | `0.182` to `0.959` |
+| `S`       | `0.141` to `0.918` |
 
-Important: this differs from both:
-- prisoners (T/S fixed, R/P varied directly), and
-- Hamilton/mutualism given < 1.5 branch (benefit/cross-benefit formulation).
+Cell validity follows:
+
+- `T > R > S > P`
+- `R - S > 0` (cooperator-vs-cooperator edge over cooperator-vs-defector)
+- `T - R > 0` (temptation still present)
+
+---
+
+## 3. Regime Interpretation
+
+All valid cells in this exported grid are in a snowdrift ordering:
+
+- `T > R > S > P`
+
+So analysis focuses on how outcome metrics vary across the magnitude of:
+
+- `T - R` (temptation premium)
+- `R - S` (cost-sharing/cooperation edge)
+- `S - P` (benefit of unilateral cooperation relative to mutual defection)
 
 ---
 
@@ -64,7 +53,14 @@ Important: this differs from both:
 
 ~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
 
-For snowdrift variants here, target given_val = 1.5.
+For current snowdrift exports used by this repo, target path is typically:
+
+- `~/results/snowdrift/shuffle_cost12_128/P/1.0/{population}/`
+
+Expected summary files:
+
+- `csv_0_for_image.con`
+- `csv_1_for_image.con` (for `pop_2` and `pop_3`)
 
 ---
 
@@ -79,7 +75,8 @@ Same genotype schema/workflow as other TRPS studies:
 
 ## 6. Analysis Workflow
 
-1. Compute local payoff ordering per cell using equations above.
-2. Build regime maps (counts by ordering, per population).
-3. Test expected signatures in qBSeen, wmean, and genotype splits.
-4. Validate with movie snapshots when dynamic claims are made.
+1. Confirm exported payoff ordering (`T > R > S > P`) from `csv_*_for_image.con`.
+2. Compute derived traits from genotypes (`C1P1`, `C0P1`, `C1P0`, `P1`).
+3. Compare mechanism `P` against control `_` to quantify partner-choice lift.
+4. For `pop_2`/`pop_3`, test cooperation-vs-fitness asymmetry between file sets.
+5. Use `R-S` and `T-R` trends (not PD-style `R-P` thresholds) to interpret gradients.

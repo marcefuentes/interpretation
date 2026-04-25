@@ -185,6 +185,8 @@ Use this workflow whenever analyzing a new given (for example 0.5, 1.0, 1.5) so 
    - ~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
 3. If temporal interpretation is needed, include _1run movie files (csv_*_for_movie.con) rather than only final snapshots.
 
+Agent policy: if expected summary exports are missing (`csv_*_for_image.con` and/or `csv_*_for_movie.con`), run graphgen first to generate them before proceeding with interpretation.
+
 ### 6.2 Compute payoffs from source equations (not assumptions)
 
 Always derive payoffs from ~/code/trps/code/src/modules/calculate_derived_globals.c.
