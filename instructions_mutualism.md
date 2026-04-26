@@ -18,7 +18,7 @@ The mutualism game uses the same Hamilton altruism payoff structure but allows t
 | *B*_max     | 9.0         | Maximum benefit (for fitness normalization)                       |
 | groupsize   | 128         | Individuals per group from each population                        |
 
-The parameter space is a **triangular matrix**: only cells where *b*₁ − *c* ≥ *b*₀ − *c* are simulated (21 × 21 grid, 231 cells). The **diagonal** (*b*₀ − *c* = *b*₁ − *c*) is the Hamilton-equivalent special case where both populations face the same game.
+The parameter space is a **triangular matrix**: only cells where *b*₁ − *c* ≥ *b*₀ − *c* are simulated (21 × 21 grid, 231 cells). For the current heatmap analyses, the focus is the strict asymmetric subset *b*₁ − *c* > *b*₀ − *c* (210 cells).
 
 Constants: same as Hamilton — B_MAX = 9.0, C_MIN = 1.0, K = 2.0 (from theory.py).
 
@@ -58,9 +58,9 @@ From calculate_derived_globals.c, at *g* = 1.0, with x0 = b0−c, x1 = b1−c, b
 
 Since *b*₁ − *c* ≥ *b*₀ − *c* by construction (triangular matrix), **population 0 always has R − P ≥ population 1's R − P**. This asymmetry in cooperation incentives is the central feature of the mutualism study.
 
-### Comparison with Hamilton
+### Asymmetry focus
 
-Hamilton is the diagonal of mutualism: *b*₀ − *c* = *b*₁ − *c*, so both populations face identical payoffs and R − P is equal. In Hamilton, which population cooperates is random (stochastic symmetry breaking). In mutualism off-diagonal, the payoff asymmetry makes role assignment deterministic (§3 of mutualism.md).
+In the analyzed asymmetric subset (*b*₁ − *c* > *b*₀ − *c*), the payoff asymmetry makes role assignment deterministic (§3 of mutualism.md).
 
 ---
 

@@ -213,7 +213,7 @@ For each parameter cell, classify payoff ordering (allowing ties at boundaries),
 - R > S > T > P (possible in asymmetric cross-benefit settings)
 - boundary forms such as T = R > P = S
 
-For 2D studies (prisoners, mutualism, snowdrift), report counts per ordering for each population and for important subsets (off-diagonal, diagonal, high/low regions).
+For 2D studies (prisoners, mutualism, snowdrift), report counts per ordering for each population and for important subsets (for example asymmetric vs diagonal when applicable, plus high/low regions).
 
 ### 6.4 Check expected signatures in outputs
 

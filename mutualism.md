@@ -8,11 +8,9 @@ Reference: instructions_mutualism.md for game parameters and payoff structure; i
 
 ## Overview
 
-The mutualism study generalizes Hamilton from a 1D axis (*b* − *c*) to a 2D triangular grid where the two coevolving populations can have **different** benefit-cost parameters (*b*₀ − *c* and *b*₁ − *c*). The diagonal (*b*₀ − *c* = *b*₁ − *c*) **is** Hamilton (same game — **Diagonal: Consistency with Hamilton**).
+The mutualism study extends the Hamilton-style payoff construction to a 2D triangular grid where the two coevolving populations have **different** benefit-cost parameters (*b*₀ − *c* and *b*₁ − *c*). This analysis focuses on the asymmetric region (*b*₁ − *c* > *b*₀ − *c*) shown in the heatmaps.
 
 **Cross-benefit payoffs** and the **bottleneck** story are developed once in the next sections; the **Summary** table lists the main **percentages and correlations** for quick reference. For **P**-mechanism definitions, see **instructions.md** and **instructions_mutualism.md**.
-
-**Navigation note.** For the diagonal (Hamilton) deep dive — especially pop_1/pop_3 behavior and detailed 1run dynamics — see **hamilton.md**.
 
 **Groupsize.** Grid cooperation levels and tables below use **shuffle_cost12_128**. **shuffle_cost12_4** collapses **qBSeen** relative to **128** on the same parameter grid (cross-benefit and **bottleneck** logic still apply; **numeric** claims do not). See **hamilton.md** for **hamilton_1run** end-state and **movie** detail.
 
@@ -24,9 +22,9 @@ The key structural difference: each population's **R − P** is set by the **par
 
 Cooperation (qBSeen) in pop_0 increases with both *b*₀ − *c* and *b*₁ − *c*, but not symmetrically. At the highest parameters the cooperating population reaches qBSeen ≈ 0.90.
 
-The heatmap for pop_0 shows a smooth gradient from ~0.04 (both *b* − *c* low) to ~0.90 (both high), with most of the variation concentrated along the diagonal and near-diagonal region. Far from the diagonal (large asymmetry), cooperation plateaus at moderate levels (0.2–0.4).
+The heatmap for pop_0 shows a smooth gradient from ~0.04 (both *b* − *c* low) to ~0.90 (both high), with most of the variation concentrated in low-asymmetry regions. At large asymmetry, cooperation plateaus at moderate levels (0.2–0.4).
 
-Pop_1's qBSeen stays low across most of the grid (typically below 0.15 off-diagonal), reaching substantial values only near the diagonal.
+Pop_1's qBSeen stays low across most of the asymmetric grid (typically below 0.15), reaching substantial values only when asymmetry is small.
 
 ### The control baseline
 
@@ -42,11 +40,9 @@ From the simulation source (calculate_derived_globals.c), at *g* = 1.0 the payof
 - Pop_1: R₁ − P₁ = *b*₀ − *c* (partner's parameter)
 - T − R = P − S = 1 for both (constant)
 
-Since *b*₁ − *c* ≥ *b*₀ − *c*, **population 0 always has at least as high a cooperation incentive as population 1**. This breaks the symmetry that exists in Hamilton and produces a deterministic outcome:
+Since *b*₁ − *c* > *b*₀ − *c* in the analyzed heatmap region, **population 0 always has a higher cooperation incentive than population 1**. This yields a deterministic role split:
 
-**Off-diagonal**: pop_0 (lower *b* − *c*) cooperates more than pop_1 in **97.1%** of cells (204/210). Pop_0 has lower fitness in 93.3% of cases — the cooperating population is exploited, just as in Hamilton.
-
-**On the diagonal**: both populations face identical games (R − P equal), and the cooperator role is assigned essentially at random (10 vs 11 out of 21 cells), exactly matching Hamilton's stochastic symmetry breaking.
+In the asymmetric region: pop_0 (lower *b* − *c*) cooperates more than pop_1 in **97.1%** of cells (204/210). Pop_0 has lower fitness in 93.3% of cases — the cooperating population is exploited.
 
 ### Why the lower *b* − *c* population cooperates
 
@@ -80,14 +76,14 @@ Within-slice correlations confirm this: at fixed *b*₁ − *c*, the correlation
 
 ### Pop_0 (cooperator)
 
-In the high-cooperation region (*b*₀ − *c* ≥ 1.0, off-diagonal):
+In the high-cooperation region (*b*₀ − *c* ≥ 1.0, asymmetric cells):
 - **C1P1** (cooperating choosers): mean 0.654 — dominant genotype
 - **C1P0** (cooperators without partner choice — behavioral free-riders who do not sort partners): mean 0.057 (7.7% of cooperators)
 - C0P1 + C0P0 (defectors): remainder
 
-As *b*₀ − *c* increases toward the diagonal, C1P0 grows from ~0.02 (at *b*₀ − *c* = 0.008) to ~0.14 (at *b*₀ − *c* = 5.66), matching Hamilton's pattern: at high *R* − *P*, a small chooser subpopulation can support a high-cooperation regime, so the P1 allele is **diluted** (many C1P0) even though partner choice still underwrites the pool.
+As asymmetry decreases (increasing *b*₀ − *c* at fixed high *b*₁ − *c*), C1P0 grows from ~0.02 (at *b*₀ − *c* = 0.008) to ~0.14 (at *b*₀ − *c* = 5.66): at high *R* − *P*, a small chooser subpopulation can support a high-cooperation regime, so the P1 allele is **diluted** (many C1P0) even though partner choice still underwrites the pool.
 
-**Grid averages only** here (no full ***_1run** triangle). The **diagonal** is **hamilton_1run** territory for dynamics; off-diagonal **mutualism** would need its own timed runs mainly for **bottleneck** timing — **hamilton.md** / **prisoners.md** for invasion vs equilibrium methodology; **end-of-run–only** dense output if timestep count grows.
+**Grid averages only** here (no full ***_1run** triangle). Asymmetric-region **mutualism** would need its own timed runs mainly for **bottleneck** timing — see **prisoners.md** for invasion vs equilibrium methodology; **end-of-run–only** dense output if timestep count grows.
 
 ### Pop_1 (defector)
 
@@ -95,28 +91,11 @@ Pop_1 is dominated by defectors: C0P1 (mean 0.46) and C0P0 (mean 0.43). The P1 a
 
 ---
 
-## Diagonal: Consistency with Hamilton
-
-On the diagonal (*b*₀ − *c* = *b*₁ − *c*), the game is identical to Hamilton. However, direct comparison of averaged qBSeen values is misleading because the file set assignment differs:
-
-- **Hamilton**: _0 = higher qBSeen (post-hoc sorted) → artificially separates cooperator and defector across runs
-- **Mutualism**: _0 and _1 assigned randomly → averaging over runs blurs the asymmetry
-
-At *b* − *c* = 8.0:
-- Hamilton (sorted): qBSeen₀ = 0.93, qBSeen₁ = 0.20
-- Mutualism diagonal (unsorted): qBSeen₀ = 0.49, qBSeen₁ = 0.63
-
-The mutualism values (~0.5–0.6) are consistent with averaging a cooperator at ~0.9 and a defector at ~0.2 across runs where each population is the cooperator roughly half the time.
-
-At low *b* − *c* (< 0.125), both studies show near-zero cooperation (~0.04–0.09), and the transition to substantial cooperation occurs at the same threshold (*b* − *c* ≈ 0.125–0.177).
-
----
-
 ## Fitness and Exploitation
 
-The cooperating population (pop_0 off-diagonal) has **lower fitness** in 93.3% of off-diagonal cells, with a mean fitness deficit of 0.31. This matches the exploitation pattern from Hamilton: cooperators pay costs that benefit their defecting partners.
+The cooperating population (pop_0, asymmetric cells) has **lower fitness** in 93.3% of asymmetric cells, with a mean fitness deficit of 0.31. Cooperators pay costs that benefit their defecting partners.
 
-The fitness gap widens with asymmetry. At extreme parameter ratios (*b*₁ − *c* / *b*₀ − *c* > 100), the gap is modest (wmean₁ − wmean₀ ≈ 0.15) because cooperation levels are low overall. The gap is largest near the diagonal at high *b* − *c*, where cooperation is high and exploitation is most effective.
+The fitness gap widens as asymmetry decreases. At extreme parameter ratios (*b*₁ − *c* / *b*₀ − *c* > 100), the gap is modest (wmean₁ − wmean₀ ≈ 0.15) because cooperation levels are low overall. The gap is largest in low-asymmetry, high-*b* regions where cooperation is high and exploitation is most effective.
 
 ---
 
@@ -173,8 +152,7 @@ Scope note from the snowdrift extension: the interpretation above is specific to
 | Topic | Headline figures (detail above) |
 | ----- | --------------------------------- |
 | **Cross-benefit** | Pop_0's **R − P** = partner's *b*₁ − *c*; pop_1's = *b*₀ − *c*; **T − R = P − S = 1** |
-| **Roles** | Pop_0 cooperates **97.1%** (204/210) off-diagonal cells; diagonal ~**50/50** like Hamilton |
+| **Roles** | Pop_0 cooperates **97.1%** (204/210) across asymmetric cells (*b*₁ − *c* > *b*₀ − *c*) |
 | **Bottleneck** | **qBSeen₀** rises **0.32 → 0.90** as *b*₀ − *c* rises (fixed *b*₁ − *c* = 8.0 table); **log₂**(*b*₀ − *c*) vs **qBSeen₀** **0.79–0.92** at fixed *b*₁ − *c* |
-| **Fitness** | Cooperating pop lower fitness **93.3%** off-diagonal; mean deficit **0.31** |
-| **Genotypes (pop_0)** | **C1P1** mean **0.654**; **C1P0** **7.7%** of cooperators (high-*b* region); **C1P0** up to **~14%** along diagonal slice |
-| **Diagonal vs Hamilton** | *b* − *c* = 8: sorted Hamilton **0.93 / 0.20** vs mutualism unsorted **0.49 / 0.63** — assignment artifact (**Diagonal** section) |
+| **Fitness** | Cooperating pop lower fitness **93.3%** across asymmetric cells; mean deficit **0.31** |
+| **Genotypes (pop_0)** | **C1P1** mean **0.654**; **C1P0** **7.7%** of cooperators (high-*b* region); **C1P0** up to **~14%** in low-asymmetry slices |

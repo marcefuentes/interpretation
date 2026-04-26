@@ -55,7 +55,7 @@ This script reads from ~/results/prisoners_1run/shuffle_cost12_128/P/1.0 — the
 | hamilton | b−c (1D, log scale) | 21 points | 6 loci → 64 genotypes | pop_1, pop_2, pop_3 |
 | mutualism | b₀−c × b₁−c (2D triangular, b₁≥b₀) | 21×21 triangle, 231 cells | 6 loci → 64 genotypes | pop_2 only |
 
-Hamilton is a 1D slice through PD parameter space with fixed T−R = P−S = 1 (slightly stronger than PD's max 0.9). Mutualism diagonal (b₀−c = b₁−c) reproduces Hamilton results.
+Hamilton is a 1D slice through PD parameter space with fixed T−R = P−S = 1 (slightly stronger than PD's max 0.9). The mutualism diagonal (b₀−c = b₁−c) reproduces Hamilton in the full triangular grid, but current mutualism heatmap analyses focus on the strict asymmetric subset (b₁−c > b₀−c).
 
 ### _1run Study Variants
 

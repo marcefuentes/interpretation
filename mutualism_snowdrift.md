@@ -86,7 +86,7 @@ Pairwise asymmetry across cells:
 - pop_0 has lower fitness in **5.2%** of cells (12/231).
 - Mean gaps (pop_0 - pop_1): ΔqBSeen = -0.710, Δwmean = +4.378.
 - corr(ΔqBSeen, Δwmean) = -0.699.
-- Cell counts: 21 diagonal, 210 off-diagonal.
+- Cell counts in the heatmap analysis subset: 210 asymmetric cells (*b*₁ − *c* > *b*₀ − *c*).
 
 Interpretation note: unlike given < 1.5 mutualism, these outcomes no longer follow cross-benefit coupling; the direction now tracks each population's own b_c-driven snowdrift regime mix.
 
