@@ -2,6 +2,11 @@
 
 **Prerequisite**: Read instructions.md first for the shared simulation model.
 
+Scope in this project:
+- **mutualism** is the primary study (two populations can differ in parameters).
+- **hamilton** is the equal-parameter diagonal special case of mutualism (`b0 - c0 = b1 - c1`).
+- **prisoners** and **snowdrift** are calibration studies used to interpret mechanism signatures, not primary biological endpoints.
+
 ---
 
 ## 1. Game Parameters

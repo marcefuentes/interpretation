@@ -1,6 +1,13 @@
 # interpretation
 
-Methodology and notes for interpreting TRPS simulation outputs: model reference, data paths, and study-specific analyses. Studies include multi-run averages (hamilton, prisoners, mutualism) and single-run variants (hamilton_1run, prisoners_1run) for tracking temporal dynamics.
+Methodology and notes for interpreting TRPS simulation outputs: model reference, data paths, and study-specific analyses.
+
+Project framing:
+- **mutualism** is the primary study (two populations with potentially different parameters; biologically central case).
+- **hamilton** is the diagonal/equal-parameter special case of mutualism (`b0 - c0 = b1 - c1`).
+- **prisoners** and **snowdrift** are auxiliary calibration studies used to interpret mechanisms and signatures seen in mutualism/Hamilton, not primary project endpoints.
+
+The repository includes multi-run averages (hamilton, prisoners, mutualism, snowdrift where available) and single-run variants (hamilton_1run, prisoners_1run) for tracking temporal dynamics.
 
 This material sits alongside other checkouts on one machine:
 
@@ -24,9 +31,10 @@ Paths in the docs that look like ../graph/graphgen/... are relative to this repo
 | instructions_prisoners.md   | Prisoner's Dilemma game parameters, data format, figures       |
 | instructions_hamilton.md    | Hamilton altruism game parameters, data format, figures        |
 | instructions_mutualism.md   | Mutualism game parameters, cross-benefit payoffs, data format  |
-| prisoners.md                | Analysis of PD partner choice results (s07)                    |
-| hamilton.md                 | Analysis of Hamilton partner choice results (s07)              |
-| mutualism.md                | Analysis of mutualism partner choice results (s07)             |
+| mutualism.md                | Primary analysis: mutualistic interactions with asymmetric populations |
+| hamilton.md                 | Special-case analysis: diagonal/equal-parameter slice of mutualism |
+| prisoners.md                | Auxiliary calibration: PD partner choice used to interpret mutualism/Hamilton |
+| snowdrift.md                | Auxiliary calibration: snowdrift partner choice used to interpret mutualism/Hamilton |
 | .github/                    | Active Copilot repository instructions                         |
 | ai/analyze_single_run.py    | Script used to analyze _1run temporal dynamics               |
 | ai/                         | Additional agent-only support material and analysis scripts    |

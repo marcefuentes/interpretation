@@ -1,9 +1,18 @@
 # Simulation Model Reference
 
-**Read this file first.** It covers the simulation model, mechanisms, and population structures shared by all studies (prisoners, hamilton, snowdrift, etc.). For game-specific parameters, data formats, and results, see:
+**Read this file first.** It covers the simulation model, mechanisms, and population structures shared by all studies.
 
-- instructions_prisoners.md — Prisoner's Dilemma (T/S fixed, R/P vary on 2D grid)
-- instructions_hamilton.md — Hamilton altruism game (b−c on 1D axis)
+Scope hierarchy for interpretation:
+- **mutualism** is the main project object (two species with potentially different parameters).
+- **hamilton** is the equal-parameter special case of mutualism (diagonal condition `b0 - c0 = b1 - c1`).
+- **prisoners** and **snowdrift** are supporting studies used to calibrate and interpret mechanism signatures, not primary biological targets.
+
+For game-specific parameters, data formats, and results, see:
+
+- instructions_mutualism.md — Mutualism (two-population cross-benefit formulation; primary frame)
+- instructions_hamilton.md — Hamilton altruism game (diagonal/equal-parameter slice)
+- instructions_prisoners.md — Prisoner's Dilemma calibration study
+- instructions_snowdrift.md — Snowdrift calibration study
 
 ---
 
