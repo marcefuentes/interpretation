@@ -20,13 +20,13 @@ This document therefore develops the reusable mechanism first: **cross-benefit p
 
 **Groupsize.** Grid cooperation levels and tables below use **shuffle_cost12_128**. **shuffle_cost12_4** collapses **qBSeen** relative to **128** on the same parameter grid (cross-benefit and **bottleneck** logic still apply; **numeric** claims do not). See **hamilton.md** for **hamilton_1run** end-state and **movie** detail.
 
-The key structural feature is that each population's **R − P** has a cross-benefit, own-cost form: the benefit term comes from the partner population, while the cost term comes from the focal population. In the asymmetric region analyzed here (*b*₁ − *c*₁ >= *b*₀ − *c*₀), population 0 always has at least as strong a cooperation incentive as population 1.
+The key structural feature is that each population's **R − P** has a cross-benefit, own-cost form: the benefit term comes from the partner population, while the cost term comes from the focal population. On the plotted strict upper triangle (*b*₁ − *c*₁ > *b*₀ − *c*₀; 210 cells), population 0 always has a stronger cooperation incentive than population 1.
 
 ## Document structure by given
 
 This single file is organized by branch/regime role:
 
-- **Given = 1.0 (PD family, benefit branch)**: main asymmetric mutualism interpretation (sections above and below on cooperation landscape, bottleneck, genotypes, and exploitation).
+- **Given = 1.0 (PD family, benefit branch)**: main mutualism interpretation on the plotted strict upper triangle (*b*₁ − *c*₁ > *b*₀ − *c*₀; sections above and below on cooperation landscape, bottleneck, genotypes, and exploitation).
 - **Given = 0.5 (mixed local regimes, benefit branch)**: see **Given = 0.5: Correct Game-Type Classification** and **Why g = 0.5 Helps Interpret g = 1.0**.
 - **Given = 1.5 (snowdrift branch)**: see **Given = 1.5: Snowdrift-Branch Interpretation**.
 
@@ -38,11 +38,11 @@ Cooperation (qBSeen) in pop_0 increases with both *b*₀ − *c* and *b*₁ − 
 
 The heatmap for pop_0 shows a smooth gradient from ~0.04 (both *b* − *c* low) to ~0.90 (both high), with most of the variation concentrated in low-asymmetry regions. At large asymmetry, cooperation plateaus at moderate levels (0.2–0.4).
 
-Pop_1's qBSeen stays low across most of the asymmetric grid (typically below 0.15), reaching substantial values only when asymmetry is small.
+Pop_1's qBSeen stays low across most of the plotted grid (typically below 0.15), reaching substantial values only when *b*₁ − *c*₁ and *b*₀ − *c*₀ are close.
 
 ### The control baseline
 
-Without mechanisms (control _), mean qBSeen ≈ 0.02 for both populations across the entire grid — cooperation cannot self-sustain at *g* = 1.0. All cooperation in the P mechanism is driven by partner choice.
+Without mechanisms (control \_), mean qBSeen ≈ 0.02 for both populations across the entire grid — cooperation cannot self-sustain at *g* = 1.0. All cooperation in the P mechanism is driven by partner choice.
 
 ---
 
@@ -56,7 +56,7 @@ From the simulation source (calculate_derived_globals.c), at *g* = 1.0 the payof
 
 Since *b*₁ − *c*₀ > *b*₀ − *c*₁ in the analyzed heatmap region, **population 0 always has a higher cooperation incentive than population 1**. This yields a deterministic role split:
 
-In the asymmetric region: pop_0 (lower *b* − *c*) cooperates more than pop_1 in **97.1%** of cells (204/210). Pop_0 has lower fitness in 93.3% of cases — the cooperating population is exploited.
+On the plotted strict upper triangle: pop_0 (lower *b* − *c*) cooperates more than pop_1 in **97.1%** of cells (204/210). Pop_0 has lower fitness in 93.3% of cases — the cooperating population is exploited.
 
 ### Why the lower *b* − *c* population cooperates
 
@@ -90,7 +90,7 @@ Within-slice correlations confirm this: at fixed *b*₁ − *c*, the correlation
 
 ### Pop_0 (cooperator)
 
-In the high-cooperation region (*b*₀ − *c* ≥ 1.0, asymmetric cells):
+In the high-cooperation region (*b*₀ − *c* ≥ 1.0 on the plotted strict upper triangle):
 - **C1P1** (cooperating choosers): mean 0.654 — dominant genotype
 - **C1P0** (cooperators without partner choice — behavioral free-riders who do not sort partners): mean 0.057 (7.7% of cooperators)
 - C0P1 + C0P0 (defectors): remainder
@@ -107,7 +107,7 @@ Pop_1 is dominated by defectors: C0P1 (mean 0.46) and C0P0 (mean 0.43). The P1 a
 
 ## Fitness and Exploitation
 
-The cooperating population (pop_0, asymmetric cells) has **lower fitness** in 93.3% of asymmetric cells, with a mean fitness deficit of 0.31. Cooperators pay costs that benefit their defecting partners.
+The cooperating population (pop_0, plotted strict upper triangle) has **lower fitness** in 93.3% of cells, with a mean fitness deficit of 0.31. Cooperators pay costs that benefit their defecting partners.
 
 The fitness gap widens as asymmetry decreases. At extreme parameter ratios (*b*₁ − *c* / *b*₀ − *c* > 100), the gap is modest (wmean₁ − wmean₀ ≈ 0.15) because cooperation levels are low overall. The gap is largest in low-asymmetry, high-*b* regions where cooperation is high and exploitation is most effective.
 
@@ -271,8 +271,8 @@ This is consistent with snowdrift.md: high cooperation can coexist with exploita
 | Topic | Headline figures (detail above) |
 | ----- | --------------------------------- |
 | **Cross-benefit, own-cost** | Pop_0's **R − P** = *b*₁ − *c*₀; pop_1's = *b*₀ − *c*₁; **T − R = P − S = 1** |
-| **Roles** | Pop_0 cooperates **97.1%** (204/210) across asymmetric cells (*b*₁ − *c* > *b*₀ − *c*) |
+| **Roles** | Pop_0 cooperates **97.1%** (204/210) across plotted cells (*b*₁ − *c* > *b*₀ − *c*) |
 | **Bottleneck** | **qBSeen₀** rises **0.32 → 0.90** as *b*₀ − *c* rises (fixed *b*₁ − *c* = 8.0 table); **log₂**(*b*₀ − *c*) vs **qBSeen₀** **0.79–0.92** at fixed *b*₁ − *c* |
-| **Fitness** | Cooperating pop lower fitness **93.3%** across asymmetric cells; mean deficit **0.31** |
+| **Fitness** | Cooperating pop lower fitness **93.3%** across plotted cells; mean deficit **0.31** |
 | **Genotypes (pop_0)** | **C1P1** mean **0.654**; **C1P0** **7.7%** of cooperators (high-*b* region); **C1P0** up to **~14%** in low-asymmetry slices |
 | **Given = 1.5 (snowdrift branch)** | No cross-benefit coupling; pop_1 more cooperative in **94.8%** of cells (219/231), while pop_0 higher fitness in **94.8%** (219/231); mean gaps (pop_0-pop_1): **ΔqBSeen -0.710**, **Δwmean +4.378** |
