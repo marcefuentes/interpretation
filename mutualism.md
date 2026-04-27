@@ -20,7 +20,7 @@ This document therefore develops the reusable mechanism first: **cross-benefit p
 
 **Groupsize.** Grid cooperation levels and tables below use **shuffle_cost12_128**. **shuffle_cost12_4** collapses **qBSeen** relative to **128** on the same parameter grid (cross-benefit and **bottleneck** logic still apply; **numeric** claims do not). See **hamilton.md** for **hamilton_1run** end-state and **movie** detail.
 
-The key structural feature is that each population's **R − P** is set by the **partner's** net benefit. In the asymmetric region analyzed here (*b*₁ − *c*₁ >= *b*₀ − *c*₀), population 0 always has at least as strong a cooperation incentive as population 1.
+The key structural feature is that each population's **R − P** has a cross-benefit, own-cost form: the benefit term comes from the partner population, while the cost term comes from the focal population. In the asymmetric region analyzed here (*b*₁ − *c*₁ >= *b*₀ − *c*₀), population 0 always has at least as strong a cooperation incentive as population 1.
 
 ## Document structure by given
 
@@ -50,11 +50,11 @@ Without mechanisms (control _), mean qBSeen ≈ 0.02 for both populations across
 
 From the simulation source (calculate_derived_globals.c), at *g* = 1.0 the payoff structure is:
 
-- Pop_0: R₀ − P₀ = *b*₁ − *c* (partner's parameter)
-- Pop_1: R₁ − P₁ = *b*₀ − *c* (partner's parameter)
+- Pop_0: R₀ − P₀ = *b*₁ − *c*₀
+- Pop_1: R₁ − P₁ = *b*₀ − *c*₁
 - T − R = P − S = 1 for both (constant)
 
-Since *b*₁ − *c* > *b*₀ − *c* in the analyzed heatmap region, **population 0 always has a higher cooperation incentive than population 1**. This yields a deterministic role split:
+Since *b*₁ − *c*₀ > *b*₀ − *c*₁ in the analyzed heatmap region, **population 0 always has a higher cooperation incentive than population 1**. This yields a deterministic role split:
 
 In the asymmetric region: pop_0 (lower *b* − *c*) cooperates more than pop_1 in **97.1%** of cells (204/210). Pop_0 has lower fitness in 93.3% of cases — the cooperating population is exploited.
 
@@ -68,7 +68,7 @@ The result is initially counterintuitive: the population whose organisms produce
 
 Despite pop_0's high cooperation incentive, its actual cooperation level is limited by a bottleneck: partner choice requires C1P1 individuals on **both** sides of the swap (well-mixed simulations—**cross-population matching**, not distance or neighborhoods).
 
-Pop_1's low R − P (= *b*₀ − *c*) means pop_1 evolves few C1P1 individuals. Without pop_1 C1P1s, pop_0 cannot execute swaps — even though pop_0 has strong incentive to cooperate.
+Pop_1's low R − P (= *b*₀ − *c*₁) means pop_1 evolves few C1P1 individuals. Without pop_1 C1P1s, pop_0 cannot execute swaps — even though pop_0 has strong incentive to cooperate.
 
 This explains why **cooperation scales primarily with the smaller of the two *b* − *c* values**:
 
@@ -270,7 +270,7 @@ This is consistent with snowdrift.md: high cooperation can coexist with exploita
 
 | Topic | Headline figures (detail above) |
 | ----- | --------------------------------- |
-| **Cross-benefit** | Pop_0's **R − P** = partner's *b*₁ − *c*; pop_1's = *b*₀ − *c*; **T − R = P − S = 1** |
+| **Cross-benefit, own-cost** | Pop_0's **R − P** = *b*₁ − *c*₀; pop_1's = *b*₀ − *c*₁; **T − R = P − S = 1** |
 | **Roles** | Pop_0 cooperates **97.1%** (204/210) across asymmetric cells (*b*₁ − *c* > *b*₀ − *c*) |
 | **Bottleneck** | **qBSeen₀** rises **0.32 → 0.90** as *b*₀ − *c* rises (fixed *b*₁ − *c* = 8.0 table); **log₂**(*b*₀ − *c*) vs **qBSeen₀** **0.79–0.92** at fixed *b*₁ − *c* |
 | **Fitness** | Cooperating pop lower fitness **93.3%** across asymmetric cells; mean deficit **0.31** |

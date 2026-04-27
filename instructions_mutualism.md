@@ -26,7 +26,7 @@ Constants: same as Hamilton — B_MAX = 9.0, C_MIN = 1.0, K = 2.0 (from theory.p
 
 ## 2. Cross-Benefit Payoff Structure
 
-The critical difference from Hamilton is that the two populations exchange **different** benefits. When population *i* cooperates, it produces benefit *b*_*i* and gives it to its partner from the other population. Each population's payoff therefore depends on the **partner's** *b* − *c*, not its own.
+The critical difference from Hamilton is that the two populations exchange **different** benefits. When population *i* cooperates, it produces benefit *b*_*i* and gives it to its partner from the other population. Each population's payoff therefore has a cross-benefit, own-cost form: benefit from the partner population's *b*, cost from the focal population's *c*.
 
 From calculate_derived_globals.c, at *g* = 1.0, with x0 = b0−c, x1 = b1−c, b0 = k1 + x0, and b1 = k1 + x1:
 
@@ -52,11 +52,11 @@ From calculate_derived_globals.c, at *g* = 1.0, with x0 = b0−c, x1 = b1−c, b
 
 |           | Pop 0                  | Pop 1                  |
 | --------- | ---------------------- | ---------------------- |
-| **R − P** | *b*₁ − *c* (partner's) | *b*₀ − *c* (partner's) |
+| **R − P** | *b*₁ − *c*₀ | *b*₀ − *c*₁ |
 | **T − R** | 1 (constant)           | 1 (constant)           |
 | **P − S** | 1 (constant)           | 1 (constant)           |
 
-Since *b*₁ − *c* ≥ *b*₀ − *c* by construction (triangular matrix), **population 0 always has R − P ≥ population 1's R − P**. This asymmetry in cooperation incentives is the central feature of the mutualism study.
+Since *b*₁ − *c*₀ ≥ *b*₀ − *c*₁ by construction in the current analyzed matrix (with shared *c*), **population 0 always has R − P ≥ population 1's R − P**. This asymmetry in cooperation incentives is the central feature of the mutualism study.
 
 ### Asymmetry focus
 
