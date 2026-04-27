@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document summarizes Hamilton-specific results from `graphgen --study hamilton --figure s07` (partner choice under mechanism **P** only: **no** direct or indirect reciprocity). It covers pop_1 (panels e-f, single population), pop_2 (panels a-b, two coevolving populations), and pop_3 (panels c-d, one population adapting to a fixed population).
+This document summarizes Hamilton-specific results from graphgen --study hamilton --figure s07 (partner choice under mechanism **P** only: **no** direct or indirect reciprocity). It covers pop_1 (panels e-f, single population), pop_2 (panels a-b, two coevolving populations), and pop_3 (panels c-d, one population adapting to a fixed population).
 
 Use **mutualism.md** as the conceptual starting point. Hamilton is the **diagonal special case** of that 2D space:
 
@@ -84,7 +84,7 @@ Fitness is normalized as (*K* + *w*) / (*K* + *B*\_max) = (*K* + *w*) / 11. With
 | AllC   | Frequency of C1P0 (cooperators without partner choice)                |
 | w̄      | Normalized mean fitness                                               |
 
-For swap eligibility and bottleneck mechanics (`choose_partner.c` behavior, C1P1-only swap pool, and behavioral C1P0 free-riding), use **mutualism.md** as the canonical mechanism reference.
+For swap eligibility and bottleneck mechanics (choose_partner.c behavior, C1P1-only swap pool, and behavioral C1P0 free-riding), use **mutualism.md** as the canonical mechanism reference.
 
 ## Single Population (pop_1, panels e-f)
 
@@ -274,15 +274,15 @@ Both studies share **T > R > P > S** and choose_partner.c (Hamilton = mechanism 
 
 ## Regime map across given folders
 
-For Hamilton-related interpretation in this repository, the `given` folders play three distinct roles:
+For Hamilton-related interpretation in this repository, the given folders play three distinct roles:
 
 | given folder | Effective game family | Interpretation use |
 | ----- | ----- | ----- |
-| `1.0` | Prisoner's Dilemma along the Hamilton diagonal | Primary Hamilton dilemma analysis |
-| `0.5` | Mixed along the diagonal: PD for low *b* − *c*, harmony-like for high *b* − *c* | Internal calibration of regime-dependent signatures |
-| `1.5` | Snowdrift branch from alternate cost-based equations | Comparison extension only; not the same biological `g` meaning |
+| 1.0 | Prisoner's Dilemma along the Hamilton diagonal | Primary Hamilton dilemma analysis |
+| 0.5 | Mixed along the diagonal: PD for low *b* − *c*, harmony-like for high *b* − *c* | Internal calibration of regime-dependent signatures |
+| 1.5 | Snowdrift branch from alternate cost-based equations | Comparison extension only; not the same biological g meaning |
 
-Important naming note: in this project, the `1.5` folder is treated as a **branching label** (`given >= 1.5` code path) rather than as a literal extension of the Hamilton-branch biological interpretation of `g`.
+Important naming note: in this project, the 1.5 folder is treated as a **branching label** (given >= 1.5 code path) rather than as a literal extension of the Hamilton-branch biological interpretation of g.
 
 ## Given = 0.5: Game-Type Classification
 
@@ -304,81 +304,81 @@ Scope note from the snowdrift extension: these g-based biological interpretation
 
 ## Given = 1.5: Snowdrift-Branch Interpretation
 
-At `given = 1.5`, Hamilton runs in the cost/snowdrift branch. With `x = b-c`, `k0 = 2`, `k1 = 1`, payoffs become:
+At given = 1.5, Hamilton runs in the cost/snowdrift branch. With x = b-c, k0 = 2, k1 = 1, payoffs become:
 
-- `T = 3`
-- `R = 2.5 + 0.5x`
-- `P = 2`
-- `S = 2 + x`
+- T = 3
+- R = 2.5 + 0.5x
+- P = 2
+- S = 2 + x
 
 So the local regime split along the 21-point axis is:
 
-- `x < 1`: `T > R > S > P`
-- `x = 1`: `T = R = S > P`
-- `x > 1`: `S > R > T > P`
+- x < 1: T > R > S > P
+- x = 1: T = R = S > P
+- x > 1: S > R > T > P
 
 Counts on the Hamilton grid: **14 / 1 / 6** cells respectively.
 
-### Outcomes by population structure (`shuffle_cost12_128`, mechanism `P`)
+### Outcomes by population structure (shuffle_cost12_128, mechanism P)
 
-- **pop_1**: near-saturated cooperation (`qBSeen` mean **0.956**, range **0.953-0.968**)
+- **pop_1**: near-saturated cooperation (qBSeen mean **0.956**, range **0.953-0.968**)
 - **pop_2**: strong role split with very large exploitation gap  
-  - `_0`: `qBSeen` **0.887**, `wmean` **3.401**  
-  - `_1`: `qBSeen` **0.041**, `wmean` **9.866**  
-  - `_0` more cooperative in **100%** of cells and lower fitness in **100%**
-- **pop_3 evolving**: high cooperation (`qBSeen` mean **0.892**) but lower fitness than fixed side (`wmean` **5.310** vs **8.232**)
+  - _0: qBSeen **0.887**, wmean **3.401**  
+  - _1: qBSeen **0.041**, wmean **9.866**  
+  - _0 more cooperative in **100%** of cells and lower fitness in **100%**
+- **pop_3 evolving**: high cooperation (qBSeen mean **0.892**) but lower fitness than fixed side (wmean **5.310** vs **8.232**)
 
 ### Regime-resolved behavior on the Hamilton axis
 
 For pop_1, cooperation stays high in both regimes, but genotype mix shifts strongly:
 
-- `x < 1` (`T>R>S>P`): `qBSeen = 0.955`, `wmean = 6.449`, `C1P1 = 0.707`, `C1P0 = 0.247`
-- `x > 1` (`S>R>T>P`): `qBSeen = 0.960`, `wmean = 8.361`, `C1P1 = 0.591`, `C1P0 = 0.370`
+- x < 1 (T>R>S>P): qBSeen = 0.955, wmean = 6.449, C1P1 = 0.707, C1P0 = 0.247
+- x > 1 (S>R>T>P): qBSeen = 0.960, wmean = 8.361, C1P1 = 0.591, C1P0 = 0.370
 
-Correlations over the full axis confirm dilution of choosers at high `x`:
+Correlations over the full axis confirm dilution of choosers at high x:
 
-- `corr(qBSeen, log2(x)) = +0.693`
-- `corr(wmean, log2(x)) = +0.776`
-- `corr(C1P1, log2(x)) = -0.805`
-- `corr(C1P0, log2(x)) = +0.804`
+- corr(qBSeen, log2(x)) = +0.693
+- corr(wmean, log2(x)) = +0.776
+- corr(C1P1, log2(x)) = -0.805
+- corr(C1P0, log2(x)) = +0.804
 
-So `given = 1.5` keeps high cooperation while shifting composition from chooser-dominant to more non-chooser cooperators as `x` rises.
+So given = 1.5 keeps high cooperation while shifting composition from chooser-dominant to more non-chooser cooperators as x rises.
 
 For pop_2, the exploitation split is robust in every regime block:
 
-- `x < 1`: `ΔqBSeen = +0.811`, `Δwmean = -7.145`
-- `x = 1`: `ΔqBSeen = +0.945`, `Δwmean = -7.558`
-- `x > 1`: `ΔqBSeen = +0.910`, `Δwmean = -4.697`
+- x < 1: ΔqBSeen = +0.811, Δwmean = -7.145
+- x = 1: ΔqBSeen = +0.945, Δwmean = -7.558
+- x > 1: ΔqBSeen = +0.910, Δwmean = -4.697
 
-Largest cooperation gap occurs at `x = 2.0` (`ΔqBSeen = +0.948`), while the most negative fitness gap occurs at `x = 0.3536` (`Δwmean = -7.841`).
+Largest cooperation gap occurs at x = 2.0 (ΔqBSeen = +0.948), while the most negative fitness gap occurs at x = 0.3536 (Δwmean = -7.841).
 
 ### Pop_3 structure-specific detail
 
-The evolving population is more cooperative than fixed across the full axis (`ΔqBSeen > 0` everywhere) but remains less fit (`Δwmean < 0` everywhere in sampled cells). The closest approach to parity is only at the largest `x`:
+The evolving population is more cooperative than fixed across the full axis (ΔqBSeen > 0 everywhere) but remains less fit (Δwmean < 0 everywhere in sampled cells). The closest approach to parity is only at the largest x:
 
-- at `x = 8.0`: `ΔqBSeen = +0.483`, `Δwmean = -0.483`
+- at x = 8.0: ΔqBSeen = +0.483, Δwmean = -0.483
 
-So unlike the `given = 1.0` crossover narrative, `given = 1.5` does not produce a clear fitness sign switch in pop_3 within the tested range.
+So unlike the given = 1.0 crossover narrative, given = 1.5 does not produce a clear fitness sign switch in pop_3 within the tested range.
 
-### Dynamic anchor from `snowdrift_1run`
+### Dynamic anchor from snowdrift_1run
 
-`snowdrift_1run` supports a stable-endpoint interpretation for this branch:
+snowdrift_1run supports a stable-endpoint interpretation for this branch:
 
-- mean starts near zero and end high (for pop_1: `0.0 -> 0.947`)
-- late-step movement is small (pop_1 mean absolute final-step change `0.011`, only `2.9%` of cells > `0.05`)
-- evolving pop_3 has even smaller late movement (`0.006`, `0.5%` > `0.05`)
+- mean starts near zero and end high (for pop_1: 0.0 -> 0.947)
+- late-step movement is small (pop_1 mean absolute final-step change 0.011, only 2.9% of cells > 0.05)
+- evolving pop_3 has even smaller late movement (0.006, 0.5% > 0.05)
 
-This is consistent with reading Hamilton `given = 1.5` final snapshots as branch-level equilibria rather than unresolved transient states.
+This is consistent with reading Hamilton given = 1.5 final snapshots as branch-level equilibria rather than unresolved transient states.
 
 ### Cross-g comparison anchor
 
-Relative to `given = 0.5` and `1.0`, `given = 1.5` shows a branch-switch signature rather than a smooth continuation:
+Relative to given = 0.5 and 1.0, given = 1.5 shows a branch-switch signature rather than a smooth continuation:
 
-- pop_1 mean `qBSeen`: **0.688** (`0.5`) -> **0.641** (`1.0`) -> **0.956** (`1.5`)
-- pop_2 mean `ΔqBSeen` (`_0 - _1`): **+0.072** -> **+0.203** -> **+0.846**
-- pop_2 mean `Δwmean` (`_0 - _1`): **-0.072** -> **-1.149** -> **-6.465**
+- pop_1 mean qBSeen: **0.688** (0.5) -> **0.641** (1.0) -> **0.956** (1.5)
+- pop_2 mean ΔqBSeen (_0 - _1): **+0.072** -> **+0.203** -> **+0.846**
+- pop_2 mean Δwmean (_0 - _1): **-0.072** -> **-1.149** -> **-6.465**
 
-This aligns with the standalone `snowdrift.md` pattern: cooperation can be high while cross-population exploitation remains strong.
+This aligns with the standalone snowdrift.md pattern: cooperation can be high while cross-population exploitation remains strong.
 
 ## Summary
 
@@ -388,4 +388,4 @@ This aligns with the standalone `snowdrift.md` pattern: cooperation can be high 
 | **Sparse choosers / C1P0** | **9% → 33%** of cooperators (**0.25 → 8.0**); **qBSeen** ~**0.93–0.97**; 1run anti-phase mostly **identity + P churn** |
 | **pop_2**                  | **ΔqBSeen** vs **Δfitness −0.92**; exploit ratio **3.56×** at *b* − *c* = 8; absorbing roles at high *b* − *c*         |
 | **pop_3**                  | Jump **7% → 41%** **qBSeen** between **R − P = 0.5** and **0.707**; crossover **Δw̄** near **R − P ≈ 1**                    |
-| **Given = 1.5 (snowdrift branch)** | Regimes **14/1/6** (`T>R>S>P` / boundary / `S>R>T>P`); pop_1 `qBSeen` mean **0.956**; pop_2 `_0` more cooperative but lower fitness in **100%** of cells; mean `Δwmean` (`_0-_1`) **-6.465** |
+| **Given = 1.5 (snowdrift branch)** | Regimes **14/1/6** (T>R>S>P / boundary / S>R>T>P); pop_1 qBSeen mean **0.956**; pop_2 _0 more cooperative but lower fitness in **100%** of cells; mean Δwmean (_0-_1) **-6.465** |

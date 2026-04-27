@@ -4,7 +4,7 @@
 
 Scope hierarchy for interpretation:
 - **mutualism** is the main project object (two species with potentially different parameters).
-- **hamilton** is the equal-parameter special case of mutualism (diagonal condition `b0 - c0 = b1 - c1`).
+- **hamilton** is the equal-parameter special case of mutualism (diagonal condition b0 - c0 = b1 - c1).
 - **prisoners** and **snowdrift** are supporting studies used to calibrate and interpret mechanism signatures, not primary biological targets.
 
 For game-specific parameters, data formats, and results, see:
@@ -194,7 +194,7 @@ Use this workflow whenever analyzing a new given (for example 0.5, 1.0, 1.5) so 
    - ~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
 3. If temporal interpretation is needed, include _1run movie files (csv_*_for_movie.con) rather than only final snapshots.
 
-Agent policy: if expected summary exports are missing (`csv_*_for_image.con` and/or `csv_*_for_movie.con`), run graphgen first to generate them before proceeding with interpretation.
+Agent policy: if expected summary exports are missing (csv_*_for_image.con and/or csv_*_for_movie.con), run graphgen first to generate them before proceeding with interpretation.
 
 ### 6.2 Compute payoffs from source equations (not assumptions)
 

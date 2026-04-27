@@ -4,7 +4,7 @@ Methodology and notes for interpreting TRPS simulation outputs: model reference,
 
 Project framing:
 - **mutualism** is the primary study (two populations with potentially different parameters; biologically central case).
-- **hamilton** is the diagonal/equal-parameter special case of mutualism (`b0 - c0 = b1 - c1`).
+- **hamilton** is the diagonal/equal-parameter special case of mutualism (b0 - c0 = b1 - c1).
 - **prisoners** and **snowdrift** are auxiliary calibration studies used to interpret mechanisms and signatures seen in mutualism/Hamilton, not primary project endpoints.
 
 The repository includes multi-run averages (hamilton, prisoners, mutualism, snowdrift where available) and single-run variants (hamilton_1run, prisoners_1run) for tracking temporal dynamics.

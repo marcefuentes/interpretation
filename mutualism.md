@@ -119,11 +119,11 @@ For interpretation across runs, it helps to separate three folder-level regimes:
 
 | given folder | Effective game family in these studies | Interpretation use |
 | ----- | ----- | ----- |
-| `1.0` | Prisoner's Dilemma family | Main mutualism/Hamilton dilemma readout |
-| `0.5` | Mixed: PD in part of the grid, harmony-like orderings in other cells | Diagnostic regime map for mechanism validation |
-| `1.5` | Snowdrift branch (cost-based equations) | Extension/comparison only; re-derive interpretation |
+| 1.0 | Prisoner's Dilemma family | Main mutualism/Hamilton dilemma readout |
+| 0.5 | Mixed: PD in part of the grid, harmony-like orderings in other cells | Diagnostic regime map for mechanism validation |
+| 1.5 | Snowdrift branch (cost-based equations) | Extension/comparison only; re-derive interpretation |
 
-Important naming note: `1.5` is used here as a **folder/branch marker** for the code path switch (`given >= 1.5`), not as the same biological mixing parameter interpretation used in the Hamilton-benefit branch (`given < 1.5`).
+Important naming note: 1.5 is used here as a **folder/branch marker** for the code path switch (given >= 1.5), not as the same biological mixing parameter interpretation used in the Hamilton-benefit branch (given < 1.5).
 
 ---
 
@@ -177,94 +177,94 @@ Scope note from the snowdrift extension: the interpretation above is specific to
 
 ## Given = 1.5: Snowdrift-Branch Interpretation
 
-At `given = 1.5`, mutualism is no longer in the cross-benefit Hamilton branch. From `calculate_derived_globals.c` (cost/snowdrift branch), with `x0 = b_c_0`, `x1 = b_c_1`, `k0 = 2`, `k1 = 1`:
+At given = 1.5, mutualism is no longer in the cross-benefit Hamilton branch. From calculate_derived_globals.c (cost/snowdrift branch), with x0 = b_c_0, x1 = b_c_1, k0 = 2, k1 = 1:
 
-- pop_0: `T0 = 3`, `R0 = 2.5 + 0.5x0`, `P0 = 2`, `S0 = 2 + x0`
-- pop_1: `T1 = 3`, `R1 = 2.5 + 0.5x1`, `P1 = 2`, `S1 = 2 + x1`
+- pop_0: T0 = 3, R0 = 2.5 + 0.5x0, P0 = 2, S0 = 2 + x0
+- pop_1: T1 = 3, R1 = 2.5 + 0.5x1, P1 = 2, S1 = 2 + x1
 
-Key structural shift relative to `given < 1.5`: there is no cross-benefit coupling. Each population's local game is set by its **own** `b_c`, not by the partner's.
+Key structural shift relative to given < 1.5: there is no cross-benefit coupling. Each population's local game is set by its **own** b_c, not by the partner's.
 
-### Local regime map (231-cell triangle, `x1 >= x0`)
+### Local regime map (231-cell triangle, x1 >= x0)
 
-For each population `i`:
+For each population i:
 
-- `x_i < 1`: `T_i > R_i > S_i > P_i`
-- `x_i = 1`: `T_i = R_i = S_i > P_i`
-- `x_i > 1`: `S_i > R_i > T_i > P_i`
+- x_i < 1: T_i > R_i > S_i > P_i
+- x_i = 1: T_i = R_i = S_i > P_i
+- x_i > 1: S_i > R_i > T_i > P_i
 
 Observed counts:
 
-- **pop_0**: 203 `T>R>S>P`, 7 boundary, 21 `S>R>T>P`
-- **pop_1**: 105 `T>R>S>P`, 15 boundary, 111 `S>R>T>P`
+- **pop_0**: 203 T>R>S>P, 7 boundary, 21 S>R>T>P
+- **pop_1**: 105 T>R>S>P, 15 boundary, 111 S>R>T>P
 
-Because `x1 >= x0`, pop_1 sits in the high-`x` (`S>R>T>P`) regime much more often than pop_0, which reverses the dominant role pattern seen at `given = 1.0`.
+Because x1 >= x0, pop_1 sits in the high-x (S>R>T>P) regime much more often than pop_0, which reverses the dominant role pattern seen at given = 1.0.
 
-### Outcomes (`shuffle_cost12_128`, mechanism `P`, pop_2)
+### Outcomes (shuffle_cost12_128, mechanism P, pop_2)
 
-- pop_0 mean: `qBSeen = 0.125`, `wmean = 9.450`
-- pop_1 mean: `qBSeen = 0.835`, `wmean = 5.072`
+- pop_0 mean: qBSeen = 0.125, wmean = 9.450
+- pop_1 mean: qBSeen = 0.835, wmean = 5.072
 - pop_0 is more cooperative in only **5.2%** of cells (12/231)
 - pop_0 has lower fitness in only **5.2%** of cells (12/231)
-- mean gaps (pop_0 - pop_1): `ΔqBSeen = -0.710`, `Δwmean = +4.378`
+- mean gaps (pop_0 - pop_1): ΔqBSeen = -0.710, Δwmean = +4.378
 
-So at `given = 1.5`, the `given = 1.0` asymmetric narrative flips: the more cooperative side is typically pop_1, while the higher-fitness side is typically pop_0.
+So at given = 1.5, the given = 1.0 asymmetric narrative flips: the more cooperative side is typically pop_1, while the higher-fitness side is typically pop_0.
 
 ### Regime-combination decomposition (why the flip is systematic)
 
-Because cells are triangular (`x1 >= x0`), populations occupy ordered regime combinations:
+Because cells are triangular (x1 >= x0), populations occupy ordered regime combinations:
 
-- `(TRSP, TRSP)`: 105 cells
-- `(TRSP, boundary)`: 14 cells
-- `(TRSP, SRTP)`: 84 cells
-- `(boundary, boundary)`: 1 cell
-- `(boundary, SRTP)`: 6 cells
-- `(SRTP, SRTP)`: 21 cells
+- (TRSP, TRSP): 105 cells
+- (TRSP, boundary): 14 cells
+- (TRSP, SRTP): 84 cells
+- (boundary, boundary): 1 cell
+- (boundary, SRTP): 6 cells
+- (SRTP, SRTP): 21 cells
 
 The key pattern is not just a global mean but a per-combination reversal:
 
-- In `(TRSP, SRTP)` (84 cells), pop_0 stays near defection (`qBSeen_0 = 0.025`) while pop_1 is near full cooperation (`qBSeen_1 = 0.983`), with large fitness inversion (`wmean_0 - wmean_1 = +4.749`).
-- In `(TRSP, TRSP)` (105 cells), both are more mixed, but pop_1 still cooperates more (`0.687` vs `0.212`) and pop_0 still has higher fitness (`+4.070`).
-- Even in `(SRTP, SRTP)` (21 cells), cooperation remains higher in pop_1 (`0.872` vs `0.159`) with pop_0 fitter (`+2.500`), so the flip is not restricted to a single regime block.
+- In (TRSP, SRTP) (84 cells), pop_0 stays near defection (qBSeen_0 = 0.025) while pop_1 is near full cooperation (qBSeen_1 = 0.983), with large fitness inversion (wmean_0 - wmean_1 = +4.749).
+- In (TRSP, TRSP) (105 cells), both are more mixed, but pop_1 still cooperates more (0.687 vs 0.212) and pop_0 still has higher fitness (+4.070).
+- Even in (SRTP, SRTP) (21 cells), cooperation remains higher in pop_1 (0.872 vs 0.159) with pop_0 fitter (+2.500), so the flip is not restricted to a single regime block.
 
-Only the single `(boundary, boundary)` cell behaves symmetrically enough to soften the pattern (`ΔqBSeen = +0.124`, `Δwmean = -0.991`).
+Only the single (boundary, boundary) cell behaves symmetrically enough to soften the pattern (ΔqBSeen = +0.124, Δwmean = -0.991).
 
 ### Gradient and asymmetry diagnostics
 
 Across all 231 cells:
 
-- `corr(ΔqBSeen, Δwmean) = -0.699` (strong exploitation signature)
-- `qBSeen_1` tracks `x1` strongly (`corr` with `log2(x1)` = `+0.811`)
-- `qBSeen_0` falls as partner axis `x1` rises (`corr` with `log2(x1)` = `-0.658`)
+- corr(ΔqBSeen, Δwmean) = -0.699 (strong exploitation signature)
+- qBSeen_1 tracks x1 strongly (corr with log2(x1) = +0.811)
+- qBSeen_0 falls as partner axis x1 rises (corr with log2(x1) = -0.658)
 
-Across asymmetric cells only (`x1 > x0`, 210 cells), asymmetry strengthens with ratio:
+Across asymmetric cells only (x1 > x0, 210 cells), asymmetry strengthens with ratio:
 
-- low asymmetry bin: `ΔqBSeen = -0.587`, `Δwmean = +3.850`
-- mid asymmetry bin: `ΔqBSeen = -0.807`, `Δwmean = +5.515`
-- high asymmetry bin: `ΔqBSeen = -0.947`, `Δwmean = +5.135`
+- low asymmetry bin: ΔqBSeen = -0.587, Δwmean = +3.850
+- mid asymmetry bin: ΔqBSeen = -0.807, Δwmean = +5.515
+- high asymmetry bin: ΔqBSeen = -0.947, Δwmean = +5.135
 
 So increasing asymmetry mostly drives sharper cooperation separation, while fitness advantage for the less cooperative side remains large throughout.
 
-### Genotype composition under `given = 1.5`
+### Genotype composition under given = 1.5
 
 The role flip appears directly in chooser composition:
 
-- pop_0 means: `C1P1 = 0.075`, `C1P0 = 0.050`
-- pop_1 means: `C1P1 = 0.439`, `C1P0 = 0.396`
+- pop_0 means: C1P1 = 0.075, C1P0 = 0.050
+- pop_1 means: C1P1 = 0.439, C1P0 = 0.396
 
-Both chooser and non-chooser cooperators concentrate in pop_1, while pop_0 remains chooser-poor. This is the opposite of `given = 1.0`, where cross-benefit coupling pushed the lower-`b_c` side toward chooser-heavy cooperation.
+Both chooser and non-chooser cooperators concentrate in pop_1, while pop_0 remains chooser-poor. This is the opposite of given = 1.0, where cross-benefit coupling pushed the lower-b_c side toward chooser-heavy cooperation.
 
-### Dynamic anchor from `snowdrift_1run`
+### Dynamic anchor from snowdrift_1run
 
-`mutualism` does not yet have a full `*_1run` triangular movie analysis for `given = 1.5`, so dynamics are interpreted with `snowdrift_1run` as a process-level anchor:
+mutualism does not yet have a full *_1run triangular movie analysis for given = 1.5, so dynamics are interpreted with snowdrift_1run as a process-level anchor:
 
-- rapid invasion from all-defection is common (`pop_1` mean start `qBSeen = 0.0`, mean end `0.947`)
-- late-step changes are small (pop_1 mean absolute final-step change `0.011`; only `2.9%` of cells exceed `0.05`)
+- rapid invasion from all-defection is common (pop_1 mean start qBSeen = 0.0, mean end 0.947)
+- late-step changes are small (pop_1 mean absolute final-step change 0.011; only 2.9% of cells exceed 0.05)
 
-This supports reading the `given = 1.5` mutualism endpoints as stable snowdrift-branch outcomes rather than unresolved transients, while leaving open a dedicated mutualism `1run` follow-up for full triangular timing.
+This supports reading the given = 1.5 mutualism endpoints as stable snowdrift-branch outcomes rather than unresolved transients, while leaving open a dedicated mutualism 1run follow-up for full triangular timing.
 
 ### Relation to the standalone snowdrift study
 
-This is consistent with `snowdrift.md`: high cooperation can coexist with exploitation asymmetry, and cooperation level is not a reliable proxy for higher fitness in cross-population settings. The `given = 1.5` mutualism results should therefore be read as snowdrift-branch behavior under mutualism parameter geometry, not as a continuation of the `given = 1.0` cross-benefit mechanism.
+This is consistent with snowdrift.md: high cooperation can coexist with exploitation asymmetry, and cooperation level is not a reliable proxy for higher fitness in cross-population settings. The given = 1.5 mutualism results should therefore be read as snowdrift-branch behavior under mutualism parameter geometry, not as a continuation of the given = 1.0 cross-benefit mechanism.
 
 ## Summary
 
