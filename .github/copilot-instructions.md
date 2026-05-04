@@ -43,13 +43,15 @@ Hamilton is a 1D sweep with **b = 0.4 (fixed)** and **c varying from 0 to b**. T
 
 Payoffs by dilemma type (folder names 0, 1, 2):
 
-| Folder | Dilemma      | T       | R           | P   | S           |
-| ------ | ------------ | ------- | ----------- | --- | ----------- |
-| 0      | No dilemma   | K + b   | K + b       | K   | K           |
-| 1      | PD           | K + b   | K + b - c   | K   | K - c       |
-| 2      | Snowdrift    | K + b   | K + b - c/2 | K   | K + b - c   |
+| Folder | Dilemma      | T       | R           | P   | S           | b structure                              |
+| ------ | ------------ | ------- | ----------- | --- | ----------- | ---------------------------------------- |
+| 0      | No dilemma   | K + b   | K + b       | K   | K           | b always received by focal               |
+| 1      | PD           | K + b   | K + b - c   | K   | K - c       | b received only when partner cooperates  |
+| 2      | Snowdrift    | K + b   | K + b - c/2 | K   | K + b - c   | b received by both whenever anyone cooperates |
 
 With K = 0.5, b = 0.4: T = 0.9, P = 0.5 (constant). R and S vary with c.
+
+In PD, b is a cross-benefit: focal receives it only when the partner cooperates (absent in S). In snowdrift, b is a shared resource: both players receive it as long as at least one cooperates (present in S as well as T and R).
 
 ### Mechanisms Available (hamilton)
 
@@ -152,11 +154,13 @@ Swaps require C1P1 on **both** sides. The code **mutually** rematches two choose
 
 ### Mutualism Payoff Asymmetry
 
-In mutualism, cooperation delivers benefit b to the **partner** (cross-benefit); the focal individual pays own cost c. So:
+In mutualism **PD** (dilemma 1), cooperation delivers benefit b to the partner (cross-benefit: b appears in T and R but not S). The focal individual pays own cost c. So:
 - Pop 0's R−P = b − c0 (receives partner's b, pays c0)
 - Pop 1's R−P = b − c1 (receives partner's b, pays c1)
 
-In the current parameterization b is fixed and equal for both populations, so the asymmetry is entirely in cost: c1 > c0 by construction, giving pop 0 the higher cooperation incentive.
+In mutualism **snowdrift** (dilemma 2), b is a shared resource received by both players whenever at least one cooperates (b present in T, R, and S). The cost c is paid by whoever cooperates (split if both cooperate).
+
+In both cases b is fixed and equal for both populations, so the asymmetry between populations is entirely in cost: c1 > c0 by construction, giving pop 0 the higher cooperation incentive.
 
 ## Figure Pipeline (graphgen)
 
