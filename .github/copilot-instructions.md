@@ -2,15 +2,16 @@
 
 ## Repository Purpose
 
-Documentation and analysis for interpreting TRPS evolutionary simulation outputs. Three studies: prisoners (Prisoner's Dilemma), hamilton (Hamilton altruism), mutualism. Each has an instructions_*.md (parameters, data format, figures) and a *.md (analysis findings).
+Documentation and analysis for interpreting TRPS evolutionary simulation outputs.
 
-**Always read instructions.md first** — it defines the shared simulation model, mechanisms, population scenarios, and data format used by all studies.
+Current active study: **hamilton** (~/results/hamilton). Mutualism and calibration studies pending new data. Old docs from the previous parameterization are preserved in legacy/.
 
 ## Repo Layout
 
 - Keep human-facing analysis and reference docs at the repository root.
 - Keep active Copilot instructions in .github/copilot-instructions.md.
 - Put any additional agent-only support material under ai/ so it stays separate from the docs intended for human reading.
+- legacy/ holds archived docs from the previous parameterization — do not edit or cite those as current.
 
 ## Related Repositories (same machine)
 
@@ -26,40 +27,43 @@ Paths like ../graph/graphgen/... are relative to this repo root.
   - csv_*_for_image.con for final-state summaries
   - csv_*_for_movie.con for time-series summaries
 - If required exports are missing, run graphgen from ~/code/graph/graphgen/ to generate them before continuing interpretation.
-- Use the study/given-specific invocation, for example:
-  - python -m graphgen.main --study <study> --figure s07 --given-focal <g>
-  - python -m graphgen.main --study <study> --figure s07 --given-focal <g> --movie
 - Treat missing *image.con or *movie.con summary files as a data-prep step, not an analysis failure.
-
-## Running the Analysis Script
-
-bash
-python3 ai/analyze_single_run.py
-
-
-This script reads from ~/results/prisoners_1run/shuffle_cost12_128/P/1.0 — the BASE path must exist with populated data. No arguments; edit BASE at the top to target a different study/condition.
 
 ## Architecture
 
-### Document Reading Order
+### Study Status
 
-1. instructions.md — shared model (mechanisms, population scenarios, data format)
-2. instructions_{study}.md — game parameters and data format for that study
-3. {study}.md — analysis findings and conclusions
+Only **hamilton** has data under the current parameterization (~/results/hamilton). Mutualism and calibration studies (prisoners, snowdrift) do not yet have new data — do not create interpretation docs for them until data is available.
 
-### Study Differences
+### Hamilton Parameter Space
 
-| Study | Parameter axes | Grid shape | Loci/Genotypes | Pop scenarios |
-|-------|---------------|-----------|----------------|---------------|
-| prisoners | R × P (2D, triangle in T>R>P>S space) | ~24×24 triangle | 6 loci → 64 genotypes | pop_1, pop_2, pop_3 |
-| hamilton | b−c (1D, log scale) | 21 points | 6 loci → 64 genotypes | pop_1, pop_2, pop_3 |
-| mutualism | b₀−c × b₁−c (2D triangular, b₁≥b₀) | 21×21 triangle, 231 cells | 6 loci → 64 genotypes | pop_2 only |
+Hamilton is a 1D sweep with **b = 0.4 (fixed)** and **c varying from 0 to b**. The x-axis is therefore c ∈ [0, 0.4]. The baseline fitness is **K = 0.5**.
 
-Hamilton is a 1D slice through PD parameter space with fixed T−R = P−S = 1 (slightly stronger than PD's max 0.9). The mutualism diagonal (b₀−c = b₁−c) reproduces Hamilton in the full triangular grid, but current mutualism heatmap analyses focus on the strict asymmetric subset (b₁−c > b₀−c).
+Payoffs by dilemma type (folder names 0, 1, 2):
 
-### _1run Study Variants
+| Folder | Dilemma      | T       | R           | P   | S           |
+| ------ | ------------ | ------- | ----------- | --- | ----------- |
+| 0      | No dilemma   | K + b   | K + b       | K   | K           |
+| 1      | PD           | K + b   | K + b - c   | K   | K - c       |
+| 2      | Snowdrift    | K + b   | K + b - c/2 | K   | K + b - c   |
 
-hamilton_1run and prisoners_1run run a single simulation instead of averaging over multiple runs. Same parameters and path structure as the main studies. Use these to observe **temporal dynamics** (cycling, tipping events) that multi-run averaging smooths out.
+With K = 0.5, b = 0.4: T = 0.9, P = 0.5 (constant). R and S vary with c.
+
+### Mechanisms Available (hamilton)
+
+| Mechanism folder | Active loci                      | Modules enabled                                                   |
+| ---------------- | -------------------------------- | ----------------------------------------------------------------- |
+| \_               | All 6 (only C expressed)         | None (control)                                                    |
+| P                | C, P                             | Partner choice                                                    |
+| M                | C, M                             | Direct reciprocity                                                |
+| MP               | C, M, P                          | Reciprocity + partner choice                                      |
+| MPQ              | C, M, P, Q                       | Reciprocity + partner choice (recent + lifetime)                  |
+| IM               | C, I, M                          | Direct + indirect reciprocity (recent)                            |
+| IJM              | C, I, J, M                       | Direct + indirect reciprocity (recent + lifetime)                 |
+| IMP              | C, I, M, P                       | All three                                                         |
+| IJMPQ            | All 6                            | All three, with lifetime variants                                 |
+
+Mechanisms \_ and M are run for all three dilemma folders (0, 1, 2). All other mechanisms are run for folders 1 and 2 only (dilemma conditions required for partner choice and indirect reciprocity to be meaningful).
 
 ## Key Conventions
 
@@ -80,21 +84,28 @@ When editing Markdown tables, keep raw-source alignment readable in plain text e
 
 ### Data File Layout
 
-Results live at ~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/:
+Results live at ~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{dilemma}/{population}/:
 
-| File | Contents |
-|------|----------|
-| csv_0_for_image.con | Final-timestep data, file_set _0 (one row per parameter cell) |
-| csv_1_for_image.con | Final-timestep data, file_set _1 |
-| csv_0_for_movie.con | Multi-timestep data, _0 (9 snapshots: t=1 to t=1048576) |
-| csv_1_for_movie.con | Multi-timestep data, _1 |
+- **dilemma**: 0 (no dilemma), 1 (PD), 2 (snowdrift)
+- **shuffle**: shuffle or noshuffle
+- **cost**: mutation cost (currently 0.001)
+- **groupsize**: 128 or 4
+
+Example: ~/results/hamilton/shuffle_cost0.001_128/P/1/pop_2/csv_0_for_image.con
+
+| File                  | Contents                                                         |
+| --------------------- | ---------------------------------------------------------------- |
+| csv_0_for_image.con | Final-timestep data, file_set _0 (one row per parameter cell)    |
+| csv_1_for_image.con | Final-timestep data, file_set _1                                 |
+| csv_0_for_movie.con | Multi-timestep data, _0 (snapshots from t=1 to t=1048576)        |
+| csv_1_for_movie.con | Multi-timestep data, _1                                          |
 
 ### Data Format
 
 All studies use **64 genotypes** from **6 loci** (C, I, J, M, P, Q):
 - Genotype columns: C0I0J0M0P0Q0 through C1I1J1M1P1Q1 (alphabetical)
 - No pre-computed derived trait columns — compute everything from genotypes
-- Game parameter columns: T0, R0, P0, S0, T1, R1, P1, S1 (prisoners, snowdrift) or k, b_c_0, b_c_1 (hamilton, mutualism)
+- Game parameter columns for hamilton/mutualism: **c0, c1** (cost for each population)
 
 ### Computing Derived Traits from Genotypes
 
@@ -120,13 +131,12 @@ Full mechanism → trait mapping: ../graph/graphgen/studies/trps/mech_trait_map.
 - C0P1 accumulates as a neutral carrier via mutation from C1P1, inflating P1 frequency in the transition zone
 - Always use C1P1 (= Choosers) for behavioral analysis, P1 only for genetic analysis
 
-### File Set _0/_1 Semantics Differ by Study
+### File Set _0/_1 Semantics
 
-| Study | _0 | _1 |
-|-------|------|------|
-| prisoners, hamilton (pop_2) | Higher qBSeen | Lower qBSeen |
-| prisoners, hamilton (pop_3) | Evolving population | Fixed population (25% each genotype) |
-| mutualism | Assigned randomly (Population 0, lower b₀−c) | Population 1 (higher b₁−c) |
+| Study    | _0                      | _1                                      |
+| -------- | ----------------------- | --------------------------------------- |
+| hamilton (pop_2) | Higher qBSeen  | Lower qBSeen                            |
+| hamilton (pop_3) | Evolving population | Fixed population (25% each genotype) |
 
 ### Population Scenario Semantics
 
@@ -136,15 +146,7 @@ Full mechanism → trait mapping: ../graph/graphgen/studies/trps/mech_trait_map.
 
 ### Partner Choice Bottleneck
 
-Swaps require C1P1 on **both** sides. The code **mutually** rematches two choosers: each trades a C0 partner for partnership with the **other** C1P1 (not an undirected “abandonment” to a random C1). The two defectors end up paired with each other. When such chooser pairs are rare, swap opportunities are scarce — this creates a positive feedback threshold (see sharp phase transition in prisoners pop_2).
-
-### Mutualism Payoff Asymmetry
-
-In mutualism, population *i* receives the **partner's** benefit, not its own:
-- Pop 0's R−P = b₁−c (partner's parameter)
-- Pop 1's R−P = b₀−c (partner's parameter)
-
-Since b₁−c ≥ b₀−c by construction, population 0 always has the higher cooperation incentive.
+Swaps require C1P1 on **both** sides. The code **mutually** rematches two choosers: each trades a C0 partner for partnership with the **other** C1P1 (not an undirected "abandonment" to a random C1). The two defectors end up paired with each other. When such chooser pairs are rare, swap opportunities are scarce — this creates a positive feedback threshold.
 
 ## Figure Pipeline (graphgen)
 
