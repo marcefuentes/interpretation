@@ -152,11 +152,11 @@ Swaps require C1P1 on **both** sides. The code **mutually** rematches two choose
 
 ### Mutualism Payoff Asymmetry
 
-In mutualism, the two populations differ in **cost** (c1 > c0 by construction). Since b is fixed and equal for both, the cooperation incentive R−P = b−c differs by population:
-- Pop 0's R−P = b − c0 (lower cost → stronger incentive)
-- Pop 1's R−P = b − c1 (higher cost → weaker incentive)
+In mutualism, cooperation delivers benefit b to the **partner** (cross-benefit); the focal individual pays own cost c. So:
+- Pop 0's R−P = b − c0 (receives partner's b, pays c0)
+- Pop 1's R−P = b − c1 (receives partner's b, pays c1)
 
-Population 0 always has the higher cooperation incentive. The grid is the strict upper triangle c1 > c0, with c ∈ [0, b].
+In the current parameterization b is fixed and equal for both populations, so the asymmetry is entirely in cost: c1 > c0 by construction, giving pop 0 the higher cooperation incentive.
 
 ## Figure Pipeline (graphgen)
 
