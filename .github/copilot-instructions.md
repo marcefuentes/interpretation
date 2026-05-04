@@ -33,9 +33,9 @@ Paths like ../graph/graphgen/... are relative to this repo root.
 
 ### Study Status
 
-**hamilton**: complete data at ~/results/hamilton (shuffle and noshuffle, groupsize 128 and 4, all mechanisms, dilemmas 0/1/2, pop_1/2/3). **Folder 0 data is invalid** — a bug in calculate_derived_globals.c wrote population 1 no-dilemma payoffs into the population 0 matrix (w_matrix[0] used instead of w_matrix[1]). Simulations will be rerun; do not use folder 0 data until then.
+**hamilton**: complete data at ~/results/hamilton (shuffle and noshuffle, groupsize 128 and 4, all mechanisms, dilemmas 1/2, pop_1/2/3).
 
-**mutualism**: incomplete data at ~/results/mutualism (noshuffle_cost0.001_128 only; mechanisms M, MP, IMP, IJMPQ; dilemmas 0/1/2; pop_2 only). Raw csv files exist per cell but graphgen summary exports (.con files) have not yet been generated. Folder 0 data is also invalid (same bug). Do not create interpretation docs until data is complete and rerun.
+**mutualism**: incomplete data at ~/results/mutualism (noshuffle_cost0.001_128 only; mechanisms M, MP, IMP, IJMPQ; dilemmas 1/2; pop_2 only). Raw csv files exist per cell but graphgen summary exports (.con files) have not yet been generated. Do not create interpretation docs until data is complete.
 
 ### Hamilton Parameter Space
 
@@ -43,13 +43,12 @@ Hamilton is a 1D sweep with **b = 0.4 (fixed)** and **c varying from 0 to b**. T
 
 Payoffs by dilemma type (folder names 0, 1, 2):
 
-| Folder | Dilemma      | T   | R           | P   | S           | b structure                              |
-| ------ | ------------ | --- | ----------- | --- | ----------- | ---------------------------------------- |
-| 0      | No dilemma   | K   | K + b - c   | K   | K + b - c   | b received by cooperators regardless of partner |
+| Folder | Dilemma      | T       | R           | P   | S           | b structure                              |
+| ------ | ------------ | ------- | ----------- | --- | ----------- | ---------------------------------------- |
 | 1      | PD           | K + b   | K + b - c   | K   | K - c       | b received only when partner cooperates  |
 | 2      | Snowdrift    | K + b   | K + b - c/2 | K   | K + b - c   | b received by both whenever anyone cooperates |
 
-With K = 0.5, b = 0.4: P = 0.5 always. T = 0.5 (folder 0) or 0.9 (folders 1 and 2). R and S vary with c.
+With K = 0.5, b = 0.4: T = 0.9, P = 0.5 (constant). R and S vary with c.
 
 In PD, b is a cross-benefit: focal receives it only when the partner cooperates (absent in S). In snowdrift, b is a shared resource: both players receive it as long as at least one cooperates (present in S as well as T and R).
 
@@ -67,7 +66,7 @@ In PD, b is a cross-benefit: focal receives it only when the partner cooperates 
 | IMP              | C, I, M, P                       | All three                                                         |
 | IJMPQ            | All 6                            | All three, with lifetime variants                                 |
 
-Mechanisms \_ and M are run for all three dilemma folders (0, 1, 2). All other mechanisms are run for folders 1 and 2 only (dilemma conditions required for partner choice and indirect reciprocity to be meaningful).
+Mechanisms `_` and `M` are run for dilemmas 1 and 2 only (same as all other mechanisms).
 
 ## Key Conventions
 
