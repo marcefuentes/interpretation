@@ -43,13 +43,13 @@ Hamilton is a 1D sweep with **b = 0.4 (fixed)** and **c varying from 0 to b**. T
 
 Payoffs by dilemma type (folder names 0, 1, 2):
 
-| Folder | Dilemma      | T       | R           | P   | S           | b structure                              |
-| ------ | ------------ | ------- | ----------- | --- | ----------- | ---------------------------------------- |
-| 0      | No dilemma   | K + b   | K + b       | K   | K           | b always received by focal               |
+| Folder | Dilemma      | T   | R           | P   | S           | b structure                              |
+| ------ | ------------ | --- | ----------- | --- | ----------- | ---------------------------------------- |
+| 0      | No dilemma   | K   | K + b - c   | K   | K + b - c   | b received by cooperators regardless of partner |
 | 1      | PD           | K + b   | K + b - c   | K   | K - c       | b received only when partner cooperates  |
 | 2      | Snowdrift    | K + b   | K + b - c/2 | K   | K + b - c   | b received by both whenever anyone cooperates |
 
-With K = 0.5, b = 0.4: T = 0.9, P = 0.5 (constant). R and S vary with c.
+With K = 0.5, b = 0.4: P = 0.5 always. T = 0.5 (folder 0) or 0.9 (folders 1 and 2). R and S vary with c.
 
 In PD, b is a cross-benefit: focal receives it only when the partner cooperates (absent in S). In snowdrift, b is a shared resource: both players receive it as long as at least one cooperates (present in S as well as T and R).
 
