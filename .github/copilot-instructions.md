@@ -33,9 +33,9 @@ Paths like ../graph/graphgen/... are relative to this repo root.
 
 ### Study Status
 
-**hamilton**: complete data at ~/results/hamilton (shuffle and noshuffle, groupsize 128 and 4, all mechanisms, dilemmas 0/1/2, pop_1/2/3).
+**hamilton**: complete data at ~/results/hamilton (shuffle and noshuffle, groupsize 128 and 4, all mechanisms, dilemmas 0/1/2, pop_1/2/3). **Folder 0 data is invalid** — a bug in calculate_derived_globals.c wrote population 1 no-dilemma payoffs into the population 0 matrix (w_matrix[0] used instead of w_matrix[1]). Simulations will be rerun; do not use folder 0 data until then.
 
-**mutualism**: incomplete data at ~/results/mutualism (noshuffle_cost0.001_128 only; mechanisms M, MP, IMP, IJMPQ; dilemmas 0/1/2; pop_2 only). Raw csv files exist per cell but graphgen summary exports (.con files) have not yet been generated. Do not create interpretation docs until data is complete.
+**mutualism**: incomplete data at ~/results/mutualism (noshuffle_cost0.001_128 only; mechanisms M, MP, IMP, IJMPQ; dilemmas 0/1/2; pop_2 only). Raw csv files exist per cell but graphgen summary exports (.con files) have not yet been generated. Folder 0 data is also invalid (same bug). Do not create interpretation docs until data is complete and rerun.
 
 ### Hamilton Parameter Space
 
