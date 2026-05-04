@@ -33,7 +33,9 @@ Paths like ../graph/graphgen/... are relative to this repo root.
 
 ### Study Status
 
-Only **hamilton** has data under the current parameterization (~/results/hamilton). Mutualism and calibration studies (prisoners, snowdrift) do not yet have new data — do not create interpretation docs for them until data is available.
+**hamilton**: complete data at ~/results/hamilton (shuffle and noshuffle, groupsize 128 and 4, all mechanisms, dilemmas 0/1/2, pop_1/2/3).
+
+**mutualism**: incomplete data at ~/results/mutualism (noshuffle_cost0.001_128 only; mechanisms M, MP, IMP, IJMPQ; dilemmas 0/1/2; pop_2 only). Raw csv files exist per cell but graphgen summary exports (.con files) have not yet been generated. Do not create interpretation docs until data is complete.
 
 ### Hamilton Parameter Space
 
@@ -150,11 +152,11 @@ Swaps require C1P1 on **both** sides. The code **mutually** rematches two choose
 
 ### Mutualism Payoff Asymmetry
 
-In mutualism, population *i* receives the **partner's** benefit, not its own:
-- Pop 0's R−P = b₁−c (partner's parameter)
-- Pop 1's R−P = b₀−c (partner's parameter)
+In mutualism, the two populations differ in **cost** (c1 > c0 by construction). Since b is fixed and equal for both, the cooperation incentive R−P = b−c differs by population:
+- Pop 0's R−P = b − c0 (lower cost → stronger incentive)
+- Pop 1's R−P = b − c1 (higher cost → weaker incentive)
 
-Since b₁−c ≥ b₀−c by construction, population 0 always has the higher cooperation incentive.
+Population 0 always has the higher cooperation incentive. The grid is the strict upper triangle c1 > c0, with c ∈ [0, b].
 
 ## Figure Pipeline (graphgen)
 
