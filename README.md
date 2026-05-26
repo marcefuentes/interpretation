@@ -14,7 +14,7 @@ Old docs are preserved in legacy/ for reference.
 ## Related repositories (same machine)
 
 - **~/code/trps/** — C simulation source code
-- **~/results/** — simulation output data. Raw data in \*.csv files. Pre-processed data in \*.con files.
+- **~/results/** — simulation output data. Metadata in \*.glo files. Raw data in \*.csv files. Pre-processed data in \*.con files.
 - **~/code/graph/graphgen/** — figure pipeline, study manifests, mech_trait_map.csv
 
 ## Project framing:
