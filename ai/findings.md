@@ -76,8 +76,29 @@ PD (dilemma 1) is the informative dilemma for mechanism discrimination.
 - ai/analyze_new_data.py: full cross-study analysis (hamilton, mutualism; all mechanisms, cells, populations)
 - ai/analyze_single_run.py: temporal dynamics from _1run studies
 
+## Hamilton gs=4 — Key Findings (vs gs=128, PD, shuffle, pop_1)
+
+| Mechanism | gs=4 effect                                                               |
+| --------- | ------------------------------------------------------------------------- |
+| \_        | Identical at both groupsizes                                              |
+| M noshuffle | Invariant; near-identical profiles                                      |
+| P         | Threshold shifts c≈0.34 → c≈0.08; effectively fails beyond c=0.10       |
+| IJM       | REVERSAL: one of weakest (gs=128) → one of strongest (gs=4); 0.923 at c=0.20 vs 0.195 |
+| IM        | Better at gs=4: 0.699 vs 0.404 at c=0.20                                 |
+| IJMPQ     | Worse at high c: 0.341 vs 0.676 at c=0.40 (partner choice component fails) |
+| IMP       | Broadly similar                                                           |
+
+Interpretation: small groups make reputation signals (I, J loci) more reliable
+(you observe more of partners' interactions) but make the chooser bottleneck
+(P locus) far worse (fewer opportunities for mutual-swap in small groups).
+
+## Mutualism gs=4 — Key Findings (vs gs=128, PD, noshuffle, pop_2)
+
+- P collapses at c0,c1 ≥ 0.10 — same threshold as hamilton
+- IMP and IJMPQ broadly similar; better for large asymmetries (fset_1)
+  - IMP fset_1 at c0=0.20, c1=0.30: gs=4=0.851 vs gs=128=0.510
+
 ## Pending
 
-- gs=4: raw .csv present; need graphgen to regenerate .con summaries before analysis
 - mutualism shuffle: data present but not analyzed
 - prisoners.md, snowdrift.md: simulations still running as of 2026-05-26

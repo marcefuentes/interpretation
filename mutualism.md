@@ -233,3 +233,58 @@ The trajectory ranges increase as c1 increases (the cooperation is less stable
 at higher c1), while still showing persistent non-zero cooperation even at
 c1 = 0.20 for mechanism M. This confirms that the multi-run averages represent
 genuine intermediate cooperation levels, not averaging of all-or-nothing states.
+
+## Groupsize comparison (gs=4 vs gs=128)
+
+All comparisons are PD (dilemma 1), noshuffle, pop_2, fset_0 (lower-cost
+population) unless noted.
+
+### Partner choice (P) — collapse at gs=4 even for mild asymmetry
+
+The P mechanism fails at gs=4 for all but the smallest cost cells. Near the
+diagonal where both costs are similar, the threshold drops to c0 ≈ 0.08:
+
+| c0   | c1   | gs=4  | gs=128 |
+| ---- | ---- | ----- | ------ |
+| 0.00 | 0.02 | 0.928 | 0.957  |
+| 0.06 | 0.08 | 0.832 | 0.854  |
+| 0.08 | 0.10 | 0.765 | 0.810  |
+| 0.10 | 0.12 | 0.059 | 0.777  |
+| 0.20 | 0.22 | 0.027 | 0.635  |
+| 0.30 | 0.32 | 0.018 | 0.494  |
+
+This mirrors the hamilton gs=4 finding exactly: the chooser bottleneck is
+catastrophically worsened by small groups, and partner choice becomes
+effectively non-functional throughout most of the parameter space.
+
+### IMP and IJMPQ — broadly similar to gs=128, better at large asymmetries
+
+Unlike partner choice, the reciprocity-based mechanisms (IMP, IJMPQ) are
+robust to groupsize reduction. At mild asymmetry they match gs=128 closely,
+and at large asymmetry they can exceed gs=128 in the high-cost population
+(fset_1):
+
+| Mechanism | c0   | c1   | fset_0 gs=4 | fset_0 gs=128 | fset_1 gs=4 | fset_1 gs=128 |
+| --------- | ---- | ---- | ----------- | ------------- | ----------- | ------------- |
+| IMP       | 0.10 | 0.12 | 0.944       | 0.954         | 0.941       | 0.952         |
+| IMP       | 0.10 | 0.30 | 0.597       | 0.505         | 0.450       | 0.248         |
+| IMP       | 0.20 | 0.30 | 0.865       | 0.639         | 0.851       | 0.510         |
+| IJMPQ     | 0.10 | 0.12 | 0.957       | 0.963         | 0.955       | 0.962         |
+| IJMPQ     | 0.10 | 0.30 | 0.544       | 0.571         | 0.327       | 0.289         |
+| IJMPQ     | 0.20 | 0.30 | 0.919       | 0.930         | 0.916       | 0.928         |
+
+At c0 = 0.20, c1 = 0.30 the IMP mechanism shows the largest gs=4 advantage:
+fset_1 (high-cost population) reaches 0.851 at gs=4 vs 0.510 at gs=128. Small
+groups allow the high-cost cooperators to interact more repeatedly with the
+same partners, making direct reciprocity (M, I loci) more effective at
+sustaining cooperation despite the cost disadvantage.
+
+### Summary
+
+| Mechanism | gs=4 effect relative to gs=128           |
+| --------- | ---------------------------------------- |
+| \_        | Identical                                |
+| M         | Negligible difference                    |
+| P         | Collapses; only works at c0,c1 < 0.10    |
+| IMP       | Broadly similar; better at large asymmetry |
+| IJMPQ     | Broadly similar; better at large asymmetry |

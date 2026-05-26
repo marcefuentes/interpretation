@@ -324,3 +324,108 @@ temporal horizon over which cooperation can be sustained.
 For snowdrift (folder 2), the ranking is similar but all mechanisms perform
 better: IJMPQ reaches 0.960 at c = 0.40 compared to 0.672 in PD. The snowdrift
 property (S > P) provides a cooperation floor that mechanisms build upon.
+
+## Groupsize comparison (gs=4 vs gs=128)
+
+Groupsize has mechanism-specific effects that in some cases reverse the
+ranking completely. All comparisons below are PD (dilemma 1), shuffle, pop_1.
+Groupsize 4 means 4 individuals per group from each population (or 4 total
+in pop_1); groupsize 128 means 128 per population.
+
+### Summary table at selected c values (qBSeen)
+
+| Mechanism | c=0.10 gs=4 | c=0.10 gs=128 | c=0.20 gs=4 | c=0.20 gs=128 | c=0.30 gs=4 | c=0.30 gs=128 |
+| --------- | ----------- | ------------- | ----------- | ------------- | ----------- | ------------- |
+| \_        | 0.974       | 0.973         | 0.965       | 0.968         | 0.941       | 0.942         |
+| M shuffle | 0.164       | 0.049         | 0.040       | 0.026         | 0.023       | 0.017         |
+| P         | 0.058       | 0.949         | 0.026       | 0.929         | 0.017       | 0.864         |
+| MP        | 0.838       | 0.951         | 0.708       | 0.929         | 0.039       | 0.867         |
+| MPQ       | 0.890       | 0.959         | 0.795       | 0.936         | 0.521       | 0.881         |
+| IM        | 0.911       | 0.901         | 0.699       | 0.404         | 0.180       | 0.062         |
+| IJM       | 0.947       | 0.965         | 0.923       | 0.195         | 0.790       | 0.079         |
+| IMP       | 0.933       | 0.950         | 0.900       | 0.933         | 0.777       | 0.873         |
+| IJMPQ     | 0.950       | 0.971         | 0.943       | 0.960         | 0.900       | 0.939         |
+
+### Partner choice (P) — threshold collapses at gs=4
+
+The P mechanism threshold shifts from c ≈ 0.34 (gs=128) to c ≈ 0.08 (gs=4).
+With only a few individuals per group, the probability of two C1P1 choosers
+being co-assigned to the same group is too low to sustain the mutual-swap
+bottleneck except at very low c, where C1P1 is still common.
+
+| c    | gs=4  | gs=128 |
+| ---- | ----- | ------ |
+| 0.06 | 0.763 | 0.955  |
+| 0.08 | 0.728 | 0.950  |
+| 0.10 | 0.058 | 0.949  |
+| 0.12 | 0.047 | 0.950  |
+| 0.20 | 0.026 | 0.929  |
+| 0.30 | 0.017 | 0.864  |
+| 0.36 | 0.014 | 0.668  |
+
+MP and MPQ partially recover at gs=4 by using the reciprocity component (M
+locus) to sustain cooperation where P alone collapses. MPQ reaches 0.521 at
+c = 0.30 (gs=4) vs 0.039 for MP alone, because lifetime memory (Q locus)
+compensates for the loss of partner choice.
+
+### Indirect reciprocity (IJM) — dramatic reversal
+
+IJM is one of the weakest mechanisms at gs=128 (collapses sharply near
+c = 0.18-0.20) but becomes one of the strongest at gs=4.
+
+| c    | IJM gs=4 | IJM gs=128 | IM gs=4 | IM gs=128 |
+| ---- | -------- | ---------- | ------- | --------- |
+| 0.16 | 0.936    | 0.962      | 0.831   | 0.769     |
+| 0.18 | 0.928    | 0.858      | 0.787   | 0.664     |
+| 0.20 | 0.923    | 0.195      | 0.699   | 0.404     |
+| 0.24 | 0.895    | 0.141      | 0.481   | 0.164     |
+| 0.30 | 0.790    | 0.079      | 0.180   | 0.062     |
+| 0.34 | 0.267    | 0.060      | 0.083   | 0.043     |
+
+In small groups each individual witnesses a larger fraction of their partners'
+interactions, making reputation signals (I and J loci) more reliable. In
+large groups the same signals are diluted over many unobserved interactions
+and fail to sustain cooperation past moderate c.
+
+### Direct reciprocity (M noshuffle) — groupsize invariant
+
+The M mechanism with noshuffle is almost perfectly invariant to groupsize.
+Stable pairings give each partner sufficient interaction history regardless
+of group size.
+
+| c    | M noshuffle gs=4 | M noshuffle gs=128 |
+| ---- | ---------------- | ------------------ |
+| 0.10 | 0.906            | 0.910              |
+| 0.20 | 0.867            | 0.858              |
+| 0.30 | 0.759            | 0.741              |
+| 0.40 | 0.075            | 0.080              |
+
+### IJMPQ — weaker at high c with gs=4
+
+IJMPQ is slightly lower than gs=128 at all c and noticeably weaker at high c,
+because the partner-choice component (P, Q) that sustains cooperation near
+c = 0.40 in gs=128 collapses at gs=4. At c = 0.40: gs=4 gives 0.341 vs 0.676
+for gs=128. The indirect reciprocity components (I, J) continue to help at
+moderate c but cannot fully compensate at the extreme end.
+
+### pop_2 symmetry breaking at gs=4
+
+With P mechanism: symmetry breaks at c = 0.10 (fset_0 = 0.698, fset_1 = 0.339)
+but both populations collapse to near zero by c = 0.20. The population with the
+higher frequency of choosers cannot sustain the bottleneck long enough.
+
+With IJMPQ: both populations remain high (>0.90) through c = 0.30 but fall to
+0.342/0.337 at c = 0.40, compared to 0.672/0.664 at gs=128. Symmetry is
+maintained (very small fset_0/fset_1 gap) at both groupsizes throughout.
+
+### Revised mechanism hierarchy at gs=4
+
+At gs=4 the PD hierarchy (c = 0.20-0.30) reorders substantially:
+
+1. IJM: 0.923 / 0.790 — best at moderate-to-high c (reversed from gs=128 rank 6)
+2. IJMPQ: 0.943 / 0.900 — still strong but lower than gs=128
+3. IM: 0.699 / 0.180 — better than gs=128 at these values
+4. IMP: 0.900 / 0.777 — broadly similar to gs=128
+5. MPQ: 0.795 / 0.521 — benefits from lifetime reciprocity memory
+6. MP: 0.708 / 0.039 — loses partner choice prematurely
+7. P: 0.026 / 0.017 — effectively fails at gs=4 beyond c ≈ 0.08
