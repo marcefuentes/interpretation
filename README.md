@@ -2,8 +2,6 @@
 
 Documentation and analysis for interpreting TRPS evolutionary simulation outputs.
 
-Current active study: **hamilton** (~/results/hamilton). Mutualism and calibration studies pending new data.
-
 Old docs are preserved in legacy/ for reference.
 
 ## Repository layout
@@ -15,6 +13,6 @@ Old docs are preserved in legacy/ for reference.
 
 ## Related repositories (same machine)
 
-- **~/code/graph/graphgen/** — figure pipeline, study manifests, mech_trait_map.csv
 - **~/code/trps/** — C simulation source code
 - **~/results/** — simulation output data
+- **~/code/graph/graphgen/** — figure pipeline, study manifests, mech_trait_map.csv
