@@ -1,0 +1,326 @@
+# Hamilton — Equal-Cost Partner Choice
+
+## Overview
+
+Hamilton is the equal-cost diagonal of the mutualism parameter space: both
+populations share the same cost c, so c0 = c1 = c throughout. The x-axis is
+c ∈ [0, 0.40], with benefit b = 0.40 fixed and baseline fitness K = 0.50.
+As c increases from 0 to b, the cooperation incentive (R − P) falls from 0.40
+to 0. The x-axis therefore runs from a trivially cooperative regime (c = 0,
+no real dilemma) to the hardest regime (c = b = 0.40, where R = P and mutual
+cooperation gives no payoff advantage over mutual defection).
+
+Mutualism.md develops the shared conceptual framework (cross-benefit payoffs,
+chooser bottleneck, exploitation). This file documents Hamilton-specific
+quantitative patterns: cooperation profiles across c, genotype structure,
+population-structure contrasts, and temporal dynamics.
+
+## Game parameters
+
+| Parameter | Value         | Description                              |
+| --------- | ------------- | ---------------------------------------- |
+| b         | 0.40          | Benefit (fixed)                          |
+| c         | 0.00 – 0.40   | Cost (x-axis; 21 values in steps of 0.02) |
+| K         | 0.50          | Baseline fitness (T and P floor)         |
+| groupsize | 128           | Individuals per group from each population |
+
+## Payoff structure
+
+Three dilemma folders are present for all Hamilton runs.
+
+| Folder | Dilemma    | T        | R          | P    | S          | R - P      |
+| ------ | ---------- | -------- | ---------- | ---- | ---------- | ---------- |
+| 0      | No dilemma | K = 0.50 | K+b-c      | 0.50 | K+b-c      | b-c        |
+| 1      | PD         | K+b=0.90 | K+b-c      | 0.50 | K-c        | b-c        |
+| 2      | Snowdrift  | K+b=0.90 | K+b-c/2    | 0.50 | K+b-c      | b-c/2      |
+
+Payoff values at selected c (K = 0.50, b = 0.40):
+
+| c    | Dilemma | T    | R    | P    | S    | R-P  | T-R  |
+| ---- | ------- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 0.00 | 0       | 0.50 | 0.90 | 0.50 | 0.90 | 0.40 | 0.00 |
+| 0.00 | 1       | 0.90 | 0.90 | 0.50 | 0.50 | 0.40 | 0.00 |
+| 0.00 | 2       | 0.90 | 0.90 | 0.50 | 0.90 | 0.40 | 0.00 |
+| 0.10 | 1       | 0.90 | 0.80 | 0.50 | 0.40 | 0.30 | 0.10 |
+| 0.20 | 1       | 0.90 | 0.70 | 0.50 | 0.30 | 0.20 | 0.20 |
+| 0.30 | 1       | 0.90 | 0.60 | 0.50 | 0.20 | 0.10 | 0.30 |
+| 0.40 | 1       | 0.90 | 0.50 | 0.50 | 0.10 | 0.00 | 0.40 |
+| 0.10 | 2       | 0.90 | 0.85 | 0.50 | 0.80 | 0.35 | 0.05 |
+| 0.20 | 2       | 0.90 | 0.80 | 0.50 | 0.70 | 0.30 | 0.10 |
+| 0.40 | 2       | 0.90 | 0.70 | 0.50 | 0.50 | 0.20 | 0.20 |
+
+Key observations on the payoff geometry:
+
+- At c = 0: T = R for both dilemma 1 and 2. There is no temptation to defect.
+  The game is already cooperative and mechanisms have little marginal effect.
+- For dilemma 1 (PD): T − R = c increases with c. At c = 0.40, T − R = 0.40
+  and R − P = 0, the most extreme prisoner's dilemma possible in this space.
+- For dilemma 2 (snowdrift): S > P for all c < 0.40 (since S = K+b-c > K = P).
+  The snowdrift property makes cooperation robust even without mechanisms.
+- No-dilemma folder (0): T = P always, so defection is never advantageous.
+  All cooperation is sustained without mechanisms.
+
+## Mechanisms and dilemma availability
+
+Mechanisms _ and M are present for all three dilemma folders (0, 1, 2).
+All other mechanisms (P, MP, MPQ, IM, IJM, IMP, IJMPQ) are present for
+dilemma folders 1 and 2 only.
+
+Conditions: shuffle and noshuffle × groupsize 128 and 4 × pop_1, pop_2, pop_3.
+Note: .con summary files for groupsize 4 require graphgen regeneration.
+
+## Cooperation profiles
+
+### Dilemma 1 (PD), shuffle, groupsize 128, pop_2 fset_0
+
+qBSeen at selected c values (pop_2 file_set 0 = higher-cooperating population):
+
+| Mech   | c=0.00 | c=0.08 | c=0.16 | c=0.24 | c=0.32 | c=0.40 |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| \_     | 0.535  | 0.066  | 0.034  | 0.022  | 0.017  | 0.014  |
+| M      | 0.541  | 0.068  | 0.035  | 0.023  | 0.017  | 0.014  |
+| P      | 0.963  | 0.849  | 0.728  | 0.630  | 0.553  | 0.022  |
+| MP     | 0.961  | 0.847  | 0.728  | 0.651  | 0.553  | 0.023  |
+| MPQ    | 0.967  | 0.872  | 0.737  | 0.643  | 0.563  | 0.036  |
+| IM     | 0.944  | 0.909  | 0.676  | 0.148  | 0.051  | 0.032  |
+| IJM    | 0.973  | 0.968  | 0.961  | 0.141  | 0.076  | 0.043  |
+| IMP    | 0.963  | 0.951  | 0.939  | 0.776  | 0.805  | 0.170  |
+| IJMPQ  | 0.975  | 0.972  | 0.967  | 0.958  | 0.923  | 0.672  |
+
+Key patterns:
+
+- Control (\_ and M with shuffle): near-zero cooperation for all c > 0. The
+  single high value at c = 0 (0.53–0.54) reflects the T = R boundary
+  condition, not genuine mechanism-driven cooperation.
+
+- Partner choice (P, MP, MPQ): sustained high cooperation at low to moderate c,
+  then a sharp drop between c = 0.34 and c = 0.36 (qBSeen falls from 0.41 to
+  0.036 for P). This threshold is the chooser bottleneck: at high c, defection
+  so dominates that insufficient C1P1 individuals exist to sustain swaps.
+
+- Direct reciprocity alone (M with shuffle): indistinguishable from control.
+  Shuffling destroys repeated interactions. See noshuffle section for a
+  fundamentally different result.
+
+- Direct reciprocity alone (IM): drops sharply at c ≈ 0.20 (0.676 → 0.148 at
+  c = 0.24). When repeated interactions are allowed (shuffle) they are still
+  unstable at high cost in the PD.
+
+- IJM (direct + lifetime indirect reciprocity): maintains high cooperation
+  through c = 0.16 (0.961), then drops at c = 0.24 (0.141). Longer memory
+  extends the cooperation window but does not change the qualitative threshold.
+
+- IMP (all three mechanisms combined): extends cooperation noticeably above P
+  alone; at c = 0.40, qBSeen = 0.170 vs 0.022 for P.
+
+- IJMPQ (all mechanisms with lifetime variants): most robust. Cooperation
+  remains above 0.92 through c = 0.32, and reaches 0.672 even at c = 0.40.
+  The combination of all mechanisms eliminates the threshold collapse seen in
+  simpler combinations.
+
+### Dilemma 2 (snowdrift), shuffle, groupsize 128, pop_2 fset_0
+
+| Mech   | c=0.00 | c=0.08 | c=0.16 | c=0.24 | c=0.32 | c=0.40 |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| \_     | 0.881  | 0.968  | 0.964  | 0.954  | 0.917  | 0.184  |
+| M      | 0.888  | 0.963  | 0.960  | 0.949  | 0.916  | 0.182  |
+| P      | 0.955  | 0.970  | 0.969  | 0.958  | 0.930  | 0.679  |
+| MPQ    | 0.964  | 0.970  | 0.965  | 0.957  | 0.935  | 0.780  |
+| IJMPQ  | 0.973  | 0.971  | 0.969  | 0.966  | 0.962  | 0.960  |
+
+For snowdrift (folder 2), cooperation is high across the board because S > P
+forces cooperation at a game-theoretic level. The control (\_ mechanism) shows
+qBSeen ≈ 0.96 at moderate c without any mechanism, confirming that snowdrift
+self-sustains cooperation. Mechanisms provide modest additional benefit at
+moderate c but the main benefit is at c = 0.40, where IJMPQ reaches 0.960 vs
+0.184 for the control.
+
+### No-dilemma folder (0), shuffle, groupsize 128, pop_2 fset_0
+
+| c    | \_ (d0) | \_ (d1) | \_ (d2) |
+| ---- | ------- | ------- | ------- |
+| 0.00 | 0.979   | 0.535   | 0.881   |
+| 0.08 | 0.977   | 0.066   | 0.968   |
+| 0.24 | 0.965   | 0.022   | 0.954   |
+| 0.40 | 0.528   | 0.014   | 0.184   |
+
+The no-dilemma folder (T = P always) shows near-complete cooperation for all
+c < 0.40 without any mechanism, confirming that the simulation produces the
+correct baseline: when defection is never advantageous, cooperation dominates.
+
+## Shuffle vs noshuffle
+
+The most striking shuffle effect is on direct reciprocity (M mechanism):
+
+| Mech  | Condition    | c=0.00 | c=0.10 | c=0.20 | c=0.30 | c=0.40 |
+| ----- | ------------ | ------ | ------ | ------ | ------ | ------ |
+| \_    | shuffle      | 0.535  | 0.055  | 0.028  | 0.018  | 0.014  |
+| \_    | noshuffle    | 0.528  | 0.054  | 0.029  | 0.019  | 0.013  |
+| M     | shuffle      | 0.541  | 0.053  | 0.028  | 0.019  | 0.014  |
+| M     | noshuffle    | 0.941  | 0.915  | 0.859  | 0.754  | 0.084  |
+| P     | shuffle      | 0.963  | 0.833  | 0.667  | 0.566  | 0.022  |
+| P     | noshuffle    | 0.961  | 0.811  | 0.688  | 0.569  | 0.023  |
+| IJMPQ | shuffle      | 0.975  | 0.971  | 0.964  | 0.939  | 0.672  |
+| IJMPQ | noshuffle    | 0.969  | 0.965  | 0.953  | 0.921  | 0.382  |
+
+Direct reciprocity (M) with shuffle is identical to the control — without
+repeated interactions with the same partner, TFT-style strategies cannot
+accumulate credit. Without shuffling, M becomes the strongest individual
+mechanism at moderate c (0.915 at c = 0.10) but collapses at high c
+(0.084 at c = 0.40), consistent with the PD iterated game theory: at
+extreme T − R ratios, defection eventually invades TFT.
+
+Partner choice (P) is largely insensitive to shuffle: cooperation levels
+differ by less than 0.03 across the cooperation range. The chooser bottleneck
+determines P mechanism outcomes, not partner continuity.
+
+IJMPQ with shuffle outperforms noshuffle at high c (0.672 vs 0.382), suggesting
+that partner choice components leverage shuffling by maintaining more diverse
+interaction opportunities.
+
+## Population structure
+
+### Single population (pop_1)
+
+Pop_1 pairs individuals within the same population. Key data for the P
+mechanism (shuffle, PD):
+
+| c    | qBSeen | C1P1  | C1P0  | C0P1  | P1    | C1P0/qBSeen |
+| ---- | ------ | ----- | ----- | ----- | ----- | ----------- |
+| 0.00 | 0.961  | 0.632 | 0.329 | 0.024 | 0.656 | 34%         |
+| 0.10 | 0.949  | 0.669 | 0.280 | 0.035 | 0.704 | 29%         |
+| 0.20 | 0.929  | 0.748 | 0.181 | 0.054 | 0.802 | 19%         |
+| 0.30 | 0.864  | 0.774 | 0.090 | 0.109 | 0.883 | 10%         |
+| 0.36 | 0.668  | 0.639 | 0.029 | 0.242 | 0.881 |  4%         |
+| 0.38 | 0.346  | 0.334 | 0.012 | 0.379 | 0.713 |  3%         |
+| 0.40 | 0.056  | 0.049 | 0.007 | 0.463 | 0.511 | 13%         |
+
+Pop_1 maintains higher cooperation than pop_2 at most c values because the
+chooser bottleneck is weaker: in a single population, both partners for a
+potential swap are drawn from the same pool, so C1P1 individuals can find
+swap partners from their own cooperating subgroup.
+
+As c increases, C1P1 rises while C1P0 falls. At high c (≈ 0.30), cooperators
+who can choose (C1P1) dominate the cooperation pool; non-chooser cooperators
+(C1P0) become rare because the cost makes cooperation unsustainable without
+the sorting benefit of partner choice.
+
+The P1 allele peaks at c ≈ 0.30 (P1 = 0.883) before cooperation collapses.
+P1 peaks later than C1P1 because C0P1 (defectors carrying P1 silently)
+accumulates via mutation from the C1P1 pool. At c = 0.40 after cooperation
+collapses, C0P1 = 0.463 dominates P1 = 0.511 — a large reservoir of neutral
+P1 carriers persists even when cooperation itself is near zero.
+
+### Two coevolving populations (pop_2)
+
+Pop_2 pairs individuals from two separate populations. The two populations
+evolve independently but interact with each other. In Hamilton they start
+symmetric (same c) but break symmetry: one population cooperates more (fset_0)
+and the other defects more (fset_1).
+
+Symmetry breaking under P mechanism (shuffle, PD):
+
+| c    | qBSeen_0 | qBSeen_1 | ΔqBSeen | w\_0  | w\_1  | Δw     |
+| ---- | -------- | -------- | ------- | ----- | ----- | ------ |
+| 0.00 | 0.963    | 0.932    | +0.031  | 0.871 | 0.883 | -0.012 |
+| 0.02 | 0.956    | 0.753    | +0.203  | 0.780 | 0.866 | -0.085 |
+| 0.04 | 0.928    | 0.405    | +0.523  | 0.623 | 0.853 | -0.230 |
+| 0.06 | 0.891    | 0.330    | +0.562  | 0.577 | 0.835 | -0.258 |
+| 0.10 | 0.833    | 0.315    | +0.518  | 0.541 | 0.800 | -0.259 |
+| 0.20 | 0.667    | 0.389    | +0.278  | 0.520 | 0.687 | -0.167 |
+| 0.30 | 0.566    | 0.475    | +0.091  | 0.518 | 0.582 | -0.064 |
+| 0.34 | 0.408    | 0.387    | +0.021  | 0.514 | 0.530 | -0.016 |
+| 0.36 | 0.036    | 0.033    | +0.004  | 0.498 | 0.501 | -0.003 |
+| 0.40 | 0.022    | 0.020    | +0.002  | 0.497 | 0.499 | -0.002 |
+
+The asymmetry is largest at c ≈ 0.04–0.08 (ΔqBSeen ≈ 0.52–0.56). At the
+transition near c = 0.36, the asymmetry collapses to near zero as both
+populations lose cooperation. The cooperating population (fset_0) consistently
+gets lower fitness — a paradox of success: more cooperation → more exploitation
+by the defecting population → lower mean payoff.
+
+For IJMPQ (all mechanisms), the symmetry breaking is almost absent:
+
+| c    | qBSeen_0 | qBSeen_1 | ΔqBSeen | w\_0  | w\_1  | Δw     |
+| ---- | -------- | -------- | ------- | ----- | ----- | ------ |
+| 0.00 | 0.975    | 0.974    | +0.002  | 0.888 | 0.888 | -0.001 |
+| 0.20 | 0.964    | 0.962    | +0.002  | 0.690 | 0.691 | -0.001 |
+| 0.40 | 0.672    | 0.664    | +0.009  | 0.495 | 0.502 | -0.007 |
+
+IJMPQ suppresses symmetry breaking through c = 0.38. Both populations converge
+to nearly identical high cooperation, and the fitness disadvantage of the
+cooperating population essentially vanishes. The combination of all mechanisms
+eliminates the exploitation trap that plagues simpler mechanism combinations.
+
+### Pop_3: evolving population against fixed partner
+
+Pop_3 pairs the evolving population (fset_0) against a fixed population held
+at 25% each of C0P0, C0P1, C1P0, C1P1. This tests how well cooperation can
+develop when one side is a constant environment.
+
+P mechanism, shuffle, PD:
+
+| c    | qBSeen (evolving) | C1P1  | C1P0  | C0P1  |
+| ---- | ----------------- | ----- | ----- | ----- |
+| 0.00 | 0.936             | 0.608 | 0.328 | 0.040 |
+| 0.08 | 0.856             | 0.666 | 0.190 | 0.103 |
+| 0.16 | 0.604             | 0.548 | 0.056 | 0.263 |
+| 0.24 | 0.392             | 0.368 | 0.024 | 0.370 |
+| 0.26 | 0.073             | 0.059 | 0.014 | 0.476 |
+| 0.30 | 0.043             | 0.031 | 0.012 | 0.474 |
+
+The transition occurs near c = 0.24–0.26: cooperation drops from 0.392 to
+0.073. Below the transition, C1P1 dominates (choosers drive cooperation).
+Above it, C0P1 (neutral P1 carriers) reaches ≈ 0.47, the largest it can
+be (= 25% from the fixed population × 2 from mutation into the evolving
+population side). The fixed fset_1 remains at qBSeen ≈ 0.500 (25% C1P0 +
+25% C1P1) throughout, confirming it is not evolving.
+
+The pop_3 transition is sharper than pop_2 (which shows gradual decline) but
+occurs at a lower c than the pop_1 collapse (c ≈ 0.36–0.38 in pop_1). The
+fixed partner provides a constant supply of C1P1 swap candidates, giving the
+evolving population a slight boost over pop_2 at low to moderate c, but the
+fixed 25% C1P1 in the partner also limits the swap pool.
+
+## Temporal dynamics (hamilton_1run)
+
+Single-run data (hamilton_1run, shuffle, PD, P mechanism, pop_2, 9 timesteps)
+shows that cooperation at intermediate c values (0.04–0.34) is genuinely
+variable across time, not a stable equilibrium:
+
+| c    | Range (max−min over timesteps) | Representative trajectory     |
+| ---- | ------------------------------ | ----------------------------- |
+| 0.02 | 0.341                          | 0.961 → 0.700 → 0.910 → 0.969 |
+| 0.04 | 0.165                          | 0.455 → 0.372 → 0.457 → 0.363 |
+| 0.08 | 0.104                          | 0.851 → 0.801 → 0.905 → 0.899 |
+| 0.16 | 0.063                          | 0.733 → 0.760 → 0.747 → 0.708 |
+| 0.32 | 0.219                          | 0.569 → 0.483 → 0.367 → 0.563 |
+| 0.36 | 0.024                          | 0.031 → 0.027 → 0.029 → 0.036 |
+
+The wide ranges at intermediate c (0.04–0.34) reflect genuine metastability:
+the cooperating and defecting roles of the two populations cycle or fluctuate.
+The averaging of many replicates (multi-run data) smooths this to a stable
+intermediate cooperation level that is not present in individual runs.
+
+At c ≤ 0.00 and c ≥ 0.36, the trajectories are stable (range < 0.10),
+confirming stable absorbing states at the extremes. The instability is
+specific to the cooperation transition zone.
+
+## Comparison across mechanisms
+
+The mechanisms form a clear hierarchy in the PD at high c (c = 0.30–0.40):
+
+1. IJMPQ: 0.939 at c = 0.30, 0.672 at c = 0.40 — sustains cooperation throughout.
+2. IMP: 0.804 at c = 0.30, 0.170 at c = 0.40 — good but lower than IJMPQ.
+3. P / MP / MPQ: 0.55–0.57 at c = 0.30, collapse to 0.022–0.036 at c = 0.40.
+4. IJM: 0.084 at c = 0.30 (drops sharply near c = 0.24).
+5. IM: 0.062 at c = 0.30 (drops near c = 0.20).
+6. M (shuffle) / \_: near zero throughout.
+
+The IJMPQ advantage over IMP at high c comes from the Q locus (lifetime partner
+choice memory) and J locus (lifetime indirect reciprocity), which extend the
+temporal horizon over which cooperation can be sustained.
+
+For snowdrift (folder 2), the ranking is similar but all mechanisms perform
+better: IJMPQ reaches 0.960 at c = 0.40 compared to 0.672 in PD. The snowdrift
+property (S > P) provides a cooperation floor that mechanisms build upon.
