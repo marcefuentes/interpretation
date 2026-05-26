@@ -3,4 +3,6 @@ I have changed all hamilton and mutualism simulation data. Now we have K = 0.5 a
 Hamilton/mutualism pd: T = K + b, R = K + b - c, P = K, S = K - c
 Hamilton/mutualism sd: T = K + b, R = K + b - c/2, P = K, S = K + b - c
 
+The legacy folder has interpretations of deprecated data using different values of b and c. It may provide a blueprint for your analysis, but don't let it pollute your thinking.
+
 As you see, I have completely dropped "given". Folders in results are now named 0 (no dilemma), 1 (prisoner's dilemma) and 2 (snowdrift) instead of 0.0, 0.5, 1.0 and 1.5
