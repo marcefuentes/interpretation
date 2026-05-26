@@ -21,21 +21,38 @@ Current parameterization: K = 0.5, b = 0.4 fixed, c varies 0 to b. Analysis docs
 
 Paths like ../graph/graphgen/... are relative to this repo root.
 
+### Running graphgen to generate .con summary files
+
+graphgen generates the csv_*_for_image.con and csv_*_for_movie.con summary files as a side effect of figure generation. Run it from ~/code/graph/ with the virtualenv activated:
+
+    cd ~/code/graph
+    . .venv/bin/activate
+    python -m graphgen.main --study STUDY --all --output /tmp/graphgen_out
+
+Use --groupsize 4 or --groupsize 128 to target a specific groupsize (default is 128).
+Use --clean to discard cached .con files and force a rebuild from raw .csv data.
+
+Examples:
+
+    python -m graphgen.main --study hamilton --all --groupsize 4 --output /tmp/graphgen_out
+    python -m graphgen.main --study mutualism --all --groupsize 4 --output /tmp/graphgen_out
+    python -m graphgen.main --study prisoners --all --output /tmp/graphgen_out
+
 ### Missing summary exports policy (for AI agents)
 
 - Before analysis, verify that required summary exports exist in the target results folder:
   - csv_*_for_image.con for final-state summaries
   - csv_*_for_movie.con for time-series summaries
-- If required exports are missing, run graphgen from ~/code/graph/graphgen/ to generate them before continuing interpretation.
+- If required exports are missing, run graphgen as above before continuing interpretation.
 - Treat missing *image.con or *movie.con summary files as a data-prep step, not an analysis failure.
 
 ## Architecture
 
 ### Study Status
 
-**hamilton**: gs=128 complete (shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3). gs=4 raw .csv data present but .con summaries missing — run graphgen before gs=4 analysis. Analysis: hamilton.md.
+**hamilton**: gs=128 complete (shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3). gs=4 .con files now generated. Analysis: hamilton.md (gs=128 only so far).
 
-**mutualism**: gs=128 noshuffle complete (dilemmas 0/1/2, 7 mechanisms: _, M, P, MP, MPQ, IMP, IJMPQ, pop_2 only). gs=4 and shuffle .con summaries missing. Analysis: mutualism.md.
+**mutualism**: gs=128 noshuffle complete (dilemmas 0/1/2, 7 mechanisms, pop_2 only). gs=4 .con files now generated. Shuffle .con files not yet generated. Analysis: mutualism.md (gs=128 noshuffle only so far).
 
 **prisoners**: simulations still running. Raw .csv data present, no .con summaries yet.
 
