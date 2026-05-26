@@ -382,15 +382,17 @@ c = 0.18-0.20) but becomes one of the strongest at gs=4.
 | 0.30 | 0.790    | 0.079      | 0.180   | 0.062     |
 | 0.34 | 0.267    | 0.060      | 0.083   | 0.043     |
 
-In small groups the shuffle only redraws pairings within a fixed set of the
-same group-mates (the groups are fixed memory segments; individuals never move
-between groups). At gs=4 the Imimic signal — copy partner->qBSeen, i.e. what
-your partner did last round — always comes from the same 3 known individuals.
-If those group-mates are mostly cooperators the signal is reliable and
-cooperation cascades. At gs=128 the fixed group contains up to 127 individuals
-of mixed strategy; every defector in the group produces qBSeen=0 signals that
-disrupt the Imimic cascade for whoever pairs with them next. The signal is
-diluted by group size, not by meeting new strangers.
+In the shuffle condition, Imimic copies partner->qBSeen after each reshuffle —
+what the partner did with their previous partner, a third party. This is
+indirect reciprocity: reputation travels with the individual and new partners
+react to it. Groups are fixed memory segments (individuals never move between
+groups); the shuffle only redraws pairings within the same fixed group. At
+gs=4 the group is a closed pool of 4 individuals, so reputation signals
+circulate among the same few known players — cooperation propagates reliably.
+At gs=128 the fixed group has 128 members of mixed strategy; defectors produce
+many qBSeen=0 signals that disrupt the cascade for whoever pairs with them.
+Smaller groups make indirect reciprocity more effective because signals concern
+the same few individuals and defector signals are less prevalent.
 
 ### Direct reciprocity (M noshuffle) — groupsize invariant
 
