@@ -4,7 +4,7 @@
 
 Documentation and analysis for interpreting TRPS evolutionary simulation outputs.
 
-Current active study: **hamilton** (~/results/hamilton). Mutualism and calibration studies pending new data. Old docs from the previous parameterization are preserved in legacy/.
+Current parameterization: K = 0.5, b = 0.4 fixed, c varies 0 to b. Analysis docs: hamilton.md and mutualism.md at repo root. Old docs in legacy/ (previous parameterization only).
 
 ## Repo Layout
 
@@ -33,9 +33,13 @@ Paths like ../graph/graphgen/... are relative to this repo root.
 
 ### Study Status
 
-**hamilton**: data pending rerun (dilemmas 0/1/2, all mechanisms, pop_1/2/3, shuffle and noshuffle, groupsize 128 and 4).
+**hamilton**: gs=128 complete (shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3). gs=4 raw .csv data present but .con summaries missing — run graphgen before gs=4 analysis. Analysis: hamilton.md.
 
-**mutualism**: data pending rerun (dilemmas 0/1/2, mechanisms M, MP, IMP, IJMPQ, pop_2, noshuffle_cost0.001_128).
+**mutualism**: gs=128 noshuffle complete (dilemmas 0/1/2, 7 mechanisms: _, M, P, MP, MPQ, IMP, IJMPQ, pop_2 only). gs=4 and shuffle .con summaries missing. Analysis: mutualism.md.
+
+**prisoners**: simulations still running. Raw .csv data present, no .con summaries yet.
+
+**snowdrift**: simulations still running. Raw .csv data present, no .con summaries yet.
 
 ### Hamilton Parameter Space
 
@@ -67,9 +71,27 @@ In PD, b is a cross-benefit: focal receives it only when the partner cooperates 
 | IMP              | C, I, M, P                       | All three                                                         |
 | IJMPQ            | All 6                            | All three, with lifetime variants                                 |
 
-Mechanisms `_` and `M` are run for all three dilemma folders (0, 1, 2). All other mechanisms are run for folders 1 and 2 only.
+Mechanisms _ and M are run for all three dilemma folders (0, 1, 2). All other mechanisms are run for folders 1 and 2 only.
 
-## Key Conventions
+### Mutualism Parameter Space
+
+Mutualism is a 2D sweep: c0 ∈ [0, 0.38] and c1 ∈ [0.02, 0.40] with c0 < c1 always (strict upper triangle, 210 cells). b = 0.4 fixed, K = 0.5. The role split is deterministic: since c0 < c1 always, pop_0 has higher R−P and cooperates more in every cell for every mechanism tested. Only pop_2 (between-population pairing) is present in mutualism data.
+
+### Mechanisms Available (mutualism)
+
+| Mechanism folder | Active loci      | Modules enabled                                  |
+| ---------------- | ---------------- | ------------------------------------------------ |
+| \_               | All 6            | None (control)                                   |
+| M                | C, M             | Direct reciprocity                               |
+| P                | C, P             | Partner choice                                   |
+| MP               | C, M, P          | Reciprocity + partner choice                     |
+| MPQ              | C, M, P, Q       | Reciprocity + partner choice (recent + lifetime) |
+| IMP              | C, I, M, P       | All three                                        |
+| IJMPQ            | All 6            | All three, with lifetime variants                |
+
+All 7 mechanisms are run for all three dilemma folders (0, 1, 2) for noshuffle_cost0.001_128.
+
+
 
 ### AI Writing Rule
 
@@ -137,10 +159,11 @@ Full mechanism → trait mapping: ../graph/graphgen/studies/trps/mech_trait_map.
 
 ### File Set _0/_1 Semantics
 
-| Study    | _0                      | _1                                      |
-| -------- | ----------------------- | --------------------------------------- |
-| hamilton (pop_2) | Higher qBSeen  | Lower qBSeen                            |
-| hamilton (pop_3) | Evolving population | Fixed population (25% each genotype) |
+| Study              | _0                        | _1                                          |
+| ------------------ | ------------------------- | ------------------------------------------- |
+| hamilton (pop_2)   | Higher qBSeen             | Lower qBSeen                                |
+| hamilton (pop_3)   | Evolving population       | Fixed population (25% each genotype)        |
+| mutualism (pop_2)  | Lower-cost pop (c0)       | Higher-cost pop (c1)                        |
 
 ### Population Scenario Semantics
 
