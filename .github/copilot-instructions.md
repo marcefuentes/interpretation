@@ -192,7 +192,15 @@ Full mechanism → trait mapping: ../graph/graphgen/studies/trps/mech_trait_map.
 
 Swaps require C1P1 on **both** sides. The code **mutually** rematches two choosers: each trades a C0 partner for partnership with the **other** C1P1 (not an undirected "abandonment" to a random C1). The two defectors end up paired with each other. When such chooser pairs are rare, swap opportunities are scarce — this creates a positive feedback threshold.
 
-### Mutualism Payoff Asymmetry
+### Group Structure (shuffle)
+
+Groups are fixed memory segments — individuals never move between groups across the simulation. shuffle_partners only redraws pairings within the same fixed group each round. At gs=4 the same 4 individuals share a group for their entire lifetime; at gs=128, the same 128.
+
+The Imimic locus (I, indirect reciprocity recent) copies partner->qBSeen — what the partner did in their previous round. This is "indirect" in that the partner's last action was with someone else in the same group. The J locus (Imimic_lt) copies round(partner->qBSeen_lt), the partner's lifetime cooperation average. Neither involves observing third-party interactions directly.
+
+Groupsize effect on indirect reciprocity: at gs=4 the Imimic signal always comes from the same 3 known group-mates; if they cooperate, the signal is reliable and cooperation cascades. At gs=128 the 128-member fixed group contains diverse cooperators and defectors; each defector produces qBSeen=0 that disrupts the cascade for whoever pairs with them next. Signal dilution by group size explains why IJM performs far better at gs=4 than gs=128.
+
+
 
 In mutualism **PD** (dilemma 1), cooperation delivers benefit b to the partner (cross-benefit: b appears in T and R but not S). The focal individual pays own cost c. So:
 - Pop 0's R−P = b − c0 (receives partner's b, pays c0)

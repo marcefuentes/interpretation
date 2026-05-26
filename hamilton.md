@@ -382,10 +382,15 @@ c = 0.18-0.20) but becomes one of the strongest at gs=4.
 | 0.30 | 0.790    | 0.079      | 0.180   | 0.062     |
 | 0.34 | 0.267    | 0.060      | 0.083   | 0.043     |
 
-In small groups each individual witnesses a larger fraction of their partners'
-interactions, making reputation signals (I and J loci) more reliable. In
-large groups the same signals are diluted over many unobserved interactions
-and fail to sustain cooperation past moderate c.
+In small groups the shuffle only redraws pairings within a fixed set of the
+same group-mates (the groups are fixed memory segments; individuals never move
+between groups). At gs=4 the Imimic signal — copy partner->qBSeen, i.e. what
+your partner did last round — always comes from the same 3 known individuals.
+If those group-mates are mostly cooperators the signal is reliable and
+cooperation cascades. At gs=128 the fixed group contains up to 127 individuals
+of mixed strategy; every defector in the group produces qBSeen=0 signals that
+disrupt the Imimic cascade for whoever pairs with them next. The signal is
+diluted by group size, not by meeting new strangers.
 
 ### Direct reciprocity (M noshuffle) — groupsize invariant
 
