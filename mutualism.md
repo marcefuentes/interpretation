@@ -30,8 +30,10 @@ from the partner, while the cost c is paid by the focal individual.
 | S      | K - c0         | K - c1         |
 | R - P  | b - c0         | b - c1         |
 
-Since c0 < c1: R0 − P0 > R1 − P1. Population 0 always has a stronger
-cooperation incentive than population 1.
+Since c0 < c1 in every cell: R0 − P0 = b − c0 > R1 − P1 = b − c1. Population
+0 always has a stronger cooperation incentive than population 1. The role split
+is therefore deterministic: fset_0 (lower-cost population) cooperates more in
+100% of the 210 cells for all mechanisms tested.
 
 ### Dilemma 2 (snowdrift, folder 2)
 
@@ -78,7 +80,34 @@ Along the c0 = 0 row (pop_0 has zero cost):
 Even with c0 = 0 (no cost to cooperate), fset_0 cooperation declines as c1
 rises, because the bottleneck is driven by the partner population's low R1 − P1.
 
-## Role split: which population cooperates more?
+## The partner choice bottleneck
+
+Despite pop_0's cooperation incentive, its achievable cooperation is capped by
+a bottleneck: partner-choice swaps require C1P1 individuals on both sides of
+the exchange. Population 1's low R1 − P1 = b − c1 means it evolves few C1P1
+individuals. Without C1P1 counterparts in pop_1, pop_0 cannot execute swaps
+even though it has strong incentive to cooperate.
+
+Along the c0 = 0 row (P mechanism, noshuffle, PD) — where pop_0 has the
+maximum possible incentive (R0 − P0 = 0.40) — cooperation still falls as c1
+rises because the bottleneck is entirely on the partner side:
+
+| c1   | R1-P1 | q\_fset0 | q\_fset1 |
+| ---- | ----- | -------- | -------- |
+| 0.02 | 0.38  | 0.957    | 0.677    |
+| 0.10 | 0.30  | 0.866    | 0.118    |
+| 0.20 | 0.20  | 0.784    | 0.054    |
+| 0.30 | 0.10  | 0.718    | 0.034    |
+| 0.40 | 0.00  | 0.667    | 0.025    |
+
+Pop_0's cooperation falls from 0.957 to 0.667 as c1 rises from 0.02 to 0.40
+— not because pop_0's own incentive changes (R0 − P0 = 0.40 throughout), but
+because pop_1's C1P1 frequency collapses with rising c1. The correlation
+between qBSeen_0 and R1 − P1 = b − c1 across all 210 cells is 0.68; the
+correlation with the focal population's own incentive R0 − P0 = b − c0 is
+0.55. The partner's incentive explains more variance than the focal's own.
+
+
 
 For all 210 cells and all mechanisms tested (dilemma 1, noshuffle, gs=128),
 fset_0 (lower-cost population) cooperates more than fset_1 in every single
@@ -126,7 +155,38 @@ The M mechanism shows weaker exploitation in noshuffle (−0.833): direct
 reciprocity elevates cooperation in fset_1 enough to partially equalize
 fitness, reducing the strength of the deterministic cooperation/fitness link.
 
-## Mechanism comparison at selected cells
+Population 0 has lower fitness in 100% of the 210 cells under the P mechanism
+(noshuffle, PD). The mean fitness deficit is 0.141 (pop_1 earns 0.141 more
+than pop_0 on average). The deficit does not vary strongly with asymmetry:
+mean deficit is 0.149 at low asymmetry (Δc ≤ 0.10) and 0.140 at high
+asymmetry (Δc > 0.20). Exploitation is persistent across the entire parameter
+space, not concentrated at specific cost ratios.
+
+## Genotype composition
+
+Under the P mechanism (noshuffle, PD), averaged across all 210 cells:
+
+| Genotype | Pop_0 (lower cost) | Pop_1 (higher cost) |
+| -------- | ------------------ | ------------------- |
+| C1P1     | 0.382              | 0.126               |
+| C1P0     | 0.090              | 0.020               |
+| C0P1     | 0.304              | 0.443               |
+| qBSeen   | 0.472              | 0.146               |
+
+Pop_0 is dominated by C1P1 (active choosers) and C0P1. Pop_1 is dominated by
+C0P1 (0.443) — defectors carrying the P1 allele silently. This is the
+hitchhiking pattern: mutations from C1P1 generate C0P1 that persist as neutral
+carriers. The high C0P1 in pop_1 shows that P1 alleles circulate throughout
+both populations even though only pop_0's C1P1 individuals actually choose.
+
+In the high-cooperation region (c0 < 0.10, c1 < 0.20): pop_0 C1P1 rises
+above 0.65 while pop_0 C1P0 averages ≈ 0.16 (roughly 16% of cooperators are
+non-chooser free-riders on the cooperator pool). At high asymmetry
+(c1 > 0.30), pop_0 C1P0 falls to near zero — when c1 is large, only C1P1
+individuals can sustain cooperation and non-chooser cooperators are selected
+out.
+
+
 
 Cooperation at (c0=0.1, c1=0.2) and (c0=0.1, c1=0.3), noshuffle_128, PD:
 
@@ -288,3 +348,21 @@ sustaining cooperation despite the cost disadvantage.
 | P         | Collapses; only works at c0,c1 < 0.10    |
 | IMP       | Broadly similar; better at large asymmetry |
 | IJMPQ     | Broadly similar; better at large asymmetry |
+
+## Summary
+
+| Topic                        | Key finding                                                                           |
+| ---------------------------- | ------------------------------------------------------------------------------------- |
+| Parameter space              | 210-cell strict upper triangle: c0 < c1, both in [0.00, 0.40], b = 0.40, K = 0.50   |
+| Cross-benefit payoffs (PD)   | R0-P0 = b-c0, R1-P1 = b-c1; higher-cost pop always has weaker incentive              |
+| Role split                   | fset_0 cooperates more in 100% of cells for all mechanisms                            |
+| Bottleneck                   | Pop_0 cooperation limited by pop_1's R1-P1; partner incentive explains more than own |
+| Exploitation (P mechanism)   | Pop_0 lower fitness in 100% of cells; mean deficit = 0.141                           |
+| Exploitation correlation     | Corr(ΔqBSeen, Δfitness) = -0.985 (P) to -1.000 (control)                            |
+| Genotypes pop_0              | Mean C1P1 = 0.382, C0P1 = 0.304, C1P0 = 0.090 (hitchhiking in both pops)            |
+| Genotypes pop_1              | Dominated by C0P1 = 0.443 (silent hitchhikers) + low C1P1 = 0.126                   |
+| Mutualistic equilibrium      | IMP at (c0=0.1, c1=0.12): both pops ≈ 0.95; fitness nearly equal                    |
+| Snowdrift (folder 2)         | fset_0 near ceiling; fset_1 defects despite S > P (exploited by pop_0 cooperation)  |
+| Shuffle effect on M          | 17× difference at (c0=0.1, c1=0.2): noshuffle = 0.878, shuffle = 0.051              |
+| gs=4 P mechanism             | Collapses by c0/c1 ≈ 0.10 — bottleneck catastrophic in small groups                 |
+| gs=4 IMP/IJMPQ               | Broadly similar to gs=128; better at large asymmetry (fset_1 gains most)             |

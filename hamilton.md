@@ -205,11 +205,50 @@ who can choose (C1P1) dominate the cooperation pool; non-chooser cooperators
 (C1P0) become rare because the cost makes cooperation unsustainable without
 the sorting benefit of partner choice.
 
-The P1 allele peaks at c ≈ 0.30 (P1 = 0.883) before cooperation collapses.
+The P1 allele peaks at c ≈ 0.34 (P1 = 0.898) before cooperation collapses.
 P1 peaks later than C1P1 because C0P1 (defectors carrying P1 silently)
 accumulates via mutation from the C1P1 pool. At c = 0.40 after cooperation
 collapses, C0P1 = 0.463 dominates P1 = 0.511 — a large reservoir of neutral
 P1 carriers persists even when cooperation itself is near zero.
+
+## P1 hitchhiking
+
+### The pattern
+
+The P1 allele peaks at a lower c than the C1P1 allele. This occurs across all
+three population structures:
+
+| Population       | P1 max c | P1    | C1P1 max c | C1P1  |
+| ---------------- | -------- | ----- | ---------- | ----- |
+| pop_1            | 0.34     | 0.898 | 0.30       | 0.774 |
+| pop_2 (fset_0)   | 0.18     | 0.858 | 0.10       | 0.687 |
+| pop_3 (evolving) | 0.14     | 0.821 | 0.08       | 0.666 |
+
+### The mechanism
+
+The P1 allele is phenotypically silent in defectors: C0P1 individuals carry P1
+but never activate partner choice. The P1 maximum occurs in the transition
+zone where:
+
+1. C1P1 is still substantial (partner choice is under positive selection)
+2. Enough defectors persist to serve as neutral P1 carriers
+3. Mutation from C1P1 to C0P1 creates a reservoir of silent P1 carriers
+
+At the P1 maximum in pop_1 (c = 0.34): C1P1 = 0.735, C0P1 = 0.163. At the
+C1P1 maximum (c = 0.30): C1P1 = 0.774, C0P1 = 0.109. Moving from the P1 max
+to the C1P1 max, C1P1 gains only 0.039 while C0P1 loses 0.054 — the net P1
+falls because neutral carriers are suppressed faster than selected carriers
+grow.
+
+### Why the P1 max shifts across population structures
+
+In pop_1 the P1 maximum is at c = 0.34 — high, because cooperation remains
+strong through c = 0.30 in a single population. In pop_2 the maximum shifts
+to c = 0.18, and in pop_3 to c = 0.14, because between-population pairing
+requires higher R − P to establish cooperation, so the transition zone where
+C1P1 is abundant but defection persists occurs at lower c. The P1 peak always
+occurs in the transition zone; the location of that zone shifts with population
+structure.
 
 ### Two coevolving populations (pop_2)
 
@@ -235,9 +274,17 @@ Symmetry breaking under P mechanism (shuffle, PD):
 
 The asymmetry is largest at c ≈ 0.04–0.08 (ΔqBSeen ≈ 0.52–0.56). At the
 transition near c = 0.36, the asymmetry collapses to near zero as both
-populations lose cooperation. The cooperating population (fset_0) consistently
-gets lower fitness — a paradox of success: more cooperation → more exploitation
-by the defecting population → lower mean payoff.
+populations lose cooperation. The correlation between cooperation advantage and
+fitness deficit is −0.984: the cooperating population consistently earns less
+fitness. This is the paradox of success — the more efficiently one population
+cooperates, the more it can be exploited by the other, whose defectors receive
+benefits without paying.
+
+At c = 0.06–0.10, the defecting population earns ≈1.4–1.5× the fitness of
+the cooperating population despite cooperating at only 35–38% of its level.
+As c increases, exploitation narrows: by c = 0.30–0.34, the gap shrinks
+(Δw ≈ 0.06–0.02) as both populations approach similar low cooperation and
+similar low payoffs.
 
 For IJMPQ (all mechanisms), the symmetry breaking is almost absent:
 
@@ -280,7 +327,41 @@ The pop_3 transition is sharper than pop_2 (which shows gradual decline) but
 occurs at a lower c than the pop_1 collapse (c ≈ 0.36–0.38 in pop_1). The
 fixed partner provides a constant supply of C1P1 swap candidates, giving the
 evolving population a slight boost over pop_2 at low to moderate c, but the
-fixed 25% C1P1 in the partner also limits the swap pool.
+fixed 25% C1P1 in the partner also limits the swap pool. Pop_1, by contrast,
+keeps all its cooperators in the same pool and can execute swaps whenever two
+C1P1 individuals are both stuck with defectors, which happens at any cooperator
+frequency. Pop_3 needs its evolving C1P1 to match against the fixed 25% C1P1,
+a weaker boost.
+
+### Exploitation crossover in pop_3
+
+The direction of exploitation reverses as cooperation grows:
+
+| c    | q\_evolv | w\_evolv | w\_fixed | Δw (evolv−fixed) |
+| ---- | -------- | -------- | -------- | ---------------- |
+| 0.00 | 0.936    | 0.699    | 0.873    | -0.174           |
+| 0.04 | 0.910    | 0.662    | 0.842    | -0.180           |
+| 0.10 | 0.796    | 0.618    | 0.767    | -0.149           |
+| 0.16 | 0.604    | 0.602    | 0.660    | -0.058           |
+| 0.18 | 0.541    | 0.600    | 0.625    | -0.025           |
+| 0.20 | 0.491    | 0.601    | 0.594    | +0.006           |
+| 0.24 | 0.392    | 0.604    | 0.536    | +0.068           |
+| 0.26 | 0.073    | 0.680    | 0.397    | +0.282           |
+| 0.30 | 0.043    | 0.686    | 0.365    | +0.321           |
+| 0.40 | 0.025    | 0.689    | 0.308    | +0.381           |
+
+At low c (c < 0.18), the evolving population cooperates far more (0.54–0.94)
+than the fixed average (0.50). The fixed population's defectors (50%) receive
+benefits from the cooperating evolving individuals without paying — the fixed
+population has higher fitness. The crossover occurs near c = 0.18–0.20, where
+the evolving population's cooperation level approaches the fixed 0.50. Above
+c = 0.26, the evolving population has collapsed to near-defection, so the fixed
+population's cooperators are now paying costs to benefit the evolving defectors.
+The fitness advantage now belongs to the evolving population.
+
+Note that the fixed population's fitness falls monotonically across the full c
+range (0.873 → 0.308). This reflects the overall payoff decline as c rises for
+the fixed population's cooperating individuals (25% C1P0 + 25% C1P1).
 
 ## Temporal dynamics (hamilton_1run)
 
@@ -436,3 +517,23 @@ At gs=4 the PD hierarchy (c = 0.20-0.30) reorders substantially:
 5. MPQ: 0.795 / 0.521 — benefits from lifetime reciprocity memory
 6. MP: 0.708 / 0.039 — loses partner choice prematurely
 7. P: 0.026 / 0.017 — effectively fails at gs=4 beyond c ≈ 0.08
+
+## Summary
+
+| Topic                          | Key finding                                                                         |
+| ------------------------------ | ----------------------------------------------------------------------------------- |
+| Payoff structure (PD)          | T = K+b = 0.90 fixed; R-P = b-c falls from 0.40 (c=0) to 0 (c=0.40)               |
+| Payoff structure (snowdrift)   | S = K+b-c > P always; cooperation floor present without mechanisms                  |
+| Control (\_ mechanism)         | qBSeen collapses to < 0.07 for c > 0 in PD; 0.96 in snowdrift at moderate c        |
+| P mechanism threshold          | Sharp collapse at c = 0.34-0.36 (gs=128); c ≈ 0.08 at gs=4                         |
+| Best mechanism (gs=128, PD)    | IJMPQ: 0.923 at c=0.32, 0.672 at c=0.40 — never collapses in tested range          |
+| Shuffle effect on M            | M shuffle = control; M noshuffle = 0.915 at c=0.10, collapses at c=0.40            |
+| P1 hitchhiking                 | P1 peaks at lower c than C1P1 in all pop structures (neutral C0P1 accumulation)    |
+| Pop_2 symmetry breaking        | Stochastic; ΔqBSeen up to 0.56 at c=0.06; corr(Δq, Δw) = -0.984 (exploitation)   |
+| Pop_2 IJMPQ                    | Symmetry breaking suppressed; ΔqBSeen < 0.010 through c = 0.38                    |
+| Pop_3 transition               | Sharp collapse at c = 0.24-0.26; sharper than pop_2, earlier than pop_1            |
+| Pop_3 crossover                | Evolving pop exploited at c < 0.18; exploits fixed pop at c > 0.20                 |
+| Snowdrift (folder 2)           | All mechanisms near ceiling; IJMPQ = 0.960 even at c = 0.40                        |
+| gs=4 P mechanism               | Collapses by c ≈ 0.08 — chooser bottleneck catastrophic in small groups            |
+| gs=4 IJM reversal              | Weakest at gs=128 → near top at gs=4 (closed reputation pool favors indirect recip) |
+| gs=4 M noshuffle               | Invariant to groupsize — stable pairings give sufficient history at any group size  |
