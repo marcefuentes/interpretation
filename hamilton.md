@@ -13,7 +13,8 @@ cooperation gives no payoff advantage over mutual defection).
 Mutualism.md develops the shared conceptual framework (cross-benefit payoffs,
 chooser bottleneck, exploitation). This file documents Hamilton-specific
 quantitative patterns: cooperation profiles across c, genotype structure,
-population-structure contrasts, and temporal dynamics.
+population-structure contrasts, and temporal dynamics. Analysis covers
+groupsize 128 (primary) and groupsize 4 (dedicated section plus comparison).
 
 ## Game parameters
 
@@ -22,7 +23,7 @@ population-structure contrasts, and temporal dynamics.
 | b         | 0.40          | Benefit (fixed)                          |
 | c         | 0.00 – 0.40   | Cost (x-axis; 21 values in steps of 0.02) |
 | K         | 0.50          | Baseline fitness (T and P floor)         |
-| groupsize | 128           | Individuals per group from each population |
+| groupsize | 4 and 128     | Individuals per group from each population (4 = closed pool) |
 
 ## Payoff structure
 
@@ -67,7 +68,7 @@ All other mechanisms (P, MP, MPQ, IM, IJM, IMP, IJMPQ) are present for
 dilemma folders 1 and 2 only.
 
 Conditions: shuffle and noshuffle × groupsize 128 and 4 × pop_1, pop_2, pop_3.
-Note: .con summary files for groupsize 4 require graphgen regeneration.
+All .con summary files (image and movie) are present under ~/results/hamilton/ for both groupsizes.
 
 ## Cooperation profiles
 
@@ -147,6 +148,89 @@ moderate c but the main benefit is at c = 0.40, where IJMPQ reaches 0.960 vs
 The no-dilemma folder (T = P always) shows near-complete cooperation for all
 c < 0.40 without any mechanism, confirming that the simulation produces the
 correct baseline: when defection is never advantageous, cooperation dominates.
+
+## Groupsize 4
+
+Groupsize 4 means four individuals per group from each population (four total
+in pop_1). Each group is a fixed memory segment for the whole run; shuffle only
+redraws pairings within that pool. The patterns below are PD (dilemma 1),
+shuffle, pop_2 fset_0 unless noted — the same reference condition as the
+gs=128 cooperation profiles above.
+
+### Cooperation profiles (gs=4)
+
+| Mech   | c=0.00 | c=0.08 | c=0.16 | c=0.24 | c=0.32 | c=0.40 |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| \_     | 0.516  | 0.065  | 0.033  | 0.023  | 0.017  | 0.013  |
+| M      | 0.851  | 0.169  | 0.053  | 0.031  | 0.022  | 0.017  |
+| P      | 0.878  | 0.812  | 0.038  | 0.024  | 0.018  | 0.014  |
+| MP     | 0.904  | 0.858  | 0.670  | 0.116  | 0.036  | 0.024  |
+| MPQ    | 0.932  | 0.903  | 0.763  | 0.337  | 0.076  | 0.036  |
+| IM     | 0.944  | 0.923  | 0.841  | 0.340  | 0.074  | 0.040  |
+| IJM    | 0.970  | 0.967  | 0.956  | 0.930  | 0.176  | 0.059  |
+| IMP    | 0.951  | 0.935  | 0.900  | 0.801  | 0.555  | 0.065  |
+| IJMPQ  | 0.967  | 0.961  | 0.954  | 0.940  | 0.892  | 0.342  |
+
+Compared with gs=128 on the same table:
+
+- **Control and P**: P holds cooperation through c ≈ 0.08 (0.812) then collapses
+  by c = 0.16 (0.038), versus gs=128 where P stays above 0.55 through c = 0.32.
+  The chooser bottleneck bites much earlier in small groups.
+
+- **IJM reversal**: IJM remains above 0.93 through c = 0.24 and only falls to
+  0.176 at c = 0.32. At gs=128, IJM collapses near c = 0.20. In gs=4 the closed
+  reputation pool sustains indirect reciprocity far longer.
+
+- **IJMPQ**: Still the most robust combined mechanism (0.892 at c = 0.32, 0.342
+  at c = 0.40), but the high-c tail is much weaker than gs=128 (0.672 at c = 0.40).
+
+- **M with shuffle**: Not identical to control at gs=4 — qBSeen = 0.851 at c = 0
+  and 0.169 at c = 0.08, whereas gs=128 M shuffle tracks control throughout.
+  Small fixed groups allow residual reciprocity-like signal even under shuffle.
+
+### Snowdrift at gs=4
+
+| Mech   | c=0.00 | c=0.08 | c=0.16 | c=0.24 | c=0.32 | c=0.40 |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| \_     | 0.880  | 0.966  | 0.964  | 0.954  | 0.920  | 0.179  |
+| M      | 0.891  | 0.919  | 0.914  | 0.895  | 0.832  | 0.690  |
+| IJMPQ  | 0.960  | 0.957  | 0.955  | 0.953  | 0.949  | 0.933  |
+
+Snowdrift cooperation remains high through moderate c at gs=4, similar to gs=128.
+IJMPQ reaches 0.933 at c = 0.40 (vs 0.960 at gs=128). Direct reciprocity (M)
+also sustains much higher cooperation at high c in snowdrift than in PD
+(0.690 vs 0.017 at c = 0.40).
+
+### Shuffle vs noshuffle at gs=4
+
+| Mech  | Condition | c=0.00 | c=0.10 | c=0.20 | c=0.30 | c=0.40 |
+| ----- | --------- | ------ | ------ | ------ | ------ | ------ |
+| M     | shuffle   | 0.851  | 0.112  | 0.040  | 0.023  | 0.017  |
+| M     | noshuffle | 0.944  | 0.912  | 0.857  | 0.740  | 0.082  |
+| P     | shuffle   | 0.878  | 0.698  | 0.029  | 0.019  | 0.014  |
+| P     | noshuffle | 0.886  | 0.749  | 0.029  | 0.018  | 0.014  |
+| IJMPQ | shuffle   | 0.967  | 0.958  | 0.948  | 0.914  | 0.342  |
+| IJMPQ | noshuffle | 0.962  | 0.956  | 0.942  | 0.900  | 0.363  |
+
+The M mechanism still shows the largest shuffle effect: noshuffle sustains
+0.857 at c = 0.20 versus 0.040 with shuffle. Partner choice (P) collapses by
+c = 0.20 under both conditions at gs=4. IJMPQ is less sensitive to shuffle than
+M but still benefits from stable pairings at moderate c.
+
+### pop_2 symmetry breaking at gs=4
+
+With the P mechanism, symmetry breaks sharply at low c before both populations
+collapse together:
+
+| c    | fset_0 | fset_1 | ΔqBSeen |
+| ---- | ------ | ------ | ------- |
+| 0.08 | 0.812  | 0.367  | +0.445  |
+| 0.10 | 0.698  | 0.339  | +0.359  |
+| 0.16 | 0.038  | 0.031  | +0.007  |
+
+The higher-cooperating population cannot sustain the chooser bottleneck once
+c exceeds ≈ 0.10. With IJMPQ, symmetry is maintained throughout (ΔqBSeen < 0.01
+through c = 0.30; both populations fall together to ≈ 0.34 at c = 0.40).
 
 ## Shuffle vs noshuffle
 

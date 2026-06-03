@@ -13,7 +13,9 @@ higher cooperation incentive (R0 − P0 = b − c0 > b − c1 = R1 − P1).
 
 The parameter space is a strict upper-triangular 20 × 20 grid:
 c0 ∈ {0.00, 0.02, …, 0.38} and c1 ∈ {0.02, 0.04, …, 0.40} with c0 < c1,
-giving 210 cells. Only pop_2 (cross-population pairing) is present.
+giving 210 cells. Only pop_2 (cross-population pairing) is present. Analysis
+covers groupsize 128 noshuffle (primary) and groupsize 4 (dedicated section
+plus comparison); shuffle conditions are included in both.
 
 ## Payoff structure
 
@@ -293,6 +295,90 @@ The trajectory ranges increase as c1 increases (the cooperation is less stable
 at higher c1), while still showing persistent non-zero cooperation even at
 c1 = 0.20 for mechanism M. This confirms that the multi-run averages represent
 genuine intermediate cooperation levels, not averaging of all-or-nothing states.
+
+## Groupsize 4
+
+All mutualism runs use pop_2 only. The triangular 210-cell grid is unchanged;
+groupsize 4 means four individuals per population in each fixed group. Unless
+noted, the tables below are PD (dilemma 1), noshuffle, fset_0 (lower-cost
+population).
+
+### Cooperation landscape (gs=4)
+
+Mechanism M, fset_0:
+
+| c0 \ c1 | c1=0.10 | c1=0.20 | c1=0.30 | c1=0.40 |
+| ------- | ------- | ------- | ------- | ------- |
+| c0=0.00 | 0.915   | 0.643   | 0.541   | 0.485   |
+| c0=0.10 | ---     | 0.863   | 0.684   | 0.211   |
+| c0=0.20 | ---     | ---     | 0.777   | 0.236   |
+| c0=0.30 | ---     | ---     | ---     | 0.188   |
+
+The landscape is broadly similar to gs=128: cooperation in fset_0 falls as c1
+rises because the partner bottleneck limits achievable cooperation. Along the
+c0 = 0 row, fset_0 still declines from 0.915 (c1 = 0.10) to 0.485 (c1 = 0.40)
+even though pop_0 pays no cost.
+
+Mean qBSeen across all 210 cells (PD, noshuffle):
+
+| Mech   | fset_0 (lower c0) | fset_1 (higher c1) | fset_0 > fset_1 |
+| ------ | ----------------- | ------------------ | --------------- |
+| \_     | 0.103             | 0.025              | 208/210 cells   |
+| M      | 0.636             | 0.551              | 209/210         |
+| P      | 0.204             | 0.046              | 209/210         |
+| IMP    | 0.709             | 0.600              | 208/210         |
+| IJMPQ  | 0.740             | 0.617              | 190/210         |
+
+The role split (lower-cost population cooperates more) is almost as universal
+at gs=4 as at gs=128. IJMPQ is the exception with 20 cells where fset_1 exceeds
+fset_0, typically at large asymmetry where the high-cost population benefits
+from repeated interaction in the small closed group.
+
+### Partner bottleneck at gs=4
+
+Along c0 = 0 (P mechanism, noshuffle):
+
+| c1   | qBSeen fset_0 | qBSeen fset_1 |
+| ---- | ------------- | ------------- |
+| 0.02 | 0.932         | 0.620         |
+| 0.10 | 0.849         | 0.284         |
+| 0.20 | 0.743         | 0.029         |
+| 0.30 | 0.680         | 0.017         |
+| 0.40 | 0.632         | 0.013         |
+
+Pop_0 cooperation falls as c1 rises even with zero own cost — the same
+bottleneck logic as gs=128. Partner choice itself barely functions beyond mild
+asymmetry: at (c0, c1) = (0.10, 0.30), qBSeen = 0.049 for the P mechanism
+versus 0.684 for M and 0.857 for IMP at (0.20, 0.30).
+
+### Exploitation at gs=4
+
+Correlation between ΔqBSeen and Δfitness (PD):
+
+| Mech   | noshuffle | shuffle |
+| ------ | --------- | ------- |
+| \_     | -1.000    | -1.000  |
+| M      | -0.864    | -0.999  |
+| P      | -0.998    | -0.998  |
+| IJMPQ  | -0.936    | -0.946  |
+
+The exploitation paradox (more cooperation, lower fitness in fset_0) persists at
+gs=4. M noshuffle shows weaker coupling (−0.864 vs −0.867 at gs=128) because
+direct reciprocity elevates fset_1 cooperation enough to partially equalize
+fitness in the small group.
+
+### Shuffle effect at gs=4
+
+Sample cells for mechanism M, fset_0:
+
+| Condition       | (0.02, 0.38) | (0.10, 0.20) | (0.20, 0.38) |
+| --------------- | ------------ | ------------ | ------------ |
+| noshuffle_gs4   | 0.301        | 0.863        | 0.363        |
+| shuffle_gs4     | 0.377        | 0.087        | 0.034        |
+
+The shuffle penalty on M is severe at gs=4 (0.863 → 0.087 at (0.10, 0.20)),
+comparable to gs=128 (0.869 → 0.051). Small groups do not rescue direct
+reciprocity under random reshuffling.
 
 ## Groupsize comparison (gs=4 vs gs=128)
 

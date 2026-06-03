@@ -30,12 +30,15 @@ graphgen generates the csv_*_for_image.con and csv_*_for_movie.con summary files
     python -m graphgen.main --study STUDY --all --output /tmp/graphgen_out
 
 Use --groupsize 4 or --groupsize 128 to target a specific groupsize (default is 128).
+Use --movie to build csv_*_for_movie.con (temporal snapshots); without it, only csv_*_for_image.con (final timestep) are written.
+Use --dilemma-type 0|1|2 to target dilemma folders other than the default (1); run once per dilemma type needed.
 Use --clean to discard cached .con files and force a rebuild from raw .csv data.
 
 Examples:
 
-    python -m graphgen.main --study hamilton --all --groupsize 4 --output /tmp/graphgen_out
-    python -m graphgen.main --study mutualism --all --groupsize 4 --output /tmp/graphgen_out
+    python -m graphgen.main --study hamilton --all --groupsize 128 --movie --output /tmp/graphgen_out
+    python -m graphgen.main --study hamilton --all --groupsize 128 --dilemma-type 2 --movie --output /tmp/graphgen_out
+    python -m graphgen.main --study mutualism --all --groupsize 4 --dilemma-type 0 --output /tmp/graphgen_out
     python -m graphgen.main --study prisoners --all --output /tmp/graphgen_out
 
 ### Missing summary exports policy (for AI agents)
@@ -50,13 +53,13 @@ Examples:
 
 ### Study Status
 
-**hamilton**: gs=128 complete (shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3). gs=4 .con files now generated. Analysis: hamilton.md (gs=128 only so far).
+**hamilton**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: hamilton.md (gs=128 primary; dedicated gs=4 section + comparison).
 
-**mutualism**: gs=128 noshuffle complete (dilemmas 0/1/2, 7 mechanisms, pop_2 only). gs=4 .con files now generated. Shuffle .con files not yet generated. Analysis: mutualism.md (gs=128 noshuffle only so far).
+**mutualism**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, 7 mechanisms, pop_2 only (image and movie). Analysis: mutualism.md (gs=128 noshuffle primary; dedicated gs=4 section + comparison).
 
-**prisoners**: simulations still running. Raw .csv data present, no .con summaries yet.
+**prisoners**: no simulation data in ~/results/prisoners/ yet; no .con summaries.
 
-**snowdrift**: simulations still running. Raw .csv data present, no .con summaries yet.
+**snowdrift**: no simulation data in ~/results/snowdrift/ yet; no .con summaries.
 
 ### Hamilton Parameter Space
 

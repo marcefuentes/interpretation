@@ -16,8 +16,8 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 
 | File          | Status   | Notes                                              |
 | ------------- | -------- | -------------------------------------------------- |
-| hamilton.md   | Complete | gs=128 only; gs=4 pending graphgen                 |
-| mutualism.md  | Complete | gs=128 noshuffle only; shuffle and gs=4 pending    |
+| hamilton.md   | Complete | gs=128 + gs=4 analysis (comparison section)        |
+| mutualism.md  | Complete | gs=128 noshuffle + gs=4 analysis (comparison)      |
 | prisoners.md  | Pending  | Simulations still running                          |
 | snowdrift.md  | Pending  | Simulations still running                          |
 
