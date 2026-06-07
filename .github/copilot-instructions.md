@@ -59,7 +59,7 @@ Examples:
 
 **mutualism**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, 7 mechanisms, pop_2 only (image and movie). Analysis: mutualism.md (gs=128 noshuffle primary; dedicated gs=4 section + comparison).
 
-**mutualism pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study mutualism_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). Data incomplete: noshuffle gs=128 and gs=4 are complete for most mechanisms; shuffle conditions partial. Figures: ~/figures/mutualism/pop_3/ (use --flat-output).
+**mutualism pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study mutualism_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with Hamilton pop_3 for interpretation** — see Mutualism Parameter Space below. Data incomplete: noshuffle gs=128 and gs=4 are complete for most mechanisms; shuffle conditions partial. Figures: ~/figures/mutualism/pop_3/ (use --flat-output).
 
 **prisoners**: no simulation data in ~/results/prisoners/ yet; no .con summaries.
 
@@ -104,6 +104,18 @@ Mutualism is a 2D sweep over c0 and c1 with b = 0.4 fixed, K = 0.5.
 **pop_2** (study mutualism): strict upper triangle only — c0 ∈ [0, 0.38], c1 ∈ [0.02, 0.40] with c0 < c1 always (210 cells). Heatmaps mask the diagonal (c0 = c1). The role split is deterministic: since c0 < c1 always, pop_0 has higher R−P and cooperates more in every cell for every mechanism tested.
 
 **pop_3** (study mutualism_pop_3): full 21×21 square — all c0, c1 pairs including diagonal and lower triangle (441 cells). One evolving population (_0) vs one fixed population (_1, 25% each genotype). Reads from the same ~/results/mutualism/ tree (results_name=mutualism). Theory overlays (s04) deferred.
+
+**mutualism pop_3 vs Hamilton pop_3 (redundant for interpretation).** The 441-cell square re-simulates what Hamilton pop_3 already captures in a 1D c sweep. Use Hamilton pop_3 for figures and analysis; mutualism_pop_3 heatmaps add little beyond noise.
+
+| Quantity | mutualism pop_3 (c0, c1) | Hamilton pop_3 (c = c0 = c1) |
+| -------- | ------------------------ | ---------------------------- |
+| Evolving _0 qBSeen / wmean | Depends on c0 only; identical across c1 at fixed c0 (matches Hamilton at c = c0 to ~0.003) | 1D sweep — same story |
+| Fixed _1 qBSeen | Flat ~0.50 (genotypes frozen) | Flat ~0.50 |
+| Fixed _1 raw wmean | w ≈ a(c0) + b(c1) (max residual ~0.005); each c1 row is the same c0 pattern shifted; c1 effect damped because only 50% (C1 genotypes) pay c1 | Diagonal slice where c0 = c1 |
+
+Figure layout (mutualism_pop_3): top row = evolving _0, bottom row = fixed _1. The top row shows vertical c0 bands only. The bottom row shows the same c0 bands with a modest vertical (c1) offset — easy to miss if the rows are swapped mentally.
+
+pop_2 remains the non-redundant mutualism case: both populations evolve and c0 ≠ c1 cells are essential (210-cell upper triangle).
 
 ### Mechanisms Available (mutualism)
 
