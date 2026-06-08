@@ -79,7 +79,7 @@ Payoffs by dilemma type (folder names 0, 1, 2):
 
 With K = 0.5, b = 0.4: P = 0.5 always. T = 0.5 (folder 0) or 0.9 (folders 1 and 2). R and S vary with c.
 
-Folder 0 (old given=0.0) is a **control**, not a cooperative game: focal fitness depends only on the focal individual's move (cooperate → K + b − c, defect → K). High qBSeen at d0 when c < b is a private cost–benefit outcome. Reciprocity loci (M1) are fitness-neutral at d0.
+Folder 0 (old given=0.0) is a **control**, not a cooperative game: the dominant strategy when c < b is to produce b (cooperate → K + b − c). Partner moves do not enter payoffs, but M1 still induces suboptimal defection when a focal C1M1 copies a mutant partner at qBSeen = 0; C1M0 (always cooperate) avoids this. At d0 noshuffle, M1 under mechanism M (~0.39 mean) is ~0.10 below the dummy baseline under _ (~0.49); shuffle keeps both near 0.5.
 
 In PD, b is a cross-benefit: focal receives it only when the partner cooperates (absent in S). In snowdrift, b is a shared resource: both players receive it as long as at least one cooperates (present in S as well as T and R).
 
@@ -201,7 +201,7 @@ Full mechanism → trait mapping: ../graph/graphgen/studies/trps/mech_trait_map.
 
 ### M locus: dTFT vs dSTFT (C0M1 is not silent)
 
-For mechanism M, graphgen splits genotypes into **dTFT** (C1M1: cooperate by default, then copy partner) and **dSTFT** (C0M1: suspicious TFT — defect on the first round with a partner, then mimic the partner on later rounds with the same oldpartner). C0M1 is **not** a silent carrier unlike C0P1: mimicry is active once age > 0 and partner == oldpartner (see decide_qB.c). M1 allele frequency = dTFT + dSTFT. At folder 0 (given=0), copying has no fitness effect because partner moves do not enter payoffs; M1 ≈ 0.5 reflects neutral drift.
+For mechanism M, graphgen splits genotypes into **dTFT** (C1M1: cooperate by default, then copy partner) and **dSTFT** (C0M1: suspicious TFT — defect on the first round with a partner, then mimic the partner on later rounds with the same oldpartner). C0M1 is **not** a silent carrier unlike C0P1: mimicry is active once age > 0 and partner == oldpartner (see decide_qB.c). M1 allele frequency = dTFT + dSTFT. At folder 0 (given=0), produce-b is dominant; M1 is slightly selected against because C1M1 can copy a mutant defector and forgo b, while C1M0 always cooperates.
 
 ### File Set _0/_1 Semantics
 

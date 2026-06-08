@@ -57,28 +57,50 @@ cost c, not on partner behavior.
 | 0.08 | 0.977   | 0.066   | 0.968   |
 | 0.40 | 0.528   | 0.014   | 0.184   |
 
-High qBSeen at d0 (for c < b) reflects a **private** cost–benefit tradeoff
-(pay c, receive b), not social cooperation. Mechanisms that copy the partner
-(M, IM, IJM) have no fitness consequence at d0 because the partner column of
-the payoff matrix is irrelevant.
+High qBSeen at d0 (for c < b) reflects a **private** cost–benefit tradeoff:
+the dominant strategy is to **produce b** (cooperate, pay c, receive b). Partner
+moves do not enter the payoff matrix, but **M1 still shapes behavior**: a C1M1
+individual paired with a mutant partner at qBSeen = 0 will mimic defection and
+earn K instead of K + b − c. Always-cooperating **C1M0** avoids that error. M1
+is therefore **slightly selected against** at d0, not neutral.
 
-#### M1 allele frequency at d0 (mechanism M, pop_2, gs=128)
+#### M1 allele frequency at d0 (pop_2, gs=128)
 
-| Condition   | c=0.00 | c=0.08 | c=0.32 | c=0.40 |
-| ----------- | ------ | ------ | ------ | ------ |
-| shuffle M1  | 0.495  | 0.498  | 0.485  | 0.496  |
-| noshuffle M1| 0.356  | 0.377  | 0.409  | 0.487  |
+Under mechanism **\_**, M1 is a dummy locus (same mutation rate, no behavioral
+effect) and drifts near 0.5. Under **M**, mimicry is active and M1 is selected
+against when produce-b is optimal.
 
-M1 stays near **0.5** with shuffle and is not selected against. With
-noshuffle, M1 is lower (~0.36–0.41 at moderate c) but still well above zero.
-At d0 this is **neutral drift**, not evidence that reciprocity works.
+| Condition  | \_ M1 mean | M M1 mean | M − \_ |
+| ---------- | ---------- | --------- | ------ |
+| shuffle    | 0.495      | 0.494     | −0.001 |
+| noshuffle  | 0.494      | 0.392     | −0.102 |
+
+Noshuffle, selected c values:
+
+| c    | \_ M1 | M M1 | M − \_ |
+| ---- | ----- | ---- | ------ |
+| 0.08 | 0.478 | 0.377| −0.101 |
+| 0.16 | 0.495 | 0.375| −0.120 |
+| 0.32 | 0.493 | 0.409| −0.084 |
+
+| Condition      | c=0.08 C1M0 | c=0.08 C1M1 | c=0.32 C1M0 | c=0.32 C1M1 |
+| -------------- | ----------- | ----------- | ----------- | ----------- |
+| noshuffle d0 M | 0.607       | 0.341       | 0.552       | 0.335       |
+| noshuffle d1 M | 0.537       | 0.378       | 0.135       | 0.621       |
+
+With **noshuffle**, M1 under M falls ~0.10 below the dummy baseline while
+**C1M0** dominates (~0.55–0.61) — consistent with selection against copying
+when produce-b is optimal. At **d1** noshuffle the pattern reverses: C1M1 rises
+with c (0.621 at c = 0.32) as reciprocity becomes advantageous.
+
+With **shuffle**, M and \_ both stay near **0.5**: frequent partner turnover
+limits repeated mimicry, so the penalty from copying a mutant defector is weak.
 
 Genotype split at d0 shuffle (c = 0.00–0.32): almost all M1 is **C1M1** (dTFT,
 ≈ 0.46–0.49); **C0M1** (dSTFT, suspicious TFT) is rare (≈ 0.01–0.03). At d1
 shuffle the split inverts: M1 ≈ 0.49 but mostly **C0M1** (≈ 0.44–0.49) because
-defectors dominate — these are suspicious TFT players (defect first round, then
-mimic the partner), not silent carriers. Mimicry still has little phenotypic
-effect under shuffle because partners rarely stay paired.
+defectors dominate — suspicious TFT players (defect first round, then mimic),
+not silent carriers.
 
 ## Shuffle vs noshuffle
 
