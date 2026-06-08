@@ -14,12 +14,20 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 
 ## Active analysis documents
 
-| File          | Status   | Notes                                              |
-| ------------- | -------- | -------------------------------------------------- |
-| hamilton.md   | Complete | gs=128 + gs=4 analysis (comparison section)        |
-| mutualism.md  | Complete | gs=128 noshuffle + gs=4 analysis (comparison)      |
-| prisoners.md  | Pending  | Simulations still running                          |
-| snowdrift.md  | Pending  | Simulations still running                          |
+| File                         | Status   | Notes                                              |
+| ---------------------------- | -------- | -------------------------------------------------- |
+| hamilton.md                  | Index    | Links to partner-choice, reciprocity, and combined write-ups |
+| hamilton_partner_choice.md   | Complete | gs=128 + gs=4; pop_1/2/3; P mechanism; PD and snowdrift      |
+| hamilton_reciprocity.md      | Complete | gs=128 + gs=4; M, IM, IJM; IJM groupsize reversal            |
+| hamilton_combined.md         | Complete | gs=128 + gs=4; MP, MPQ, IMP, IJMPQ; IJMPQ symmetry          |
+| mutualism.md                 | Index    | Links to partner-choice, reciprocity, and combined write-ups |
+| mutualism_partner_choice.md  | Complete | gs=128 noshuffle + gs=4 (P mechanism)                          |
+| mutualism_reciprocity.md     | Complete | gs=128 noshuffle + gs=4 (M mechanism)                        |
+| mutualism_combined.md        | Complete | gs=128 noshuffle + gs=4 (MP, MPQ, IMP, IJMPQ)                |
+| prisoners.md                 | Index    | Links to partner-choice and reciprocity write-ups  |
+| prisoners_partner_choice.md  | Complete | P mechanism (previous parameterization)            |
+| prisoners_reciprocity.md     | Pending  | Simulations still running                          |
+| snowdrift.md                 | Pending  | Simulations still running                          |
 
 ## Related repositories (same machine)
 
@@ -37,5 +45,5 @@ The repository includes multi-run averages (hamilton, prisoners, mutualism, snow
 
 ## Documentation conventions
 
-For Markdown files intended for human reading (for example prisoners.md, hamilton.md, and mutualism.md), format tables for source readability as well as rendered output. Prefer aligned pipe tables with consistent spacing when practical, so the raw .md remains easy to scan and edit in a terminal or text editor.
+For Markdown files intended for human reading (for example hamilton_*.md, mutualism_*.md, and prisoners_*.md), format tables for source readability as well as rendered output. Prefer aligned pipe tables with consistent spacing when practical, so the raw .md remains easy to scan and edit in a terminal or text editor.
 

@@ -4,7 +4,7 @@
 
 Documentation and analysis for interpreting TRPS evolutionary simulation outputs.
 
-Current parameterization: K = 0.5, b = 0.4 fixed, c varies 0 to b. Analysis docs: hamilton.md and mutualism.md at repo root. Old docs in legacy/ (previous parameterization only).
+Current parameterization: K = 0.5, b = 0.4 fixed, c varies 0 to b. Analysis docs at repo root split by mechanism family: *_partner_choice.md (P), *_reciprocity.md (M, IM, IJM), *_combined.md (MP, MPQ, IMP, IJMPQ); hamilton.md and mutualism.md are indexes. Old docs in legacy/ (previous parameterization only).
 
 ## Repo Layout
 
@@ -55,9 +55,9 @@ Examples:
 
 ### Study Status
 
-**hamilton**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: hamilton.md (gs=128 primary; dedicated gs=4 section + comparison).
+**hamilton**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: hamilton_partner_choice.md (P), hamilton_reciprocity.md (M, IM, IJM), hamilton_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 primary with dedicated gs=4 sections.
 
-**mutualism**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, 7 mechanisms, pop_2 only (image and movie). Analysis: mutualism.md (gs=128 noshuffle primary; dedicated gs=4 section + comparison).
+**mutualism**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, 7 mechanisms, pop_2 only (image and movie). Analysis: mutualism_partner_choice.md (P), mutualism_reciprocity.md (M), mutualism_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 noshuffle primary with dedicated gs=4 sections.
 
 **mutualism pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study mutualism_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with Hamilton pop_3 for interpretation** — see Mutualism Parameter Space below. Data incomplete: noshuffle gs=128 and gs=4 are complete for most mechanisms; shuffle conditions partial. Figures: ~/figures/mutualism/pop_3/ (use --flat-output).
 
@@ -71,13 +71,15 @@ Hamilton is a 1D sweep with **b = 0.4 (fixed)** and **c varying from 0 to b**. T
 
 Payoffs by dilemma type (folder names 0, 1, 2):
 
-| Folder | Dilemma      | T       | R           | P   | S           | b structure                              |
-| ------ | ------------ | ------- | ----------- | --- | ----------- | ---------------------------------------- |
-| 0      | No dilemma   | K       | K + b - c   | K   | K + b - c   | b received by cooperators regardless of partner |
-| 1      | PD           | K + b   | K + b - c   | K   | K - c       | b received only when partner cooperates  |
-| 2      | Snowdrift    | K + b   | K + b - c/2 | K   | K + b - c   | b received by both whenever anyone cooperates |
+| Folder | Role         | T       | R           | P   | S           | Partner dependence                     |
+| ------ | ------------ | ------- | ----------- | --- | ----------- | -------------------------------------- |
+| 0      | Control (given=0) | K  | K + b - c   | K   | K + b - c   | None: T = P, R = S; partner irrelevant |
+| 1      | PD           | K + b   | K + b - c   | K   | K - c       | b only when partner cooperates         |
+| 2      | Snowdrift    | K + b   | K + b - c/2 | K   | K + b - c   | b shared whenever anyone cooperates    |
 
 With K = 0.5, b = 0.4: P = 0.5 always. T = 0.5 (folder 0) or 0.9 (folders 1 and 2). R and S vary with c.
+
+Folder 0 (old given=0.0) is a **control**, not a cooperative game: focal fitness depends only on the focal individual's move (cooperate → K + b − c, defect → K). High qBSeen at d0 when c < b is a private cost–benefit outcome. Reciprocity loci (M1) are fitness-neutral at d0.
 
 In PD, b is a cross-benefit: focal receives it only when the partner cooperates (absent in S). In snowdrift, b is a shared resource: both players receive it as long as at least one cooperates (present in S as well as T and R).
 
@@ -152,7 +154,7 @@ When editing Markdown tables, keep raw-source alignment readable in plain text e
 
 Results live at ~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{dilemma}/{population}/:
 
-- **dilemma**: 0 (no dilemma), 1 (PD), 2 (snowdrift)
+- **dilemma**: 0 (control, given=0), 1 (PD), 2 (snowdrift)
 - **shuffle**: shuffle or noshuffle
 - **cost**: mutation cost (currently 0.001)
 - **groupsize**: 128 or 4
@@ -196,6 +198,10 @@ Full mechanism → trait mapping: ../graph/graphgen/studies/trps/mech_trait_map.
 - P1 allele frequency ≠ fraction of choosers
 - C0P1 accumulates as a neutral carrier via mutation from C1P1, inflating P1 frequency in the transition zone
 - Always use C1P1 (= Choosers) for behavioral analysis, P1 only for genetic analysis
+
+### M locus: dTFT vs dSTFT (C0M1 is not silent)
+
+For mechanism M, graphgen splits genotypes into **dTFT** (C1M1: cooperate by default, then copy partner) and **dSTFT** (C0M1: suspicious TFT — defect on the first round with a partner, then mimic the partner on later rounds with the same oldpartner). C0M1 is **not** a silent carrier unlike C0P1: mimicry is active once age > 0 and partner == oldpartner (see decide_qB.c). M1 allele frequency = dTFT + dSTFT. At folder 0 (given=0), copying has no fitness effect because partner moves do not enter payoffs; M1 ≈ 0.5 reflects neutral drift.
 
 ### File Set _0/_1 Semantics
 

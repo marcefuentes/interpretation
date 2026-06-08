@@ -1,7 +1,7 @@
 # Key Findings — New Parameterization
 
 Quick reference for future AI sessions. All data from gs=128, shuffle conditions unless noted.
-Source analysis: ai/analyze_new_data.py. Full write-ups: hamilton.md, mutualism.md.
+Source analysis: ai/analyze_new_data.py. Full write-ups: hamilton_partner_choice.md, hamilton_reciprocity.md, hamilton_combined.md, mutualism_partner_choice.md, mutualism_reciprocity.md, mutualism_combined.md.
 
 ## Hamilton — Critical Thresholds (PD, shuffle, pop_1 unless noted)
 
@@ -101,4 +101,4 @@ Interpretation: small groups make reputation signals (I, J loci) more reliable
 ## Pending
 
 - mutualism shuffle: data present but not analyzed
-- prisoners.md, snowdrift.md: simulations still running as of 2026-05-26
+- prisoners_reciprocity.md, snowdrift.md: simulations still running as of 2026-05-26
