@@ -64,7 +64,7 @@ for fitness outcomes.
 
 ### Dilemma 1 (PD)
 
-Along the c0 = 0 row (pop_0 has zero cost), noshuffle, groupsize 128:
+Along the c0 = 0 column (pop_0 has zero cost), noshuffle, groupsize 128:
 
 | Mech   | c1=0.02 | c1=0.10 | c1=0.18 | c1=0.26 | c1=0.34 |
 | ------ | ------- | ------- | ------- | ------- | ------- |
@@ -85,7 +85,7 @@ Cooperation landscape, mechanism P, fset_0:
 
 ### Dilemma 2 (snowdrift)
 
-Along the c0 = 0 row, noshuffle, groupsize 128:
+Along the c0 = 0 column, noshuffle, groupsize 128:
 
 | Mech   | c1=0.02 | c1=0.10 | c1=0.20 | c1=0.30 | c1=0.40 |
 | ------ | ------- | ------- | ------- | ------- | ------- |
@@ -135,7 +135,7 @@ the exchange. Population 1's low R1 − P1 = b − c1 means it evolves few C1P1
 individuals. Without C1P1 counterparts in pop_1, pop_0 cannot execute swaps
 even though it has strong incentive to cooperate.
 
-Along the c0 = 0 row (P mechanism, noshuffle) — where pop_0 has the maximum
+Along the c0 = 0 column (P mechanism, noshuffle) — where pop_0 has the maximum
 possible incentive (R0 − P0 = 0.40) — cooperation still falls as c1 rises
 because the bottleneck is entirely on the partner side:
 
@@ -308,7 +308,7 @@ grid.
 
 ### Partner bottleneck at gs=4
 
-Along c0 = 0 (P mechanism):
+Along the c0 = 0 column (P mechanism):
 
 **Dilemma 1 (PD):**
 

@@ -73,7 +73,7 @@ incentive is high (c0 small), the partner bottleneck limits achievable
 cooperation. When c1 is large, population 1 evolves few cooperators, which
 starves pop_0 of reciprocal partners.
 
-Along the c0 = 0 row:
+Along the c0 = 0 column:
 
 | Mech   | c1=0.02 | c1=0.10 | c1=0.18 | c1=0.26 | c1=0.34 |
 | ------ | ------- | ------- | ------- | ------- | ------- |
@@ -96,7 +96,7 @@ along rows of constant c0: reciprocity does not need to bootstrap cooperation
 from scratch as in PD. Decline appears only at high c0 (pop_0's own cost
 rises), not from partner-side bottlenecks.
 
-Along the c0 = 0 row:
+Along the c0 = 0 column:
 
 | Mech   | c1=0.02 | c1=0.10 | c1=0.18 | c1=0.26 | c1=0.34 |
 | ------ | ------- | ------- | ------- | ------- | ------- |
@@ -211,7 +211,7 @@ asymmetry.
 
 ## Single-run dynamics (mutualism_1run)
 
-Along the c0 = 0 row (mechanism M, noshuffle, PD, fset_0), single-run
+Along the c0 = 0 column (mechanism M, noshuffle, PD, fset_0), single-run
 trajectories show high but variable cooperation:
 
 | c1   | Range | Representative trajectory              |

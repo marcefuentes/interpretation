@@ -21,10 +21,10 @@ upper triangle). Benefit b = 0.40 fixed, K = 0.50. Analysis covers dilemma 1
 (PD) and dilemma 2 (snowdrift), groupsize 128 noshuffle (primary) and
 groupsize 4; shuffle where noted.
 
-## Cooperation along c0 = 0 row
+## Cooperation along c0 = 0 column
 
-Mechanisms add partner-choice sorting on top of reciprocity. Along c0 = 0
-(noshuffle, gs=128):
+Mechanisms add partner-choice sorting on top of reciprocity. Along the c0 = 0
+column (noshuffle, gs=128):
 
 **Dilemma 1 (PD):**
 

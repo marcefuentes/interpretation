@@ -12,3 +12,8 @@ split by mechanism family:
 
 Hamilton is the equal-cost diagonal (c0 = c1); see **hamilton.md** (index to
 hamilton_partner_choice.md, hamilton_reciprocity.md, and hamilton_combined.md).
+
+**Parameter axes.** graphgen heatmaps plot c0 horizontally and c1 vertically
+(upper triangle, c0 < c1). Markdown landscape tables in the sub-docs list c0
+as rows and c1 as columns; a fixed-c0 slice is a heatmap column (left edge) but
+the top row of those tables.
