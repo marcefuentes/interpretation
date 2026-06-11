@@ -112,6 +112,10 @@ cooperation advantage and fitness deficit: −0.984 (paradox of success). This
 contrasts with mutualism pop_2, where the role split is deterministic off the
 diagonal.
 
+Under partner choice, Pop_0 (the sorted higher-cooperating role) can suffer lower fitness than in the control (mechanism _):
+- **Prisoner's Dilemma (PD):** At c = 0.40, Pop_0's fitness is slightly lower under P than under the control (0.4974 vs. 0.4976 under shuffle). This minor drop is negligible and near the noise floor, reflecting the inability of either population to sustain cooperation at such high cost.
+- **Snowdrift:** Pop_0 gets lower fitness under P than under the control in 8 out of 21 cells (shuffle). At c = 0.40, cooperation rises from 0.1841 (control) to 0.6789 (P), but average fitness drops from 0.5460 (control) to 0.5167 (P) — a significant, non-noise deficit of 0.0293. Unilateral cooperation at c = 0.40 is highly penalized (earning K + b - c = 0.50) compared to defection (earning K + b = 0.90). The selective pressure of partner choice drives high levels of cooperation, but because the cost is too high to establish a fully cooperative group, individuals are frequently exploited, leading to lower average payoffs than if they had simply remained defectors.
+
 ### Pop_3: evolving vs fixed partner
 
 P mechanism, shuffle, PD:
