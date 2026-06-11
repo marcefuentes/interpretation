@@ -81,6 +81,19 @@ IJMPQ nearly eliminates it:
 Both populations converge to near-identical high cooperation; the fitness
 disadvantage of the cooperating population vanishes.
 
+### Cooperation Boost vs. Asymmetry Effects
+
+Combining partner choice (P) and reciprocity (M, IMP, IJMPQ) in Hamilton shows that the reciprocity components completely override partner choice's tendency to drive population asymmetry:
+
+- **Prisoner's Dilemma (PD):** 
+  - Under partner choice alone (P), stochastic role splits occur, driving an average asymmetry of 0.242.
+  - Combining them (**IMP** and **IJMPQ**) has the major effect of **increasing cooperation symmetrically** in both populations. Average cooperation rises to ~0.87 under IMP and ~0.90 under IJMPQ.
+  - Crucially, the asymmetry is **almost entirely eliminated** (falling from 0.242 under P to 0.003 under IMP, and 0.002 under IJMPQ). Conditional reciprocity prevents any stable role split, allowing both populations to coevolve to high cooperation without either being exploited.
+- **Snowdrift:** 
+  - Partner choice alone (P) has almost no effect, preserving the high control asymmetry of ~0.73.
+  - Combining them (**IMP** and **IJMPQ**) has the major effect of **decreasing asymmetry** (collapsing it from 0.69 under control to 0.025 under IMP, and a near-perfect 0.001 under IJMPQ).
+  - This is driven by **massively increasing cooperation in Pop_1** (from 0.196 under control/P to 0.915 under IMP, and 0.959 under IJMPQ). The reciprocity components successfully lift Pop_1 to cooperators, collapsing the asymmetry.
+
 ## Comparison across mechanisms
 
 PD hierarchy at high c (c = 0.30–0.40):
