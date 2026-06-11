@@ -207,6 +207,15 @@ Stable pairings provide sufficient history regardless of group size.
 Combined mechanisms rank above pure reciprocity at gs=4 — see
 **hamilton_combined.md**.
 
+## Cooperation Boost vs. Asymmetry Effects
+
+Comparing direct reciprocity (M) to the control (_) in the coevolving setup (pop_2) reveals that reciprocity has a strong tendency to enforce symmetry and prevent role splits:
+
+- **Prisoner's Dilemma (PD):** 
+  - Under control, cooperation is nearly zero. Allowing reciprocity (M, under noshuffle) has a major effect of **increasing cooperation symmetrically** in both populations (Pop_0 +0.689, Pop_1 +0.690 on average across cells). Net asymmetry remains virtually zero (average 0.009). Because conditional reciprocity (TFT) ties cooperation to the partner's actions, a cooperator cannot play unless its partner cooperates too. This prevents one population from exploiting the other and suppresses the stochastic symmetry breaking seen under partner choice.
+- **Snowdrift:** 
+  - The major effect of reciprocity is **to decrease asymmetry** (by -0.217 on average). Under the control, the Snowdrift payoff floor already sustains high cooperation in Pop_0 (0.89) but low cooperation in Pop_1 (0.20), leading to high asymmetry (0.69). Reciprocity enforces symmetry by bootstrapping cooperation in Pop_1 to 0.40 (+0.208 boost), narrowing the asymmetry to 0.475 on average. At moderate costs (e.g. c = 0.08), asymmetry drops from 0.725 (control) to 0.015 (M) as both populations converge on symmetric cooperation.
+
 ## Summary
 
 | Topic                    | Key finding                                                                 |

@@ -81,6 +81,15 @@ In PD, simple reciprocity (M) preserves the deterministic role split in every
 cell. In snowdrift, M roughly doubles Pop_1 cooperation (0.191 vs 0.091)
 but leaves a large gap below Pop_0.
 
+### Cooperation Boost vs. Asymmetry Effects
+
+Comparing direct reciprocity (M) to the control (_) in Mutualism shows a strong tendency to enforce symmetry compared to partner choice:
+
+- **Prisoner's Dilemma (PD):** 
+  - The major effect of allowing reciprocity is **to increase cooperation symmetrically** in both populations, keeping asymmetry low. Pop_0's cooperation increases by +0.534 (from 0.103 to 0.637) and Pop_1's cooperation increases by +0.526 (from 0.025 to 0.551). The net asymmetry change is a negligible +0.008 (from 0.078 to 0.086). Because conditional cooperation (TFT) ties players' actions together, Pop_0 cannot cooperate without Pop_1 reciprocating, which successfully lifts Pop_1 to cooperate and prevents the emergence of high exploitation asymmetries.
+- **Snowdrift:** 
+  - The major effect of allowing reciprocity is **to decrease asymmetry** (by -0.129 on average). Under the control, asymmetry is extremely high (0.864) because Pop_0 cooperates at ceiling while Pop_1 free-rides and defects. Reciprocity elevates Pop_1's cooperation by +0.100 (from 0.091 to 0.191) while Pop_0's cooperation drops slightly (by -0.029), narrowing the asymmetry.
+
 ## Mechanism comparison
 
 Cooperation at (c0=0.1, c1=0.2) and (c0=0.1, c1=0.3), noshuffle, gs=128:
