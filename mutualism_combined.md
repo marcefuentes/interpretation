@@ -44,14 +44,14 @@ column (noshuffle, gs=128):
 | IJMPQ  | 0.967   | 0.964   | 0.963   | 0.912   | 0.912   |
 
 In PD, IMP and IJMPQ exceed both M and P alone at moderate c1. In snowdrift,
-combined mechanisms add little for fset_0 (already at ceiling); the benefit
-is elevating fset_1.
+combined mechanisms add little for Pop_0 (already at ceiling); the benefit
+is elevating Pop_1.
 
 ## Role split
 
 Mean qBSeen across all 210 cells (noshuffle, gs=128):
 
-| Mech   | Dilemma | fset_0 | fset_1 | fset_0 > fset_1 |
+| Mech   | Dilemma | Pop_0 | Pop_1 | Pop_0 > Pop_1 |
 | ------ | ------- | ------ | ------ | --------------- |
 | MP     | 1 (PD)  | 0.606  | 0.410  | 210/210         |
 | IMP    | 1 (PD)  | 0.670  | 0.505  | 203/210         |
@@ -61,7 +61,7 @@ Mean qBSeen across all 210 cells (noshuffle, gs=128):
 | IJMPQ  | 2 (SD)  | 0.923  | 0.609  | 176/210         |
 
 IMP and IJMPQ partially erode the deterministic role split at mild asymmetry.
-In snowdrift, IJMPQ brings fset_1 to mean 0.609 (vs 0.091 control) and reverses
+In snowdrift, IJMPQ brings Pop_1 to mean 0.609 (vs 0.091 control) and reverses
 the role split in 34/210 cells.
 
 ## Mechanism comparison at sample cells
@@ -70,7 +70,7 @@ Cooperation at (c0=0.1, c1=0.2) and (c0=0.1, c1=0.3), noshuffle, gs=128:
 
 **Dilemma 1 (PD):**
 
-| Mech   | (0.1, 0.2) fset_0 | (0.1, 0.2) fset_1 | (0.1, 0.3) fset_0 | (0.1, 0.3) fset_1 |
+| Mech   | (0.1, 0.2) Pop_0 | (0.1, 0.2) Pop_1 | (0.1, 0.3) Pop_0 | (0.1, 0.3) Pop_1 |
 | ------ | ----------------- | ----------------- | ----------------- | ----------------- |
 | M      | 0.869             | 0.830             | 0.680             | 0.616             |
 | P      | 0.600             | 0.187             | 0.369             | 0.101             |
@@ -81,7 +81,7 @@ Cooperation at (c0=0.1, c1=0.2) and (c0=0.1, c1=0.3), noshuffle, gs=128:
 
 **Dilemma 2 (snowdrift):**
 
-| Mech   | (0.1, 0.2) fset_0 | (0.1, 0.2) fset_1 | (0.1, 0.3) fset_0 | (0.1, 0.3) fset_1 |
+| Mech   | (0.1, 0.2) Pop_0 | (0.1, 0.2) Pop_1 | (0.1, 0.3) Pop_0 | (0.1, 0.3) Pop_1 |
 | ------ | ----------------- | ----------------- | ----------------- | ----------------- |
 | M      | 0.945             | 0.188             | 0.945             | 0.123             |
 | P      | 0.973             | 0.089             | 0.972             | 0.061             |
@@ -92,9 +92,9 @@ Cooperation at (c0=0.1, c1=0.2) and (c0=0.1, c1=0.3), noshuffle, gs=128:
 
 At mild asymmetry (c0=0.1, c1=0.2), IMP and IJMPQ achieve near-symmetric high
 cooperation in both dilemma types (0.946–0.962). MP and MPQ sit between M and
-P — better than P alone for fset_1 at high asymmetry, but far below IMP/IJMPQ.
+P — better than P alone for Pop_1 at high asymmetry, but far below IMP/IJMPQ.
 
-At high asymmetry (c0=0.1, c1=0.3), IJMPQ sustains fset_1 = 0.293 in
+At high asymmetry (c0=0.1, c1=0.3), IJMPQ sustains Pop_1 = 0.293 in
 snowdrift vs 0.057 for the control — a fivefold lift.
 
 ## Mutual cooperation (IMP, c0=0.1)
@@ -131,24 +131,24 @@ Partner shuffling has a major impact on combined mechanisms because it disables 
 
 ### Mean cooperation across all 210 cells (gs=128)
 
-| Mechanism | Dilemma | noshuffle (fset_0 / fset_1) | shuffle (fset_0 / fset_1) | Key observation |
+| Mechanism | Dilemma | noshuffle (Pop_0 / Pop_1) | shuffle (Pop_0 / Pop_1) | Key observation |
 | --------- | ------- | --------------------------- | ------------------------- | --------------- |
 | **M**     | 1 (PD)  | 0.637 / 0.551               | 0.108 / 0.026             | Collapses to control baseline |
 | **P**     | 1 (PD)  | 0.472 / 0.146               | 0.470 / 0.146             | Completely unaffected by shuffle |
 | **MP**    | 1 (PD)  | 0.606 / 0.410               | 0.474 / 0.148             | Collapses to P-only baseline |
 | **MPQ**   | 1 (PD)  | 0.594 / 0.318               | 0.523 / 0.155             | Q memory locus adds slight resilience |
 | **IMP**   | 1 (PD)  | 0.670 / 0.505               | 0.567 / 0.264             | I locus (reputation) resists turnover |
-| **IJMPQ** | 1 (PD)  | 0.729 / 0.573               | 0.729 / 0.442             | Extremely robust; fset_0 unchanged |
-| **IJMPQ** | 2 (SD)  | 0.923 / 0.609               | 0.932 / 0.477             | Maintains substantial fset_1 lift |
+| **IJMPQ** | 1 (PD)  | 0.729 / 0.573               | 0.729 / 0.442             | Extremely robust; Pop_0 unchanged |
+| **IJMPQ** | 2 (SD)  | 0.923 / 0.609               | 0.932 / 0.477             | Maintains substantial Pop_1 lift |
 
 ### Role Split under Shuffle
 
-Shuffling does not erase the deterministic role split (where the lower-cost population 0 cooperates more). In fact, the fraction of cells where `fset_0 > fset_1` increases under shuffling for the most robust mechanisms:
-- **IMP** (PD): `fset_0 > fset_1` in **203/210** cells (noshuffle) $\rightarrow$ **210/210** cells (shuffle)
-- **IJMPQ** (PD): `fset_0 > fset_1` in **198/210** cells (noshuffle) $\rightarrow$ **205/210** cells (shuffle)
-- **IJMPQ** (SD): `fset_0 > fset_1` in **176/210** cells (noshuffle) $\rightarrow$ **197/210** cells (shuffle)
+Shuffling does not erase the deterministic role split (where the lower-cost population 0 cooperates more). In fact, the fraction of cells where `Pop_0 > Pop_1` increases under shuffling for the most robust mechanisms:
+- **IMP** (PD): `Pop_0 > Pop_1` in **203/210** cells (noshuffle) $\rightarrow$ **210/210** cells (shuffle)
+- **IJMPQ** (PD): `Pop_0 > Pop_1` in **198/210** cells (noshuffle) $\rightarrow$ **205/210** cells (shuffle)
+- **IJMPQ** (SD): `Pop_0 > Pop_1` in **176/210** cells (noshuffle) $\rightarrow$ **197/210** cells (shuffle)
 
-This happens because shuffling suppresses cooperation in the higher-cost population (fset_1) more than in the lower-cost population (fset_0), making the asymmetric role split even more pronounced across the parameter space.
+This happens because shuffling suppresses cooperation in the higher-cost population (Pop_1) more than in the lower-cost population (Pop_0), making the asymmetric role split even more pronounced across the parameter space.
 
 ## Exploitation
 
@@ -159,27 +159,27 @@ This happens because shuffling suppresses cooperation in the higher-cost populat
 | IMP    | 2 (SD)  | -0.507    | -0.362  |
 | IJMPQ  | 2 (SD)  | -0.633    | -0.576  |
 
-Combined mechanisms raise fset_1 cooperation, partially restoring a
+Combined mechanisms raise Pop_1 cooperation, partially restoring a
 cooperation/fitness tradeoff. IJMPQ shows the strongest snowdrift coupling
-(−0.633) because it most effectively elevates fset_1.
+(−0.633) because it most effectively elevates Pop_1.
 
-### fset_1 lift in snowdrift
+### Pop_1 lift in snowdrift
 
-| Mech   | fset_1 mean | fset_1 at (0.1, 0.3) |
+| Mech   | Pop_1 mean | Pop_1 at (0.1, 0.3) |
 | ------ | ----------- | -------------------- |
 | M      | 0.191       | 0.123                |
 | P      | 0.096       | 0.061                |
 | IMP    | 0.391       | 0.192                |
 | IJMPQ  | 0.609       | 0.293                |
 
-IJMPQ is the only mechanism that brings fset_1 into a genuinely cooperative
+IJMPQ is the only mechanism that brings Pop_1 into a genuinely cooperative
 regime in snowdrift.
 
 ## Groupsize 4
 
 Mean qBSeen across all 210 cells (noshuffle):
 
-| Mech   | Dilemma | fset_0 | fset_1 | fset_0 > fset_1 |
+| Mech   | Dilemma | Pop_0 | Pop_1 | Pop_0 > Pop_1 |
 | ------ | ------- | ------ | ------ | --------------- |
 | IMP    | 1 (PD)  | 0.709  | 0.600  | 208/210         |
 | IJMPQ  | 1 (PD)  | 0.740  | 0.617  | 190/210         |
@@ -194,7 +194,7 @@ cells at gs=4.
 
 **Dilemma 1 (PD):**
 
-| Mechanism | c0   | c1   | fset_0 gs=4 | fset_0 gs=128 | fset_1 gs=4 | fset_1 gs=128 |
+| Mechanism | c0   | c1   | Pop_0 gs=4 | Pop_0 gs=128 | Pop_1 gs=4 | Pop_1 gs=128 |
 | --------- | ---- | ---- | ----------- | ------------- | ----------- | ------------- |
 | IMP       | 0.10 | 0.12 | 0.943       | 0.953         | 0.943       | 0.952         |
 | IMP       | 0.10 | 0.30 | 0.585       | 0.509         | 0.437       | 0.255         |
@@ -203,20 +203,20 @@ cells at gs=4.
 | IJMPQ     | 0.10 | 0.30 | 0.545       | 0.574         | 0.320       | 0.293         |
 | IJMPQ     | 0.20 | 0.30 | 0.920       | 0.932         | 0.917       | 0.931         |
 
-At c0 = 0.20, c1 = 0.30, IMP shows the largest gs=4 advantage: fset_1 reaches
+At c0 = 0.20, c1 = 0.30, IMP shows the largest gs=4 advantage: Pop_1 reaches
 0.844 at gs=4 vs 0.519 at gs=128. Small groups allow high-cost cooperators to
 interact more repeatedly with the same partners.
 
 **Dilemma 2 (snowdrift):** gs=4 and gs=128 are broadly similar; the large
-fset_1 advantage seen in PD at high asymmetry does not appear.
+Pop_1 advantage seen in PD at high asymmetry does not appear.
 
 ## Summary
 
 | Topic                   | PD (dilemma 1)                                              | Snowdrift (dilemma 2)                                       |
 | ----------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| Best combined mech      | IJMPQ: mean fset_0 = 0.729, fset_1 = 0.573                  | IJMPQ: mean fset_0 = 0.923, fset_1 = 0.609                  |
+| Best combined mech      | IJMPQ: mean Pop_0 = 0.729, Pop_1 = 0.573                  | IJMPQ: mean Pop_0 = 0.923, Pop_1 = 0.609                  |
 | Mutualistic equilibrium | IMP/IJMPQ at (0.1, 0.12–0.20): both pops ≈ 0.95             | IMP at (0.1, 0.12–0.16): both pops ≈ 0.95; breaks by c1=0.20 |
-| vs M alone              | IJMPQ raises fset_1 from 0.551 to 0.573                     | IJMPQ raises fset_1 from 0.191 to 0.609                    |
-| vs P alone              | IMP/IJMPQ far exceed P for fset_1 at mild asymmetry           | IJMPQ raises fset_1 from 0.096 to 0.609                     |
-| gs=4                    | IMP/IJMPQ robust; fset_1 gains at large asymmetry            | Broadly similar to gs=128                                   |
-| Role reversals (IJMPQ)  | fset_1 > fset_0 in 12/210 cells (gs=128), 18/210 (gs=4)     | 34/210 (gs=128), 22/210 (gs=4)                              |
+| vs M alone              | IJMPQ raises Pop_1 from 0.551 to 0.573                     | IJMPQ raises Pop_1 from 0.191 to 0.609                    |
+| vs P alone              | IMP/IJMPQ far exceed P for Pop_1 at mild asymmetry           | IJMPQ raises Pop_1 from 0.096 to 0.609                     |
+| gs=4                    | IMP/IJMPQ robust; Pop_1 gains at large asymmetry            | Broadly similar to gs=128                                   |
+| Role reversals (IJMPQ)  | Pop_1 > Pop_0 in 12/210 cells (gs=128), 18/210 (gs=4)     | 34/210 (gs=128), 22/210 (gs=4)                              |

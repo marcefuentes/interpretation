@@ -17,17 +17,17 @@ See **[mutualism.md](mutualism.md#payoff-structure)** for the common payoff stru
 
 ### Dilemma 1 (PD)
 
-Along the c0 = 0 column (pop_0 has zero cost), noshuffle, groupsize 128:
+Along the c0 = 0 column (Pop_0 has zero cost), noshuffle, groupsize 128:
 
 | Mech   | c1=0.02 | c1=0.10 | c1=0.18 | c1=0.26 | c1=0.34 |
 | ------ | ------- | ------- | ------- | ------- | ------- |
 | \_     | 0.487   | 0.498   | 0.500   | 0.502   | 0.500   |
 | P      | 0.961   | 0.864   | 0.791   | 0.735   | 0.710   |
 
-Even with c0 = 0 (no cost to cooperate), fset_0 cooperation declines as c1
+Even with c0 = 0 (no cost to cooperate), Pop_0 cooperation declines as c1
 rises, because the bottleneck is driven by the partner population's low R1 − P1.
 
-Cooperation landscape, mechanism P, fset_0:
+Cooperation landscape, mechanism P, Pop_0:
 
 | c0 \ c1 | c1=0.10 | c1=0.20 | c1=0.30 | c1=0.40 |
 | ------- | ------- | ------- | ------- | ------- |
@@ -47,9 +47,9 @@ Along the c0 = 0 column, noshuffle, groupsize 128:
 
 Partner choice raises cooperation only at the lowest c1 (0.961 vs 0.922);
 above c1 = 0.02 the control is already near ceiling and P adds negligible
-lift for fset_0.
+lift for Pop_0.
 
-Cooperation landscape, mechanism P, fset_0:
+Cooperation landscape, mechanism P, Pop_0:
 
 | c0 \ c1 | c1=0.10 | c1=0.20 | c1=0.30 | c1=0.40 |
 | ------- | ------- | ------- | ------- | ------- |
@@ -60,14 +60,14 @@ Cooperation landscape, mechanism P, fset_0:
 
 ### Role split (both dilemmas)
 
-For all 210 cells (noshuffle, gs=128, P mechanism), fset_0 (lower-cost
-population) cooperates more than fset_1 in every single cell for both dilemma
-types. The split is deterministic: since c0 < c1 always, pop_0 has higher
+For all 210 cells (noshuffle, gs=128, P mechanism), Pop_0 (lower-cost
+population) cooperates more than Pop_1 in every single cell for both dilemma
+types. The split is deterministic: since c0 < c1 always, Pop_0 has higher
 R − P.
 
 Mean qBSeen across all 210 cells:
 
-| Mech   | Dilemma | fset_0 (lower c0) | fset_1 (higher c1) |
+| Mech   | Dilemma | Pop_0 (lower c0) | Pop_1 (higher c1) |
 | ------ | ------- | ----------------- | ------------------ |
 | \_     | 1 (PD)  | 0.103             | 0.025              |
 | P      | 1 (PD)  | 0.472             | 0.146              |
@@ -75,20 +75,20 @@ Mean qBSeen across all 210 cells:
 | P      | 2 (SD)  | 0.956             | 0.096              |
 
 In snowdrift, partner choice barely changes the cooperation means: the
-snowdrift floor sustains high fset_0 cooperation without sorting, while
-fset_1 remains near 0.10 regardless of mechanism.
+snowdrift floor sustains high Pop_0 cooperation without sorting, while
+Pop_1 remains near 0.10 regardless of mechanism.
 
 ## The partner choice bottleneck
 
 ### Dilemma 1 (PD)
 
-Despite pop_0's cooperation incentive, its achievable cooperation is capped by
+Despite Pop_0's cooperation incentive, its achievable cooperation is capped by
 a bottleneck: partner-choice swaps require C1P1 individuals on both sides of
 the exchange. Population 1's low R1 − P1 = b − c1 means it evolves few C1P1
-individuals. Without C1P1 counterparts in pop_1, pop_0 cannot execute swaps
+individuals. Without C1P1 counterparts in Pop_1, Pop_0 cannot execute swaps
 even though it has strong incentive to cooperate.
 
-Along the c0 = 0 column (P mechanism, noshuffle) — where pop_0 has the maximum
+Along the c0 = 0 column (P mechanism, noshuffle) — where Pop_0 has the maximum
 possible incentive (R0 − P0 = 0.40) — cooperation still falls as c1 rises
 because the bottleneck is entirely on the partner side:
 
@@ -101,8 +101,8 @@ because the bottleneck is entirely on the partner side:
 | 0.40 | 0.00  | 0.672    | 0.023    |
 
 Pop_0's cooperation falls from 0.961 to 0.672 as c1 rises from 0.02 to 0.40
-— not because pop_0's own incentive changes (R0 − P0 = 0.40 throughout), but
-because pop_1's C1P1 frequency collapses with rising c1. The correlation
+— not because Pop_0's own incentive changes (R0 − P0 = 0.40 throughout), but
+because Pop_1's C1P1 frequency collapses with rising c1. The correlation
 between qBSeen_0 and R1 − P1 across all 210 cells is 0.90; the correlation
 with the focal population's own incentive R0 − P0 is 0.67. The partner's
 incentive explains more variance than the focal's own.
@@ -121,15 +121,15 @@ lower-cost population:
 | 0.30 | 0.25  | 0.977    | 0.059    |
 | 0.40 | 0.20  | 0.978    | 0.045    |
 
-Pop_0 stays near 0.97 while pop_1's cooperation collapses from 0.818 to 0.045
+Pop_0 stays near 0.97 while Pop_1's cooperation collapses from 0.818 to 0.045
 as c1 rises. The correlation between qBSeen_0 and R1 − P1 is −0.01 (no
-bottleneck on pop_0). Instead, the constraint operates on pop_1: when pop_0
-cooperates heavily, pop_1's defectors receive T1 = R1 (the shared benefit b
+bottleneck on Pop_0). Instead, the constraint operates on Pop_1: when Pop_0
+cooperates heavily, Pop_1's defectors receive T1 = R1 (the shared benefit b
 arrives regardless), eliminating the marginal payoff advantage of cooperating.
 Pop_1 defects even though S1 > P1 holds throughout.
 
-Partner choice provides almost no benefit for pop_1 in snowdrift: at
-(c0=0.1, c1=0.3), P gives fset_1 = 0.061 vs control 0.057. The bottleneck
+Partner choice provides almost no benefit for Pop_1 in snowdrift: at
+(c0=0.1, c1=0.3), P gives Pop_1 = 0.061 vs control 0.057. The bottleneck
 is not swap scarcity but payoff structure — sorting cannot overcome the
 free-rider advantage when the partner population is already cooperating at
 ceiling.
@@ -146,10 +146,10 @@ Population 0 cooperates more but often earns less. The correlation between
 | \_     | 2 (SD)  | -0.148    | -0.141  |
 | P      | 2 (SD)  | -0.144    | -0.165  |
 
-In PD, the cooperation/fitness link is nearly deterministic: pop_0 cooperates
+In PD, the cooperation/fitness link is nearly deterministic: Pop_0 cooperates
 more and earns less in 199/210 cells (mean fitness deficit = 0.140). In
 snowdrift, the correlation is weak (−0.144) because the snowdrift payoff
-structure sustains high cooperation without the same fitness penalty; pop_0
+structure sustains high cooperation without the same fitness penalty; Pop_0
 has lower fitness in 187/210 cells with a smaller mean deficit (0.104).
 
 ### Exploitation at the cell level (P mechanism, c0=0.1)
@@ -179,12 +179,12 @@ ratio narrows: at (c0=0.1, c1=0.40), w\_1/w\_0 = 1.11.
 
 The cooperation gap is far larger (16× at c1=0.30) but fitness differences
 are smaller and more stable across c1. Pop_1 earns more despite cooperating
-at a fraction of pop_0's rate, because snowdrift payoffs reward the
+at a fraction of Pop_0's rate, because snowdrift payoffs reward the
 defecting high-cost population when paired against abundant cooperators.
 
 ### Mechanism comparison at sample cells
 
-| Mech   | Dilemma | (0.1, 0.2) fset_0 | (0.1, 0.2) fset_1 | (0.1, 0.3) fset_0 | (0.1, 0.3) fset_1 |
+| Mech   | Dilemma | (0.1, 0.2) Pop_0 | (0.1, 0.2) Pop_1 | (0.1, 0.3) Pop_0 | (0.1, 0.3) Pop_1 |
 | ------ | ------- | ----------------- | ----------------- | ----------------- | ----------------- |
 | \_     | 1 (PD)  | 0.051             | 0.026             | 0.047             | 0.018             |
 | P      | 1 (PD)  | 0.600             | 0.187             | 0.369             | 0.101             |
@@ -192,7 +192,7 @@ defecting high-cost population when paired against abundant cooperators.
 | P      | 2 (SD)  | 0.973             | 0.089             | 0.972             | 0.061             |
 
 In PD, partner choice creates substantial cooperation where the control
-fails. In snowdrift, the control already sustains high fset_0 cooperation
+fails. In snowdrift, the control already sustains high Pop_0 cooperation
 and partner choice changes outcomes only marginally.
 
 ## Genotype composition
@@ -213,10 +213,10 @@ C0P1 (0.443) — defectors carrying the P1 allele silently. This is the
 hitchhiking pattern: mutations from C1P1 generate C0P1 that persist as neutral
 carriers.
 
-In the high-cooperation region (c0 < 0.10, c1 < 0.20): pop_0 C1P1 rises
-to 0.58 while pop_0 C1P0 averages ≈ 0.22 (roughly 22% of cooperators are
+In the high-cooperation region (c0 < 0.10, c1 < 0.20): Pop_0 C1P1 rises
+to 0.58 while Pop_0 C1P0 averages ≈ 0.22 (roughly 22% of cooperators are
 non-chooser free-riders on the cooperator pool). At high asymmetry
-(c1 > 0.30), pop_0 C1P0 falls to near zero — when c1 is large, only C1P1
+(c1 > 0.30), Pop_0 C1P0 falls to near zero — when c1 is large, only C1P1
 individuals can sustain cooperation and non-chooser cooperators are selected
 out.
 
@@ -235,7 +235,7 @@ pattern: a thin C1P1 layer sustains a high-cooperation pool of behavioral
 free-riders. Pop_1 retains the C0P1 hitchhiking signature (0.446) with very
 few active choosers (C1P1 = 0.048).
 
-In the high-cooperation region (c0 < 0.10, c1 < 0.20), pop_0 C1P1 ≈ 0.47
+In the high-cooperation region (c0 < 0.10, c1 < 0.20), Pop_0 C1P1 ≈ 0.47
 and C1P0 ≈ 0.49 — roughly half of cooperators carry P0 and do not sort
 partners, because the snowdrift floor makes chooser density unnecessary for
 sustaining cooperation.
@@ -243,19 +243,19 @@ sustaining cooperation.
 ## Groupsize 4
 
 All mutualism runs use pop_2 only. Unless noted, tables are noshuffle,
-fset_0 (lower-cost population).
+Pop_0 (lower-cost population).
 
 ### Partner choice at gs=4
 
 Mean qBSeen across all 210 cells:
 
-| Dilemma | Mech   | fset_0 (lower c0) | fset_1 (higher c1) | fset_0 > fset_1 |
+| Dilemma | Mech   | Pop_0 (lower c0) | Pop_1 (higher c1) | Pop_0 > Pop_1 |
 | ------- | ------ | ----------------- | ------------------ | --------------- |
 | 1 (PD)  | P      | 0.204             | 0.046              | 209/210         |
 | 2 (SD)  | P      | 0.959             | 0.092              | 210/210         |
 
 In PD, the role split holds in 209/210 cells but cooperation levels collapse
-outside the smallest cost cells. In snowdrift, fset_0 remains near ceiling
+outside the smallest cost cells. In snowdrift, Pop_0 remains near ceiling
 (0.959 vs 0.956 at gs=128) and partner choice stays functional across the
 grid.
 
@@ -265,7 +265,7 @@ Along the c0 = 0 column (P mechanism):
 
 **Dilemma 1 (PD):**
 
-| c1   | qBSeen fset_0 | qBSeen fset_1 |
+| c1   | qBSeen Pop_0 | qBSeen Pop_1 |
 | ---- | ------------- | ------------- |
 | 0.02 | 0.932         | 0.620         |
 | 0.10 | 0.849         | 0.122         |
@@ -279,7 +279,7 @@ asymmetry: at (c0, c1) = (0.10, 0.30), qBSeen = 0.049.
 
 **Dilemma 2 (snowdrift):**
 
-| c1   | qBSeen fset_0 | qBSeen fset_1 |
+| c1   | qBSeen Pop_0 | qBSeen Pop_1 |
 | ---- | ------------- | ------------- |
 | 0.02 | 0.942         | 0.742         |
 | 0.10 | 0.975         | 0.180         |
@@ -288,7 +288,7 @@ asymmetry: at (c0, c1) = (0.10, 0.30), qBSeen = 0.049.
 | 0.40 | 0.977         | 0.046         |
 
 Fset_0 stays near ceiling regardless of c1. The bottleneck affects only
-fset_1, as at gs=128.
+Pop_1, as at gs=128.
 
 ### Exploitation at gs=4
 
@@ -302,7 +302,7 @@ remains weak, matching the gs=128 pattern.
 
 ## Groupsize comparison (gs=4 vs gs=128)
 
-All comparisons are noshuffle, pop_2, fset_0 (lower-cost population).
+All comparisons are noshuffle, pop_2, Pop_0 (lower-cost population).
 
 ### Partner choice (P) — PD collapses at gs=4; snowdrift robust
 
@@ -339,7 +339,7 @@ Cooperation stays high even at moderate asymmetry:
 The partner choice mechanism (P) is almost completely insensitive to partner shuffling:
 
 - **Dilemma 1 (PD):** 
-  - Mean cooperation across all 210 cells under noshuffle is **0.472 / 0.146** (fset_0 / fset_1) vs. **0.470 / 0.146** under shuffle (gs=128). 
+  - Mean cooperation across all 210 cells under noshuffle is **0.472 / 0.146** (Pop_0 / Pop_1) vs. **0.470 / 0.146** under shuffle (gs=128). 
   - At groupsize 4, it is **0.204 / 0.046** under noshuffle vs. **0.201 / 0.046** under shuffle.
 - **Dilemma 2 (SD):** 
   - Mean cooperation across all 210 cells under noshuffle is **0.956 / 0.096** vs. **0.956 / 0.097** under shuffle (gs=128).
@@ -351,11 +351,11 @@ This invariance occurs because partner choice operates dynamically on a per-step
 
 | Topic                      | PD (dilemma 1)                                                                        | Snowdrift (dilemma 2)                                                                 |
 | -------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| P vs control (fset_0 mean) | 0.472 vs 0.103 — partner choice essential                                             | 0.956 vs 0.955 — marginal lift; snowdrift floor dominates                             |
-| Role split                 | fset_0 > fset_1 in 210/210 cells                                                      | fset_0 > fset_1 in 210/210 cells                                                      |
-| Bottleneck                 | Pop_0 capped by pop_1's C1P1; corr(qB0, R1-P1) = 0.90                                 | Pop_0 at ceiling; pop_1 defects because T1 = R1 when partner cooperates               |
+| P vs control (Pop_0 mean) | 0.472 vs 0.103 — partner choice essential                                             | 0.956 vs 0.955 — marginal lift; snowdrift floor dominates                             |
+| Role split                 | Pop_0 > Pop_1 in 210/210 cells                                                      | Pop_0 > Pop_1 in 210/210 cells                                                      |
+| Bottleneck                 | Pop_0 capped by Pop_1's C1P1; corr(qB0, R1-P1) = 0.90                                 | Pop_0 at ceiling; Pop_1 defects because T1 = R1 when partner cooperates               |
 | Exploitation               | Pop_0 lower fitness in 199/210 cells; mean deficit = 0.140; corr = −0.986             | Pop_0 lower fitness in 187/210 cells; mean deficit = 0.104; corr = −0.144             |
-| Genotypes pop_0            | C1P1-dominated choosers (0.382); C1P0 free-riders at 9%                               | Sparse choosers: C1P1 ≈ C1P0 ≈ 0.47 each                                              |
-| Genotypes pop_1            | C0P1 hitchhikers dominate (0.442)                                                     | Same hitchhiking pattern (C0P1 = 0.446); few choosers (C1P1 = 0.048)                  |
-| gs=4 P mechanism           | Collapses by c0/c1 ≈ 0.10                                                             | Robust; fset_0 ≈ 0.96 at (0.1, 0.3) for both groupsizes                               |
+| Genotypes Pop_0            | C1P1-dominated choosers (0.382); C1P0 free-riders at 9%                               | Sparse choosers: C1P1 ≈ C1P0 ≈ 0.47 each                                              |
+| Genotypes Pop_1            | C0P1 hitchhikers dominate (0.442)                                                     | Same hitchhiking pattern (C0P1 = 0.446); few choosers (C1P1 = 0.048)                  |
+| gs=4 P mechanism           | Collapses by c0/c1 ≈ 0.10                                                             | Robust; Pop_0 ≈ 0.96 at (0.1, 0.3) for both groupsizes                               |
 | gs=4 exploitation (P)      | corr = −0.998                                                                         | corr = −0.178 — weak, as at gs=128                                                    |
