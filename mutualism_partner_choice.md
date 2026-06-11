@@ -78,6 +78,16 @@ In snowdrift, partner choice barely changes the cooperation means: the
 snowdrift floor sustains high Pop_0 cooperation without sorting, while
 Pop_1 remains near 0.10 regardless of mechanism.
 
+### Cooperation Boost vs. Asymmetry Effects
+
+Comparing partner choice (P) to the control (_) reveals that its major effect is highly context-dependent:
+
+- **Prisoner's Dilemma (PD):** 
+  - **In low cost-asymmetry cells (c1 − c0 ≤ 0.08):** The major effect is **to increase cooperation** in both populations. Pop_0's cooperation increases by +0.500 (from 0.075 to 0.575) and Pop_1's cooperation increases by +0.215 (from 0.037 to 0.252). While asymmetry also increases (by +0.285), both populations achieve substantial cooperation.
+  - **In high cost-asymmetry cells (c1 − c0 ≥ 0.20):** The major effect is **to increase asymmetry** (+0.206 increase). Pop_0's cooperation is moderately boosted (+0.242), but Pop_1's cooperation remains extremely low (+0.037 change). Partner choice fails to establish mutual cooperation here; instead, it draws Pop_0 into cooperation while Pop_1 continues to defect, creating a heavy exploitation asymmetry.
+- **Snowdrift:** 
+  - Partner choice has **almost no effect** on either cooperation or asymmetry compared to the control. The average changes are completely negligible (Pop_0 coop +0.001, Pop_1 coop +0.005, asymmetry -0.004). This is because the Snowdrift payoff floor already drives Pop_0 to cooperate near ceiling (0.955) in the control, and Pop_1 free-rides on this cooperation by defecting (asymmetry is already maximized under control at 0.864). Partner choice alone cannot bootstrap Pop_1's cooperation in this regime.
+
 ## The partner choice bottleneck
 
 ### Dilemma 1 (PD)

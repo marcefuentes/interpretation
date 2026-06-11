@@ -116,6 +116,20 @@ Under partner choice, Pop_0 (the sorted higher-cooperating role) can suffer lowe
 - **Prisoner's Dilemma (PD):** At c = 0.40, Pop_0's fitness is slightly lower under P than under the control (0.4974 vs. 0.4976 under shuffle). This minor drop is negligible and near the noise floor, reflecting the inability of either population to sustain cooperation at such high cost.
 - **Snowdrift:** Pop_0 gets lower fitness under P than under the control in 8 out of 21 cells (shuffle). At c = 0.40, cooperation rises from 0.1841 (control) to 0.6789 (P), but average fitness drops from 0.5460 (control) to 0.5167 (P) — a significant, non-noise deficit of 0.0293. Unilateral cooperation at c = 0.40 is highly penalized (earning K + b - c = 0.50) compared to defection (earning K + b = 0.90). The selective pressure of partner choice drives high levels of cooperation, but because the cost is too high to establish a fully cooperative group, individuals are frequently exploited, leading to lower average payoffs than if they had simply remained defectors.
 
+### Cooperation Boost vs. Asymmetry Effects
+
+Comparing partner choice (P) to the control (_) in the coevolving setup (pop_2) shows how the primary effect shifts depending on cost and dilemma:
+
+- **Prisoner's Dilemma (PD):** 
+  - The overall effect is a massive boost in average cooperation (lifting the pop_2 average from ~0.06 under control to ~0.50 under P).
+  - **At low costs (c ≤ 0.16):** The major effect is **to increase cooperation** in both populations (e.g., at c = 0.02, cooperation rises from 0.233/0.200 to 0.960/0.783).
+  - **At moderate costs (c = 0.04 to 0.12):** The major effect is **to increase asymmetry** (+0.548 asymmetry change at c = 0.06). While both populations are lifted, symmetry breaks stochastically and one population becomes highly cooperative (~0.89) while the other remains moderately cooperative (~0.33).
+- **Snowdrift:** 
+  - **At low and moderate costs (c ≤ 0.34):** Partner choice has **almost no effect** on cooperation or asymmetry compared to the control. The Snowdrift payoff floor already sustains near-perfect cooperation in Pop_0 (0.95+) and defection in Pop_1 under control, leaving no room for P to change the outcome.
+  - **At very high costs (c ≥ 0.36):** The major effect is **to increase asymmetry**. The control population collapses toward mutual defection (at c = 0.40, control is 0.182/0.130). Partner choice prevents this collapse by driving Pop_0 to maintain high cooperation (0.684) while Pop_1 defects (0.080), resulting in a massive asymmetry change of +0.552.
+
+
+
 ### Pop_3: evolving vs fixed partner
 
 P mechanism, shuffle, PD:
