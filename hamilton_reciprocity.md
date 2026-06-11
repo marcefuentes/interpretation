@@ -8,8 +8,7 @@ in **hamilton_combined.md**. For asymmetric costs (c0 ≠ c1), see
 
 ## Overview
 
-Hamilton is the equal-cost diagonal of the mutualism parameter space (c0 = c1 =
-c). The x-axis is c ∈ [0, 0.40] with b = 0.40 fixed and K = 0.50. Studies
+Hamilton is the equal-cost diagonal ($c_0 = c_1 = c$). See **[hamilton.md](hamilton.md)** for the central game parameters. Studies
 include pop_1, pop_2, and pop_3 across dilemma types 0, 1 (PD), and 2
 (snowdrift), groupsize 128 and 4, shuffle and noshuffle.
 

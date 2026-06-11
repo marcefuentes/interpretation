@@ -8,11 +8,7 @@ only — no reciprocity locus). Pure reciprocity (M, IM, IJM) is in
 
 ## Overview
 
-Hamilton is the equal-cost diagonal of the mutualism parameter space: both
-populations share the same cost c, so c0 = c1 = c throughout. The x-axis is
-c ∈ [0, 0.40], with benefit b = 0.40 fixed and baseline fitness K = 0.50.
-As c increases from 0 to b, the cooperation incentive (R − P) falls from 0.40
-to 0.
+Hamilton is the equal-cost diagonal ($c_0 = c_1 = c$). See **[hamilton.md](hamilton.md)** for the central game parameters.
 
 Unlike mutualism (pop_2 only, strict upper triangle), Hamilton includes
 pop_1 (single population), pop_2 (two coevolving populations), and pop_3

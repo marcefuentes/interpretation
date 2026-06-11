@@ -7,21 +7,7 @@ in **mutualism_combined.md**.
 
 ## Overview
 
-Mutualism is the primary study: two populations with potentially different
-costs interact exclusively across populations. Population 0 has cost c0 and
-population 1 has cost c1, with c0 < c1 always (the plotted triangular grid
-constrains c1 > c0). Benefit b = 0.40 is fixed and K = 0.50.
-
-Hamilton is the diagonal special case where c0 = c1. Because c0 < c1,
-population 0 always has a higher cooperation incentive (R0 − P0 > R1 − P1)
-in both dilemma types.
-
-The parameter space is a strict upper-triangular 20 × 20 grid:
-c0 ∈ {0.00, 0.02, …, 0.38} and c1 ∈ {0.02, 0.04, …, 0.40} with c0 < c1,
-giving 210 cells. Only pop_2 (cross-population pairing) is present. Analysis
-covers dilemma 1 (prisoner's dilemma) and dilemma 2 (snowdrift), groupsize
-128 noshuffle (primary) and groupsize 4 (dedicated section plus comparison);
-shuffle conditions are included where noted.
+See **[mutualism.md](mutualism.md#overview)** for the common model overview and parameter space.
 
 ## Payoff structure
 

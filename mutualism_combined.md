@@ -16,10 +16,7 @@ Hamilton (c0 = c1) is the diagonal special case; see **hamilton_combined.md**.
 
 ## Overview
 
-Two populations with c0 < c1 interact across populations only (pop_2, 210-cell
-upper triangle). Benefit b = 0.40 fixed, K = 0.50. Analysis covers dilemma 1
-(PD) and dilemma 2 (snowdrift), groupsize 128 noshuffle (primary) and
-groupsize 4; shuffle where noted.
+See **[mutualism.md](mutualism.md#overview)** for the common model overview and parameter space.
 
 ## Cooperation along c0 = 0 column
 

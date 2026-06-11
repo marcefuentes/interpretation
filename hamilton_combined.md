@@ -16,8 +16,7 @@ For asymmetric costs (c0 ≠ c1), see **mutualism_combined.md**.
 
 ## Overview
 
-Hamilton is the equal-cost diagonal (c0 = c1 = c). The x-axis is c ∈ [0, 0.40]
-with b = 0.40 fixed and K = 0.50. Analysis covers dilemmas 1 (PD) and 2
+Hamilton is the equal-cost diagonal ($c_0 = c_1 = c$). See **[hamilton.md](hamilton.md)** for the central game parameters. Analysis covers dilemmas 1 (PD) and 2
 (snowdrift), groupsize 128 (primary) and groupsize 4.
 
 ## Game parameters and payoffs
