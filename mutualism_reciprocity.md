@@ -49,7 +49,7 @@ Mechanism M, noshuffle, groupsize 128, Pop_0:
 | c0=0.20 | ---     | ---     | 0.927   | 0.930   |
 | c0=0.30 | ---     | ---     | ---     | 0.880   |
 
-Fset_0 cooperation is near ceiling across the grid. The landscape is flat
+Pop_0 cooperation is near ceiling across the grid. The landscape is flat
 along rows of constant c0: reciprocity does not need to bootstrap cooperation
 from scratch as in PD. Decline appears only at high c0 (Pop_0's own cost
 rises), not from partner-side bottlenecks.

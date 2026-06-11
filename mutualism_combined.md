@@ -47,7 +47,7 @@ In PD, IMP and IJMPQ exceed both M and P alone at moderate c1. In snowdrift,
 combined mechanisms add little for Pop_0 (already at ceiling); the benefit
 is elevating Pop_1.
 
-## Role split
+## Cooperation Boost vs. Asymmetry Effects (pop_2 Role Splits)
 
 Mean qBSeen across all 210 cells (noshuffle, gs=128):
 
@@ -60,22 +60,22 @@ Mean qBSeen across all 210 cells (noshuffle, gs=128):
 | IMP    | 2 (SD)  | 0.915  | 0.391  | 196/210         |
 | IJMPQ  | 2 (SD)  | 0.923  | 0.609  | 176/210         |
 
-IMP and IJMPQ partially erode the deterministic role split at mild asymmetry.
-In snowdrift, IJMPQ brings Pop_1 to mean 0.609 (vs 0.091 control) and reverses
-the role split in 34/210 cells.
-
-### Cooperation Boost vs. Asymmetry Effects
-
 Combining partner choice (P) and reciprocity (M, IMP, IJMPQ) in Mutualism demonstrates how reciprocity acts to reduce the asymmetry driven by partner choice:
 
 - **Prisoner's Dilemma (PD):** 
   - Under partner choice alone (P), asymmetry is high (0.325) because Pop_0 cooperates at 0.472 while Pop_1 cooperates at only 0.146.
-  - Adding reciprocity (**IMP** and **IJMPQ**) has the major effect of **decreasing asymmetry** relative to P alone (falling from 0.325 to 0.165 for IMP, and to 0.156 for IJMPQ).
+  - Adding reciprocity (**IMP** and **IJMPQ**) has the major effect of **decreasing asymmetry** relative to P alone (falling from 0.325 to 0.165 for IMP, and to 0.156 for IJMPQ), partially eroding the deterministic role split at mild asymmetry.
   - This reduction is achieved by **increasing cooperation in Pop_1** (from 0.146 under P to 0.573 under IJMPQ, a +0.427 boost). Conditional reciprocity forces Pop_1 to coevolve cooperation to access partners, preventing the extreme exploitation asymmetry of partner choice alone.
 - **Snowdrift:** 
   - Partner choice alone (P) leaves asymmetry almost unchanged compared to the control (0.860 vs. 0.864).
-  - Combining them (**IMP** and **IJMPQ**) has a massive major effect of **decreasing asymmetry** (average asymmetry collapses from 0.864 in control to 0.524 under IMP, and to 0.313 under IJMPQ).
+  - Combining them (**IMP** and **IJMPQ**) has a massive major effect of **decreasing asymmetry** (average asymmetry collapses from 0.864 in control to 0.524 under IMP, and to 0.313 under IJMPQ), which brings Pop_1 to a mean of 0.609 (vs. 0.091 control) and reverses the role split in 34 out of 210 cells.
   - The asymmetry drop is driven entirely by **elevating Pop_1's cooperation** (from 0.091 under control to 0.391 under IMP, and a massive 0.609 under IJMPQ). Reciprocity resolves the free-riding bottleneck that partner choice alone could not affect.
+
+### Shuffling Shifts the Balance Between Partner Choice and Reciprocity
+
+Under shuffling, direct reciprocity (M) is completely disabled. This allows partner choice (P) to dominate the combined mechanisms, causing cooperation to drop and asymmetry to surge:
+- For **IMP**, where M is shuffled, Pop_1 cooperation drops from 0.505 (noshuffle) to 0.264 (shuffle), and asymmetry surges from 0.165 to 0.303, returning close to partner choice's baseline asymmetry of 0.325.
+- For **IJMPQ**, Pop_1 cooperation remains much higher at 0.442 and asymmetry is kept lower at 0.286. This is because IJMPQ includes lifetime reputation components (J and Q) which are shuffle-invariant, allowing indirect reciprocity to continue enforcing symmetry even when partner continuity is broken.
 
 ## Mechanism comparison at sample cells
 

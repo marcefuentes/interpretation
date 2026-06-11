@@ -67,10 +67,9 @@ leverage shuffling for diverse interactions:
 IJMPQ with shuffle outperforms noshuffle at high c (0.672 vs 0.382), because
 partner-choice components leverage shuffling for diverse interactions.
 
-## pop_2 symmetry: IJMPQ suppresses exploitation
+## pop_2 Symmetry: Cooperation Boost vs. Asymmetry Effects
 
-P mechanism shows strong symmetry breaking (see **hamilton_partner_choice.md**).
-IJMPQ nearly eliminates it:
+Partner choice (P) shows strong stochastic symmetry breaking (see **hamilton_partner_choice.md**). Combining partner choice and reciprocity (M, IMP, IJMPQ) reveals that the reciprocity components completely override partner choice's tendency to drive population asymmetry, nearly eliminating exploitation:
 
 | c    | qBSeen_0 | qBSeen_1 | ΔqBSeen | w\_0  | w\_1  | Δw     |
 | ---- | -------- | -------- | ------- | ----- | ----- | ------ |
@@ -78,12 +77,7 @@ IJMPQ nearly eliminates it:
 | 0.20 | 0.964    | 0.962    | +0.002  | 0.690 | 0.691 | -0.001 |
 | 0.40 | 0.672    | 0.664    | +0.009  | 0.495 | 0.502 | -0.007 |
 
-Both populations converge to near-identical high cooperation; the fitness
-disadvantage of the cooperating population vanishes.
-
-### Cooperation Boost vs. Asymmetry Effects
-
-Combining partner choice (P) and reciprocity (M, IMP, IJMPQ) in Hamilton shows that the reciprocity components completely override partner choice's tendency to drive population asymmetry:
+Both populations converge to near-identical high cooperation; the fitness disadvantage of the cooperating population vanishes:
 
 - **Prisoner's Dilemma (PD):** 
   - Under partner choice alone (P), stochastic role splits occur, driving an average asymmetry of 0.242.
@@ -92,7 +86,7 @@ Combining partner choice (P) and reciprocity (M, IMP, IJMPQ) in Hamilton shows t
 - **Snowdrift:** 
   - Partner choice alone (P) has almost no effect, preserving the high control asymmetry of ~0.73.
   - Combining them (**IMP** and **IJMPQ**) has the major effect of **decreasing asymmetry** (collapsing it from 0.69 under control to 0.025 under IMP, and a near-perfect 0.001 under IJMPQ).
-  - This is driven by **massively increasing cooperation in Pop_1** (from 0.196 under control/P to 0.915 under IMP, and 0.959 under IJMPQ). The reciprocity components successfully lift Pop_1 to cooperators, collapsing the asymmetry.
+  - This is driven by **massively increasing cooperation in fset_1** (from 0.196 under control/P to 0.915 under IMP, and 0.959 under IJMPQ). The reciprocity components successfully lift fset_1 to cooperators, collapsing the asymmetry.
 
 ## Comparison across mechanisms
 

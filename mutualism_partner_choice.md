@@ -147,7 +147,7 @@ ceiling.
 ## Exploitation: the paradox of success
 
 Population 0 cooperates more but often earns less. The correlation between
-ΔqBSeen (qBSeen_0 − qBSeen_1) and Δfitness (w0 − w1):
+The correlation between ΔqBSeen (qBSeen_0 − qBSeen_1) and Δfitness (w0 − w1):
 
 | Mech   | Dilemma | noshuffle | shuffle |
 | ------ | ------- | --------- | ------- |
@@ -162,10 +162,8 @@ snowdrift, the correlation is weak (−0.144) because the snowdrift payoff
 structure sustains high cooperation without the same fitness penalty; Pop_0
 has lower fitness in 187/210 cells with a smaller mean deficit (0.104).
 
-### Partner Choice (P) vs. Control (_) Fitness
-
-While partner choice successfully bootstraps mutual cooperation in the majority of Mutualism PD cells (resulting in higher Pop_0 fitness than the control in 168 out of 210 cells), it can act as an evolutionary trap at high parameter asymmetries:
-- **Prisoner's Dilemma (PD):** Pop_0 achieves lower fitness under P than under the control _ in 42 out of 210 cells. For example, at (c0=0.02, c1=0.40), Pop_0's fitness is 0.5000 under P (with cooperation qBSeen_0 = 0.4263) vs. 0.5008 under control _ (cooperation 0.1919). This minor drop is systematic: Pop_0 is selected to cooperate to seek partners, but because Pop_1's cost c1 is too high to cooperate, Pop_0 cannot find cooperative partners in Pop_1 and ends up frequently cooperating unilaterally and getting exploited. Because c0 is very small, the maximum possible fitness deficit is tiny, making the difference practically negligible and close to the level of simulation noise.
+Comparing partner choice (P) directly to the control (_) reveals that while partner choice successfully bootstraps mutual cooperation in the majority of PD cells (resulting in higher Pop_0 fitness than the control in 168 out of 210 cells), it acts as an evolutionary trap at high parameter asymmetries:
+- **Prisoner's Dilemma (PD):** Pop_0 achieves lower fitness under P than under the control in 42 out of 210 cells. For example, at (c0=0.02, c1=0.40), Pop_0's fitness is 0.5000 under P (with cooperation qBSeen_0 = 0.4263) vs. 0.5008 under control (cooperation 0.1919). This minor drop is systematic: Pop_0 is selected to cooperate to seek partners, but because Pop_1's cost c1 is too high to cooperate, Pop_0 cannot find cooperative partners in Pop_1 and ends up cooperating unilaterally. Because c0 is very small, the maximum possible deficit is tiny, making the difference practically negligible and close to the level of simulation noise.
 - **Snowdrift:** Pop_0 has lower fitness under P than under the control in 77 out of 210 cells. For example, at (c0=0.00, c1=0.02), Pop_0's fitness is 0.8896 under P vs. 0.8900 under control, despite slightly higher cooperation. With the cooperation floor already high, Pop_0 pays the cost of cooperation slightly more often (and the metabolic cost of expressing the additional P locus) without receiving any extra benefits, resulting in minor, negligible fitness deficits.
 
 ### Exploitation at the cell level (P mechanism, c0=0.1)
