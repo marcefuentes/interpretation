@@ -20,6 +20,10 @@ Hamilton is the equal-cost diagonal (c0 = c1 = c). The x-axis is c ∈ [0, 0.40]
 with b = 0.40 fixed and K = 0.50. Analysis covers dilemmas 1 (PD) and 2
 (snowdrift), groupsize 128 (primary) and groupsize 4.
 
+## Game parameters and payoffs
+
+See **[hamilton.md](hamilton.md#game-parameters)** for the common game parameters and payoff structure.
+
 ## Cooperation profiles
 
 ### Dilemma 1 (PD), shuffle, groupsize 128, pop_2 fset_0

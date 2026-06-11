@@ -25,40 +25,7 @@ shuffle conditions are included where noted.
 
 ## Payoff structure
 
-All payoffs use cross-benefit form: the benefit b is the contribution received
-from the partner, while the cost c is paid by the focal individual. In
-snowdrift, b is a shared resource: both players receive it whenever at least
-one cooperates (b appears in T, R, and S).
-
-### Dilemma 1 (PD, folder 1)
-
-| Payoff | Pop 0          | Pop 1          |
-| ------ | -------------- | -------------- |
-| T      | K + b = 0.90   | K + b = 0.90   |
-| R      | K + b - c0     | K + b - c1     |
-| P      | K = 0.50       | K = 0.50       |
-| S      | K - c0         | K - c1         |
-| R - P  | b - c0         | b - c1         |
-
-Since c0 < c1 in every cell: R0 − P0 = b − c0 > R1 − P1 = b − c1. Population
-0 always has a stronger cooperation incentive than population 1.
-
-### Dilemma 2 (snowdrift, folder 2)
-
-| Payoff | Pop 0            | Pop 1            |
-| ------ | ---------------- | ---------------- |
-| T      | K + b = 0.90     | K + b = 0.90     |
-| R      | K + b - c0/2     | K + b - c1/2     |
-| P      | K = 0.50         | K = 0.50         |
-| S      | K + b - c0       | K + b - c1       |
-| R - P  | b - c0/2         | b - c1/2         |
-
-In snowdrift, S > P for all c < 0.40 = b, so unilateral cooperation is always
-better than mutual defection. The cooperation floor is high even without
-mechanisms: the control (\_) reaches mean qBSeen_0 = 0.955. Partner choice
-adds little marginal lift for the lower-cost population (P mean = 0.956) but
-the asymmetric dynamics remain important for the higher-cost population and
-for fitness outcomes.
+See **[mutualism.md](mutualism.md#payoff-structure)** for the common payoff structure and control baseline. Under partner choice (P), dilemma 2 (snowdrift) adds little marginal lift for the lower-cost population (P mean = 0.956 vs control 0.955) but the asymmetric dynamics remain important for the higher-cost population and for fitness outcomes.
 
 ## Cooperation under partner choice (P)
 
@@ -381,9 +348,18 @@ Cooperation stays high even at moderate asymmetry:
 | 0.20 | 0.22 | 0.791 | 0.879  |
 | 0.30 | 0.32 | 0.941 | 0.795  |
 
-At (c0=0.1, c1=0.3), gs=4 matches gs=128 exactly (0.972). The snowdrift
-cooperation floor means small groups do not catastrophically worsen the
-chooser bottleneck for fset_0.
+## Shuffle vs noshuffle
+
+The partner choice mechanism (P) is almost completely insensitive to partner shuffling:
+
+- **Dilemma 1 (PD):** 
+  - Mean cooperation across all 210 cells under noshuffle is **0.472 / 0.146** (fset_0 / fset_1) vs. **0.470 / 0.146** under shuffle (gs=128). 
+  - At groupsize 4, it is **0.204 / 0.046** under noshuffle vs. **0.201 / 0.046** under shuffle.
+- **Dilemma 2 (SD):** 
+  - Mean cooperation across all 210 cells under noshuffle is **0.956 / 0.096** vs. **0.956 / 0.097** under shuffle (gs=128).
+  - At groupsize 4, it is **0.959 / 0.092** under noshuffle vs. **0.959 / 0.091** under shuffle.
+
+This invariance occurs because partner choice operates dynamically on a per-step rematching basis within groups, rendering any initial random partner shuffling irrelevant.
 
 ## Summary
 

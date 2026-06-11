@@ -128,6 +128,31 @@ collapses by c1 = 0.20 in snowdrift.
 IJMPQ extends this further: at (c0=0.1, c1=0.2) both populations reach
 0.957/0.957 in PD and 0.962/0.962 in snowdrift.
 
+## Shuffle vs noshuffle
+
+Partner shuffling has a major impact on combined mechanisms because it disables the direct reciprocity ($M$) component. However, the presence of other loci (like partner choice $P$, lifetime memory $Q$, and indirect reciprocity $I, J$) provides varying levels of robustness:
+
+### Mean cooperation across all 210 cells (gs=128)
+
+| Mechanism | Dilemma | noshuffle (fset_0 / fset_1) | shuffle (fset_0 / fset_1) | Key observation |
+| --------- | ------- | --------------------------- | ------------------------- | --------------- |
+| **M**     | 1 (PD)  | 0.637 / 0.551               | 0.108 / 0.026             | Collapses to control baseline |
+| **P**     | 1 (PD)  | 0.472 / 0.146               | 0.470 / 0.146             | Completely unaffected by shuffle |
+| **MP**    | 1 (PD)  | 0.606 / 0.410               | 0.474 / 0.148             | Collapses to P-only baseline |
+| **MPQ**   | 1 (PD)  | 0.594 / 0.318               | 0.523 / 0.155             | Q memory locus adds slight resilience |
+| **IMP**   | 1 (PD)  | 0.670 / 0.505               | 0.567 / 0.264             | I locus (reputation) resists turnover |
+| **IJMPQ** | 1 (PD)  | 0.729 / 0.573               | 0.729 / 0.442             | Extremely robust; fset_0 unchanged |
+| **IJMPQ** | 2 (SD)  | 0.923 / 0.609               | 0.932 / 0.477             | Maintains substantial fset_1 lift |
+
+### Role Split under Shuffle
+
+Shuffling does not erase the deterministic role split (where the lower-cost population 0 cooperates more). In fact, the fraction of cells where `fset_0 > fset_1` increases under shuffling for the most robust mechanisms:
+- **IMP** (PD): `fset_0 > fset_1` in **203/210** cells (noshuffle) $\rightarrow$ **210/210** cells (shuffle)
+- **IJMPQ** (PD): `fset_0 > fset_1` in **198/210** cells (noshuffle) $\rightarrow$ **205/210** cells (shuffle)
+- **IJMPQ** (SD): `fset_0 > fset_1` in **176/210** cells (noshuffle) $\rightarrow$ **197/210** cells (shuffle)
+
+This happens because shuffling suppresses cooperation in the higher-cost population (fset_1) more than in the lower-cost population (fset_0), making the asymmetric role split even more pronounced across the parameter space.
+
 ## Exploitation
 
 | Mech   | Dilemma | noshuffle | shuffle |

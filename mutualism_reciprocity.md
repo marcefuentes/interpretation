@@ -25,35 +25,7 @@ shuffle conditions are included where noted.
 
 ## Payoff structure
 
-All payoffs use cross-benefit form: the benefit b is the contribution received
-from the partner, while the cost c is paid by the focal individual. In
-snowdrift, b is a shared resource: both players receive it whenever at least
-one cooperates (b appears in T, R, and S).
-
-### Dilemma 1 (PD, folder 1)
-
-| Payoff | Pop 0          | Pop 1          |
-| ------ | -------------- | -------------- |
-| T      | K + b = 0.90   | K + b = 0.90   |
-| R      | K + b - c0     | K + b - c1     |
-| P      | K = 0.50       | K = 0.50       |
-| S      | K - c0         | K - c1         |
-| R - P  | b - c0         | b - c1         |
-
-### Dilemma 2 (snowdrift, folder 2)
-
-| Payoff | Pop 0            | Pop 1            |
-| ------ | ---------------- | ---------------- |
-| T      | K + b = 0.90     | K + b = 0.90     |
-| R      | K + b - c0/2     | K + b - c1/2     |
-| P      | K = 0.50         | K = 0.50         |
-| S      | K + b - c0       | K + b - c1       |
-| R - P  | b - c0/2         | b - c1/2         |
-
-In snowdrift, S > P for all c < b, so unilateral cooperation is always
-better than mutual defection. The control (\_) already sustains mean qBSeen_0
-= 0.955. Reciprocity mechanisms must be evaluated against this high baseline,
-not against near-zero cooperation as in PD.
+See **[mutualism.md](mutualism.md#payoff-structure)** for the common payoff structure and control baseline. Reciprocity mechanisms must be evaluated against the high snowdrift baseline, not against near-zero cooperation as in PD.
 
 ## Cooperation landscape
 

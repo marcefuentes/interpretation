@@ -17,6 +17,10 @@ Mechanisms \_ and M are present for all three dilemma folders. IM and IJM are
 present for dilemmas 1 and 2 only. All .con summary files are present under
 ~/results/hamilton/ for both groupsizes.
 
+## Game parameters and payoffs
+
+See **[hamilton.md](hamilton.md#game-parameters)** for the common game parameters and payoff structure.
+
 ## Cooperation profiles
 
 ### Dilemma 1 (PD), shuffle, groupsize 128, pop_2 fset_0
