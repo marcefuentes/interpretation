@@ -11,7 +11,9 @@ c), split by mechanism family:
 - **[hamilton_combined.md](hamilton_combined.md)** — mechanisms MP, MPQ, IMP,
   IJMPQ: mechanism hierarchy, IJMPQ symmetry suppression, groupsize effects
 
-For asymmetric costs (c0 ≠ c1), see **mutualism.md**.
+For asymmetric costs (c0 ≠ c1), see **mutualism.md**. For which payoff gap
+(temptation, risk, or R − P) drives each mechanism's c-collapse, see
+**[synthesis.md](synthesis.md)**.
 
 ## Game parameters
 

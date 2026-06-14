@@ -15,57 +15,14 @@ Tolerances: qBSeen / fitness / correlation values are rounded to the same 3
 decimals the docs use, compared with a small tolerance; cell counts are exact.
 """
 
-import csv
 import math
-import os
 import sys
 
-BASE = os.path.expanduser("~/results")
+from trps_io import BASE, allele, corr, gsum, load, m1sum, ols2  # noqa: F401
+
 TOL = 0.006  # docs round to 3 decimals; allow half-ULP plus minor regen jitter
 
 CHECKS = []  # (study, label, compute->float|int, expected, tol_or_None_for_exact)
-
-
-def load(p):
-    return list(csv.DictReader(open(p))) if os.path.exists(p) else None
-
-
-def corr(xs, ys):
-    n = len(xs)
-    mx = sum(xs) / n
-    my = sum(ys) / n
-    num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
-    dx = math.sqrt(sum((x - mx) ** 2 for x in xs))
-    dy = math.sqrt(sum((y - my) ** 2 for y in ys))
-    return num / (dx * dy) if dx * dy else float("nan")
-
-
-def ols2(R, P, Q):
-    n = len(Q)
-    mR = sum(R) / n
-    mP = sum(P) / n
-    mQ = sum(Q) / n
-    Srr = sum((r - mR) ** 2 for r in R)
-    Spp = sum((p - mP) ** 2 for p in P)
-    Srp = sum((R[i] - mR) * (P[i] - mP) for i in range(n))
-    Srq = sum((R[i] - mR) * (Q[i] - mQ) for i in range(n))
-    Spq = sum((P[i] - mP) * (Q[i] - mQ) for i in range(n))
-    det = Srr * Spp - Srp * Srp
-    return (Spp * Srq - Srp * Spq) / det, (Srr * Spq - Srp * Srq) / det
-
-
-def gsum(row, c, p=None):
-    cols = [k for k in row if not k.endswith("SD") and len(k) == 12 and k[0] == "C"]
-    cols = [x for x in cols if x.startswith(f"C{c}")]
-    if p is not None:
-        cols = [x for x in cols if f"P{p}" in x]
-    return sum(float(row[x]) for x in cols)
-
-
-def m1sum(row):
-    cols = [k for k in row if not k.endswith("SD") and len(k) == 12
-            and k[0] == "C" and "M1" in k]
-    return sum(float(row[x]) for x in cols)
 
 
 def check(study, label, fn, expected, tol=TOL):
@@ -98,6 +55,13 @@ def mcell(rows, c0, c1, col="qBSeen"):
         if abs(float(r["c0"]) - c0) < 0.005 and abs(float(r["c1"]) - c1) < 0.005:
             return float(r[col])
     return float("nan")
+
+
+def mcell_row(rows, c0, c1):
+    for r in rows:
+        if abs(float(r["c0"]) - c0) < 0.005 and abs(float(r["c1"]) - c1) < 0.005:
+            return r
+    return None
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -146,6 +110,24 @@ check("hamilton", "CB: IJMPQ shuffle qBSeen c=0.40 = 0.672",
       lambda: at_c(load(hpath("shuffle", "128", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.672)
 check("hamilton", "CB: IJMPQ noshuffle qBSeen c=0.40 = 0.382",
       lambda: at_c(load(hpath("noshuffle", "128", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.382)
+
+# combined.md gs=128 PD profile (shuffle, pop_2 fset_0): MP/MPQ collapse, IMP/IJMPQ tail
+check("hamilton", "CB: MP shuffle qBSeen c=0.40 = 0.023",
+      lambda: at_c(load(hpath("shuffle", "128", "MP", 1, "pop_2", 0)), 0.40), 0.023)
+check("hamilton", "CB: MPQ shuffle qBSeen c=0.40 = 0.036",
+      lambda: at_c(load(hpath("shuffle", "128", "MPQ", 1, "pop_2", 0)), 0.40), 0.036)
+check("hamilton", "CB: IMP shuffle qBSeen c=0.08 = 0.951",
+      lambda: at_c(load(hpath("shuffle", "128", "IMP", 1, "pop_2", 0)), 0.08), 0.951)
+check("hamilton", "CB: IMP shuffle qBSeen c=0.40 = 0.170",
+      lambda: at_c(load(hpath("shuffle", "128", "IMP", 1, "pop_2", 0)), 0.40), 0.170)
+
+# combined.md gs=4 PD profile (shuffle, pop_2 fset_0): weaker high-c tail
+check("hamilton", "CB: IMP gs=4 shuffle qBSeen c=0.40 = 0.065",
+      lambda: at_c(load(hpath("shuffle", "4", "IMP", 1, "pop_2", 0)), 0.40), 0.065)
+check("hamilton", "CB: IJMPQ gs=4 shuffle qBSeen c=0.32 = 0.892",
+      lambda: at_c(load(hpath("shuffle", "4", "IJMPQ", 1, "pop_2", 0)), 0.32), 0.892)
+check("hamilton", "CB: IJMPQ gs=4 shuffle qBSeen c=0.40 = 0.342",
+      lambda: at_c(load(hpath("shuffle", "4", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.342)
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -227,6 +209,78 @@ check("mutualism", "RC: IJM shuffle PD Pop_1 mean = 0.299",
       lambda: mut_rolesplit_mean("shuffle", "128", "IJM", 1, 1), 0.299)
 
 
+# reciprocity.md: cross-population hitchhiking (PD, noshuffle, gs=128, c0=0.10, c1=0.30)
+check("mutualism", "RC: hitchhike Pop_0 M1 (0.10,0.30) = 0.749",
+      lambda: allele(mcell_row(load(mpath("noshuffle", "128", "M", 1, 0)), 0.10, 0.30), "M1"), 0.749)
+check("mutualism", "RC: hitchhike Pop_1 M1 (0.10,0.30) = 0.370 (< control)",
+      lambda: allele(mcell_row(load(mpath("noshuffle", "128", "M", 1, 1)), 0.10, 0.30), "M1"), 0.370)
+check("mutualism", "RC: hitchhike control Pop_1 M1 (0.10,0.30) = 0.500",
+      lambda: allele(mcell_row(load(mpath("noshuffle", "128", "_", 1, 1)), 0.10, 0.30), "M1"), 0.500, 0.01)
+
+# combined.md: shuffle lifetime recovery carried by J not Q (PD Pop_1 means, gs=128)
+check("mutualism", "CB: J adds IM->IJM shuffle Pop_1 = +0.133",
+      lambda: mut_rolesplit_mean("shuffle", "128", "IJM", 1, 1)
+      - mut_rolesplit_mean("shuffle", "128", "IM", 1, 1), 0.133, 0.01)
+check("mutualism", "CB: Q adds MP->MPQ shuffle Pop_1 = +0.007 (negligible)",
+      lambda: mut_rolesplit_mean("shuffle", "128", "MPQ", 1, 1)
+      - mut_rolesplit_mean("shuffle", "128", "MP", 1, 1), 0.007, 0.01)
+
+
+def mut_dominance(sh, gs, m, d):
+    r0 = load(mpath(sh, gs, m, d, 0))
+    r1 = load(mpath(sh, gs, m, d, 1))
+    m1 = {(round(float(x["c0"]), 4), round(float(x["c1"]), 4)): float(x["qBSeen"]) for x in r1}
+    n = 0
+    for x in r0:
+        k = (round(float(x["c0"]), 4), round(float(x["c1"]), 4))
+        if k in m1 and float(x["qBSeen"]) > m1[k]:
+            n += 1
+    return n
+
+
+# combined.md: pop_2 role-split means + dominance counts (noshuffle, gs=128)
+check("mutualism", "CB: MP PD Pop_0 mean = 0.606",
+      lambda: mut_rolesplit_mean("noshuffle", "128", "MP", 1, 0), 0.606)
+check("mutualism", "CB: MP PD Pop_1 mean = 0.410",
+      lambda: mut_rolesplit_mean("noshuffle", "128", "MP", 1, 1), 0.410)
+check("mutualism", "CB: IMP PD Pop_0 mean = 0.670",
+      lambda: mut_rolesplit_mean("noshuffle", "128", "IMP", 1, 0), 0.670)
+check("mutualism", "CB: IMP PD Pop_1 mean = 0.505",
+      lambda: mut_rolesplit_mean("noshuffle", "128", "IMP", 1, 1), 0.505)
+check("mutualism", "CB: IJMPQ PD Pop_0 mean = 0.729",
+      lambda: mut_rolesplit_mean("noshuffle", "128", "IJMPQ", 1, 0), 0.729)
+check("mutualism", "CB: IJMPQ PD Pop_1 mean = 0.573",
+      lambda: mut_rolesplit_mean("noshuffle", "128", "IJMPQ", 1, 1), 0.573)
+check("mutualism", "CB: IJMPQ SD Pop_1 mean = 0.609",
+      lambda: mut_rolesplit_mean("noshuffle", "128", "IJMPQ", 2, 1), 0.609)
+check("mutualism", "CB: MP PD Pop_0>Pop_1 = 210", lambda: mut_dominance("noshuffle", "128", "MP", 1), 210, None)
+check("mutualism", "CB: IMP PD Pop_0>Pop_1 = 203", lambda: mut_dominance("noshuffle", "128", "IMP", 1), 203, None)
+check("mutualism", "CB: IJMPQ PD Pop_0>Pop_1 = 198", lambda: mut_dominance("noshuffle", "128", "IJMPQ", 1), 198, None)
+check("mutualism", "CB: IJMPQ SD Pop_0>Pop_1 = 176", lambda: mut_dominance("noshuffle", "128", "IJMPQ", 2), 176, None)
+
+# combined.md: shuffle disables M -> Pop_1 drops (gs=128)
+check("mutualism", "CB: IMP shuffle PD Pop_1 mean = 0.264",
+      lambda: mut_rolesplit_mean("shuffle", "128", "IMP", 1, 1), 0.264)
+check("mutualism", "CB: IJMPQ shuffle PD Pop_1 mean = 0.442",
+      lambda: mut_rolesplit_mean("shuffle", "128", "IJMPQ", 1, 1), 0.442)
+check("mutualism", "CB: IJMPQ shuffle SD Pop_1 mean = 0.477",
+      lambda: mut_rolesplit_mean("shuffle", "128", "IJMPQ", 2, 1), 0.477)
+
+# combined.md: c0=0 column (noshuffle, gs=128, Pop_0 = fset_0)
+check("mutualism", "CB: M c0=0 c1=0.10 = 0.918",
+      lambda: mcell(load(mpath("noshuffle", "128", "M", 1, 0)), 0.0, 0.10), 0.918)
+check("mutualism", "CB: P c0=0 c1=0.10 = 0.864",
+      lambda: mcell(load(mpath("noshuffle", "128", "P", 1, 0)), 0.0, 0.10), 0.864)
+check("mutualism", "CB: IMP c0=0 c1=0.02 = 0.961",
+      lambda: mcell(load(mpath("noshuffle", "128", "IMP", 1, 0)), 0.0, 0.02), 0.961)
+check("mutualism", "CB: IJMPQ c0=0 c1=0.10 = 0.966",
+      lambda: mcell(load(mpath("noshuffle", "128", "IJMPQ", 1, 0)), 0.0, 0.10), 0.966)
+check("mutualism", "CB: gs=4 IJMPQ PD Pop_1 mean = 0.617",
+      lambda: mut_rolesplit_mean("noshuffle", "4", "IJMPQ", 1, 1), 0.617)
+check("mutualism", "CB: gs=4 IMP PD Pop_0>Pop_1 = 208",
+      lambda: mut_dominance("noshuffle", "4", "IMP", 1), 208, None)
+
+
 # ════════════════════════════════════════════════════════════════════════════
 # PRISONERS
 # ════════════════════════════════════════════════════════════════════════════
@@ -264,6 +318,73 @@ check("prisoners", "RC: M noshuffle mean = 0.730", lambda: pris_mean("noshuffle"
 check("prisoners", "RC: M shuffle mean = 0.017", lambda: pris_mean("shuffle", "128", "M", "pop_1"), 0.017, 0.01)
 check("prisoners", "RC: IM shuffle gs4 mean = 0.521", lambda: pris_mean("shuffle", "4", "IM", "pop_1"), 0.521, 0.01)
 check("prisoners", "RC: IJM shuffle gs4 mean = 0.706", lambda: pris_mean("shuffle", "4", "IJM", "pop_1"), 0.706, 0.01)
+
+
+# ── additional coverage (paradox of success + cross-study tables) ─────────────
+
+def pcell(rows, R, P, col="qBSeen"):
+    for r in rows:
+        if abs(float(r["R0"]) - R) < 0.005 and abs(float(r["P0"]) - P) < 0.005:
+            return float(r[col])
+    return float("nan")
+
+
+def pris_paradox(sh, gs, m):
+    """corr(ΔqBSeen, Δwmean) and count of fitness-inverted cells (pop_2)."""
+    r0 = load(ppath(sh, gs, m, "pop_2", 0))
+    r1 = load(ppath(sh, gs, m, "pop_2", 1))
+    m1 = {(x["R0"], x["P0"]): x for x in r1}
+    dq, dw, inv = [], [], 0
+    for x in r0:
+        k = (x["R0"], x["P0"])
+        if k not in m1:
+            continue
+        q = float(x["qBSeen"]) - float(m1[k]["qBSeen"])
+        w = float(x["wmean"]) - float(m1[k]["wmean"])
+        dq.append(q)
+        dw.append(w)
+        if q * w < 0:  # higher-cooperation side has lower fitness
+            inv += 1
+    return corr(dq, dw), inv, len(dq)
+
+
+# partner_choice.md: prisoners pop_2 paradox of success (P, noshuffle, gs=128)
+check("prisoners", "PC: pop_2 paradox corr(dqB,dw) = -1.000",
+      lambda: pris_paradox("noshuffle", "128", "P")[0], -1.000, 0.01)
+check("prisoners", "PC: pop_2 fitness-inverted cells = 172",
+      lambda: pris_paradox("noshuffle", "128", "P")[1], 172, None)
+check("prisoners", "PC: pop_2 (R=0.30,P=0.14) qB_0 = 0.286",
+      lambda: pcell(load(ppath("noshuffle", "128", "P", "pop_2", 0)), 0.30, 0.14), 0.286)
+check("prisoners", "PC: pop_2 (R=0.30,P=0.14) defector w_1 > coop w_0 (+0.166)",
+      lambda: pcell(load(ppath("noshuffle", "128", "P", "pop_2", 1)), 0.30, 0.14, "wmean")
+      - pcell(load(ppath("noshuffle", "128", "P", "pop_2", 0)), 0.30, 0.14, "wmean"), 0.166, 0.01)
+
+
+def pris_locus_mean(m, col="qBSeen"):
+    """Mean over the temptation=risk anti-diagonal R+P=1.0 (pop_1, PD, noshuffle)."""
+    r = load(ppath("noshuffle", "128", m, "pop_1", 0))
+    v = [float(x[col]) for x in r if abs(float(x["R0"]) + float(x["P0"]) - 1.0) < 0.005]
+    return sum(v) / len(v)
+
+
+# calibration.md: temptation=risk locus (R+P=1.0) means
+check("prisoners", "CAL: R+P=1 locus P mean = 0.944", lambda: pris_locus_mean("P"), 0.944, 0.01)
+check("prisoners", "CAL: R+P=1 locus M mean = 0.899", lambda: pris_locus_mean("M"), 0.899, 0.01)
+check("prisoners", "CAL: R+P=1 locus IJMPQ mean = 0.965", lambda: pris_locus_mean("IJMPQ"), 0.965, 0.01)
+
+# combined.md: IMP mutual-cooperation table (PD, c0=0.1, noshuffle gs=128)
+check("mutualism", "CB: IMP mutual-coop (0.1,0.12) Pop_0 = 0.953",
+      lambda: mcell(load(mpath("noshuffle", "128", "IMP", 1, 0)), 0.10, 0.12), 0.953)
+check("mutualism", "CB: IMP mutual-coop (0.1,0.12) Pop_1 = 0.952",
+      lambda: mcell(load(mpath("noshuffle", "128", "IMP", 1, 1)), 0.10, 0.12), 0.952)
+
+# combined.md: c0=0 snowdrift column (M holds at ceiling, dilemma 2)
+check("mutualism", "CB: M c0=0 c1=0.10 snowdrift = 0.950",
+      lambda: mcell(load(mpath("noshuffle", "128", "M", 2, 0)), 0.0, 0.10), 0.950)
+
+# combined.md: hamilton snowdrift IJMPQ at c=0.40 (shuffle, gs=128)
+check("hamilton", "CB: IJMPQ snowdrift qBSeen c=0.40 = 0.960",
+      lambda: at_c(load(hpath("shuffle", "128", "IJMPQ", 2, "pop_2", 0)), 0.40), 0.960)
 
 
 # ════════════════════════════════════════════════════════════════════════════

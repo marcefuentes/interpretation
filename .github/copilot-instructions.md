@@ -51,6 +51,13 @@ Examples:
 - If required exports are missing, run graphgen as above before continuing interpretation.
 - Treat missing *image.con or *movie.con summary files as a data-prep step, not an analysis failure.
 
+### Verifying numeric claims (for AI agents)
+
+- Headline numbers in the analysis docs are regression-checked against the .con data by ai/verify_claims.py (shared loaders/stats in ai/trps_io.py).
+- Run python3 ai/verify_claims.py before committing any doc edit that changes a number; it exits non-zero on a prose/data mismatch and prints PASS/FAIL/SKIP per check.
+- When you add or change a headline number, add or update the matching check so the claim stays covered.
+- SKIP means the underlying .con is absent — generate it with graphgen to activate the check; SKIP is not a pass.
+
 ## Architecture
 
 ### Study Status

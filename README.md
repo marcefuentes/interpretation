@@ -29,6 +29,7 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 | prisoners_partner_choice.md  | Complete | P on (R,P) sweep; gs=128 + gs=4; temporal (1run)            |
 | prisoners_reciprocity.md     | Complete | M, IM, IJM on (R,P) sweep; gs=128 + gs=4                    |
 | snowdrift.md                 | Pending  | Only single-run (snowdrift_1run) exists; no multi-run .con   |
+| synthesis.md                 | Complete | Cross-study: maps prisoners payoff axes onto hamilton/mutualism thresholds |
 
 ## Related repositories (same machine)
 
@@ -47,4 +48,19 @@ The repository includes multi-run averages (hamilton, prisoners, mutualism, snow
 ## Documentation conventions
 
 For Markdown files intended for human reading (for example hamilton_*.md, mutualism_*.md, and prisoners_*.md), format tables for source readability as well as rendered output. Prefer aligned pipe tables with consistent spacing when practical, so the raw .md remains easy to scan and edit in a terminal or text editor.
+
+## Verifying numeric claims
+
+Headline numbers in the analysis docs are regression-checked against the .con
+data by `ai/verify_claims.py`. Run it before committing any doc edit that
+touches a number; it exits non-zero on any prose/data mismatch:
+
+```bash
+python3 ai/verify_claims.py            # all studies
+python3 ai/verify_claims.py mutualism  # filter by substring
+```
+
+When you change or add a headline number, add or update the matching check.
+Shared loaders/stats live in `ai/trps_io.py`. Checks whose .con is missing
+report SKIP rather than fail (regenerate the export to activate them).
 

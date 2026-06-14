@@ -14,60 +14,17 @@ them, so we can attribute each mechanism's behavior to a payoff axis.
 Cell key is (R0, P0). T0 = 0.9, S0 = 0.1 fixed.
 """
 
-import csv
 import os
-import math
 
-BASE = os.path.expanduser("~/results/prisoners")
+from trps_io import corr, gsum, load, ols2  # noqa: F401
+
+PRIS_BASE = os.path.expanduser("~/results/prisoners")
 T_FIX, S_FIX = 0.9, 0.1
 
 
-def load(p):
-    return list(csv.DictReader(open(p))) if os.path.exists(p) else None
-
-
 def path(sh, gs, mech, pop, fset):
-    return os.path.join(BASE, f"{sh}_cost0.001_{gs}", mech, "1", pop,
+    return os.path.join(PRIS_BASE, f"{sh}_cost0.001_{gs}", mech, "1", pop,
                         f"csv_{fset}_for_image.con")
-
-
-def corr(xs, ys):
-    n = len(xs)
-    if n < 2:
-        return float("nan")
-    mx = sum(xs) / n
-    my = sum(ys) / n
-    num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
-    dx = math.sqrt(sum((x - mx) ** 2 for x in xs))
-    dy = math.sqrt(sum((y - my) ** 2 for y in ys))
-    return num / (dx * dy) if dx * dy else float("nan")
-
-
-def ols2(R, P, Q):
-    """Least squares Q ~ a*R + b*P + const. Returns (a, b)."""
-    n = len(Q)
-    mR = sum(R) / n
-    mP = sum(P) / n
-    mQ = sum(Q) / n
-    Srr = sum((r - mR) ** 2 for r in R)
-    Spp = sum((p - mP) ** 2 for p in P)
-    Srp = sum((R[i] - mR) * (P[i] - mP) for i in range(n))
-    Srq = sum((R[i] - mR) * (Q[i] - mQ) for i in range(n))
-    Spq = sum((P[i] - mP) * (Q[i] - mQ) for i in range(n))
-    det = Srr * Spp - Srp * Srp
-    return (Spp * Srq - Srp * Spq) / det, (Srr * Spq - Srp * Srq) / det
-
-
-def gcols(row, c, p=None):
-    cols = [k for k in row if not k.endswith("SD") and len(k) == 12 and k[0] == "C"]
-    cols = [x for x in cols if x.startswith(f"C{c}")]
-    if p is not None:
-        cols = [x for x in cols if f"P{p}" in x]
-    return cols
-
-
-def gsum(row, c, p=None):
-    return sum(float(row[x]) for x in gcols(row, c, p))
 
 
 MECHS = ["_", "M", "P", "MP", "MPQ", "IMP", "IJMPQ"]

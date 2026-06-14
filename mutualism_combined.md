@@ -75,7 +75,7 @@ Combining partner choice (P) and reciprocity (M, IMP, IJMPQ) in Mutualism demons
 
 Under shuffling, direct reciprocity (M) is completely disabled. This allows partner choice (P) to dominate the combined mechanisms, causing cooperation to drop and asymmetry to surge:
 - For **IMP**, where M is shuffled, Pop_1 cooperation drops from 0.505 (noshuffle) to 0.264 (shuffle), and asymmetry surges from 0.165 to 0.303, returning close to partner choice's baseline asymmetry of 0.325.
-- For **IJMPQ**, Pop_1 cooperation remains much higher at 0.442 and asymmetry is kept lower at 0.286. This is because IJMPQ includes lifetime reputation components (J and Q) which are shuffle-invariant, allowing indirect reciprocity to continue enforcing symmetry even when partner continuity is broken.
+- For **IJMPQ**, Pop_1 cooperation remains much higher at 0.442 and asymmetry is kept lower at 0.286. Partner choice and indirect reciprocity both run every round regardless of shuffle (the simulation loop calls choose_partner after shuffle_partners; only direct reciprocity M, which requires partner == oldpartner, is disabled). Isolating the lifetime loci shows the recovery over IMP is carried specifically by **J** (lifetime indirect reciprocity): IM → IJM lifts Pop_1 by +0.133 under shuffle, whereas Q (MP → MPQ) adds only +0.007. The lifetime cooperation average (qBSeen_lt) that J reads is robust to the partner turnover that makes the recent indirect signal (I) noisy. (The M1 allele frequency actually rises under shuffle in the full IJMPQ stack, but M is behaviorally inert there — it fires only when partner == oldpartner — so this is neutral drift / hitchhiking on the active loci, not direct reciprocity doing work.)
 
 ## Mechanism comparison at sample cells
 

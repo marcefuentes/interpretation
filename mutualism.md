@@ -12,6 +12,8 @@ split by mechanism family:
 
 Hamilton is the equal-cost diagonal (c0 = c1); see **hamilton.md** (index to
 hamilton_partner_choice.md, hamilton_reciprocity.md, and hamilton_combined.md).
+For why the deterministic role split and the Pop_1 lift track the R − P payoff
+gap, see **[synthesis.md](synthesis.md)**.
 
 **Parameter axes.** graphgen heatmaps plot c0 horizontally and c1 vertically
 (upper triangle, c0 < c1). Markdown landscape tables in the sub-docs list c0

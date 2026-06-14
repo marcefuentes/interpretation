@@ -22,6 +22,9 @@ for temporal dynamics; gs = 4 movie not yet generated); 30 runs per cell.
   IJM: M is risk-limited (sensitive to P), shuffle kills M, indirect
   reciprocity recovers it
 
+For how these payoff-axis attributions map back onto the hamilton and mutualism
+thresholds, see **[synthesis.md](synthesis.md)**.
+
 ## Headline result
 
 Each mechanism is governed by a different payoff axis — invisible in hamilton,
@@ -32,6 +35,26 @@ where R and P move together:
 | M                | risk / defection payoff P   | the c-collapse of M is mostly a rising-risk effect |
 | P                | cooperation advantage R − P | the chooser bottleneck is set by R − P            |
 | MP, MPQ, IMP, IJMPQ | reward / temptation R    | reputation removes M's risk sensitivity           |
+
+## Replicates and noise floor
+
+Every value here is a mean over 30 independent runs (Runs = 30 in the .glo
+metadata). The csv_*_for_image.con files carry a companion SD column per
+statistic (qBSeenSD, wmeanSD, …); the standard error of a cell mean is SD / √30.
+
+Typical noise floor (gs = 128, pop_1, noshuffle): median qBSeenSD ≈ 0.002
+(control) to 0.016 (M), i.e. SE ≈ 0.0004–0.003; median wmeanSD ≈ 0.001
+(control) to 0.005 (M), i.e. SE ≈ 0.0002–0.001. SD spikes in transition cells
+where R ≈ P (max qBSeenSD ≈ 0.40 for M), where individual runs split between a
+cooperative and a collapsed fixed point — multi-run means there reflect a mix
+of bistable outcomes rather than a single equilibrium. Bistability is localized,
+though: only 6 of the 172 M cells (pop_1, noshuffle) have qBSeenSD > 0.1, so
+almost every cited mean sits on a single stable equilibrium.
+
+Practical reading guide: per-cell qBSeen gaps below ~0.01–0.02 are within
+run-to-run noise. The payoff-axis −b/a ratios and mean-qBSeen figures are
+fitted/averaged over all 172 cells, so they are far tighter than any single
+cell; treat −b/a differences below ~0.03 as not meaningful.
 
 ## Role in this project
 

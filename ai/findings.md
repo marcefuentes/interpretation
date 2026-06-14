@@ -1,7 +1,7 @@
 # Key Findings — New Parameterization
 
 Quick reference for future AI sessions. All data from gs=128, shuffle conditions unless noted.
-Source analysis: ai/analyze_new_data.py. Full write-ups: hamilton_partner_choice.md, hamilton_reciprocity.md, hamilton_combined.md, mutualism_partner_choice.md, mutualism_reciprocity.md, mutualism_combined.md.
+Source analysis: ai/analyze_new_data.py. Full write-ups: hamilton_partner_choice.md, hamilton_reciprocity.md, hamilton_combined.md, mutualism_partner_choice.md, mutualism_reciprocity.md, mutualism_combined.md. Cross-study synthesis tying prisoners payoff axes to hamilton/mutualism thresholds: synthesis.md.
 
 ## Hamilton — Critical Thresholds (PD, shuffle, pop_1 unless noted)
 
@@ -127,16 +127,56 @@ Confirmed directly in ~/code/trps/code/src against the analysis docs' claims:
   at c=0; C1M0 vs C0M1 -> mutual cooperation R=0.90. Snowdrift S-P penalty at c=0.12 = 0.78-0.50
   = 0.28 = 280 x the 0.001 locus cost. Matches hamilton_reciprocity.md / mutualism_reciprocity.md.
 
+## Narrative validation (ai/validate_mechanisms.py, 2026-06)
+
+Steady-state genotype decomposition (30-run image .con) + source gradient:
+
+- **Cross-population hitchhiking (mutualism PD, noshuffle, gs=128): CONFIRMED.** At
+  (c0=0.10, c1=0.30) Pop_0 M1=0.749 (polices), Pop_1 qBSeen=0.616, Pop_1 M1=0.370 <
+  control 0.500. M-shedding strengthens along the c0=0.10 row as c1 rises (Pop_1 M1
+  0.479@c1=0.12 -> 0.235@c1=0.36). Composition nuance: C1M0 (always-cooperate) is the
+  plurality cooperator (0.306) but only marginally above C1M1 dTFT (0.282) — the doc's
+  M1=0.370 figure is exact; "plays C1M0" is a partial shift, not a sweep. Gradient: C1M0
+  and C1M1 behave identically vs cooperators, so the only selective difference is the
+  0.001/round M-locus cost (recruits.c) -> drives M1 down while Pop_0 polices defectors.
+  Temporal (mutualism_1run cell 0099, single run): Pop_0 M1 stays ~0.79 (policing
+  sustained) while Pop_1 holds qBSeen~0.62 at M1~0.40 < 0.500 for the whole run ->
+  hitchhiking is a stable attractor, not an averaging artifact. Caveat: snapshots are
+  131072 apart, so the sub-establishment order (coop rises THEN M1 falls) is below the
+  logging resolution — finer early logging would be needed to resolve the causal order.
+
+- **IJMPQ shuffle robustness (mutualism PD Pop_1, gs=128): behavioral claim CONFIRMED,
+  mechanism CORRECTED.** IMP 0.505->0.264 under shuffle; IJMPQ 0.573->0.442; the +0.178
+  recovery is carried by J (lifetime indirect reciprocity), NOT Q: IM->IJM = +0.133 (Pop_1),
+  MP->MPQ = +0.007 (Pop_1). simulation.c runs choose_partner after shuffle, so P/Q/I/J are
+  never disabled by shuffle — only M (needs partner==oldpartner) is. Fixed mutualism_combined.md
+  (was "lifetime components J and Q"). Hamilton differs: the high-c shuffle window (IMP->IJMPQ
+  +0.135@c=0.30, +0.502@c=0.40) is synergistic — isolated J (~+0.02) and Q (~+0.02) are both
+  tiny, so hamilton_combined.md's "Q and J loci extend cooperation window" (epistatic) stays.
+
 ## Verification
 
-- ai/verify_claims.py: re-derives headline doc numbers from .con data, PASS/FAIL (39 checks).
-  Run before committing doc edits to catch prose/data drift.
+- ai/verify_claims.py: re-derives headline doc numbers from .con data, PASS/FAIL/SKIP
+  (63 checks; hamilton + mutualism combined tables, c0=0 columns, prisoners payoff axes).
+  Run before committing doc edits to catch prose/data drift. SKIP = .con absent (not a pass).
+- ai/trps_io.py: shared loaders/stats (load, corr, ols2, genotype_cols, gsum, m1sum)
+  imported by analyze_new_data.py, analyze_prisoners.py, and verify_claims.py.
+
+### Data gap surfaced by the verifier (2026-06, now resolved)
+
+- hamilton gs=4 .con were briefly missing (raw .csv only); the verifier flagged 3 gs=4
+  checks as SKIP. Regenerated 2026-06 (170 gs=4 .con); all 66 checks now PASS, 0 SKIP.
+  If hamilton gs=4 .con go missing again, regenerate with graphgen --study hamilton
+  --groupsize 4 (per dilemma).
 
 ## Analysis Scripts Available
 
 - ai/analyze_new_data.py: full cross-study analysis (hamilton, mutualism; all mechanisms, cells, populations)
 - ai/analyze_prisoners.py: prisoners payoff-axis calibration (sensitivity fit, R-P collapse, genotypes, pop_2/3, shuffle, IM/IJM)
 - ai/analyze_single_run.py: temporal dynamics from _1run studies
+- ai/verify_claims.py: regression-checks headline doc numbers against .con data
+- ai/validate_mechanisms.py: validates the hitchhiking and IJMPQ-shuffle narratives (genotype decomposition + source gradient)
+- ai/trps_io.py: shared loaders/stats used by the above
 
 ## Hamilton gs=4 — Key Findings (vs gs=128, PD, shuffle, pop_1)
 

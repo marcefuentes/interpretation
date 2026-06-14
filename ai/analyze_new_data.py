@@ -11,34 +11,17 @@ Payoffs:
 With K=0.5, b=0.4.
 """
 
-import csv
 import os
 import sys
 from collections import defaultdict
 
-BASE = os.path.expanduser("~/results")
+from trps_io import BASE, corr, genotype_cols, load as load_con  # noqa: F401
+
 K = 0.5
 B = 0.4
 
 
 # ── helpers ──────────────────────────────────────────────────────────────────
-
-def load_con(path):
-    if not os.path.exists(path):
-        return None
-    with open(path) as f:
-        return list(csv.DictReader(f))
-
-
-def genotype_cols(row, prefix_c, prefix_p=None):
-    """Return columns matching C{prefix_c}...P{prefix_p}... (no SD suffix)."""
-    cols = [k for k in row if not k.endswith("SD") and len(k) == 12 and k[0] == "C"]
-    if prefix_c is not None:
-        cols = [c for c in cols if c.startswith(f"C{prefix_c}")]
-    if prefix_p is not None:
-        cols = [c for c in cols if f"P{prefix_p}" in c]
-    return cols
-
 
 def coop(row):
     """Total cooperation = C1* allele frequency = qBSeen from file (faster)."""
@@ -402,18 +385,6 @@ for mech in ["_", "M", "P", "MP", "IJMPQ"]:
 # ── 13. Exploitation correlation ─────────────────────────────────────────────
 
 print("\n--- EXPLOITATION: correlation(ΔqBSeen, Δfitness) ---")
-import math
-
-def corr(xs, ys):
-    n = len(xs)
-    if n < 2:
-        return float("nan")
-    mx = sum(xs) / n; my = sum(ys) / n
-    num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
-    dx = math.sqrt(sum((x - mx)**2 for x in xs))
-    dy = math.sqrt(sum((y - my)**2 for y in ys))
-    return num / (dx * dy) if dx * dy > 0 else float("nan")
-
 for mech in ["_", "M", "P", "IJMPQ"]:
     for dilemma in [1]:
         for shuffle in ["noshuffle", "shuffle"]:
