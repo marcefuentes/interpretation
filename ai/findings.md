@@ -71,9 +71,28 @@ Control (\_) reaches qB~0.96 at moderate c without any mechanism.
 Mechanisms add marginal lift but the snowdrift floor is already high.
 PD (dilemma 1) is the informative dilemma for mechanism discrimination.
 
+## Prisoners — Payoff-Axis Calibration (new parameterization)
+
+Prisoners is now a raw PD payoff-plane sweep: T=0.9, S=0.1 fixed; R and P swept
+(18x18, 172 cells). Decouples temptation/risk/(R-P) that hamilton welds onto c.
+Fitting qBSeen ~ a*R + b*P (pop_1, PD, noshuffle, gs=128); -b/a = P:R weight:
+
+| Mechanism | -b/a | Limiting axis |
+| --------- | ---- | ------------- |
+| M         | 1.73 | risk / defection payoff P |
+| P         | 0.89 | cooperation advantage R-P |
+| MP/MPQ/IMP/IJMPQ | 0.50-0.56 | reward / temptation R (P-insensitive) |
+
+- Partner choice collapses onto R-P (iso-R-P cells give equal qB).
+- M is risk-limited: at R=0.50, qB falls 0.86 (P=0.14) -> 0.47 (P=0.46).
+- Shuffle strips the M term: MP -b/a 0.56 -> 0.89 (reverts to pure P); M dies (0.730 -> 0.017).
+- IM/IJM (shuffle only) recover to 0.381/0.360; IM tracks R-P, IJM reward-led.
+- Only gs=128 .con exports exist (no gs=4, no movie). Full write-up: prisoners_calibration.md, prisoners_partner_choice.md, prisoners_reciprocity.md.
+
 ## Analysis Scripts Available
 
 - ai/analyze_new_data.py: full cross-study analysis (hamilton, mutualism; all mechanisms, cells, populations)
+- ai/analyze_prisoners.py: prisoners payoff-axis calibration (sensitivity fit, R-P collapse, genotypes, pop_2/3, shuffle, IM/IJM)
 - ai/analyze_single_run.py: temporal dynamics from _1run studies
 
 ## Hamilton gs=4 — Key Findings (vs gs=128, PD, shuffle, pop_1)

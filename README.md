@@ -24,9 +24,10 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 | mutualism_partner_choice.md  | Complete | gs=128 noshuffle + gs=4 (P mechanism)                          |
 | mutualism_reciprocity.md     | Complete | M (gs=128 noshuffle + gs=4); IM, IJM (shuffle)               |
 | mutualism_combined.md        | Complete | gs=128 noshuffle + gs=4 (MP, MPQ, IMP, IJMPQ)                |
-| prisoners.md                 | Index    | Links to partner-choice and reciprocity write-ups  |
-| prisoners_partner_choice.md  | Complete | P mechanism (previous parameterization)            |
-| prisoners_reciprocity.md     | Pending  | Simulations still running                          |
+| prisoners.md                 | Index    | Calibration study index; (R,P) payoff-plane sweep            |
+| prisoners_calibration.md     | Complete | Cross-mechanism payoff-axis attribution; gs=128 PD          |
+| prisoners_partner_choice.md  | Complete | P mechanism on the (R,P) sweep; gs=128 PD                   |
+| prisoners_reciprocity.md     | Complete | M, IM, IJM on the (R,P) sweep; gs=128 PD                    |
 | snowdrift.md                 | Pending  | Simulations still running                          |
 
 ## Related repositories (same machine)
