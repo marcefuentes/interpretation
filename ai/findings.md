@@ -100,5 +100,5 @@ Interpretation: small groups make reputation signals (I, J loci) more reliable
 
 ## Pending
 
-- mutualism shuffle: data present but not analyzed
-- prisoners_reciprocity.md, snowdrift.md: simulations still running as of 2026-05-26
+- mutualism shuffle: analyzed — P (mutualism_partner_choice.md), M and indirect IM/IJM (mutualism_reciprocity.md), combined (mutualism_combined.md)
+- prisoners/snowdrift: deprecated parameterization (old cost12/cost3 data); not part of the current K=0.5, b=0.4 study

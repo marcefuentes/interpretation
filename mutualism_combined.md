@@ -156,10 +156,10 @@ Partner shuffling has a major impact on combined mechanisms because it disables 
 
 ### Role Split under Shuffle
 
-Shuffling does not erase the deterministic role split (where the lower-cost population 0 cooperates more). In fact, the fraction of cells where `Pop_0 > Pop_1` increases under shuffling for the most robust mechanisms:
-- **IMP** (PD): `Pop_0 > Pop_1` in **203/210** cells (noshuffle) $\rightarrow$ **210/210** cells (shuffle)
-- **IJMPQ** (PD): `Pop_0 > Pop_1` in **198/210** cells (noshuffle) $\rightarrow$ **205/210** cells (shuffle)
-- **IJMPQ** (SD): `Pop_0 > Pop_1` in **176/210** cells (noshuffle) $\rightarrow$ **197/210** cells (shuffle)
+Shuffling does not erase the deterministic role split (where the lower-cost population 0 cooperates more). In fact, the fraction of cells where Pop_0 > Pop_1 increases under shuffling for the most robust mechanisms:
+- **IMP** (PD): Pop_0 > Pop_1 in **203/210** cells (noshuffle) $\rightarrow$ **210/210** cells (shuffle)
+- **IJMPQ** (PD): Pop_0 > Pop_1 in **198/210** cells (noshuffle) $\rightarrow$ **205/210** cells (shuffle)
+- **IJMPQ** (SD): Pop_0 > Pop_1 in **176/210** cells (noshuffle) $\rightarrow$ **197/210** cells (shuffle)
 
 This happens because shuffling suppresses cooperation in the higher-cost population (Pop_1) more than in the lower-cost population (Pop_0), making the asymmetric role split even more pronounced across the parameter space.
 

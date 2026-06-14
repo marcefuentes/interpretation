@@ -157,10 +157,11 @@ The correlation between ΔqBSeen (qBSeen_0 − qBSeen_1) and Δfitness (w0 − w
 | P      | 2 (SD)  | -0.144    | -0.165  |
 
 In PD, the cooperation/fitness link is nearly deterministic: Pop_0 cooperates
-more and earns less in 199/210 cells (mean fitness deficit = 0.140). In
+more and earns less in 210/210 cells (mean fitness deficit = 0.140). In
 snowdrift, the correlation is weak (−0.144) because the snowdrift payoff
 structure sustains high cooperation without the same fitness penalty; Pop_0
-has lower fitness in 187/210 cells with a smaller mean deficit (0.104).
+has lower fitness in 190/210 cells with a smaller mean deficit (0.116 over
+those cells, 0.105 averaged across all 210).
 
 Comparing partner choice (P) directly to the control (_) reveals that while partner choice successfully bootstraps mutual cooperation in the majority of PD cells (resulting in higher Pop_0 fitness than the control in 168 out of 210 cells), it acts as an evolutionary trap at high parameter asymmetries:
 - **Prisoner's Dilemma (PD):** Pop_0 achieves lower fitness under P than under the control in 42 out of 210 cells. For example, at (c0=0.02, c1=0.40), Pop_0's fitness is 0.5000 under P (with cooperation qBSeen_0 = 0.4263) vs. 0.5008 under control (cooperation 0.1919). This minor drop is systematic: Pop_0 is selected to cooperate to seek partners, but because Pop_1's cost c1 is too high to cooperate, Pop_0 cannot find cooperative partners in Pop_1 and ends up cooperating unilaterally. Because c0 is very small, the maximum possible deficit is tiny, making the difference practically negligible and close to the level of simulation noise.
@@ -368,7 +369,7 @@ This invariance occurs because partner choice operates dynamically on a per-step
 | P vs control (Pop_0 mean) | 0.472 vs 0.103 — partner choice essential                                             | 0.956 vs 0.955 — marginal lift; snowdrift floor dominates                             |
 | Role split                 | Pop_0 > Pop_1 in 210/210 cells                                                      | Pop_0 > Pop_1 in 210/210 cells                                                      |
 | Bottleneck                 | Pop_0 capped by Pop_1's C1P1; corr(qB0, R1-P1) = 0.90                                 | Pop_0 at ceiling; Pop_1 defects because T1 = R1 when partner cooperates               |
-| Exploitation               | Pop_0 lower fitness in 199/210 cells; mean deficit = 0.140; corr = −0.986             | Pop_0 lower fitness in 187/210 cells; mean deficit = 0.104; corr = −0.144             |
+| Exploitation               | Pop_0 lower fitness in 210/210 cells; mean deficit = 0.140; corr = −0.986             | Pop_0 lower fitness in 190/210 cells; mean deficit = 0.116; corr = −0.144             |
 | Genotypes Pop_0            | C1P1-dominated choosers (0.382); C1P0 free-riders at 9%                               | Sparse choosers: C1P1 ≈ C1P0 ≈ 0.47 each                                              |
 | Genotypes Pop_1            | C0P1 hitchhikers dominate (0.442)                                                     | Same hitchhiking pattern (C0P1 = 0.446); few choosers (C1P1 = 0.048)                  |
 | gs=4 P mechanism           | Collapses by c0/c1 ≈ 0.10                                                             | Robust; Pop_0 ≈ 0.96 at (0.1, 0.3) for both groupsizes                               |

@@ -1,9 +1,12 @@
 # Mutualism — Reciprocity
 
-Pure reciprocity analysis for the two-population mutualism study (mechanism
-**M** only — no partner-choice locus). Partner choice (P) is in
-**mutualism_partner_choice.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are
-in **mutualism_combined.md**.
+Pure reciprocity analysis for the two-population mutualism study — direct
+reciprocity (**M**) and indirect reciprocity (**IM**, **IJM**), no
+partner-choice locus. M is present under both shuffle and noshuffle; IM and
+IJM exist only under the shuffle conditions, which is precisely where direct
+reciprocity collapses and reputation-based reciprocity earns its keep. Partner
+choice (P) is in **mutualism_partner_choice.md**; combined mechanisms (MP, MPQ,
+IMP, IJMPQ) are in **mutualism_combined.md**.
 
 ## Overview
 
@@ -145,7 +148,7 @@ regardless). Direct reciprocity partially overcomes this:
 
 ## Reciprocity Locus (M1) Dynamics
 
-In the coevolving two-population mutualism, the frequency of the active reciprocity locus M1 under mechanism M frequently drops significantly below its nearly neutral control baseline (which drifts at approx. 0.49 - 0.51). Across the grid, there are 3,701 parameter cells where M1 under M is suppressed. This suppression is driven by three distinct game-theoretic mechanisms depending on the dilemma type (including dilemma 0 where there is no social dilemma):
+In the coevolving two-population mutualism, the frequency of the active reciprocity locus M1 under mechanism M frequently drops significantly below its nearly neutral control baseline (which drifts at approx. 0.49 - 0.51). Aggregated across every condition (3 dilemmas x 2 populations x 2 shuffle settings x 2 groupsizes = 5,040 cell-conditions over the 210-cell grid), M1 under M is suppressed below the control baseline in 3,701 of them. This suppression is driven by three distinct game-theoretic mechanisms depending on the dilemma type (including dilemma 0 where there is no social dilemma):
 
 ### Unwitting self-harm under no social dilemma (Dilemma 0)
 In Dilemma 0 (Control baseline), there is no social dilemma because payoffs do not depend on the partner's move (focal fitness depends only on paying cost c to receive private benefit b). Since b > c, cooperating (paying c) is always privately optimal. However, under mechanism M, a reciprocating cooperator (C1M1) will mimic defection if paired with a mutant defector. 
@@ -192,6 +195,79 @@ For M in snowdrift, shuffle reduces the exploitation correlation from −0.265
 (noshuffle) to −0.141 (shuffle) — matching the control — because shuffling
 removes the reciprocity-driven elevation of Pop_1 that creates cooperation
 asymmetry.
+
+## Indirect reciprocity under shuffle (IM, IJM)
+
+The mutualism grid only ran IM and IJM under the shuffle conditions. This is
+the informative regime: shuffling destroys direct reciprocity (M shuffle
+collapses to the control), so any cooperation that IM and IJM sustain is
+attributable to reputation signals (the I locus copies a new partner's last
+move toward a third party; J copies the partner's lifetime cooperation
+average). The pattern mirrors hamilton_reciprocity.md: reputation-based
+reciprocity survives partner turnover where memory-based reciprocity cannot,
+and the lifetime signal J (in IJM) is far more robust than the recent-only
+signal I (in IM).
+
+### Cooperation along the c0 = 0 column (shuffle, gs=128, Pop_0)
+
+**Dilemma 1 (PD):**
+
+| Mech   | c1=0.02 | c1=0.10 | c1=0.18 | c1=0.26 | c1=0.34 |
+| ------ | ------- | ------- | ------- | ------- | ------- |
+| M      | 0.529   | 0.518   | 0.538   | 0.523   | 0.512   |
+| IM     | 0.938   | 0.841   | 0.742   | 0.682   | 0.625   |
+| IJM    | 0.971   | 0.970   | 0.806   | 0.738   | 0.691   |
+
+M under shuffle sits at the control drift level (≈ 0.5 at c0 = 0, where
+T = R removes the temptation). IM and IJM recover high cooperation; IJM holds
+near ceiling through c1 = 0.10 and stays above IM across the column.
+
+**Dilemma 2 (snowdrift):**
+
+| Mech   | c1=0.02 | c1=0.10 | c1=0.18 | c1=0.26 | c1=0.34 |
+| ------ | ------- | ------- | ------- | ------- | ------- |
+| M      | 0.912   | 0.969   | 0.972   | 0.971   | 0.973   |
+| IM     | 0.942   | 0.950   | 0.953   | 0.950   | 0.953   |
+| IJM    | 0.971   | 0.972   | 0.929   | 0.930   | 0.931   |
+
+In snowdrift the floor already sustains Pop_0 near ceiling; IM and IJM add
+little for the lower-cost population (the action is in Pop_1, below).
+
+### Mean cooperation and role split across 210 cells (shuffle, gs=128)
+
+| Mech   | Dilemma | Pop_0 | Pop_1 | Pop_0 > Pop_1 |
+| ------ | ------- | ------ | ------ | --------------- |
+| M      | 1 (PD)  | 0.108  | 0.026  | 210/210         |
+| IM     | 1 (PD)  | 0.362  | 0.167  | 210/210         |
+| IJM    | 1 (PD)  | 0.453  | 0.299  | 203/210         |
+| M      | 2 (SD)  | 0.953  | 0.095  | 210/210         |
+| IM     | 2 (SD)  | 0.927  | 0.199  | 210/210         |
+| IJM    | 2 (SD)  | 0.917  | 0.378  | 204/210         |
+
+For reference, M under noshuffle averages 0.637/0.551 (PD) and 0.926/0.191
+(snowdrift). So in PD, shuffled IJM (0.453/0.299) recovers roughly two-thirds
+of the cooperation that shuffled M loses, without restoring partner memory. In
+snowdrift the IM/IJM benefit is concentrated in Pop_1: IJM lifts the
+higher-cost population to 0.378 (vs 0.095 for shuffled M and 0.191 for
+noshuffle M), the largest Pop_1 elevation of any pure-reciprocity mechanism.
+The role split also begins to soften — IJM reverses it in 7/210 PD cells and
+6/210 snowdrift cells, because lifetime reputation occasionally lets the
+higher-cost population out-cooperate the lower-cost one.
+
+### Sample cells (shuffle, gs=128)
+
+| Mech   | Dilemma | (0.1, 0.2) Pop_0 | (0.1, 0.2) Pop_1 | (0.1, 0.3) Pop_0 | (0.1, 0.3) Pop_1 |
+| ------ | ------- | ----------------- | ----------------- | ----------------- | ----------------- |
+| IM     | 1 (PD)  | 0.511             | 0.286             | 0.258             | 0.115             |
+| IJM    | 1 (PD)  | 0.911             | 0.846             | 0.258             | 0.141             |
+| IM     | 2 (SD)  | 0.941             | 0.188             | 0.943             | 0.125             |
+| IJM    | 2 (SD)  | 0.924             | 0.363             | 0.919             | 0.205             |
+
+At mild PD asymmetry (c0=0.1, c1=0.2), IJM achieves near-symmetric high
+cooperation (0.911/0.846) where IM manages only 0.511/0.286 — the lifetime
+signal J is what bootstraps both populations together. By (0.1, 0.3) both
+collapse toward the chooser-free reciprocity floor, confirming that indirect
+reciprocity, like direct, has a cost-asymmetry ceiling.
 
 ## Single-run dynamics (mutualism_1run)
 
@@ -315,4 +391,5 @@ Combined mechanisms show different groupsize sensitivity — see
 | Role split            | Pop_0 > Pop_1 in 210/210                                  | Pop_0 > Pop_1 in 210/210                       |
 | M vs shuffle          | 17× penalty at (0.1, 0.2): 0.869 → 0.051                  | No penalty; shuffle ≈ noshuffle (~0.95) for Pop_0 |
 | Exploitation (M)      | corr = −0.867 noshuffle; shuffle restores −1.000            | corr = −0.265 noshuffle; weaker than PD            |
+| Indirect (shuffle)    | IJM 0.453/0.299, IM 0.362/0.167 — recover ~⅔ of shuffled M's loss | IJM lifts Pop_1 to 0.378 (largest pure-reciprocity Pop_1 lift) |
 | gs=4 M (PD)           | Landscape matches gs=128; shuffle penalty severe (0.863 → 0.087) | Near ceiling; shuffle penalty absent         |

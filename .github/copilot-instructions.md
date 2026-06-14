@@ -57,7 +57,7 @@ Examples:
 
 **hamilton**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: hamilton_partner_choice.md (P), hamilton_reciprocity.md (M, IM, IJM), hamilton_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 primary with dedicated gs=4 sections.
 
-**mutualism**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, 7 mechanisms, pop_2 only (image and movie). Analysis: mutualism_partner_choice.md (P), mutualism_reciprocity.md (M), mutualism_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 noshuffle primary with dedicated gs=4 sections.
+**mutualism**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, pop_2 only (image and movie). Mechanism coverage differs by shuffle setting: noshuffle has 7 mechanisms (_, M, P, MP, MPQ, IMP, IJMPQ); shuffle adds IM and IJM for 9. Analysis: mutualism_partner_choice.md (P), mutualism_reciprocity.md (M noshuffle; IM, IJM shuffle), mutualism_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 noshuffle primary with dedicated gs=4 sections.
 
 **mutualism pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study mutualism_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with Hamilton pop_3 for interpretation** — see Mutualism Parameter Space below. Data incomplete: noshuffle gs=128 and gs=4 are complete for most mechanisms; shuffle conditions partial. Figures: ~/figures/mutualism/pop_3/ (use --flat-output).
 
@@ -121,17 +121,19 @@ pop_2 remains the non-redundant mutualism case: both populations evolve and c0 �
 
 ### Mechanisms Available (mutualism)
 
-| Mechanism folder | Active loci      | Modules enabled                                  |
-| ---------------- | ---------------- | ------------------------------------------------ |
-| \_               | All 6            | None (control)                                   |
-| M                | C, M             | Direct reciprocity                               |
-| P                | C, P             | Partner choice                                   |
-| MP               | C, M, P          | Reciprocity + partner choice                     |
-| MPQ              | C, M, P, Q       | Reciprocity + partner choice (recent + lifetime) |
-| IMP              | C, I, M, P       | All three                                        |
-| IJMPQ            | All 6            | All three, with lifetime variants                |
+| Mechanism folder | Active loci      | Modules enabled                                  | Conditions          |
+| ---------------- | ---------------- | ------------------------------------------------ | ------------------- |
+| \_               | All 6            | None (control)                                   | shuffle + noshuffle |
+| M                | C, M             | Direct reciprocity                               | shuffle + noshuffle |
+| P                | C, P             | Partner choice                                   | shuffle + noshuffle |
+| MP               | C, M, P          | Reciprocity + partner choice                     | shuffle + noshuffle |
+| MPQ              | C, M, P, Q       | Reciprocity + partner choice (recent + lifetime) | shuffle + noshuffle |
+| IMP              | C, I, M, P       | All three                                        | shuffle + noshuffle |
+| IJMPQ            | All 6            | All three, with lifetime variants                | shuffle + noshuffle |
+| IM               | C, I, M          | Direct + indirect reciprocity (recent)           | shuffle only        |
+| IJM              | C, I, J, M       | Direct + indirect reciprocity (recent + lifetime)| shuffle only        |
 
-All 7 mechanisms are run for all three dilemma folders (0, 1, 2) for noshuffle_cost0.001_128.
+The 7 base mechanisms are run for all three dilemma folders (0, 1, 2) under both shuffle and noshuffle_cost0.001_128. IM and IJM are present only under the shuffle conditions (gs=128 and gs=4).
 
 
 

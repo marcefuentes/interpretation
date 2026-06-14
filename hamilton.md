@@ -36,3 +36,23 @@ for all c < 0.40.
 Folder 0 (given=0): T = P and R = S — partner moves do not affect focal
 payoffs. High qBSeen for c < b is a private cost–benefit outcome, not social
 cooperation.
+
+## Replicates and noise floor
+
+Every value in these write-ups is a mean over 30 independent simulation runs
+(Runs = 30 in the .glo metadata). The csv_*_for_image.con files carry a
+companion SD column for each statistic (qBSeenSD, wmeanSD, …) giving the
+standard deviation across those 30 runs; the standard error of a cell mean is
+SD / √30.
+
+Typical noise floor (gs=128, PD): median wmeanSD ≈ 0.001 (control) to 0.010
+(M), i.e. SE ≈ 0.0002–0.002; median qBSeenSD ≈ 0.007 (control) to 0.037 (P),
+i.e. SE ≈ 0.001–0.007. SD peaks in the transition zones (max wmeanSD ≈
+0.07–0.10) where individual runs split between a cooperative and a collapsed
+fixed point, so multi-run means there reflect a mix of bistable outcomes
+rather than a single equilibrium (see the single-run dynamics sections).
+
+Practical reading guide: fitness (wmean) gaps below ~0.002 and qBSeen gaps
+below ~0.01–0.02 are within run-to-run noise. Statements like "near the noise
+floor" or "negligible" in the analysis docs refer to differences at or below
+these magnitudes.

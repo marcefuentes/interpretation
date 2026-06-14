@@ -22,7 +22,7 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 | hamilton_combined.md         | Complete | gs=128 + gs=4; MP, MPQ, IMP, IJMPQ; IJMPQ symmetry          |
 | mutualism.md                 | Index    | Links to partner-choice, reciprocity, and combined write-ups |
 | mutualism_partner_choice.md  | Complete | gs=128 noshuffle + gs=4 (P mechanism)                          |
-| mutualism_reciprocity.md     | Complete | gs=128 noshuffle + gs=4 (M mechanism)                        |
+| mutualism_reciprocity.md     | Complete | M (gs=128 noshuffle + gs=4); IM, IJM (shuffle)               |
 | mutualism_combined.md        | Complete | gs=128 noshuffle + gs=4 (MP, MPQ, IMP, IJMPQ)                |
 | prisoners.md                 | Index    | Links to partner-choice and reciprocity write-ups  |
 | prisoners_partner_choice.md  | Complete | P mechanism (previous parameterization)            |

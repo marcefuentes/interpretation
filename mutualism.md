@@ -68,3 +68,22 @@ Since c0 < c1 in every cell: R0 − P0 = b − c0 > R1 − P1 = b − c1. Popula
 In snowdrift, S > P for all c < 0.40 = b, so unilateral cooperation is always
 better than mutual defection. The cooperation floor is high even without
 mechanisms: the control (\_) reaches mean qBSeen_0 = 0.955.
+
+## Replicates and noise floor
+
+Every value in these write-ups is a mean over 30 independent simulation runs
+(Runs = 30 in the .glo metadata). The csv_*_for_image.con files carry a
+companion SD column for each statistic (qBSeenSD, wmeanSD, …) giving the
+standard deviation across those 30 runs; the standard error of a cell mean is
+SD / √30.
+
+Typical noise floor (gs=128, PD): median wmeanSD ≈ 0.001 (control) to 0.010
+(M), i.e. SE ≈ 0.0002–0.002; median qBSeenSD ≈ 0.007 (control) to 0.037 (P),
+i.e. SE ≈ 0.001–0.007. SD peaks in transition cells (max wmeanSD ≈ 0.07–0.10)
+where individual runs split between cooperative and collapsed fixed points.
+
+Practical reading guide: fitness (wmean) gaps below ~0.002 and qBSeen gaps
+below ~0.01–0.02 are within run-to-run noise. Cell-count claims (for example,
+the exploitation tallies) and per-cell fitness deficits should be read against
+this floor — small deficits such as 0.5000 vs 0.5008 are below the wmean
+standard error and are flagged as negligible in the analysis docs.
