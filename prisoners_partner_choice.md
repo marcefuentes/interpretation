@@ -97,10 +97,51 @@ Partner choice is insensitive to shuffling — mean qBSeen (pop_1, gs=128) is
 unchanged (−b/a = 0.89 either way). Per-step rematching within the group makes
 any initial random pairing irrelevant, exactly as in hamilton and mutualism.
 
+## Groupsize 4: the chooser bottleneck collapses
+
+Partner choice fails almost entirely with four individuals per group. Mean
+qBSeen (pop_1, noshuffle) drops from 0.898 (gs=128) to 0.075 (gs=4), and the
+R − P profile is flat near zero:
+
+| R − P | gs=128 | gs=4  |
+| ----- | ------ | ----- |
+| 0.04  | 0.660  | 0.015 |
+| 0.08  | 0.835  | 0.015 |
+| 0.12  | 0.889  | 0.015 |
+| 0.20  | 0.932  | 0.016 |
+| 0.40  | 0.963  | 0.087 |
+
+Even at large R − P, where cooperation is trivial at gs=128, the small group
+cannot sustain it: mutual C1P1 swaps require two choosers meeting, and among
+four individuals such pairs are too rare to bootstrap. This reproduces the
+hamilton and mutualism gs=4 result — pure partner choice is catastrophically
+weakened by small groups, while reciprocity-bearing combinations (MP, MPQ,
+IMP, IJMPQ) partially recover. See **prisoners_calibration.md** for the
+groupsize-vs-shuffle decomposition.
+
+## Temporal dynamics (prisoners_1run)
+
+Single-run trajectories (P, pop_1, noshuffle, gs=128; snapshots from
+t = 131072 to 1048576) show that run-to-run and temporal variability is
+concentrated in the transition zone:
+
+| R − P | range (max−min) | representative trajectory          |
+| ----- | --------------- | ---------------------------------- |
+| 0.04  | 0.151           | 0.54 → 0.43 → 0.55 → 0.58 → 0.47    |
+| 0.08  | 0.046           | 0.80 → 0.82 → 0.81 → 0.78          |
+| 0.20  | 0.038           | 0.93 → 0.90 → 0.91 → 0.91          |
+| 0.40  | 0.014           | 0.96 → 0.96 → 0.97 → 0.97          |
+
+Saturated cells (R − P ≥ 0.20) are temporally stable; only the threshold cells
+(R − P ≈ 0.04) fluctuate. This confirms that the intermediate cooperation
+levels in the multi-run means near the threshold reflect genuine fluctuation,
+not a hidden all-or-nothing split — the same conclusion drawn from the
+within-bin spread above.
+
 ## Caveats
 
-Only gs = 128 .con exports exist so far; gs = 4 and movie/temporal exports are
-not yet generated. PD only.
+gs = 128 and gs = 4 .con exports exist; temporal (movie) exports exist for
+gs = 128 only. PD only.
 
 ## Summary
 
@@ -111,4 +152,6 @@ not yet generated. PD only.
 | Genotypes          | C1P1 carries coop; C0P1 hitchhikers dominate below threshold (0.45)  |
 | Pop_2              | Stochastic symmetry breaking; defecting side earns more (w_1 > w_0)  |
 | Shuffle            | Invariant (0.898 both); −b/a = 0.89 unchanged                       |
+| Groupsize 4        | Collapses (0.898 → 0.075); chooser bottleneck fails even at high R − P |
+| Temporal           | Only the threshold cells (R − P ≈ 0.04) fluctuate; saturated cells stable |
 | vs hamilton        | Reproduces the R − P chooser-bottleneck threshold from the (R,P) plane |

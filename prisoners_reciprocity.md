@@ -52,11 +52,11 @@ reciprocity is dead there and any cooperation is attributable to reputation
 signals (I copies a new partner's last move toward a third party; J copies the
 partner's lifetime cooperation average). Mean qBSeen, shuffle, gs=128:
 
-| Mech | pop_1 | pop_2 | −b/a (pop_1) | Limiting axis           |
-| ---- | ----- | ----- | ------------ | ----------------------- |
-| M    | 0.017 | 0.019 | —            | dead under shuffle      |
-| IM   | 0.381 | 0.330 | 0.90         | cooperation gap R − P   |
-| IJM  | 0.360 | 0.378 | 0.55         | reward / temptation R   |
+| Mech | pop_1 gs=128 | pop_1 gs=4 | −b/a (pop_1, gs=128) | Limiting axis           |
+| ---- | ------------ | ---------- | -------------------- | ----------------------- |
+| M    | 0.017        | 0.116      | —                    | dead under shuffle      |
+| IM   | 0.381        | 0.521      | 0.90                 | cooperation gap R − P   |
+| IJM  | 0.360        | 0.706      | 0.55                 | reward / temptation R   |
 
 Both recover substantial cooperation from M's collapse. Their payoff-axis
 signatures differ informatively: IM (recent reputation only) behaves like
@@ -67,10 +67,44 @@ seen when reputation is layered onto the combined mechanisms in
 that lifetime indirect reciprocity (J) is the noise-resistant component that
 survives partner turnover.
 
+Indirect reciprocity is markedly stronger in small groups: at gs=4 (shuffle,
+pop_1) IM rises to 0.521 and IJM to 0.706, roughly double their gs=128 levels.
+A closed four-individual pool makes reputation signals far more relevant —
+every signal concerns someone the focal individual also interacts with, and
+defector signals are less prevalent — so the cascade propagates reliably. This
+is the same gs=4 indirect-reciprocity boost documented for hamilton (the IJM
+groupsize reversal), now reproduced in the raw payoff plane.
+
+## Groupsize 4: direct reciprocity is invariant
+
+Unlike partner choice, M is essentially unchanged at gs=4. Mean qBSeen
+(pop_1, noshuffle) is 0.730 at both groupsizes, and the risk profile at
+R = 0.50 is identical:
+
+| P    | P − S | gs=128 | gs=4  |
+| ---- | ----- | ------ | ----- |
+| 0.14 | 0.04  | 0.859  | 0.868 |
+| 0.30 | 0.20  | 0.829  | 0.825 |
+| 0.42 | 0.32  | 0.662  | 0.652 |
+| 0.46 | 0.36  | 0.469  | 0.467 |
+
+Stable pairings supply the partner history TFT needs regardless of group size,
+so the risk-limited profile carries over unchanged. This is why the
+reciprocity-bearing combinations partially recover at gs=4 where pure partner
+choice collapses (see **prisoners_calibration.md**): they fall back on the
+groupsize-invariant M component, the mirror image of the shuffle case where
+they fall back on P.
+
+Under shuffle, the small group leaves a faint residual: M shuffle mean qBSeen
+is 0.116 at gs=4 vs 0.017 at gs=128 — a closed four-individual pool lets a
+little reciprocal signal persist, but it is still far below the noshuffle
+level. The same small residual appears in hamilton at gs=4.
+
 ## Caveats
 
-Only gs = 128 .con exports exist so far; gs = 4 and movie/temporal exports are
-not yet generated. PD only; pop_2 payoffs are symmetric.
+gs = 128 and gs = 4 .con exports exist; temporal (movie) exports exist for
+gs = 128 only. PD only; pop_2 payoffs are symmetric. IM and IJM are present
+only under shuffle.
 
 ## Summary
 
@@ -78,6 +112,8 @@ not yet generated. PD only; pop_2 payoffs are symmetric.
 | ---------------------- | ---------------------------------------------------------------- |
 | M limiting axis        | risk / defection payoff P (−b/a = 1.73); collapses as P rises      |
 | M at R=0.50            | qBSeen 0.86 (P=0.14) → 0.47 (P=0.46)                              |
-| M shuffle              | 0.730 → 0.017 (reverts to control)                               |
+| M shuffle              | 0.730 → 0.017 (reverts to control); gs=4 residual 0.116           |
+| M groupsize            | invariant: 0.730 at gs=128 and gs=4 (stable pairings)            |
 | IM / IJM (shuffle)     | recover to 0.381 / 0.360; IM tracks R − P, IJM reward-limited     |
+| IM / IJM at gs=4       | boosted to 0.521 / 0.706 (closed-pool reputation; hamilton's IJM reversal) |
 | vs hamilton/mutualism  | recasts the c-collapse of M as a rising-risk effect              |

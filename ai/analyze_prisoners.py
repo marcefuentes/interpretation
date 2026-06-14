@@ -195,4 +195,43 @@ for fset, label in [(0, "evolving"), (1, "fixed")]:
     mq = sum(float(x["qBSeen"]) for x in r) / len(r)
     print(f"  fset_{fset} ({label}): mean qBSeen={mq:.3f}")
 
+
+print("\n--- GROUPSIZE 4 vs 128 (pop_1, noshuffle): mean qB and -b/a ---")
+print("gs=4 strips the partner-choice (P) component (mirror of shuffle stripping M)")
+print(f"{'mech':6} {'qB_128':>7} {'qB_4':>7} {'-b/a_128':>9} {'-b/a_4':>7}")
+for mech in MECHS:
+    out = []
+    for gs in ["128", "4"]:
+        r = load(path("noshuffle", gs, mech, "pop_1", 0))
+        if not r:
+            out.append((float("nan"), float("nan")))
+            continue
+        R = [float(x["R0"]) for x in r]
+        P = [float(x["P0"]) for x in r]
+        Q = [float(x["qBSeen"]) for x in r]
+        a, b = ols2(R, P, Q)
+        out.append((sum(Q) / len(Q), -b / a if a else float("nan")))
+    print(f"{mech:6} {out[0][0]:7.3f} {out[1][0]:7.3f} {out[0][1]:9.2f} {out[1][1]:7.2f}")
+
+
+print("\n--- TEMPORAL DYNAMICS (prisoners_1run, P, pop_1, noshuffle gs128) ---")
+print("Transition-zone fluctuation vs stable saturated cells (qBSeen by R-P, P=0.14)")
+RUN = os.path.expanduser("~/results/prisoners_1run")
+mv = f"{RUN}/noshuffle_cost0.001_128/P/1/pop_1/csv_0_for_movie.con"
+r = load(mv)
+if r:
+    from collections import defaultdict
+    byc = defaultdict(list)
+    for x in r:
+        byc[(round(float(x["R0"]), 2), round(float(x["P0"]), 2))].append(x)
+    for (R, P) in sorted(byc):
+        if round(P, 2) != 0.14 or round(R - P, 2) not in (0.04, 0.08, 0.20, 0.40):
+            continue
+        rows = sorted(byc[(R, P)], key=lambda z: int(z["Time"]))
+        qbs = [float(z["qBSeen"]) for z in rows[1:]]
+        print(f"  R-P={R-P:.2f}: range={max(qbs)-min(qbs):.3f} final={qbs[-1]:.3f} "
+              f"traj=[{' '.join(f'{q:.2f}' for q in qbs)}]")
+else:
+    print("  (movie con not found)")
+
 print("\nDONE")

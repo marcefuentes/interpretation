@@ -61,9 +61,9 @@ Examples:
 
 **mutualism pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study mutualism_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with Hamilton pop_3 for interpretation** — see Mutualism Parameter Space below. Data incomplete: noshuffle gs=128 and gs=4 are complete for most mechanisms; shuffle conditions partial. Figures: ~/figures/mutualism/pop_3/ (use --flat-output).
 
-**prisoners**: calibration study, re-run under the current engine (cost0.001, Runs=30) as a raw PD payoff-plane sweep — T=0.9 and S=0.1 fixed, R and P swept independently over an 18x18 grid (172 cells, T>R>P>S). Dilemma 1 (PD) only; symmetric payoffs; pops 1/2/3; shuffle and noshuffle. .con exports: gs=128 only so far (noshuffle 7 mechanisms, shuffle adds IM/IJM); gs=4 and movie exports not yet generated. Cell key is (R0, P0), not c0/c1. Analysis: prisoners_calibration.md (cross-mechanism payoff-axis attribution), prisoners_partner_choice.md (P), prisoners_reciprocity.md (M, IM, IJM). The old cost12/cost3 data are deprecated.
+**prisoners**: calibration study, re-run under the current engine (cost0.001, Runs=30) as a raw PD payoff-plane sweep — T=0.9 and S=0.1 fixed, R and P swept independently over an 18x18 grid (172 cells, T>R>P>S). Dilemma 1 (PD) only; symmetric payoffs; pops 1/2/3; shuffle and noshuffle. .con exports: gs=128 and gs=4 image (noshuffle 7 mechanisms, shuffle adds IM/IJM); gs=128 movie via prisoners_1run for temporal dynamics; gs=4 movie not yet generated. Cell key is (R0, P0), not c0/c1. Analysis: prisoners_calibration.md (payoff-axis attribution, gs=4 mirror of shuffle), prisoners_partner_choice.md (P), prisoners_reciprocity.md (M, IM, IJM). The old cost12/cost3 data are deprecated.
 
-**snowdrift**: no simulation data in ~/results/snowdrift/ yet; no .con summaries.
+**snowdrift**: only single-run (snowdrift_1run, Runs=1) exists in the current parameterization — a snowdrift-ordered payoff sweep (T=0.9, P=0.10 fixed; R and S swept; T>R>S>P), dilemma 2. The multi-run snowdrift/ tree is empty (no 30-run .con), so no doc is written; generate multi-run snowdrift data before analyzing.
 
 ### Hamilton Parameter Space
 

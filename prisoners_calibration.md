@@ -104,6 +104,35 @@ IM = 0.381, IJM = 0.360), with IM tracking R − P (−b/a = 0.90, like partner
 choice) and IJM turning reward-dominated once the lifetime signal J is added
 (−b/a = 0.55).
 
+## Groupsize 4 is the mirror image of shuffle
+
+Shuffle removes the direct-reciprocity (M) component; small groups remove the
+partner-choice (P) component (mutual C1P1 swaps are too rare among four
+individuals). The payoff-axis fit makes both subtractions visible, and they
+are mirror images of each other.
+
+Pop_1, PD, noshuffle, gs=4 vs gs=128:
+
+| Mech   | mean qB gs=128 | mean qB gs=4 | −b/a gs=128 | −b/a gs=4 | Reading at gs=4                    |
+| ------ | -------------- | ------------ | ----------- | --------- | ---------------------------------- |
+| M      | 0.730          | 0.730        | 1.73        | 1.72      | groupsize-invariant (stable pairs) |
+| P      | 0.898          | 0.075        | 0.89        | (collapsed)| chooser bottleneck fails           |
+| MP     | 0.884          | 0.748        | 0.56        | 1.62      | P term removed; reverts to M        |
+| MPQ    | 0.906          | 0.782        | 0.56        | 1.50      | P term removed; reverts to M        |
+| IMP    | 0.890          | 0.785        | 0.50        | 1.58      | P term removed; reverts to M        |
+| IJMPQ  | 0.917          | 0.894        | 0.53        | 0.43      | survives; stays reward-led          |
+
+The contrast is clean. Under shuffle, MP/MPQ snap onto pure P's signature
+(−b/a → 0.89, R − P / reward-led) because the M term dies. Under gs = 4, the
+same mechanisms snap onto M's signature (−b/a → 1.5–1.6, risk-led) because the
+P term dies. Direct reciprocity M is invariant to groupsize (stable pairings
+supply history regardless of group size), and IJMPQ is the only mechanism
+robust to both perturbations — its indirect (I) and lifetime (J, Q) loci
+survive partner turnover and small groups alike. Reading the two tables
+together isolates which payoff axis each component contributes: P supplies
+R − P sensitivity, M supplies risk (P-axis) sensitivity, and the reputation
+loci supply the reward-led robustness.
+
 ## The temptation = risk locus (R + P = 1.0)
 
 Mean qBSeen on the hamilton-analogue anti-diagonal (pop_1, PD, noshuffle,
@@ -136,8 +165,9 @@ mirroring the hamilton collapse as R − P → 0.
   absolute thresholds sit at a different scale than hamilton's.
 - PD only (dilemma 1) — no snowdrift, no dilemma 0, and pop_2 payoffs are
   symmetric (no c0 ≠ c1 mutualism analogue).
-- Only gs = 128 .con exports exist so far (noshuffle and shuffle). gs = 4 and
-  movie/temporal exports are not yet generated.
+- gs = 128 and gs = 4 .con exports exist (noshuffle and shuffle), plus gs = 128
+  movie exports (prisoners_1run) for temporal dynamics. gs = 4 movie exports
+  are not yet generated.
 
 ## Summary
 

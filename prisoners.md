@@ -9,8 +9,8 @@ axis — letting us attribute each mechanism's behavior to a specific payoff
 gap.
 
 Dilemma 1 (PD) only; payoffs symmetric across populations; pops 1/2/3;
-shuffle and noshuffle; gs = 128 (gs = 4 and movie exports not yet generated);
-30 runs per cell.
+shuffle and noshuffle; gs = 128 and gs = 4 (gs = 128 movie exports available
+for temporal dynamics; gs = 4 movie not yet generated); 30 runs per cell.
 
 - **[prisoners_calibration.md](prisoners_calibration.md)** — cross-mechanism
   payoff-axis attribution (which gap limits each mechanism), the shuffle

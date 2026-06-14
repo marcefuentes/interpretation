@@ -25,10 +25,10 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 | mutualism_reciprocity.md     | Complete | M (gs=128 noshuffle + gs=4); IM, IJM (shuffle)               |
 | mutualism_combined.md        | Complete | gs=128 noshuffle + gs=4 (MP, MPQ, IMP, IJMPQ)                |
 | prisoners.md                 | Index    | Calibration study index; (R,P) payoff-plane sweep            |
-| prisoners_calibration.md     | Complete | Cross-mechanism payoff-axis attribution; gs=128 PD          |
-| prisoners_partner_choice.md  | Complete | P mechanism on the (R,P) sweep; gs=128 PD                   |
-| prisoners_reciprocity.md     | Complete | M, IM, IJM on the (R,P) sweep; gs=128 PD                    |
-| snowdrift.md                 | Pending  | Simulations still running                          |
+| prisoners_calibration.md     | Complete | Payoff-axis attribution; gs=128 + gs=4 (shuffle/groupsize)  |
+| prisoners_partner_choice.md  | Complete | P on (R,P) sweep; gs=128 + gs=4; temporal (1run)            |
+| prisoners_reciprocity.md     | Complete | M, IM, IJM on (R,P) sweep; gs=128 + gs=4                    |
+| snowdrift.md                 | Pending  | Only single-run (snowdrift_1run) exists; no multi-run .con   |
 
 ## Related repositories (same machine)
 

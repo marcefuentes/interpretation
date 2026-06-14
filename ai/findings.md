@@ -86,8 +86,22 @@ Fitting qBSeen ~ a*R + b*P (pop_1, PD, noshuffle, gs=128); -b/a = P:R weight:
 - Partner choice collapses onto R-P (iso-R-P cells give equal qB).
 - M is risk-limited: at R=0.50, qB falls 0.86 (P=0.14) -> 0.47 (P=0.46).
 - Shuffle strips the M term: MP -b/a 0.56 -> 0.89 (reverts to pure P); M dies (0.730 -> 0.017).
-- IM/IJM (shuffle only) recover to 0.381/0.360; IM tracks R-P, IJM reward-led.
-- Only gs=128 .con exports exist (no gs=4, no movie). Full write-up: prisoners_calibration.md, prisoners_partner_choice.md, prisoners_reciprocity.md.
+- gs=4 is the MIRROR: strips the P term. P collapses (0.898 -> 0.075); MP/MPQ/IMP revert
+  to M's risk signature (-b/a -> 1.5-1.6); M is groupsize-invariant (0.730 both); IJMPQ
+  robust to both (0.894 at gs=4).
+- IM/IJM (shuffle only) recover to 0.381/0.360 (gs=128); BOOSTED at gs=4 to 0.521/0.706
+  (closed-pool reputation; hamilton's IJM reversal reproduced).
+- Temporal (prisoners_1run, gs=128): only threshold cells (R-P~0.04) fluctuate; saturated stable.
+- .con exports: gs=128 + gs=4 (image); gs=128 movie. gs=4 movie not generated.
+- Full write-up: prisoners_calibration.md, prisoners_partner_choice.md, prisoners_reciprocity.md.
+
+## Snowdrift (new parameterization) — single-run only
+
+snowdrift_1run is a single-run (Runs=1) snowdrift-ordered payoff sweep: T=0.9, P=0.10
+fixed; R and S swept (172 cells, T>R>S>P), dilemma 2. The multi-run snowdrift/ dir is
+empty (no 30-run .con). Single-run landscape (noisy): control meanQ~0.49 (vs ~0.017 for
+PD control) confirms the snowdrift cooperation floor in the raw payoff plane. NOT written
+up as a doc — single runs violate the 30-run rigor standard; needs multi-run data first.
 
 ## Analysis Scripts Available
 
