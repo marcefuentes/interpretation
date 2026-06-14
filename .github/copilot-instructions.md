@@ -158,7 +158,7 @@ Results live at ~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{
 
 - **dilemma**: 0 (control, given=0), 1 (PD), 2 (snowdrift)
 - **shuffle**: shuffle or noshuffle
-- **cost**: mutation cost (currently 0.001)
+- **cost**: per-module locus-expression cost (currently 0.001), distinct from MutationRate (0.01). Charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. 0.001 for expressing any partner-choice locus plus 0.001 for expressing any reciprocity locus (max 0.002). See decide_qB.c / recruits.c.
 - **groupsize**: 128 or 4
 
 Example: ~/results/hamilton/shuffle_cost0.001_128/P/1/pop_2/csv_0_for_image.con

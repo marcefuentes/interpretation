@@ -103,6 +103,35 @@ empty (no 30-run .con). Single-run landscape (noisy): control meanQ~0.49 (vs ~0.
 PD control) confirms the snowdrift cooperation floor in the raw payoff plane. NOT written
 up as a doc — single runs violate the 30-run rigor standard; needs multi-run data first.
 
+## Model mechanics (validated against trps source, 2026-06)
+
+Confirmed directly in ~/code/trps/code/src against the analysis docs' claims:
+
+- decide_qB.c: each round qBDecided = qBDefault unless age>0 and partner age>0.
+  Precedence under indirect_r: J (Imimic_lt, language=1) copies round(partner->qBSeen_lt)
+  > I (Imimic) copies partner->qBSeen (third party, any partner) > M (Mimic) copies
+  partner->qBSeen only if partner==oldpartner (direct). So C1M1=TFT (coop first), C0M1=
+  suspicious TFT (defect first then mimic) — C0M1 is NOT silent.
+- fitness.c: w = w_matrix[pop][own][partner] - cost; then qBSeen=qBDecided (partner reads
+  your last move), oldpartner=partner, age++. Round loop is the simulation.c time loop.
+- calculate_derived_globals.c: payoff matrices exactly match docs (PD T=K+b,R=K+b-c,P=K,S=K-c;
+  SD R=K+b-c/2,S=K+b-c; folder 0 T=P=K,R=S=K+b-c). populations==3 => pop_1 fixed at 50/50
+  per locus (=> 25% each of 4 genotypes for a 2-locus mechanism).
+- choose_partner.c: C0P1 silencing confirmed — can_improve_L0_partner requires Choose && qBSeen!=0
+  && partner->qBSeen==0, so a defector (qBSeen=0) never swaps. Mutual swap: both sides must prefer;
+  two stuck cooperators pair up and their ex-defector partners pair together. Choose=P (recent,
+  qBSeen), Choose_lt=Q (lifetime, qBSeen_lt).
+- recruits.c: cost = 0.001 * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) per round —
+  per-module-family, not per-locus. C0P1/C0M1 carriers still pay it.
+- Alternation math (validated): C1M1 vs C0M1 lock out-of-phase -> avg (T+S)/2 = (0.9+0.5)/2 = 0.70
+  at c=0; C1M0 vs C0M1 -> mutual cooperation R=0.90. Snowdrift S-P penalty at c=0.12 = 0.78-0.50
+  = 0.28 = 280 x the 0.001 locus cost. Matches hamilton_reciprocity.md / mutualism_reciprocity.md.
+
+## Verification
+
+- ai/verify_claims.py: re-derives headline doc numbers from .con data, PASS/FAIL (39 checks).
+  Run before committing doc edits to catch prose/data drift.
+
 ## Analysis Scripts Available
 
 - ai/analyze_new_data.py: full cross-study analysis (hamilton, mutualism; all mechanisms, cells, populations)
