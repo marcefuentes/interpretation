@@ -105,6 +105,20 @@ shuffle the split inverts: M1 ≈ 0.49 but mostly **C0M1** (≈ 0.44–0.49) bec
 defectors dominate — suspicious TFT players (defect first round, then mimic),
 not silent carriers.
 
+### M1 allele frequency dynamics (Dilemmas 1 and 2)
+
+Under Dilemma 1 (PD) and Dilemma 2 (Snowdrift), the frequency of the reciprocity allele M1 under mechanism M frequently falls below its nearly neutral baseline (control mechanism \_). This is driven by two distinct selective forces depending on the cost and game structure:
+
+#### Second-order free-riding (PD at low costs)
+At low costs (c <= 0.10) in PD, cooperation is near-ceiling and defectors are rare. Cooperating reciprocators (C1M1, or Tit-for-Tat) act as altruistic punishers: they protect the population by retaliating against defectors, but they pay the 0.001 locus expression cost. Unconditional cooperators (C1M0, or second-order free-riders) do not pay the locus cost but reap the benefits of the cooperative environment maintained by reciprocators. Furthermore, when playing against suspicious TFT mutants (C0M1), C1M1 individuals get stuck in an out-of-phase alternation of defection and cooperation (yielding 0.70 average payoff), whereas C1M0 coordinates immediately to mutual cooperation (yielding 0.90 average payoff). 
+
+Consequently, C1M0 outcompetes C1M1. Selection drives the M1 frequency below the nearly neutral drift baseline (0.420 under M vs 0.494 under control at c = 0.00). When c >= 0.16, the individual cost of being exploited exceeds the 0.001 locus cost, and M1 rises above the control baseline for self-protection (0.528 under M vs 0.493 under control at c = 0.16).
+
+#### Suboptimal mimicry defection penalty (Snowdrift)
+In Snowdrift, cooperating when the partner defects is a dominant strategy (S > P). Active reciprocity (M1) forces cooperators to copy partner defection, earning mutual defection payoff (P = 0.50) in subsequent rounds. Unconditional cooperators (C1M0) continue cooperating and earn S = K + b - c = 0.78 (at c = 0.12). 
+
+This imposes a severe game payoff penalty of 0.28 per round on C1M1, which is 280 times larger than the locus cost. Selection acts extremely strongly against M1, collapsing its frequency to near-zero (approx. 0.033) compared to the nearly neutral control baseline of approx. 0.50.
+
 ## Shuffle vs noshuffle
 
 The largest shuffle effect is on direct reciprocity (M):

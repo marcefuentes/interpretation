@@ -143,6 +143,23 @@ regardless). Direct reciprocity partially overcomes this:
 | \_     | 0.091                       | 0.057                |
 | M      | 0.191                       | 0.123                |
 
+## Reciprocity Locus (M1) Dynamics
+
+In the coevolving two-population mutualism, the frequency of the active reciprocity locus M1 under mechanism M frequently drops significantly below its nearly neutral control baseline (which drifts at approx. 0.49 - 0.51). Across the grid, there are 3,701 parameter cells where M1 under M is suppressed. This suppression is driven by three distinct game-theoretic mechanisms depending on the dilemma type (including dilemma 0 where there is no social dilemma):
+
+### Unwitting self-harm under no social dilemma (Dilemma 0)
+In Dilemma 0 (Control baseline), there is no social dilemma because payoffs do not depend on the partner's move (focal fitness depends only on paying cost c to receive private benefit b). Since b > c, cooperating (paying c) is always privately optimal. However, under mechanism M, a reciprocating cooperator (C1M1) will mimic defection if paired with a mutant defector. 
+
+Since mimicking defection does not affect the partner's payoff (no sharing of b), the reciprocator does not punish the defector; instead, it only hurts itself by forfeiting its own private payoff (earning K = 0.50 instead of K + b - c0 = 0.80). Always-cooperating C1M0 avoids this error and outcompetes C1M1. As the partner's cost c1 increases, cooperation in Pop_1 decays, producing more defectors. This increases the frequency of suboptimal mimicry events in Pop_0, driving Pop_0's M1 frequency down from 0.356 (at c1 = 0.12) to 0.068 (at c1 = 0.40), compared to the control baseline of approx. 0.50.
+
+### Cross-population reciprocity hitchhiking (PD)
+Along the c0 = 0.10 row in Dilemma 1 (PD), Pop_0 has a lower cost and readily evolves reciprocators (M1 approx. 0.749 at c1 = 0.30). Pop_0's reciprocators punish defection, forcing Pop_1 to cooperate (qBSeen = 0.616). Once Pop_1 is forced to cooperate, Pop_1 cooperators no longer need to perform the policing themselves. They can play Always Cooperate (C1M0) to save the 0.001 locus cost and let Pop_0's reciprocators handle defection. Pop_1 cooperators thus "hitchhike" on the reciprocity of Pop_0, driving Pop_1's M1 frequency down to 0.370 (compared to 0.500 in control).
+
+### Suboptimal mimicry defection penalty (Snowdrift)
+In Dilemma 2 (Snowdrift), cooperating when the partner defects is a dominant strategy (S > P). Under control, Pop_0 cooperates at ceiling (approx. 0.97) while Pop_1 free-rides and defects. Under mechanism M, a reciprocating cooperator (C1M1) in Pop_0 mimics Pop_1's defection, causing it to defect in subsequent rounds and earn mutual defection payoff (P = 0.50). An unconditional cooperator (C1M0) ignores the defection and continues cooperating, earning S = K + b - c0 = 0.78 (at c0 = 0.12). 
+
+This imposes a severe game payoff penalty of 0.28 per round on C1M1. Selection acts extremely strongly against reciprocity in Pop_0, collapsing its M1 frequency to approx. 0.033 (only 3.3%) across all c1 values, compared to the nearly neutral control baseline of approx. 0.50.
+
 ## Shuffle effect on M mechanism
 
 Shuffling destroys direct reciprocity in PD but is inconsequential in snowdrift,
