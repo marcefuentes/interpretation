@@ -24,7 +24,7 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 | mutualism_partner_choice.md  | Complete | gs=128 noshuffle + gs=4 (P mechanism)                          |
 | mutualism_reciprocity.md     | Complete | M (gs=128 noshuffle + gs=4); IM, IJM (shuffle)               |
 | mutualism_combined.md        | Complete | gs=128 noshuffle + gs=4 (MP, MPQ, IMP, IJMPQ)                |
-| prisoners.md                 | Index    | Calibration study index; (R,P) payoff-plane sweep            |
+| prisoners.md                 | Index    | Calibration study index; PD payoff-plane sweep + d0 control  |
 | prisoners_calibration.md     | Complete | Payoff-axis attribution; gs=128 + gs=4 (shuffle/groupsize)  |
 | prisoners_partner_choice.md  | Complete | P on (R,P) sweep; gs=128 + gs=4; temporal (1run)            |
 | prisoners_reciprocity.md     | Complete | M, IM, IJM on (R,P) sweep; gs=128 + gs=4                    |
@@ -63,4 +63,3 @@ python3 ai/verify_claims.py mutualism  # filter by substring
 When you change or add a headline number, add or update the matching check.
 Shared loaders/stats live in `ai/trps_io.py`. Checks whose .con is missing
 report SKIP rather than fail (regenerate the export to activate them).
-

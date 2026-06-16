@@ -19,8 +19,9 @@ collapses as c rises but cannot say *which* payoff gap drives the collapse.
 The prisoners study removes that confound: it fixes T = 0.90 and S = 0.10 and
 sweeps R and P independently over an 18 × 18 grid (172 cells satisfying
 T > R > P > S). Each cell is a mean over 30 runs (see the noise-floor note in
-**hamilton.md**). Dilemma folder 1 (PD) only; payoffs are symmetric across
-populations.
+**hamilton.md**). Dilemma folder 1 (PD) is the informative sweep; a folder 0
+no-social-dilemma rerun now exists for the dummy control mechanism \_ only.
+Payoffs are symmetric across populations.
 
 ## Payoff geometry
 
@@ -163,8 +164,9 @@ mirroring the hamilton collapse as R − P → 0.
 - Complementary, not a superset: prisoners fixes S = 0.10 whereas hamilton's
   S = 0.50 − c slides with c, so overlays are structural, not literal, and the
   absolute thresholds sit at a different scale than hamilton's.
-- PD only (dilemma 1) — no snowdrift, no dilemma 0, and pop_2 payoffs are
-  symmetric (no c0 ≠ c1 mutualism analogue).
+- PD-centered: the informative sweep is dilemma 1, while dilemma 0 now exists
+  only as a no-social-dilemma dummy baseline; there is still no snowdrift
+  sweep, and pop_2 payoffs are symmetric (no c0 ≠ c1 mutualism analogue).
 - gs = 128 and gs = 4 .con exports exist (noshuffle and shuffle), plus gs = 128
   movie exports (prisoners_1run) for temporal dynamics. gs = 4 movie exports
   are not yet generated.

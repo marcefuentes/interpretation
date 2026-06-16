@@ -8,9 +8,12 @@ T = 0.90 and S = 0.10 and sweeps R and P independently over an 18 × 18 grid
 axis — letting us attribute each mechanism's behavior to a specific payoff
 gap.
 
-Dilemma 1 (PD) only; payoffs symmetric across populations; pops 1/2/3;
-shuffle and noshuffle; gs = 128 and gs = 4 (gs = 128 movie exports available
-for temporal dynamics; gs = 4 movie not yet generated); 30 runs per cell.
+The main analysis here is the dilemma 1 (PD) payoff plane; a no-social-
+dilemma control rerun (folder 0) now also exists for the dummy control
+mechanism \_. Payoffs are symmetric across populations; pops 1/2/3; shuffle
+and noshuffle; gs = 128 and gs = 4 (gs = 128 movie exports available for
+temporal dynamics; gs = 4 movie not yet generated); 30 runs per cell in the
+multi-run sweep.
 
 - **[prisoners_calibration.md](prisoners_calibration.md)** — cross-mechanism
   payoff-axis attribution (which gap limits each mechanism), the shuffle
