@@ -51,17 +51,15 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
 ## Larger (blocked on data generation)
 
-7. [~] Snowdrift multi-run study (unblocks the pending snowdrift.md).
-   - Maintainer is generating the 30-run snowdrift data (in progress, 2026-06).
-   - When done: graphgen .con + write snowdrift_*.md following the prisoners
-     calibration template. Snowdrift axes: temptation T - R and the snowdrift
-     gap S - P. The prisoners-derived prediction to test: M should be far less
-     risk-limited here because high S keeps the sucker gap small.
+7. [x] Snowdrift multi-run study (unblocks the pending snowdrift.md).
+   - Wrote snowdrift.md, snowdrift_calibration.md, snowdrift_partner_choice.md, and snowdrift_reciprocity.md following the prisoners template.
+   - Identified that direct reciprocity (M) is insensitive to sucker payoff S because TFT only pays it once per pairing (risk determined by P, not S).
+   - Confirmed partner choice (P) does not collapse at gs=4 due to the high cooperation floor.
+   - Documented extreme pop_2 symmetry breaking exploitation.
 
-8. [ ] Regenerate missing .con exports.
-   - prisoners gs=4 movie exports so gs=4 transition-zone dynamics can be
-     examined (currently gs=128 temporal only). Low priority.
-   - (hamilton gs=4 image .con: done 2026-06.)
+8. [x] Regenerate missing con exports.
+   - Generated both prisoners gs=4 movie exports and snowdrift gs=4 movie exports using the graphgen pipeline.
+   - Removed the gs=4 movie caveats from all prisoners and snowdrift documents.
 
 ## Decisions needed from maintainer
 

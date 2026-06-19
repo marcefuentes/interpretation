@@ -158,12 +158,11 @@ prisoners pins the difference to R − P:
   S = 0.50 − c slides with cost, so the overlays are about which axis governs a
   mechanism, not about matching absolute thresholds — the prisoners and
   hamilton numbers sit on different scales.
-- **PD-centered.** Prisoners measures dilemma 1 with symmetric pop_2 payoffs,
-  and now also has a dilemma 0 no-social-dilemma rerun for the dummy control
-  only. The snowdrift attributions above are inferred from the geometry
-  (high S → low risk) and corroborated by hamilton/mutualism snowdrift data,
-  not measured on a prisoners snowdrift sweep (none exists; see
-  **snowdrift.md**).
+- **Calibration sweeps.** Prisoners measures dilemma 1 (PD) with symmetric pop_2
+  payoffs and has a dilemma 0 control rerun. The Snowdrift calibration study
+  adds an independent snowdrift payoff-plane sweep (dilemma 2) confirming the
+  low-risk nature of the game (high S) and direct reciprocity's insensitivity
+  to S (see **snowdrift.md**).
 - **Noise floor.** Per-cell qBSeen differences below ~0.01–0.02 and −b/a
   differences below ~0.03 are within run-to-run noise (see **prisoners.md** and
   **hamilton.md**).

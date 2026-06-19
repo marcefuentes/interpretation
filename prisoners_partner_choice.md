@@ -140,8 +140,7 @@ within-bin spread above.
 
 ## Caveats
 
-gs = 128 and gs = 4 .con exports exist; temporal (movie) exports exist for
-gs = 128 only. PD only.
+con exports and temporal (movie) exports exist for both gs = 128 and gs = 4. PD only.
 
 ## Summary
 

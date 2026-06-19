@@ -28,7 +28,7 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 | prisoners_calibration.md     | Complete | Payoff-axis attribution; gs=128 + gs=4 (shuffle/groupsize)  |
 | prisoners_partner_choice.md  | Complete | P on (R,P) sweep; gs=128 + gs=4; temporal (1run)            |
 | prisoners_reciprocity.md     | Complete | M, IM, IJM on (R,P) sweep; gs=128 + gs=4                    |
-| snowdrift.md                 | Pending  | Only single-run (snowdrift_1run) exists; no multi-run .con   |
+| snowdrift.md                 | Complete | Calibration study index; Snowdrift payoff-plane sweep        |
 | synthesis.md                 | Complete | Cross-study: maps prisoners payoff axes onto hamilton/mutualism thresholds |
 
 ## Related repositories (same machine)

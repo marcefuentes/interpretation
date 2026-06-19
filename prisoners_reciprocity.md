@@ -102,9 +102,7 @@ level. The same small residual appears in hamilton at gs=4.
 
 ## Caveats
 
-gs = 128 and gs = 4 .con exports exist; temporal (movie) exports exist for
-gs = 128 only. PD only; pop_2 payoffs are symmetric. IM and IJM are present
-only under shuffle.
+con exports and temporal (movie) exports exist for both gs = 128 and gs = 4. PD only; pop_2 payoffs are symmetric. IM and IJM are present only under shuffle.
 
 ## Summary
 

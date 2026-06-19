@@ -43,6 +43,10 @@ def ppath(sh, gs, m, pop, f):
     return f"{BASE}/prisoners/{sh}_cost0.001_{gs}/{m}/1/{pop}/csv_{f}_for_image.con"
 
 
+def sdpath(sh, gs, m, pop, f):
+    return f"{BASE}/snowdrift/{sh}_cost0.001_{gs}/{m}/2/{pop}/csv_{f}_for_image.con"
+
+
 def at_c(rows, c, col="qBSeen"):
     for r in rows:
         if abs(float(r["c0"]) - c) < 0.005:
@@ -385,6 +389,62 @@ check("mutualism", "CB: M c0=0 c1=0.10 snowdrift = 0.950",
 # combined.md: hamilton snowdrift IJMPQ at c=0.40 (shuffle, gs=128)
 check("hamilton", "CB: IJMPQ snowdrift qBSeen c=0.40 = 0.960",
       lambda: at_c(load(hpath("shuffle", "128", "IJMPQ", 2, "pop_2", 0)), 0.40), 0.960)
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# SNOWDRIFT
+# ════════════════════════════════════════════════════════════════════════════
+
+def sd_ba(sh, gs, m, pop):
+    r = load(sdpath(sh, gs, m, pop, 0))
+    R = [float(x["R0"]) for x in r]
+    S = [float(x["S0"]) for x in r]
+    Q = [float(x["qBSeen"]) for x in r]
+    a, b = ols2(R, S, Q)
+    return -b / a
+
+
+def sd_mean(sh, gs, m, pop):
+    r = load(sdpath(sh, gs, m, pop, 0))
+    return sum(float(x["qBSeen"]) for x in r) / len(r)
+
+
+def sd_paradox(sh, gs, m):
+    r0 = load(sdpath(sh, gs, m, "pop_2", 0))
+    r1 = load(sdpath(sh, gs, m, "pop_2", 1))
+    m1 = {(x["R0"], x["S0"]): x for x in r1}
+    dq, dw, inv = [], [], 0
+    for x in r0:
+        k = (x["R0"], x["S0"])
+        if k not in m1:
+            continue
+        q = float(x["qBSeen"]) - float(m1[k]["qBSeen"])
+        w = float(x["wmean"]) - float(m1[k]["wmean"])
+        dq.append(q)
+        dw.append(w)
+        if q * w < 0:
+            inv += 1
+    return corr(dq, dw), inv
+
+
+check("snowdrift", "CAL: _ mean = 0.493", lambda: sd_mean("noshuffle", "128", "_", "pop_1"), 0.493, 0.01)
+check("snowdrift", "CAL: M mean = 0.599", lambda: sd_mean("noshuffle", "128", "M", "pop_1"), 0.599, 0.01)
+check("snowdrift", "CAL: P mean = 0.947", lambda: sd_mean("noshuffle", "128", "P", "pop_1"), 0.947, 0.01)
+check("snowdrift", "CAL: IJMPQ mean = 0.956", lambda: sd_mean("noshuffle", "128", "IJMPQ", "pop_1"), 0.956, 0.01)
+
+check("snowdrift", "CAL: M -b/a = -0.15", lambda: sd_ba("noshuffle", "128", "M", "pop_1"), -0.15, 0.03)
+check("snowdrift", "CAL: P -b/a = 0.19", lambda: sd_ba("noshuffle", "128", "P", "pop_1"), 0.19, 0.03)
+check("snowdrift", "CAL: IJMPQ -b/a = 0.05", lambda: sd_ba("noshuffle", "128", "IJMPQ", "pop_1"), 0.05, 0.03)
+
+check("snowdrift", "RC: M shuffle mean = 0.497", lambda: sd_mean("shuffle", "128", "M", "pop_1"), 0.497, 0.01)
+check("snowdrift", "RC: IM shuffle mean = 0.605", lambda: sd_mean("shuffle", "128", "IM", "pop_1"), 0.605, 0.01)
+check("snowdrift", "RC: IJM shuffle mean = 0.696", lambda: sd_mean("shuffle", "128", "IJM", "pop_1"), 0.696, 0.01)
+
+check("snowdrift", "CAL: P gs=4 mean = 0.717", lambda: sd_mean("noshuffle", "4", "P", "pop_1"), 0.717, 0.01)
+check("snowdrift", "CAL: IJMPQ gs=4 mean = 0.904", lambda: sd_mean("noshuffle", "4", "IJMPQ", "pop_1"), 0.904, 0.01)
+
+check("snowdrift", "PC: pop_2 paradox corr = -0.437", lambda: sd_paradox("noshuffle", "128", "P")[0], -0.437, 0.01)
+check("snowdrift", "PC: pop_2 fitness-inverted cells = 172", lambda: sd_paradox("noshuffle", "128", "P")[1], 172, None)
 
 
 # ════════════════════════════════════════════════════════════════════════════
