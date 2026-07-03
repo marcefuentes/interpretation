@@ -39,6 +39,10 @@ covers dilemma 1 (prisoner's dilemma) and dilemma 2 (snowdrift), groupsize
 
 ## Payoff structure
 
+Canonical constants and payoff equations live in
+**[parameterization.md](parameterization.md)** (verified against `.glo` metadata);
+the tables below are the local, self-contained copy for this study.
+
 All payoffs use cross-benefit form: the benefit b is the contribution received
 from the partner, while the cost c is paid by the focal individual. In
 snowdrift, b is a shared resource: both players receive it whenever at least

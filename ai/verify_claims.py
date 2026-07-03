@@ -18,7 +18,7 @@ decimals the docs use, compared with a small tolerance; cell counts are exact.
 import math
 import sys
 
-from trps_io import BASE, allele, corr, gsum, load, m1sum, ols2  # noqa: F401
+from trps_io import BASE, allele, any_glo, corr, gsum, load, m1sum, ols2  # noqa: F401
 
 TOL = 0.006  # docs round to 3 decimals; allow half-ULP plus minor regen jitter
 
@@ -586,6 +586,49 @@ check("mutualism_pop_3", "fixed pop qBSeen == 0.5 (max dev <= 0.01)",
 # no c0xc1 interaction: fixed-pop wmean is additively separable a(c0)+b(c1)
 check("mutualism_pop_3", "fixed pop wmean additively separable (residual <= 0.01)",
       mp3_fixed_wmean_residual, 0.0, 0.01)
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# PARAMETERIZATION — guard the canonical constants in journal/parameterization.md
+# against the simulation .glo metadata, so a doc/data drift fails the verifier.
+# ════════════════════════════════════════════════════════════════════════════
+
+def glo_val(study, sh, gs, m, d, pop, key):
+    meta = any_glo(f"{BASE}/{study}/{sh}/{gs}/{m}/{d}/{pop}")
+    return float(meta[key]) if meta and key in meta else float("nan")
+
+
+# K = 0.5 and b = 0.4 in the cost-parameterized studies (hamilton, mutualism, hamilton_cost)
+for study, d, pop in (("hamilton", 1, "pop_1"), ("mutualism", 1, "pop_2"),
+                      ("hamilton_cost", 1, "pop_1")):
+    check("parameterization", f"{study} K = 0.5",
+          (lambda s=study, dd=d, pp=pop: glo_val(s, "noshuffle", "128", "P", dd, pp, "K")), 0.5)
+    check("parameterization", f"{study} b = 0.4",
+          (lambda s=study, dd=d, pp=pop: glo_val(s, "noshuffle", "128", "P", dd, pp, "b")), 0.4)
+
+# Cost = 0.001 default everywhere except hamilton_cost (where Cost is the swept axis)
+check("parameterization", "hamilton Cost = 0.001 (default)",
+      lambda: glo_val("hamilton", "noshuffle", "128", "P", 1, "pop_1", "Cost"), 0.001, 0.0)
+check("parameterization", "prisoners Cost = 0.001 (default)",
+      lambda: glo_val("prisoners", "noshuffle", "128", "P", 1, "pop_1", "Cost"), 0.001, 0.0)
+
+# Runs = 30 in the multi-run studies; 1 in the single-run variants
+check("parameterization", "hamilton Runs = 30",
+      lambda: glo_val("hamilton", "noshuffle", "128", "P", 1, "pop_1", "Runs"), 30, None)
+check("parameterization", "mutualism Runs = 30",
+      lambda: glo_val("mutualism", "noshuffle", "128", "P", 1, "pop_2", "Runs"), 30, None)
+check("parameterization", "hamilton_1run Runs = 1",
+      lambda: glo_val("hamilton_1run", "noshuffle", "128", "P", 1, "pop_1", "Runs"), 1, None)
+
+# prisoners / snowdrift are payoff-plane sweeps: T and one other payoff are pinned
+check("parameterization", "prisoners T0 = 0.9 (fixed)",
+      lambda: glo_val("prisoners", "noshuffle", "128", "P", 1, "pop_1", "T0"), 0.9)
+check("parameterization", "prisoners S0 = 0.1 (fixed)",
+      lambda: glo_val("prisoners", "noshuffle", "128", "P", 1, "pop_1", "S0"), 0.1)
+check("parameterization", "snowdrift T0 = 0.9 (fixed)",
+      lambda: glo_val("snowdrift", "noshuffle", "128", "P", 2, "pop_1", "T0"), 0.9)
+check("parameterization", "snowdrift P0 = 0.1 (fixed)",
+      lambda: glo_val("snowdrift", "noshuffle", "128", "P", 2, "pop_1", "P0"), 0.1)
 
 
 # ════════════════════════════════════════════════════════════════════════════

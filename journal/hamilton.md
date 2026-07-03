@@ -20,6 +20,10 @@ information-cost axis fits, see **[synthesis.md](synthesis.md)**.
 
 ## Game parameters
 
+Canonical constants and payoff equations live in
+**[parameterization.md](parameterization.md)** (verified against `.glo` metadata);
+the tables below are the local, self-contained copy for this study.
+
 | Parameter | Value         | Description                              |
 | --------- | ------------- | ---------------------------------------- |
 | b         | 0.40          | Benefit (fixed)                          |

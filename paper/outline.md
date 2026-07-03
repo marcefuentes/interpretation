@@ -11,6 +11,7 @@ Section files:
 - methods.md
 - results.md
 - discussion.md
+- figures.md — figure manifest (provenance + graphgen commands; no image binaries in-repo)
 
 ## One-paragraph thesis
 

@@ -14,9 +14,11 @@ previous parameterization are preserved in `legacy/`.
 The repository is organised for an eventual IMRaD manuscript, with the detailed
 quantitative work kept separate as a running journal.
 
-- **paper/** — the manuscript scaffold (Introduction, Methods, Results, Discussion).
-  Narrative and concise; it cites the journal for every number rather than restating
-  the analysis. Start at `paper/outline.md`.
+- **paper/** — the manuscript scaffold (Introduction, Methods, Results, Discussion,
+  plus `figures.md`, a text figure manifest). Narrative and concise; it cites the
+  journal for every number rather than restating the analysis. Figures are generated
+  artifacts and are **not** stored here — `figures.md` records how to reproduce them.
+  Start at `paper/outline.md`.
 - **journal/** — the analytical record: per-study and per-mechanism write-ups, the
   cross-study synthesis, the parameterization reference, and the framework note that
   fixes the independent- and outcome-variable model. This is where the numbers,

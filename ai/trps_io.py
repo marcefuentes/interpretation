@@ -23,6 +23,30 @@ def load(path):
     return list(csv.DictReader(open(path))) if os.path.exists(path) else None
 
 
+def glo(path):
+    """Read a two-column `.glo` metadata file into a {key: value} dict (values as
+    strings), or None if absent. Keys include K, b, Cost, Runs, Dilemma, GroupSize,
+    Shuffle (hamilton/mutualism), and T0/R0/P0/S0 (prisoners/snowdrift)."""
+    if not os.path.exists(path):
+        return None
+    out = {}
+    for row in csv.reader(open(path)):
+        if len(row) >= 2:
+            out[row[0]] = row[1]
+    return out
+
+
+def any_glo(dirpath):
+    """Return the parsed metadata of the first `.glo` file found under dirpath, or
+    None. Used to assert study-wide constants that are identical across cells."""
+    if not os.path.isdir(dirpath):
+        return None
+    for name in sorted(os.listdir(dirpath)):
+        if name.endswith(".glo"):
+            return glo(os.path.join(dirpath, name))
+    return None
+
+
 def corr(xs, ys):
     """Pearson correlation; nan if undefined."""
     n = len(xs)
