@@ -97,16 +97,19 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
 ## Pending — mutualism_cost simulations (submitted 2026-07)
 
-13. [~] mutualism_cost_1run + mutualism_cost (information cost under asymmetry).
+13. [~] mutualism_cost_1run + mutualism_cost (price–demand under built-in asymmetry).
     - Study defined in ~/code/cesga (c0 = 0.10 fixed; Cost × c1 triangle, 120 cells
-      per leaf, pop_2 only). User started runs 2026-07.
-    - Waiting for: equilibrium .csv/.con and temporal 1-run data.
-    - Why: hamilton_cost answers price vs demand only on c0 = c1; mutualism_cost tests
-      whether taxing enforcement changes the cooperator/exploiter split, cooperation
-      gap, fitness gap, and behaviour–machinery decoupling when c0 < c1.
+      per leaf, pop_2 only). 1-run primary slice ~73% complete (2026-07); 30-run
+      not started.
+    - Manuscript: one unified article (decision 2026-07) — mutualism_cost extends the
+      hamilton_cost price–demand thesis to pinned cooperator/exploiter roles; not a
+      second paper on asymmetry alone.
+    - Why: hamilton_cost covers only c0 = c1; mutualism_cost tests price–demand when
+      roles are deterministic and measures gap compression, c1-threshold retreat,
+      and decoupling on each side.
     - On arrival: graphgen, ai/analyze_mutualism_cost.py, verify_claims checks,
       journal/mutualism_cost.md results section, synthesis + paper updates.
-    - Spec: journal/mutualism_cost.md; roadmap section in paper/roadmap.md.
+    - Spec: journal/mutualism_cost.md; paper/roadmap.md.
 
 ## Decisions needed from maintainer
 

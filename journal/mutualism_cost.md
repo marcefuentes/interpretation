@@ -1,7 +1,8 @@
 # Mutualism Cost — Information Price Meets Exploitation Asymmetry
 
-**Status: simulations pending** (mutualism_cost_1run submitted 2026-07; mutualism_cost
-to follow). This document records what we are waiting for and why.
+**Status: partial data** — mutualism_cost_1run is ~73% complete on the primary slice
+(noshuffle, gs = 128; MPQ and IJMPQ still missing); mutualism_cost (Runs = 30) not
+yet started. This document records the study design, open questions, and manuscript role.
 
 ## The gap hamilton_cost leaves open
 
@@ -95,18 +96,30 @@ when c is low enough that unconditional cooperation is viable. With asymmetry:
 - Does partner choice still act as population-level assortment (residual choosers
   protecting both populations) when the two populations face different c?
 
-### 4. Two-paper boundary
+### 4. Manuscript scope (decision locked 2026-07)
 
-This sweep is what makes a **second paper** on one-vs-two populations + exploitation
-asymmetry scientifically independent from the information-cost paper:
+We originally considered two articles:
 
-- Paper A (hamilton + hamilton_cost): price vs demand, behaviour–machinery decoupling,
-  symmetric populations.
-- Paper B (mutualism + mutualism_cost): cooperator/exploiter role split, cooperation
-  and fitness asymmetry, **plus** how information cost modulates that split.
+- **Price–demand** — hamilton + hamilton_cost: Cost versus c, behaviour–machinery
+  decoupling, symmetric populations.
+- **Asymmetry / exploitation** — mutualism + hamilton (diagonal): cooperator/exploiter
+  role split, cooperation and fitness gaps at negligible Cost.
 
-Without mutualism_cost, Paper B can describe the role split at negligible Cost but
-cannot say whether taxing enforcement machinery changes the exploitation dynamic.
+mutualism_cost belongs with the **price–demand** thesis, not as a separate asymmetry
+paper: it is the same Cost axis on the branch where roles are pinned by c0 < c1. A
+price–demand article that used only hamilton data could not test that interaction
+without extrapolating from the stochastic role split on the c0 = c1 diagonal; an
+asymmetry-only article at Cost ≈ 0 could not say how taxing enforcement modulates
+exploitation.
+
+**Decision:** one manuscript covering everything — baseline demand (hamilton +
+mutualism), built-in roles (mutualism; hamilton as the symmetric special case), then
+price–demand in one and two populations (hamilton_cost + mutualism_cost). See
+paper/roadmap.md for the narrative arc.
+
+Provisional 1-run preview (noshuffle, gs = 128, PD): Cost = 0 matches mutualism within
+noise; cooperation and fitness gaps between populations compress as Cost rises; c1-collapse
+thresholds retreat with Cost similarly to hamilton_cost. Full claims await the 30-run study.
 
 ## When results arrive
 
@@ -115,9 +128,7 @@ cannot say whether taxing enforcement machinery changes the exploitation dynamic
 2. Write ai/analyze_mutualism_cost.py (mirror analyze_hamilton_cost.py structure:
    Cost × c1 grid at fixed c0, control decomposition, asymmetry panels).
 3. Add verify_claims.py regression checks for headline numbers.
-4. Update synthesis.md, framework.md, paper/results.md and paper/roadmap.md.
-5. Revisit the one-paper vs two-paper decision with data on whether Cost × asymmetry
-   is a genuinely new interaction or a diagonal extrapolation of hamilton_cost.
+4. Update synthesis.md, framework.md, and paper/results.md.
 
 ## Pipeline location
 

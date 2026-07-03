@@ -12,8 +12,14 @@ From the current scaffold to a finished manuscript. Companion to `outline.md`
   unconditional cooperators after the machinery is taxed away).
 - **Venue / type:** full research article, specialist theoretical-biology / evolution
   journal. Implies ~5-7 main figures, a complete Methods, and a supplement.
-- **Scope:** main text = mutualism + hamilton + hamilton_cost; supplement =
-  prisoners/snowdrift payoff-axis calibration and the gs=4 / shuffle robustness.
+- **Scope:** one manuscript — main text = hamilton + mutualism (baseline demand and
+  two-population roles) + hamilton_cost + mutualism_cost (price–demand in symmetric
+  and asymmetric settings); supplement = prisoners/snowdrift payoff-axis calibration
+  and the gs=4 / shuffle robustness.
+- **Retired split (2026-07):** we had considered a price–demand paper (hamilton only)
+  and a separate asymmetry/exploitation paper (mutualism + hamilton diagonal).
+  mutualism_cost is price–demand data on the asymmetric branch, so it belongs in the
+  unified article, not a second publication.
 
 ## Narrative arc (for this framing)
 
@@ -22,10 +28,12 @@ From the current scaffold to a finished manuscript. Companion to `outline.md`
 2. Baseline: how each mechanism sustains cooperation as the cooperation cost c rises,
    in one population (hamilton) and two (mutualism), including the cooperator/exploiter
    asymmetry.
-3. Headline: make the machinery itself costly (hamilton_cost). Information cost is soft
-   alone but compounds with c (price starves the defence demand requires), and taxing
-   the machinery erodes the apparatus while cooperation can persist — behaviour and
-   mechanism decouple.
+3. Headline: make the machinery itself costly (hamilton_cost; mutualism_cost on the
+   asymmetric branch). Information cost is soft alone but compounds with cooperation
+   cost (price starves the defence demand requires), and taxing the machinery erodes
+   the apparatus while cooperation can persist — behaviour and mechanism decouple;
+   under built-in roles, Cost also modulates cooperation and fitness gaps between
+   populations.
 4. The payoff-axis attribution (why each mechanism has the threshold it does) is the
    mechanistic backbone; stated in the main text as established, derived in the
    supplement (prisoners/snowdrift).
@@ -38,8 +46,9 @@ Decisions above recorded. Thesis paragraph drafted in `outline.md`.
 
 - [ ] Finalize the main-text figure list from the candidates in `figures.md` (target
   ~5-7): baseline cooperation-vs-c per mechanism; two-population role split
-  (cooperation + fitness); the Cost x c landscape; the allele-erosion / decoupling
-  panel; the dilemma-0 control decomposition.
+  (cooperation + fitness); the Cost x c / Cost x c1 landscapes; the allele-erosion /
+  decoupling panel; the dilemma-0 control decomposition; optional asymmetry-under-Cost
+  panel (cooperation and fitness gaps vs Cost).
 - [ ] Decide the supplement figure list (payoff-axis fits; gs=4/shuffle mirrors).
 - [ ] Generate the chosen figures via graphgen; record exact commands + output paths
   in `figures.md` (already templated there).
@@ -87,16 +96,16 @@ Cost + c1 ≤ 0.40 — 120 cells per leaf, ~8,640 jobs total across mutualism_sh
 mutualism_long layouts. Same mechanisms, dilemmas, groupsizes, and shuffle conditions
 as mutualism.
 
-**What it unlocks for the manuscript(s):**
+**What it unlocks for the manuscript:**
 
-- Does Cost shift the c1-collapse threshold the same way it shifts c on the hamilton
-  diagonal (~1.5 c per Cost unit), or does asymmetry change the interaction?
-- Cooperation and fitness gaps between populations as Cost rises — does taxing
-  enforcement widen exploitation or trigger decoupling on the cheap side?
-- Behaviour–machinery decoupling (C1P0 / C1M0) with a fixed cooperator role — the
-  result hamilton_cost cannot provide.
-- Empirical basis for the one-paper vs two-paper split (symmetric price–demand vs
-  asymmetric exploitation).
+- Price–demand under pinned roles: does Cost shift the c1-collapse threshold the same
+  way it shifts c on the hamilton diagonal (~1.5 c per Cost unit)?
+- Cooperation and fitness gaps between populations as Cost rises — provisional 1-run
+  data show gaps compressing before full collapse; needs 30-run confirmation.
+- Behaviour–machinery decoupling (C1P0 / C1M0) on cooperator vs exploiter sides —
+  the result hamilton_cost cannot provide.
+- Completes the unified price–demand story (symmetric slice in hamilton_cost,
+  asymmetric slice here); not material for a separate publication.
 
 Full specification: journal/mutualism_cost.md. Analysis pipeline to be added when
 results land (analyze_mutualism_cost.py, verify_claims checks, graphgen .con).
