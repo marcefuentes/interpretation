@@ -10,10 +10,13 @@ c), split by mechanism family:
   IJM: shuffle effects, IJM groupsize reversal, direct vs indirect reciprocity
 - **[hamilton_combined.md](hamilton_combined.md)** — mechanisms MP, MPQ, IMP,
   IJMPQ: mechanism hierarchy, IJMPQ symmetry suppression, groupsize effects
+- **[hamilton_cost.md](hamilton_cost.md)** — the information-cost extension:
+  Cost (the per-round tax on carrying the machinery) swept jointly with c, and
+  how a rising price of enforcement interacts with a rising demand for it
 
 For asymmetric costs (c0 ≠ c1), see **mutualism.md**. For which payoff gap
-(temptation, risk, or R − P) drives each mechanism's c-collapse, see
-**[synthesis.md](synthesis.md)**.
+(temptation, risk, or R − P) drives each mechanism's c-collapse, and how the
+information-cost axis fits, see **[synthesis.md](synthesis.md)**.
 
 ## Game parameters
 
@@ -35,7 +38,7 @@ At c = 0: T = R for dilemmas 1 and 2 — no temptation to defect. For PD,
 T − R = c increases with c; at c = 0.40, R − P = 0. For snowdrift, S > P
 for all c < 0.40.
 
-Folder 0 (given=0): T = P and R = S — partner moves do not affect focal
+Folder 0 (control): T = P and R = S — partner moves do not affect focal
 payoffs. High qBSeen for c < b is a private cost–benefit outcome, not social
 cooperation.
 

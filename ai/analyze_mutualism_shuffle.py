@@ -28,7 +28,7 @@ def sorted_rows(rows):
     return sorted(rows, key=lambda r: (float(r["c0"]), float(r["c1"])))
 
 def mut_path(shuffle, gs, mech, dilemma, fset):
-    cond = f"{shuffle}_cost0.001_{gs}"
+    cond = f"{shuffle}/{gs}"
     return os.path.join(BASE, "mutualism", cond, mech, str(dilemma), "pop_2",
                         f"csv_{fset}_for_image.con")
 

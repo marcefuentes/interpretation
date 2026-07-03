@@ -102,7 +102,7 @@ DILEMMAS = [0, 1, 2]
 
 
 def hamilton_path(shuffle, gs, mech, dilemma, pop, fset):
-    cond = f"{shuffle}_cost0.001_{gs}"
+    cond = f"{shuffle}/{gs}"
     return os.path.join(BASE, "hamilton", cond, mech, str(dilemma), pop,
                         f"csv_{fset}_for_image.con")
 
@@ -292,7 +292,7 @@ print("\n--- HAMILTON_1RUN: TEMPORAL DYNAMICS (shuffle_128, PD, P, pop_2) ---")
 
 
 def hamilton_1run_path(shuffle, gs, mech, dilemma, pop, fset):
-    cond = f"{shuffle}_cost0.001_{gs}"
+    cond = f"{shuffle}/{gs}"
     return os.path.join(BASE, "hamilton_1run", cond, mech, str(dilemma), pop,
                         f"csv_{fset}_for_movie.con")
 
@@ -330,7 +330,7 @@ print("pop_2 only; fset_0=higher qBSeen (lower-cost pop), fset_1=lower qBSeen")
 
 
 def mut_path(shuffle, gs, mech, dilemma, fset):
-    cond = f"{shuffle}_cost0.001_{gs}"
+    cond = f"{shuffle}/{gs}"
     return os.path.join(BASE, "mutualism", cond, mech, str(dilemma), "pop_2",
                         f"csv_{fset}_for_image.con")
 
@@ -457,7 +457,7 @@ print("\n--- MUTUALISM_1RUN: TEMPORAL DYNAMICS (noshuffle_128, PD, M, fset_0) --
 
 
 def mut_1run_path(shuffle, gs, mech, dilemma, fset):
-    cond = f"{shuffle}_cost0.001_{gs}"
+    cond = f"{shuffle}/{gs}"
     return os.path.join(BASE, "mutualism_1run", cond, mech, str(dilemma), "pop_2",
                         f"csv_{fset}_for_movie.con")
 

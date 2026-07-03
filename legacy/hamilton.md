@@ -108,9 +108,9 @@ At *b* − *c* = 0.008, 13.2% of the population cooperates — far above pop_2 (
 
 Conceptually: partner choice still underwrites the pool; at high *b* − *c* a **thin C1P1 layer** can support many **C1P0** (sparse choosers). Quantitatively: C1P0/qBSeen rises from **9%** (*b* − *c* = 0.25) to **33%** (*b* − *c* = 8.0); **P1** allele frequency falls because **P0** spreads among cooperators, not because sorting switches off.
 
-**Single-run (hamilton_1run, pop_1, shuffle_cost12_128, P, given = 1.0, 9 timesteps/cell):** **C1P1** and **C1P0** move opposite in most adjacent pairs; with **qBSeen** ~flat at high *b* − *c*, anti-phase is **mostly** **C1P1 + C1P0 = qBSeen**, plus **P0**/**P1** turnover among cooperators.
+**Single-run (hamilton_1run, pop_1, shuffle, groupsize 128, P, given = 1.0, 9 timesteps/cell):** **C1P1** and **C1P0** move opposite in most adjacent pairs; with **qBSeen** ~flat at high *b* − *c*, anti-phase is **mostly** **C1P1 + C1P0 = qBSeen**, plus **P0**/**P1** turnover among cooperators.
 
-**Groupsize 4 vs 128 (hamilton_1run, same 21 cells, movie csv_0_for_movie.con, pop_1):** **shuffle_cost12_4** yields **narrow, nearly flat qBSeen trajectories** across the nine snapshots—typical within-cell range **~0.07** vs **~0.67** at **shuffle_cost12_128**, with **large last-interval moves rare at 4 (~5% of cells vs ~62% at 128)**—so **groupsize 4** matches **low end-state cooperation** as a **different regime**, not **128 slowed down**.
+**Groupsize 4 vs 128 (hamilton_1run, same 21 cells, movie csv_0_for_movie.con, pop_1):** **groupsize 4 (shuffle)** yields **narrow, nearly flat qBSeen trajectories** across the nine snapshots—typical within-cell range **~0.07** vs **~0.67** at **groupsize 128**, with **large last-interval moves rare at 4 (~5% of cells vs ~62% at 128)**—so **groupsize 4** matches **low end-state cooperation** as a **different regime**, not **128 slowed down**.
 
 **Invasion vs late tail (partition timesteps within each cell):** **Invasion** (first three Δ after *t* = 1): **r**(C0, ΔP1) ≈ **+0.71**, **r**(C0, ΔC0) ≈ **−0.62**; high C0 at *t* pairs with large positive **ΔP1** and negative **ΔC0**. **Late** (*t* index ≥ 3): **r**(C0, ΔP1) ≈ **+0.08** — tiny stepwise Δ’s; **no** reliable one-step **P1** ↔ **P0** cycle at nine snapshots (longer period, smaller amplitude, or both). Sharper tail inference: **many replicates** at fixed *b* − *c* and/or **dense checkpoints only near run end** (limits CSV growth vs uniform dense output). High **C1P0**/qBSeen at *t* → slightly positive mean next-step Δ(C1P1/qBSeen) (**suggestive**).
 
@@ -292,7 +292,7 @@ For the full Hamilton-branch derivation and cross-population generalization, see
 - *b* − *c* = 1: **T = R > P = S** (boundary)
 - *b* − *c* > 1: **R > T > S > P** (harmony-like)
 
-On the 21-point Hamilton grid (shuffle_cost12_128, mechanism P, given = 0.5): **14 PD / 1 boundary / 6 harmony-like** cells.
+On the 21-point Hamilton grid (shuffle, groupsize 128, mechanism P, given = 0.5): **14 PD / 1 boundary / 6 harmony-like** cells.
 
 ## Why g = 0.5 Helps Interpret g = 1.0
 
@@ -319,7 +319,7 @@ So the local regime split along the 21-point axis is:
 
 Counts on the Hamilton grid: **14 / 1 / 6** cells respectively.
 
-### Outcomes by population structure (shuffle_cost12_128, mechanism P)
+### Outcomes by population structure (shuffle, groupsize 128, mechanism P)
 
 - **pop_1**: near-saturated cooperation (qBSeen mean **0.956**, range **0.953-0.968**)
 - **pop_2**: strong role split with very large exploitation gap  

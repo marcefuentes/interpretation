@@ -24,7 +24,7 @@ from trps_io import BASE, allele, load
 
 
 def mpath(sh, gs, m, d, f):
-    return f"{BASE}/mutualism/{sh}_cost0.001_{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
+    return f"{BASE}/mutualism/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
 
 
 def cell(rows, c0, c1):
@@ -89,7 +89,7 @@ print("    30-run mean? Reading the raw per-cell time series directly.")
 import csv as _csv
 import glob as _glob
 
-RUN = os.path.expanduser("~/results/mutualism_1run/noshuffle_cost0.001_128/M/1/pop_2")
+RUN = os.path.expanduser("~/results/mutualism_1run/noshuffle/128/M/1/pop_2")
 idx = None
 for f in sorted(_glob.glob(f"{RUN}/*_1.csv")):
     rr = list(_csv.DictReader(open(f)))
@@ -177,7 +177,7 @@ print("  high-c window also J-led? Isolate at c=0.30 and c=0.40, shuffle.")
 
 
 def hpath(sh, gs, m, d, f):
-    return f"{BASE}/hamilton/{sh}_cost0.001_{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
+    return f"{BASE}/hamilton/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
 
 
 def h_at_c(sh, m, c):

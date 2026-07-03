@@ -56,11 +56,11 @@ So analysis focuses on how outcome metrics vary across the magnitude of:
 
 ## 4. Results Path Pattern
 
-~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
+~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{population}/
 
 For current snowdrift exports used by this repo, target path is typically:
 
-- ~/results/snowdrift/shuffle_cost12_128/P/1.0/{population}/
+- ~/results/snowdrift/shuffle/128/P/2/{population}/
 
 Expected summary files:
 

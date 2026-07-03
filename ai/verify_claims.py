@@ -32,19 +32,19 @@ def check(study, label, fn, expected, tol=TOL):
 # ── path helpers ──────────────────────────────────────────────────────────────
 
 def hpath(sh, gs, m, d, pop, f):
-    return f"{BASE}/hamilton/{sh}_cost0.001_{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
+    return f"{BASE}/hamilton/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
 
 
 def mpath(sh, gs, m, d, f):
-    return f"{BASE}/mutualism/{sh}_cost0.001_{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
+    return f"{BASE}/mutualism/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
 
 
 def ppath(sh, gs, m, pop, f):
-    return f"{BASE}/prisoners/{sh}_cost0.001_{gs}/{m}/1/{pop}/csv_{f}_for_image.con"
+    return f"{BASE}/prisoners/{sh}/{gs}/{m}/1/{pop}/csv_{f}_for_image.con"
 
 
 def sdpath(sh, gs, m, pop, f):
-    return f"{BASE}/snowdrift/{sh}_cost0.001_{gs}/{m}/2/{pop}/csv_{f}_for_image.con"
+    return f"{BASE}/snowdrift/{sh}/{gs}/{m}/2/{pop}/csv_{f}_for_image.con"
 
 
 def at_c(rows, c, col="qBSeen"):
@@ -66,6 +66,54 @@ def mcell_row(rows, c0, c1):
         if abs(float(r["c0"]) - c0) < 0.005 and abs(float(r["c1"]) - c1) < 0.005:
             return r
     return None
+
+
+def mp3path(sh, gs, m, f):
+    return f"{BASE}/mutualism/{sh}/{gs}/{m}/1/pop_3/csv_{f}_for_image.con"
+
+
+def _grid(rows, col):
+    return {(round(float(r["c0"]), 3), round(float(r["c1"]), 3)): float(r[col]) for r in rows}
+
+
+def mp3_evolving_vs_hamilton(m):
+    """Max |mutualism pop_3 evolving qBSeen(c0,c1) - hamilton pop_3 qBSeen(c0)| over
+    all 441 cells. Near 0 == the 2D square is the Hamilton 1D sweep (redundant)."""
+    ev = load(mp3path("noshuffle", "128", m, 0))
+    ham = load(hpath("noshuffle", "128", m, 1, "pop_3", 0))
+    hmap = {round(float(r["c0"]), 3): float(r["qBSeen"]) for r in ham}
+    return max(abs(float(r["qBSeen"]) - hmap[round(float(r["c0"]), 3)]) for r in ev)
+
+
+def mp3_c1_spread(m):
+    """Max over c0 of (max-min evolving qBSeen across all c1). Near 0 == evolving
+    cooperation depends on c0 only (no coevolutionary channel for c1)."""
+    ev = load(mp3path("noshuffle", "128", m, 0))
+    byc0 = {}
+    for r in ev:
+        byc0.setdefault(round(float(r["c0"]), 3), []).append(float(r["qBSeen"]))
+    return max(max(v) - min(v) for v in byc0.values())
+
+
+def mp3_fixed_qb_dev():
+    """Max |fixed-pop qBSeen - 0.5|. Near 0 == the fixed partner is frozen at 25%."""
+    fx = load(mp3path("noshuffle", "128", "P", 1))
+    return max(abs(float(r["qBSeen"]) - 0.5) for r in fx)
+
+
+def mp3_fixed_wmean_residual():
+    """Max residual of the fixed-pop wmean under an additive a(c0)+b(c1) fit. Near 0
+    == no c0xc1 interaction (the one thing Hamilton can't show is provably absent)."""
+    fx = load(mp3path("noshuffle", "128", "P", 1))
+    g = _grid(fx, "wmean")
+    c0s = sorted({k[0] for k in g})
+    c1s = sorted({k[1] for k in g})
+    gm = sum(g.values()) / len(g)
+    rowm = {c0: sum(g[(c0, c1)] for c1 in c1s if (c0, c1) in g)
+            / sum(1 for c1 in c1s if (c0, c1) in g) for c0 in c0s}
+    colm = {c1: sum(g[(c0, c1)] for c0 in c0s if (c0, c1) in g)
+            / sum(1 for c0 in c0s if (c0, c1) in g) for c1 in c1s}
+    return max(abs(g[k] - (rowm[k[0]] + colm[k[1]] - gm)) for k in g)
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -445,6 +493,99 @@ check("snowdrift", "CAL: IJMPQ gs=4 mean = 0.904", lambda: sd_mean("noshuffle", 
 
 check("snowdrift", "PC: pop_2 paradox corr = -0.437", lambda: sd_paradox("noshuffle", "128", "P")[0], -0.437, 0.01)
 check("snowdrift", "PC: pop_2 fitness-inverted cells = 172", lambda: sd_paradox("noshuffle", "128", "P")[1], 172, None)
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# HAMILTON_COST — hamilton_cost.md (information-cost axis; cell key = (Cost, c0))
+# ════════════════════════════════════════════════════════════════════════════
+
+def hcpath(sh, gs, m, d, pop, f):
+    return f"{BASE}/hamilton_cost/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
+
+
+def hc_cell(rows, cost, c, col="qBSeen"):
+    for r in rows:
+        if abs(float(r["Cost"]) - cost) < 0.005 and abs(float(r["c0"]) - c) < 0.005:
+            return float(r[col])
+    return float("nan")
+
+
+def hc_cell_row(rows, cost, c):
+    for r in rows:
+        if abs(float(r["Cost"]) - cost) < 0.005 and abs(float(r["c0"]) - c) < 0.005:
+            return r
+    return None
+
+
+# pure information-cost axis (c=0): gentle collapse, combined most robust
+for m, exp in (("_", 0.517), ("M", 0.627), ("P", 0.539), ("MP", 0.654),
+               ("MPQ", 0.715), ("IMP", 0.719), ("IJMPQ", 0.810)):
+    check("hamilton_cost", f"Cost=0.40 c=0 {m} qBSeen = {exp:.3f}",
+          (lambda mm=m: hc_cell(load(hcpath("noshuffle", "128", mm, 1, "pop_1", 0)), 0.40, 0.0)), exp)
+
+check("hamilton_cost", "IJMPQ Cost=0.20 c=0 = 0.886",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.0), 0.886)
+
+# sanity: Cost=0 edge reproduces standard hamilton (Cost=0.001) at c=0.20
+check("hamilton_cost", "sanity IJMPQ Cost=0 c=0.20 = 0.951",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.0, 0.20), 0.951)
+
+# machinery erosion: enforcement allele selected out along the Cost axis (c=0)
+check("hamilton_cost", "P1 allele c=0 Cost=0 = 0.671",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.0, 0.0), "P1"), 0.671, 0.01)
+check("hamilton_cost", "P1 allele c=0 Cost=0.40 = 0.020",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.40, 0.0), "P1"), 0.020, 0.01)
+check("hamilton_cost", "M1 allele c=0 Cost=0.40 = 0.018",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 1, "pop_1", 0)), 0.40, 0.0), "M1"), 0.018, 0.01)
+
+# control (dilemma 0) decomposes cost from demand: machinery erodes at ~same rate
+# as the PD, but behavior stays pinned at the ceiling (no enforcement needed).
+check("hamilton_cost", "control M1 c=0 Cost=0 = 0.383",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.0, 0.0), "M1"), 0.383, 0.01)
+check("hamilton_cost", "control M1 c=0 Cost=0.40 = 0.023 (erodes like PD)",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), "M1"), 0.023, 0.01)
+check("hamilton_cost", "control qBSeen c=0 Cost=0 = 0.968 (ceiling)",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.0, 0.0), 0.968)
+check("hamilton_cost", "control qBSeen c=0 Cost=0.40 = 0.978 (pinned; no collapse)",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), 0.978)
+check("hamilton_cost", "control C1M0 c=0 Cost=0.40 = 0.956 (free-coop niche)",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), "C1", "M0"), 0.956, 0.01)
+
+# snowdrift (dilemma 2) buffers information cost: M holds high at Cost=0.40
+check("hamilton_cost", "M dilemma2 Cost=0.40 c=0 = 0.870",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 2, "pop_1", 0)), 0.40, 0.0), 0.870)
+
+# interaction: information cost lowers the c-collapse threshold (IJMPQ interior)
+check("hamilton_cost", "IJMPQ Cost=0.20 c=0.16 collapsed = 0.049",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.16), 0.049)
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# MUTUALISM POP_3 — redundant with hamilton pop_3 (copilot-instructions.md,
+# "Mutualism Parameter Space"). Only _0 evolves; _1 is frozen at 25% each, so
+# there is no coevolutionary channel for c1 and the 441-cell square collapses
+# onto the hamilton pop_3 1D c-sweep. These bound checks lock that redundancy.
+# ════════════════════════════════════════════════════════════════════════════
+
+# evolving pop tracks hamilton pop_3 at c=c0 across the whole square (bound ~0)
+check("mutualism_pop_3", "P evolving == hamilton pop_3 (max cell dev <= 0.03)",
+      lambda: mp3_evolving_vs_hamilton("P"), 0.0, 0.03)
+check("mutualism_pop_3", "IJMPQ evolving == hamilton pop_3 (max cell dev <= 0.03)",
+      lambda: mp3_evolving_vs_hamilton("IJMPQ"), 0.0, 0.03)
+
+# evolving cooperation depends on c0 only: spread across c1 is within noise
+check("mutualism_pop_3", "P evolving qBSeen c1-invariant (max c1-spread <= 0.035)",
+      lambda: mp3_c1_spread("P"), 0.0, 0.035)
+check("mutualism_pop_3", "IJMPQ evolving qBSeen c1-invariant (max c1-spread <= 0.035)",
+      lambda: mp3_c1_spread("IJMPQ"), 0.0, 0.035)
+
+# fixed partner frozen at 25% each -> qBSeen == 0.5 everywhere
+check("mutualism_pop_3", "fixed pop qBSeen == 0.5 (max dev <= 0.01)",
+      mp3_fixed_qb_dev, 0.0, 0.01)
+
+# no c0xc1 interaction: fixed-pop wmean is additively separable a(c0)+b(c1)
+check("mutualism_pop_3", "fixed pop wmean additively separable (residual <= 0.01)",
+      mp3_fixed_wmean_residual, 0.0, 0.01)
 
 
 # ════════════════════════════════════════════════════════════════════════════

@@ -64,5 +64,5 @@ cell; treat −b/a differences below ~0.03 as not meaningful.
 Prisoners is an auxiliary calibration study used to interpret mechanism
 signatures seen in **mutualism** and **hamilton**, not a primary biological
 endpoint. Earlier write-ups under the previous parameterization (K = 2, c = 1
-fixed) are superseded by these documents; the deprecated cost12/cost3 data are
-not part of the current K = 0.5, b = 0.4 study.
+fixed) are superseded by these documents and are not part of the current
+K = 0.5, b = 0.4 study.

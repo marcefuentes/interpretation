@@ -6,7 +6,7 @@ This document summarizes the current snowdrift study outputs generated via:
 
 - python -m graphgen.main --study snowdrift --figure s07
 
-Focus here is mechanism P at shuffle_cost12_128, using the finalized summary exports in ~/results/snowdrift/.../csv_*_for_image.con.
+Focus here is mechanism P (shuffle, groupsize 128), using the finalized summary exports in ~/results/snowdrift/.../csv_*_for_image.con.
 
 Role in this project: **snowdrift is a calibration study**, not the primary object. It is used to benchmark which partner-choice patterns generalize across game families when interpreting **mutualism** (main target) and **Hamilton** (equal-parameter special case within mutualism).
 

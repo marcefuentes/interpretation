@@ -10,7 +10,7 @@ It covers pop_3 (panels e-f, evolving population), pop_2 (panels a-d, two coevol
 
 **Partner choice mechanics** (mutual **C1P1** swaps, **C0P1** silent in defectors) are given once in **The Resolution**; later sections add **grid and single-run numbers** without re-deriving the code path every time.
 
-**Groupsize / path.** Heatmaps and aggregated **prisoners/** statistics refer to **shuffle_cost12_128** (groupsize **128**). **shuffle_cost12_4** yields **much lower** **qBSeen** on the same *(R,P)* grid; where **csv_0_for_movie.con** exists for **4**, trajectories are **plateaued by the last snapshots** on the usual nine-checkpoint horizon—not **128** “still catching up.” The detailed **hamilton_1run** movie comparison is in **hamilton.md**.
+**Groupsize / path.** Heatmaps and aggregated **prisoners/** statistics refer to the **shuffle, groupsize-128** condition. **Groupsize 4** yields **much lower** **qBSeen** on the same *(R,P)* grid; where **csv_0_for_movie.con** exists for **4**, trajectories are **plateaued by the last snapshots** on the usual nine-checkpoint horizon—not **128** “still catching up.” The detailed **hamilton_1run** movie comparison is in **hamilton.md**.
 
 ## The Puzzle
 
@@ -94,7 +94,7 @@ Evidence: When C1P1 is abundant (R >> P), C0P1 > C0P0 because mutation from C1P1
 
 As **R−P** rises, **qBSeen** rises but **P1** falls: **C0P1** hitchhiking “from below” vs **C1P0** dilution “from above” (**two forces** below).
 
-**Single-run (prisoners_1run, pop_1, shuffle_cost12_128, P, given = 1.0, 9 × 210 cells):** C1P0 ~**0.23–0.33** (high-R−P cells), C1P1 dominant ~**0.64–0.74**; heatmaps vs single-run ~**29%** vs **33%** C1P0 among cooperators at high R−P. Anti-phase C1P1 vs C1P0 with flat **qBSeen** → mostly **C1P1 + C1P0 = qBSeen** plus P-locus churn.
+**Single-run (prisoners_1run, pop_1, shuffle, groupsize 128, P, given = 1.0, 9 × 210 cells):** C1P0 ~**0.23–0.33** (high-R−P cells), C1P1 dominant ~**0.64–0.74**; heatmaps vs single-run ~**29%** vs **33%** C1P0 among cooperators at high R−P. Anti-phase C1P1 vs C1P0 with flat **qBSeen** → mostly **C1P1 + C1P0 = qBSeen** plus P-locus churn.
 
 **Invasion vs late (same partition as hamilton.md):** **r**(C0, ΔP1) ≈ **+0.97**, **r**(C0, ΔC0) ≈ **−0.97** (first three Δ); **late** **r**(C0, ΔP1) ≈ **+0.03**. Stronger tail inference: **many replicates** per **(R, P)** and/or **dense checkpoints only near run end** — see **hamilton.md** for narrative.
 

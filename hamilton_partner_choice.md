@@ -12,8 +12,8 @@ Hamilton is the equal-cost diagonal ($c_0 = c_1 = c$). See **[hamilton.md](hamil
 
 Unlike mutualism (pop_2 only, strict upper triangle), Hamilton includes
 pop_1 (single population), pop_2 (two coevolving populations), and pop_3
-(evolving vs fixed partner). Analysis covers dilemma types 0 (control,
-given=0), 1 (PD), and 2 (snowdrift), groupsize 128 (primary) and groupsize 4
+(evolving vs fixed partner). Analysis covers dilemma types 0 (control),
+1 (PD), and 2 (snowdrift), groupsize 128 (primary) and groupsize 4
 (dedicated section plus comparison). Partner-choice analysis focuses on d1
 and d2; d0 is not meaningful for P.
 

@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
-"""Analyze single-run Prisoner's Dilemma simulation data for 4 questions."""
+"""Analyze single-run Prisoner's Dilemma simulation data for 4 questions.
+
+Reads the raw per-run CSVs from the prisoners_1run payoff-plane sweep (mechanism
+P, PD). Cell key is (R0, P0); trajectories span the 9 movie snapshots.
+Layout: ~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{population}/.
+"""
 
 import os
 import csv
 import glob as globmod
 from collections import defaultdict
 
-BASE = os.path.expanduser("~/results/prisoners_1run/shuffle_cost12_128/P/1.0")
+BASE = os.path.expanduser("~/results/prisoners_1run/noshuffle/128/P/1")
 
 def load_csv(path):
     """Load CSV, return list of dicts with float values where possible."""

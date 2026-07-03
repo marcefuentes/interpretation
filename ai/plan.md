@@ -61,6 +61,24 @@ Status legend: [ ] todo, [~] in progress, [x] done.
    - Generated both prisoners gs=4 movie exports and snowdrift gs=4 movie exports using the graphgen pipeline.
    - Removed the gs=4 movie caveats from all prisoners and snowdrift documents.
 
+## Newly landed data (2026-07)
+
+9. [x] All studies migrated to the modern `{shuffle}/{groupsize}` layout; ai/*.py path
+   helpers updated to match. verify_claims.py passes 110/110, with all existing
+   hamilton/mutualism/prisoners/snowdrift headline numbers reproducing exactly.
+
+10. [x] snowdrift multi-run confirmed present (Runs=30); all snowdrift doc claims verify.
+    Updated the stale "snowdrift is single-run only / dir empty" notes in findings.md and
+    copilot-instructions.md.
+
+11. [x] hamilton_cost + hamilton_cost_1run (new information-cost study).
+    - Wrote hamilton_cost.md; added the price-vs-demand section to synthesis.md.
+    - ai/analyze_hamilton_cost.py + 14 regression checks.
+    - Findings: information cost is soft vs cooperation cost (machinery shed harmlessly at
+      c=0), family count does not predict collapse (combined most robust), machinery erosion
+      decouples behavior from mechanism, and Cost lowers the c-collapse threshold (~1.5 c per
+      Cost, not iso-budget). P/M split two ways; snowdrift buffers Cost; gs=4 double-penalizes P.
+
 ## Decisions needed from maintainer
 
 - (a) Keep or drop mutualism pop_3 (item 6).

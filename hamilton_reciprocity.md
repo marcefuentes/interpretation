@@ -47,9 +47,9 @@ Key patterns:
 Snowdrift provides a cooperation floor for M. Combined mechanisms (IJMPQ)
 extend cooperation further — see **hamilton_combined.md**.
 
-### Folder 0 (given=0), control baseline
+### Folder 0, control baseline
 
-Folder 0 is the old **given=0.0** control: payoffs do not depend on the
+Folder 0 is the **control**: payoffs do not depend on the
 partner's move (T = P = K, R = S = K + b − c). Interactive cooperation is not
 in the game — focal fitness depends only on whether the focal individual pays
 cost c, not on partner behavior.

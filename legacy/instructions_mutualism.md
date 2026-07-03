@@ -81,12 +81,12 @@ Same as Hamilton: **6 loci** (C, I, J, M, P, Q) → **64 genotype columns**. Col
 ## 5. Results Path
 
 
-~/results/mutualism/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
+~/results/mutualism/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{population}/
 
 
-Example: ~/results/mutualism/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con
+Example: ~/results/mutualism/shuffle/128/P/1/pop_2/csv_0_for_image.con
 
-Available given values: 0.5, 1.0, 1.5 (only *g* = 1.0 analyzed here).
+Dilemma folders: 0 (control), 1 (PD), 2 (snowdrift) (only the PD folder analyzed here).
 
 ---
 

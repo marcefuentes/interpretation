@@ -23,7 +23,7 @@ T_FIX, S_FIX = 0.9, 0.1
 
 
 def path(sh, gs, mech, pop, fset):
-    return os.path.join(PRIS_BASE, f"{sh}_cost0.001_{gs}", mech, "1", pop,
+    return os.path.join(PRIS_BASE, sh, str(gs), mech, "1", pop,
                         f"csv_{fset}_for_image.con")
 
 
@@ -174,7 +174,7 @@ for mech in MECHS:
 print("\n--- TEMPORAL DYNAMICS (prisoners_1run, P, pop_1, noshuffle gs128) ---")
 print("Transition-zone fluctuation vs stable saturated cells (qBSeen by R-P, P=0.14)")
 RUN = os.path.expanduser("~/results/prisoners_1run")
-mv = f"{RUN}/noshuffle_cost0.001_128/P/1/pop_1/csv_0_for_movie.con"
+mv = f"{RUN}/noshuffle/128/P/1/pop_1/csv_0_for_movie.con"
 r = load(mv)
 if r:
     from collections import defaultdict

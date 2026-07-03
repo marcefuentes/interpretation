@@ -124,7 +124,7 @@ All studies live under ~/results/{study}/:
 ~/results/{study}/{path_template}/{population}/
 
 
-The common path template is {shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}. See the game-specific instructions for concrete examples.
+The common path template is {shuffle}/{groupsize}/{mechanism}/{dilemma}. See the game-specific instructions for concrete examples.
 
 #### Single-run variants (_1run)
 
@@ -191,7 +191,7 @@ Use this workflow whenever analyzing a new given (for example 0.5, 1.0, 1.5) so 
    - python -m graphgen.main --study <study> --figure s07 --given-focal <g>
    - python -m graphgen.main --study <study> --figure s07 --given-focal <g> --movie
 2. Confirm .con sources exist under:
-   - ~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
+   - ~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{population}/
 3. If temporal interpretation is needed, include _1run movie files (csv_*_for_movie.con) rather than only final snapshots.
 
 Agent policy: if expected summary exports are missing (csv_*_for_image.con and/or csv_*_for_movie.con), run graphgen first to generate them before proceeding with interpretation.

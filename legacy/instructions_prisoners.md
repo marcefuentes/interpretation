@@ -36,10 +36,10 @@ The prisoners study uses **6 loci** (C, I, J, M, P, Q) → **64 genotype columns
 ## 3. Results Path
 
 
-~/results/prisoners/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
+~/results/prisoners/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{population}/
 
 
-Example: ~/results/prisoners/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con
+Example: ~/results/prisoners/shuffle/128/P/1/pop_2/csv_0_for_image.con
 
 ---
 

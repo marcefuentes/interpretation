@@ -18,7 +18,7 @@ When that equality holds cell-by-cell, the asymmetric role split disappears by c
 
 This document therefore develops the reusable mechanism first: **cross-benefit payoffs**, the **chooser bottleneck**, and resulting cooperation/fitness asymmetries. The **Summary** table lists headline percentages and correlations. For **P**-mechanism definitions, see **instructions.md** and **instructions_mutualism.md**.
 
-**Groupsize.** Grid cooperation levels and tables below use **shuffle_cost12_128**. **shuffle_cost12_4** collapses **qBSeen** relative to **128** on the same parameter grid (cross-benefit and **bottleneck** logic still apply; **numeric** claims do not). See **hamilton.md** for **hamilton_1run** end-state and **movie** detail.
+**Groupsize.** Grid cooperation levels and tables below use the **shuffle, groupsize-128** condition. **Groupsize 4** collapses **qBSeen** relative to **128** on the same parameter grid (cross-benefit and **bottleneck** logic still apply; **numeric** claims do not). See **hamilton.md** for **hamilton_1run** end-state and **movie** detail.
 
 The key structural feature is that each population's **R − P** has a cross-benefit, own-cost form: the benefit term comes from the partner population, while the cost term comes from the focal population. On the plotted strict upper triangle (*b*₁ − *c*₁ > *b*₀ − *c*₀; 210 cells), population 0 always has a stronger cooperation incentive than population 1.
 
@@ -144,7 +144,7 @@ Equivalent differences:
 
 So the focal game family is controlled by x_self around 1.0, while cross-population asymmetry (x_partner vs x_self) can yield additional orderings beyond simple PD/harmony.
 
-On the triangular mutualism grid (shuffle_cost12_128, mechanism P, given = 0.5, 231 cells):
+On the triangular mutualism grid (shuffle, groupsize 128, mechanism P, given = 0.5, 231 cells):
 
 ### Population 0 (x_self = x0, x_partner = x1, with x1 >= x0)
 
@@ -199,7 +199,7 @@ Observed counts:
 
 Because x1 >= x0, pop_1 sits in the high-x (S>R>T>P) regime much more often than pop_0, which reverses the dominant role pattern seen at given = 1.0.
 
-### Outcomes (shuffle_cost12_128, mechanism P, pop_2)
+### Outcomes (shuffle, groupsize 128, mechanism P, pop_2)
 
 - pop_0 mean: qBSeen = 0.125, wmean = 9.450
 - pop_1 mean: qBSeen = 0.835, wmean = 5.072

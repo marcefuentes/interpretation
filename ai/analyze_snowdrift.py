@@ -17,7 +17,7 @@ SD_BASE = os.path.expanduser("~/results/snowdrift")
 T_FIX, P_FIX = 0.9, 0.1
 
 def path(sh, gs, mech, pop, fset):
-    return os.path.join(SD_BASE, f"{sh}_cost0.001_{gs}", mech, "2", pop,
+    return os.path.join(SD_BASE, sh, str(gs), mech, "2", pop,
                         f"csv_{fset}_for_image.con")
 
 MECHS = ["_", "M", "P", "MP", "MPQ", "IMP", "IJMPQ"]
@@ -148,7 +148,7 @@ for mech in MECHS:
 
 print("\n--- TEMPORAL DYNAMICS (snowdrift_1run, P, pop_1, noshuffle gs128) ---")
 RUN = os.path.expanduser("~/results/snowdrift_1run")
-mv = f"{RUN}/noshuffle_cost0.001_128/P/2/pop_1/csv_0_for_movie.con"
+mv = f"{RUN}/noshuffle/128/P/2/pop_1/csv_0_for_movie.con"
 r = load(mv)
 if r:
     from collections import defaultdict

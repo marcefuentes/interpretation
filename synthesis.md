@@ -152,6 +152,45 @@ prisoners pins the difference to R − P:
   because, being reward-led, they no longer route the R − P gap into a
   cooperation gap.
 
+## The information-cost axis: price vs demand for enforcement
+
+Prisoners/snowdrift decompose the payoff gaps behind the c-thresholds;
+**hamilton_cost** adds an orthogonal axis — the information cost Cost of carrying
+the machinery, charged once per round for being a partner chooser (P/Q locus) and
+once for being a reciprocator (M/I/J locus), independent of the game payoffs (see
+**hamilton_cost.md**). It reframes the whole picture as a supply-and-demand for
+enforcement:
+
+- **c is the demand.** Rising cooperation cost is rising temptation and risk —
+  the pressure the machinery must resist.
+- **Cost is the price.** Rising information cost is a per-round tax on the
+  machinery itself, escapable only by shedding it.
+
+The two are benign alone and destructive together:
+
+- **Information cost is soft on its own** (c = 0): at Cost = 0.40 IJMPQ still
+  holds 0.810, versus 0.378 at c = 0.40. With no temptation the population simply
+  sheds the taxed machinery — the enforcement allele collapses (P1 0.67 to 0.02;
+  M1 0.44 to 0.02 across the Cost sweep) while cooperation is carried by tax-free
+  unconditional cooperators (C1P0, C1M0). **Behavior and mechanism decouple.**
+- **Information cost lowers the c-ceiling.** Because it thins the very apparatus
+  that resists temptation, adding Cost retreats the c-collapse threshold —
+  IJMPQ's half-cooperation c-threshold falls 0.38 to 0.08 as Cost goes 0 to 0.20
+  (roughly 1.5 units of tolerable c lost per unit Cost). This is not an
+  equal-budget effect: at fixed Cost + c = 0.4 cooperation ranges 0.378 (all-c)
+  to 0.810 (all-Cost); c is far more destructive per unit.
+- **The reward-led / assortment / risk attributions carry over.** Combined
+  reputation-rich mechanisms are the most Cost-robust despite paying the double
+  (two-family) tax — family count does not predict the collapse, the enforcement
+  architecture does. Along c > 0, P defends cooperation to a higher c than M at
+  equal Cost (a residual chooser minority sorts the whole population; a residual
+  TFT minority protects only itself) — the same population-level (P) vs
+  individual-level (M) split seen in the payoff-axis fits.
+- **Snowdrift buffers the price** (M/P hold about 0.87 at Cost = 0.40 in
+  dilemma 2 vs 0.54–0.63 in PD): a high cooperation floor makes the apparatus
+  optional, so taxing it barely matters — the low-risk snowdrift result, seen on
+  the information-cost axis.
+
 ## Caveats
 
 - **Structural, not literal.** Prisoners fixes S = 0.10, whereas hamilton's
@@ -178,3 +217,5 @@ prisoners pins the difference to R − P:
 | IMP / IJMPQ hold cooperation at high c        | reward-led; blind to risk P                |
 | Shuffle kills M-based cooperation             | the M term drops from the payoff-axis fit  |
 | gs = 4 kills P-based cooperation, M recovers   | the P term drops; risk-led M remains       |
+| Information cost Cost erodes cooperation slowly | machinery is shed harmlessly at c = 0; behavior decouples from mechanism |
+| ...but sharply lowers the c-collapse threshold  | Cost thins the apparatus that c demands (price vs demand) |

@@ -68,9 +68,11 @@ Examples:
 
 **mutualism pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study mutualism_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with Hamilton pop_3 for interpretation** — see Mutualism Parameter Space below. Data incomplete: noshuffle gs=128 and gs=4 are complete for most mechanisms; shuffle conditions partial. Figures: ~/figures/mutualism/pop_3/ (use --flat-output).
 
-**prisoners**: calibration study, re-run under the current engine (cost0.001, Runs=30) as a raw PD payoff-plane sweep — T=0.9 and S=0.1 fixed, R and P swept independently over an 18x18 grid (172 cells, T>R>P>S). The main analysis is dilemma 1 (PD); a dilemma 0 no-social-dilemma rerun now exists for the dummy control mechanism \_ only. Payoffs are symmetric; pops 1/2/3; shuffle and noshuffle. .con exports: gs=128 and gs=4 image for the PD sweep (noshuffle 7 mechanisms, shuffle adds IM/IJM), plus dilemma 0 control exports for \_; gs=128 movie via prisoners_1run for temporal dynamics; gs=4 movie not yet generated. Cell key is (R0, P0), not c0/c1. Analysis: prisoners_calibration.md (payoff-axis attribution, gs=4 mirror of shuffle), prisoners_partner_choice.md (P), prisoners_reciprocity.md (M, IM, IJM). The old cost12/cost3 data are deprecated.
+**prisoners**: calibration study, re-run under the current engine (Cost=0.001, Runs=30) as a raw PD payoff-plane sweep — T=0.9 and S=0.1 fixed, R and P swept independently over an 18x18 grid (172 cells, T>R>P>S). The main analysis is dilemma 1 (PD); a dilemma 0 no-social-dilemma rerun now exists for the dummy control mechanism \_ only. Payoffs are symmetric; pops 1/2/3; shuffle and noshuffle. .con exports: gs=128 and gs=4 image for the PD sweep (noshuffle 7 mechanisms, shuffle adds IM/IJM), plus dilemma 0 control exports for \_; movie exports present for gs=128 and gs=4 (temporal via prisoners_1run: gs=128 and gs=4 complete). Cell key is (R0, P0), not c0/c1. Analysis: prisoners_calibration.md (payoff-axis attribution, gs=4 mirror of shuffle), prisoners_partner_choice.md (P), prisoners_reciprocity.md (M, IM, IJM).
 
-**snowdrift**: only single-run (snowdrift_1run, Runs=1) exists in the current parameterization — a snowdrift-ordered payoff sweep (T=0.9, P=0.10 fixed; R and S swept; T>R>S>P), dilemma 2. The multi-run snowdrift/ tree is empty (no 30-run .con), so no doc is written; generate multi-run snowdrift data before analyzing.
+**snowdrift**: multi-run (snowdrift, Runs=30) now present — a snowdrift-ordered payoff sweep (T=0.9, P=0.10 fixed; R and S swept; T>R>S>P), dilemma 2, gs=128 and gs=4 image exports. Temporal from snowdrift_1run (Runs=1) movie exports (gs=128 and gs=4). Analysis: snowdrift.md (index), snowdrift_calibration.md (payoff-axis attribution), snowdrift_partner_choice.md (P), snowdrift_reciprocity.md (M, IM, IJM). Cell key is (R0, S0).
+
+**hamilton_cost**: extends hamilton with a 2nd swept axis — Cost, the per-round information cost of the machinery (recruits.c: cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2xCost, single-family 1x, control 0). Triangular Cost x c grid with Cost+c<=0.4 (231 cells: Cost in {0,0.02,...,0.4}, c in {0,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), pops 1/2/3, Runs=30 (image); hamilton_cost_1run is the single-run temporal variant. Cell key is (Cost, c0). Analysis: hamilton_cost.md; ai/analyze_hamilton_cost.py.
 
 ### Hamilton Parameter Space
 
@@ -80,13 +82,13 @@ Payoffs by dilemma type (folder names 0, 1, 2):
 
 | Folder | Role         | T       | R           | P   | S           | Partner dependence                     |
 | ------ | ------------ | ------- | ----------- | --- | ----------- | -------------------------------------- |
-| 0      | Control (given=0) | K  | K + b - c   | K   | K + b - c   | None: T = P, R = S; partner irrelevant |
+| 0      | Control      | K       | K + b - c   | K   | K + b - c   | None: T = P, R = S; partner irrelevant |
 | 1      | PD           | K + b   | K + b - c   | K   | K - c       | b only when partner cooperates         |
 | 2      | Snowdrift    | K + b   | K + b - c/2 | K   | K + b - c   | b shared whenever anyone cooperates    |
 
 With K = 0.5, b = 0.4: P = 0.5 always. T = 0.5 (folder 0) or 0.9 (folders 1 and 2). R and S vary with c.
 
-Folder 0 (old given=0.0) is a **control**, not a cooperative game: the dominant strategy when c < b is to produce b (cooperate → K + b − c). Partner moves do not enter payoffs, but M1 still induces suboptimal defection when a focal C1M1 copies a mutant partner at qBSeen = 0; C1M0 (always cooperate) avoids this. At d0 noshuffle, M1 under mechanism M (~0.39 mean) is ~0.10 below the dummy baseline under _ (~0.49); shuffle keeps both near 0.5.
+Folder 0 is a **control**, not a cooperative game: the dominant strategy when c < b is to produce b (cooperate → K + b − c). Partner moves do not enter payoffs, but M1 still induces suboptimal defection when a focal C1M1 copies a mutant partner at qBSeen = 0; C1M0 (always cooperate) avoids this. At d0 noshuffle, M1 under mechanism M (~0.39 mean) is ~0.10 below the dummy baseline under _ (~0.49); shuffle keeps both near 0.5.
 
 In PD, b is a cross-benefit: focal receives it only when the partner cooperates (absent in S). In snowdrift, b is a shared resource: both players receive it as long as at least one cooperates (present in S as well as T and R).
 
@@ -114,13 +116,13 @@ Mutualism is a 2D sweep over c0 and c1 with b = 0.4 fixed, K = 0.5.
 
 **pop_3** (study mutualism_pop_3): full 21×21 square — all c0, c1 pairs including diagonal and lower triangle (441 cells). One evolving population (_0) vs one fixed population (_1, 25% each genotype). Reads from the same ~/results/mutualism/ tree (results_name=mutualism). Theory overlays (s04) deferred.
 
-**mutualism pop_3 vs Hamilton pop_3 (redundant for interpretation).** The 441-cell square re-simulates what Hamilton pop_3 already captures in a 1D c sweep. Use Hamilton pop_3 for figures and analysis; mutualism_pop_3 heatmaps add little beyond noise.
+**mutualism pop_3 vs Hamilton pop_3 (redundant for interpretation).** The 441-cell square re-simulates what Hamilton pop_3 already captures in a 1D c sweep. Use Hamilton pop_3 for figures and analysis; mutualism_pop_3 heatmaps add little beyond noise. Root cause: in pop_3 only _0 evolves and _1 is frozen at 25% each, so c1 (the frozen partner's own cost) has no coevolutionary channel to the evolving population's payoffs — the one dynamical quantity can depend on c0 alone. Regression-locked in ai/verify_claims.py (study mutualism_pop_3, 6 checks).
 
 | Quantity | mutualism pop_3 (c0, c1) | Hamilton pop_3 (c = c0 = c1) |
 | -------- | ------------------------ | ---------------------------- |
-| Evolving _0 qBSeen / wmean | Depends on c0 only; identical across c1 at fixed c0 (matches Hamilton at c = c0 to ~0.003) | 1D sweep — same story |
-| Fixed _1 qBSeen | Flat ~0.50 (genotypes frozen) | Flat ~0.50 |
-| Fixed _1 raw wmean | w ≈ a(c0) + b(c1) (max residual ~0.005); each c1 row is the same c0 pattern shifted; c1 effect damped because only 50% (C1 genotypes) pay c1 | Diagonal slice where c0 = c1 |
+| Evolving _0 qBSeen / wmean | Depends on c0 only; c1-invariant at fixed c0 (max c1-spread <= 0.025) and matches Hamilton pop_3 at c = c0 across all 441 cells (max cell deviation <= 0.019) | 1D sweep — same story |
+| Fixed _1 qBSeen | Flat 0.50, genotypes frozen (max dev 0.005) | Flat ~0.50 |
+| Fixed _1 raw wmean | Additively separable w ≈ a(c0) + b(c1), no c0xc1 interaction (max residual 0.005); c1 effect damped because only 50% (C1 genotypes) pay c1 | Diagonal slice where c0 = c1 |
 
 Figure layout (mutualism_pop_3): top row = evolving _0, bottom row = fixed _1. The top row shows vertical c0 bands only. The bottom row shows the same c0 bands with a modest vertical (c1) offset — easy to miss if the rows are swapped mentally.
 
@@ -140,7 +142,7 @@ pop_2 remains the non-redundant mutualism case: both populations evolve and c0 �
 | IM               | C, I, M          | Direct + indirect reciprocity (recent)           | shuffle only        |
 | IJM              | C, I, J, M       | Direct + indirect reciprocity (recent + lifetime)| shuffle only        |
 
-The 7 base mechanisms are run for all three dilemma folders (0, 1, 2) under both shuffle and noshuffle_cost0.001_128. IM and IJM are present only under the shuffle conditions (gs=128 and gs=4).
+The 7 base mechanisms are run for all three dilemma folders (0, 1, 2) under both shuffle and noshuffle (gs=128 and gs=4). IM and IJM are present only under the shuffle conditions (gs=128 and gs=4).
 
 
 
@@ -161,14 +163,15 @@ When editing Markdown tables, keep raw-source alignment readable in plain text e
 
 ### Data File Layout
 
-Results live at ~/results/{study}/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{dilemma}/{population}/:
+Results live at ~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{population}/:
 
-- **dilemma**: 0 (control, given=0), 1 (PD), 2 (snowdrift)
+- **dilemma**: 0 (control), 1 (PD), 2 (snowdrift)
 - **shuffle**: shuffle or noshuffle
-- **cost**: per-module locus-expression cost (currently 0.001), distinct from MutationRate (0.01). Charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. 0.001 for expressing any partner-choice locus plus 0.001 for expressing any reciprocity locus (max 0.002). See decide_qB.c / recruits.c.
 - **groupsize**: 128 or 4
 
-Example: ~/results/hamilton/shuffle_cost0.001_128/P/1/pop_2/csv_0_for_image.con
+Cost (the per-module locus-expression tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except hamilton_cost, where it is the swept 2nd axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. Cost for expressing any partner-choice locus plus Cost for expressing any reciprocity locus. See decide_qB.c / recruits.c.
+
+Example: ~/results/hamilton/shuffle/128/P/1/pop_2/csv_0_for_image.con
 
 | File                  | Contents                                                         |
 | --------------------- | ---------------------------------------------------------------- |
@@ -210,7 +213,7 @@ Full mechanism → trait mapping: ../graph/graphgen/studies/trps/mech_trait_map.
 
 ### M locus: dTFT vs dSTFT (C0M1 is not silent)
 
-For mechanism M, graphgen splits genotypes into **dTFT** (C1M1: cooperate by default, then copy partner) and **dSTFT** (C0M1: suspicious TFT — defect on the first round with a partner, then mimic the partner on later rounds with the same oldpartner). C0M1 is **not** a silent carrier unlike C0P1: mimicry is active once age > 0 and partner == oldpartner (see decide_qB.c). M1 allele frequency = dTFT + dSTFT. At folder 0 (given=0), produce-b is dominant; M1 is slightly selected against because C1M1 can copy a mutant defector and forgo b, while C1M0 always cooperates.
+For mechanism M, graphgen splits genotypes into **dTFT** (C1M1: cooperate by default, then copy partner) and **dSTFT** (C0M1: suspicious TFT — defect on the first round with a partner, then mimic the partner on later rounds with the same oldpartner). C0M1 is **not** a silent carrier unlike C0P1: mimicry is active once age > 0 and partner == oldpartner (see decide_qB.c). M1 allele frequency = dTFT + dSTFT. At folder 0 (control), produce-b is dominant; M1 is slightly selected against because C1M1 can copy a mutant defector and forgo b, while C1M0 always cooperates.
 
 ### File Set _0/_1 Semantics
 

@@ -92,16 +92,59 @@ Fitting qBSeen ~ a*R + b*P (pop_1, PD, noshuffle, gs=128); -b/a = P:R weight:
 - IM/IJM (shuffle only) recover to 0.381/0.360 (gs=128); BOOSTED at gs=4 to 0.521/0.706
   (closed-pool reputation; hamilton's IJM reversal reproduced).
 - Temporal (prisoners_1run, gs=128): only threshold cells (R-P~0.04) fluctuate; saturated stable.
-- .con exports: gs=128 + gs=4 (image); gs=128 movie. gs=4 movie not generated.
+- .con exports: gs=128 + gs=4 (image and movie); temporal from prisoners_1run (gs=128 and gs=4 complete for every mechanism x payoff cell, including the M dilemma-0 control).
 - Full write-up: prisoners_calibration.md, prisoners_partner_choice.md, prisoners_reciprocity.md.
 
-## Snowdrift (new parameterization) — single-run only
+## Snowdrift (new parameterization) — multi-run now present
 
-snowdrift_1run is a single-run (Runs=1) snowdrift-ordered payoff sweep: T=0.9, P=0.10
-fixed; R and S swept (172 cells, T>R>S>P), dilemma 2. The multi-run snowdrift/ dir is
-empty (no 30-run .con). Single-run landscape (noisy): control meanQ~0.49 (vs ~0.017 for
-PD control) confirms the snowdrift cooperation floor in the raw payoff plane. NOT written
-up as a doc — single runs violate the 30-run rigor standard; needs multi-run data first.
+The multi-run snowdrift/ tree now has 30-run .con (Runs=30): a snowdrift-ordered payoff
+sweep T=0.9, P=0.10 fixed; R and S swept (172 cells, T>R>S>P), dilemma 2. All snowdrift
+headline claims verify against it (verify_claims.py). Written up: snowdrift.md,
+snowdrift_calibration.md, snowdrift_partner_choice.md, snowdrift_reciprocity.md. Temporal
+comes from snowdrift_1run (Runs=1) movie exports (gs=128 and gs=4 present). Control
+meanQ~0.493 (vs ~0.017 for PD control) confirms the snowdrift cooperation floor.
+
+## Directory layout
+
+All studies use:
+`~/results/{study}/{shuffle}/{groupsize}/{mech}/{dilemma}/{pop}/csv_{fset}_for_{image,movie}.con`.
+Cost is read from .glo/.con metadata (not the path). All ai/*.py path helpers follow this
+layout; verify_claims.py passes 110/110 against the current data.
+
+## hamilton_cost — Information Cost of the Enforcement Machinery (new study)
+
+hamilton_cost extends hamilton with a 2nd axis: Cost (per-round module tax) swept jointly
+with c over a triangular grid Cost+c<=0.4 (231 cells, 21 Cost x up-to-21 c). recruits.c:
+cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)) — Cost once per family, so
+combined mechs pay 2xCost, single-family (M,P) 1x, control _ pays 0. Primary: pop_1 PD
+noshuffle gs128 fset0; cell=(Cost,c). Full write-up: hamilton_cost.md. Key findings:
+
+- Cost=0 edge reproduces standard hamilton (Cost=0.001) within +-0.008 (sanity).
+- Information cost is SOFT vs cooperation cost: at c=0, IJMPQ 0.968->0.810 across Cost
+  0->0.4; the same 0.4 on the c axis gives 0.378. c injects temptation for everyone; Cost
+  only taxes carriers and is escapable by shedding machinery when c=0 (no temptation).
+- Family count does NOT predict collapse: combined (2-family) mechs are the MOST Cost-robust
+  despite double tax. MP@Cost0.08=0.907 but P@Cost0.16=0.589 -> the per-round tax alone does
+  not govern it (architecture does).
+- Machinery erosion + behavior/mechanism DECOUPLING: along c=0, P1 allele 0.67->0.02, M1
+  0.44->0.02 (machinery selected out) while cooperation held by tax-free unconditional
+  cooperators C1P0 (0.32->0.53) / C1M0 (0.53->0.62).
+- INTERACTION (the headline): Cost lowers the c-collapse threshold. IJMPQ half-qB c-threshold
+  0.38 (Cost0) -> 0.08 (Cost0.2); ~1.5 units c lost per unit Cost. NOT iso-budget: at
+  Cost+c=0.4, IJMPQ ranges 0.378 (all-c) to 0.810 (all-Cost). Framing: c = demand for
+  enforcement, Cost = price of enforcement.
+- P vs M split 2 ways: at c=0 high Cost, M>P (0.627>0.539; stable pairings vs decayed
+  assortment); at c>0, P defends much higher c than M (Cost0.08: P c-thr 0.22 vs M 0.02 —
+  residual choosers sort the whole pop; residual TFT protects only itself).
+- Snowdrift (d2) buffers Cost: M/P ~0.87 at Cost0.4 (vs 0.54-0.63 in PD) — high floor makes
+  the apparatus optional.
+- gs=4: P penalized twice (0.856@Cost0 -> 0.522@Cost0.08, ~control); M groupsize-invariant.
+- Temporal (hamilton_cost_1run): fast establishment; collapse cells collapse immediately,
+  stable cells stay stable (machinery-shedding order is sub-establishment, below 131072
+  snapshot spacing).
+- pop_2 symmetry breaking is weak on the pure-Cost axis (fset0-fset1 gap +0.03..+0.07 for P):
+  the paradox-of-success split needs temptation (c), not information cost.
+- Analysis script: ai/analyze_hamilton_cost.py. 14 regression checks in verify_claims.py.
 
 ## Model mechanics (validated against trps source, 2026-06)
 
@@ -174,6 +217,7 @@ Steady-state genotype decomposition (30-run image .con) + source gradient:
 - ai/analyze_new_data.py: full cross-study analysis (hamilton, mutualism; all mechanisms, cells, populations)
 - ai/analyze_prisoners.py: prisoners payoff-axis calibration (sensitivity fit, R-P collapse, genotypes, pop_2/3, shuffle, IM/IJM)
 - ai/analyze_single_run.py: temporal dynamics from _1run studies
+- ai/analyze_hamilton_cost.py: hamilton_cost information-cost axis (Cost x c grid, machinery erosion, frontier)
 - ai/verify_claims.py: regression-checks headline doc numbers against .con data
 - ai/validate_mechanisms.py: validates the hitchhiking and IJMPQ-shuffle narratives (genotype decomposition + source gradient)
 - ai/trps_io.py: shared loaders/stats used by the above
@@ -203,4 +247,4 @@ Interpretation: small groups make reputation signals (I, J loci) more reliable
 ## Pending
 
 - mutualism shuffle: analyzed — P (mutualism_partner_choice.md), M and indirect IM/IJM (mutualism_reciprocity.md), combined (mutualism_combined.md)
-- prisoners/snowdrift: deprecated parameterization (old cost12/cost3 data); not part of the current K=0.5, b=0.4 study
+- prisoners and snowdrift are current K=0.5, b=0.4 calibration studies (payoff-plane sweeps); fully analyzed and verified.

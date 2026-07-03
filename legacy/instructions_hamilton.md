@@ -88,10 +88,10 @@ The Hamilton study uses **6 loci** (C, I, J, M, P, Q) → **64 genotype columns*
 ## 5. Results Path
 
 
-~/results/hamilton/{shuffle}_cost{cost}_{groupsize}/{mechanism}/{given_val}/{population}/
+~/results/hamilton/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{population}/
 
 
-Example: ~/results/hamilton/shuffle_cost12_128/P/1.0/pop_2/csv_0_for_image.con
+Example: ~/results/hamilton/shuffle/128/P/1/pop_2/csv_0_for_image.con
 
 ---
 

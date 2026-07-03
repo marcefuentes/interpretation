@@ -1,7 +1,7 @@
 # interpretation
 
 Documentation and analysis for interpreting TRPS evolutionary simulation outputs.
-Current parameterization: K = 0.5, b = 0.4 fixed, c varies from 0 to b. See new.md for the change note.
+Current parameterization: K = 0.5, b = 0.4 fixed, c varies from 0 to b. See new.md for the payoff/folder reference.
 Old docs from the previous parameterization are preserved in legacy/ for reference.
 
 ## Repository layout
@@ -9,8 +9,8 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 - **Repository root**: human-facing analysis and reference docs
 - **.github/copilot-instructions.md**: active GitHub Copilot repository guidance
 - **ai/**: agent-only support material, including analysis scripts and key findings
-- **legacy/**: archived docs from the previous parameterization (K=2, c=1 fixed, given folders)
-- **new.md**: note documenting the parameterization change
+- **legacy/**: archived docs from the previous parameterization (K=2, c=1 fixed)
+- **new.md**: current parameterization and dilemma-folder payoff reference
 
 ## Active analysis documents
 
@@ -20,6 +20,7 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 | hamilton_partner_choice.md   | Complete | gs=128 + gs=4; pop_1/2/3; P mechanism; PD and snowdrift      |
 | hamilton_reciprocity.md      | Complete | gs=128 + gs=4; M, IM, IJM; IJM groupsize reversal            |
 | hamilton_combined.md         | Complete | gs=128 + gs=4; MP, MPQ, IMP, IJMPQ; IJMPQ symmetry          |
+| hamilton_cost.md             | Complete | Cost×c triangular sweep; information cost of the machinery   |
 | mutualism.md                 | Index    | Links to partner-choice, reciprocity, and combined write-ups |
 | mutualism_partner_choice.md  | Complete | gs=128 noshuffle + gs=4 (P mechanism)                          |
 | mutualism_reciprocity.md     | Complete | M (gs=128 noshuffle + gs=4); IM, IJM (shuffle)               |
@@ -34,7 +35,7 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 ## Related repositories (same machine)
 
 - **~/code/trps/** — C simulation source code
-- **~/results/** — simulation output data. Metadata in \*.glo files. Raw data in \*.csv files. Pre-processed data in \*.con files.
+- **~/results/** — simulation output data. Metadata in \*.glo files. Raw data in \*.csv files. Pre-processed data in \*.con files. Layout is `~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{population}/`.
 - **~/code/graph/graphgen/** — figure pipeline, study manifests, mech_trait_map.csv
 
 ## Project framing
@@ -43,7 +44,7 @@ Old docs from the previous parameterization are preserved in legacy/ for referen
 - **hamilton** is the diagonal/equal-parameter special case of mutualism (c0 = c1).
 - **prisoners** and **snowdrift** are auxiliary calibration studies used to interpret mechanisms and signatures seen in mutualism and hamilton, not primary project endpoints.
 
-The repository includes multi-run averages (hamilton, prisoners, mutualism, snowdrift) and single-run variants (hamilton_1run, prisoners_1run, snowdrift_1run, mutualism_1run) for tracking temporal dynamics.
+The repository includes multi-run averages (hamilton, hamilton_cost, prisoners, mutualism, snowdrift) and single-run variants (hamilton_1run, hamilton_cost_1run, prisoners_1run, snowdrift_1run, mutualism_1run) for tracking temporal dynamics. **hamilton_cost** extends hamilton with a second swept axis, the information cost of carrying reciprocity/partner-choice machinery (see hamilton_cost.md).
 
 ## Documentation conventions
 
