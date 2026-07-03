@@ -79,6 +79,22 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       decouples behavior from mechanism, and Cost lowers the c-collapse threshold (~1.5 c per
       Cost, not iso-budget). P/M split two ways; snowdrift buffers Cost; gs=4 double-penalizes P.
 
+## Paper restructure (2026-07)
+
+12. [x] Reorganised the repo into two layers for the eventual IMRaD manuscript.
+    - paper/ — manuscript scaffold (outline, introduction, methods, results,
+      discussion); narrative, cites journal/ for all numbers. results.md is
+      organised around the three outcome variables.
+    - journal/ — moved all analysis docs (study indexes, mechanism write-ups,
+      synthesis.md) plus new.md -> parameterization.md; added framework.md fixing
+      the independent variables (dilemma x costs x ecology x mechanism, population
+      structure) and the three outcome variables (cooperation level; between-pop
+      asymmetry = cooperation + exploitation/fitness; genotype composition / route).
+    - Temporal dynamics dropped as a standalone outcome (regime is absorbing-state,
+      invariant to population count, and under-instrumented for oscillation).
+    - README, copilot-instructions, findings.md updated to the journal/ paths;
+      no broken relative links; verifier 121/121.
+
 ## Decisions needed from maintainer
 
 - (a) Keep or drop mutualism pop_3 (item 6).

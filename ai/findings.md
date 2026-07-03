@@ -1,7 +1,7 @@
 # Key Findings — New Parameterization
 
 Quick reference for future AI sessions. All data from gs=128, shuffle conditions unless noted.
-Source analysis: ai/analyze_new_data.py. Full write-ups: hamilton_partner_choice.md, hamilton_reciprocity.md, hamilton_combined.md, mutualism_partner_choice.md, mutualism_reciprocity.md, mutualism_combined.md. Cross-study synthesis tying prisoners payoff axes to hamilton/mutualism thresholds: synthesis.md.
+Source analysis: ai/analyze_new_data.py. Analysis docs live in journal/ (full write-ups: journal/hamilton_partner_choice.md, journal/hamilton_reciprocity.md, journal/hamilton_combined.md, journal/mutualism_partner_choice.md, journal/mutualism_reciprocity.md, journal/mutualism_combined.md; cross-study synthesis journal/synthesis.md; conceptual model journal/framework.md). The paper/ scaffold (IMRaD) cites the journal for numbers.
 
 ## Hamilton — Critical Thresholds (PD, shuffle, pop_1 unless noted)
 
