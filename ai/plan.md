@@ -95,6 +95,19 @@ Status legend: [ ] todo, [~] in progress, [x] done.
     - README, copilot-instructions, findings.md updated to the journal/ paths;
       no broken relative links; verifier 121/121.
 
+## Pending — mutualism_cost simulations (submitted 2026-07)
+
+13. [~] mutualism_cost_1run + mutualism_cost (information cost under asymmetry).
+    - Study defined in ~/code/cesga (c0 = 0.10 fixed; Cost × c1 triangle, 120 cells
+      per leaf, pop_2 only). User started runs 2026-07.
+    - Waiting for: equilibrium .csv/.con and temporal 1-run data.
+    - Why: hamilton_cost answers price vs demand only on c0 = c1; mutualism_cost tests
+      whether taxing enforcement changes the cooperator/exploiter split, cooperation
+      gap, fitness gap, and behaviour–machinery decoupling when c0 < c1.
+    - On arrival: graphgen, ai/analyze_mutualism_cost.py, verify_claims checks,
+      journal/mutualism_cost.md results section, synthesis + paper updates.
+    - Spec: journal/mutualism_cost.md; roadmap section in paper/roadmap.md.
+
 ## Decisions needed from maintainer
 
 - (a) Keep or drop mutualism pop_3 (item 6).

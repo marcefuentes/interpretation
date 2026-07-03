@@ -12,6 +12,7 @@ Section files:
 - results.md
 - discussion.md
 - figures.md — figure manifest (provenance + graphgen commands; no image binaries in-repo)
+- roadmap.md — plan from scaffold to finished manuscript (framing, phases, open items)
 
 ## One-paragraph thesis
 

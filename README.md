@@ -41,6 +41,7 @@ quantitative work kept separate as a running journal.
 | journal/hamilton_reciprocity.md | M, IM, IJM; shuffle effects; IJM groupsize reversal |
 | journal/hamilton_combined.md | MP, MPQ, IMP, IJMPQ; hierarchy; IJMPQ symmetry |
 | journal/hamilton_cost.md | Cost x c triangular sweep; information cost of the machinery |
+| journal/mutualism_cost.md | Pending: Cost x c1 at fixed c0; price vs demand under asymmetry |
 | journal/mutualism.md | Index + model overview for the primary two-population study |
 | journal/mutualism_partner_choice.md | P: chooser bottleneck, exploitation, groupsize |
 | journal/mutualism_reciprocity.md | M (noshuffle + gs=4); IM, IJM (shuffle) |
@@ -63,6 +64,8 @@ quantitative work kept separate as a running journal.
 - **prisoners** and **snowdrift** are auxiliary calibration studies used to interpret
   mechanisms and signatures seen in mutualism and hamilton.
 - **hamilton_cost** extends hamilton with the information-cost axis.
+- **mutualism_cost** (pending) extends mutualism with the same Cost axis at fixed
+  c0 = 0.10, sweeping c1 — see journal/mutualism_cost.md.
 
 Each study has a multi-run average (30 runs) and a single-run variant (`*_1run`) for
 temporal inspection.

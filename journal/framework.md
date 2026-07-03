@@ -24,7 +24,8 @@ combination of them, and every study is a sweep over some subset.
 - **Information cost Cost.** The per-round metabolic/cognitive overhead of carrying
   reciprocity or partner-choice machinery, charged once for a partner-choice family
   (P/Q loci) and once for a reciprocity family (M/I/J loci), independent of the game
-  payoffs. This is the *price* of enforcement. Swept only in hamilton_cost.
+  payoffs. This is the *price* of enforcement. Swept in hamilton_cost (symmetric
+  c0 = c1) and, pending, mutualism_cost (fixed c0, swept c1).
 - **Ecological context.** Groupsize (4 vs 128 individuals per group), partner
   shuffling (stable pairings vs within-group re-draw each round), and population
   structure (see below).
@@ -105,7 +106,8 @@ the behaviour. This captures findings invisible to level and asymmetry alone:
 | ----- | ----------------------------- | --------------- |
 | mutualism | pop_2, 2D c0 x c1 triangle, dilemmas 1/2, both groupsizes, shuffle/noshuffle, all mechanisms | Primary: two-population cooperation and asymmetry |
 | hamilton | pop_1/2/3, diagonal c, dilemmas 0/1/2, both groupsizes, shuffle/noshuffle, all mechanisms | The equal-cost special case; single-population baseline |
-| hamilton_cost | adds the Cost axis (Cost x c triangle) to hamilton | Price vs demand for enforcement |
+| hamilton_cost | adds the Cost axis (Cost x c triangle) to hamilton | Price vs demand for enforcement (symmetric) |
+| mutualism_cost | pop_2, fixed c0 = 0.10, Cost x c1 triangle (pending) | Price vs demand under exploitation asymmetry |
 | prisoners | (R, P) payoff-plane sweep, PD | Attribute c-collapses to temptation / risk / R minus P |
 | snowdrift | (R, S) payoff-plane sweep, snowdrift | Confirm the low-risk (high S) attribution from the other side |
 | *_1run | single-run variants of the above | Temporal dynamics (limited resolution) |

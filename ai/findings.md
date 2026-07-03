@@ -24,6 +24,7 @@ creates drift. If a result belongs in the analysis, put it in the relevant
 | Cross-study payoff-axis attribution; info-cost axis | synthesis.md |
 | Hamilton P / M+indirect / combined | hamilton_partner_choice.md, hamilton_reciprocity.md, hamilton_combined.md |
 | Information cost of the machinery (Cost x c) | hamilton_cost.md |
+| Information cost under asymmetry (pending) | mutualism_cost.md |
 | Mutualism P / M+indirect / combined | mutualism_partner_choice.md, mutualism_reciprocity.md, mutualism_combined.md |
 | Prisoners payoff-plane calibration | prisoners_calibration.md, prisoners_partner_choice.md, prisoners_reciprocity.md |
 | Snowdrift payoff-plane calibration | snowdrift_calibration.md, snowdrift_partner_choice.md, snowdrift_reciprocity.md |
