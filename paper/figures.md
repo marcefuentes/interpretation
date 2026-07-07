@@ -61,6 +61,18 @@ Status: provisional — adjust before locking the manuscript figure set.
 6. Fig 6 — m5
    - python -m graphgen.main --study interpretation --figure m5 --groupsize 128 --output ~/figures
 
+### Available alternative: information-cost line charts (not yet a manuscript figure)
+
+The Cost axis backing Fig 4 / Fig 5 also exists as a 1D line-chart reslice, should a
+line presentation read better than the m3/m4 heatmaps. The diagonal_infocost study
+(and its single-run companion diagonal_infocost_1run) fixes the cooperation cost at
+c = c0 = c1 = 0.10 and sweeps the information cost Cost from 0 to 0.30, rendered like
+the diagonal cooperation-vs-c line figures but with an "Information cost" x-axis. Data
+and image exports are in ~/results/diagonal_infocost{,_1run}/; the manifest is
+../graph/graphgen/studies/diagonal_infocost/. It carries no new numbers beyond
+journal/symmetric_cost.md — it is a presentation option only, and is not yet wired
+into the interpretation figure namespace. See ai/plan.md item 15.
+
 ## Supplement figures (candidates)
 
 Robustness and control panels from the primary studies only. No prisoners or

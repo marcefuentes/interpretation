@@ -181,6 +181,29 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       the Cost asymmetry is a near-null; not worth the runs).
     - **Open decisions:** Study B c-gap and Cost sub-grid.
 
+## Newly landed data — diagonal_infocost (2026-07)
+
+15. [ ] diagonal_infocost + diagonal_infocost_1run (line-chart reslice, not yet integrated).
+    - Maintainer extracted these from symmetric_cost / symmetric_cost_1run: a fixed
+      cooperation-cost slice at c = c0 = c1 = 0.10, sweeping the information cost Cost
+      from 0 to 0.30 in 0.02 steps (16 cells). Same diagonal structure otherwise —
+      pops 1/2/3, shuffle + noshuffle, gs 128 + 4, dilemmas, the diagonal mechanism set.
+      Data and csv_*_for_image.con exports are in ~/results/diagonal_infocost{,_1run}/.
+    - Rendered as line charts (x-axis "Information cost") via
+      ../graph/graphgen/studies/diagonal_infocost/manifest.py, mirroring the diagonal
+      line-chart builder. diagonal_infocost_1run is the single-run temporal companion.
+    - Purpose: a presentation variant, not new science. The information-cost findings
+      are already analysed on the full Cost x c grid in journal/symmetric_cost.md
+      (soft erosion of the machinery, the C1P0/C1M0 free-cooperator niche, the P-vs-M
+      split). This gives a clean cooperation-vs-Cost line view at one load-bearing c,
+      visually parallel to the existing diagonal cooperation-vs-c line figures.
+    - Status: registered here as candidate figure material only. No journal doc,
+      analysis script, or verifier checks yet. Consider these as an option if the
+      manuscript wants a line-chart companion for the price-of-enforcement axis
+      (see paper/figures.md, Fig 4/5 backing symmetric_cost.md). Decide before
+      building whether the line reslice adds enough over the m3/m4 heatmaps to earn a
+      figure slot.
+
 ## Decisions needed from maintainer
 
 - (a) Keep or drop mutualism pop_3 (item 6).
