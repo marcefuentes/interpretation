@@ -7,6 +7,7 @@ is also our record for answering referee questions later.
 
 Section files:
 
+- summary.md — draft publication summary (structured abstract)
 - introduction.md
 - methods.md
 - results.md
