@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Analyze new hamilton and mutualism simulation data.
+Analyze new diagonal and mutualism simulation data.
 New parameterization: K=0.5, b=0.4 fixed, c varies from 0 to b.
 
 Dilemma folders: 0 (no dilemma), 1 (PD), 2 (snowdrift)
@@ -69,11 +69,11 @@ def payoffs(dilemma, c, k=K, b=B):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# HAMILTON ANALYSIS
+# DIAGONAL ANALYSIS
 # ══════════════════════════════════════════════════════════════════════════════
 
 print("=" * 80)
-print("HAMILTON ANALYSIS  (K=0.5, b=0.4, c in [0,0.4])")
+print("DIAGONAL ANALYSIS  (K=0.5, b=0.4, c in [0,0.4])")
 print("=" * 80)
 
 # ── 1. Payoff table ──────────────────────────────────────────────────────────
@@ -101,9 +101,9 @@ POPS_HAM = ["pop_1", "pop_2", "pop_3"]
 DILEMMAS = [0, 1, 2]
 
 
-def hamilton_path(shuffle, gs, mech, dilemma, pop, fset):
+def diagonal_path(shuffle, gs, mech, dilemma, pop, fset):
     cond = f"{shuffle}/{gs}"
-    return os.path.join(BASE, "hamilton", cond, mech, str(dilemma), pop,
+    return os.path.join(BASE, "diagonal", cond, mech, str(dilemma), pop,
                         f"csv_{fset}_for_image.con")
 
 
@@ -113,7 +113,7 @@ for mech in MECHS_FULL:
     for dilemma in [1]:  # PD as primary
         for pop in ["pop_1", "pop_2"]:
             for fset in [0]:
-                path = hamilton_path("shuffle", "128", mech, dilemma, pop, fset)
+                path = diagonal_path("shuffle", "128", mech, dilemma, pop, fset)
                 rows = load_con(path)
                 if rows is None:
                     continue
@@ -128,15 +128,15 @@ for mech in MECHS_FULL:
                 print(f"  {mech:6s} d{dilemma} {pop} fset{fset}: {' | '.join(samples)}")
         print()
 
-# ── 3. Hamilton pop_2 symmetry-breaking (fset_0 vs fset_1) ──────────────────
+# ── 3. Diagonal pop_2 symmetry-breaking (fset_0 vs fset_1) ──────────────────
 
 print("\n--- POP_2 SYMMETRY BREAKING: fset_0 (higher qBSeen) vs fset_1 ---")
 print("(shuffle_128, PD)")
 print(f"{'c':>5}  {'qB_0':>6}  {'qB_1':>6}  {'DeltaqB':>8}  {'w_0':>6}  {'w_1':>6}  {'Deltaw':>8}")
 for mech in ["_", "M", "P", "MP", "IJMPQ"]:
     dilemma = 1
-    path0 = hamilton_path("shuffle", "128", mech, dilemma, "pop_2", 0)
-    path1 = hamilton_path("shuffle", "128", mech, dilemma, "pop_2", 1)
+    path0 = diagonal_path("shuffle", "128", mech, dilemma, "pop_2", 0)
+    path1 = diagonal_path("shuffle", "128", mech, dilemma, "pop_2", 1)
     rows0 = load_con(path0)
     rows1 = load_con(path1)
     if rows0 is None or rows1 is None:
@@ -166,7 +166,7 @@ for mech in ["_", "M", "P"]:
     paths = {}
     rows_d = {}
     for d in [0, 1, 2]:
-        p = hamilton_path("shuffle", "128", mech, d, "pop_2", 0)
+        p = diagonal_path("shuffle", "128", mech, d, "pop_2", 0)
         rows = load_con(p)
         if rows:
             rows_d[d] = {round(float(r["c0"]), 4): r for r in rows}
@@ -184,7 +184,7 @@ print("\n--- GROUPSIZE COMPARISON (shuffle, PD, pop_2 fset_0) ---")
 print("Mech | c=0.0 / c=0.1 / c=0.2 / c=0.3 / c=0.4  [128 | 4]")
 for mech in ["_", "M", "P", "IJMPQ"]:
     for gs in ["128", "4"]:
-        path = hamilton_path("shuffle", gs, mech, 1, "pop_2", 0)
+        path = diagonal_path("shuffle", gs, mech, 1, "pop_2", 0)
         rows = load_con(path)
         if rows is None:
             continue
@@ -201,7 +201,7 @@ for mech in ["_", "M", "P", "IJMPQ"]:
 print("\n--- SHUFFLE VS NOSHUFFLE (gs=128, PD, pop_2 fset_0) ---")
 for mech in ["_", "M", "P", "IJMPQ"]:
     for shuffle in ["shuffle", "noshuffle"]:
-        path = hamilton_path(shuffle, "128", mech, 1, "pop_2", 0)
+        path = diagonal_path(shuffle, "128", mech, 1, "pop_2", 0)
         rows = load_con(path)
         if rows is None:
             continue
@@ -216,7 +216,7 @@ for mech in ["_", "M", "P", "IJMPQ"]:
 # ── 7. C1P1 / C1P0 / P1 genotype analysis (pop_1, P mechanism) ──────────────
 
 print("\n--- GENOTYPE ANALYSIS (shuffle_128, PD, P mech, pop_1, fset_0) ---")
-path = hamilton_path("shuffle", "128", "P", 1, "pop_1", 0)
+path = diagonal_path("shuffle", "128", "P", 1, "pop_1", 0)
 rows = load_con(path)
 if rows:
     rows = sorted_rows(rows)
@@ -232,7 +232,7 @@ if rows:
         print(f"  {c_val:>5.2f}  {qb:>7.3f}  {_c1p1:>7.3f}  {_c1p0:>7.3f}  {_c0p1:>7.3f}  {_p1:>7.3f}  {ratio:>9.1f}")
 
 print("\n--- GENOTYPE ANALYSIS (shuffle_128, PD, P mech, pop_2, fset_0 = higher qB) ---")
-path = hamilton_path("shuffle", "128", "P", 1, "pop_2", 0)
+path = diagonal_path("shuffle", "128", "P", 1, "pop_2", 0)
 rows = load_con(path)
 if rows:
     rows = sorted_rows(rows)
@@ -252,7 +252,7 @@ if rows:
 print("\n--- POP_3 ANALYSIS (shuffle_128, PD, P mech, pop_3) ---")
 print("fset_0 = evolving, fset_1 = fixed (25% each C0P0/C0P1/C1P0/C1P1)")
 for fset, label in [(0, "evolving"), (1, "fixed")]:
-    path = hamilton_path("shuffle", "128", "P", 1, "pop_3", fset)
+    path = diagonal_path("shuffle", "128", "P", 1, "pop_3", fset)
     rows = load_con(path)
     if rows is None:
         print(f"  fset_{fset}: not found")
@@ -278,7 +278,7 @@ for mech in MECHS_FULL:
     # PD only for mechs that only have PD; else also no-dilemma
     dilemmas_to_check = [0, 1, 2] if mech in ["_", "M"] else [1, 2]
     for d in dilemmas_to_check:
-        path = hamilton_path("shuffle", "128", mech, d, "pop_2", 0)
+        path = diagonal_path("shuffle", "128", mech, d, "pop_2", 0)
         rows = load_con(path)
         if rows is None:
             continue
@@ -286,19 +286,19 @@ for mech in MECHS_FULL:
         vals = [f"{rmap.get(round(c, 4), float('nan')):.3f}" for c in sample_cs]
         print(f"  {mech:4s} d{d}  {'  '.join(vals)}")
 
-# ── 10. hamilton_1run temporal dynamics ──────────────────────────────────────
+# ── 10. diagonal_1run temporal dynamics ──────────────────────────────────────
 
-print("\n--- HAMILTON_1RUN: TEMPORAL DYNAMICS (shuffle_128, PD, P, pop_2) ---")
+print("\n--- DIAGONAL_1RUN: TEMPORAL DYNAMICS (shuffle_128, PD, P, pop_2) ---")
 
 
-def hamilton_1run_path(shuffle, gs, mech, dilemma, pop, fset):
+def diagonal_1run_path(shuffle, gs, mech, dilemma, pop, fset):
     cond = f"{shuffle}/{gs}"
-    return os.path.join(BASE, "hamilton_1run", cond, mech, str(dilemma), pop,
+    return os.path.join(BASE, "diagonal_1run", cond, mech, str(dilemma), pop,
                         f"csv_{fset}_for_movie.con")
 
 
 for fset in [0, 1]:
-    path = hamilton_1run_path("shuffle", "128", "P", 1, "pop_2", fset)
+    path = diagonal_1run_path("shuffle", "128", "P", 1, "pop_2", fset)
     rows = load_con(path)
     if rows is None:
         print(f"  fset_{fset}: not found at {path}")
@@ -409,7 +409,7 @@ for mech in ["_", "M", "P", "IJMPQ"]:
 # ── 14. Mechanism comparison in mutualism (along diagonal slice) ──────────────
 
 print("\n--- MECHANISM COMPARISON: diagonal slice c0=c1 (noshuffle_128, PD, fset_0) ---")
-# Hamilton is the diagonal; for mutualism, the diagonal is where c0=c1
+# The diagonal study is c0=c1; for mutualism, the diagonal is where c0=c1
 # but in mutualism the triangular grid has c0 < c1 always
 # So let's instead compare mechanisms at fixed c0=0.1, c1=0.3 (asymmetric) and c0=0.1, c1=0.2 (mild)
 print("  Sample cells: (c0=0.1, c1=0.3) and (c0=0.1, c1=0.2)")

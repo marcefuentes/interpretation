@@ -333,7 +333,7 @@ cost cells. Near the diagonal, the threshold drops to c0 ≈ 0.08:
 | 0.20 | 0.22 | 0.026 | 0.636  |
 | 0.30 | 0.32 | 0.016 | 0.500  |
 
-This mirrors the **hamilton_partner_choice.md** gs=4 finding: the chooser bottleneck is
+This mirrors the **diagonal_partner_choice.md** gs=4 finding: the chooser bottleneck is
 catastrophically worsened by small groups, and partner choice becomes
 effectively non-functional throughout most of the parameter space.
 

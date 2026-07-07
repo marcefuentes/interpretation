@@ -1,24 +1,24 @@
-# Hamilton — Reciprocity
+# Diagonal — Reciprocity
 
-Pure reciprocity analysis for the equal-cost Hamilton study (mechanisms **M**,
+Pure reciprocity analysis for the equal-cost Diagonal study (mechanisms **M**,
 **IM**, **IJM** — no partner-choice locus). Partner choice (P) is in
-**hamilton_partner_choice.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are
-in **hamilton_combined.md**. For asymmetric costs (c0 ≠ c1), see
+**diagonal_partner_choice.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are
+in **diagonal_combined.md**. For asymmetric costs (c0 ≠ c1), see
 **mutualism_reciprocity.md**.
 
 ## Overview
 
-Hamilton is the equal-cost diagonal ($c_0 = c_1 = c$). See **[hamilton.md](hamilton.md)** for the central game parameters. Studies
+This study is the equal-cost diagonal ($c_0 = c_1 = c$). See **[diagonal.md](diagonal.md)** for the central game parameters. Studies
 include pop_1, pop_2, and pop_3 across dilemma types 0, 1 (PD), and 2
 (snowdrift), groupsize 128 and 4, shuffle and noshuffle.
 
 Mechanisms \_ and M are present for all three dilemma folders. IM and IJM are
 present for dilemmas 1 and 2 only. All .con summary files are present under
-~/results/hamilton/ for both groupsizes.
+~/results/diagonal/ for both groupsizes.
 
 ## Game parameters and payoffs
 
-See **[hamilton.md](hamilton.md#game-parameters)** for the common game parameters and payoff structure.
+See **[diagonal.md](diagonal.md#game-parameters)** for the common game parameters and payoff structure.
 
 ## Cooperation profiles
 
@@ -45,7 +45,7 @@ Key patterns:
 | M      | 0.888  | 0.963  | 0.960  | 0.949  | 0.916  | 0.182  |
 
 Snowdrift provides a cooperation floor for M. Combined mechanisms (IJMPQ)
-extend cooperation further — see **hamilton_combined.md**.
+extend cooperation further — see **diagonal_combined.md**.
 
 ### Folder 0, control baseline
 
@@ -142,7 +142,7 @@ PD hierarchy at high c (c = 0.30–0.40), pure reciprocity only:
 4. M (noshuffle): 0.754 at c = 0.30, 0.084 at c = 0.40
 
 Combined mechanisms (IMP, IJMPQ) and partner choice (P) extend cooperation
-much further — see **hamilton_combined.md** and **hamilton_partner_choice.md**.
+much further — see **diagonal_combined.md** and **diagonal_partner_choice.md**.
 
 ## Groupsize 4
 
@@ -219,7 +219,7 @@ Stable pairings provide sufficient history regardless of group size.
 3. M shuffle: 0.040 / 0.026
 
 Combined mechanisms rank above pure reciprocity at gs=4 — see
-**hamilton_combined.md**.
+**diagonal_combined.md**.
 
 ## Cooperation Boost vs. Asymmetry Effects
 
@@ -241,4 +241,4 @@ Comparing direct reciprocity (M) and indirect reciprocity (IM, IJM) to the contr
 | Snowdrift M              | 0.916 at c = 0.32, 0.182 at c = 0.40                                       |
 | gs=4 IJM reversal        | Weakest at gs=128 → near top at gs=4                                        |
 | gs=4 M noshuffle         | Invariant to groupsize                                                      |
-| vs mutualism             | Hamilton 1D c sweep; mutualism 2D asymmetric triangle with deterministic role split |
+| vs mutualism             | Diagonal 1D c sweep; mutualism 2D asymmetric triangle with deterministic role split |

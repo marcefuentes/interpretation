@@ -33,9 +33,9 @@ risk P − S while leaving R − P to fall) drives the collapse:
 The mechanism is mechanistic: TFT's punishment outcome is mutual defection, so
 the value of retaliating is bounded by how bad mutual defection is. When P is
 high (defection comfortable), TFT cannot enforce cooperation and M decays
-toward the control. This is the payoff gap hamilton cannot expose on its own —
-hamilton holds P = K = 0.50 fixed and only ever moves R. It reframes the
-hamilton/mutualism finding that M collapses near c = 0.40 as primarily a
+toward the control. This is the payoff gap diagonal cannot expose on its own —
+diagonal holds P = K = 0.50 fixed and only ever moves R. It reframes the
+diagonal/mutualism finding that M collapses near c = 0.40 as primarily a
 rising-risk effect rather than a vanishing cooperation gap.
 
 ## Shuffle destroys direct reciprocity
@@ -43,7 +43,7 @@ rising-risk effect rather than a vanishing cooperation gap.
 Mean qBSeen (pop_1, gs=128): M drops from 0.730 (noshuffle) to 0.017 (shuffle)
 — indistinguishable from the control (\_ = 0.017). Without stable pairings TFT
 cannot accumulate the partner history it needs. This matches the largest
-shuffle penalty seen in hamilton and mutualism.
+shuffle penalty seen in diagonal and mutualism.
 
 ## Indirect reciprocity recovers what shuffle takes (IM, IJM)
 
@@ -63,7 +63,7 @@ signatures differ informatively: IM (recent reputation only) behaves like
 partner choice, tracking R − P (−b/a = 0.90); adding the lifetime signal J
 turns IJM reward-dominated (−b/a = 0.55), the same shift toward R-limitation
 seen when reputation is layered onto the combined mechanisms in
-**prisoners_calibration.md**. This mirrors the hamilton and mutualism result
+**prisoners_calibration.md**. This mirrors the diagonal and mutualism result
 that lifetime indirect reciprocity (J) is the noise-resistant component that
 survives partner turnover.
 
@@ -72,7 +72,7 @@ pop_1) IM rises to 0.521 and IJM to 0.706, roughly double their gs=128 levels.
 A closed four-individual pool makes reputation signals far more relevant —
 every signal concerns someone the focal individual also interacts with, and
 defector signals are less prevalent — so the cascade propagates reliably. This
-is the same gs=4 indirect-reciprocity boost documented for hamilton (the IJM
+is the same gs=4 indirect-reciprocity boost documented for diagonal (the IJM
 groupsize reversal), now reproduced in the raw payoff plane.
 
 ## Groupsize 4: direct reciprocity is invariant
@@ -98,7 +98,7 @@ they fall back on P.
 Under shuffle, the small group leaves a faint residual: M shuffle mean qBSeen
 is 0.116 at gs=4 vs 0.017 at gs=128 — a closed four-individual pool lets a
 little reciprocal signal persist, but it is still far below the noshuffle
-level. The same small residual appears in hamilton at gs=4.
+level. The same small residual appears in diagonal at gs=4.
 
 ## Caveats
 
@@ -113,5 +113,5 @@ con exports and temporal (movie) exports exist for both gs = 128 and gs = 4. PD 
 | M shuffle              | 0.730 → 0.017 (reverts to control); gs=4 residual 0.116           |
 | M groupsize            | invariant: 0.730 at gs=128 and gs=4 (stable pairings)            |
 | IM / IJM (shuffle)     | recover to 0.381 / 0.360; IM tracks R − P, IJM reward-limited     |
-| IM / IJM at gs=4       | boosted to 0.521 / 0.706 (closed-pool reputation; hamilton's IJM reversal) |
-| vs hamilton/mutualism  | recasts the c-collapse of M as a rising-risk effect              |
+| IM / IJM at gs=4       | boosted to 0.521 / 0.706 (closed-pool reputation; diagonal's IJM reversal) |
+| vs diagonal/mutualism  | recasts the c-collapse of M as a rising-risk effect              |

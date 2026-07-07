@@ -4,13 +4,13 @@ Cross-mechanism calibration analysis for the snowdrift study. Per-mechanism deta
 
 ## Why this study exists
 
-Hamilton and mutualism derive payoffs from a single cost parameter c. For dilemma 2 (Snowdrift), this means T = K + b, R = K + b − c/2, P = K, and S = K + b − c. That welds three distinct quantities onto one axis:
+Diagonal and mutualism derive payoffs from a single cost parameter c. For dilemma 2 (Snowdrift), this means T = K + b, R = K + b − c/2, P = K, and S = K + b − c. That welds three distinct quantities onto one axis:
 
 - temptation T − R = c/2
 - risk (sucker gap) R − S = c/2
 - cooperation advantage R − P = b − c/2
 
-Because all three move together with c, hamilton can show that a mechanism collapses as c rises but cannot say which payoff gap drives the collapse. The snowdrift calibration study removes that confound: it fixes T = 0.90 and P = 0.10 and sweeps R and S independently over an 18 × 18 grid (172 cells satisfying T > R > S > P). Each cell is a mean over 30 runs. Dilemma folder 2 (Snowdrift) is the sweep of interest; payoffs are symmetric across populations.
+Because all three move together with c, diagonal can show that a mechanism collapses as c rises but cannot say which payoff gap drives the collapse. The snowdrift calibration study removes that confound: it fixes T = 0.90 and P = 0.10 and sweeps R and S independently over an 18 × 18 grid (172 cells satisfying T > R > S > P). Each cell is a mean over 30 runs. Dilemma folder 2 (Snowdrift) is the sweep of interest; payoffs are symmetric across populations.
 
 ## Payoff geometry
 
@@ -77,20 +77,20 @@ Pop_1, Snowdrift, noshuffle, gs=4 vs gs=128:
 
 Direct reciprocity M is perfectly invariant to groupsize (mean qB is 0.599 at both gs = 128 and gs = 4) because stable pairings supply the needed history. Partner choice P drops from 0.947 to 0.717 but does not collapse, and its payoff signature remains strongly reward-led (−b/a = 0.01). Combined mechanisms (MP, MPQ, IMP, IJMPQ) remain highly cooperative at gs = 4, falling back on the groupsize-invariant M component and reputation signals.
 
-## Cross-checks with hamilton and mutualism
+## Cross-checks with diagonal and mutualism
 
-- **Cooperation floor.** In hamilton and mutualism dilemma 2, cooperation remains high across all mechanisms at moderate costs. The snowdrift sweep explains why: the baseline payoff S > P provides an evolutionary floor that prevents defection from dominating, ensuring that partner choice and direct reciprocity operate in a cooperator-rich environment.
-- **Direct reciprocity.** Direct reciprocity noshuffle M in hamilton snowdrift maintains high cooperation because TFT is insensitive to the sucker payoff S. The collapse of M in hamilton PD is a rising-risk (P-defection payoff) effect, which is absent in Snowdrift since P is fixed at the low value of 0.10.
+- **Cooperation floor.** In diagonal and mutualism dilemma 2, cooperation remains high across all mechanisms at moderate costs. The snowdrift sweep explains why: the baseline payoff S > P provides an evolutionary floor that prevents defection from dominating, ensuring that partner choice and direct reciprocity operate in a cooperator-rich environment.
+- **Direct reciprocity.** Direct reciprocity noshuffle M in diagonal snowdrift maintains high cooperation because TFT is insensitive to the sucker payoff S. The collapse of M in diagonal PD is a rising-risk (P-defection payoff) effect, which is absent in Snowdrift since P is fixed at the low value of 0.10.
 - **Symmetry breaking.** Snowdrift pop_2 breaks symmetry stochastically into cooperator and defector populations under partner choice P. Because the defector population earns the temptation payoff T while the cooperator population is stuck earning the sucker payoff S, the defector earns significantly more (w_1 > w_0). This is the paradox-of-success signature, now visible in its most extreme form in the raw Snowdrift payoff plane.
 
 ## Caveats
 
-- Complementary, not a superset: snowdrift fixes P = 0.10 whereas hamilton's P = 0.50 is fixed at baseline. The sweep variables are R and S, whereas in Prisoners they were R and P.
+- Complementary, not a superset: snowdrift fixes P = 0.10 whereas diagonal's P = 0.50 is fixed at baseline. The sweep variables are R and S, whereas in Prisoners they were R and P.
 - gs = 128 and gs = 4 con exports exist; gs = 128 movie exports (snowdrift_1run) exist for temporal dynamics.
 
 ## Summary
 
-| Mechanism family | Limiting payoff axis | −b/a (pop_1) | Hamilton/mutualism reading |
+| Mechanism family | Limiting payoff axis | −b/a (pop_1) | Diagonal/mutualism reading |
 | ---------------- | -------------------- | ------------ | -------------------------- |
 | M | reward R (insensitive to S) | −0.15 | TFT pays S only once; risk is set by P, not S |
 | P | reward R (saturated) | 0.19 | high cooperation floor prevents the chooser bottleneck from collapsing |

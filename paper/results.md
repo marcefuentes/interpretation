@@ -7,7 +7,7 @@ derives and regression-checks them rather than restated in full.*
 ## 1. The level of cooperation and what limits it
 
 Each mechanism sustains cooperation up to a cost threshold and then collapses. The
-single cost axis of hamilton/mutualism cannot say *which* payoff gap drives a
+single cost axis of diagonal/mutualism cannot say *which* payoff gap drives a
 collapse, because raising c simultaneously raises temptation (T − R), raises risk
 (P − S), and shrinks the cooperation advantage (R − P). The prisoners and snowdrift
 calibration sweeps decouple these, and the attribution is clean and stable
@@ -18,7 +18,7 @@ calibration sweeps decouple these, and the attribution is clean and stable
 - **Direct reciprocity (M) is risk-limited.** Its collapse as c rises is mostly the
   growing mutual-defection risk, not the shrinking R − P — confirmed from the other
   side by snowdrift, where the low sucker gap lets M sustain cooperation it cannot in
-  the PD ([hamilton_reciprocity.md](../journal/hamilton_reciprocity.md)).
+  the PD ([diagonal_reciprocity.md](../journal/diagonal_reciprocity.md)).
 - **Partner choice (P) is limited by the cooperation advantage R − P.** It tracks
   R − P alone across the orthogonal sweep, which is why it fails at the chooser
   bottleneck as R − P → 0.
@@ -27,7 +27,7 @@ calibration sweeps decouple these, and the attribution is clean and stable
   the highest costs.
 
 **Information cost is a softer, orthogonal pressure**
-([hamilton_cost.md](../journal/hamilton_cost.md)). Taxing the machinery alone (c = 0)
+([diagonal_cost.md](../journal/diagonal_cost.md)). Taxing the machinery alone (c = 0)
 erodes cooperation only gently, because with no temptation a population can shed the
 apparatus and keep cooperating for free. But because information cost thins the very
 apparatus that resists temptation, it pulls the c-collapse threshold downward where
@@ -44,7 +44,7 @@ With two populations, cooperation frequently breaks into a cooperator/exploiter 
 split, and the cooperating side is typically the one that earns less — the paradox of
 success. The two faces of the asymmetry (who cooperates, who profits) can diverge.
 
-- **Symmetric payoffs split stochastically.** In hamilton pop_2 (and the symmetric
+- **Symmetric payoffs split stochastically.** In diagonal pop_2 (and the symmetric
   prisoners pop_2) two identical populations diverge by chance, the cooperating side
   exploited; carrying the chooser allele correlates with fitness at roughly minus one
   ([prisoners_partner_choice.md](../journal/prisoners_partner_choice.md)).
@@ -71,7 +71,7 @@ treated as a separate outcome.
 ## 3. Genotype composition — the route to cooperation
 
 The same cooperation level can be produced by different genotypes, and this is where
-some of the strongest results sit ([hamilton_cost.md](../journal/hamilton_cost.md),
+some of the strongest results sit ([diagonal_cost.md](../journal/diagonal_cost.md),
 [synthesis.md](../journal/synthesis.md)).
 
 - **Behaviour and machinery decouple under information cost.** As Cost rises at c = 0,
@@ -90,5 +90,5 @@ some of the strongest results sit ([hamilton_cost.md](../journal/hamilton_cost.m
 - **Free-riding and silent carriers.** Second-order free-riders (C1M0) ride on the
   punishment supplied by reciprocators, and silent carriers (C0P1) accumulate by
   mutation without expressing choice
-  ([hamilton_reciprocity.md](../journal/hamilton_reciprocity.md),
+  ([diagonal_reciprocity.md](../journal/diagonal_reciprocity.md),
   [mutualism_reciprocity.md](../journal/mutualism_reciprocity.md)).

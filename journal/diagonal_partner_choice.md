@@ -1,16 +1,16 @@
-# Hamilton — Partner Choice
+# Diagonal — Partner Choice
 
-Partner-choice analysis for the equal-cost Hamilton study (mechanism **P**
+Partner-choice analysis for the equal-cost Diagonal study (mechanism **P**
 only — no reciprocity locus). Pure reciprocity (M, IM, IJM) is in
-**hamilton_reciprocity.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are in
-**hamilton_combined.md**. For asymmetric costs (c0 ≠ c1), see
+**diagonal_reciprocity.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are in
+**diagonal_combined.md**. For asymmetric costs (c0 ≠ c1), see
 **mutualism_partner_choice.md**.
 
 ## Overview
 
-Hamilton is the equal-cost diagonal ($c_0 = c_1 = c$). See **[hamilton.md](hamilton.md)** for the central game parameters.
+This study is the equal-cost diagonal ($c_0 = c_1 = c$). See **[diagonal.md](diagonal.md)** for the central game parameters.
 
-Unlike mutualism (pop_2 only, strict upper triangle), Hamilton includes
+Unlike mutualism (pop_2 only, strict upper triangle), Diagonal includes
 pop_1 (single population), pop_2 (two coevolving populations), and pop_3
 (evolving vs fixed partner). Analysis covers dilemma types 0 (control),
 1 (PD), and 2 (snowdrift), groupsize 128 (primary) and groupsize 4
@@ -19,7 +19,7 @@ and d2; d0 is not meaningful for P.
 
 ## Game parameters and payoffs
 
-See **[hamilton.md](hamilton.md#game-parameters)** for the common game parameters and payoff structure. Partner-choice mechanisms are not tested meaningfully at dilemma 0.
+See **[diagonal.md](diagonal.md#game-parameters)** for the common game parameters and payoff structure. Partner-choice mechanisms are not tested meaningfully at dilemma 0.
 
 ## Cooperation profiles (P mechanism)
 
@@ -142,7 +142,7 @@ P mechanism, shuffle, PD:
 Sharp transition near c = 0.24–0.26. Exploitation direction reverses with c:
 evolving population exploited at c < 0.18; exploits fixed population at c > 0.20.
 
-## Temporal dynamics (hamilton_1run)
+## Temporal dynamics (diagonal_1run)
 
 Single-run data (shuffle, PD, P, pop_2) shows metastability at intermediate c:
 
@@ -170,7 +170,7 @@ P holds cooperation through c ≈ 0.08 (0.812) then collapses by c = 0.16
 ### Snowdrift at gs=4
 
 Snowdrift cooperation remains high through moderate c at gs=4, similar to
-gs=128. P stays near ceiling at moderate c; see **hamilton_combined.md**
+gs=128. P stays near ceiling at moderate c; see **diagonal_combined.md**
 for IJMPQ snowdrift profiles at gs=4.
 
 ### Shuffle vs noshuffle at gs=4 (P)
@@ -208,7 +208,7 @@ PD, shuffle, pop_1:
 The P threshold shifts from c ≈ 0.34 (gs=128) to c ≈ 0.08 (gs=4). With only
 four individuals per group, mutual C1P1 swaps are too rare to sustain
 cooperation beyond mild costs. MP and MPQ partially recover via reciprocity
-components — see **hamilton_combined.md**.
+components — see **diagonal_combined.md**.
 
 ## Summary
 
@@ -221,4 +221,4 @@ components — see **hamilton_combined.md**.
 | pop_2 exploitation    | corr(Δq, Δw) = −0.984; stochastic symmetry breaking                      |
 | pop_3 transition      | Sharp collapse at c = 0.24–0.26; exploitation crossover at c ≈ 0.18   |
 | Snowdrift (P)         | Near ceiling at moderate c; benefit at c = 0.40 (0.679 vs 0.184 control) |
-| vs mutualism          | Hamilton pop_2 symmetry is stochastic; mutualism role split is deterministic |
+| vs mutualism          | Diagonal pop_2 symmetry is stochastic; mutualism role split is deterministic |

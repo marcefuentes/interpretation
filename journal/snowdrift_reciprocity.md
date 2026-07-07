@@ -28,7 +28,7 @@ The mechanism is structural: TFT (dTFT) cooperates on the first round of a partn
 
 ## Shuffle destroys direct reciprocity
 
-Without stable pairings, TFT cannot accumulate history. Mean qBSeen (pop_1, gs=128) for M drops from 0.599 (noshuffle) to 0.497 (shuffle) — indistinguishable from the control (0.493 under control). This matches the shuffle penalty seen in hamilton and mutualism.
+Without stable pairings, TFT cannot accumulate history. Mean qBSeen (pop_1, gs=128) for M drops from 0.599 (noshuffle) to 0.497 (shuffle) — indistinguishable from the control (0.493 under control). This matches the shuffle penalty seen in diagonal and mutualism.
 
 ## Indirect reciprocity recovers what shuffle takes (IM, IJM)
 
@@ -42,7 +42,7 @@ IM and IJM were run only under shuffle — the informative regime, since direct 
 
 Both recover substantial cooperation from M's collapse. Their payoff-axis signatures show they are highly reward-led and insensitive to S (−b/a = −0.18 for IM, −0.10 for IJM). Because these are reciprocity-based mechanisms, they occasionally pay S against defectors, but their long-term payoff is dominated by R. Therefore, like direct reciprocity, they are insensitive to S.
 
-Both mechanisms are stronger in small groups: at gs=4 (shuffle, pop_1), IM rises to 0.690 and IJM to 0.756. A closed four-individual pool makes reputation signals far more relevant (reputation signals circulate in a tight pool and defector signals are less prevalent), so the cooperative cascade propagates reliably. This is the groupsize boost for indirect reciprocity documented in hamilton and prisoners.
+Both mechanisms are stronger in small groups: at gs=4 (shuffle, pop_1), IM rises to 0.690 and IJM to 0.756. A closed four-individual pool makes reputation signals far more relevant (reputation signals circulate in a tight pool and defector signals are less prevalent), so the cooperative cascade propagates reliably. This is the groupsize boost for indirect reciprocity documented in diagonal and prisoners.
 
 ## Groupsize 4: direct reciprocity is invariant
 

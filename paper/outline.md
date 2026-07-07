@@ -38,11 +38,11 @@ cooperator/exploiter split.
 | Paper section | Backed by (journal/) |
 | ------------- | -------------------- |
 | Introduction | framework.md |
-| Methods: model, payoffs, grid | parameterization.md, framework.md; hamilton.md and mutualism.md (noise floor, replicates) |
-| Results 1: level of cooperation | synthesis.md, prisoners_calibration.md, snowdrift_calibration.md, hamilton_*.md, mutualism_*.md, hamilton_cost.md, mutualism_cost.md |
+| Methods: model, payoffs, grid | parameterization.md, framework.md; diagonal.md and mutualism.md (noise floor, replicates) |
+| Results 1: level of cooperation | synthesis.md, prisoners_calibration.md, snowdrift_calibration.md, diagonal_*.md, mutualism_*.md, diagonal_cost.md, mutualism_cost.md |
 | Results 2: between-population asymmetry | mutualism_partner_choice.md, mutualism_combined.md, mutualism_cost.md, prisoners_partner_choice.md, synthesis.md |
-| Results 3: composition / route to cooperation | hamilton_cost.md, mutualism_cost.md, hamilton_reciprocity.md, mutualism_reciprocity.md, synthesis.md |
-| Discussion | synthesis.md, hamilton_cost.md, mutualism_cost.md, framework.md |
+| Results 3: composition / route to cooperation | diagonal_cost.md, mutualism_cost.md, diagonal_reciprocity.md, mutualism_reciprocity.md, synthesis.md |
+| Discussion | synthesis.md, diagonal_cost.md, mutualism_cost.md, framework.md |
 
 ## Status
 

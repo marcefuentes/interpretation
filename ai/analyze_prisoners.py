@@ -7,7 +7,7 @@ R and P are swept independently over an 18x18 grid (172 cells satisfying
 T > R > P > S). Dilemma folder 1 (PD) only; symmetric payoffs across
 populations; pops 1/2/3; shuffle/noshuffle; gs 128/4; Runs = 30.
 
-Purpose: hamilton/mutualism weld temptation (T-R), risk (P-S) and the
+Purpose: diagonal/mutualism weld temptation (T-R), risk (P-S) and the
 cooperation advantage (R-P) onto a single cost axis c. This sweep decouples
 them, so we can attribute each mechanism's behavior to a payoff axis.
 

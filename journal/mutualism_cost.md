@@ -6,14 +6,14 @@ mutualism pop_2 ecology, fixes c0 = 0.10 for the low-cost population, and sweeps
 Cost jointly with c1 over the triangle Cost + c1 <= 0.40, c1 > c0. The cell key
 is therefore (Cost, c1), with pop_0 the cheap side and pop_1 the expensive side.
 
-This is the missing asymmetric counterpart to hamilton_cost. On the diagonal
-c0 = c1, hamilton_cost asks how the price of the machinery interacts with the
+This is the missing asymmetric counterpart to diagonal_cost. On the diagonal
+c0 = c1, diagonal_cost asks how the price of the machinery interacts with the
 demand for that machinery in symmetric populations. mutualism_cost asks the same
 question when the cheap population is already the natural cooperator and the
 expensive one the natural exploiter.
 
 For the cross-study payoff-axis interpretation, see [synthesis.md](synthesis.md).
-For the symmetric Cost x c sweep, see [hamilton_cost.md](hamilton_cost.md).
+For the symmetric Cost x c sweep, see [diagonal_cost.md](diagonal_cost.md).
 
 ## Design and sanity
 
@@ -28,14 +28,14 @@ Along sampled Cost = 0 cells the new study reproduces the corresponding mutualis
 slice at c0 = 0.10 within the usual noise floor: for mechanism P at c1 = 0.20,
 pop_0 is 0.603 here versus 0.599 in mutualism, and pop_1 is 0.178 versus 0.187.
 At the low-asymmetry edge c1 = 0.12, the symmetric diagonal remains the right
-reference point: M, IMP, and IJMPQ are almost unchanged from hamilton_cost pop_2
+reference point: M, IMP, and IJMPQ are almost unchanged from diagonal_cost pop_2
 at c = 0.10 (for IJMPQ, 0.962 / 0.961 on the diagonal versus 0.961 / 0.961 here),
 while P immediately splits into the familiar cooperator/exploiter pair
 (0.763 / 0.286).
 
 ## Headline: the harmless pure-Cost edge disappears
 
-The key difference from hamilton_cost is simple: there is no c = 0 refuge here.
+The key difference from diagonal_cost is simple: there is no c = 0 refuge here.
 Even the cheap population always pays c0 = 0.10, so shedding the machinery is
 never harmless. On the diagonal, Cost alone only slowly erodes cooperation because
 the population can fall back onto tax-free unconditional cooperators. On the
@@ -60,7 +60,7 @@ Two features dominate.
 First, Cost is much harsher here than on the diagonal. M is the clearest example:
 its means start high at Cost = 0 (0.689 / 0.641) but by Cost = 0.08 it is already
 at the control floor (0.061 / 0.032). There is no long shallow decline analogous
-to hamilton_cost's c = 0 edge, because there is no edge where enforcement can be
+to diagonal_cost's c = 0 edge, because there is no edge where enforcement can be
 shed without consequence.
 
 Second, the combined mechanisms still rank highest, but their advantage is now
@@ -84,7 +84,7 @@ above qBSeen = 0.5:
 | IJMPQ     | 0   | 0.34   | 0.26      | 0.18      | 0.12      |
 | IJMPQ     | 1   | 0.22   | 0.18      | 0.12      | none      |
 
-This is the asymmetric version of the price-demand interaction from hamilton_cost:
+This is the asymmetric version of the price-demand interaction from diagonal_cost:
 raising Cost retreats the demand ceiling. But the retreat is steeper here because
 the demand never falls to zero. At Cost = 0.12, IJMPQ still has a surviving cheap
 side at c1 = 0.12 (pop_0 = 0.570), while the expensive side is already below 0.5
@@ -123,7 +123,7 @@ Cost = 0.20).
 
 ## Control decomposition: Cost erodes M1 supply-side, the dilemma decides the damage
 
-As in hamilton_cost, the control isolates the pure machinery tax. Mechanism M is
+As in diagonal_cost, the control isolates the pure machinery tax. Mechanism M is
 enough to show it:
 
 | Cost | control pop_0 qB | control pop_0 M1 | PD pop_0 qB | PD pop_0 M1 |
@@ -147,7 +147,7 @@ almost immediately.
 
 ## There is little behavior-mechanism decoupling here
 
-hamilton_cost's striking result was that cooperation could remain high after the
+diagonal_cost's striking result was that cooperation could remain high after the
 active enforcement alleles had largely vanished. mutualism_cost shows the boundary
 of that result: once the cheap side still faces nontrivial demand, machinery loss
 and behavioral loss move together.
@@ -170,7 +170,7 @@ For M on the same slice:
 
 The machinery still erodes, but the tax-free unconditional-cooperator niche does
 not inherit a stable high-cooperation regime. Once P1 or M1 is mostly gone, the
-population falls with it. This is the clean contrast with hamilton_cost: the
+population falls with it. This is the clean contrast with diagonal_cost: the
 diagonal has a harmless-shedding region; the asymmetric branch does not.
 
 ## Snowdrift buffers the price only on the cheap side
@@ -187,7 +187,7 @@ almost Cost-proof, while the high-cost population remains stuck in the role spli
 | IJMPQ     | 0   | 0.928  | 0.913     | 0.928     | 0.873     |
 | IJMPQ     | 1   | 0.597  | 0.325     | 0.238     | 0.335     |
 
-So the snowdrift lesson from hamilton_cost still holds only half-way. High S makes
+So the snowdrift lesson from diagonal_cost still holds only half-way. High S makes
 cooperation individually attractive enough that pop_0 keeps cooperating even when
 the machinery is taxed. But because c1 remains structurally higher, pop_1 does not
 join it; the role split persists, only with a slightly softer floor.
@@ -227,7 +227,7 @@ late erosion but whether a cell establishes a defended state at all.
 
 ## One-line reading
 
-hamilton_cost showed that information cost can be shed harmlessly when the game
+diagonal_cost showed that information cost can be shed harmlessly when the game
 does not still demand enforcement. mutualism_cost shows the complementary case:
 once one population is locked at c0 = 0.10 and the other is costlier still, the
 price of the machinery is paid directly in behavior. Cost compresses the

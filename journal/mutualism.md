@@ -10,8 +10,8 @@ split by mechanism family:
 - **[mutualism_combined.md](mutualism_combined.md)** — mechanisms MP, MPQ, IMP,
   IJMPQ: partner choice plus reciprocity, mutualistic equilibrium, Pop_1 lift
 
-Hamilton is the equal-cost diagonal (c0 = c1); see **hamilton.md** (index to
-hamilton_partner_choice.md, hamilton_reciprocity.md, and hamilton_combined.md).
+Diagonal is the equal-cost special case (c0 = c1); see **diagonal.md** (index to
+diagonal_partner_choice.md, diagonal_reciprocity.md, and diagonal_combined.md).
 The information-cost extension on this asymmetric branch is
 **[mutualism_cost.md](mutualism_cost.md)**: fixed c0 = 0.10, Cost x c1 sweep,
 showing how taxing the machinery compresses the deterministic
@@ -31,7 +31,7 @@ costs interact exclusively across populations. Population 0 has cost c0 and
 population 1 has cost c1, with c0 < c1 always (the plotted triangular grid
 constrains c1 > c0). Benefit b = 0.40 is fixed and K = 0.50.
 
-Hamilton is the diagonal special case where c0 = c1 (see **[hamilton.md](hamilton.md)**).
+Diagonal is the equal-cost special case where c0 = c1 (see **[diagonal.md](diagonal.md)**).
 Because c0 < c1, population 0 always has a higher cooperation incentive
 (R0 − P0 > R1 − P1) in both dilemma types.
 

@@ -6,7 +6,7 @@ detail is in **prisoners_partner_choice.md** (P) and
 
 ## Why this study exists
 
-Hamilton and mutualism derive payoffs from a single cost parameter c
+Diagonal and mutualism derive payoffs from a single cost parameter c
 (T = K + b, R = K + b − c, P = K, S = K − c). That welds three distinct
 quantities onto one axis:
 
@@ -14,12 +14,12 @@ quantities onto one axis:
 - risk (sucker gap) P − S = c
 - cooperation advantage R − P = b − c
 
-Because all three move together with c, hamilton can show *that* a mechanism
+Because all three move together with c, diagonal can show *that* a mechanism
 collapses as c rises but cannot say *which* payoff gap drives the collapse.
 The prisoners study removes that confound: it fixes T = 0.90 and S = 0.10 and
 sweeps R and P independently over an 18 × 18 grid (172 cells satisfying
 T > R > P > S). Each cell is a mean over 30 runs (see the noise-floor note in
-**hamilton.md**). Dilemma folder 1 (PD) is the informative sweep; a folder 0
+**diagonal.md**). Dilemma folder 1 (PD) is the informative sweep; a folder 0
 no-social-dilemma rerun now exists for the dummy control mechanism \_ only.
 Payoffs are symmetric across populations.
 
@@ -32,13 +32,13 @@ With T and S pinned, the two free coordinates are:
 - P — the mutual-defection payoff. Raising P raises risk (P − S = P − 0.10)
   and lowers the cooperation advantage (R − P).
 
-Two reference loci matter for the hamilton/mutualism comparison:
+Two reference loci matter for the diagonal/mutualism comparison:
 
 - R − P = const are the iso-cooperation-advantage diagonals.
-- R + P = 1.0 is the temptation = risk locus (0.90 − R = P − 0.10). Hamilton
+- R + P = 1.0 is the temptation = risk locus (0.90 − R = P − 0.10). Diagonal
   is structurally pinned to temptation = risk = c, so the R + P = 1 anti-
-  diagonal is the closest in-grid analogue of the hamilton constraint; cells
-  off it (R + P ≠ 1) are regimes hamilton cannot reach.
+  diagonal is the closest in-grid analogue of the diagonal constraint; cells
+  off it (R + P ≠ 1) are regimes diagonal cannot reach.
 
 ## Payoff-axis sensitivity
 
@@ -59,7 +59,7 @@ Pop_1 (single population), PD, noshuffle, gs=128:
 | IMP    | 0.890   | 0.642     | −0.319    | 0.50 | −0.003      | reward / temptation R |
 | IJMPQ  | 0.917   | 0.488     | −0.260    | 0.53 | −0.029      | reward / temptation R |
 
-Three regimes emerge that hamilton could never separate:
+Three regimes emerge that diagonal could never separate:
 
 - **Direct reciprocity (M) is risk-limited.** M is roughly twice as sensitive
   to P as to R (−b/a = 1.73). Raising the mutual-defection payoff erodes TFT's
@@ -136,34 +136,34 @@ loci supply the reward-led robustness.
 
 ## The temptation = risk locus (R + P = 1.0)
 
-Mean qBSeen on the hamilton-analogue anti-diagonal (pop_1, PD, noshuffle,
+Mean qBSeen on the diagonal-analogue anti-diagonal (pop_1, PD, noshuffle,
 gs=128, 9 cells): P = 0.944, M = 0.899, IMP = 0.956, IJMPQ = 0.965. Along this
 locus cooperation stays high and falls only toward the small-R − P corner
 (R = 0.54, P = 0.46), where the cooperation advantage shrinks to 0.08 —
-mirroring the hamilton collapse as R − P → 0.
+mirroring the diagonal collapse as R − P → 0.
 
-## Cross-checks with hamilton and mutualism
+## Cross-checks with diagonal and mutualism
 
-- **Partner-choice threshold.** Hamilton P (shuffle, gs=128, pop_1) collapses
+- **Partner-choice threshold.** Diagonal P (shuffle, gs=128, pop_1) collapses
   as R − P → 0: qBSeen 0.864 at R − P = 0.10, 0.788 at 0.06, 0.668 at 0.04,
   0.056 at 0.00. The prisoners P landscape reproduces this from the other
   direction — cooperation is monotone in R − P and only crosses below 0.5 in
   the smallest-R − P cells — confirming R − P is the controlling variable, not
   temptation or risk individually.
-- **Direct reciprocity.** Hamilton/mutualism could only show M collapsing near
+- **Direct reciprocity.** Diagonal/mutualism could only show M collapsing near
   c = 0.40 (where both R − P → 0 and risk P − S = c is largest). Prisoners
-  isolates the cause: M tracks risk P, so the hamilton collapse is largely a
+  isolates the cause: M tracks risk P, so the diagonal collapse is largely a
   rising-risk effect, not purely a vanishing cooperation gap.
-- **Symmetry breaking.** Prisoners pop_2 is symmetric (like hamilton pop_2)
+- **Symmetry breaking.** Prisoners pop_2 is symmetric (like diagonal pop_2)
   and breaks stochastically into a cooperator/defector role split, with the
   cooperating side earning less (paradox of success) — the same signature
-  documented for hamilton pop_2. See **prisoners_partner_choice.md**.
+  documented for diagonal pop_2. See **prisoners_partner_choice.md**.
 
 ## Caveats
 
-- Complementary, not a superset: prisoners fixes S = 0.10 whereas hamilton's
+- Complementary, not a superset: prisoners fixes S = 0.10 whereas diagonal's
   S = 0.50 − c slides with c, so overlays are structural, not literal, and the
-  absolute thresholds sit at a different scale than hamilton's.
+  absolute thresholds sit at a different scale than diagonal's.
 - PD-centered: the informative sweep is dilemma 1, while dilemma 0 now exists
   only as a no-social-dilemma dummy baseline; there is still no snowdrift
   sweep, and pop_2 payoffs are symmetric (no c0 ≠ c1 mutualism analogue).
@@ -173,7 +173,7 @@ mirroring the hamilton collapse as R − P → 0.
 
 ## Summary
 
-| Mechanism family | Limiting payoff axis        | −b/a (pop_1) | Hamilton/mutualism reading                    |
+| Mechanism family | Limiting payoff axis        | −b/a (pop_1) | Diagonal/mutualism reading                    |
 | ---------------- | --------------------------- | ------------ | --------------------------------------------- |
 | M                | risk / defection payoff P   | 1.73         | c-collapse is mostly rising-risk, not just R−P |
 | P                | cooperation advantage R − P | 0.89         | chooser bottleneck set by R − P                |

@@ -7,7 +7,7 @@ expected value written in that doc. Run before committing doc edits to catch
 drift between prose and data.
 
     python3 ai/verify_claims.py            # all studies
-    python3 ai/verify_claims.py hamilton   # filter by substring
+    python3 ai/verify_claims.py diagonal   # filter by substring
 
 Exit code is non-zero if any check fails.
 
@@ -32,7 +32,7 @@ def check(study, label, fn, expected, tol=TOL):
 # ── path helpers ──────────────────────────────────────────────────────────────
 
 def hpath(sh, gs, m, d, pop, f):
-    return f"{BASE}/hamilton/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
+    return f"{BASE}/diagonal/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
 
 
 def mpath(sh, gs, m, d, f):
@@ -76,9 +76,9 @@ def _grid(rows, col):
     return {(round(float(r["c0"]), 3), round(float(r["c1"]), 3)): float(r[col]) for r in rows}
 
 
-def mp3_evolving_vs_hamilton(m):
-    """Max |mutualism pop_3 evolving qBSeen(c0,c1) - hamilton pop_3 qBSeen(c0)| over
-    all 441 cells. Near 0 == the 2D square is the Hamilton 1D sweep (redundant)."""
+def mp3_evolving_vs_diagonal(m):
+    """Max |mutualism pop_3 evolving qBSeen(c0,c1) - diagonal pop_3 qBSeen(c0)| over
+    all 441 cells. Near 0 == the 2D square is the Diagonal 1D sweep (redundant)."""
     ev = load(mp3path("noshuffle", "128", m, 0))
     ham = load(hpath("noshuffle", "128", m, 1, "pop_3", 0))
     hmap = {round(float(r["c0"]), 3): float(r["qBSeen"]) for r in ham}
@@ -103,7 +103,7 @@ def mp3_fixed_qb_dev():
 
 def mp3_fixed_wmean_residual():
     """Max residual of the fixed-pop wmean under an additive a(c0)+b(c1) fit. Near 0
-    == no c0xc1 interaction (the one thing Hamilton can't show is provably absent)."""
+    == no c0xc1 interaction (the one thing Diagonal can't show is provably absent)."""
     fx = load(mp3path("noshuffle", "128", "P", 1))
     g = _grid(fx, "wmean")
     c0s = sorted({k[0] for k in g})
@@ -117,7 +117,7 @@ def mp3_fixed_wmean_residual():
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# HAMILTON — hamilton_partner_choice.md, hamilton_reciprocity.md, hamilton_combined.md
+# DIAGONAL — diagonal_partner_choice.md, diagonal_reciprocity.md, diagonal_combined.md
 # ════════════════════════════════════════════════════════════════════════════
 
 def ham_P_profile():
@@ -127,7 +127,7 @@ def ham_P_profile():
 # partner_choice.md cooperation profile (P, PD, shuffle, pop_2 fset_0)
 for c, exp in zip((0.0, 0.08, 0.16, 0.24, 0.32, 0.40),
                   (0.963, 0.849, 0.728, 0.630, 0.553, 0.022)):
-    check("hamilton", f"PC: P qBSeen at c={c:.2f}",
+    check("diagonal", f"PC: P qBSeen at c={c:.2f}",
           (lambda cc=c: at_c(load(hpath("shuffle", "128", "P", 1, "pop_2", 0)), cc)), exp)
 
 
@@ -144,41 +144,41 @@ def ham_P_corr():
     return corr(dq, dw)
 
 
-check("hamilton", "PC: P pop_2 corr(dq,dw) = -0.984", ham_P_corr, -0.984)
+check("diagonal", "PC: P pop_2 corr(dq,dw) = -0.984", ham_P_corr, -0.984)
 
 # reciprocity.md: M shuffle vs noshuffle at c=0.10 (pop_2 fset_0)
-check("hamilton", "RC: M noshuffle qBSeen c=0.10 = 0.915",
+check("diagonal", "RC: M noshuffle qBSeen c=0.10 = 0.915",
       lambda: at_c(load(hpath("noshuffle", "128", "M", 1, "pop_2", 0)), 0.10), 0.915)
-check("hamilton", "RC: M shuffle qBSeen c=0.10 ~ control (<0.06)",
+check("diagonal", "RC: M shuffle qBSeen c=0.10 ~ control (<0.06)",
       lambda: at_c(load(hpath("shuffle", "128", "M", 1, "pop_2", 0)), 0.10), 0.053)
 
 # reciprocity.md: M1 under M at d0 noshuffle mean = 0.392 (vs control 0.494)
-check("hamilton", "RC: d0 M1 mean under M noshuffle = 0.392",
+check("diagonal", "RC: d0 M1 mean under M noshuffle = 0.392",
       lambda: sum(m1sum(r) for r in load(hpath("noshuffle", "128", "M", 0, "pop_2", 0)))
       / len(load(hpath("noshuffle", "128", "M", 0, "pop_2", 0))), 0.392, 0.01)
 
 # combined.md: IJMPQ shuffle vs noshuffle at c=0.40
-check("hamilton", "CB: IJMPQ shuffle qBSeen c=0.40 = 0.672",
+check("diagonal", "CB: IJMPQ shuffle qBSeen c=0.40 = 0.672",
       lambda: at_c(load(hpath("shuffle", "128", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.672)
-check("hamilton", "CB: IJMPQ noshuffle qBSeen c=0.40 = 0.382",
+check("diagonal", "CB: IJMPQ noshuffle qBSeen c=0.40 = 0.382",
       lambda: at_c(load(hpath("noshuffle", "128", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.382)
 
 # combined.md gs=128 PD profile (shuffle, pop_2 fset_0): MP/MPQ collapse, IMP/IJMPQ tail
-check("hamilton", "CB: MP shuffle qBSeen c=0.40 = 0.023",
+check("diagonal", "CB: MP shuffle qBSeen c=0.40 = 0.023",
       lambda: at_c(load(hpath("shuffle", "128", "MP", 1, "pop_2", 0)), 0.40), 0.023)
-check("hamilton", "CB: MPQ shuffle qBSeen c=0.40 = 0.036",
+check("diagonal", "CB: MPQ shuffle qBSeen c=0.40 = 0.036",
       lambda: at_c(load(hpath("shuffle", "128", "MPQ", 1, "pop_2", 0)), 0.40), 0.036)
-check("hamilton", "CB: IMP shuffle qBSeen c=0.08 = 0.951",
+check("diagonal", "CB: IMP shuffle qBSeen c=0.08 = 0.951",
       lambda: at_c(load(hpath("shuffle", "128", "IMP", 1, "pop_2", 0)), 0.08), 0.951)
-check("hamilton", "CB: IMP shuffle qBSeen c=0.40 = 0.170",
+check("diagonal", "CB: IMP shuffle qBSeen c=0.40 = 0.170",
       lambda: at_c(load(hpath("shuffle", "128", "IMP", 1, "pop_2", 0)), 0.40), 0.170)
 
 # combined.md gs=4 PD profile (shuffle, pop_2 fset_0): weaker high-c tail
-check("hamilton", "CB: IMP gs=4 shuffle qBSeen c=0.40 = 0.065",
+check("diagonal", "CB: IMP gs=4 shuffle qBSeen c=0.40 = 0.065",
       lambda: at_c(load(hpath("shuffle", "4", "IMP", 1, "pop_2", 0)), 0.40), 0.065)
-check("hamilton", "CB: IJMPQ gs=4 shuffle qBSeen c=0.32 = 0.892",
+check("diagonal", "CB: IJMPQ gs=4 shuffle qBSeen c=0.32 = 0.892",
       lambda: at_c(load(hpath("shuffle", "4", "IJMPQ", 1, "pop_2", 0)), 0.32), 0.892)
-check("hamilton", "CB: IJMPQ gs=4 shuffle qBSeen c=0.40 = 0.342",
+check("diagonal", "CB: IJMPQ gs=4 shuffle qBSeen c=0.40 = 0.342",
       lambda: at_c(load(hpath("shuffle", "4", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.342)
 
 
@@ -434,8 +434,8 @@ check("mutualism", "CB: IMP mutual-coop (0.1,0.12) Pop_1 = 0.952",
 check("mutualism", "CB: M c0=0 c1=0.10 snowdrift = 0.950",
       lambda: mcell(load(mpath("noshuffle", "128", "M", 2, 0)), 0.0, 0.10), 0.950)
 
-# combined.md: hamilton snowdrift IJMPQ at c=0.40 (shuffle, gs=128)
-check("hamilton", "CB: IJMPQ snowdrift qBSeen c=0.40 = 0.960",
+# combined.md: diagonal snowdrift IJMPQ at c=0.40 (shuffle, gs=128)
+check("diagonal", "CB: IJMPQ snowdrift qBSeen c=0.40 = 0.960",
       lambda: at_c(load(hpath("shuffle", "128", "IJMPQ", 2, "pop_2", 0)), 0.40), 0.960)
 
 
@@ -496,11 +496,11 @@ check("snowdrift", "PC: pop_2 fitness-inverted cells = 172", lambda: sd_paradox(
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# HAMILTON_COST — hamilton_cost.md (information-cost axis; cell key = (Cost, c0))
+# DIAGONAL_COST — diagonal_cost.md (information-cost axis; cell key = (Cost, c0))
 # ════════════════════════════════════════════════════════════════════════════
 
 def hcpath(sh, gs, m, d, pop, f):
-    return f"{BASE}/hamilton_cost/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
+    return f"{BASE}/diagonal_cost/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
 
 
 def hc_cell(rows, cost, c, col="qBSeen"):
@@ -520,43 +520,43 @@ def hc_cell_row(rows, cost, c):
 # pure information-cost axis (c=0): gentle collapse, combined most robust
 for m, exp in (("_", 0.517), ("M", 0.627), ("P", 0.539), ("MP", 0.654),
                ("MPQ", 0.715), ("IMP", 0.719), ("IJMPQ", 0.810)):
-    check("hamilton_cost", f"Cost=0.40 c=0 {m} qBSeen = {exp:.3f}",
+    check("diagonal_cost", f"Cost=0.40 c=0 {m} qBSeen = {exp:.3f}",
           (lambda mm=m: hc_cell(load(hcpath("noshuffle", "128", mm, 1, "pop_1", 0)), 0.40, 0.0)), exp)
 
-check("hamilton_cost", "IJMPQ Cost=0.20 c=0 = 0.886",
+check("diagonal_cost", "IJMPQ Cost=0.20 c=0 = 0.886",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.0), 0.886)
 
-# sanity: Cost=0 edge reproduces standard hamilton (Cost=0.001) at c=0.20
-check("hamilton_cost", "sanity IJMPQ Cost=0 c=0.20 = 0.951",
+# sanity: Cost=0 edge reproduces standard diagonal (Cost=0.001) at c=0.20
+check("diagonal_cost", "sanity IJMPQ Cost=0 c=0.20 = 0.951",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.0, 0.20), 0.951)
 
 # machinery erosion: enforcement allele selected out along the Cost axis (c=0)
-check("hamilton_cost", "P1 allele c=0 Cost=0 = 0.671",
+check("diagonal_cost", "P1 allele c=0 Cost=0 = 0.671",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.0, 0.0), "P1"), 0.671, 0.01)
-check("hamilton_cost", "P1 allele c=0 Cost=0.40 = 0.020",
+check("diagonal_cost", "P1 allele c=0 Cost=0.40 = 0.020",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.40, 0.0), "P1"), 0.020, 0.01)
-check("hamilton_cost", "M1 allele c=0 Cost=0.40 = 0.018",
+check("diagonal_cost", "M1 allele c=0 Cost=0.40 = 0.018",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 1, "pop_1", 0)), 0.40, 0.0), "M1"), 0.018, 0.01)
 
 # control (dilemma 0) decomposes cost from demand: machinery erodes at ~same rate
 # as the PD, but behavior stays pinned at the ceiling (no enforcement needed).
-check("hamilton_cost", "control M1 c=0 Cost=0 = 0.383",
+check("diagonal_cost", "control M1 c=0 Cost=0 = 0.383",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.0, 0.0), "M1"), 0.383, 0.01)
-check("hamilton_cost", "control M1 c=0 Cost=0.40 = 0.023 (erodes like PD)",
+check("diagonal_cost", "control M1 c=0 Cost=0.40 = 0.023 (erodes like PD)",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), "M1"), 0.023, 0.01)
-check("hamilton_cost", "control qBSeen c=0 Cost=0 = 0.968 (ceiling)",
+check("diagonal_cost", "control qBSeen c=0 Cost=0 = 0.968 (ceiling)",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.0, 0.0), 0.968)
-check("hamilton_cost", "control qBSeen c=0 Cost=0.40 = 0.978 (pinned; no collapse)",
+check("diagonal_cost", "control qBSeen c=0 Cost=0.40 = 0.978 (pinned; no collapse)",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), 0.978)
-check("hamilton_cost", "control C1M0 c=0 Cost=0.40 = 0.956 (free-coop niche)",
+check("diagonal_cost", "control C1M0 c=0 Cost=0.40 = 0.956 (free-coop niche)",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), "C1", "M0"), 0.956, 0.01)
 
 # snowdrift (dilemma 2) buffers information cost: M holds high at Cost=0.40
-check("hamilton_cost", "M dilemma2 Cost=0.40 c=0 = 0.870",
+check("diagonal_cost", "M dilemma2 Cost=0.40 c=0 = 0.870",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 2, "pop_1", 0)), 0.40, 0.0), 0.870)
 
 # interaction: information cost lowers the c-collapse threshold (IJMPQ interior)
-check("hamilton_cost", "IJMPQ Cost=0.20 c=0.16 collapsed = 0.049",
+check("diagonal_cost", "IJMPQ Cost=0.20 c=0.16 collapsed = 0.049",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.16), 0.049)
 
 
@@ -726,17 +726,17 @@ check("mutualism_cost", "1run P (0.12,0.20) Pop_0 first snapshot collapsed = 0.0
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# MUTUALISM POP_3 — redundant with hamilton pop_3 (copilot-instructions.md,
+# MUTUALISM POP_3 — redundant with diagonal pop_3 (copilot-instructions.md,
 # "Mutualism Parameter Space"). Only _0 evolves; _1 is frozen at 25% each, so
 # there is no coevolutionary channel for c1 and the 441-cell square collapses
-# onto the hamilton pop_3 1D c-sweep. These bound checks lock that redundancy.
+# onto the diagonal pop_3 1D c-sweep. These bound checks lock that redundancy.
 # ════════════════════════════════════════════════════════════════════════════
 
-# evolving pop tracks hamilton pop_3 at c=c0 across the whole square (bound ~0)
-check("mutualism_pop_3", "P evolving == hamilton pop_3 (max cell dev <= 0.03)",
-      lambda: mp3_evolving_vs_hamilton("P"), 0.0, 0.03)
-check("mutualism_pop_3", "IJMPQ evolving == hamilton pop_3 (max cell dev <= 0.03)",
-      lambda: mp3_evolving_vs_hamilton("IJMPQ"), 0.0, 0.03)
+# evolving pop tracks diagonal pop_3 at c=c0 across the whole square (bound ~0)
+check("mutualism_pop_3", "P evolving == diagonal pop_3 (max cell dev <= 0.03)",
+      lambda: mp3_evolving_vs_diagonal("P"), 0.0, 0.03)
+check("mutualism_pop_3", "IJMPQ evolving == diagonal pop_3 (max cell dev <= 0.03)",
+      lambda: mp3_evolving_vs_diagonal("IJMPQ"), 0.0, 0.03)
 
 # evolving cooperation depends on c0 only: spread across c1 is within noise
 check("mutualism_pop_3", "P evolving qBSeen c1-invariant (max c1-spread <= 0.035)",
@@ -763,27 +763,27 @@ def glo_val(study, sh, gs, m, d, pop, key):
     return float(meta[key]) if meta and key in meta else float("nan")
 
 
-# K = 0.5 and b = 0.4 in the cost-parameterized studies (hamilton, mutualism, hamilton_cost)
-for study, d, pop in (("hamilton", 1, "pop_1"), ("mutualism", 1, "pop_2"),
-                      ("hamilton_cost", 1, "pop_1")):
+# K = 0.5 and b = 0.4 in the cost-parameterized studies (diagonal, mutualism, diagonal_cost)
+for study, d, pop in (("diagonal", 1, "pop_1"), ("mutualism", 1, "pop_2"),
+                      ("diagonal_cost", 1, "pop_1")):
     check("parameterization", f"{study} K = 0.5",
           (lambda s=study, dd=d, pp=pop: glo_val(s, "noshuffle", "128", "P", dd, pp, "K")), 0.5)
     check("parameterization", f"{study} b = 0.4",
           (lambda s=study, dd=d, pp=pop: glo_val(s, "noshuffle", "128", "P", dd, pp, "b")), 0.4)
 
-# Cost = 0.001 default everywhere except hamilton_cost (where Cost is the swept axis)
-check("parameterization", "hamilton Cost = 0.001 (default)",
-      lambda: glo_val("hamilton", "noshuffle", "128", "P", 1, "pop_1", "Cost"), 0.001, 0.0)
+# Cost = 0.001 default everywhere except diagonal_cost (where Cost is the swept axis)
+check("parameterization", "diagonal Cost = 0.001 (default)",
+      lambda: glo_val("diagonal", "noshuffle", "128", "P", 1, "pop_1", "Cost"), 0.001, 0.0)
 check("parameterization", "prisoners Cost = 0.001 (default)",
       lambda: glo_val("prisoners", "noshuffle", "128", "P", 1, "pop_1", "Cost"), 0.001, 0.0)
 
 # Runs = 30 in the multi-run studies; 1 in the single-run variants
-check("parameterization", "hamilton Runs = 30",
-      lambda: glo_val("hamilton", "noshuffle", "128", "P", 1, "pop_1", "Runs"), 30, None)
+check("parameterization", "diagonal Runs = 30",
+      lambda: glo_val("diagonal", "noshuffle", "128", "P", 1, "pop_1", "Runs"), 30, None)
 check("parameterization", "mutualism Runs = 30",
       lambda: glo_val("mutualism", "noshuffle", "128", "P", 1, "pop_2", "Runs"), 30, None)
-check("parameterization", "hamilton_1run Runs = 1",
-      lambda: glo_val("hamilton_1run", "noshuffle", "128", "P", 1, "pop_1", "Runs"), 1, None)
+check("parameterization", "diagonal_1run Runs = 1",
+      lambda: glo_val("diagonal_1run", "noshuffle", "128", "P", 1, "pop_1", "Runs"), 1, None)
 
 # prisoners / snowdrift are payoff-plane sweeps: T and one other payoff are pinned
 check("parameterization", "prisoners T0 = 0.9 (fixed)",

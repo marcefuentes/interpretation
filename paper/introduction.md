@@ -20,7 +20,7 @@ Most theory treats a single well-mixed population. Many biologically important c
 are mutualisms: two distinct populations (or species) that cooperate across the
 divide, each with its own cost of helping. We treat the single population as the
 baseline and the two-population mutualism as the central case, and ask what the
-second population changes. The equal-cost single population (our "hamilton" case) is
+second population changes. The equal-cost single population (our "diagonal" case) is
 the diagonal special case of the two-population design (our "mutualism" case) in
 which both sides carry the same cost.
 

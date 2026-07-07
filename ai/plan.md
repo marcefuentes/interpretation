@@ -6,7 +6,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 ## Near-term (cheap, no new data)
 
 1. [x] Wire the verifier into the workflow.
-   - Expanded ai/verify_claims.py to 82 checks: hamilton_combined (gs=128 +
+   - Expanded ai/verify_claims.py to 82 checks: diagonal_combined (gs=128 +
      gs=4 shuffle, snowdrift), mutualism_combined mean-qB / dominance-count /
      mutual-coop tables, c0 = 0 columns, hitchhiking, J-vs-Q shuffle split,
      prisoners pop_2 paradox of success, and the R+P=1 locus. Documented "run
@@ -25,8 +25,8 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
 ### Data gap found while expanding the verifier (resolved)
 
-- hamilton gs=4 .con were briefly missing; regenerated 2026-06 (170 .con). All
-  gs=4 hamilton doc claims now verify.
+- diagonal gs=4 .con were briefly missing; regenerated 2026-06 (170 .con). All
+  gs=4 diagonal doc claims now verify.
 
 ## Medium
 
@@ -34,7 +34,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
    - Wrote synthesis.md: master attribution table + per-axis sections (M->risk
      P, P->R-P, combined->reward R), the two-perturbation framework (shuffle
      removes M, gs=4 removes P), and the two routes to the role split. Linked
-     from README and the hamilton/mutualism/prisoners indexes.
+     from README and the diagonal/mutualism/prisoners indexes.
 
 5. [x] Validate the remaining mechanistic narratives.
    - Done in ai/validate_mechanisms.py (+ 5 regression checks in verify_claims.py).
@@ -42,11 +42,11 @@ Status legend: [ ] todo, [~] in progress, [x] done.
      while cooperating at 0.616; gradient = the 0.001/round M-locus cost).
    - IJMPQ shuffle robustness: behavioral claim confirmed; mechanism CORRECTED —
      the recovery is carried by J (lifetime indirect, +0.133 Pop_1), not Q
-     (+0.007). Fixed mutualism_combined.md. Hamilton high-c window is synergistic
-     (J/Q epistatic), so hamilton_combined.md phrasing stays.
+     (+0.007). Fixed mutualism_combined.md. Diagonal high-c window is synergistic
+     (J/Q epistatic), so diagonal_combined.md phrasing stays.
 
-6. [x] Resolve mutualism pop_3: DROP (maintainer: redundant with hamilton pop_3).
-   - Docs already frame it as redundant ("use Hamilton pop_3"); no further data
+6. [x] Resolve mutualism pop_3: DROP (maintainer: redundant with diagonal pop_3).
+   - Docs already frame it as redundant ("use Diagonal pop_3"); no further data
      or analysis. No write-up will be produced.
 
 ## Larger completed data tasks
@@ -65,15 +65,15 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
 9. [x] All studies migrated to the modern `{shuffle}/{groupsize}` layout; ai/*.py path
    helpers updated to match. verify_claims.py passes 110/110, with all existing
-   hamilton/mutualism/prisoners/snowdrift headline numbers reproducing exactly.
+   diagonal/mutualism/prisoners/snowdrift headline numbers reproducing exactly.
 
 10. [x] snowdrift multi-run confirmed present (Runs=30); all snowdrift doc claims verify.
     Updated the stale "snowdrift is single-run only / dir empty" notes in findings.md and
     copilot-instructions.md.
 
-11. [x] hamilton_cost + hamilton_cost_1run (new information-cost study).
-    - Wrote hamilton_cost.md; added the price-vs-demand section to synthesis.md.
-    - ai/analyze_hamilton_cost.py + 14 regression checks.
+11. [x] diagonal_cost + diagonal_cost_1run (new information-cost study).
+    - Wrote diagonal_cost.md; added the price-vs-demand section to synthesis.md.
+    - ai/analyze_diagonal_cost.py + 14 regression checks.
     - Findings: information cost is soft vs cooperation cost (machinery shed harmlessly at
       c=0), family count does not predict collapse (combined most robust), machinery erosion
       decouples behavior from mechanism, and Cost lowers the c-collapse threshold (~1.5 c per
@@ -100,7 +100,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 13. [x] mutualism_cost_1run + mutualism_cost (price–demand under built-in asymmetry).
     - Analysis now lives in journal/mutualism_cost.md, with regression checks in
       ai/verify_claims.py and support script ai/analyze_mutualism_cost.py.
-    - Headline result: the soft Cost effect from hamilton_cost depends on the c = 0
+    - Headline result: the soft Cost effect from diagonal_cost depends on the c = 0
       refuge. With c0 fixed at 0.10 on the asymmetric branch, Cost retreats the c1
       ceiling immediately, compresses the cooperation/fitness split, and leaves much
       less behavior-mechanism decoupling.

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Analyze the hamilton_cost study: how cooperation depends on the *information
+Analyze the diagonal_cost study: how cooperation depends on the *information
 cost* of carrying reciprocity / partner-choice machinery.
 
-Standard hamilton fixes the per-round module tax at Cost = 0.001 (negligible)
-and sweeps the cooperation cost c in [0, 0.4]. hamilton_cost adds a second axis:
+Standard diagonal fixes the per-round module tax at Cost = 0.001 (negligible)
+and sweeps the cooperation cost c in [0, 0.4]. diagonal_cost adds a second axis:
 Cost (the "information cost" of a module family) is swept jointly with c over a
 triangular grid constrained to Cost + c <= 0.4 (= b). 231 cells:
 Cost in {0, 0.02, ..., 0.4}; for each Cost, c in {0, 0.02, ..., 0.4 - Cost}.
@@ -18,7 +18,7 @@ family mechanisms (M, P) pay 1 x Cost; the control (_) pays 0. Fitness is
 w = max(0, payoff - cost) each round.
 
 Primary condition: pop_1, PD (dilemma 1), noshuffle, gs=128, fset 0.
-Cell key is (Cost, c) with c = c0 = c1 (hamilton diagonal).
+Cell key is (Cost, c) with c = c0 = c1 (the diagonal).
 """
 
 import os
@@ -26,8 +26,8 @@ from collections import defaultdict
 
 from trps_io import allele, load  # noqa: F401
 
-HC = os.path.expanduser("~/results/hamilton_cost")
-HAM = os.path.expanduser("~/results/hamilton")
+HC = os.path.expanduser("~/results/diagonal_cost")
+HAM = os.path.expanduser("~/results/diagonal")
 
 # families touched by each mechanism -> per-round tax multiplier
 FAMILIES = {"_": 0, "M": 1, "P": 1, "MP": 2, "MPQ": 2, "IMP": 2, "IJMPQ": 2,
@@ -66,14 +66,14 @@ def cell(g, cost, c):
 
 
 print("=" * 78)
-print("HAMILTON_COST  (K=0.5, b=0.4; triangular Cost x c grid, Cost + c <= 0.4)")
+print("DIAGONAL_COST  (K=0.5, b=0.4; triangular Cost x c grid, Cost + c <= 0.4)")
 print("Primary: pop_1, PD (d1), noshuffle, gs=128, fset0.  cell=(Cost,c).")
 print("=" * 78)
 
-# ── A. sanity: Cost=0 column reproduces standard hamilton (Cost=0.001) ────────
-print("\n--- A. SANITY: hamilton_cost Cost=0 slice vs standard hamilton (Cost=0.001) ---")
+# ── A. sanity: Cost=0 column reproduces standard diagonal (Cost=0.001) ────────
+print("\n--- A. SANITY: diagonal_cost Cost=0 slice vs standard diagonal (Cost=0.001) ---")
 print("qBSeen along c (pop_1, PD, noshuffle, gs=128, fset0)")
-print(f"{'mech':6}{'c':>6}  {'HC Cost=0':>10}  {'hamilton':>9}  {'diff':>7}")
+print(f"{'mech':6}{'c':>6}  {'HC Cost=0':>10}  {'diagonal':>9}  {'diff':>7}")
 for mech in MECHS:
     d = 1
     g = grid("noshuffle", "128", mech, d, "pop_1", 0)

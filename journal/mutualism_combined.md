@@ -12,7 +12,7 @@ Analysis of mechanisms that combine partner choice with reciprocity: **MP**,
 | IMP       | C, I, M, P  | Indirect + direct reciprocity + PC  |
 | IJMPQ     | C, I, J, M, P, Q | Full stack with lifetime memory |
 
-Hamilton (c0 = c1) is the diagonal special case; see **hamilton_combined.md**.
+Diagonal (c0 = c1) is the equal-cost special case; see **diagonal_combined.md**.
 
 ## Overview
 

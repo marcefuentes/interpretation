@@ -12,8 +12,8 @@ From the current scaffold to a finished manuscript. Companion to outline.md
   unconditional cooperators after the machinery is taxed away).
 - **Venue / type:** full research article, specialist theoretical-biology / evolution
   journal. Implies ~5-7 main figures, a complete Methods, and a supplement.
-- **Scope:** one manuscript — main text = hamilton + mutualism (baseline demand and
-  two-population roles) + hamilton_cost + mutualism_cost (price–demand in symmetric
+- **Scope:** one manuscript — main text = diagonal + mutualism (baseline demand and
+  two-population roles) + diagonal_cost + mutualism_cost (price–demand in symmetric
   and asymmetric settings); supplement = robustness panels from the primary studies
   (shuffle, groupsize, dilemma-0 control) plus an attribution table.
 - **Calibration studies (prisoners, snowdrift):** auxiliary only. They justify the
@@ -21,8 +21,8 @@ From the current scaffold to a finished manuscript. Companion to outline.md
   and live in journal/prisoners_calibration.md and journal/snowdrift_calibration.md.
   Cite them in Methods/Results prose and the supplement table; do not publish their
   payoff-plane figures.
-- **Retired split (2026-07):** we had considered a price–demand paper (hamilton only)
-  and a separate asymmetry/exploitation paper (mutualism + hamilton diagonal).
+- **Retired split (2026-07):** we had considered a price–demand paper (diagonal only)
+  and a separate asymmetry/exploitation paper (mutualism + diagonal).
   mutualism_cost is price–demand data on the asymmetric branch, so it belongs in the
   unified article, not a second publication.
 
@@ -31,9 +31,9 @@ From the current scaffold to a finished manuscript. Companion to outline.md
 1. Cooperation between non-kin needs enforcement (reciprocity, partner choice,
    reputation), and models normally treat that machinery as free.
 2. Baseline: how each mechanism sustains cooperation as the cooperation cost c rises,
-   in one population (hamilton pop_1) and two (hamilton pop_2 and mutualism pop_2),
+   in one population (diagonal pop_1) and two (diagonal pop_2 and mutualism pop_2),
    including how partner choice creates or converts the cooperator/exploiter asymmetry.
-3. Headline: make the machinery itself costly (hamilton_cost; mutualism_cost on the
+3. Headline: make the machinery itself costly (diagonal_cost; mutualism_cost on the
    asymmetric branch). Information cost is soft alone but compounds with cooperation
    cost (price starves the defence demand requires), and taxing the machinery erodes
    the apparatus while cooperation can persist — behaviour and mechanism decouple;
@@ -50,12 +50,12 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 ## Phase 1 — figure set (do before Results prose)
 
 - [~] Finalize the main-text figure list from the candidates in figures.md (target
-  ~5-7): current draft is m1 (hamilton pop_1 hierarchy), m6 (hamilton pop_2
+  ~5-7): current draft is m1 (diagonal pop_1 hierarchy), m6 (diagonal pop_2
   stochastic asymmetry under P), m2 (mutualism deterministic split and IJMPQ
-  suppression), m3–m5 (hamilton_cost and mutualism_cost price–demand panels) — not
+  suppression), m3–m5 (diagonal_cost and mutualism_cost price–demand panels) — not
   yet locked.
 - [~] Decide the supplement figure list: current draft is ms3–ms5 only (shuffle,
-  gs = 4 robustness, hamilton_cost dilemma-0 control) plus a text attribution table;
+  gs = 4 robustness, diagonal_cost dilemma-0 control) plus a text attribution table;
   no prisoners/snowdrift heatmaps.
 - [x] Generate candidate figures via graphgen; record exact commands + output paths
   in figures.md (interpretation study namespace).

@@ -35,12 +35,12 @@ quantitative work kept separate as a running journal.
 | ---- | ---- |
 | journal/framework.md | Independent variables and the three outcome variables (the conceptual spine) |
 | journal/parameterization.md | Current payoff equations and dilemma-folder reference |
-| journal/synthesis.md | Cross-study: maps prisoners/snowdrift payoff axes onto hamilton/mutualism thresholds; information-cost axis |
-| journal/hamilton.md | Index + game parameters for the equal-cost diagonal |
-| journal/hamilton_partner_choice.md | Mechanism P; PD and snowdrift; pop_1/2/3; groupsize |
-| journal/hamilton_reciprocity.md | M, IM, IJM; shuffle effects; IJM groupsize reversal |
-| journal/hamilton_combined.md | MP, MPQ, IMP, IJMPQ; hierarchy; IJMPQ symmetry |
-| journal/hamilton_cost.md | Cost x c triangular sweep; information cost of the machinery |
+| journal/synthesis.md | Cross-study: maps prisoners/snowdrift payoff axes onto diagonal/mutualism thresholds; information-cost axis |
+| journal/diagonal.md | Index + game parameters for the equal-cost diagonal |
+| journal/diagonal_partner_choice.md | Mechanism P; PD and snowdrift; pop_1/2/3; groupsize |
+| journal/diagonal_reciprocity.md | M, IM, IJM; shuffle effects; IJM groupsize reversal |
+| journal/diagonal_combined.md | MP, MPQ, IMP, IJMPQ; hierarchy; IJMPQ symmetry |
+| journal/diagonal_cost.md | Cost x c triangular sweep; information cost of the machinery |
 | journal/mutualism_cost.md | Cost x c1 at fixed c0; information price under deterministic cooperator/exploiter roles |
 | journal/mutualism.md | Index + model overview for the primary two-population study |
 | journal/mutualism_partner_choice.md | P: chooser bottleneck, exploitation, groupsize |
@@ -59,11 +59,11 @@ quantitative work kept separate as a running journal.
 
 - **mutualism** is the primary study (two populations with potentially different
   parameters; the biologically central case).
-- **hamilton** is the equal-parameter special case of mutualism (c0 = c1), and the
+- **diagonal** is the equal-parameter special case of mutualism (c0 = c1), and the
   single-population baseline.
 - **prisoners** and **snowdrift** are auxiliary calibration studies used to interpret
-  mechanisms and signatures seen in mutualism and hamilton.
-- **hamilton_cost** extends hamilton with the information-cost axis.
+  mechanisms and signatures seen in mutualism and diagonal.
+- **diagonal_cost** extends diagonal with the information-cost axis.
 - **mutualism_cost** extends the price–demand axis to pinned cooperator/exploiter
   roles (fixed c0 = 0.10, sweep c1) and shows where the soft diagonal Cost effect
   breaks down — see

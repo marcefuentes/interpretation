@@ -8,7 +8,7 @@ trps source logic.
    forcing Pop_1 to cooperate; Pop_1 then sheds the (costly) M locus and plays
    always-cooperate (C1M0), so Pop_1 M1 falls BELOW the control baseline.
 
-2. IJMPQ shuffle robustness (mutualism_combined.md / hamilton_combined.md):
+2. IJMPQ shuffle robustness (mutualism_combined.md / diagonal_combined.md):
    shuffle disables direct reciprocity (M needs partner == oldpartner), but the
    lifetime loci J (Imimic_lt, copies partner qBSeen_lt) and Q (Choose_lt) are
    shuffle-invariant, so IJMPQ keeps Pop_1 cooperation that IMP (no J, Q) loses.
@@ -172,12 +172,12 @@ print("    every round, so M is inert under shuffle (matches M1 not driving the 
 print("  - choose_partner.c: Choose_lt (Q) uses lifetime preference; also independent")
 print("    of round-to-round partner continuity.")
 
-print("\n  Hamilton cross-check (pop_2 fset_0, PD, gs=128): is the IJMPQ-over-IMP")
+print("\n  Diagonal cross-check (pop_2 fset_0, PD, gs=128): is the IJMPQ-over-IMP")
 print("  high-c window also J-led? Isolate at c=0.30 and c=0.40, shuffle.")
 
 
 def hpath(sh, gs, m, d, f):
-    return f"{BASE}/hamilton/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
+    return f"{BASE}/diagonal/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
 
 
 def h_at_c(sh, m, c):
@@ -194,7 +194,7 @@ for c in (0.30, 0.40):
     j = h_at_c("shuffle", "IJM", c) - h_at_c("shuffle", "IM", c)
     full = h_at_c("shuffle", "IJMPQ", c) - h_at_c("shuffle", "IMP", c)
     print(f"  {c:5.2f} {q:+12.3f} {j:+12.3f} {full:+11.3f}")
-print("  (in hamilton the pure-reciprocity IM/IJM collapse at high c, so the")
+print("  (in diagonal the pure-reciprocity IM/IJM collapse at high c, so the")
 print("   IJMPQ window is a combined effect — see whether J or Q dominates)")
 
 print("\nDONE")

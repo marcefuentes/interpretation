@@ -203,7 +203,7 @@ the informative regime: shuffling destroys direct reciprocity (M shuffle
 collapses to the control), so any cooperation that IM and IJM sustain is
 attributable to reputation signals (the I locus copies a new partner's last
 move toward a third party; J copies the partner's lifetime cooperation
-average). The pattern mirrors hamilton_reciprocity.md: reputation-based
+average). The pattern mirrors diagonal_reciprocity.md: reputation-based
 reciprocity survives partner turnover where memory-based reciprocity cannot,
 and the lifetime signal J (in IJM) is far more robust than the recent-only
 signal I (in IM).

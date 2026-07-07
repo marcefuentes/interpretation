@@ -4,7 +4,7 @@
 
 Documentation and analysis for interpreting TRPS evolutionary simulation outputs.
 
-Current parameterization: K = 0.5, b = 0.4 fixed, c varies 0 to b. The analysis docs live in journal/, split by mechanism family: *_partner_choice.md (P), *_reciprocity.md (M, IM, IJM), *_combined.md (MP, MPQ, IMP, IJMPQ); journal/hamilton.md and journal/mutualism.md are indexes; journal/framework.md fixes the independent/outcome-variable model; journal/parameterization.md holds the payoff reference. Old docs in legacy/ (previous parameterization only).
+Current parameterization: K = 0.5, b = 0.4 fixed, c varies 0 to b. The analysis docs live in journal/, split by mechanism family: *_partner_choice.md (P), *_reciprocity.md (M, IM, IJM), *_combined.md (MP, MPQ, IMP, IJMPQ); journal/diagonal.md and journal/mutualism.md are indexes; journal/framework.md fixes the independent/outcome-variable model; journal/parameterization.md holds the payoff reference. Old docs in legacy/ (previous parameterization only).
 
 ## Repo Layout
 
@@ -16,7 +16,7 @@ The repo is organised in two layers for an eventual IMRaD manuscript:
 - .github/copilot-instructions.md — active Copilot instructions.
 - legacy/ holds archived docs from the previous parameterization — do not edit or cite those as current.
 
-When citing an analysis doc, use its journal/ path (e.g. journal/hamilton_cost.md).
+When citing an analysis doc, use its journal/ path (e.g. journal/diagonal_cost.md).
 
 ## Related Repositories (same machine)
 
@@ -42,8 +42,8 @@ Use --flat-output to write figures directly to --output without appending the st
 
 Examples:
 
-    python -m graphgen.main --study hamilton --all --groupsize 128 --movie --output /tmp/graphgen_out
-    python -m graphgen.main --study hamilton --all --groupsize 128 --dilemma-type 2 --movie --output /tmp/graphgen_out
+    python -m graphgen.main --study diagonal --all --groupsize 128 --movie --output /tmp/graphgen_out
+    python -m graphgen.main --study diagonal --all --groupsize 128 --dilemma-type 2 --movie --output /tmp/graphgen_out
     python -m graphgen.main --study mutualism --all --groupsize 4 --dilemma-type 0 --output /tmp/graphgen_out
     python -m graphgen.main --study mutualism_pop_3 --all --groupsize 128 --dilemma-type 1 --output ~/figures/mutualism/pop_3 --flat-output
     python -m graphgen.main --study prisoners --all --output /tmp/graphgen_out
@@ -67,23 +67,23 @@ Examples:
 
 ### Study Status
 
-**hamilton**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: hamilton_partner_choice.md (P), hamilton_reciprocity.md (M, IM, IJM), hamilton_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 primary with dedicated gs=4 sections.
+**diagonal**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: diagonal_partner_choice.md (P), diagonal_reciprocity.md (M, IM, IJM), diagonal_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 primary with dedicated gs=4 sections.
 
 **mutualism**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, pop_2 only (image and movie). Mechanism coverage differs by shuffle setting: noshuffle has 7 mechanisms (_, M, P, MP, MPQ, IMP, IJMPQ); shuffle adds IM and IJM for 9. Analysis: mutualism_partner_choice.md (P), mutualism_reciprocity.md (M noshuffle; IM, IJM shuffle), mutualism_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 noshuffle primary with dedicated gs=4 sections.
 
-**mutualism pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study mutualism_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with Hamilton pop_3 for interpretation** — see Mutualism Parameter Space below. Use Hamilton pop_3 for figures and analysis; mutualism_pop_3 is retained only as auxiliary figure material at ~/figures/mutualism/pop_3/ (use --flat-output).
+**mutualism pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study mutualism_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with Diagonal pop_3 for interpretation** — see Mutualism Parameter Space below. Use Diagonal pop_3 for figures and analysis; mutualism_pop_3 is retained only as auxiliary figure material at ~/figures/mutualism/pop_3/ (use --flat-output).
 
 **prisoners**: calibration study, re-run under the current engine (Cost=0.001, Runs=30) as a raw PD payoff-plane sweep — T=0.9 and S=0.1 fixed, R and P swept independently over an 18x18 grid (172 cells, T>R>P>S). The main analysis is dilemma 1 (PD); a dilemma 0 no-social-dilemma rerun now exists for the dummy control mechanism \_ only. Payoffs are symmetric; pops 1/2/3; shuffle and noshuffle. .con exports: gs=128 and gs=4 image for the PD sweep (noshuffle 7 mechanisms, shuffle adds IM/IJM), plus dilemma 0 control exports for \_; movie exports present for gs=128 and gs=4 (temporal via prisoners_1run: gs=128 and gs=4 complete). Cell key is (R0, P0), not c0/c1. Analysis: prisoners_calibration.md (payoff-axis attribution, gs=4 mirror of shuffle), prisoners_partner_choice.md (P), prisoners_reciprocity.md (M, IM, IJM).
 
 **snowdrift**: multi-run (snowdrift, Runs=30) now present — a snowdrift-ordered payoff sweep (T=0.9, P=0.10 fixed; R and S swept; T>R>S>P), dilemma 2, gs=128 and gs=4 image exports. Temporal from snowdrift_1run (Runs=1) movie exports (gs=128 and gs=4). Analysis: snowdrift.md (index), snowdrift_calibration.md (payoff-axis attribution), snowdrift_partner_choice.md (P), snowdrift_reciprocity.md (M, IM, IJM). Cell key is (R0, S0).
 
-**hamilton_cost**: extends hamilton with a 2nd swept axis — Cost, the per-round information cost of the machinery (recruits.c: cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2xCost, single-family 1x, control 0). Triangular Cost x c grid with Cost+c<=0.4 (231 cells: Cost in {0,0.02,...,0.4}, c in {0,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), pops 1/2/3, Runs=30 (image); hamilton_cost_1run is the single-run temporal variant. Cell key is (Cost, c0). Analysis: hamilton_cost.md; ai/analyze_hamilton_cost.py.
+**diagonal_cost**: extends diagonal with a 2nd swept axis — Cost, the per-round information cost of the machinery (recruits.c: cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2xCost, single-family 1x, control 0). Triangular Cost x c grid with Cost+c<=0.4 (231 cells: Cost in {0,0.02,...,0.4}, c in {0,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), pops 1/2/3, Runs=30 (image); diagonal_cost_1run is the single-run temporal variant. Cell key is (Cost, c0). Analysis: diagonal_cost.md; ai/analyze_diagonal_cost.py.
 
 **mutualism_cost**: extends mutualism pop_2 with the same information-cost axis but on the asymmetric branch: c0 is fixed at 0.10 for pop_0, and Cost is swept jointly with c1 over the triangle Cost+c1<=0.4 with c1>c0 (120 cells: Cost in {0,0.02,...,0.28}; c1 in {0.12,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), Runs=30 (image); mutualism_cost_1run is the single-run temporal variant. Cell key is (Cost, c1). Analysis: mutualism_cost.md; ai/analyze_mutualism_cost.py.
 
-### Hamilton Parameter Space
+### Diagonal Parameter Space
 
-Hamilton is a 1D sweep with **b = 0.4 (fixed)** and **c varying from 0 to b**. The x-axis is therefore c ∈ [0, 0.4]. The baseline fitness is **K = 0.5**.
+Diagonal is a 1D sweep with **b = 0.4 (fixed)** and **c varying from 0 to b**. The x-axis is therefore c ∈ [0, 0.4]. The baseline fitness is **K = 0.5**.
 
 Payoffs by dilemma type (folder names 0, 1, 2):
 
@@ -99,7 +99,7 @@ Folder 0 is a **control**, not a cooperative game: the dominant strategy when c 
 
 In PD, b is a cross-benefit: focal receives it only when the partner cooperates (absent in S). In snowdrift, b is a shared resource: both players receive it as long as at least one cooperates (present in S as well as T and R).
 
-### Mechanisms Available (hamilton)
+### Mechanisms Available (diagonal)
 
 | Mechanism folder | Active loci                      | Modules enabled                                                   |
 | ---------------- | -------------------------------- | ----------------------------------------------------------------- |
@@ -123,11 +123,11 @@ Mutualism is a 2D sweep over c0 and c1 with b = 0.4 fixed, K = 0.5.
 
 **pop_3** (study mutualism_pop_3): full 21×21 square — all c0, c1 pairs including diagonal and lower triangle (441 cells). One evolving population (_0) vs one fixed population (_1, 25% each genotype). Reads from the same ~/results/mutualism/ tree (results_name=mutualism). Theory overlays (s04) deferred.
 
-**mutualism pop_3 vs Hamilton pop_3 (redundant for interpretation).** The 441-cell square re-simulates what Hamilton pop_3 already captures in a 1D c sweep. Use Hamilton pop_3 for figures and analysis; mutualism_pop_3 heatmaps add little beyond noise. Root cause: in pop_3 only _0 evolves and _1 is frozen at 25% each, so c1 (the frozen partner's own cost) has no coevolutionary channel to the evolving population's payoffs — the one dynamical quantity can depend on c0 alone. Regression-locked in ai/verify_claims.py (study mutualism_pop_3, 6 checks).
+**mutualism pop_3 vs Diagonal pop_3 (redundant for interpretation).** The 441-cell square re-simulates what Diagonal pop_3 already captures in a 1D c sweep. Use Diagonal pop_3 for figures and analysis; mutualism_pop_3 heatmaps add little beyond noise. Root cause: in pop_3 only _0 evolves and _1 is frozen at 25% each, so c1 (the frozen partner's own cost) has no coevolutionary channel to the evolving population's payoffs — the one dynamical quantity can depend on c0 alone. Regression-locked in ai/verify_claims.py (study mutualism_pop_3, 6 checks).
 
-| Quantity | mutualism pop_3 (c0, c1) | Hamilton pop_3 (c = c0 = c1) |
+| Quantity | mutualism pop_3 (c0, c1) | Diagonal pop_3 (c = c0 = c1) |
 | -------- | ------------------------ | ---------------------------- |
-| Evolving _0 qBSeen / wmean | Depends on c0 only; c1-invariant at fixed c0 (max c1-spread <= 0.025) and matches Hamilton pop_3 at c = c0 across all 441 cells (max cell deviation <= 0.019) | 1D sweep — same story |
+| Evolving _0 qBSeen / wmean | Depends on c0 only; c1-invariant at fixed c0 (max c1-spread <= 0.025) and matches Diagonal pop_3 at c = c0 across all 441 cells (max cell deviation <= 0.019) | 1D sweep — same story |
 | Fixed _1 qBSeen | Flat 0.50, genotypes frozen (max dev 0.005) | Flat ~0.50 |
 | Fixed _1 raw wmean | Additively separable w ≈ a(c0) + b(c1), no c0xc1 interaction (max residual 0.005); c1 effect damped because only 50% (C1 genotypes) pay c1 | Diagonal slice where c0 = c1 |
 
@@ -176,9 +176,9 @@ Results live at ~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{p
 - **shuffle**: shuffle or noshuffle
 - **groupsize**: 128 or 4
 
-Cost (the per-module locus-expression tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except hamilton_cost, where it is the swept 2nd axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. Cost for expressing any partner-choice locus plus Cost for expressing any reciprocity locus. See decide_qB.c / recruits.c.
+Cost (the per-module locus-expression tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except diagonal_cost, where it is the swept 2nd axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. Cost for expressing any partner-choice locus plus Cost for expressing any reciprocity locus. See decide_qB.c / recruits.c.
 
-Example: ~/results/hamilton/shuffle/128/P/1/pop_2/csv_0_for_image.con
+Example: ~/results/diagonal/shuffle/128/P/1/pop_2/csv_0_for_image.con
 
 | File                  | Contents                                                         |
 | --------------------- | ---------------------------------------------------------------- |
@@ -192,7 +192,7 @@ Example: ~/results/hamilton/shuffle/128/P/1/pop_2/csv_0_for_image.con
 All studies use **64 genotypes** from **6 loci** (C, I, J, M, P, Q):
 - Genotype columns: C0I0J0M0P0Q0 through C1I1J1M1P1Q1 (alphabetical)
 - No pre-computed derived trait columns — compute everything from genotypes
-- Game parameter columns for hamilton/mutualism: **c0, c1** (cost for each population)
+- Game parameter columns for diagonal/mutualism: **c0, c1** (cost for each population)
 
 ### Computing Derived Traits from Genotypes
 
@@ -226,8 +226,8 @@ For mechanism M, graphgen splits genotypes into **dTFT** (C1M1: cooperate by def
 
 | Study              | _0                        | _1                                          |
 | ------------------ | ------------------------- | ------------------------------------------- |
-| hamilton (pop_2)   | Higher qBSeen             | Lower qBSeen                                |
-| hamilton (pop_3)   | Evolving population       | Fixed population (25% each genotype)        |
+| diagonal (pop_2)   | Higher qBSeen             | Lower qBSeen                                |
+| diagonal (pop_3)   | Evolving population       | Fixed population (25% each genotype)        |
 | mutualism (pop_2)  | Lower-cost pop (c0)       | Higher-cost pop (c1)                        |
 | mutualism (pop_3)  | Evolving population       | Fixed population (25% each genotype)        |
 
@@ -267,4 +267,4 @@ Figures are generated by ../graph/graphgen/studies/{study}/manifest.py. Key file
 - ../graph/graphgen/studies/trps/config.py — shared trait definitions
 - ../graph/graphgen/studies/common/shared.py — common path template
 
-Renderers: imshow for heatmaps (prisoners/mutualism), plot for line plots (hamilton).
+Renderers: imshow for heatmaps (prisoners/mutualism), plot for line plots (diagonal).
