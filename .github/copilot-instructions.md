@@ -4,7 +4,7 @@
 
 Documentation and analysis for interpreting TRPS evolutionary simulation outputs.
 
-Current parameterization: K = 0.5, b = 0.4 fixed, c varies 0 to b. The analysis docs live in journal/, split by mechanism family: *_partner_choice.md (P), *_reciprocity.md (M, IM, IJM), *_combined.md (MP, MPQ, IMP, IJMPQ); journal/diagonal.md and journal/mutualism.md are indexes; journal/framework.md fixes the independent/outcome-variable model; journal/parameterization.md holds the payoff reference. Old docs in legacy/ (previous parameterization only).
+Current parameterization: K = 0.5, b = 0.4 fixed, c varies 0 to b. The analysis docs live in journal/, split by mechanism family: *_partner_choice.md (P), *_reciprocity.md (M, IM, IJM), *_combined.md (MP, MPQ, IMP, IJMPQ); journal/diagonal.md and journal/mutualism.md are indexes; journal/framework.md fixes the independent/outcome-variable model; journal/parameterization.md holds the payoff reference.
 
 ## Repo Layout
 
@@ -14,7 +14,6 @@ The repo is organised in two layers for an eventual IMRaD manuscript:
 - journal/ — the analytical record (per-study and per-mechanism write-ups, synthesis.md, framework.md, parameterization.md). This is where numbers, derivations, and reasoning live, and the record for referee questions. All headline numbers here are regression-checked.
 - ai/ — agent-only support: analysis scripts, verify_claims.py, findings.md quick-reference.
 - .github/copilot-instructions.md — active Copilot instructions.
-- legacy/ holds archived docs from the previous parameterization — do not edit or cite those as current.
 
 When citing an analysis doc, use its journal/ path (e.g. journal/diagonal_cost.md).
 

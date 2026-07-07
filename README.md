@@ -6,8 +6,7 @@ mutualistic populations, across social dilemmas, cost constraints, and ecologica
 contexts.
 
 Current parameterization: K = 0.5, b = 0.4 fixed, c varies from 0 to b. See
-`journal/parameterization.md` for the payoff/folder reference. Old docs from the
-previous parameterization are preserved in `legacy/`.
+`journal/parameterization.md` for the payoff/folder reference.
 
 ## Two layers: paper and journal
 
@@ -26,7 +25,6 @@ quantitative work kept separate as a running journal.
   later. Start at `journal/framework.md`.
 - **ai/** — agent-only support: analysis scripts, the numeric-claim verifier, and a
   findings quick-reference.
-- **legacy/** — archived docs from the previous parameterization (K = 2, c = 1 fixed).
 - **.github/copilot-instructions.md** — active repository guidance for agents.
 
 ## Journal contents

@@ -14,7 +14,6 @@ creates drift. If a result belongs in the analysis, put it in the relevant
 - **journal/parameterization.md** — canonical model constants and payoffs
   (verified against `.glo` metadata). Do not restate K/b/Cost elsewhere; link here.
 - **ai/** — scripts, this file, `plan.md`.
-- **legacy/** — previous parameterization; never cite as current.
 
 ## Findings index (which journal doc owns what)
 
