@@ -107,10 +107,85 @@ Status legend: [ ] todo, [~] in progress, [x] done.
     - Related framework, synthesis, README, and paper notes updated to treat
       mutualism_cost as part of the settled manuscript scope.
 
+## Proposed — asymmetric information cost (2026-07)
+
+14. [ ] Asymmetric information-cost study (per-population Cost0, Cost1).
+    - **Question.** Existing cost studies tax the machinery symmetrically (a single
+      global `Cost` shared by both populations): diagonal_cost sweeps symmetric Cost x
+      symmetric c, mutualism_cost sweeps symmetric Cost x asymmetric c1 (c0 = 0.10).
+      The empty cell is asymmetric *price*: Cost0 != Cost1. The higher-Cost population
+      sheds its enforcement machinery faster (supply-side erosion, see
+      journal/diagonal_cost.md), so the novel question is whether it becomes the
+      exploiter (free-rides, tax-free) or the exploited (undefended). This is a **third
+      route to the cooperator/exploiter role split** — deterministic symmetry breaking
+      via the *price* of enforcement, complementing the two routes in
+      journal/synthesis.md (stochastic under symmetric payoffs; deterministic via the
+      *demand* c0 < c1). Ties directly to the manuscript's price-vs-demand thesis
+      (paper/roadmap.md).
+
+    - **Feasibility dependency (code change in ~/code/trps).** The simulation currently
+      uses a single scalar `globals->cost`; per-population cost is not supported. Needs:
+      add `cost0`/`cost1` to Globals (`~/code/trps/code/src/include/globals.h`), read
+      them (`.../modules/read_globals.c`, alongside c0/c1), select on the population
+      index in the per-round tax (`.../modules/recruits.c` lines 130-131, where
+      `current_pop_index` is already in scope), and extend the `.glo`/CSV headers
+      (`.../modules/write.c`, `.../modules/write_ics.c`). Modest, but a source change +
+      re-run, not just a new sweep config. Confirm before generating the grid.
+
+    - **Study A (symmetric c, asymmetric Cost) — the clean first study.**
+      - pop_2 only. Fix c0 = c1 = c at a positive value so demand bites (c = 0 is a
+        near-null: diagonal_cost pop_2 barely breaks symmetry with no temptation).
+        **c = 0.10 primary** (nests the Cost0 = Cost1 edge onto diagonal_cost pop_2 at
+        c = 0.10, and sits adjacent to mutualism_cost's low-asymmetry edge) plus
+        **c = 0.20 secondary** (machinery more load-bearing, so the Cost-asymmetry role
+        split should read sharper; guards against a muted signal at c = 0.10).
+      - Sweep (Cost0, Cost1) on a **0.02 grid** (matches diagonal_cost / mutualism_cost
+        so cells nest exactly).
+      - **Ordering triangle Cost0 <= Cost1** (not a full square): under symmetric c the
+        populations are exchangeable, so (Cost0, Cost1) and its mirror are the same
+        experiment; the triangle avoids redundant runs. The Cost0 = Cost1 edge is the
+        pure-Cost axis already covered by diagonal_cost pop_2.
+      - **Per-axis cap Cmax = b - c** (LOCKED), i.e. each axis bounded independently by
+        the single-family break-even c + Cost = b, beyond which a cooperate-and-enforce
+        individual cannot beat the mutual-defection floor K even in its best case
+        (mutual coop: K + b - c - Cost < K). NOT the sum-cut Cost0 + Cost1 <= b: the two
+        costs are paid by different individuals in different populations, never summed
+        within one individual, so the sum-cut would wrongly exclude payoff-feasible
+        cells (e.g. c = 0.10, Cost0 = 0.15, Cost1 = 0.25: both have c + Cost_p < b, but
+        sum = 0.40). Combined mechanisms (2 x Cost) break even earlier at c + 2 Cost = b;
+        as in diagonal_cost, cells past that are kept but read knowing the combined
+        strategy is already underwater there.
+
+    - **Study B (crossed asymmetries) — reserved, higher payoff, more expensive.**
+      - The headline question: do the two asymmetry axes reinforce or fight? With
+        c0 < c1 (built-in cooperator = pop_0) plus asymmetric Cost, does giving the
+        natural cooperator the expensive machinery *flip* the role — can the price of
+        enforcement override the payoff structure?
+      - Requires the **full square** in (Cost0, Cost1) at fixed c-gap: with c0 < c1 the
+        populations are no longer exchangeable, so the *sign* of Cost1 - Cost0 matters
+        (taxing the cheap cooperator vs the expensive exploiter are different
+        experiments, not mirror images).
+      - Scope (which c-gap, Cost sub-grid) TBD; do after Study A.
+
+    - **Mechanism-level hypothesis to test.** Partner choice has a built-in role
+      asymmetry (chooser vs chosen) that reciprocity lacks, so asymmetric Cost may act
+      *directionally* on P (taxing the chooser side != the chosen side) in a way M does
+      not — a discriminator between the assortment (P) and history (M) accounts in
+      synthesis.md.
+
+    - **Locked decisions (this thread):** per-population Cost0/Cost1; 0.02 grid on
+      Cost0, Cost1, c; Study A = symmetric c with ordering triangle Cost0 <= Cost1;
+      per-axis cap Cmax = b - c; Study A c = 0.10 primary + c = 0.20 secondary; Study B
+      reserved with a full square.
+    - **No c = 0 slice** (would land in diagonal_cost's harmless-shedding regime where
+      the Cost asymmetry is a near-null; not worth the runs).
+    - **Open decisions:** Study B c-gap and Cost sub-grid.
+
 ## Decisions needed from maintainer
 
 - (a) Keep or drop mutualism pop_3 (item 6).
 - (b) Is snowdrift in scope enough to justify generating multi-run data (item 7)?
+- (c) Study B scope (item 14 open decisions).
 
 ## Suggested order
 
