@@ -14,8 +14,13 @@ From the current scaffold to a finished manuscript. Companion to outline.md
   journal. Implies ~5-7 main figures, a complete Methods, and a supplement.
 - **Scope:** one manuscript — main text = hamilton + mutualism (baseline demand and
   two-population roles) + hamilton_cost + mutualism_cost (price–demand in symmetric
-  and asymmetric settings); supplement = prisoners/snowdrift payoff-axis calibration
-  and the gs=4 / shuffle robustness.
+  and asymmetric settings); supplement = robustness panels from the primary studies
+  (shuffle, groupsize, dilemma-0 control) plus an attribution table.
+- **Calibration studies (prisoners, snowdrift):** auxiliary only. They justify the
+  payoff-gap attributions (M risk-limited, P limited by R − P, combined reward-limited)
+  and live in journal/prisoners_calibration.md and journal/snowdrift_calibration.md.
+  Cite them in Methods/Results prose and the supplement table; do not publish their
+  payoff-plane figures.
 - **Retired split (2026-07):** we had considered a price–demand paper (hamilton only)
   and a separate asymmetry/exploitation paper (mutualism + hamilton diagonal).
   mutualism_cost is price–demand data on the asymmetric branch, so it belongs in the
@@ -26,17 +31,17 @@ From the current scaffold to a finished manuscript. Companion to outline.md
 1. Cooperation between non-kin needs enforcement (reciprocity, partner choice,
    reputation), and models normally treat that machinery as free.
 2. Baseline: how each mechanism sustains cooperation as the cooperation cost c rises,
-   in one population (hamilton) and two (mutualism), including the cooperator/exploiter
-   asymmetry.
+   in one population (hamilton pop_1) and two (hamilton pop_2 and mutualism pop_2),
+   including how partner choice creates or converts the cooperator/exploiter asymmetry.
 3. Headline: make the machinery itself costly (hamilton_cost; mutualism_cost on the
    asymmetric branch). Information cost is soft alone but compounds with cooperation
    cost (price starves the defence demand requires), and taxing the machinery erodes
    the apparatus while cooperation can persist — behaviour and mechanism decouple;
    under built-in roles, Cost also modulates cooperation and fitness gaps between
    populations.
-4. The payoff-axis attribution (why each mechanism has the threshold it does) is the
-   mechanistic backbone; stated in the main text as established, derived in the
-   supplement (prisoners/snowdrift).
+4. Payoff-axis attribution (why each mechanism has the threshold it does) is stated
+   in the main text and summarized in a supplement table; the prisoners/snowdrift
+   calibration sweeps that derive it remain in the journal, not the figure set.
 
 ## Phase 0 — framing [x]
 
@@ -45,12 +50,13 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 ## Phase 1 — figure set (do before Results prose)
 
 - [~] Finalize the main-text figure list from the candidates in figures.md (target
-  ~5-7): current draft is m1–m5 (hamilton baseline; mutualism role split;
-  hamilton_cost price-versus-demand and decoupling; mutualism_cost asymmetric
-  panel) — not yet locked.
-- [~] Decide the supplement figure list (current draft: ms1–ms5 — prisoners and
-  snowdrift payoff-axis calibration, shuffle and gs = 4 robustness mirrors,
-  hamilton_cost control decomposition).
+  ~5-7): current draft is m1 (hamilton pop_1 hierarchy), m6 (hamilton pop_2
+  stochastic asymmetry under P), m2 (mutualism deterministic split and IJMPQ
+  suppression), m3–m5 (hamilton_cost and mutualism_cost price–demand panels) — not
+  yet locked.
+- [~] Decide the supplement figure list: current draft is ms3–ms5 only (shuffle,
+  gs = 4 robustness, hamilton_cost dilemma-0 control) plus a text attribution table;
+  no prisoners/snowdrift heatmaps.
 - [x] Generate candidate figures via graphgen; record exact commands + output paths
   in figures.md (interpretation study namespace).
 - [~] Draft one-sentence captions, each traceable to a journal doc (and a
@@ -60,6 +66,7 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 
 - [ ] **Methods** — closest to done; complete the model description, the IV grid, and
   the replicate/verification paragraph. Link constants to journal/parameterization.md.
+  Describe prisoners/snowdrift as orthogonal calibration sweeps (journal only).
 - [ ] **Results** — write to the final figures, in the narrative-arc order; keep
   numbers cited to journal docs, not re-derived.
 - [ ] **Introduction** — requires the related-work layer (see Phase 2b); frame the
@@ -89,8 +96,9 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 
 - **Figure set is provisional** — Results prose depends on it; finalize in Phase 1.
 - **Related-work layer is absent** — gates Introduction and Discussion; start early.
-- **Main-text attribution without the calibration** — ensure the supplement is
-  referenced wherever the main text asserts a mechanism's limiting payoff gap.
+- **Attribution without calibration figures** — main text must cite the supplement
+  table (and journal calibration docs) wherever it asserts a mechanism's limiting
+  payoff gap.
 - **Tooling stays authoritative** — any new headline number in the paper must trace to
   a journal doc with a verify_claims.py check; the paper cites, it does not originate
   numbers.
