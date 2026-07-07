@@ -15,7 +15,7 @@ The repo is organised in two layers for an eventual IMRaD manuscript:
 - ai/ — agent-only support: analysis scripts, verify_claims.py, findings.md quick-reference.
 - .github/copilot-instructions.md — active Copilot instructions.
 
-When citing an analysis doc, use its journal/ path (e.g. journal/diagonal_cost.md).
+When citing an analysis doc, use its journal/ path (e.g. journal/symmetric_cost.md).
 
 ## Related Repositories (same machine)
 
@@ -76,7 +76,7 @@ Examples:
 
 **snowdrift**: multi-run (snowdrift, Runs=30) now present — a snowdrift-ordered payoff sweep (T=0.9, P=0.10 fixed; R and S swept; T>R>S>P), dilemma 2, gs=128 and gs=4 image exports. Temporal from snowdrift_1run (Runs=1) movie exports (gs=128 and gs=4). Analysis: snowdrift.md (index), snowdrift_calibration.md (payoff-axis attribution), snowdrift_partner_choice.md (P), snowdrift_reciprocity.md (M, IM, IJM). Cell key is (R0, S0).
 
-**diagonal_cost**: extends diagonal with a 2nd swept axis — Cost, the per-round information cost of the machinery (recruits.c: cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2xCost, single-family 1x, control 0). Triangular Cost x c grid with Cost+c<=0.4 (231 cells: Cost in {0,0.02,...,0.4}, c in {0,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), pops 1/2/3, Runs=30 (image); diagonal_cost_1run is the single-run temporal variant. Cell key is (Cost, c0). Analysis: diagonal_cost.md; ai/analyze_diagonal_cost.py.
+**symmetric_cost**: extends diagonal with a 2nd swept axis — Cost, the per-round information cost of the machinery (recruits.c: cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2xCost, single-family 1x, control 0). Triangular Cost x c grid with Cost+c<=0.4 (231 cells: Cost in {0,0.02,...,0.4}, c in {0,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), pops 1/2/3, Runs=30 (image); symmetric_cost_1run is the single-run temporal variant. Cell key is (Cost, c0). Analysis: symmetric_cost.md; ai/analyze_symmetric_cost.py.
 
 **mutualism_cost**: extends mutualism pop_2 with the same information-cost axis but on the asymmetric branch: c0 is fixed at 0.10 for pop_0, and Cost is swept jointly with c1 over the triangle Cost+c1<=0.4 with c1>c0 (120 cells: Cost in {0,0.02,...,0.28}; c1 in {0.12,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), Runs=30 (image); mutualism_cost_1run is the single-run temporal variant. Cell key is (Cost, c1). Analysis: mutualism_cost.md; ai/analyze_mutualism_cost.py.
 
@@ -175,7 +175,7 @@ Results live at ~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{p
 - **shuffle**: shuffle or noshuffle
 - **groupsize**: 128 or 4
 
-Cost (the per-module locus-expression tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except diagonal_cost, where it is the swept 2nd axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. Cost for expressing any partner-choice locus plus Cost for expressing any reciprocity locus. See decide_qB.c / recruits.c.
+Cost (the per-module locus-expression tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except symmetric_cost, where it is the swept 2nd axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. Cost for expressing any partner-choice locus plus Cost for expressing any reciprocity locus. See decide_qB.c / recruits.c.
 
 Example: ~/results/diagonal/shuffle/128/P/1/pop_2/csv_0_for_image.con
 

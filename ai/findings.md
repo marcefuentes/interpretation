@@ -22,7 +22,7 @@ creates drift. If a result belongs in the analysis, put it in the relevant
 | Conceptual model: IVs and the three outcomes | framework.md |
 | Cross-study payoff-axis attribution; info-cost axis | synthesis.md |
 | Diagonal P / M+indirect / combined | diagonal_partner_choice.md, diagonal_reciprocity.md, diagonal_combined.md |
-| Information cost of the machinery (Cost x c) | diagonal_cost.md |
+| Information cost of the machinery (Cost x c) | symmetric_cost.md |
 | Information cost under asymmetry | mutualism_cost.md |
 | Mutualism P / M+indirect / combined | mutualism_partner_choice.md, mutualism_reciprocity.md, mutualism_combined.md |
 | Prisoners payoff-plane calibration | prisoners_calibration.md, prisoners_partner_choice.md, prisoners_reciprocity.md |
@@ -48,7 +48,7 @@ source if the engine changes.
 - `ai/analyze_new_data.py` — cross-study analysis (diagonal, mutualism).
 - `ai/analyze_prisoners.py` — prisoners payoff-axis calibration.
 - `ai/analyze_snowdrift.py` — snowdrift payoff-axis calibration.
-- `ai/analyze_diagonal_cost.py` — information-cost axis (Cost x c grid).
+- `ai/analyze_symmetric_cost.py` — information-cost axis (Cost x c grid).
 - `ai/analyze_mutualism_cost.py` — information-cost axis under built-in asymmetry
   (Cost x c1 with c0 fixed).
 - `ai/analyze_single_run.py` — temporal dynamics from `*_1run` studies.

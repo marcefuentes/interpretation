@@ -1,7 +1,7 @@
 # Discussion
 
 *Draft scaffold. Backing: [synthesis.md](../journal/synthesis.md),
-[diagonal_cost.md](../journal/diagonal_cost.md),
+[symmetric_cost.md](../journal/symmetric_cost.md),
 [framework.md](../journal/framework.md).*
 
 ## What each mechanism is really limited by

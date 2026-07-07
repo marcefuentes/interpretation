@@ -3,7 +3,7 @@
 Analyze the mutualism_cost study: how information cost Cost interacts with the
 deterministic cooperator/exploiter split of mutualism pop_2.
 
-Unlike diagonal_cost, this sweep fixes c0 = 0.10 for the low-cost population and
+Unlike symmetric_cost, this sweep fixes c0 = 0.10 for the low-cost population and
 sweeps Cost jointly with c1 over the triangular grid Cost + c1 <= 0.40, c1 > c0.
 Cell key is therefore (Cost, c1), with pop_0 the low-cost side and pop_1 the
 high-cost side.
@@ -20,7 +20,7 @@ BASE = os.path.expanduser("~/results")
 MC = f"{BASE}/mutualism_cost"
 MC1 = f"{BASE}/mutualism_cost_1run"
 MUT = f"{BASE}/mutualism"
-HC = f"{BASE}/diagonal_cost"
+HC = f"{BASE}/symmetric_cost"
 
 MECHS = ["_", "M", "P", "MP", "MPQ", "IMP", "IJMPQ"]
 PRIMARY_MECHS = ["M", "P", "IMP", "IJMPQ"]
@@ -220,7 +220,7 @@ for mech, co, c1 in (("P", 0.00, 0.20), ("P", 0.12, 0.20),
                      if abs(float(r["Cost"]) - co) < 0.005 and abs(float(r["c1"]) - c1) < 0.005)
         print(f"    pop_{f}: " + "  ".join(f"{t}:{q:.3f}" for t, q in pts))
 
-print("\n--- J. SYMMETRIC REFERENCE: diagonal_cost pop_2 at c=0.10 vs mutualism_cost c1=0.12 ---")
+print("\n--- J. SYMMETRIC REFERENCE: symmetric_cost pop_2 at c=0.10 vs mutualism_cost c1=0.12 ---")
 for mech in PRIMARY_MECHS:
     h0 = hc_cell(load(hc_path("noshuffle", "128", mech, 1, "pop_2", 0)), 0.0, 0.10)
     h1 = hc_cell(load(hc_path("noshuffle", "128", mech, 1, "pop_2", 1)), 0.0, 0.10)

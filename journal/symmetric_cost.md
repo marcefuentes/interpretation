@@ -1,7 +1,7 @@
 # Diagonal Cost — The Price of the Enforcement Apparatus
 
 Standard diagonal fixes the per-round module tax at Cost = 0.001 (negligible)
-and sweeps the cooperation cost c from 0 to b = 0.4. **diagonal_cost** adds a
+and sweeps the cooperation cost c from 0 to b = 0.4. **symmetric_cost** adds a
 second axis: it sweeps Cost jointly with c over a triangular grid, so we can ask
 what happens when carrying reciprocity or partner-choice machinery is itself
 expensive. Cost is the *information cost* of a mechanism — the metabolic or
@@ -10,7 +10,7 @@ c, the *cooperation cost* paid when you actually help a partner.
 
 Everything else matches diagonal: the diagonal special case of mutualism
 (c0 = c1 = c), K = 0.5, b = 0.4, pops 1/2/3, shuffle and noshuffle, gs = 128 and
-gs = 4, dilemmas 0/1/2, Runs = 30. The companion diagonal_cost_1run is the
+gs = 4, dilemmas 0/1/2, Runs = 30. The companion symmetric_cost_1run is the
 single-run variant for temporal dynamics.
 
 For how the information-cost axis sits alongside the payoff-axis attributions
@@ -241,7 +241,7 @@ small Cost then knocks it to the control floor. This mirrors the gs = 4 findings
 in diagonal and synthesis: small groups remove the P component, and information
 cost finishes it off.
 
-## Temporal dynamics (diagonal_cost_1run)
+## Temporal dynamics (symmetric_cost_1run)
 
 Single-run trajectories (nine snapshots, t = 1 ... 1.05M) show that the image
 (steady-state) values are representative:
@@ -281,6 +281,6 @@ payoffs split stochastically only under temptation" reading in **synthesis.md**.
 - **Triangular grid.** Because Cost + c ≤ 0.4, the extreme corners of a full
   square are not sampled; the iso-budget comparison is therefore made along the
   hypotenuse and shorter interior diagonals, not a full square.
-- **Role in the project.** diagonal_cost is an extension of the primary diagonal
+- **Role in the project.** symmetric_cost is an extension of the primary diagonal
   study, not a separate calibration. It answers "how expensive can the mechanism
   be before it stops paying for itself," which the fixed-Cost studies cannot.

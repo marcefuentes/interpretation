@@ -11,17 +11,17 @@ between this doc and the data fails the verifier.
 
 | Constant | Value | Applies to | Source of truth |
 | -------- | ----- | ---------- | --------------- |
-| K (baseline fitness) | 0.5 | diagonal, mutualism, diagonal_cost | .glo `K` |
-| b (benefit) | 0.4, fixed | diagonal, mutualism, diagonal_cost | .glo `b` |
+| K (baseline fitness) | 0.5 | diagonal, mutualism, symmetric_cost | .glo `K` |
+| b (benefit) | 0.4, fixed | diagonal, mutualism, symmetric_cost | .glo `b` |
 | c (cooperation cost) | swept 0 to b | diagonal (c0 = c1), mutualism (c0 < c1) | .glo `c0`, `c1` |
-| Cost (information cost) | 0.001 default; swept 0 to 0.4 in diagonal_cost | all studies | .glo `Cost` |
+| Cost (information cost) | 0.001 default; swept 0 to 0.4 in symmetric_cost | all studies | .glo `Cost` |
 | Runs | 30 (multi-run); 1 (`*_1run`) | all studies | .glo `Runs` |
 | MutationRate | 0.01 | all studies | .glo `MutationRate` |
 
 Cost is the per-round tax for expressing machinery, charged once for any
 partner-choice locus (P/Q) plus once for any reciprocity locus (M/I/J):
 cost = Cost × ((Choose or Choose_lt) + (Mimic or Imimic or Imimic_lt)); fitness is
-w = max(0, payoff − cost). See journal/diagonal_cost.md for the swept-Cost study.
+w = max(0, payoff − cost). See journal/symmetric_cost.md for the swept-Cost study.
 
 ## Diagonal / mutualism payoffs
 

@@ -10,7 +10,7 @@ c), split by mechanism family:
   IJM: shuffle effects, IJM groupsize reversal, direct vs indirect reciprocity
 - **[diagonal_combined.md](diagonal_combined.md)** — mechanisms MP, MPQ, IMP,
   IJMPQ: mechanism hierarchy, IJMPQ symmetry suppression, groupsize effects
-- **[diagonal_cost.md](diagonal_cost.md)** — the information-cost extension:
+- **[symmetric_cost.md](symmetric_cost.md)** — the information-cost extension:
   Cost (the per-round tax on carrying the machinery) swept jointly with c, and
   how a rising price of enforcement interacts with a rising demand for it
 

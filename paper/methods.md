@@ -46,7 +46,7 @@ IJM).
 - **mutualism** (primary): two coevolving populations, a 2D upper-triangular sweep of
   c0 < c1 (210 cells), dilemmas 1/2, both group sizes, shuffle/noshuffle.
 - **diagonal**: the equal-cost diagonal (c0 = c1), pop_1/2/3, dilemmas 0/1/2.
-- **diagonal_cost**: adds the information-cost axis, sweeping Cost jointly with c on a
+- **symmetric_cost**: adds the information-cost axis, sweeping Cost jointly with c on a
   triangular grid (Cost + c ≤ b).
 - **prisoners** and **snowdrift**: payoff-plane calibration sweeps that hold two
   payoffs fixed and vary the other two, decoupling temptation, risk, and the

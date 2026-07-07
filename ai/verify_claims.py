@@ -496,11 +496,11 @@ check("snowdrift", "PC: pop_2 fitness-inverted cells = 172", lambda: sd_paradox(
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# DIAGONAL_COST — diagonal_cost.md (information-cost axis; cell key = (Cost, c0))
+# SYMMETRIC_COST — symmetric_cost.md (information-cost axis; cell key = (Cost, c0))
 # ════════════════════════════════════════════════════════════════════════════
 
 def hcpath(sh, gs, m, d, pop, f):
-    return f"{BASE}/diagonal_cost/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
+    return f"{BASE}/symmetric_cost/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
 
 
 def hc_cell(rows, cost, c, col="qBSeen"):
@@ -520,43 +520,43 @@ def hc_cell_row(rows, cost, c):
 # pure information-cost axis (c=0): gentle collapse, combined most robust
 for m, exp in (("_", 0.517), ("M", 0.627), ("P", 0.539), ("MP", 0.654),
                ("MPQ", 0.715), ("IMP", 0.719), ("IJMPQ", 0.810)):
-    check("diagonal_cost", f"Cost=0.40 c=0 {m} qBSeen = {exp:.3f}",
+    check("symmetric_cost", f"Cost=0.40 c=0 {m} qBSeen = {exp:.3f}",
           (lambda mm=m: hc_cell(load(hcpath("noshuffle", "128", mm, 1, "pop_1", 0)), 0.40, 0.0)), exp)
 
-check("diagonal_cost", "IJMPQ Cost=0.20 c=0 = 0.886",
+check("symmetric_cost", "IJMPQ Cost=0.20 c=0 = 0.886",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.0), 0.886)
 
 # sanity: Cost=0 edge reproduces standard diagonal (Cost=0.001) at c=0.20
-check("diagonal_cost", "sanity IJMPQ Cost=0 c=0.20 = 0.951",
+check("symmetric_cost", "sanity IJMPQ Cost=0 c=0.20 = 0.951",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.0, 0.20), 0.951)
 
 # machinery erosion: enforcement allele selected out along the Cost axis (c=0)
-check("diagonal_cost", "P1 allele c=0 Cost=0 = 0.671",
+check("symmetric_cost", "P1 allele c=0 Cost=0 = 0.671",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.0, 0.0), "P1"), 0.671, 0.01)
-check("diagonal_cost", "P1 allele c=0 Cost=0.40 = 0.020",
+check("symmetric_cost", "P1 allele c=0 Cost=0.40 = 0.020",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.40, 0.0), "P1"), 0.020, 0.01)
-check("diagonal_cost", "M1 allele c=0 Cost=0.40 = 0.018",
+check("symmetric_cost", "M1 allele c=0 Cost=0.40 = 0.018",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 1, "pop_1", 0)), 0.40, 0.0), "M1"), 0.018, 0.01)
 
 # control (dilemma 0) decomposes cost from demand: machinery erodes at ~same rate
 # as the PD, but behavior stays pinned at the ceiling (no enforcement needed).
-check("diagonal_cost", "control M1 c=0 Cost=0 = 0.383",
+check("symmetric_cost", "control M1 c=0 Cost=0 = 0.383",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.0, 0.0), "M1"), 0.383, 0.01)
-check("diagonal_cost", "control M1 c=0 Cost=0.40 = 0.023 (erodes like PD)",
+check("symmetric_cost", "control M1 c=0 Cost=0.40 = 0.023 (erodes like PD)",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), "M1"), 0.023, 0.01)
-check("diagonal_cost", "control qBSeen c=0 Cost=0 = 0.968 (ceiling)",
+check("symmetric_cost", "control qBSeen c=0 Cost=0 = 0.968 (ceiling)",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.0, 0.0), 0.968)
-check("diagonal_cost", "control qBSeen c=0 Cost=0.40 = 0.978 (pinned; no collapse)",
+check("symmetric_cost", "control qBSeen c=0 Cost=0.40 = 0.978 (pinned; no collapse)",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), 0.978)
-check("diagonal_cost", "control C1M0 c=0 Cost=0.40 = 0.956 (free-coop niche)",
+check("symmetric_cost", "control C1M0 c=0 Cost=0.40 = 0.956 (free-coop niche)",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), "C1", "M0"), 0.956, 0.01)
 
 # snowdrift (dilemma 2) buffers information cost: M holds high at Cost=0.40
-check("diagonal_cost", "M dilemma2 Cost=0.40 c=0 = 0.870",
+check("symmetric_cost", "M dilemma2 Cost=0.40 c=0 = 0.870",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 2, "pop_1", 0)), 0.40, 0.0), 0.870)
 
 # interaction: information cost lowers the c-collapse threshold (IJMPQ interior)
-check("diagonal_cost", "IJMPQ Cost=0.20 c=0.16 collapsed = 0.049",
+check("symmetric_cost", "IJMPQ Cost=0.20 c=0.16 collapsed = 0.049",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.16), 0.049)
 
 
@@ -763,15 +763,15 @@ def glo_val(study, sh, gs, m, d, pop, key):
     return float(meta[key]) if meta and key in meta else float("nan")
 
 
-# K = 0.5 and b = 0.4 in the cost-parameterized studies (diagonal, mutualism, diagonal_cost)
+# K = 0.5 and b = 0.4 in the cost-parameterized studies (diagonal, mutualism, symmetric_cost)
 for study, d, pop in (("diagonal", 1, "pop_1"), ("mutualism", 1, "pop_2"),
-                      ("diagonal_cost", 1, "pop_1")):
+                      ("symmetric_cost", 1, "pop_1")):
     check("parameterization", f"{study} K = 0.5",
           (lambda s=study, dd=d, pp=pop: glo_val(s, "noshuffle", "128", "P", dd, pp, "K")), 0.5)
     check("parameterization", f"{study} b = 0.4",
           (lambda s=study, dd=d, pp=pop: glo_val(s, "noshuffle", "128", "P", dd, pp, "b")), 0.4)
 
-# Cost = 0.001 default everywhere except diagonal_cost (where Cost is the swept axis)
+# Cost = 0.001 default everywhere except symmetric_cost (where Cost is the swept axis)
 check("parameterization", "diagonal Cost = 0.001 (default)",
       lambda: glo_val("diagonal", "noshuffle", "128", "P", 1, "pop_1", "Cost"), 0.001, 0.0)
 check("parameterization", "prisoners Cost = 0.001 (default)",

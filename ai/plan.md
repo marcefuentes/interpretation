@@ -71,9 +71,9 @@ Status legend: [ ] todo, [~] in progress, [x] done.
     Updated the stale "snowdrift is single-run only / dir empty" notes in findings.md and
     copilot-instructions.md.
 
-11. [x] diagonal_cost + diagonal_cost_1run (new information-cost study).
-    - Wrote diagonal_cost.md; added the price-vs-demand section to synthesis.md.
-    - ai/analyze_diagonal_cost.py + 14 regression checks.
+11. [x] symmetric_cost + symmetric_cost_1run (new information-cost study).
+    - Wrote symmetric_cost.md; added the price-vs-demand section to synthesis.md.
+    - ai/analyze_symmetric_cost.py + 14 regression checks.
     - Findings: information cost is soft vs cooperation cost (machinery shed harmlessly at
       c=0), family count does not predict collapse (combined most robust), machinery erosion
       decouples behavior from mechanism, and Cost lowers the c-collapse threshold (~1.5 c per
@@ -100,7 +100,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 13. [x] mutualism_cost_1run + mutualism_cost (price–demand under built-in asymmetry).
     - Analysis now lives in journal/mutualism_cost.md, with regression checks in
       ai/verify_claims.py and support script ai/analyze_mutualism_cost.py.
-    - Headline result: the soft Cost effect from diagonal_cost depends on the c = 0
+    - Headline result: the soft Cost effect from symmetric_cost depends on the c = 0
       refuge. With c0 fixed at 0.10 on the asymmetric branch, Cost retreats the c1
       ceiling immediately, compresses the cooperation/fitness split, and leaves much
       less behavior-mechanism decoupling.
@@ -111,11 +111,11 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
 14. [ ] Asymmetric information-cost study (per-population Cost0, Cost1).
     - **Question.** Existing cost studies tax the machinery symmetrically (a single
-      global `Cost` shared by both populations): diagonal_cost sweeps symmetric Cost x
+      global `Cost` shared by both populations): symmetric_cost sweeps symmetric Cost x
       symmetric c, mutualism_cost sweeps symmetric Cost x asymmetric c1 (c0 = 0.10).
       The empty cell is asymmetric *price*: Cost0 != Cost1. The higher-Cost population
       sheds its enforcement machinery faster (supply-side erosion, see
-      journal/diagonal_cost.md), so the novel question is whether it becomes the
+      journal/symmetric_cost.md), so the novel question is whether it becomes the
       exploiter (free-rides, tax-free) or the exploited (undefended). This is a **third
       route to the cooperator/exploiter role split** — deterministic symmetry breaking
       via the *price* of enforcement, complementing the two routes in
@@ -134,17 +134,17 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
     - **Study A (symmetric c, asymmetric Cost) — the clean first study.**
       - pop_2 only. Fix c0 = c1 = c at a positive value so demand bites (c = 0 is a
-        near-null: diagonal_cost pop_2 barely breaks symmetry with no temptation).
-        **c = 0.10 primary** (nests the Cost0 = Cost1 edge onto diagonal_cost pop_2 at
+        near-null: symmetric_cost pop_2 barely breaks symmetry with no temptation).
+        **c = 0.10 primary** (nests the Cost0 = Cost1 edge onto symmetric_cost pop_2 at
         c = 0.10, and sits adjacent to mutualism_cost's low-asymmetry edge) plus
         **c = 0.20 secondary** (machinery more load-bearing, so the Cost-asymmetry role
         split should read sharper; guards against a muted signal at c = 0.10).
-      - Sweep (Cost0, Cost1) on a **0.02 grid** (matches diagonal_cost / mutualism_cost
+      - Sweep (Cost0, Cost1) on a **0.02 grid** (matches symmetric_cost / mutualism_cost
         so cells nest exactly).
       - **Ordering triangle Cost0 <= Cost1** (not a full square): under symmetric c the
         populations are exchangeable, so (Cost0, Cost1) and its mirror are the same
         experiment; the triangle avoids redundant runs. The Cost0 = Cost1 edge is the
-        pure-Cost axis already covered by diagonal_cost pop_2.
+        pure-Cost axis already covered by symmetric_cost pop_2.
       - **Per-axis cap Cmax = b - c** (LOCKED), i.e. each axis bounded independently by
         the single-family break-even c + Cost = b, beyond which a cooperate-and-enforce
         individual cannot beat the mutual-defection floor K even in its best case
@@ -153,7 +153,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
         within one individual, so the sum-cut would wrongly exclude payoff-feasible
         cells (e.g. c = 0.10, Cost0 = 0.15, Cost1 = 0.25: both have c + Cost_p < b, but
         sum = 0.40). Combined mechanisms (2 x Cost) break even earlier at c + 2 Cost = b;
-        as in diagonal_cost, cells past that are kept but read knowing the combined
+        as in symmetric_cost, cells past that are kept but read knowing the combined
         strategy is already underwater there.
 
     - **Study B (crossed asymmetries) — reserved, higher payoff, more expensive.**
@@ -177,7 +177,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       Cost0, Cost1, c; Study A = symmetric c with ordering triangle Cost0 <= Cost1;
       per-axis cap Cmax = b - c; Study A c = 0.10 primary + c = 0.20 secondary; Study B
       reserved with a full square.
-    - **No c = 0 slice** (would land in diagonal_cost's harmless-shedding regime where
+    - **No c = 0 slice** (would land in symmetric_cost's harmless-shedding regime where
       the Cost asymmetry is a near-null; not worth the runs).
     - **Open decisions:** Study B c-gap and Cost sub-grid.
 

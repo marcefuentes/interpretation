@@ -33,8 +33,8 @@ Status: provisional — adjust before locking the manuscript figure set.
 | 1 | Equal-cost baseline: the three canonical families define the mechanism hierarchy on the diagonal (single population) | m1 | python -m graphgen.main --study interpretation --figure m1 --groupsize 128 --output ~/figures | ~/figures/interpretation/m1.png | diagonal_partner_choice.md, diagonal_reciprocity.md, diagonal_combined.md, synthesis.md |
 | 2 | Stochastic two-population asymmetry: partner choice breaks symmetry between identical populations; the cooperating side earns less | m6 | python -m graphgen.main --study interpretation --figure m6 --groupsize 128 --output ~/figures | ~/figures/interpretation/m6.png | diagonal_partner_choice.md, synthesis.md |
 | 3 | Deterministic two-population asymmetry: built-in cost difference is converted into a cooperator/exploiter split; combined mechanisms suppress it | m2 | python -m graphgen.main --study interpretation --figure m2 --groupsize 128 --output ~/figures | ~/figures/interpretation/m2.png | mutualism_partner_choice.md, mutualism_combined.md, synthesis.md |
-| 4 | Price versus demand on the symmetric branch: Cost is soft alone but retreats the c ceiling | m3 | python -m graphgen.main --study interpretation --figure m3 --groupsize 128 --output ~/figures | ~/figures/interpretation/m3.png | diagonal_cost.md |
-| 5 | Behaviour–mechanism decoupling on the symmetric branch: enforcement alleles erode before cooperation does | m4 | python -m graphgen.main --study interpretation --figure m4 --groupsize 128 --output ~/figures | ~/figures/interpretation/m4.png | diagonal_cost.md |
+| 4 | Price versus demand on the symmetric branch: Cost is soft alone but retreats the c ceiling | m3 | python -m graphgen.main --study interpretation --figure m3 --groupsize 128 --output ~/figures | ~/figures/interpretation/m3.png | symmetric_cost.md |
+| 5 | Behaviour–mechanism decoupling on the symmetric branch: enforcement alleles erode before cooperation does | m4 | python -m graphgen.main --study interpretation --figure m4 --groupsize 128 --output ~/figures | ~/figures/interpretation/m4.png | symmetric_cost.md |
 | 6 | Price versus demand under pinned roles: no harmless Cost edge remains once c0 is fixed above zero | m5 | python -m graphgen.main --study interpretation --figure m5 --groupsize 128 --output ~/figures | ~/figures/interpretation/m5.png | mutualism_cost.md, synthesis.md |
 
 ### Panel order notes
@@ -42,7 +42,7 @@ Status: provisional — adjust before locking the manuscript figure set.
 1. m1: columns = P, M, IJMPQ (diagonal pop_1).
 2. m6: diagonal pop_2 under P; rows top to bottom = population with higher cooperation cost label (_1), lower (_0); columns = cooperation, fitness. On the equal-cost diagonal, partner choice stochastically assigns the cooperator role; fitness inverts (paradox of success).
 3. m2: mutualism pop_2; rows top to bottom = P high-cost population, P low-cost population, IJMPQ high-cost population, IJMPQ low-cost population; columns = cooperation, fitness. Contrast with m6: the same mechanism family now splits deterministically off the diagonal, and IJMPQ lifts the expensive population.
-4. m3: columns = cooperation, fitness for IJMPQ on diagonal_cost.
+4. m3: columns = cooperation, fitness for IJMPQ on symmetric_cost.
 5. m4: rows = P then M; columns = machinery allele then cooperation.
 6. m5: rows = high-cost then low-cost population under P on mutualism_cost; columns = cooperation, fitness.
 

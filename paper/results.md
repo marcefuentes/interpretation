@@ -27,7 +27,7 @@ calibration sweeps decouple these, and the attribution is clean and stable
   the highest costs.
 
 **Information cost is a softer, orthogonal pressure**
-([diagonal_cost.md](../journal/diagonal_cost.md)). Taxing the machinery alone (c = 0)
+([symmetric_cost.md](../journal/symmetric_cost.md)). Taxing the machinery alone (c = 0)
 erodes cooperation only gently, because with no temptation a population can shed the
 apparatus and keep cooperating for free. But because information cost thins the very
 apparatus that resists temptation, it pulls the c-collapse threshold downward where
@@ -71,7 +71,7 @@ treated as a separate outcome.
 ## 3. Genotype composition — the route to cooperation
 
 The same cooperation level can be produced by different genotypes, and this is where
-some of the strongest results sit ([diagonal_cost.md](../journal/diagonal_cost.md),
+some of the strongest results sit ([symmetric_cost.md](../journal/symmetric_cost.md),
 [synthesis.md](../journal/synthesis.md)).
 
 - **Behaviour and machinery decouple under information cost.** As Cost rises at c = 0,
