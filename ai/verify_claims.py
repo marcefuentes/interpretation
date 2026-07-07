@@ -561,6 +561,171 @@ check("hamilton_cost", "IJMPQ Cost=0.20 c=0.16 collapsed = 0.049",
 
 
 # ════════════════════════════════════════════════════════════════════════════
+# MUTUALISM_COST — mutualism_cost.md (information cost under built-in asymmetry;
+# cell key = (Cost, c1), with c0 fixed at 0.10)
+# ════════════════════════════════════════════════════════════════════════════
+
+def mcpath(study, sh, gs, m, d, f, movie=False):
+    suffix = "movie" if movie else "image"
+    return f"{BASE}/{study}/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_{suffix}.con"
+
+
+def mc_cell(rows, cost, c1, col="qBSeen"):
+    for r in rows:
+        if abs(float(r["Cost"]) - cost) < 0.005 and abs(float(r["c1"]) - c1) < 0.005:
+            return float(r[col])
+    return float("nan")
+
+
+def mc_cell_row(rows, cost, c1):
+    for r in rows:
+        if abs(float(r["Cost"]) - cost) < 0.005 and abs(float(r["c1"]) - c1) < 0.005:
+            return r
+    return None
+
+
+def mc_cost_mean(m, d, f, cost, sh="noshuffle", gs="128", col="qBSeen"):
+    rows = load(mcpath("mutualism_cost", sh, gs, m, d, f))
+    vals = [float(r[col]) for r in rows if abs(float(r["Cost"]) - cost) < 0.005]
+    return sum(vals) / len(vals)
+
+
+def mc_threshold(m, f, cost, sh="noshuffle", gs="128"):
+    rows = load(mcpath("mutualism_cost", sh, gs, m, 1, f))
+    vals = sorted((float(r["c1"]), float(r["qBSeen"])) for r in rows
+                  if abs(float(r["Cost"]) - cost) < 0.005)
+    good = [c1 for c1, q in vals if q >= 0.5]
+    return max(good) if good else float("nan")
+
+
+def mc_gap_mean(m, cost, col):
+    r0 = load(mcpath("mutualism_cost", "noshuffle", "128", m, 1, 0))
+    r1 = load(mcpath("mutualism_cost", "noshuffle", "128", m, 1, 1))
+    m1 = {(round(float(r["Cost"]), 3), round(float(r["c1"]), 3)): r for r in r1}
+    vals = []
+    for r in r0:
+        if abs(float(r["Cost"]) - cost) >= 0.005:
+            continue
+        rr = m1[(round(float(r["Cost"]), 3), round(float(r["c1"]), 3))]
+        vals.append(float(r[col]) - float(rr[col]))
+    return sum(vals) / len(vals)
+
+
+def mc_corr_inv(m):
+    r0 = load(mcpath("mutualism_cost", "noshuffle", "128", m, 1, 0))
+    r1 = load(mcpath("mutualism_cost", "noshuffle", "128", m, 1, 1))
+    m1 = {(round(float(r["Cost"]), 3), round(float(r["c1"]), 3)): r for r in r1}
+    dq, dw, inv = [], [], 0
+    for r in r0:
+        rr = m1[(round(float(r["Cost"]), 3), round(float(r["c1"]), 3))]
+        q = float(r["qBSeen"]) - float(rr["qBSeen"])
+        w = float(r["wmean"]) - float(rr["wmean"])
+        dq.append(q)
+        dw.append(w)
+        if q * w < 0:
+            inv += 1
+    return corr(dq, dw), inv
+
+
+def mc_m1_suppressed_total():
+    total = 0
+    for sh in ("noshuffle", "shuffle"):
+        for gs in ("128", "4"):
+            for d in (0, 1, 2):
+                rM0 = load(mcpath("mutualism_cost", sh, gs, "M", d, 0))
+                rM1 = load(mcpath("mutualism_cost", sh, gs, "M", d, 1))
+                rC0 = load(mcpath("mutualism_cost", sh, gs, "_", d, 0))
+                rC1 = load(mcpath("mutualism_cost", sh, gs, "_", d, 1))
+                for a, c in zip(rM0, rC0):
+                    if allele(a, "M1") < allele(c, "M1"):
+                        total += 1
+                for a, c in zip(rM1, rC1):
+                    if allele(a, "M1") < allele(c, "M1"):
+                        total += 1
+    return total
+
+
+def mc_cost_allele_mean(m, d, f, cost, token, sh="noshuffle", gs="128"):
+    rows = load(mcpath("mutualism_cost", sh, gs, m, d, f))
+    vals = [allele(r, token) for r in rows if abs(float(r["Cost"]) - cost) < 0.005]
+    return sum(vals) / len(vals)
+
+
+def mc_time_q(mech, cost, c1, f, t):
+    rows = load(mcpath("mutualism_cost_1run", "noshuffle", "128", mech, 1, f, movie=True))
+    for r in rows:
+        if (abs(float(r["Cost"]) - cost) < 0.005
+                and abs(float(r["c1"]) - c1) < 0.005
+                and int(float(r["Time"])) == t):
+            return float(r["qBSeen"])
+    return float("nan")
+
+
+# Cost=0 sample points reproduce the mutualism c0=0.10 slice to within noise.
+check("mutualism_cost", "sanity P Cost=0 c1=0.20 Pop_0 = 0.603",
+      lambda: mc_cell(load(mcpath("mutualism_cost", "noshuffle", "128", "P", 1, 0)), 0.0, 0.20), 0.603)
+check("mutualism_cost", "sanity P Cost=0 c1=0.20 Pop_1 = 0.178",
+      lambda: mc_cell(load(mcpath("mutualism_cost", "noshuffle", "128", "P", 1, 1)), 0.0, 0.20), 0.178)
+
+# Cost immediately compresses partner-choice asymmetry and exploitative fitness gap.
+check("mutualism_cost", "P mean dq at Cost=0 = 0.329",
+      lambda: mc_gap_mean("P", 0.0, "qBSeen"), 0.329)
+check("mutualism_cost", "P mean dw at Cost=0 = -0.148",
+      lambda: mc_gap_mean("P", 0.0, "wmean"), -0.148)
+check("mutualism_cost", "P mean dq at Cost=0.20 = 0.017",
+      lambda: mc_gap_mean("P", 0.20, "qBSeen"), 0.017)
+check("mutualism_cost", "P mean dw at Cost=0.20 = -0.006",
+      lambda: mc_gap_mean("P", 0.20, "wmean"), -0.006)
+check("mutualism_cost", "P corr(dq,dw) = -0.998",
+      lambda: mc_corr_inv("P")[0], -0.998)
+check("mutualism_cost", "P fitness-inverted cells = 120", lambda: mc_corr_inv("P")[1], 120, None)
+
+# No soft pure-Cost edge: even modest Cost collapses M on the asymmetric branch.
+check("mutualism_cost", "M mean Pop_0 at Cost=0 = 0.689",
+      lambda: mc_cost_mean("M", 1, 0, 0.0), 0.689)
+check("mutualism_cost", "M mean Pop_1 at Cost=0 = 0.641",
+      lambda: mc_cost_mean("M", 1, 1, 0.0), 0.641)
+check("mutualism_cost", "M mean Pop_0 at Cost=0.08 = 0.061",
+      lambda: mc_cost_mean("M", 1, 0, 0.08), 0.061)
+check("mutualism_cost", "M mean Pop_1 at Cost=0.08 = 0.032",
+      lambda: mc_cost_mean("M", 1, 1, 0.08), 0.032)
+
+# Combined mechanisms lose c1 ceiling steadily as Cost rises.
+check("mutualism_cost", "IJMPQ Pop_0 threshold Cost=0 = c1 0.34",
+      lambda: mc_threshold("IJMPQ", 0, 0.0), 0.34)
+check("mutualism_cost", "IJMPQ Pop_0 threshold Cost=0.08 = c1 0.18",
+      lambda: mc_threshold("IJMPQ", 0, 0.08), 0.18)
+check("mutualism_cost", "IJMPQ Pop_1 threshold Cost=0 = c1 0.22",
+      lambda: mc_threshold("IJMPQ", 1, 0.0), 0.22)
+check("mutualism_cost", "IJMPQ Pop_1 c1=0.12 at Cost=0.12 = 0.331",
+      lambda: mc_cell(load(mcpath("mutualism_cost", "noshuffle", "128", "IJMPQ", 1, 1)), 0.12, 0.12), 0.331)
+check("mutualism_cost", "IJMPQ Pop_1 c1=0.14 at Cost=0.12 = 0.263",
+      lambda: mc_cell(load(mcpath("mutualism_cost", "noshuffle", "128", "IJMPQ", 1, 1)), 0.12, 0.14), 0.263)
+
+# Control decomposition: Cost erodes M1 supply-side, but only the PD pays in behavior.
+check("mutualism_cost", "M control Pop_0 mean qB at Cost=0.20 = 0.974",
+      lambda: mc_cost_mean("M", 0, 0, 0.20), 0.974)
+check("mutualism_cost", "M control Pop_0 mean M1 at Cost=0.20 = 0.040",
+      lambda: mc_cost_allele_mean("M", 0, 0, 0.20, "M1"), 0.040, 0.01)
+check("mutualism_cost", "M PD Pop_0 mean qB at Cost=0.20 = 0.053",
+      lambda: mc_cost_mean("M", 1, 0, 0.20), 0.053)
+check("mutualism_cost", "M suppressed below control in 2001 cell-conditions",
+      mc_m1_suppressed_total, 2001, None)
+
+# Snowdrift buffers Cost on the low-cost side but not the high-cost side.
+check("mutualism_cost", "P snowdrift Pop_0 mean at Cost=0.28 = 0.917",
+      lambda: mc_cost_mean("P", 2, 0, 0.28), 0.917)
+check("mutualism_cost", "P snowdrift Pop_1 mean at Cost=0.28 = 0.197",
+      lambda: mc_cost_mean("P", 2, 1, 0.28), 0.197)
+
+# Temporal snapshots: established and collapsed cells are already set by the first sample.
+check("mutualism_cost", "1run P (0,0.20) Pop_0 final = 0.664",
+      lambda: mc_time_q("P", 0.0, 0.20, 0, 1048576), 0.664, 0.01)
+check("mutualism_cost", "1run P (0.12,0.20) Pop_0 first snapshot collapsed = 0.043",
+      lambda: mc_time_q("P", 0.12, 0.20, 0, 131072), 0.043, 0.01)
+
+
+# ════════════════════════════════════════════════════════════════════════════
 # MUTUALISM POP_3 — redundant with hamilton pop_3 (copilot-instructions.md,
 # "Mutualism Parameter Space"). Only _0 evolves; _1 is frozen at 25% each, so
 # there is no coevolutionary channel for c1 and the 441-cell square collapses

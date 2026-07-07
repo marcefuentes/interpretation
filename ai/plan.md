@@ -49,9 +49,9 @@ Status legend: [ ] todo, [~] in progress, [x] done.
    - Docs already frame it as redundant ("use Hamilton pop_3"); no further data
      or analysis. No write-up will be produced.
 
-## Larger (blocked on data generation)
+## Larger completed data tasks
 
-7. [x] Snowdrift multi-run study (unblocks the pending snowdrift.md).
+7. [x] Snowdrift multi-run study (completes snowdrift.md).
    - Wrote snowdrift.md, snowdrift_calibration.md, snowdrift_partner_choice.md, and snowdrift_reciprocity.md following the prisoners template.
    - Identified that direct reciprocity (M) is insensitive to sucker payoff S because TFT only pays it once per pairing (risk determined by P, not S).
    - Confirmed partner choice (P) does not collapse at gs=4 due to the high cooperation floor.
@@ -95,21 +95,17 @@ Status legend: [ ] todo, [~] in progress, [x] done.
     - README, copilot-instructions, findings.md updated to the journal/ paths;
       no broken relative links; verifier 121/121.
 
-## Pending — mutualism_cost simulations (submitted 2026-07)
+## Completed — mutualism_cost integration (2026-07)
 
-13. [~] mutualism_cost_1run + mutualism_cost (price–demand under built-in asymmetry).
-    - Study defined in ~/code/cesga (c0 = 0.10 fixed; Cost × c1 triangle, 120 cells
-      per leaf, pop_2 only). 1-run primary slice ~73% complete (2026-07); 30-run
-      not started.
-    - Manuscript: one unified article (decision 2026-07) — mutualism_cost extends the
-      hamilton_cost price–demand thesis to pinned cooperator/exploiter roles; not a
-      second paper on asymmetry alone.
-    - Why: hamilton_cost covers only c0 = c1; mutualism_cost tests price–demand when
-      roles are deterministic and measures gap compression, c1-threshold retreat,
-      and decoupling on each side.
-    - On arrival: graphgen, ai/analyze_mutualism_cost.py, verify_claims checks,
-      journal/mutualism_cost.md results section, synthesis + paper updates.
-    - Spec: journal/mutualism_cost.md; paper/roadmap.md.
+13. [x] mutualism_cost_1run + mutualism_cost (price–demand under built-in asymmetry).
+    - Analysis now lives in journal/mutualism_cost.md, with regression checks in
+      ai/verify_claims.py and support script ai/analyze_mutualism_cost.py.
+    - Headline result: the soft Cost effect from hamilton_cost depends on the c = 0
+      refuge. With c0 fixed at 0.10 on the asymmetric branch, Cost retreats the c1
+      ceiling immediately, compresses the cooperation/fitness split, and leaves much
+      less behavior-mechanism decoupling.
+    - Related framework, synthesis, README, and paper notes updated to treat
+      mutualism_cost as part of the settled manuscript scope.
 
 ## Decisions needed from maintainer
 

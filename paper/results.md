@@ -57,6 +57,12 @@ success. The two faces of the asymmetry (who cooperates, who profits) can diverg
   high-cost population and shrink the asymmetry, because being reward-led they no
   longer route the R − P gap into a cooperation gap
   ([mutualism_combined.md](../journal/mutualism_combined.md)).
+- **Information cost compresses the split by collapsing both sides.** On the
+  asymmetric Cost x c1 sweep, taxing the machinery retreats the c1 ceiling and
+  steadily shrinks both the cooperation gap and the fitness gap between the two
+  populations; the paradox of success remains while partner choice still functions,
+  then disappears mainly because the system is driven to the control floor
+  ([mutualism_cost.md](../journal/mutualism_cost.md)).
 
 The temporal regime of this split is an absorbing state (roles lock in), and it does
 not differ between one and two populations; this is why temporal dynamics is not
@@ -73,6 +79,10 @@ some of the strongest results sit ([hamilton_cost.md](../journal/hamilton_cost.m
   near zero) while cooperation is carried by tax-free unconditional cooperators (C1P0,
   C1M0). A dilemma-free control confirms the erosion is a supply-side effect of the
   tax; the dilemma only decides whether losing the machinery drags behaviour down.
+- **The decoupling has a boundary.** On the asymmetric branch with c0 fixed at 0.10,
+  machinery loss and behavioural loss move together much more tightly: there is no
+  harmless pure-Cost edge, so shedding P1 or M1 no longer leaves a stable
+  high-cooperation niche behind ([mutualism_cost.md](../journal/mutualism_cost.md)).
 - **Partner choice assorts, reciprocity remembers.** A residual chooser minority sorts
   the whole population so even unconditional cooperators are protected; a residual
   reciprocator minority protects only itself. This population-level vs individual-level

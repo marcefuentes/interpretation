@@ -33,7 +33,11 @@ machinery). Alone each is survivable; together they compound, because the price 
 the apparatus the demand requires. The striking consequence is that behaviour and
 mechanism decouple: cooperation can persist through unconditional cooperators after
 the expensive conditional machinery has been selected away — cooperation without
-active enforcement, but only where the game does not punish it.
+active enforcement, but only where the game does not punish it. The new
+mutualism_cost branch fixes the boundary of that result: once one population is
+held at c0 = 0.10 and the second is costlier still, there is no harmless Cost edge,
+so information cost retreats the c1 ceiling directly and compresses the
+cooperator/exploiter split rather than merely changing the genotype route.
 
 ## Limitations
 
@@ -47,10 +51,11 @@ active enforcement, but only where the game does not punish it.
   would require dense early-time logging.
 - **pop_3 redundancy.** The evolving-vs-fixed structure adds nothing over the hamilton
   diagonal and is excluded from interpretation (shown, and regression-locked, in
-  [synthesis.md](../journal/synthesis.md) and `ai/verify_claims.py`).
+  [synthesis.md](../journal/synthesis.md) and ai/verify_claims.py).
 
 ## Future directions
 
-Finer temporal logging to settle the oscillation question; extension of the
-information-cost axis to the two-population mutualism; and, for the manuscript,
-selection of the figure set from the graphgen pipeline.
+Finer temporal logging to settle the oscillation question; a targeted c0 sweep on
+the asymmetric Cost branch if we later want to test how broadly the mutualism_cost
+boundary generalizes; and fuller related-work positioning around costly
+enforcement machinery.

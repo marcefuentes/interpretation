@@ -13,8 +13,9 @@ split by mechanism family:
 Hamilton is the equal-cost diagonal (c0 = c1); see **hamilton.md** (index to
 hamilton_partner_choice.md, hamilton_reciprocity.md, and hamilton_combined.md).
 The information-cost extension on this asymmetric branch is
-**[mutualism_cost.md](mutualism_cost.md)** (pending simulations: fixed c0 = 0.10,
-Cost × c1 sweep).
+**[mutualism_cost.md](mutualism_cost.md)**: fixed c0 = 0.10, Cost x c1 sweep,
+showing how taxing the machinery compresses the deterministic
+cooperator/exploiter split.
 For why the deterministic role split and the Pop_1 lift track the R − P payoff
 gap, see **[synthesis.md](synthesis.md)**.
 

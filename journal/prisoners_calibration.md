@@ -167,9 +167,9 @@ mirroring the hamilton collapse as R − P → 0.
 - PD-centered: the informative sweep is dilemma 1, while dilemma 0 now exists
   only as a no-social-dilemma dummy baseline; there is still no snowdrift
   sweep, and pop_2 payoffs are symmetric (no c0 ≠ c1 mutualism analogue).
-- gs = 128 and gs = 4 .con exports exist (noshuffle and shuffle), plus gs = 128
-  movie exports (prisoners_1run) for temporal dynamics. gs = 4 movie exports
-  are not yet generated.
+- gs = 128 and gs = 4 .con exports exist (noshuffle and shuffle), with
+  prisoners_1run movie exports available at both groupsizes for temporal
+  dynamics.
 
 ## Summary
 

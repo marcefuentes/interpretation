@@ -11,8 +11,8 @@ gap.
 The main analysis here is the dilemma 1 (PD) payoff plane; a no-social-
 dilemma control rerun (folder 0) now also exists for the dummy control
 mechanism \_. Payoffs are symmetric across populations; pops 1/2/3; shuffle
-and noshuffle; gs = 128 and gs = 4 (gs = 128 movie exports available for
-temporal dynamics; gs = 4 movie not yet generated); 30 runs per cell in the
+and noshuffle; gs = 128 and gs = 4 (movie exports available for temporal
+dynamics at both groupsizes); 30 runs per cell in the
 multi-run sweep.
 
 - **[prisoners_calibration.md](prisoners_calibration.md)** — cross-mechanism

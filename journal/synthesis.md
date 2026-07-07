@@ -179,6 +179,12 @@ The two are benign alone and destructive together:
   (roughly 1.5 units of tolerable c lost per unit Cost). This is not an
   equal-budget effect: at fixed Cost + c = 0.4 cooperation ranges 0.378 (all-c)
   to 0.810 (all-Cost); c is far more destructive per unit.
+- **On the asymmetric branch there is no harmless Cost edge.** mutualism_cost fixes
+  c0 = 0.10 and sweeps Cost x c1, so even the cheap population always faces
+  nonzero demand. The result is the complement of hamilton_cost: Cost no longer
+  erodes behavior softly, but immediately compresses the cooperator/exploiter split,
+  retreats the c1 ceiling, and removes most of the behavior-mechanism decoupling
+  that the symmetric c = 0 edge allowed.
 - **The reward-led / assortment / risk attributions carry over.** Combined
   reputation-rich mechanisms are the most Cost-robust despite paying the double
   (two-family) tax — family count does not predict the collapse, the enforcement
@@ -217,5 +223,6 @@ The two are benign alone and destructive together:
 | IMP / IJMPQ hold cooperation at high c        | reward-led; blind to risk P                |
 | Shuffle kills M-based cooperation             | the M term drops from the payoff-axis fit  |
 | gs = 4 kills P-based cooperation, M recovers   | the P term drops; risk-led M remains       |
-| Information cost Cost erodes cooperation slowly | machinery is shed harmlessly at c = 0; behavior decouples from mechanism |
-| ...but sharply lowers the c-collapse threshold  | Cost thins the apparatus that c demands (price vs demand) |
+| Information cost Cost erodes cooperation slowly on the diagonal | machinery is shed harmlessly at c = 0; behavior decouples from mechanism |
+| ...but not on the asymmetric branch             | with c0 fixed above zero there is no harmless-shedding refuge |
+| In both cases Cost lowers the demand ceiling    | Cost thins the apparatus that c or c1 demands (price vs demand) |

@@ -1,143 +1,235 @@
-# Mutualism Cost — Information Price Meets Exploitation Asymmetry
+# Mutualism Cost — Information Price on the Asymmetric Branch
 
-**Status: partial data** — mutualism_cost_1run is ~73% complete on the primary slice
-(noshuffle, gs = 128; MPQ and IJMPQ still missing); mutualism_cost (Runs = 30) not
-yet started. This document records the study design, open questions, and manuscript role.
+mutualism_cost extends the information-cost axis to the branch where the
+cooperator/exploiter roles are already pinned by payoff asymmetry. It uses the
+mutualism pop_2 ecology, fixes c0 = 0.10 for the low-cost population, and sweeps
+Cost jointly with c1 over the triangle Cost + c1 <= 0.40, c1 > c0. The cell key
+is therefore (Cost, c1), with pop_0 the cheap side and pop_1 the expensive side.
 
-## The gap hamilton_cost leaves open
+This is the missing asymmetric counterpart to hamilton_cost. On the diagonal
+c0 = c1, hamilton_cost asks how the price of the machinery interacts with the
+demand for that machinery in symmetric populations. mutualism_cost asks the same
+question when the cheap population is already the natural cooperator and the
+expensive one the natural exploiter.
 
-hamilton_cost answers the **price–demand** question for symmetric populations:
-c0 = c1 = c, pops 1/2/3. It shows that information cost Cost (the *price* of
-carrying enforcement machinery) and cooperation cost c (the *demand* for that
-machinery) interact non-additively — machinery erodes supply-side when Cost rises,
-while the social dilemma sets whether losing the apparatus drags behaviour down
-(see hamilton_cost.md, especially the dilemma-0 control decomposition).
+For the cross-study payoff-axis interpretation, see [synthesis.md](synthesis.md).
+For the symmetric Cost x c sweep, see [hamilton_cost.md](hamilton_cost.md).
 
-That sweep cannot tell us what happens when **asymmetry is built in**. In mutualism
-pop_2 the lower-cost population (c0) is the natural cooperator and the higher-cost
-population (c1) the exploiter. hamilton_cost pop_2 only covers the diagonal c0 = c1,
-where the role split is stochastic. We therefore have no data on:
+## Design and sanity
 
-- whether taxing the machinery **widens or narrows** the cooperation and fitness gaps
-  between the two populations;
-- whether behaviour–machinery decoupling (C1P0 / C1M0 niches) appears on the
-  **cooperator side, the exploiter side, or both**;
-- whether the price–demand interaction is the same when enforcement must sustain
-  **cross-population** cooperation rather than within-population assortment.
+- Study pair: mutualism_cost (Runs = 30 image summaries) and mutualism_cost_1run
+  (single-run temporal movies).
+- Population structure: pop_2 only.
+- Sweep: Cost in {0.00, 0.02, ..., 0.28}; for each Cost, c1 in
+  {0.12, 0.14, ..., 0.40 - Cost}. That gives 120 valid (Cost, c1) cells.
+- Primary condition below unless noted: PD, noshuffle, gs = 128.
 
-mutualism_cost closes that gap with the same Cost axis, but on the asymmetric
-c0 < c1 branch mutualism already uses.
+Along sampled Cost = 0 cells the new study reproduces the corresponding mutualism
+slice at c0 = 0.10 within the usual noise floor: for mechanism P at c1 = 0.20,
+pop_0 is 0.603 here versus 0.599 in mutualism, and pop_1 is 0.178 versus 0.187.
+At the low-asymmetry edge c1 = 0.12, the symmetric diagonal remains the right
+reference point: M, IMP, and IJMPQ are almost unchanged from hamilton_cost pop_2
+at c = 0.10 (for IJMPQ, 0.962 / 0.961 on the diagonal versus 0.961 / 0.961 here),
+while P immediately splits into the familiar cooperator/exploiter pair
+(0.763 / 0.286).
 
-## What we are waiting for
+## Headline: the harmless pure-Cost edge disappears
 
-Two studies, mirroring the hamilton_cost pair:
+The key difference from hamilton_cost is simple: there is no c = 0 refuge here.
+Even the cheap population always pays c0 = 0.10, so shedding the machinery is
+never harmless. On the diagonal, Cost alone only slowly erodes cooperation because
+the population can fall back onto tax-free unconditional cooperators. On the
+asymmetric branch, Cost is immediately paid in behavior because the game still
+demands enforcement.
 
-| Study | Runs | Purpose |
-| ----- | ---- | ------- |
-| mutualism_cost_1run | 1 | Temporal dynamics; run first |
-| mutualism_cost | 30 | Equilibrium averages for the paper |
+The PD means over each available c1 column show the contrast:
 
-**Population structure:** pop_2 only (two coevolving populations). Same mechanism
-layout as mutualism: mutualism_short + mutualism_long layouts (9 mechanisms, dilemmas
-0/1/2 for _ and M, 1/2 for the rest, gs = 4 and 128, shuffle and noshuffle).
+| Mechanism | Pop | Cost=0 | Cost=0.04 | Cost=0.08 | Cost=0.12 | Cost=0.20 |
+| --------- | --- | -----: | --------: | --------: | --------: | --------: |
+| M         | 0   | 0.689  | 0.336     | 0.061     | 0.056     | 0.053     |
+| M         | 1   | 0.641  | 0.283     | 0.032     | 0.031     | 0.035     |
+| P         | 0   | 0.469  | 0.391     | 0.333     | 0.194     | 0.049     |
+| P         | 1   | 0.140  | 0.151     | 0.152     | 0.102     | 0.032     |
+| IMP       | 0   | 0.655  | 0.579     | 0.353     | 0.263     | 0.058     |
+| IMP       | 1   | 0.499  | 0.451     | 0.187     | 0.142     | 0.038     |
+| IJMPQ     | 0   | 0.708  | 0.599     | 0.413     | 0.314     | 0.080     |
+| IJMPQ     | 1   | 0.549  | 0.430     | 0.225     | 0.163     | 0.053     |
 
-**Fixed cooperation cost for population 0:**
+Two features dominate.
 
-- c0 = **0.10** (the lower-cost, cooperator-role population)
+First, Cost is much harsher here than on the diagonal. M is the clearest example:
+its means start high at Cost = 0 (0.689 / 0.641) but by Cost = 0.08 it is already
+at the control floor (0.061 / 0.032). There is no long shallow decline analogous
+to hamilton_cost's c = 0 edge, because there is no edge where enforcement can be
+shed without consequence.
 
-**Swept axes (120 valid cells per leaf directory):**
+Second, the combined mechanisms still rank highest, but their advantage is now
+about how long they can postpone collapse, not about surviving an otherwise benign
+Cost axis. IJMPQ remains the best mechanism at every Cost shown, but even it is
+driven to 0.080 / 0.053 by Cost = 0.20.
 
-- **Cost** — information cost of the machinery, same 21-point ladder as hamilton_cost:
-  {0.00, 0.02, 0.04, …, 0.40}
-- **c1** — cooperation cost of population 1 (the higher-cost, exploiter-role side),
-  values with c1 > c0: {0.12, 0.14, …, 0.40}
+## Cost lowers the c1 ceiling
 
-**Triangular constraint:** Cost + c1 ≤ b = 0.40 (equivalently Cost ≤ b − c1), so the
-costlier population still profits from cooperation. Cost values ≥ 0.30 yield no valid
-pairs. Total: 120 (Cost, c1) combinations per mechanism × dilemma × ecology cell;
-~8,640 input files across both layouts (vs ~111k for a full c0 × c1 × Cost sweep).
+The cleanest readout is the maximum c1 each population can tolerate while staying
+above qBSeen = 0.5:
 
-**Everything else** matches mutualism / hamilton_cost: K = 0.5, b = 0.4,
-MutationRate = 0.01, Time = 20, Periods = 3.
+| Mechanism | Pop | Cost=0 | Cost=0.04 | Cost=0.08 | Cost=0.12 |
+| --------- | --- | -----: | --------: | --------: | --------: |
+| M         | 0   | 0.34   | 0.22      | none      | none      |
+| M         | 1   | 0.32   | 0.20      | none      | none      |
+| P         | 0   | 0.24   | 0.20      | 0.16      | 0.14      |
+| P         | 1   | none   | none      | none      | none      |
+| IMP       | 0   | 0.30   | 0.26      | 0.16      | 0.12      |
+| IMP       | 1   | 0.22   | 0.22      | none      | none      |
+| IJMPQ     | 0   | 0.34   | 0.26      | 0.18      | 0.12      |
+| IJMPQ     | 1   | 0.22   | 0.18      | 0.12      | none      |
 
-## The price–demand questions this sweep is designed to answer
+This is the asymmetric version of the price-demand interaction from hamilton_cost:
+raising Cost retreats the demand ceiling. But the retreat is steeper here because
+the demand never falls to zero. At Cost = 0.12, IJMPQ still has a surviving cheap
+side at c1 = 0.12 (pop_0 = 0.570), while the expensive side is already below 0.5
+everywhere (0.331 at c1 = 0.12, 0.263 at c1 = 0.14, then lower). The cooperator
+side fails first in absolute c1, but the exploiter side loses its high-cooperation
+tail sooner.
 
-### 1. Supply vs demand under asymmetry
+## Cost compresses the role split and softens exploitation
 
-At fixed c0 = 0.10, raising c1 increases *demand* on the exploiter side; raising
-Cost increases *price* on both sides' machinery carriers. We can ask:
+Under partner choice alone, mutualism at negligible Cost gives the sharpest
+deterministic split: the cheap population cooperates more and earns less. That
+logic survives here, but Cost steadily compresses both faces of the asymmetry.
 
-- Does cooperation collapse on the **c1 axis**, the **Cost axis**, or their
-  **interaction** — and is the collapse threshold on c1 shifted by Cost the same
-  ~1.5 c-units per Cost-unit seen on the hamilton diagonal?
-- Does the dilemma-0 control (no social dilemma) again isolate pure supply-side
-  erosion, with asymmetry pinned by c0 < c1 rather than temptation?
+For P, the mean cooperation gap and mean fitness gap by Cost are:
 
-### 2. Between-population asymmetry (outcome 2)
+| Cost | mean qBSeen gap (pop_0 - pop_1) | mean wmean gap (pop_0 - pop_1) |
+| ---: | -------------------------------: | ------------------------------: |
+| 0.00 | 0.329                            | -0.148                         |
+| 0.04 | 0.240                            | -0.108                         |
+| 0.08 | 0.180                            | -0.083                         |
+| 0.12 | 0.092                            | -0.043                         |
+| 0.20 | 0.017                            | -0.006                         |
 
-With c0 fixed below c1, mutualism already gives a deterministic cooperator/exploiter
-split. Under information cost we can measure:
+The paradox-of-success signal remains essentially perfect while it lasts:
+corr(dqBSeen, dwmean) = -0.998, and the higher-cooperation side has lower fitness
+in all 120 cells. What Cost changes is not who profits at a given functioning P
+cell, but how many functioning P cells remain. The asymmetry collapses mainly
+because both populations are pushed toward the control floor.
 
-- **Cooperation gap** — does Cost widen the qBSeen difference between populations,
-  or does decoupling (unconditional cooperators on the cheap side) compress it?
-- **Fitness gap** — does taxing partner-choice machinery on the cooperator side
-  change who profits, or only how much?
+The same compression appears in the combined mechanisms, only from a higher base.
+IJMPQ's mean cooperation gap is 0.159 at Cost = 0, grows slightly at intermediate
+Cost while pop_1 loses its tail first (0.188 at Cost = 0.08), then shrinks to
+0.027 by Cost = 0.20. Its mean fitness gap follows the same pattern but remains
+negative throughout (-0.019 at Cost = 0, -0.086 at Cost = 0.08, -0.011 at
+Cost = 0.20).
 
-Compare directly to hamilton_cost pop_2 at c0 = c1 = 0.10 (symmetric diagonal point)
-and to mutualism at Cost = 0.001 (no information tax).
+## Control decomposition: Cost erodes M1 supply-side, the dilemma decides the damage
 
-### 3. Genotype composition / decoupling (outcome 3)
+As in hamilton_cost, the control isolates the pure machinery tax. Mechanism M is
+enough to show it:
 
-hamilton_cost shows machinery alleles (P1, M1) erode while C1P0 / C1M0 rise, but only
-when c is low enough that unconditional cooperation is viable. With asymmetry:
+| Cost | control pop_0 qB | control pop_0 M1 | PD pop_0 qB | PD pop_0 M1 |
+| ---: | ---------------: | ---------------: | ----------: | ----------: |
+| 0.00 | 0.956            | 0.248            | 0.689       | 0.673       |
+| 0.04 | 0.968            | 0.170            | 0.336       | 0.308       |
+| 0.08 | 0.972            | 0.098            | 0.061       | 0.069       |
+| 0.20 | 0.974            | 0.040            | 0.053       | 0.026       |
+| 0.28 | 0.974            | 0.028            | 0.054       | 0.018       |
 
-- Does decoupling appear **only on the low-c0 cooperator side**, or also on the
-  high-c1 exploiter side?
-- Does partner choice still act as population-level assortment (residual choosers
-  protecting both populations) when the two populations face different c?
+The machinery story is the same as on the diagonal: M1 is selected out as Cost
+rises even in the control, where no enforcement is needed. Across all dilemmas,
+groupsizes, shuffle settings, and both populations, M1 under M is below the dummy
+baseline in 2,001 cell-conditions. That is the supply-side effect.
 
-### 4. Manuscript scope (decision locked 2026-07)
+What changes on the asymmetric branch is the behavioral consequence. In the
+control, qBSeen stays pinned near 0.97 while M1 erodes, because producing b is
+still individually favored. In the PD the same erosion removes the very machinery
+needed to hold c0 = 0.10 and c1 > 0.10 cooperation together, so behavior collapses
+almost immediately.
 
-We originally considered two articles:
+## There is little behavior-mechanism decoupling here
 
-- **Price–demand** — hamilton + hamilton_cost: Cost versus c, behaviour–machinery
-  decoupling, symmetric populations.
-- **Asymmetry / exploitation** — mutualism + hamilton (diagonal): cooperator/exploiter
-  role split, cooperation and fitness gaps at negligible Cost.
+hamilton_cost's striking result was that cooperation could remain high after the
+active enforcement alleles had largely vanished. mutualism_cost shows the boundary
+of that result: once the cheap side still faces nontrivial demand, machinery loss
+and behavioral loss move together.
 
-mutualism_cost belongs with the **price–demand** thesis, not as a separate asymmetry
-paper: it is the same Cost axis on the branch where roles are pinned by c0 < c1. A
-price–demand article that used only hamilton data could not test that interaction
-without extrapolating from the stochastic role split on the c0 = c1 diagonal; an
-asymmetry-only article at Cost ≈ 0 could not say how taxing enforcement modulates
-exploitation.
+For P on pop_0 at c1 = 0.20:
 
-**Decision:** one manuscript covering everything — baseline demand (hamilton +
-mutualism), built-in roles (mutualism; hamilton as the symmetric special case), then
-price–demand in one and two populations (hamilton_cost + mutualism_cost). See
-paper/roadmap.md for the narrative arc.
+| Cell | qBSeen | P1 | C1P0 |
+| ---- | -----: | -: | ---: |
+| Cost=0.00 | 0.603 | 0.797 | 0.071 |
+| Cost=0.08 | 0.415 | 0.374 | 0.098 |
+| Cost=0.12 | 0.048 | 0.042 | 0.046 |
 
-Provisional 1-run preview (noshuffle, gs = 128, PD): Cost = 0 matches mutualism within
-noise; cooperation and fitness gaps between populations compress as Cost rises; c1-collapse
-thresholds retreat with Cost similarly to hamilton_cost. Full claims await the 30-run study.
+For M on the same slice:
 
-## When results arrive
+| Cell | qBSeen | M1 | C1M0 |
+| ---- | -----: | -: | ---: |
+| Cost=0.00 | 0.867 | 0.554 | 0.408 |
+| Cost=0.08 | 0.062 | 0.068 | 0.060 |
+| Cost=0.12 | 0.056 | 0.045 | 0.054 |
 
-1. Run graphgen on mutualism_cost_1run then mutualism_cost (image .con first;
-   movies if needed for temporal claims).
-2. Write ai/analyze_mutualism_cost.py (mirror analyze_hamilton_cost.py structure:
-   Cost × c1 grid at fixed c0, control decomposition, asymmetry panels).
-3. Add verify_claims.py regression checks for headline numbers.
-4. Update synthesis.md, framework.md, and paper/results.md.
+The machinery still erodes, but the tax-free unconditional-cooperator niche does
+not inherit a stable high-cooperation regime. Once P1 or M1 is mostly gone, the
+population falls with it. This is the clean contrast with hamilton_cost: the
+diagonal has a harmless-shedding region; the asymmetric branch does not.
 
-## Pipeline location
+## Snowdrift buffers the price only on the cheap side
 
-Study definitions live in ~/code/cesga/python/studies/mutualism_cost/ and
-mutualism_cost_1run/. Generate with:
+Snowdrift again raises the floor, but asymmetrically. The low-cost population is
+almost Cost-proof, while the high-cost population remains stuck in the role split:
 
-```
-python create.py --study mutualism_cost_1run --layout mutualism_short
-python create.py --study mutualism_cost_1run --layout mutualism_long
-```
+| Mechanism | Pop | Cost=0 | Cost=0.08 | Cost=0.20 | Cost=0.28 |
+| --------- | --- | -----: | --------: | --------: | --------: |
+| M         | 0   | 0.944  | 0.937     | 0.927     | 0.908     |
+| M         | 1   | 0.167  | 0.158     | 0.185     | 0.238     |
+| P         | 0   | 0.962  | 0.955     | 0.935     | 0.917     |
+| P         | 1   | 0.090  | 0.103     | 0.154     | 0.197     |
+| IJMPQ     | 0   | 0.928  | 0.913     | 0.928     | 0.873     |
+| IJMPQ     | 1   | 0.597  | 0.325     | 0.238     | 0.335     |
 
-(same with mutualism_cost for the 30-run study).
+So the snowdrift lesson from hamilton_cost still holds only half-way. High S makes
+cooperation individually attractive enough that pop_0 keeps cooperating even when
+the machinery is taxed. But because c1 remains structurally higher, pop_1 does not
+join it; the role split persists, only with a slightly softer floor.
+
+## Shuffle and groupsize still isolate the same components
+
+The robustness mirrors carry over cleanly.
+
+- Shuffle removes the M contribution. At Cost = 0, MP is 0.598 / 0.422 under
+  noshuffle but only 0.467 / 0.142 under shuffle, essentially reverting to the
+  partner-choice split. By Cost = 0.12 both ecologies converge near the same low
+  floor, because there is little M component left for shuffle to remove.
+- gs = 4 removes partner choice almost completely from the outset. P at Cost = 0 is
+  already 0.054 / 0.025 at gs = 4 versus 0.469 / 0.140 at gs = 128. M is
+  groupsize-invariant under Cost (0.689 / 0.641 versus 0.686 / 0.637 at Cost = 0),
+  while IJMPQ keeps its gs = 4 penalty from the mutualism baseline
+  (0.708 / 0.549 versus 0.708 / 0.600 at Cost = 0, then 0.413 / 0.225 versus
+  0.124 / 0.065 at Cost = 0.08).
+
+## Temporal dynamics: the verdict is set by the first snapshot
+
+The single-run movies show the same absorbing-state pattern as the other studies.
+Established cells are already established by the first recorded snapshot, and
+collapsed cells are already collapsed.
+
+- P at (Cost, c1) = (0.00, 0.20) reaches 0.593 / 0.180 at t = 131072 and ends at
+  0.664 / 0.157. The role split is in place immediately and only wobbles slightly.
+- P at (0.12, 0.20) is already collapsed at the first snapshot
+  (0.043 / 0.024) and stays there through the run.
+- M at (0.00, 0.20) sits in the high-cooperation state from the first snapshot
+  onward (about 0.82 / 0.80, ending 0.866 / 0.835).
+- IJMPQ at (0.20, 0.20) is already near the floor by the first snapshot
+  (0.077 / 0.032) and never recovers.
+
+So the image summaries are representative. The interesting event is not a slow
+late erosion but whether a cell establishes a defended state at all.
+
+## One-line reading
+
+hamilton_cost showed that information cost can be shed harmlessly when the game
+does not still demand enforcement. mutualism_cost shows the complementary case:
+once one population is locked at c0 = 0.10 and the other is costlier still, the
+price of the machinery is paid directly in behavior. Cost compresses the
+cooperator/exploiter split, retreats the c1 ceiling, and largely removes the
+behavior-mechanism decoupling that made the diagonal Cost axis look soft.

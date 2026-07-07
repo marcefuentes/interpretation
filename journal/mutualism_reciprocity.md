@@ -286,8 +286,8 @@ non-zero cooperation even at c1 = 0.20. This confirms that the multi-run
 averages represent genuine intermediate cooperation levels, not averaging of
 all-or-nothing states.
 
-Snowdrift single-run analysis is pending (mutualism_1run exports not yet
-available for dilemma 2).
+This single-run section is restricted to the available PD movie slice; the
+snowdrift branch is not analyzed temporally here.
 
 ## Groupsize 4
 

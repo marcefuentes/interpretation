@@ -26,8 +26,11 @@ that (i) the payoff gap each mechanism is limited by is identifiable and stable
 advantage, reputation-rich mechanisms are reward-limited); (ii) with two populations
 a cooperator/exploiter role split emerges, stochastically when payoffs are symmetric
 and deterministically when they are not; and (iii) making the machinery itself
-costly erodes the enforcement apparatus without necessarily erasing cooperation,
-decoupling behaviour from the mechanism that produced it.
+costly sets a price on enforcement whose effects depend on demand: on the symmetric
+low-demand edge, cooperation can persist after the apparatus is eroded, decoupling
+behaviour from the mechanism that produced it, but under built-in asymmetry the same
+price more directly retreats the cooperation ceiling and compresses the
+cooperator/exploiter split.
 
 ## Section-to-journal map
 
@@ -35,14 +38,14 @@ decoupling behaviour from the mechanism that produced it.
 | ------------- | -------------------- |
 | Introduction | framework.md |
 | Methods: model, payoffs, grid | parameterization.md, framework.md; hamilton.md and mutualism.md (noise floor, replicates) |
-| Results 1: level of cooperation | synthesis.md, prisoners_calibration.md, snowdrift_calibration.md, hamilton_*.md, mutualism_*.md, hamilton_cost.md |
-| Results 2: between-population asymmetry | mutualism_partner_choice.md, mutualism_combined.md, prisoners_partner_choice.md, synthesis.md |
-| Results 3: composition / route to cooperation | hamilton_cost.md, hamilton_reciprocity.md, mutualism_reciprocity.md, synthesis.md |
-| Discussion | synthesis.md, hamilton_cost.md, framework.md |
+| Results 1: level of cooperation | synthesis.md, prisoners_calibration.md, snowdrift_calibration.md, hamilton_*.md, mutualism_*.md, hamilton_cost.md, mutualism_cost.md |
+| Results 2: between-population asymmetry | mutualism_partner_choice.md, mutualism_combined.md, mutualism_cost.md, prisoners_partner_choice.md, synthesis.md |
+| Results 3: composition / route to cooperation | hamilton_cost.md, mutualism_cost.md, hamilton_reciprocity.md, mutualism_reciprocity.md, synthesis.md |
+| Discussion | synthesis.md, hamilton_cost.md, mutualism_cost.md, framework.md |
 
 ## Status
 
 First-draft scaffold. Prose is provisional and numbers are cited rather than
 restated in full; consult the linked journal doc for the exact values (all
 regression-checked by `ai/verify_claims.py`). Figures are produced by the graphgen
-pipeline (`../graph/graphgen/`), not yet placed here.
+pipeline (`../graph/graphgen/`) rather than stored here.

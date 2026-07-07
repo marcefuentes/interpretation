@@ -1,7 +1,7 @@
 # Manuscript Roadmap
 
-From the current scaffold to a finished manuscript. Companion to `outline.md`
-(structure) and `figures.md` (figure provenance). Status legend: [ ] todo,
+From the current scaffold to a finished manuscript. Companion to outline.md
+(structure) and figures.md (figure provenance). Status legend: [ ] todo,
 [~] in progress, [x] done.
 
 ## Framing decisions (locked 2026-07)
@@ -40,25 +40,26 @@ From the current scaffold to a finished manuscript. Companion to `outline.md`
 
 ## Phase 0 — framing [x]
 
-Decisions above recorded. Thesis paragraph drafted in `outline.md`.
+Decisions above recorded. Thesis paragraph drafted in outline.md.
 
 ## Phase 1 — figure set (do before Results prose)
 
-- [ ] Finalize the main-text figure list from the candidates in `figures.md` (target
-  ~5-7): baseline cooperation-vs-c per mechanism; two-population role split
-  (cooperation + fitness); the Cost x c / Cost x c1 landscapes; the allele-erosion /
-  decoupling panel; the dilemma-0 control decomposition; optional asymmetry-under-Cost
-  panel (cooperation and fitness gaps vs Cost).
-- [ ] Decide the supplement figure list (payoff-axis fits; gs=4/shuffle mirrors).
-- [ ] Generate the chosen figures via graphgen; record exact commands + output paths
-  in `figures.md` (already templated there).
-- [ ] Draft one-sentence captions, each traceable to a `journal/` doc (and a
-  verify_claims.py check).
+- [~] Finalize the main-text figure list from the candidates in figures.md (target
+  ~5-7): current draft is m1–m5 (hamilton baseline; mutualism role split;
+  hamilton_cost price-versus-demand and decoupling; mutualism_cost asymmetric
+  panel) — not yet locked.
+- [~] Decide the supplement figure list (current draft: ms1–ms5 — prisoners and
+  snowdrift payoff-axis calibration, shuffle and gs = 4 robustness mirrors,
+  hamilton_cost control decomposition).
+- [x] Generate candidate figures via graphgen; record exact commands + output paths
+  in figures.md (interpretation study namespace).
+- [~] Draft one-sentence captions, each traceable to a journal doc (and a
+  verify_claims.py check); revise when the set is finalized.
 
 ## Phase 2 — prose (scaffold -> manuscript)
 
 - [ ] **Methods** — closest to done; complete the model description, the IV grid, and
-  the replicate/verification paragraph. Link constants to `journal/parameterization.md`.
+  the replicate/verification paragraph. Link constants to journal/parameterization.md.
 - [ ] **Results** — write to the final figures, in the narrative-arc order; keep
   numbers cited to journal docs, not re-derived.
 - [ ] **Introduction** — requires the related-work layer (see Phase 2b); frame the
@@ -71,7 +72,7 @@ Decisions above recorded. Thesis paragraph drafted in `outline.md`.
 - [ ] Assemble a bibliography (no references layer exists yet). Core areas: direct
   reciprocity / TFT, partner choice / biological markets, indirect reciprocity and
   reputation, the cost of cognition / information, and mutualism theory.
-- [ ] Choose a citation system for the repo (e.g. a `paper/references.bib` +
+- [ ] Choose a citation system for the repo (e.g. a paper/references.bib +
   pandoc-citeproc, or inline). Decide before writing Introduction/Discussion.
 - [ ] Position the information-cost contribution against existing "cost of the
   machinery" treatments.
@@ -80,42 +81,14 @@ Decisions above recorded. Thesis paragraph drafted in `outline.md`.
 
 - [ ] Abstract and title.
 - [ ] Author list, affiliations, keywords.
-- [ ] Consistency pass; run `ai/verify_claims.py` (numbers) and the link check.
-- [ ] Supplement assembly (calibration + robustness), cross-referenced from main text.
+- [ ] Consistency pass; run ai/verify_claims.py (numbers) and the link check.
+- [ ] Supplement cross-referencing and caption polish in the manuscript text.
 - [ ] Target-journal formatting (length, figure specs, reference style).
-
-## Pending simulations — mutualism_cost (submitted 2026-07)
-
-We are waiting on **mutualism_cost_1run** (then **mutualism_cost**, Runs = 30) to
-close the price–demand question under **built-in asymmetry**. hamilton_cost covers
-only the symmetric diagonal (c0 = c1); it cannot say how information cost interacts
-with the deterministic cooperator/exploiter split in mutualism pop_2.
-
-**Design:** c0 fixed at 0.10; sweep Cost and c1 (c1 > c0) on the triangular grid
-Cost + c1 ≤ 0.40 — 120 cells per leaf, ~8,640 jobs total across mutualism_short +
-mutualism_long layouts. Same mechanisms, dilemmas, groupsizes, and shuffle conditions
-as mutualism.
-
-**What it unlocks for the manuscript:**
-
-- Price–demand under pinned roles: does Cost shift the c1-collapse threshold the same
-  way it shifts c on the hamilton diagonal (~1.5 c per Cost unit)?
-- Cooperation and fitness gaps between populations as Cost rises — provisional 1-run
-  data show gaps compressing before full collapse; needs 30-run confirmation.
-- Behaviour–machinery decoupling (C1P0 / C1M0) on cooperator vs exploiter sides —
-  the result hamilton_cost cannot provide.
-- Completes the unified price–demand story (symmetric slice in hamilton_cost,
-  asymmetric slice here); not material for a separate publication.
-
-Full specification: journal/mutualism_cost.md. Analysis pipeline to be added when
-results land (analyze_mutualism_cost.py, verify_claims checks, graphgen .con).
 
 ## Open items / risks
 
-- **mutualism_cost data not yet in** — blocks any claim about Cost under asymmetry;
-  hamilton_cost results must not be extrapolated to mutualism pop_2.
-- **Related-work layer is absent** — gates Introduction and Discussion; start early.
 - **Figure set is provisional** — Results prose depends on it; finalize in Phase 1.
+- **Related-work layer is absent** — gates Introduction and Discussion; start early.
 - **Main-text attribution without the calibration** — ensure the supplement is
   referenced wherever the main text asserts a mechanism's limiting payoff gap.
 - **Tooling stays authoritative** — any new headline number in the paper must trace to
@@ -126,7 +99,7 @@ results land (analyze_mutualism_cost.py, verify_claims checks, graphgen .con).
 
 A submittable manuscript: complete IMRaD prose tied to a finalized figure set, a
 referenced Introduction/Discussion, an assembled supplement, an abstract and title,
-and a green `ai/verify_claims.py` with every main-text number traceable to the journal.
+and a green ai/verify_claims.py with every main-text number traceable to the journal.
 
 ## Suggested order
 
