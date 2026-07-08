@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply study renames from new_naming.csv across results, figures, cesga, graph, interpretation."""
+"""Apply study renames from naming.csv across results, figures, cesga, graph, interpretation."""
 
 from __future__ import annotations
 

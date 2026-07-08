@@ -1,7 +1,0 @@
-Old_name,New_name,Shape,x-axis,y-axis,c0,c1,Cost0,Cost1
-symmetric_cost,symmetric_c_Cost,triangle,c,Cost,=c1,,=Cost1,
-diagonal,symmetric_c,line,c,,=c1,,0.001,0.001
-diagonal_infocost,symmetric_cost,line,Cost,,0.1,0.1,=Cost1,
-mutualism,asymmetric_c0_c1,triangle,c0,c1,<c1,,0.001,0.001
-mutualism_cost,asymmetric_c1_Cost,triangle,c1,Cost,0.1,>0.1,=Cost1,
-mutualism_infocost,asymmetric_Cost0_Cost1,triangle,Cost0,Cost1,0.1,0.1,<Cost1,
