@@ -103,7 +103,7 @@ DILEMMAS = [0, 1, 2]
 
 def diagonal_path(shuffle, gs, mech, dilemma, pop, fset):
     cond = f"{shuffle}/{gs}"
-    return os.path.join(BASE, "diagonal", cond, mech, str(dilemma), pop,
+    return os.path.join(BASE, "symmetric_c", cond, mech, str(dilemma), pop,
                         f"csv_{fset}_for_image.con")
 
 
@@ -286,19 +286,19 @@ for mech in MECHS_FULL:
         vals = [f"{rmap.get(round(c, 4), float('nan')):.3f}" for c in sample_cs]
         print(f"  {mech:4s} d{d}  {'  '.join(vals)}")
 
-# ── 10. diagonal_1run temporal dynamics ──────────────────────────────────────
+# ── 10. symmetric_c_1run temporal dynamics ──────────────────────────────────────
 
 print("\n--- DIAGONAL_1RUN: TEMPORAL DYNAMICS (shuffle_128, PD, P, pop_2) ---")
 
 
-def diagonal_1run_path(shuffle, gs, mech, dilemma, pop, fset):
+def symmetric_c_1run_path(shuffle, gs, mech, dilemma, pop, fset):
     cond = f"{shuffle}/{gs}"
-    return os.path.join(BASE, "diagonal_1run", cond, mech, str(dilemma), pop,
+    return os.path.join(BASE, "symmetric_c_1run", cond, mech, str(dilemma), pop,
                         f"csv_{fset}_for_movie.con")
 
 
 for fset in [0, 1]:
-    path = diagonal_1run_path("shuffle", "128", "P", 1, "pop_2", fset)
+    path = symmetric_c_1run_path("shuffle", "128", "P", 1, "pop_2", fset)
     rows = load_con(path)
     if rows is None:
         print(f"  fset_{fset}: not found at {path}")
@@ -331,7 +331,7 @@ print("pop_2 only; fset_0=higher qBSeen (lower-cost pop), fset_1=lower qBSeen")
 
 def mut_path(shuffle, gs, mech, dilemma, fset):
     cond = f"{shuffle}/{gs}"
-    return os.path.join(BASE, "mutualism", cond, mech, str(dilemma), "pop_2",
+    return os.path.join(BASE, "asymmetric_c0_c1", cond, mech, str(dilemma), "pop_2",
                         f"csv_{fset}_for_image.con")
 
 
@@ -451,14 +451,14 @@ for shuffle in ["shuffle", "noshuffle"]:
                 print(f"  n/a       ", end="")
         print()
 
-# ── 16. mutualism_1run temporal dynamics ─────────────────────────────────────
+# ── 16. asymmetric_c0_c1_1run temporal dynamics ─────────────────────────────────────
 
 print("\n--- MUTUALISM_1RUN: TEMPORAL DYNAMICS (noshuffle_128, PD, M, fset_0) ---")
 
 
 def mut_1run_path(shuffle, gs, mech, dilemma, fset):
     cond = f"{shuffle}/{gs}"
-    return os.path.join(BASE, "mutualism_1run", cond, mech, str(dilemma), "pop_2",
+    return os.path.join(BASE, "asymmetric_c0_c1_1run", cond, mech, str(dilemma), "pop_2",
                         f"csv_{fset}_for_movie.con")
 
 

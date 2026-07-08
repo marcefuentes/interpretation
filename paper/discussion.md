@@ -1,7 +1,7 @@
 # Discussion
 
 *Draft scaffold. Backing: [synthesis.md](../journal/synthesis.md),
-[symmetric_cost.md](../journal/symmetric_cost.md),
+[symmetric_c_Cost.md](../journal/symmetric_c_Cost.md),
 [framework.md](../journal/framework.md).*
 
 ## What each mechanism is really limited by
@@ -34,7 +34,7 @@ the apparatus the demand requires. The striking consequence is that behaviour an
 mechanism decouple: cooperation can persist through unconditional cooperators after
 the expensive conditional machinery has been selected away — cooperation without
 active enforcement, but only where the game does not punish it. The new
-mutualism_cost branch fixes the boundary of that result: once one population is
+asymmetric_c1_Cost branch fixes the boundary of that result: once one population is
 held at c0 = 0.10 and the second is costlier still, there is no harmless Cost edge,
 so information cost retreats the c1 ceiling directly and compresses the
 cooperator/exploiter split rather than merely changing the genotype route.
@@ -56,6 +56,6 @@ cooperator/exploiter split rather than merely changing the genotype route.
 ## Future directions
 
 Finer temporal logging to settle the oscillation question; a targeted c0 sweep on
-the asymmetric Cost branch if we later want to test how broadly the mutualism_cost
+the asymmetric Cost branch if we later want to test how broadly the asymmetric_c1_Cost
 boundary generalizes; and fuller related-work positioning around costly
 enforcement machinery.

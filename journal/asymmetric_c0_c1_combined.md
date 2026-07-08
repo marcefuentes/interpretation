@@ -16,7 +16,7 @@ Diagonal (c0 = c1) is the equal-cost special case; see **diagonal_combined.md**.
 
 ## Overview
 
-See **[mutualism.md](mutualism.md#overview)** for the common model overview and parameter space.
+See **[asymmetric_c0_c1.md](asymmetric_c0_c1.md#overview)** for the common model overview and parameter space.
 
 ## Cooperation along c0 = 0 column
 

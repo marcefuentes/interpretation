@@ -7,11 +7,11 @@ only — no reciprocity locus). Pure reciprocity (M) is in
 
 ## Overview
 
-See **[mutualism.md](mutualism.md#overview)** for the common model overview and parameter space.
+See **[asymmetric_c0_c1.md](asymmetric_c0_c1.md#overview)** for the common model overview and parameter space.
 
 ## Payoff structure
 
-See **[mutualism.md](mutualism.md#payoff-structure)** for the common payoff structure and control baseline. Under partner choice (P), dilemma 2 (snowdrift) adds little marginal lift for the lower-cost population (P mean = 0.956 vs control 0.955) but the asymmetric dynamics remain important for the higher-cost population and for fitness outcomes.
+See **[asymmetric_c0_c1.md](asymmetric_c0_c1.md#payoff-structure)** for the common payoff structure and control baseline. Under partner choice (P), dilemma 2 (snowdrift) adds little marginal lift for the lower-cost population (P mean = 0.956 vs control 0.955) but the asymmetric dynamics remain important for the higher-cost population and for fitness outcomes.
 
 ## Cooperation under partner choice (P)
 

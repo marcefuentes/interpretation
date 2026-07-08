@@ -79,7 +79,7 @@ stochastically into a cooperating side (fset_0) and a defecting side
 
 The cooperating population (fset_0) climbs with R − P while the defecting
 population stays near 0.07–0.10, and the defector consistently earns more
-(w_1 > w_0) — the paradox-of-success signature also seen in diagonal pop_2.
+(w_1 > w_0) — the paradox-of-success signature also seen in symmetric_c pop_2.
 The asymmetry peaks around R − P ≈ 0.64 and narrows again only when R is so
 large that even the defecting side begins to cooperate.
 
@@ -114,7 +114,7 @@ R − P profile is flat near zero:
 Even at large R − P, where cooperation is trivial at gs=128, the small group
 cannot sustain it: mutual C1P1 swaps require two choosers meeting, and among
 four individuals such pairs are too rare to bootstrap. This reproduces the
-diagonal and mutualism gs=4 result — pure partner choice is catastrophically
+diagonal and asymmetric_c0_c1 gs=4 result — pure partner choice is catastrophically
 weakened by small groups, while reciprocity-bearing combinations (MP, MPQ,
 IMP, IJMPQ) partially recover. See **prisoners_calibration.md** for the
 groupsize-vs-shuffle decomposition.

@@ -62,7 +62,7 @@ cell; treat −b/a differences below ~0.03 as not meaningful.
 ## Role in this project
 
 Prisoners is an auxiliary calibration study used to interpret mechanism
-signatures seen in **mutualism** and **diagonal**, not a primary biological
+signatures seen in **asymmetric_c0_c1** and **symmetric_c**, not a primary biological
 endpoint. Earlier write-ups under the previous parameterization (K = 2, c = 1
 fixed) are superseded by these documents and are not part of the current
 K = 0.5, b = 0.4 study.

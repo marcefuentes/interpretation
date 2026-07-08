@@ -8,8 +8,8 @@ This document maps that attribution back onto the specific diagonal and
 mutualism thresholds, consolidating the cross-checks otherwise scattered across
 the per-study write-ups.
 
-See **prisoners_calibration.md** for the payoff-axis fits, **diagonal.md** and
-**mutualism.md** for the threshold profiles, and **diagonal.md** for the 30-run
+See **prisoners_calibration.md** for the payoff-axis fits, **symmetric_c.md** and
+**asymmetric_c0_c1.md** for the threshold profiles, and **symmetric_c.md** for the 30-run
 noise floor that bounds the comparisons below.
 
 ## The confound prisoners removes
@@ -141,9 +141,9 @@ side earning less (the paradox of success), but they reach it differently, and
 prisoners pins the difference to R − P:
 
 - **Symmetric payoffs split stochastically.** Prisoners pop_2 (symmetric, like
-  diagonal pop_2) breaks into a role split by chance, the cooperating side
+  symmetric_c pop_2) breaks into a role split by chance, the cooperating side
   earning less (**prisoners_partner_choice.md**) — the same signature as
-  diagonal pop_2.
+  symmetric_c pop_2.
 - **Asymmetric payoffs split deterministically.** Mutualism pop_2 has a
   built-in R − P asymmetry (c0 < c1), so the lower-cost population always takes
   the cooperator role. Same outcome, but seeded by the payoff structure rather
@@ -155,10 +155,10 @@ prisoners pins the difference to R − P:
 ## The information-cost axis: price vs demand for enforcement
 
 Prisoners/snowdrift decompose the payoff gaps behind the c-thresholds;
-**symmetric_cost** adds an orthogonal axis — the information cost Cost of carrying
+**symmetric_c_Cost** adds an orthogonal axis — the information cost Cost of carrying
 the machinery, charged once per round for being a partner chooser (P/Q locus) and
 once for being a reciprocator (M/I/J locus), independent of the game payoffs (see
-**symmetric_cost.md**). It reframes the whole picture as a supply-and-demand for
+**symmetric_c_Cost.md**). It reframes the whole picture as a supply-and-demand for
 enforcement:
 
 - **c is the demand.** Rising cooperation cost is rising temptation and risk —
@@ -179,9 +179,9 @@ The two are benign alone and destructive together:
   (roughly 1.5 units of tolerable c lost per unit Cost). This is not an
   equal-budget effect: at fixed Cost + c = 0.4 cooperation ranges 0.378 (all-c)
   to 0.810 (all-Cost); c is far more destructive per unit.
-- **On the asymmetric branch there is no harmless Cost edge.** mutualism_cost fixes
+- **On the asymmetric branch there is no harmless Cost edge.** asymmetric_c1_Cost fixes
   c0 = 0.10 and sweeps Cost x c1, so even the cheap population always faces
-  nonzero demand. The result is the complement of symmetric_cost: Cost no longer
+  nonzero demand. The result is the complement of symmetric_c_Cost: Cost no longer
   erodes behavior softly, but immediately compresses the cooperator/exploiter split,
   retreats the c1 ceiling, and removes most of the behavior-mechanism decoupling
   that the symmetric c = 0 edge allowed.
@@ -210,7 +210,7 @@ The two are benign alone and destructive together:
   to S (see **snowdrift.md**).
 - **Noise floor.** Per-cell qBSeen differences below ~0.01–0.02 and −b/a
   differences below ~0.03 are within run-to-run noise (see **prisoners.md** and
-  **diagonal.md**).
+  **symmetric_c.md**).
 
 ## One-line readings
 

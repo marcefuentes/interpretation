@@ -30,4 +30,4 @@ Practical reading guide: per-cell qBSeen differences below 0.01 to 0.02 are with
 
 ## Role in this project
 
-Snowdrift is an auxiliary calibration study used to interpret mechanism signatures seen in **mutualism** and **diagonal**, not a primary biological endpoint. Earlier write-ups under the previous parameterization are superseded by these documents and are not part of the current K = 0.5, b = 0.4 study.
+Snowdrift is an auxiliary calibration study used to interpret mechanism signatures seen in **asymmetric_c0_c1** and **symmetric_c**, not a primary biological endpoint. Earlier write-ups under the previous parameterization are superseded by these documents and are not part of the current K = 0.5, b = 0.4 study.

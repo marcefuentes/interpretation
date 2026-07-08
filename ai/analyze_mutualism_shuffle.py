@@ -29,7 +29,7 @@ def sorted_rows(rows):
 
 def mut_path(shuffle, gs, mech, dilemma, fset):
     cond = f"{shuffle}/{gs}"
-    return os.path.join(BASE, "mutualism", cond, mech, str(dilemma), "pop_2",
+    return os.path.join(BASE, "asymmetric_c0_c1", cond, mech, str(dilemma), "pop_2",
                         f"csv_{fset}_for_image.con")
 
 def main():

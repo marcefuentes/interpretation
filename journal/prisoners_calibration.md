@@ -19,7 +19,7 @@ collapses as c rises but cannot say *which* payoff gap drives the collapse.
 The prisoners study removes that confound: it fixes T = 0.90 and S = 0.10 and
 sweeps R and P independently over an 18 × 18 grid (172 cells satisfying
 T > R > P > S). Each cell is a mean over 30 runs (see the noise-floor note in
-**diagonal.md**). Dilemma folder 1 (PD) is the informative sweep; a folder 0
+**symmetric_c.md**). Dilemma folder 1 (PD) is the informative sweep; a folder 0
 no-social-dilemma rerun now exists for the dummy control mechanism \_ only.
 Payoffs are symmetric across populations.
 
@@ -154,10 +154,10 @@ mirroring the diagonal collapse as R − P → 0.
   c = 0.40 (where both R − P → 0 and risk P − S = c is largest). Prisoners
   isolates the cause: M tracks risk P, so the diagonal collapse is largely a
   rising-risk effect, not purely a vanishing cooperation gap.
-- **Symmetry breaking.** Prisoners pop_2 is symmetric (like diagonal pop_2)
+- **Symmetry breaking.** Prisoners pop_2 is symmetric (like symmetric_c pop_2)
   and breaks stochastically into a cooperator/defector role split, with the
   cooperating side earning less (paradox of success) — the same signature
-  documented for diagonal pop_2. See **prisoners_partner_choice.md**.
+  documented for symmetric_c pop_2. See **prisoners_partner_choice.md**.
 
 ## Caveats
 

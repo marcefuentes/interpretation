@@ -10,11 +10,11 @@ IMP, IJMPQ) are in **mutualism_combined.md**.
 
 ## Overview
 
-See **[mutualism.md](mutualism.md#overview)** for the common model overview and parameter space.
+See **[asymmetric_c0_c1.md](asymmetric_c0_c1.md#overview)** for the common model overview and parameter space.
 
 ## Payoff structure
 
-See **[mutualism.md](mutualism.md#payoff-structure)** for the common payoff structure and control baseline. Reciprocity mechanisms must be evaluated against the high snowdrift baseline, not against near-zero cooperation as in PD.
+See **[asymmetric_c0_c1.md](asymmetric_c0_c1.md#payoff-structure)** for the common payoff structure and control baseline. Reciprocity mechanisms must be evaluated against the high snowdrift baseline, not against near-zero cooperation as in PD.
 
 ## Cooperation landscape
 
@@ -269,7 +269,7 @@ signal J is what bootstraps both populations together. By (0.1, 0.3) both
 collapse toward the chooser-free reciprocity floor, confirming that indirect
 reciprocity, like direct, has a cost-asymmetry ceiling.
 
-## Single-run dynamics (mutualism_1run)
+## Single-run dynamics (asymmetric_c0_c1_1run)
 
 Along the c0 = 0 column (mechanism M, noshuffle, PD, Pop_0), single-run
 trajectories show high but variable cooperation:

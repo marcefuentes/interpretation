@@ -8,17 +8,17 @@ in **diagonal_combined.md**. For asymmetric costs (c0 ≠ c1), see
 
 ## Overview
 
-This study is the equal-cost diagonal ($c_0 = c_1 = c$). See **[diagonal.md](diagonal.md)** for the central game parameters. Studies
+This study is the equal-cost diagonal ($c_0 = c_1 = c$). See **[symmetric_c.md](symmetric_c.md)** for the central game parameters. Studies
 include pop_1, pop_2, and pop_3 across dilemma types 0, 1 (PD), and 2
 (snowdrift), groupsize 128 and 4, shuffle and noshuffle.
 
 Mechanisms \_ and M are present for all three dilemma folders. IM and IJM are
 present for dilemmas 1 and 2 only. All .con summary files are present under
-~/results/diagonal/ for both groupsizes.
+~/results/symmetric_c/ for both groupsizes.
 
 ## Game parameters and payoffs
 
-See **[diagonal.md](diagonal.md#game-parameters)** for the common game parameters and payoff structure.
+See **[symmetric_c.md](symmetric_c.md#game-parameters)** for the common game parameters and payoff structure.
 
 ## Cooperation profiles
 

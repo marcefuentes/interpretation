@@ -2,7 +2,7 @@
 
 *Draft scaffold. Backing: [parameterization.md](../journal/parameterization.md),
 [framework.md](../journal/framework.md); replicate/noise detail in
-[diagonal.md](../journal/diagonal.md) and [mutualism.md](../journal/mutualism.md).*
+[symmetric_c.md](../journal/symmetric_c.md) and [asymmetric_c0_c1.md](../journal/asymmetric_c0_c1.md).*
 
 ## Model
 
@@ -30,7 +30,7 @@ swept from 0 to b. The dilemma folders are:
 
 Exact tables, including the two-population form, are in
 [parameterization.md](../journal/parameterization.md),
-[diagonal.md](../journal/diagonal.md), and [mutualism.md](../journal/mutualism.md).
+[symmetric_c.md](../journal/symmetric_c.md), and [asymmetric_c0_c1.md](../journal/asymmetric_c0_c1.md).
 
 ## Independent variables
 
@@ -43,10 +43,10 @@ IJM).
 
 ## Studies
 
-- **mutualism** (primary): two coevolving populations, a 2D upper-triangular sweep of
+- **asymmetric_c0_c1** (primary): two coevolving populations, a 2D upper-triangular sweep of
   c0 < c1 (210 cells), dilemmas 1/2, both group sizes, shuffle/noshuffle.
-- **diagonal**: the equal-cost diagonal (c0 = c1), pop_1/2/3, dilemmas 0/1/2.
-- **symmetric_cost**: adds the information-cost axis, sweeping Cost jointly with c on a
+- **symmetric_c**: the equal-cost diagonal (c0 = c1), pop_1/2/3, dilemmas 0/1/2.
+- **symmetric_c_Cost**: adds the information-cost axis, sweeping Cost jointly with c on a
   triangular grid (Cost + c ≤ b).
 - **prisoners** and **snowdrift**: payoff-plane calibration sweeps that hold two
   payoffs fixed and vary the other two, decoupling temptation, risk, and the
@@ -67,7 +67,7 @@ and the wmean gap (exploitation) between file sets _0 and _1.
 Main-study values are means over 30 independent runs, with a companion SD column per
 statistic. The practical noise floor is qBSeen gaps below ~0.01–0.02 and fitness gaps
 below ~0.002; SD peaks in bistable transition cells (details in
-[diagonal.md](../journal/diagonal.md) and [mutualism.md](../journal/mutualism.md)).
+[symmetric_c.md](../journal/symmetric_c.md) and [asymmetric_c0_c1.md](../journal/asymmetric_c0_c1.md)).
 Every headline number in the journal is regression-checked against the exported data
 by `ai/verify_claims.py`, which is run before any documentation edit that changes a
 number.

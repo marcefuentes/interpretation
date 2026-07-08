@@ -15,7 +15,7 @@ The repo is organised in two layers for an eventual IMRaD manuscript:
 - ai/ — agent-only support: analysis scripts, verify_claims.py, findings.md quick-reference.
 - .github/copilot-instructions.md — active Copilot instructions.
 
-When citing an analysis doc, use its journal/ path (e.g. journal/symmetric_cost.md).
+When citing an analysis doc, use its journal/ path (e.g. journal/symmetric_c_Cost.md).
 
 ## Related Repositories (same machine)
 
@@ -37,14 +37,14 @@ Use --groupsize 4 or --groupsize 128 to target a specific groupsize (default is 
 Use --movie to build csv_*_for_movie.con (temporal snapshots); without it, only csv_*_for_image.con (final timestep) are written.
 Use --dilemma-type 0|1|2 to target dilemma folders other than the default (1); run once per dilemma type needed.
 Use --clean to discard cached .con files and force a rebuild from raw .csv data.
-Use --flat-output to write figures directly to --output without appending the study name (e.g. ~/figures/mutualism/pop_3 for mutualism_pop_3).
+Use --flat-output to write figures directly to --output without appending the study name (e.g. ~/figures/asymmetric_c0_c1/pop_3 for asymmetric_c0_c1_pop_3).
 
 Examples:
 
-    python -m graphgen.main --study diagonal --all --groupsize 128 --movie --output /tmp/graphgen_out
-    python -m graphgen.main --study diagonal --all --groupsize 128 --dilemma-type 2 --movie --output /tmp/graphgen_out
-    python -m graphgen.main --study mutualism --all --groupsize 4 --dilemma-type 0 --output /tmp/graphgen_out
-    python -m graphgen.main --study mutualism_pop_3 --all --groupsize 128 --dilemma-type 1 --output ~/figures/mutualism/pop_3 --flat-output
+    python -m graphgen.main --study symmetric_c --all --groupsize 128 --movie --output /tmp/graphgen_out
+    python -m graphgen.main --study symmetric_c --all --groupsize 128 --dilemma-type 2 --movie --output /tmp/graphgen_out
+    python -m graphgen.main --study asymmetric_c0_c1 --all --groupsize 4 --dilemma-type 0 --output /tmp/graphgen_out
+    python -m graphgen.main --study asymmetric_c0_c1_pop_3 --all --groupsize 128 --dilemma-type 1 --output ~/figures/asymmetric_c0_c1/pop_3 --flat-output
     python -m graphgen.main --study prisoners --all --output /tmp/graphgen_out
 
 ### Missing summary exports policy (for AI agents)
@@ -66,19 +66,19 @@ Examples:
 
 ### Study Status
 
-**diagonal**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: diagonal_partner_choice.md (P), diagonal_reciprocity.md (M, IM, IJM), diagonal_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 primary with dedicated gs=4 sections.
+**symmetric_c**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: diagonal_partner_choice.md (P), diagonal_reciprocity.md (M, IM, IJM), diagonal_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 primary with dedicated gs=4 sections.
 
-**mutualism**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, pop_2 only (image and movie). Mechanism coverage differs by shuffle setting: noshuffle has 7 mechanisms (_, M, P, MP, MPQ, IMP, IJMPQ); shuffle adds IM and IJM for 9. Analysis: mutualism_partner_choice.md (P), mutualism_reciprocity.md (M noshuffle; IM, IJM shuffle), mutualism_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 noshuffle primary with dedicated gs=4 sections.
+**asymmetric_c0_c1**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, pop_2 only (image and movie). Mechanism coverage differs by shuffle setting: noshuffle has 7 mechanisms (_, M, P, MP, MPQ, IMP, IJMPQ); shuffle adds IM and IJM for 9. Analysis: mutualism_partner_choice.md (P), mutualism_reciprocity.md (M noshuffle; IM, IJM shuffle), mutualism_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 noshuffle primary with dedicated gs=4 sections.
 
-**mutualism pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study mutualism_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with Diagonal pop_3 for interpretation** — see Mutualism Parameter Space below. Use Diagonal pop_3 for figures and analysis; mutualism_pop_3 is retained only as auxiliary figure material at ~/figures/mutualism/pop_3/ (use --flat-output).
+**asymmetric_c0_c1 pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study asymmetric_c0_c1_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with Diagonal pop_3 for interpretation** — see Mutualism Parameter Space below. Use Diagonal pop_3 for figures and analysis; asymmetric_c0_c1_pop_3 is retained only as auxiliary figure material at ~/figures/asymmetric_c0_c1/pop_3/ (use --flat-output).
 
 **prisoners**: calibration study, re-run under the current engine (Cost=0.001, Runs=30) as a raw PD payoff-plane sweep — T=0.9 and S=0.1 fixed, R and P swept independently over an 18x18 grid (172 cells, T>R>P>S). The main analysis is dilemma 1 (PD); a dilemma 0 no-social-dilemma rerun now exists for the dummy control mechanism \_ only. Payoffs are symmetric; pops 1/2/3; shuffle and noshuffle. .con exports: gs=128 and gs=4 image for the PD sweep (noshuffle 7 mechanisms, shuffle adds IM/IJM), plus dilemma 0 control exports for \_; movie exports present for gs=128 and gs=4 (temporal via prisoners_1run: gs=128 and gs=4 complete). Cell key is (R0, P0), not c0/c1. Analysis: prisoners_calibration.md (payoff-axis attribution, gs=4 mirror of shuffle), prisoners_partner_choice.md (P), prisoners_reciprocity.md (M, IM, IJM).
 
 **snowdrift**: multi-run (snowdrift, Runs=30) now present — a snowdrift-ordered payoff sweep (T=0.9, P=0.10 fixed; R and S swept; T>R>S>P), dilemma 2, gs=128 and gs=4 image exports. Temporal from snowdrift_1run (Runs=1) movie exports (gs=128 and gs=4). Analysis: snowdrift.md (index), snowdrift_calibration.md (payoff-axis attribution), snowdrift_partner_choice.md (P), snowdrift_reciprocity.md (M, IM, IJM). Cell key is (R0, S0).
 
-**symmetric_cost**: extends diagonal with a 2nd swept axis — Cost, the per-round information cost of the machinery (recruits.c: cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2xCost, single-family 1x, control 0). Triangular Cost x c grid with Cost+c<=0.4 (231 cells: Cost in {0,0.02,...,0.4}, c in {0,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), pops 1/2/3, Runs=30 (image); symmetric_cost_1run is the single-run temporal variant. Cell key is (Cost, c0). Analysis: symmetric_cost.md; ai/analyze_symmetric_cost.py.
+**symmetric_c_Cost**: extends diagonal with a 2nd swept axis — Cost, the per-round information cost of the machinery (recruits.c: cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2xCost, single-family 1x, control 0). Triangular Cost x c grid with Cost+c<=0.4 (231 cells: Cost in {0,0.02,...,0.4}, c in {0,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), pops 1/2/3, Runs=30 (image); symmetric_c_Cost_1run is the single-run temporal variant. Cell key is (Cost, c0). Analysis: symmetric_c_Cost.md; ai/analyze_symmetric_c_Cost.py.
 
-**mutualism_cost**: extends mutualism pop_2 with the same information-cost axis but on the asymmetric branch: c0 is fixed at 0.10 for pop_0, and Cost is swept jointly with c1 over the triangle Cost+c1<=0.4 with c1>c0 (120 cells: Cost in {0,0.02,...,0.28}; c1 in {0.12,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), Runs=30 (image); mutualism_cost_1run is the single-run temporal variant. Cell key is (Cost, c1). Analysis: mutualism_cost.md; ai/analyze_mutualism_cost.py.
+**asymmetric_c1_Cost**: extends asymmetric_c0_c1 pop_2 with the same information-cost axis but on the asymmetric branch: c0 is fixed at 0.10 for pop_0, and Cost is swept jointly with c1 over the triangle Cost+c1<=0.4 with c1>c0 (120 cells: Cost in {0,0.02,...,0.28}; c1 in {0.12,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), Runs=30 (image); asymmetric_c1_Cost_1run is the single-run temporal variant. Cell key is (Cost, c1). Analysis: asymmetric_c1_Cost.md; ai/analyze_asymmetric_c1_Cost.py.
 
 ### Diagonal Parameter Space
 
@@ -120,17 +120,17 @@ Mutualism is a 2D sweep over c0 and c1 with b = 0.4 fixed, K = 0.5.
 
 **pop_2** (study mutualism): strict upper triangle only — c0 ∈ [0, 0.38], c1 ∈ [0.02, 0.40] with c0 < c1 always (210 cells). Heatmaps mask the diagonal (c0 = c1). The role split is deterministic: since c0 < c1 always, pop_0 has higher R−P and cooperates more in every cell for every mechanism tested.
 
-**pop_3** (study mutualism_pop_3): full 21×21 square — all c0, c1 pairs including diagonal and lower triangle (441 cells). One evolving population (_0) vs one fixed population (_1, 25% each genotype). Reads from the same ~/results/mutualism/ tree (results_name=mutualism). Theory overlays (s04) deferred.
+**pop_3** (study asymmetric_c0_c1_pop_3): full 21×21 square — all c0, c1 pairs including diagonal and lower triangle (441 cells). One evolving population (_0) vs one fixed population (_1, 25% each genotype). Reads from the same ~/results/asymmetric_c0_c1/ tree (results_name=mutualism). Theory overlays (s04) deferred.
 
-**mutualism pop_3 vs Diagonal pop_3 (redundant for interpretation).** The 441-cell square re-simulates what Diagonal pop_3 already captures in a 1D c sweep. Use Diagonal pop_3 for figures and analysis; mutualism_pop_3 heatmaps add little beyond noise. Root cause: in pop_3 only _0 evolves and _1 is frozen at 25% each, so c1 (the frozen partner's own cost) has no coevolutionary channel to the evolving population's payoffs — the one dynamical quantity can depend on c0 alone. Regression-locked in ai/verify_claims.py (study mutualism_pop_3, 6 checks).
+**asymmetric_c0_c1 pop_3 vs Diagonal pop_3 (redundant for interpretation).** The 441-cell square re-simulates what Diagonal pop_3 already captures in a 1D c sweep. Use Diagonal pop_3 for figures and analysis; asymmetric_c0_c1_pop_3 heatmaps add little beyond noise. Root cause: in pop_3 only _0 evolves and _1 is frozen at 25% each, so c1 (the frozen partner's own cost) has no coevolutionary channel to the evolving population's payoffs — the one dynamical quantity can depend on c0 alone. Regression-locked in ai/verify_claims.py (study asymmetric_c0_c1_pop_3, 6 checks).
 
-| Quantity | mutualism pop_3 (c0, c1) | Diagonal pop_3 (c = c0 = c1) |
+| Quantity | asymmetric_c0_c1 pop_3 (c0, c1) | Diagonal pop_3 (c = c0 = c1) |
 | -------- | ------------------------ | ---------------------------- |
 | Evolving _0 qBSeen / wmean | Depends on c0 only; c1-invariant at fixed c0 (max c1-spread <= 0.025) and matches Diagonal pop_3 at c = c0 across all 441 cells (max cell deviation <= 0.019) | 1D sweep — same story |
 | Fixed _1 qBSeen | Flat 0.50, genotypes frozen (max dev 0.005) | Flat ~0.50 |
 | Fixed _1 raw wmean | Additively separable w ≈ a(c0) + b(c1), no c0xc1 interaction (max residual 0.005); c1 effect damped because only 50% (C1 genotypes) pay c1 | Diagonal slice where c0 = c1 |
 
-Figure layout (mutualism_pop_3): top row = evolving _0, bottom row = fixed _1. The top row shows vertical c0 bands only. The bottom row shows the same c0 bands with a modest vertical (c1) offset — easy to miss if the rows are swapped mentally.
+Figure layout (asymmetric_c0_c1_pop_3): top row = evolving _0, bottom row = fixed _1. The top row shows vertical c0 bands only. The bottom row shows the same c0 bands with a modest vertical (c1) offset — easy to miss if the rows are swapped mentally.
 
 pop_2 remains the non-redundant mutualism case: both populations evolve and c0 ≠ c1 cells are essential (210-cell upper triangle).
 
@@ -175,9 +175,9 @@ Results live at ~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{p
 - **shuffle**: shuffle or noshuffle
 - **groupsize**: 128 or 4
 
-Cost (the per-module locus-expression tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except symmetric_cost, where it is the swept 2nd axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. Cost for expressing any partner-choice locus plus Cost for expressing any reciprocity locus. See decide_qB.c / recruits.c.
+Cost (the per-module locus-expression tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except symmetric_c_Cost, where it is the swept 2nd axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. Cost for expressing any partner-choice locus plus Cost for expressing any reciprocity locus. See decide_qB.c / recruits.c.
 
-Example: ~/results/diagonal/shuffle/128/P/1/pop_2/csv_0_for_image.con
+Example: ~/results/symmetric_c/shuffle/128/P/1/pop_2/csv_0_for_image.con
 
 | File                  | Contents                                                         |
 | --------------------- | ---------------------------------------------------------------- |
@@ -262,7 +262,7 @@ In both cases b is fixed and equal for both populations, so the asymmetry betwee
 
 Figures are generated by ../graph/graphgen/studies/{study}/manifest.py. Key files:
 - ../graph/graphgen/studies/{study}/manifest.py — MAIN_ROWS defines panel layout (row → population, file_set, trait, renderer)
-- ../graph/graphgen/studies/mutualism_pop_3/manifest.py — pop_3 full-square grid (reindex_full_square_matrix; no s04 theory)
+- ../graph/graphgen/studies/asymmetric_c0_c1_pop_3/manifest.py — pop_3 full-square grid (reindex_full_square_matrix; no s04 theory)
 - ../graph/graphgen/studies/trps/config.py — shared trait definitions
 - ../graph/graphgen/studies/common/shared.py — common path template
 

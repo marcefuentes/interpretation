@@ -16,12 +16,12 @@ For asymmetric costs (c0 ≠ c1), see **mutualism_combined.md**.
 
 ## Overview
 
-This study is the equal-cost diagonal ($c_0 = c_1 = c$). See **[diagonal.md](diagonal.md)** for the central game parameters. Analysis covers dilemmas 1 (PD) and 2
+This study is the equal-cost diagonal ($c_0 = c_1 = c$). See **[symmetric_c.md](symmetric_c.md)** for the central game parameters. Analysis covers dilemmas 1 (PD) and 2
 (snowdrift), groupsize 128 (primary) and groupsize 4.
 
 ## Game parameters and payoffs
 
-See **[diagonal.md](diagonal.md#game-parameters)** for the common game parameters and payoff structure.
+See **[symmetric_c.md](symmetric_c.md#game-parameters)** for the common game parameters and payoff structure.
 
 ## Cooperation profiles
 
