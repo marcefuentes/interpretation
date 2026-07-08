@@ -27,7 +27,7 @@ calibration sweeps decouple these, and the attribution is clean and stable
   the highest costs.
 
 **Information cost is a softer, orthogonal pressure**
-([symmetric_c_Cost.md](../journal/symmetric_c_Cost.md)). Taxing the machinery alone (c = 0)
+([symmetric_c_cost.md](../journal/symmetric_c_cost.md)). Taxing the machinery alone (c = 0)
 erodes cooperation only gently, because with no temptation a population can shed the
 apparatus and keep cooperating for free. But because information cost thins the very
 apparatus that resists temptation, it pulls the c-collapse threshold downward where
@@ -62,7 +62,7 @@ success. The two faces of the asymmetry (who cooperates, who profits) can diverg
   steadily shrinks both the cooperation gap and the fitness gap between the two
   populations; the paradox of success remains while partner choice still functions,
   then disappears mainly because the system is driven to the control floor
-  ([asymmetric_c1_Cost.md](../journal/asymmetric_c1_Cost.md)).
+  ([asymmetric_c1_cost.md](../journal/asymmetric_c1_cost.md)).
 
 The temporal regime of this split is an absorbing state (roles lock in), and it does
 not differ between one and two populations; this is why temporal dynamics is not
@@ -71,7 +71,7 @@ treated as a separate outcome.
 ## 3. Genotype composition — the route to cooperation
 
 The same cooperation level can be produced by different genotypes, and this is where
-some of the strongest results sit ([symmetric_c_Cost.md](../journal/symmetric_c_Cost.md),
+some of the strongest results sit ([symmetric_c_cost.md](../journal/symmetric_c_cost.md),
 [synthesis.md](../journal/synthesis.md)).
 
 - **Behaviour and machinery decouple under information cost.** As Cost rises at c = 0,
@@ -82,7 +82,7 @@ some of the strongest results sit ([symmetric_c_Cost.md](../journal/symmetric_c_
 - **The decoupling has a boundary.** On the asymmetric branch with c0 fixed at 0.10,
   machinery loss and behavioural loss move together much more tightly: there is no
   harmless pure-Cost edge, so shedding P1 or M1 no longer leaves a stable
-  high-cooperation niche behind ([asymmetric_c1_Cost.md](../journal/asymmetric_c1_Cost.md)).
+  high-cooperation niche behind ([asymmetric_c1_cost.md](../journal/asymmetric_c1_cost.md)).
 - **Partner choice assorts, reciprocity remembers.** A residual chooser minority sorts
   the whole population so even unconditional cooperators are protected; a residual
   reciprocator minority protects only itself. This population-level vs individual-level

@@ -71,9 +71,9 @@ Status legend: [ ] todo, [~] in progress, [x] done.
     Updated the stale "snowdrift is single-run only / dir empty" notes in findings.md and
     copilot-instructions.md.
 
-11. [x] symmetric_c_Cost + symmetric_c_Cost_1run (new information-cost study).
-    - Wrote symmetric_c_Cost.md; added the price-vs-demand section to synthesis.md.
-    - ai/analyze_symmetric_c_Cost.py + 14 regression checks.
+11. [x] symmetric_c_cost + symmetric_c_cost_1run (new information-cost study).
+    - Wrote symmetric_c_cost.md; added the price-vs-demand section to synthesis.md.
+    - ai/analyze_symmetric_c_cost.py + 14 regression checks.
     - Findings: information cost is soft vs cooperation cost (machinery shed harmlessly at
       c=0), family count does not predict collapse (combined most robust), machinery erosion
       decouples behavior from mechanism, and Cost lowers the c-collapse threshold (~1.5 c per
@@ -95,27 +95,27 @@ Status legend: [ ] todo, [~] in progress, [x] done.
     - README, copilot-instructions, findings.md updated to the journal/ paths;
       no broken relative links; verifier 121/121.
 
-## Completed — asymmetric_c1_Cost integration (2026-07)
+## Completed — asymmetric_c1_cost integration (2026-07)
 
-13. [x] asymmetric_c1_Cost_1run + asymmetric_c1_Cost (price–demand under built-in asymmetry).
-    - Analysis now lives in journal/asymmetric_c1_Cost.md, with regression checks in
-      ai/verify_claims.py and support script ai/analyze_asymmetric_c1_Cost.py.
-    - Headline result: the soft Cost effect from symmetric_c_Cost depends on the c = 0
+13. [x] asymmetric_c1_cost_1run + asymmetric_c1_cost (price–demand under built-in asymmetry).
+    - Analysis now lives in journal/asymmetric_c1_cost.md, with regression checks in
+      ai/verify_claims.py and support script ai/analyze_asymmetric_c1_cost.py.
+    - Headline result: the soft Cost effect from symmetric_c_cost depends on the c = 0
       refuge. With c0 fixed at 0.10 on the asymmetric branch, Cost retreats the c1
       ceiling immediately, compresses the cooperation/fitness split, and leaves much
       less behavior-mechanism decoupling.
     - Related framework, synthesis, README, and paper notes updated to treat
-      asymmetric_c1_Cost as part of the settled manuscript scope.
+      asymmetric_c1_cost as part of the settled manuscript scope.
 
 ## Proposed — asymmetric information cost (2026-07)
 
 14. [ ] Asymmetric information-cost study (per-population Cost0, Cost1).
     - **Question.** Existing cost studies tax the machinery symmetrically (a single
-      global `Cost` shared by both populations): symmetric_c_Cost sweeps symmetric Cost x
-      symmetric c, asymmetric_c1_Cost sweeps symmetric Cost x asymmetric c1 (c0 = 0.10).
+      global `Cost` shared by both populations): symmetric_c_cost sweeps symmetric Cost x
+      symmetric c, asymmetric_c1_cost sweeps symmetric Cost x asymmetric c1 (c0 = 0.10).
       The empty cell is asymmetric *price*: Cost0 != Cost1. The higher-Cost population
       sheds its enforcement machinery faster (supply-side erosion, see
-      journal/symmetric_c_Cost.md), so the novel question is whether it becomes the
+      journal/symmetric_c_cost.md), so the novel question is whether it becomes the
       exploiter (free-rides, tax-free) or the exploited (undefended). This is a **third
       route to the cooperator/exploiter role split** — deterministic symmetry breaking
       via the *price* of enforcement, complementing the two routes in
@@ -134,17 +134,17 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
     - **Study A (symmetric c, asymmetric Cost) — the clean first study.**
       - pop_2 only. Fix c0 = c1 = c at a positive value so demand bites (c = 0 is a
-        near-null: symmetric_c_Cost pop_2 barely breaks symmetry with no temptation).
-        **c = 0.10 primary** (nests the Cost0 = Cost1 edge onto symmetric_c_Cost pop_2 at
-        c = 0.10, and sits adjacent to asymmetric_c1_Cost's low-asymmetry edge) plus
+        near-null: symmetric_c_cost pop_2 barely breaks symmetry with no temptation).
+        **c = 0.10 primary** (nests the Cost0 = Cost1 edge onto symmetric_c_cost pop_2 at
+        c = 0.10, and sits adjacent to asymmetric_c1_cost's low-asymmetry edge) plus
         **c = 0.20 secondary** (machinery more load-bearing, so the Cost-asymmetry role
         split should read sharper; guards against a muted signal at c = 0.10).
-      - Sweep (Cost0, Cost1) on a **0.02 grid** (matches symmetric_c_Cost / asymmetric_c1_Cost
+      - Sweep (Cost0, Cost1) on a **0.02 grid** (matches symmetric_c_cost / asymmetric_c1_cost
         so cells nest exactly).
       - **Ordering triangle Cost0 <= Cost1** (not a full square): under symmetric c the
         populations are exchangeable, so (Cost0, Cost1) and its mirror are the same
         experiment; the triangle avoids redundant runs. The Cost0 = Cost1 edge is the
-        pure-Cost axis already covered by symmetric_c_Cost pop_2.
+        pure-Cost axis already covered by symmetric_c_cost pop_2.
       - **Per-axis cap Cmax = b - c** (LOCKED), i.e. each axis bounded independently by
         the single-family break-even c + Cost = b, beyond which a cooperate-and-enforce
         individual cannot beat the mutual-defection floor K even in its best case
@@ -153,7 +153,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
         within one individual, so the sum-cut would wrongly exclude payoff-feasible
         cells (e.g. c = 0.10, Cost0 = 0.15, Cost1 = 0.25: both have c + Cost_p < b, but
         sum = 0.40). Combined mechanisms (2 x Cost) break even earlier at c + 2 Cost = b;
-        as in symmetric_c_Cost, cells past that are kept but read knowing the combined
+        as in symmetric_c_cost, cells past that are kept but read knowing the combined
         strategy is already underwater there.
 
     - **Study B (crossed asymmetries) — reserved, higher payoff, more expensive.**
@@ -177,30 +177,30 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       Cost0, Cost1, c; Study A = symmetric c with ordering triangle Cost0 <= Cost1;
       per-axis cap Cmax = b - c; Study A c = 0.10 primary + c = 0.20 secondary; Study B
       reserved with a full square.
-    - **No c = 0 slice** (would land in symmetric_c_Cost's harmless-shedding regime where
+    - **No c = 0 slice** (would land in symmetric_c_cost's harmless-shedding regime where
       the Cost asymmetry is a near-null; not worth the runs).
     - **Open decisions:** Study B c-gap and Cost sub-grid.
 
-## Newly landed data — symmetric_c_Cost (2026-07)
+## Newly landed data — symmetric_c_cost (2026-07)
 
-15. [ ] symmetric_c_Cost + symmetric_c_Cost_1run (line-chart reslice, not yet integrated).
-    - Maintainer extracted these from symmetric_c_Cost / symmetric_c_Cost_1run: a fixed
+15. [ ] symmetric_c_cost + symmetric_c_cost_1run (line-chart reslice, not yet integrated).
+    - Maintainer extracted these from symmetric_c_cost / symmetric_c_cost_1run: a fixed
       cooperation-cost slice at c = c0 = c1 = 0.10, sweeping the information cost Cost
       from 0 to 0.30 in 0.02 steps (16 cells). Same diagonal structure otherwise —
       pops 1/2/3, shuffle + noshuffle, gs 128 + 4, dilemmas, the diagonal mechanism set.
-      Data and csv_*_for_image.con exports are in ~/results/symmetric_c_Cost{,_1run}/.
+      Data and csv_*_for_image.con exports are in ~/results/symmetric_c_cost{,_1run}/.
     - Rendered as line charts (x-axis "Information cost") via
-      ../graph/graphgen/studies/symmetric_c_Cost/manifest.py, mirroring the diagonal
-      line-chart builder. symmetric_c_Cost_1run is the single-run temporal companion.
+      ../graph/graphgen/studies/symmetric_c_cost/manifest.py, mirroring the diagonal
+      line-chart builder. symmetric_c_cost_1run is the single-run temporal companion.
     - Purpose: a presentation variant, not new science. The information-cost findings
-      are already analysed on the full Cost x c grid in journal/symmetric_c_Cost.md
+      are already analysed on the full Cost x c grid in journal/symmetric_c_cost.md
       (soft erosion of the machinery, the C1P0/C1M0 free-cooperator niche, the P-vs-M
       split). This gives a clean cooperation-vs-Cost line view at one load-bearing c,
       visually parallel to the existing diagonal cooperation-vs-c line figures.
     - Status: registered here as candidate figure material only. No journal doc,
       analysis script, or verifier checks yet. Consider these as an option if the
       manuscript wants a line-chart companion for the price-of-enforcement axis
-      (see paper/figures.md, Fig 4/5 backing symmetric_c_Cost.md). Decide before
+      (see paper/figures.md, Fig 4/5 backing symmetric_c_cost.md). Decide before
       building whether the line reslice adds enough over the m3/m4 heatmaps to earn a
       figure slot.
 

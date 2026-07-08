@@ -13,7 +13,7 @@ split by mechanism family:
 Diagonal is the equal-cost special case (c0 = c1); see **symmetric_c.md** (index to
 diagonal_partner_choice.md, diagonal_reciprocity.md, and diagonal_combined.md).
 The information-cost extension on this asymmetric branch is
-**[asymmetric_c1_Cost.md](asymmetric_c1_Cost.md)**: fixed c0 = 0.10, Cost x c1 sweep,
+**[asymmetric_c1_cost.md](asymmetric_c1_cost.md)**: fixed c0 = 0.10, Cost x c1 sweep,
 showing how taxing the machinery compresses the deterministic
 cooperator/exploiter split.
 For why the deterministic role split and the Pop_1 lift track the R − P payoff

@@ -15,15 +15,15 @@ INTERP = Path("/home/marcelino/code/interpretation")
 
 # Unambiguous renames (longest first). Excludes bare "diagonal" and "mutualism".
 UNAMBIGUOUS: list[tuple[str, str]] = [
-    ("mutualism_infocost_1run", "asymmetric_Cost0_Cost1_1run"),
-    ("mutualism_infocost", "asymmetric_Cost0_Cost1"),
-    ("mutualism_cost_1run", "asymmetric_c1_Cost_1run"),
-    ("mutualism_cost", "asymmetric_c1_Cost"),
+    ("mutualism_infocost_1run", "asymmetric_cost0_cost1_1run"),
+    ("mutualism_infocost", "asymmetric_cost0_cost1"),
+    ("mutualism_cost_1run", "asymmetric_c1_cost_1run"),
+    ("mutualism_cost", "asymmetric_c1_cost"),
     ("mutualism_1run", "asymmetric_c0_c1_1run"),
     ("diagonal_infocost_1run", "symmetric_cost_1run"),
     ("diagonal_infocost", "symmetric_cost"),
-    ("symmetric_cost_1run", "symmetric_c_Cost_1run"),
-    ("symmetric_cost", "symmetric_c_Cost"),
+    ("symmetric_cost_1run", "symmetric_c_cost_1run"),
+    ("symmetric_cost", "symmetric_c_cost"),
     ("diagonal_1run", "symmetric_c_1run"),
 ]
 
@@ -33,8 +33,8 @@ STUDY_RENAMES: list[tuple[str, str]] = [
 ]
 
 COLLIDING = {
-    "symmetric_cost": "symmetric_c_Cost",
-    "symmetric_cost_1run": "symmetric_c_Cost_1run",
+    "symmetric_cost": "symmetric_c_cost",
+    "symmetric_cost_1run": "symmetric_c_cost_1run",
     "diagonal_infocost": "symmetric_cost",
     "diagonal_infocost_1run": "symmetric_cost_1run",
 }
@@ -143,12 +143,12 @@ def rename_test_files(tests_dir: Path) -> None:
     if not tests_dir.is_dir():
         return
     pairs = [
-        ("test_studies_symmetric_cost_1run.py", "test_studies_symmetric_c_Cost_1run.py"),
-        ("test_studies_symmetric_cost.py", "test_studies_symmetric_c_Cost.py"),
+        ("test_studies_symmetric_cost_1run.py", "test_studies_symmetric_c_cost_1run.py"),
+        ("test_studies_symmetric_cost.py", "test_studies_symmetric_c_cost.py"),
         ("test_studies_diagonal_infocost.py", "test_studies_symmetric_cost.py"),
         ("test_studies_diagonal.py", "test_studies_symmetric_c.py"),
-        ("test_studies_mutualism_cost_1run.py", "test_studies_asymmetric_c1_Cost_1run.py"),
-        ("test_studies_mutualism_cost.py", "test_studies_asymmetric_c1_Cost.py"),
+        ("test_studies_mutualism_cost_1run.py", "test_studies_asymmetric_c1_cost_1run.py"),
+        ("test_studies_mutualism_cost.py", "test_studies_asymmetric_c1_cost.py"),
     ]
     for old, new in pairs:
         rename_dir(tests_dir, old, new)
@@ -156,8 +156,8 @@ def rename_test_files(tests_dir: Path) -> None:
 
 def rename_journal_files(journal_dir: Path) -> None:
     pairs = [
-        ("symmetric_cost.md", "symmetric_c_Cost.md"),
-        ("mutualism_cost.md", "asymmetric_c1_Cost.md"),
+        ("symmetric_cost.md", "symmetric_c_cost.md"),
+        ("mutualism_cost.md", "asymmetric_c1_cost.md"),
         ("mutualism_combined.md", "asymmetric_c0_c1_combined.md"),
         ("mutualism_partner_choice.md", "asymmetric_c0_c1_partner_choice.md"),
         ("mutualism_reciprocity.md", "asymmetric_c0_c1_reciprocity.md"),
@@ -173,8 +173,8 @@ def rename_journal_files(journal_dir: Path) -> None:
 
 def rename_ai_scripts(ai_dir: Path) -> None:
     pairs = [
-        ("analyze_symmetric_cost.py", "analyze_symmetric_c_Cost.py"),
-        ("analyze_mutualism_cost.py", "analyze_asymmetric_c1_Cost.py"),
+        ("analyze_symmetric_cost.py", "analyze_symmetric_c_cost.py"),
+        ("analyze_mutualism_cost.py", "analyze_asymmetric_c1_cost.py"),
     ]
     for old, new in pairs:
         rename_dir(ai_dir, old, new)

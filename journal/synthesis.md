@@ -155,10 +155,10 @@ prisoners pins the difference to R − P:
 ## The information-cost axis: price vs demand for enforcement
 
 Prisoners/snowdrift decompose the payoff gaps behind the c-thresholds;
-**symmetric_c_Cost** adds an orthogonal axis — the information cost Cost of carrying
+**symmetric_c_cost** adds an orthogonal axis — the information cost Cost of carrying
 the machinery, charged once per round for being a partner chooser (P/Q locus) and
 once for being a reciprocator (M/I/J locus), independent of the game payoffs (see
-**symmetric_c_Cost.md**). It reframes the whole picture as a supply-and-demand for
+**symmetric_c_cost.md**). It reframes the whole picture as a supply-and-demand for
 enforcement:
 
 - **c is the demand.** Rising cooperation cost is rising temptation and risk —
@@ -179,9 +179,9 @@ The two are benign alone and destructive together:
   (roughly 1.5 units of tolerable c lost per unit Cost). This is not an
   equal-budget effect: at fixed Cost + c = 0.4 cooperation ranges 0.378 (all-c)
   to 0.810 (all-Cost); c is far more destructive per unit.
-- **On the asymmetric branch there is no harmless Cost edge.** asymmetric_c1_Cost fixes
+- **On the asymmetric branch there is no harmless Cost edge.** asymmetric_c1_cost fixes
   c0 = 0.10 and sweeps Cost x c1, so even the cheap population always faces
-  nonzero demand. The result is the complement of symmetric_c_Cost: Cost no longer
+  nonzero demand. The result is the complement of symmetric_c_cost: Cost no longer
   erodes behavior softly, but immediately compresses the cooperator/exploiter split,
   retreats the c1 ceiling, and removes most of the behavior-mechanism decoupling
   that the symmetric c = 0 edge allowed.
