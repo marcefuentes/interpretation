@@ -45,7 +45,7 @@ IJM).
 
 - **asymmetric_c0_c1** (primary): two coevolving populations, a 2D upper-triangular sweep of
   c0 < c1 (210 cells), dilemmas 1/2, both group sizes, shuffle/noshuffle.
-- **symmetric_c**: the equal-cost diagonal (c0 = c1), pop_1/2/3, dilemmas 0/1/2.
+- **symmetric_c**: symmetric_c (equal-cost, c0 = c1), pop_1/2/3, dilemmas 0/1/2.
 - **symmetric_c_i**: adds the information-cost axis, sweeping Cost jointly with c on a
   triangular grid (Cost + c ≤ b).
 - **prisoners** and **snowdrift**: payoff-plane calibration sweeps that hold two

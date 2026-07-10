@@ -1,6 +1,6 @@
-# Diagonal — Reciprocity
+# symmetric_c — Reciprocity
 
-Pure reciprocity analysis for the equal-cost Diagonal study (mechanisms **M**,
+Pure reciprocity analysis for the symmetric_c study (mechanisms **M**,
 **IM**, **IJM** — no partner-choice locus). Partner choice (P) is in
 **symmetric_c_partner_choice.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are
 in **symmetric_c_combined.md**. For asymmetric costs (c0 ≠ c1), see
@@ -241,4 +241,4 @@ Comparing direct reciprocity (M) and indirect reciprocity (IM, IJM) to the contr
 | Snowdrift M              | 0.916 at c = 0.32, 0.182 at c = 0.40                                       |
 | gs=4 IJM reversal        | Weakest at gs=128 → near top at gs=4                                        |
 | gs=4 M noshuffle         | Invariant to groupsize                                                      |
-| vs mutualism             | Diagonal 1D c sweep; mutualism 2D asymmetric triangle with deterministic role split |
+| vs asymmetric_c0_c1             | symmetric_c 1D c sweep; asymmetric_c0_c1 2D asymmetric triangle with deterministic role split |

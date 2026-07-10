@@ -1,6 +1,6 @@
-# Mutualism — Reciprocity
+# asymmetric_c0_c1 — Reciprocity
 
-Pure reciprocity analysis for the two-population mutualism study — direct
+Pure reciprocity analysis for the asymmetric_c0_c1 study — direct
 reciprocity (**M**) and indirect reciprocity (**IM**, **IJM**), no
 partner-choice locus. M is present under both shuffle and noshuffle; IM and
 IJM exist only under the shuffle conditions, which is precisely where direct
@@ -86,7 +86,7 @@ but leaves a large gap below Pop_0.
 
 ### Cooperation Boost vs. Asymmetry Effects
 
-Comparing direct reciprocity (M) to the control (_) in Mutualism shows a strong tendency to enforce symmetry compared to partner choice:
+Comparing direct reciprocity (M) to the control (_) in asymmetric_c0_c1 shows a strong tendency to enforce symmetry compared to partner choice:
 
 - **Prisoner's Dilemma (PD):** 
   - The major effect of allowing reciprocity is **to increase cooperation symmetrically** in both populations, keeping asymmetry low. Pop_0's cooperation increases by +0.534 (from 0.103 to 0.637) and Pop_1's cooperation increases by +0.526 (from 0.025 to 0.551). The net asymmetry change is a negligible +0.008 (from 0.078 to 0.086). Because conditional cooperation (TFT) ties players' actions together, Pop_0 cannot cooperate without Pop_1 reciprocating, which successfully lifts Pop_1 to cooperate and prevents the emergence of high exploitation asymmetries.
@@ -148,7 +148,7 @@ regardless). Direct reciprocity partially overcomes this:
 
 ## Reciprocity Locus (M1) Dynamics
 
-In the coevolving two-population mutualism, the frequency of the active reciprocity locus M1 under mechanism M frequently drops significantly below its nearly neutral control baseline (which drifts at approx. 0.49 - 0.51). Aggregated across every condition (3 dilemmas x 2 populations x 2 shuffle settings x 2 groupsizes = 5,040 cell-conditions over the 210-cell grid), M1 under M is suppressed below the control baseline in 3,701 of them. This suppression is driven by three distinct game-theoretic mechanisms depending on the dilemma type (including dilemma 0 where there is no social dilemma):
+In the coevolving two mutualistic populations, the frequency of the active reciprocity locus M1 under mechanism M frequently drops significantly below its nearly neutral control baseline (which drifts at approx. 0.49 - 0.51). Aggregated across every condition (3 dilemmas x 2 populations x 2 shuffle settings x 2 groupsizes = 5,040 cell-conditions over the 210-cell grid), M1 under M is suppressed below the control baseline in 3,701 of them. This suppression is driven by three distinct game-theoretic mechanisms depending on the dilemma type (including dilemma 0 where there is no social dilemma):
 
 ### Unwitting self-harm under no social dilemma (Dilemma 0)
 In Dilemma 0 (Control baseline), there is no social dilemma because payoffs do not depend on the partner's move (focal fitness depends only on paying cost c to receive private benefit b). Since b > c, cooperating (paying c) is always privately optimal. However, under mechanism M, a reciprocating cooperator (C1M1) will mimic defection if paired with a mutant defector. 
@@ -198,7 +198,7 @@ asymmetry.
 
 ## Indirect reciprocity under shuffle (IM, IJM)
 
-The mutualism grid only ran IM and IJM under the shuffle conditions. This is
+The asymmetric_c0_c1 grid only ran IM and IJM under the shuffle conditions. This is
 the informative regime: shuffling destroys direct reciprocity (M shuffle
 collapses to the control), so any cooperation that IM and IJM sustain is
 attributable to reputation signals (the I locus copies a new partner's last

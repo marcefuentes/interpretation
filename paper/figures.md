@@ -30,7 +30,7 @@ Status: provisional — adjust before locking the manuscript figure set.
 
 | Fig | Message | Manuscript figure id | graphgen command | Output | Journal backing |
 | --- | ------- | -------------------- | ---------------- | ------ | --------------- |
-| 1 | Equal-cost baseline: the three canonical families define the mechanism hierarchy on the diagonal (single population) | m1 | python -m graphgen.main --study interpretation --figure m1 --groupsize 128 --output ~/figures | ~/figures/interpretation/m1.png | symmetric_c_partner_choice.md, symmetric_c_reciprocity.md, symmetric_c_combined.md, synthesis.md |
+| 1 | Equal-cost baseline: the three canonical families define the mechanism hierarchy in symmetric_c (single population) | m1 | python -m graphgen.main --study interpretation --figure m1 --groupsize 128 --output ~/figures | ~/figures/interpretation/m1.png | symmetric_c_partner_choice.md, symmetric_c_reciprocity.md, symmetric_c_combined.md, synthesis.md |
 | 2 | Stochastic two-population asymmetry: partner choice breaks symmetry between identical populations; the cooperating side earns less | m6 | python -m graphgen.main --study interpretation --figure m6 --groupsize 128 --output ~/figures | ~/figures/interpretation/m6.png | symmetric_c_partner_choice.md, synthesis.md |
 | 3 | Deterministic two-population asymmetry: built-in cost difference is converted into a cooperator/exploiter split; combined mechanisms suppress it | m2 | python -m graphgen.main --study interpretation --figure m2 --groupsize 128 --output ~/figures | ~/figures/interpretation/m2.png | asymmetric_c0_c1_partner_choice.md, asymmetric_c0_c1_combined.md, synthesis.md |
 | 4 | Price versus demand on the symmetric branch: Cost is soft alone but retreats the c ceiling | m3 | python -m graphgen.main --study interpretation --figure m3 --groupsize 128 --output ~/figures | ~/figures/interpretation/m3.png | symmetric_c_i.md |
@@ -40,7 +40,7 @@ Status: provisional — adjust before locking the manuscript figure set.
 ### Panel order notes
 
 1. m1: columns = P, M, IJMPQ (symmetric_c pop_1).
-2. m6: symmetric_c pop_2 under P; rows top to bottom = population with higher cooperation cost label (_1), lower (_0); columns = cooperation, fitness. On the equal-cost diagonal, partner choice stochastically assigns the cooperator role; fitness inverts (paradox of success).
+2. m6: symmetric_c pop_2 under P; rows top to bottom = population with higher cooperation cost label (_1), lower (_0); columns = cooperation, fitness. At c0 = c1, partner choice stochastically assigns the cooperator role; fitness inverts (paradox of success).
 3. m2: asymmetric_c0_c1 pop_2; rows top to bottom = P high-cost population, P low-cost population, IJMPQ high-cost population, IJMPQ low-cost population; columns = cooperation, fitness. Contrast with m6: the same mechanism family now splits deterministically off the diagonal, and IJMPQ lifts the expensive population.
 4. m3: columns = cooperation, fitness for IJMPQ on symmetric_c_i.
 5. m4: rows = P then M; columns = machinery allele then cooperation.
@@ -67,7 +67,7 @@ The Cost axis backing Fig 4 / Fig 5 also exists as a 1D line-chart reslice, shou
 line presentation read better than the m3/m4 heatmaps. The symmetric_c_i study
 (and its single-run companion symmetric_c_i_1run) fixes the cooperation cost at
 c = c0 = c1 = 0.10 and sweeps the information cost Cost from 0 to 0.30, rendered like
-the diagonal cooperation-vs-c line figures but with an "Information cost" x-axis. Data
+the symmetric_c cooperation-vs-c line figures but with an "Information cost" x-axis. Data
 and image exports are in ~/results/symmetric_c_i{,_1run}/; the manifest is
 ../graph/graphgen/studies/symmetric_c_i/. It carries no new numbers beyond
 journal/symmetric_c_i.md — it is a presentation option only, and is not yet wired
@@ -80,8 +80,8 @@ snowdrift calibration heatmaps.
 
 | Supp fig | Message | Manuscript figure id | graphgen command | Output |
 | -------- | ------- | -------------------- | ---------------- | ------ |
-| S1 | Short-memory comparison on the diagonal: adding or removing the direct-reciprocity branch shifts the collapse ordering | ms3 | python -m graphgen.main --study interpretation --figure ms3 --groupsize 128 --output ~/figures | ~/figures/interpretation/ms3.png |
-| S2 | Small-group mirror for mutualism partner choice: gs = 4 removes the broad high-cooperation basin and exposes the role split more starkly | ms4 | python -m graphgen.main --study interpretation --figure ms4 --groupsize 4 --output ~/figures | ~/figures/interpretation/ms4.png |
+| S1 | Short-memory comparison in symmetric_c: adding or removing the direct-reciprocity branch shifts the collapse ordering | ms3 | python -m graphgen.main --study interpretation --figure ms3 --groupsize 128 --output ~/figures | ~/figures/interpretation/ms3.png |
+| S2 | Small-group mirror for asymmetric_c0_c1 partner choice: gs = 4 removes the broad high-cooperation basin and exposes the role split more starkly | ms4 | python -m graphgen.main --study interpretation --figure ms4 --groupsize 4 --output ~/figures | ~/figures/interpretation/ms4.png |
 | S3 | Control decomposition for information cost: machinery erodes similarly with and without a social dilemma | ms5 | python -m graphgen.main --study interpretation --figure ms5 --groupsize 128 --output ~/figures | ~/figures/interpretation/ms5.png |
 
 ## Supplement table (no figure)
@@ -98,7 +98,7 @@ do not publish the full payoff-plane heatmaps.
 
 ## Draft captions
 
-1. Fig 1. On the equal-cost diagonal, partner choice, direct reciprocity, and the reputation-rich combined mechanism define the threshold hierarchy the rest of the paper explains.
+1. Fig 1. At c0 = c1, partner choice, direct reciprocity, and the reputation-rich combined mechanism define the threshold hierarchy the rest of the paper explains.
 2. Fig 2. With two identical populations, partner choice breaks symmetry stochastically: one population becomes the cooperator and is exploited by the other (symmetric_c pop_2).
 3. Fig 3. With built-in cost asymmetry, partner choice converts the payoff gap into a deterministic cooperator/exploiter split; the combined mechanism lifts the expensive population and softens both cooperation and fitness asymmetry (asymmetric_c0_c1 pop_2).
 4. Fig 4. On the symmetric branch, information cost is soft by itself but lowers the cooperation-cost ceiling once the two costs overlap.

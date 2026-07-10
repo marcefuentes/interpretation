@@ -34,7 +34,7 @@ quantitative work kept separate as a running journal.
 | journal/framework.md | Independent variables and the three outcome variables (the conceptual spine) |
 | journal/parameterization.md | Current payoff equations and dilemma-folder reference |
 | journal/synthesis.md | Cross-study: maps prisoners/snowdrift payoff axes onto symmetric_c/asymmetric_c0_c1 thresholds; information-cost axis |
-| journal/symmetric_c.md | Index + game parameters for the equal-cost diagonal |
+| journal/symmetric_c.md | Index + game parameters for symmetric_c (equal-cost, c0 = c1) |
 | journal/symmetric_c_partner_choice.md | Mechanism P; PD and snowdrift; pop_1/2/3; groupsize |
 | journal/symmetric_c_reciprocity.md | M, IM, IJM; shuffle effects; IJM groupsize reversal |
 | journal/symmetric_c_combined.md | MP, MPQ, IMP, IJMPQ; hierarchy; IJMPQ symmetry |
@@ -57,13 +57,13 @@ quantitative work kept separate as a running journal.
 
 - **asymmetric_c0_c1** is the primary study (two populations with potentially different
   parameters; the biologically central case).
-- **symmetric_c** is the equal-parameter special case of mutualism (c0 = c1), and the
+- **symmetric_c** is the equal-parameter special case (c0 = c1) of asymmetric_c0_c1 (c0 = c1), and the
   single-population baseline.
 - **prisoners** and **snowdrift** are auxiliary calibration studies used to interpret
-  mechanisms and signatures seen in mutualism and diagonal.
-- **symmetric_c_i** extends diagonal with the information-cost axis.
+  mechanisms and signatures seen in asymmetric_c0_c1 and symmetric_c.
+- **symmetric_c_i** extends symmetric_c with the information-cost axis.
 - **asymmetric_c1_i** extends the information-cost axis to pinned cooperator/exploiter
-  roles (fixed c0 = 0.10, sweep c1) and shows where the soft diagonal Cost effect
+  roles (fixed c0 = 0.10, sweep c1) and shows where the soft symmetric_c_i Cost effect
   breaks down — see
   journal/asymmetric_c1_i.md. Part of the single unified manuscript (paper/roadmap.md).
 

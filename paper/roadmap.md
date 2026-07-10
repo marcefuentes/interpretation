@@ -12,7 +12,7 @@ From the current scaffold to a finished manuscript. Companion to outline.md
   unconditional cooperators after the machinery is taxed away).
 - **Venue / type:** full research article, specialist theoretical-biology / evolution
   journal. Implies ~5-7 main figures, a complete Methods, and a supplement.
-- **Scope:** one manuscript — main text = diagonal + mutualism (baseline demand and
+- **Scope:** one manuscript — main text = symmetric_c + asymmetric_c0_c1 (baseline demand and
   two-population roles) + symmetric_c_i + asymmetric_c1_i (information cost vs cooperation cost in symmetric
   and asymmetric settings); supplement = robustness panels from the primary studies
   (shuffle, groupsize, dilemma-0 control) plus an attribution table.
@@ -21,8 +21,8 @@ From the current scaffold to a finished manuscript. Companion to outline.md
   and live in journal/prisoners_calibration.md and journal/snowdrift_calibration.md.
   Cite them in Methods/Results prose and the supplement table; do not publish their
   payoff-plane figures.
-- **Retired split (2026-07):** we had considered a separate information-cost paper (diagonal only)
-  and a separate asymmetry/exploitation paper (mutualism + diagonal).
+- **Retired split (2026-07):** we had considered a separate information-cost paper (symmetric_c only)
+  and a separate asymmetry/exploitation paper (asymmetric_c0_c1 + symmetric_c).
   asymmetric_c1_i is information-cost data on the asymmetric branch, so it belongs in the
   unified article, not a second publication.
 
@@ -51,7 +51,7 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 
 - [~] Finalize the main-text figure list from the candidates in figures.md (target
   ~5-7): current draft is m1 (symmetric_c pop_1 hierarchy), m6 (symmetric_c pop_2
-  stochastic asymmetry under P), m2 (mutualism deterministic split and IJMPQ
+  stochastic asymmetry under P), m2 (asymmetric_c0_c1 deterministic split and IJMPQ
   suppression), m3–m5 (symmetric_c_i and asymmetric_c1_i information-cost panels) — not
   yet locked.
 - [~] Decide the supplement figure list: current draft is ms3–ms5 only (shuffle,

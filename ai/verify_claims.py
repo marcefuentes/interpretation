@@ -103,7 +103,7 @@ def mp3_fixed_qb_dev():
 
 def mp3_fixed_wmean_residual():
     """Max residual of the fixed-pop wmean under an additive a(c0)+b(c1) fit. Near 0
-    == no c0xc1 interaction (the one thing Diagonal can't show is provably absent)."""
+    == no c0xc1 interaction (the one thing symmetric_c can't show is provably absent)."""
     fx = load(mp3path("noshuffle", "128", "P", 1))
     g = _grid(fx, "wmean")
     c0s = sorted({k[0] for k in g})
@@ -727,7 +727,7 @@ check("asymmetric_c1_i", "1run P (0.12,0.20) Pop_0 first snapshot collapsed = 0.
 
 # ════════════════════════════════════════════════════════════════════════════
 # MUTUALISM POP_3 — redundant with symmetric_c pop_3 (copilot-instructions.md,
-# "Mutualism Parameter Space"). Only _0 evolves; _1 is frozen at 25% each, so
+# "asymmetric_c0_c1 Parameter Space"). Only _0 evolves; _1 is frozen at 25% each, so
 # there is no coevolutionary channel for c1 and the 441-cell square collapses
 # onto the symmetric_c pop_3 1D c-sweep. These bound checks lock that redundancy.
 # ════════════════════════════════════════════════════════════════════════════

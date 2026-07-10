@@ -1,10 +1,10 @@
 # Prisoner's Dilemma
 
-Calibration study analysis for the raw PD payoff-plane sweep. Unlike diagonal
-and mutualism (which derive payoffs from a single cost c), prisoners fixes
+Calibration study analysis for the raw PD payoff-plane sweep. Unlike symmetric_c
+and asymmetric_c0_c1 (which derive payoffs from a single cost c), prisoners fixes
 T = 0.90 and S = 0.10 and sweeps R and P independently over an 18 × 18 grid
 (172 cells with T > R > P > S). This decouples temptation (T − R), risk
-(P − S), and the cooperation advantage (R − P), which diagonal welds onto one
+(P − S), and the cooperation advantage (R − P), which symmetric_c welds onto one
 axis — letting us attribute each mechanism's behavior to a specific payoff
 gap.
 
@@ -25,12 +25,12 @@ multi-run sweep.
   IJM: M is risk-limited (sensitive to P), shuffle kills M, indirect
   reciprocity recovers it
 
-For how these payoff-axis attributions map back onto the diagonal and mutualism
+For how these payoff-axis attributions map back onto the symmetric_c and asymmetric_c0_c1
 thresholds, see **[synthesis.md](synthesis.md)**.
 
 ## Headline result
 
-Each mechanism is governed by a different payoff axis — invisible in diagonal,
+Each mechanism is governed by a different payoff axis — invisible in symmetric_c,
 where R and P move together:
 
 | Mechanism family | Limiting payoff axis        | Reading for symmetric_c/asymmetric_c0_c1                   |

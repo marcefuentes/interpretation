@@ -1,6 +1,6 @@
-# Mutualism
+# asymmetric_c0_c1
 
-Analysis for the two-population mutualism study (pop_2, 210-cell upper triangle),
+Analysis for the asymmetric_c0_c1 study (pop_2, 210-cell upper triangle),
 split by mechanism family:
 
 - **[asymmetric_c0_c1_partner_choice.md](asymmetric_c0_c1_partner_choice.md)** — mechanism P: PD and
@@ -10,7 +10,7 @@ split by mechanism family:
 - **[asymmetric_c0_c1_combined.md](asymmetric_c0_c1_combined.md)** — mechanisms MP, MPQ, IMP,
   IJMPQ: partner choice plus reciprocity, mutualistic equilibrium, Pop_1 lift
 
-Diagonal is the equal-cost special case (c0 = c1); see **symmetric_c.md** (index to
+symmetric_c is the equal-cost special case (c0 = c1); see **symmetric_c.md** (index to
 symmetric_c_partner_choice.md, symmetric_c_reciprocity.md, and symmetric_c_combined.md).
 The information-cost extension on this asymmetric branch is
 **[asymmetric_c1_i.md](asymmetric_c1_i.md)**: fixed c0 = 0.10, Cost x c1 sweep,
@@ -26,12 +26,12 @@ the top row of those tables.
 
 ## Overview
 
-Mutualism is the primary study: two populations with potentially different
+asymmetric_c0_c1 is the primary study: two populations with potentially different
 costs interact exclusively across populations. Population 0 has cost c0 and
 population 1 has cost c1, with c0 < c1 always (the plotted triangular grid
 constrains c1 > c0). Benefit b = 0.40 is fixed and K = 0.50.
 
-Diagonal is the equal-cost special case where c0 = c1 (see **[symmetric_c.md](symmetric_c.md)**).
+symmetric_c is the equal-cost special case where c0 = c1 (see **[symmetric_c.md](symmetric_c.md)**).
 Because c0 < c1, population 0 always has a higher cooperation incentive
 (R0 − P0 > R1 − P1) in both dilemma types.
 

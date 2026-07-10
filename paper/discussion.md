@@ -42,15 +42,15 @@ cooperator/exploiter split rather than merely changing the genotype route.
 ## Limitations
 
 - **Calibration is structural, not literal.** The prisoners/snowdrift sweeps fix a
-  payoff that slides with cost in diagonal, so the overlays identify which axis governs
+  payoff that slides with cost in symmetric_c, so the overlays identify which axis governs
   a mechanism, not absolute thresholds (see caveats in
   [synthesis.md](../journal/synthesis.md)).
 - **Temporal resolution.** Single-run snapshots are too coarse to resolve
   sub-establishment ordering or to rule out low-amplitude cycling; we therefore treat
   temporal dynamics as an open question rather than a measured outcome. Testing it
   would require dense early-time logging.
-- **pop_3 redundancy.** The evolving-vs-fixed structure adds nothing over the diagonal
-  diagonal and is excluded from interpretation (shown, and regression-locked, in
+- **pop_3 redundancy.** The evolving-vs-fixed structure adds nothing over symmetric_c
+  symmetric_c and is excluded from interpretation (shown, and regression-locked, in
   [synthesis.md](../journal/synthesis.md) and ai/verify_claims.py).
 
 ## Future directions

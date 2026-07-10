@@ -36,7 +36,7 @@ The absolute (R, P) level barely matters: at R − P = 0.20, every cell from
 (R = 0.34, P = 0.14) to (R = 0.66, P = 0.46) sits at qB ≈ 0.92–0.94. Spread is
 largest near R − P = 0.04, the transition zone where runs split between
 cooperative and collapsed fixed points. This is the independent confirmation
-of the diagonal chooser-bottleneck story: diagonal P (gs=128, pop_1, shuffle)
+of the symmetric_c chooser-bottleneck story: symmetric_c P (gs=128, pop_1, shuffle)
 falls from 0.788 at R − P = 0.06 to 0.056 at R − P = 0.00, and the prisoners
 sweep shows the same threshold is set by R − P rather than by temptation or
 risk separately.
@@ -56,7 +56,7 @@ carriers) along R − P (pop_1, noshuffle, gs=128):
 | 0.40  | 0.965 | 0.723 | 0.242 | 0.026 |
 | 0.72  | 0.975 | 0.649 | 0.326 | 0.017 |
 
-Same pattern as diagonal: choosers (C1P1) carry cooperation, and below the
+Same pattern as symmetric_c: choosers (C1P1) carry cooperation, and below the
 threshold the collapse leaves a large pool of C0P1 silent carriers (0.454 at
 R − P = 0) — P1 hitchhikers that accumulate by neutral mutation from C1P1.
 As R − P grows the population can afford non-choosing cooperators (C1P0 rises
@@ -95,7 +95,7 @@ genotypes are C1).
 Partner choice is insensitive to shuffling — mean qBSeen (pop_1, gs=128) is
 0.898 under both noshuffle and shuffle, and the payoff-axis signature is
 unchanged (−b/a = 0.89 either way). Per-step rematching within the group makes
-any initial random pairing irrelevant, exactly as in diagonal and mutualism.
+any initial random pairing irrelevant, exactly as in symmetric_c and asymmetric_c0_c1.
 
 ## Groupsize 4: the chooser bottleneck collapses
 
@@ -114,7 +114,7 @@ R − P profile is flat near zero:
 Even at large R − P, where cooperation is trivial at gs=128, the small group
 cannot sustain it: mutual C1P1 swaps require two choosers meeting, and among
 four individuals such pairs are too rare to bootstrap. This reproduces the
-diagonal and asymmetric_c0_c1 gs=4 result — pure partner choice is catastrophically
+symmetric_c and asymmetric_c0_c1 gs=4 result — pure partner choice is catastrophically
 weakened by small groups, while reciprocity-bearing combinations (MP, MPQ,
 IMP, IJMPQ) partially recover. See **prisoners_calibration.md** for the
 groupsize-vs-shuffle decomposition.
@@ -153,4 +153,4 @@ con exports and temporal (movie) exports exist for both gs = 128 and gs = 4. PD 
 | Shuffle            | Invariant (0.898 both); −b/a = 0.89 unchanged                       |
 | Groupsize 4        | Collapses (0.898 → 0.075); chooser bottleneck fails even at high R − P |
 | Temporal           | Only the threshold cells (R − P ≈ 0.04) fluctuate; saturated cells stable |
-| vs diagonal        | Reproduces the R − P chooser-bottleneck threshold from the (R,P) plane |
+| vs symmetric_c     | Reproduces the R − P chooser-bottleneck threshold from the (R,P) plane |

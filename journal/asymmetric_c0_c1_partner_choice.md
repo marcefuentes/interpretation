@@ -1,6 +1,6 @@
-# Mutualism — Partner Choice
+# asymmetric_c0_c1 — Partner Choice
 
-Partner-choice analysis for the two-population mutualism study (mechanism **P**
+Partner-choice analysis for the asymmetric_c0_c1 study (mechanism **P**
 only — no reciprocity locus). Pure reciprocity (M) is in
 **asymmetric_c0_c1_reciprocity.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are in
 **asymmetric_c0_c1_combined.md**.
@@ -257,7 +257,7 @@ sustaining cooperation.
 
 ## Groupsize 4
 
-All mutualism runs use pop_2 only. Unless noted, tables are noshuffle,
+All asymmetric_c0_c1 runs use pop_2 only. Unless noted, tables are noshuffle,
 Pop_0 (lower-cost population).
 
 ### Partner choice at gs=4

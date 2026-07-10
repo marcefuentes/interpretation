@@ -1,6 +1,6 @@
 # symmetric_c_i — Information Cost of the Enforcement Apparatus
 
-Standard diagonal fixes the information cost at Cost = 0.001 (negligible)
+symmetric_c fixes the information cost at Cost = 0.001 (negligible)
 and sweeps the cooperation cost c from 0 to b = 0.4. **symmetric_c_i** adds a
 second axis: it sweeps Cost jointly with c over a triangular grid, so we can ask
 what happens when carrying reciprocity or partner-choice machinery is itself
@@ -8,7 +8,7 @@ expensive. Cost is the *information cost* of a mechanism — the metabolic or
 cognitive overhead of being a reciprocator or a partner chooser — as opposed to
 c, the *cooperation cost* paid when you actually help a partner.
 
-Everything else matches diagonal: the diagonal special case of mutualism
+Everything else matches symmetric_c: the c0 = c1 special case of asymmetric_c0_c1
 (c0 = c1 = c), K = 0.5, b = 0.4, pops 1/2/3, shuffle and noshuffle, gs = 128 and
 gs = 4, dilemmas 0/1/2, Runs = 30. The companion symmetric_c_i_1run is the
 single-run variant for temporal dynamics.
@@ -41,7 +41,7 @@ Triangular: Cost runs over {0, 0.02, ..., 0.40} and, for each Cost, c runs
 constraint keeps the combined burden within the cooperation benefit b; it also
 means the two axes are only ever explored together up to their shared ceiling.
 
-**Sanity check.** The Cost = 0 edge reproduces standard diagonal (Cost = 0.001)
+**Sanity check.** The Cost = 0 edge reproduces symmetric_c (Cost = 0.001)
 cell for cell: across all seven mechanisms at c = 0.0/0.1/0.2/0.4 (pop_1, PD,
 noshuffle, gs = 128) the two studies agree to within ±0.008 (the noise floor).
 The new axis is a clean extension, not a reparameterization.
@@ -182,7 +182,7 @@ The one-line reading: **c is the demand for enforcement (temptation to defect);
 Cost is information cost. Cooperation persists where the
 population can afford the machinery the game demands.** With no demand (c = 0) any
 information cost is survivable — the apparatus is shed harmlessly. With free machinery
-(Cost = 0) the standard diagonal c-profile returns. The interior is where
+(Cost = 0) the symmetric_c c-profile returns. The interior is where
 rising information cost starves the defense that rising cooperation cost requires.
 
 ## Reciprocity vs partner choice split two ways under cost
@@ -238,7 +238,7 @@ noshuffle):
 M is groupsize-invariant under Cost (stable pairings do not care about group
 size); P is already depressed at gs = 4 (fewer mutual-swap opportunities) and a
 small Cost then knocks it to the control floor. This mirrors the gs = 4 findings
-in diagonal and synthesis: small groups remove the P component, and information
+in symmetric_c and synthesis: small groups remove the P component, and information
 cost finishes it off.
 
 ## Temporal dynamics (symmetric_c_i_1run)
@@ -281,6 +281,6 @@ payoffs split stochastically only under temptation" reading in **synthesis.md**.
 - **Triangular grid.** Because Cost + c ≤ 0.4, the extreme corners of a full
   square are not sampled; the iso-budget comparison is therefore made along the
   hypotenuse and shorter interior diagonals, not a full square.
-- **Role in the project.** symmetric_c_i is an extension of the primary diagonal
+- **Role in the project.** symmetric_c_i is an extension of the primary symmetric_c
   study, not a separate calibration. It answers "how expensive can the mechanism
   be before it stops paying for itself," which the fixed-Cost studies cannot.

@@ -1,4 +1,4 @@
-# Mutualism — Combined Mechanisms
+# asymmetric_c0_c1 — Combined Mechanisms
 
 Analysis of mechanisms that combine partner choice with reciprocity: **MP**,
 **MPQ**, **IMP**, and **IJMPQ**. Pure partner choice (P) is in
@@ -12,7 +12,7 @@ Analysis of mechanisms that combine partner choice with reciprocity: **MP**,
 | IMP       | C, I, M, P  | Indirect + direct reciprocity + PC  |
 | IJMPQ     | C, I, J, M, P, Q | Full stack with lifetime memory |
 
-Diagonal (c0 = c1) is the equal-cost special case; see **symmetric_c_combined.md**.
+symmetric_c (c0 = c1) is the equal-cost special case; see **symmetric_c_combined.md**.
 
 ## Overview
 
@@ -60,7 +60,7 @@ Mean qBSeen across all 210 cells (noshuffle, gs=128):
 | IMP    | 2 (SD)  | 0.915  | 0.391  | 196/210         |
 | IJMPQ  | 2 (SD)  | 0.923  | 0.609  | 176/210         |
 
-Combining partner choice (P) and reciprocity (M, IMP, IJMPQ) in Mutualism demonstrates how reciprocity acts to reduce the asymmetry driven by partner choice:
+Combining partner choice (P) and reciprocity (M, IMP, IJMPQ) in asymmetric_c0_c1 demonstrates how reciprocity acts to reduce the asymmetry driven by partner choice:
 
 - **Prisoner's Dilemma (PD):** 
   - Under partner choice alone (P), asymmetry is high (0.325) because Pop_0 cooperates at 0.472 while Pop_1 cooperates at only 0.146.

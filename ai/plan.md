@@ -26,7 +26,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 ### Data gap found while expanding the verifier (resolved)
 
 - symmetric_c gs=4 .con were briefly missing; regenerated 2026-06 (170 .con). All
-  gs=4 diagonal doc claims now verify.
+  gs=4 symmetric_c doc claims now verify.
 
 ## Medium
 
@@ -42,7 +42,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
      while cooperating at 0.616; gradient = the 0.001/round M-locus cost).
    - IJMPQ shuffle robustness: behavioral claim confirmed; mechanism CORRECTED —
      the recovery is carried by J (lifetime indirect, +0.133 Pop_1), not Q
-     (+0.007). Fixed asymmetric_c0_c1_combined.md. Diagonal high-c window is synergistic
+     (+0.007). Fixed asymmetric_c0_c1_combined.md. symmetric_c high-c window is synergistic
      (J/Q epistatic), so symmetric_c_combined.md phrasing stays.
 
 6. [x] Resolve asymmetric_c0_c1 pop_3: DROP (maintainer: redundant with symmetric_c pop_3).
@@ -186,17 +186,17 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 15. [ ] symmetric_c_i + symmetric_c_i_1run (line-chart reslice, not yet integrated).
     - Maintainer extracted these from symmetric_c_i / symmetric_c_i_1run: a fixed
       cooperation-cost slice at c = c0 = c1 = 0.10, sweeping the information cost Cost
-      from 0 to 0.30 in 0.02 steps (16 cells). Same diagonal structure otherwise —
-      pops 1/2/3, shuffle + noshuffle, gs 128 + 4, dilemmas, the diagonal mechanism set.
+      from 0 to 0.30 in 0.02 steps (16 cells). Same c0 = c1 line structure otherwise —
+      pops 1/2/3, shuffle + noshuffle, gs 128 + 4, dilemmas, the symmetric_c mechanism set.
       Data and csv_*_for_image.con exports are in ~/results/symmetric_c_i{,_1run}/.
     - Rendered as line charts (x-axis "Information cost") via
-      ../graph/graphgen/studies/symmetric_c_i/manifest.py, mirroring the diagonal
+      ../graph/graphgen/studies/symmetric_c_i/manifest.py, mirroring symmetric_c
       line-chart builder. symmetric_c_i_1run is the single-run temporal companion.
     - Purpose: a presentation variant, not new science. The information-cost findings
       are already analysed on the full Cost x c grid in journal/symmetric_c_i.md
       (soft erosion of the machinery, the C1P0/C1M0 free-cooperator niche, the P-vs-M
       split). This gives a clean cooperation-vs-Cost line view at one load-bearing c,
-      visually parallel to the existing diagonal cooperation-vs-c line figures.
+      visually parallel to the existing symmetric_c cooperation-vs-c line figures.
     - Status: registered here as candidate figure material only. No journal doc,
       analysis script, or verifier checks yet. Consider these as an option if the
       manuscript wants a line-chart companion for the information-cost axis

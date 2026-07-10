@@ -19,7 +19,7 @@ group size and partner turnover.
 Most theory treats a single well-mixed population. Many biologically important cases
 are mutualisms: two distinct populations (or species) that cooperate across the
 divide, each with its own cost of helping. We treat the single population as the
-baseline and the two-population mutualism as the central case, and ask what the
+baseline and the mutualistic two-population interaction as the central case, and ask what the
 second population changes. The equal-cost single population (symmetric_c) is
 the c0 = c1 special case of the two-population design (asymmetric_c0_c1) in
 which both sides carry the same cost.

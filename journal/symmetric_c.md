@@ -1,6 +1,6 @@
-# Diagonal
+# symmetric_c
 
-Analysis for the equal-cost diagonal of the mutualism parameter space (c0 = c1 =
+Analysis for symmetric_c (equal-cost, c0 = c1) of the two-population parameter space (c0 = c1 =
 c), split by mechanism family:
 
 - **[symmetric_c_partner_choice.md](symmetric_c_partner_choice.md)** — mechanism P:

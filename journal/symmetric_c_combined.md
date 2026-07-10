@@ -1,4 +1,4 @@
-# Diagonal — Combined Mechanisms
+# symmetric_c — Combined Mechanisms
 
 Analysis of mechanisms that combine partner choice with reciprocity: **MP**,
 **MPQ**, **IMP**, and **IJMPQ**. Pure partner choice (P) is in

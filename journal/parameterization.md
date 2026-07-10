@@ -11,9 +11,9 @@ between this doc and the data fails the verifier.
 
 | Constant | Value | Applies to | Source of truth |
 | -------- | ----- | ---------- | --------------- |
-| K (baseline fitness) | 0.5 | diagonal, mutualism, symmetric_c_i | .glo `K` |
-| b (benefit) | 0.4, fixed | diagonal, mutualism, symmetric_c_i | .glo `b` |
-| c (cooperation cost) | swept 0 to b | diagonal (c0 = c1), mutualism (c0 < c1) | .glo `c0`, `c1` |
+| K (baseline fitness) | 0.5 | symmetric_c, asymmetric_c0_c1, symmetric_c_i | .glo `K` |
+| b (benefit) | 0.4, fixed | symmetric_c, asymmetric_c0_c1, symmetric_c_i | .glo `b` |
+| c (cooperation cost) | swept 0 to b | symmetric_c (c0 = c1), asymmetric_c0_c1 (c0 < c1) | .glo `c0`, `c1` |
 | Cost (information cost) | 0.001 default; swept 0 to 0.4 in symmetric_c_i | all studies | .glo `Cost` |
 | Runs | 30 (multi-run); 1 (`*_1run`) | all studies | .glo `Runs` |
 | MutationRate | 0.01 | all studies | .glo `MutationRate` |
@@ -23,10 +23,10 @@ partner-choice locus (P/Q) plus once for any reciprocity locus (M/I/J):
 cost = Cost × ((Choose or Choose_lt) + (Mimic or Imimic or Imimic_lt)); fitness is
 w = max(0, payoff − cost). See journal/symmetric_c_i.md for the swept-Cost study.
 
-## Diagonal / mutualism payoffs
+## symmetric_c / asymmetric_c0_c1 payoffs
 
-These two studies are parameterized by K, b, and cost. Diagonal is the equal-cost
-diagonal (c0 = c1 = c); mutualism uses two costs with c0 < c1.
+These two studies are parameterized by K, b, and cost. symmetric_c is the equal-cost
+case (c0 = c1 = c); asymmetric_c0_c1 uses two costs with c0 < c1.
 
 - PD (folder 1): T = K + b, R = K + b − c, P = K, S = K − c
 - Snowdrift (folder 2): T = K + b, R = K + b − c/2, P = K, S = K + b − c
@@ -39,7 +39,7 @@ Result folders are named by dilemma type:
 - **1 — prisoner's dilemma:** T = K + b, R = K + b − c, P = K, S = K − c.
 - **2 — snowdrift:** T = K + b, R = K + b − c/2, P = K, S = K + b − c.
 
-Two-population form (mutualism): population 0 uses c0 and population 1 uses c1, with
+Two-population form (asymmetric_c0_c1): population 0 uses c0 and population 1 uses c1, with
 c0 < c1 in every plotted cell, so R0 − P0 = b − c0 > R1 − P1 = b − c1 (population 0
 always has the stronger cooperation incentive). Full tables in journal/symmetric_c.md
 and journal/asymmetric_c0_c1.md.
