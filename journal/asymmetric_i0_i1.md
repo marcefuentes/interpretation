@@ -196,8 +196,8 @@ snowdrift; mean |dw| = 0.028 across the triangle. The paradox of success still
 holds (120 / 120 fitness-inverted cells), but the **cooperator/exploiter
 distinction is nominal** — both populations sit near the cooperation ceiling.
 
-At high total Cost the combined mechanisms (M, IMP, IJMPQ) still show large
-Cost-linked dq in snowdrift (mean dq -0.245 to -0.297), driven by collapse
+At high total Cost the reciprocity mechanisms (M, IMP, IJMPQ) still show large
+Cost-linked dq in snowdrift (mean dq -0.219 to -0.297), driven by collapse
 asymmetry at the expensive edge rather than the PD-style hitchhiking regime.
 
 ### One-line snowdrift read
@@ -213,15 +213,37 @@ The c = 0.20 triangle (55 cells, Cmax = b − c = 0.20) shows the same qualitati
 signs with weaker magnitude — higher cooperation cost compresses the
 Cost-asymmetry signal when demand and supply both load the apparatus:
 
-| Mechanism | mean dq (pop₀ − pop₁) | pop₀ cooperates more |
-| --------- | --------------------- | -------------------- |
-| P         | +0.053                | 18 / 55              |
-| IJMPQ     | −0.070                | 8 / 55 (pop₁ leads in most cells) |
-| M         | −0.011                | 0 / 55               |
+| Mechanism | mean dq (pop₀ − pop₁) | pop₁ cooperates more | corr(dq,dw) |
+| --------- | --------------------- | -------------------- | ----------- |
+| P         | +0.053                | 0 / 55               | -0.964      |
+| MP        | -0.031                | 16 / 55              | -0.973      |
+| IMP       | -0.050                | 22 / 55              | -0.988      |
+| IJMPQ     | -0.070                | 25 / 55              | -0.993      |
+| M         | -0.011                | 11 / 55              | -0.963      |
 
-Exports: `csv_{fset}_c020_for_image.con` (graphgen `--export-slices`). The P
-low-Cost cooperator assignment and IJMPQ hitchhiking inversion survive at c =
-0.20; only the gap magnitude shrinks relative to c = 0.10.
+All five mechanisms show fitness inversion in at least 41 / 55 cells (IJMPQ:
+55 / 55). The P low-Cost cooperator assignment and hitchhiking inversion (MP
+through IJMPQ) survive at c = 0.20; IMP is intermediate between MP and IJMPQ
+as at c = 0.10.
+
+**P collapses at the maximum Cost gap.** At c = 0.20 the Cost cap is
+Cmax = 0.20, so (Cost0, Cost1) = (0, 0.20) is already the boundary cell. P
+collapses there: q = 0.031 / 0.027 (both populations near zero). By contrast
+IJMPQ retains q = 0.463 / 0.696, dq = -0.234 at the same cell — the combined
+mechanism is cost-robust at c = 0.20 in a way that partner choice alone is not.
+For reference, at (0, 0.10) P gives q = 0.414 / 0.250, dq = +0.164, showing
+that the P role split is intact at smaller Cost gaps even at c = 0.20.
+
+Exports: `csv_{fset}_c020_for_image.con` (graphgen `--export-slices`).
+
+### c = 0.20 snowdrift
+
+Under snowdrift at c = 0.20 (55 cells, d = 2), P remains Cost-independent
+(mean dq = -0.003), consistent with the c = 0.10 snowdrift picture. IJMPQ
+shows a stronger negative gap than at c = 0.10 (mean dq = -0.282 vs -0.245),
+likely driven by greater pop₀ collapse at the expensive edge when cooperation
+cost is higher. M shows mean dq = -0.170. The PD-only character of
+deterministic role assignment therefore persists at c = 0.20.
 
 ## Temporal dynamics: roles fixed by the first snapshot
 
@@ -259,8 +281,8 @@ a cell establishes a defended state at all, not a slow late erosion.
 
 - **Primary slice.** Headline numbers are c = 0.10, PD, noshuffle, gs = 128 unless
   stated. Filtered `.con` exports (`csv_*_filtered_for_image.con`) hold c = 0.10;
-  the secondary slice uses `csv_*_c020_for_image.con` (regenerate with graphgen
-  `--export-slices`).
+  the secondary slice uses `csv_*_c020_for_image.con` for both PD and snowdrift
+  (regenerate with graphgen `--export-slices --dilemma-type 1` and `--dilemma-type 2`).
 - **Strict triangle.** Cost0 = Cost1 cells are excluded (they belong on the
   symmetric_i / symmetric_c_i diagonal). There is no (0, 0) cell in this study;
   the nearest low-asymmetry cells are (0, 0.02).

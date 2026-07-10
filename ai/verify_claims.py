@@ -1011,6 +1011,29 @@ check("asymmetric_i0_i1", "P c=0.20 mean dq = 0.053",
       lambda: ai0_gap_mean("P", "qBSeen", c=0.20, slice_tag="c020"), 0.053)
 check("asymmetric_i0_i1", "IJMPQ c=0.20 mean dq = -0.070",
       lambda: ai0_gap_mean("IJMPQ", "qBSeen", c=0.20, slice_tag="c020"), -0.070)
+check("asymmetric_i0_i1", "MP c=0.20 mean dq = -0.031",
+      lambda: ai0_gap_mean("MP", "qBSeen", c=0.20, slice_tag="c020"), -0.031)
+check("asymmetric_i0_i1", "IMP c=0.20 mean dq = -0.050",
+      lambda: ai0_gap_mean("IMP", "qBSeen", c=0.20, slice_tag="c020"), -0.050)
+# P collapses at maximum Cost gap (0, 0.20) at c = 0.20
+check("asymmetric_i0_i1", "P c=0.20 (0,0.20) pop0 qB = 0.031",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 1, 0,
+                                    slice_tag="c020")), 0.20, 0.0, 0.20), 0.031)
+check("asymmetric_i0_i1", "P c=0.20 (0,0.20) pop1 qB = 0.027",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 1, 1,
+                                    slice_tag="c020")), 0.20, 0.0, 0.20), 0.027)
+# IJMPQ remains active at maximum Cost gap at c = 0.20
+check("asymmetric_i0_i1", "IJMPQ c=0.20 (0,0.20) pop0 qB = 0.463",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0,
+                                    slice_tag="c020")), 0.20, 0.0, 0.20), 0.463)
+check("asymmetric_i0_i1", "IJMPQ c=0.20 (0,0.20) pop1 qB = 0.696",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1,
+                                    slice_tag="c020")), 0.20, 0.0, 0.20), 0.696)
+# c = 0.20 snowdrift (d=2)
+check("asymmetric_i0_i1", "P snowdrift c=0.20 mean dq = -0.003",
+      lambda: ai0_gap_mean("P", "qBSeen", c=0.20, d=2, slice_tag="c020"), -0.003)
+check("asymmetric_i0_i1", "IJMPQ snowdrift c=0.20 mean dq = -0.282",
+      lambda: ai0_gap_mean("IJMPQ", "qBSeen", c=0.20, d=2, slice_tag="c020"), -0.282)
 
 # Temporal: roles established by first snapshot (1run movies)
 def ai0_time_q(mech, co0, co1, pop, time, movie_study="asymmetric_i0_i1_1run"):

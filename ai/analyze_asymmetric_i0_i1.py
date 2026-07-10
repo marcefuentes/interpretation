@@ -229,11 +229,36 @@ for mech in ["P", "M", "IJMPQ"]:
     n = sum(1 for a, b in triangle_pairs(r0, r1) if float(a["qBSeen"]) + float(b["qBSeen"]) < 0.15)
     print(f"  {mech}: {n}/120")
 
-print("\n--- L. SECONDARY c=0.20 (c020 .con exports) ---")
-for mech in ("P", "IJMPQ", "M"):
+print("\n--- L. SECONDARY c=0.20 (c020 .con exports, PD d=1) ---")
+for mech in ("P", "MP", "IMP", "IJMPQ", "M"):
     dq, dw, _ = gap_stats(mech, c=0.20, slice_tag="c020")
-    print(f"  {mech}: n={len(dq)}, mean dq={mean(dq):+.3f}, "
-          f"pop0 coops {sum(1 for x in dq if x > 0.02)}/{len(dq)}")
+    p1 = sum(1 for x in dq if x < -0.02)
+    inv = sum(1 for x, y in zip(dq, dw) if x * y < 0)
+    print(f"  {mech}: n={len(dq)}, mean dq={mean(dq):+.3f}, mean dw={mean(dw):+.3f}, "
+          f"corr(dq,dw)={corr(dq, dw):.3f}, "
+          f"pop0 coops {sum(1 for x in dq if x > 0.02)}/{len(dq)}, "
+          f"pop1 coops {p1}/{len(dq)}, inv={inv}/{len(dq)}")
+
+print("\n--- L2. c=0.20 SELECTED CELLS ---")
+for mech in ("P", "IJMPQ"):
+    print(f"  {mech}:")
+    for co0, co1 in ((0.0, 0.10), (0.0, 0.20)):
+        r0 = load(ai_path(STUDY, "noshuffle", "128", mech, 1, 0, slice_tag="c020"))
+        r1 = load(ai_path(STUDY, "noshuffle", "128", mech, 1, 1, slice_tag="c020"))
+        q0 = ai_cell(r0, 0.20, co0, co1)
+        q1 = ai_cell(r1, 0.20, co0, co1)
+        if q0 == q0:
+            print(f"    ({co0:.2f},{co1:.2f}): q {q0:.3f}/{q1:.3f} dq={q0 - q1:+.3f}  "
+                  f"w {ai_cell(r0, 0.20, co0, co1, 'wmean'):.3f}/"
+                  f"{ai_cell(r1, 0.20, co0, co1, 'wmean'):.3f}")
+
+print("\n--- L3. c=0.20 SNOWDRIFT (d=2) ---")
+for mech in ("P", "IJMPQ", "M"):
+    try:
+        dq, dw, gaps = gap_stats(mech, c=0.20, d=2, slice_tag="c020")
+        print(f"  {mech}: n={len(dq)}, mean dq={mean(dq):+.3f}, corr(gap,dq)={corr(gaps, dq):.3f}")
+    except Exception as e:
+        print(f"  {mech}: ERROR {e}")
 
 print("\n--- M. TEMPORAL (1run movies, PD c=0.10) ---")
 for mech, co0, co1 in (("P", 0.0, 0.20), ("P", 0.0, 0.10), ("IJMPQ", 0.0, 0.20)):
