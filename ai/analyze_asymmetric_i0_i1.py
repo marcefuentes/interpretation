@@ -4,8 +4,9 @@ Analyze the asymmetric_i0_i1 study: symmetric cooperation cost (c0 = c1 = c) wit
 asymmetric per-population information cost (Cost0, Cost1).
 
 Cell key is (c, Cost0, Cost1) with Cost0 < Cost1 on a strict triangle bounded by
-Cost_p <= b - c per population. Primary slice: c = 0.10 (120 cells); secondary
-c = 0.20 exists in raw CSV (55 cells) but is omitted from filtered .con exports.
+Cost_p <= b - c per population. Primary slice: c = 0.10 (120 cells) via
+csv_*_filtered_for_image.con; secondary c = 0.20 (55 cells) via
+csv_*_c020_for_image.con (PD and snowdrift; regenerate with graphgen --export-slices).
 
 Primary condition: pop_2, PD (dilemma 1), noshuffle, gs = 128.
 """
