@@ -13,14 +13,14 @@ distinct populations interact, each with its own cost of helping, and both
 cooperation and the cognitive apparatus that sustains it may carry separate costs. It
 remains unclear how mechanism choice, cooperation level, between-population asymmetry,
 and the genotypes that produce cooperation respond jointly when the social dilemma,
-cooperation cost, information cost of the machinery, and ecological context all vary.
+cooperation cost, information cost, and ecological context all vary.
 
 ## Methods
 
 We use an individual-based evolutionary model in which agents play repeated pairwise
 games, reproduce in proportion to accumulated fitness, and evolve cooperation and
 mechanism loci (partner choice, direct and indirect reciprocity, and lifetime
-reputation). We sweep cooperation cost, information cost of carrying the machinery,
+reputation). We sweep cooperation cost, information cost,
 dilemma type (prisoner's dilemma and snowdrift), group size, partner shuffling, and
 one- versus two-population structure. The single-population equal-cost case provides a
 baseline; the two-population case with distinct costs is the primary biological
@@ -40,10 +40,11 @@ because partner choice converts built-in payoff asymmetry into a cooperation gap
 Reward-led combined mechanisms suppress this split by lifting the exploited
 population.
 
-Making the machinery itself costly introduces a price–demand trade-off. Cooperation
-cost is demand — temptation and risk the apparatus must resist; information cost is
-price — a per-round tax escapable only by shedding the machinery. Alone each pressure
-is mild; together they compound, because price thins the defence demand requires.
+Making the machinery itself costly introduces an information-cost versus
+cooperation-cost trade-off. Cooperation cost is demand — temptation and risk the
+apparatus must resist; information cost is escapable only by shedding the machinery.
+Alone each pressure is mild; together they compound, because information cost thins
+the defence cooperation cost requires.
 On the symmetric branch, information cost erodes enforcement alleles while cooperation
 can persist through tax-free unconditional cooperators: behaviour and mechanism
 decouple. Once one population is held at nonzero cooperation cost and the second is

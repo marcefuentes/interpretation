@@ -8,13 +8,13 @@ The main analysis here is the dilemma 2 (Snowdrift) payoff plane. Payoffs are sy
 - **[snowdrift_partner_choice.md](snowdrift_partner_choice.md)** — mechanism P: cooperation robustness, genotype structure, pop_2 symmetry breaking, and pop_3
 - **[snowdrift_reciprocity.md](snowdrift_reciprocity.md)** — mechanisms M, IM, and IJM: M is insensitive to the sucker payoff S, shuffle sensitivity, and groupsize-reversal boosts
 
-For how these payoff-axis attributions compare to prisoners and map onto the diagonal/mutualism thresholds, see **[synthesis.md](synthesis.md)**.
+For how these payoff-axis attributions compare to prisoners and map onto the symmetric_c/asymmetric_c0_c1 thresholds, see **[synthesis.md](synthesis.md)**.
 
 ## Headline result
 
 Because Snowdrift features a high cooperation floor (where cooperation is individually rational when the partner defects, S > P), the evolutionary dynamics differ fundamentally from the Prisoner's Dilemma:
 
-| Mechanism family | Limiting payoff axis | Reading for diagonal/mutualism |
+| Mechanism family | Limiting payoff axis | Reading for symmetric_c/asymmetric_c0_c1 |
 | ---------------- | -------------------- | ------------------------------ |
 | M | reward R (insensitive to S) | TFT pays the sucker payoff S only on round 1; risk is set by P, not S |
 | P | reward R (cooperation is high) | high cooperation floor prevents the chooser bottleneck from collapsing |

@@ -18,7 +18,7 @@ between this doc and the data fails the verifier.
 | Runs | 30 (multi-run); 1 (`*_1run`) | all studies | .glo `Runs` |
 | MutationRate | 0.01 | all studies | .glo `MutationRate` |
 
-Cost is the per-round tax for expressing machinery, charged once for any
+Cost is information cost for expressing machinery, charged once for any
 partner-choice locus (P/Q) plus once for any reciprocity locus (M/I/J):
 cost = Cost × ((Choose or Choose_lt) + (Mimic or Imimic or Imimic_lt)); fitness is
 w = max(0, payoff − cost). See journal/symmetric_c_i.md for the swept-Cost study.

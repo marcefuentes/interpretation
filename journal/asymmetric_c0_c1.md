@@ -3,18 +3,18 @@
 Analysis for the two-population mutualism study (pop_2, 210-cell upper triangle),
 split by mechanism family:
 
-- **[mutualism_partner_choice.md](mutualism_partner_choice.md)** — mechanism P: PD and
+- **[asymmetric_c0_c1_partner_choice.md](asymmetric_c0_c1_partner_choice.md)** — mechanism P: PD and
   snowdrift analysis of chooser bottleneck, genotypes, exploitation, groupsize effects
-- **[mutualism_reciprocity.md](mutualism_reciprocity.md)** — mechanism M: PD and
+- **[asymmetric_c0_c1_reciprocity.md](asymmetric_c0_c1_reciprocity.md)** — mechanism M: PD and
   snowdrift cooperation landscapes, shuffle effects, groupsize comparisons
-- **[mutualism_combined.md](mutualism_combined.md)** — mechanisms MP, MPQ, IMP,
+- **[asymmetric_c0_c1_combined.md](asymmetric_c0_c1_combined.md)** — mechanisms MP, MPQ, IMP,
   IJMPQ: partner choice plus reciprocity, mutualistic equilibrium, Pop_1 lift
 
 Diagonal is the equal-cost special case (c0 = c1); see **symmetric_c.md** (index to
-diagonal_partner_choice.md, diagonal_reciprocity.md, and diagonal_combined.md).
+symmetric_c_partner_choice.md, symmetric_c_reciprocity.md, and symmetric_c_combined.md).
 The information-cost extension on this asymmetric branch is
 **[asymmetric_c1_i.md](asymmetric_c1_i.md)**: fixed c0 = 0.10, Cost x c1 sweep,
-showing how taxing the machinery compresses the deterministic
+showing how information cost compresses the deterministic
 cooperator/exploiter split.
 For why the deterministic role split and the Pop_1 lift track the R − P payoff
 gap, see **[synthesis.md](synthesis.md)**.

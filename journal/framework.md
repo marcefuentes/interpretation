@@ -24,7 +24,7 @@ combination of them, and every study is a sweep over some subset.
 - **Information cost Cost.** The per-round metabolic/cognitive overhead of carrying
   reciprocity or partner-choice machinery, charged once for a partner-choice family
   (P/Q loci) and once for a reciprocity family (M/I/J loci), independent of the game
-  payoffs. This is the *price* of enforcement. Swept in symmetric_c_i (symmetric
+  payoffs. This is information cost. Swept in symmetric_c_i (symmetric
   c0 = c1) and asymmetric_c1_i (fixed c0, swept c1).
 - **Ecological context.** Groupsize (4 vs 128 individuals per group), partner
   shuffling (stable pairings vs within-group re-draw each round), and population
@@ -106,7 +106,7 @@ the behaviour. This captures findings invisible to level and asymmetry alone:
 | ----- | ----------------------------- | --------------- |
 | asymmetric_c0_c1 | pop_2, 2D c0 x c1 triangle, dilemmas 1/2, both groupsizes, shuffle/noshuffle, all mechanisms | Primary: two-population cooperation and asymmetry |
 | symmetric_c | pop_1/2/3, diagonal c, dilemmas 0/1/2, both groupsizes, shuffle/noshuffle, all mechanisms | The equal-cost special case; single-population baseline |
-| symmetric_c_i | adds the Cost axis (Cost x c triangle) to symmetric_c | Price vs demand for enforcement (symmetric) |
+| symmetric_c_i | adds the Cost axis (Cost x c triangle) to symmetric_c | Information cost vs cooperation cost (symmetric) |
 | asymmetric_c1_i | pop_2, fixed c0 = 0.10, Cost x c1 triangle | Price vs demand under exploitation asymmetry |
 | prisoners | (R, P) payoff-plane sweep, PD | Attribute c-collapses to temptation / risk / R minus P |
 | snowdrift | (R, S) payoff-plane sweep, snowdrift | Confirm the low-risk (high S) attribution from the other side |

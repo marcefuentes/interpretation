@@ -32,7 +32,7 @@ With T and S pinned, the two free coordinates are:
 - P — the mutual-defection payoff. Raising P raises risk (P − S = P − 0.10)
   and lowers the cooperation advantage (R − P).
 
-Two reference loci matter for the diagonal/mutualism comparison:
+Two reference loci matter for the symmetric_c/asymmetric_c0_c1 comparison:
 
 - R − P = const are the iso-cooperation-advantage diagonals.
 - R + P = 1.0 is the temptation = risk locus (0.90 − R = P − 0.10). Diagonal
@@ -150,7 +150,7 @@ mirroring the diagonal collapse as R − P → 0.
   direction — cooperation is monotone in R − P and only crosses below 0.5 in
   the smallest-R − P cells — confirming R − P is the controlling variable, not
   temptation or risk individually.
-- **Direct reciprocity.** Diagonal/mutualism could only show M collapsing near
+- **Direct reciprocity.** symmetric_c/asymmetric_c0_c1 could only show M collapsing near
   c = 0.40 (where both R − P → 0 and risk P − S = c is largest). Prisoners
   isolates the cause: M tracks risk P, so the diagonal collapse is largely a
   rising-risk effect, not purely a vanishing cooperation gap.
@@ -173,7 +173,7 @@ mirroring the diagonal collapse as R − P → 0.
 
 ## Summary
 
-| Mechanism family | Limiting payoff axis        | −b/a (pop_1) | Diagonal/mutualism reading                    |
+| Mechanism family | Limiting payoff axis        | −b/a (pop_1) | symmetric_c/asymmetric_c0_c1 reading                    |
 | ---------------- | --------------------------- | ------------ | --------------------------------------------- |
 | M                | risk / defection payoff P   | 1.73         | c-collapse is mostly rising-risk, not just R−P |
 | P                | cooperation advantage R − P | 0.89         | chooser bottleneck set by R − P                |

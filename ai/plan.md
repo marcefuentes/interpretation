@@ -6,8 +6,8 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 ## Near-term (cheap, no new data)
 
 1. [x] Wire the verifier into the workflow.
-   - Expanded ai/verify_claims.py to 82 checks: diagonal_combined (gs=128 +
-     gs=4 shuffle, snowdrift), mutualism_combined mean-qB / dominance-count /
+   - Expanded ai/verify_claims.py to 82 checks: symmetric_c_combined (gs=128 +
+     gs=4 shuffle, snowdrift), asymmetric_c0_c1_combined mean-qB / dominance-count /
      mutual-coop tables, c0 = 0 columns, hitchhiking, J-vs-Q shuffle split,
      prisoners pop_2 paradox of success, and the R+P=1 locus. Documented "run
      before committing doc edits" in README and .github/copilot-instructions.md.
@@ -34,7 +34,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
    - Wrote synthesis.md: master attribution table + per-axis sections (M->risk
      P, P->R-P, combined->reward R), the two-perturbation framework (shuffle
      removes M, gs=4 removes P), and the two routes to the role split. Linked
-     from README and the diagonal/mutualism/prisoners indexes.
+     from README and the symmetric_c/asymmetric_c0_c1/prisoners indexes.
 
 5. [x] Validate the remaining mechanistic narratives.
    - Done in ai/validate_mechanisms.py (+ 5 regression checks in verify_claims.py).
@@ -42,11 +42,11 @@ Status legend: [ ] todo, [~] in progress, [x] done.
      while cooperating at 0.616; gradient = the 0.001/round M-locus cost).
    - IJMPQ shuffle robustness: behavioral claim confirmed; mechanism CORRECTED —
      the recovery is carried by J (lifetime indirect, +0.133 Pop_1), not Q
-     (+0.007). Fixed mutualism_combined.md. Diagonal high-c window is synergistic
-     (J/Q epistatic), so diagonal_combined.md phrasing stays.
+     (+0.007). Fixed asymmetric_c0_c1_combined.md. Diagonal high-c window is synergistic
+     (J/Q epistatic), so symmetric_c_combined.md phrasing stays.
 
 6. [x] Resolve asymmetric_c0_c1 pop_3: DROP (maintainer: redundant with symmetric_c pop_3).
-   - Docs already frame it as redundant ("use Diagonal pop_3"); no further data
+   - Docs already frame it as redundant ("use symmetric_c pop_3"); no further data
      or analysis. No write-up will be produced.
 
 ## Larger completed data tasks
@@ -65,14 +65,14 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
 9. [x] All studies migrated to the modern `{shuffle}/{groupsize}` layout; ai/*.py path
    helpers updated to match. verify_claims.py passes 110/110, with all existing
-   diagonal/mutualism/prisoners/snowdrift headline numbers reproducing exactly.
+   symmetric_c/asymmetric_c0_c1/prisoners/snowdrift headline numbers reproducing exactly.
 
 10. [x] snowdrift multi-run confirmed present (Runs=30); all snowdrift doc claims verify.
     Updated the stale "snowdrift is single-run only / dir empty" notes in findings.md and
     copilot-instructions.md.
 
 11. [x] symmetric_c_i + symmetric_c_i_1run (new information-cost study).
-    - Wrote symmetric_c_i.md; added the price-vs-demand section to synthesis.md.
+    - Wrote symmetric_c_i.md; added the information-cost vs cooperation-cost section to synthesis.md.
     - ai/analyze_symmetric_c_i.py + 14 regression checks.
     - Findings: information cost is soft vs cooperation cost (machinery shed harmlessly at
       c=0), family count does not predict collapse (combined most robust), machinery erosion
@@ -97,7 +97,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
 ## Completed — asymmetric_c1_i integration (2026-07)
 
-13. [x] asymmetric_c1_i_1run + asymmetric_c1_i (price–demand under built-in asymmetry).
+13. [x] asymmetric_c1_i_1run + asymmetric_c1_i (information cost vs cooperation cost under built-in asymmetry).
     - Analysis now lives in journal/asymmetric_c1_i.md, with regression checks in
       ai/verify_claims.py and support script ai/analyze_asymmetric_c1_i.py.
     - Headline result: the soft Cost effect from symmetric_c_i depends on the c = 0
@@ -110,24 +110,24 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 ## Proposed — asymmetric information cost (2026-07)
 
 14. [ ] Asymmetric information-cost study (per-population Cost0, Cost1).
-    - **Question.** Existing cost studies tax the machinery symmetrically (a single
+    - **Question.** Existing cost studies apply information cost symmetrically (a single
       global `Cost` shared by both populations): symmetric_c_i sweeps symmetric Cost x
       symmetric c, asymmetric_c1_i sweeps symmetric Cost x asymmetric c1 (c0 = 0.10).
-      The empty cell is asymmetric *price*: Cost0 != Cost1. The higher-Cost population
+      The empty cell is asymmetric information cost: Cost0 != Cost1. The higher-Cost population
       sheds its enforcement machinery faster (supply-side erosion, see
       journal/symmetric_c_i.md), so the novel question is whether it becomes the
       exploiter (free-rides, tax-free) or the exploited (undefended). This is a **third
       route to the cooperator/exploiter role split** — deterministic symmetry breaking
-      via the *price* of enforcement, complementing the two routes in
+      via asymmetric information cost, complementing the two routes in
       journal/synthesis.md (stochastic under symmetric payoffs; deterministic via the
-      *demand* c0 < c1). Ties directly to the manuscript's price-vs-demand thesis
+      *demand* c0 < c1). Ties directly to the manuscript's information-cost thesis
       (paper/roadmap.md).
 
     - **Feasibility dependency (code change in ~/code/trps).** The simulation currently
       uses a single scalar `globals->cost`; per-population cost is not supported. Needs:
       add `cost0`/`cost1` to Globals (`~/code/trps/code/src/include/globals.h`), read
       them (`.../modules/read_globals.c`, alongside c0/c1), select on the population
-      index in the per-round tax (`.../modules/recruits.c` lines 130-131, where
+      index in the information cost (`.../modules/recruits.c` lines 130-131, where
       `current_pop_index` is already in scope), and extend the `.glo`/CSV headers
       (`.../modules/write.c`, `.../modules/write_ics.c`). Modest, but a source change +
       re-run, not just a new sweep config. Confirm before generating the grid.
@@ -159,8 +159,8 @@ Status legend: [ ] todo, [~] in progress, [x] done.
     - **Study B (crossed asymmetries) — reserved, higher payoff, more expensive.**
       - The headline question: do the two asymmetry axes reinforce or fight? With
         c0 < c1 (built-in cooperator = pop_0) plus asymmetric Cost, does giving the
-        natural cooperator the expensive machinery *flip* the role — can the price of
-        enforcement override the payoff structure?
+        natural cooperator the expensive machinery *flip* the role — can information cost
+        override the payoff structure?
       - Requires the **full square** in (Cost0, Cost1) at fixed c-gap: with c0 < c1 the
         populations are no longer exchangeable, so the *sign* of Cost1 - Cost0 matters
         (taxing the cheap cooperator vs the expensive exploiter are different
@@ -199,7 +199,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       visually parallel to the existing diagonal cooperation-vs-c line figures.
     - Status: registered here as candidate figure material only. No journal doc,
       analysis script, or verifier checks yet. Consider these as an option if the
-      manuscript wants a line-chart companion for the price-of-enforcement axis
+      manuscript wants a line-chart companion for the information-cost axis
       (see paper/figures.md, Fig 4/5 backing symmetric_c_i.md). Decide before
       building whether the line reslice adds enough over the m3/m4 heatmaps to earn a
       figure slot.

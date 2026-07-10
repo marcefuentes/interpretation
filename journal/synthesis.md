@@ -14,7 +14,7 @@ noise floor that bounds the comparisons below.
 
 ## The confound prisoners removes
 
-In diagonal/mutualism the four payoffs are functions of one cost c
+In symmetric_c/asymmetric_c0_c1 the four payoffs are functions of one cost c
 (T = K + b, R = K + b − c, P = K, S = K − c), which welds three gaps together:
 
 - temptation T − R = c
@@ -45,7 +45,7 @@ R = 0.50 fixed and raising the mutual-defection payoff, M cooperation falls
 0.86 (P = 0.14) → 0.47 (P = 0.46): TFT can only enforce cooperation when mutual
 defection is cheap, because its punishment outcome *is* mutual defection.
 
-This reinterprets two diagonal/mutualism results:
+This reinterprets two symmetric_c/asymmetric_c0_c1 results:
 
 - **The diagonal c-collapse is largely a risk effect.** M noshuffle holds
   0.915 at c = 0.10 and 0.754 at c = 0.30, then collapses to 0.084 at c = 0.40.
@@ -54,10 +54,10 @@ This reinterprets two diagonal/mutualism results:
 - **Snowdrift confirms it from the other side.** In snowdrift S is high
   (S = K + b − c), so the sucker gap P − S is small — i.e. low risk. M then
   sustains cooperation where it cannot in PD: at gs = 4, c = 0.40, M reaches
-  0.690 in snowdrift versus 0.017 in PD (**diagonal_reciprocity.md**). Low
+  0.690 in snowdrift versus 0.017 in PD (**symmetric_c_reciprocity.md**). Low
   risk, not high reward, is what rescues M. The mutualism mirror is the
   snowdrift mimicry penalty (S > P makes mimicking a defector strictly costly,
-  collapsing Pop_0 M1 to ≈ 0.033; **mutualism_reciprocity.md**).
+  collapsing Pop_0 M1 to ≈ 0.033; **asymmetric_c0_c1_reciprocity.md**).
 - **Groupsize-invariant in both.** Prisoners M keeps −b/a = 1.73 → 1.72 from
   gs = 128 to gs = 4; diagonal M noshuffle is flat across groupsize (0.906 vs
   0.910 at c = 0.10). Stable pairings supply TFT history regardless of group
@@ -79,10 +79,10 @@ studies:
   c0 < c1 by construction, Pop_0 has the larger cooperation advantage
   (R − P = b − c0 > b − c1) and wins the chooser bottleneck in every cell:
   Pop_0 = 0.472 vs Pop_1 = 0.146 under P (asymmetry 0.325;
-  **mutualism_partner_choice.md**). Partner choice converts the built-in R − P
+  **asymmetric_c0_c1_partner_choice.md**). Partner choice converts the built-in R − P
   gap directly into a cooperation gap.
 - **Shuffle-invariant, gs = 4-fragile** in prisoners (0.898 → 0.898 under
-  shuffle; 0.898 → 0.075 at gs = 4), matching diagonal/mutualism: shuffle
+  shuffle; 0.898 → 0.075 at gs = 4), matching symmetric_c/asymmetric_c0_c1: shuffle
   leaves P untouched while small groups starve the mutual C1P1 swap.
 
 ## Combined and reputation-rich mechanisms are reward-limited (R axis)
@@ -91,7 +91,7 @@ Prisoners: MP, MPQ, IMP, IJMPQ have −b/a ≈ 0.5 and corr(qB, P) ≈ 0 — alm
 blind to the defection baseline P, responding chiefly to the reward R.
 Reciprocity plus reputation strips out the risk sensitivity that limits M alone.
 
-This explains why the combined mechanisms break the diagonal/mutualism ceilings
+This explains why the combined mechanisms break the symmetric_c/asymmetric_c0_c1 ceilings
 that bound M and P:
 
 - **High-c persistence in diagonal.** At c = 0.40 (maximum risk and minimum
@@ -100,7 +100,7 @@ that bound M and P:
   the shrinking R − P that kills P.
 - **Pop_1 lift in mutualism.** Combined mechanisms raise the exploited
   high-cost population: IJMPQ Pop_1 = 0.573 (PD) and 0.609 (snowdrift) versus
-  0.146 / 0.096 under P alone (**mutualism_combined.md**). Reward-led
+  0.146 / 0.096 under P alone (**asymmetric_c0_c1_combined.md**). Reward-led
   cooperation does not require Pop_1 to win an R − P contest it is structurally
   set up to lose.
 
@@ -117,14 +117,14 @@ subtractions legible, and they are mirror images:
 | IMP       | 0.50                  | 0.84                | 1.58                | M off → toward P; P off → M |
 | IJMPQ     | 0.53                  | 0.52                | 0.43                | robust to both       |
 
-The diagonal/mutualism shuffle and groupsize results are the same story at the
+The symmetric_c/asymmetric_c0_c1 shuffle and groupsize results are the same story at the
 threshold level:
 
 - **Shuffle removes M-dependent cooperation.** Diagonal M 0.915 → 0.053 at
   c = 0.10; mutualism MP reverts from 0.606 / 0.410 (Pop_0 / Pop_1) to the
   P-only baseline 0.474 / 0.148. Prisoners shows why: the M term simply drops
   out of the payoff-axis fit.
-- **gs = 4 removes P-dependent cooperation.** Diagonal/mutualism P collapses in
+- **gs = 4 removes P-dependent cooperation.** symmetric_c/asymmetric_c0_c1 P collapses in
   small groups, while MP / MPQ *recover* via their M component (e.g. diagonal
   MP 0.039 → 0.708 at c = 0.20), and pure reciprocity IJM becomes the best
   mechanism (0.923 at c = 0.20, gs = 4). Prisoners shows MP/MPQ snapping onto
@@ -152,25 +152,24 @@ prisoners pins the difference to R − P:
   because, being reward-led, they no longer route the R − P gap into a
   cooperation gap.
 
-## The information-cost axis: price vs demand for enforcement
+## The information-cost axis: information cost vs cooperation cost
 
 Prisoners/snowdrift decompose the payoff gaps behind the c-thresholds;
 **symmetric_c_i** adds an orthogonal axis — the information cost Cost of carrying
 the machinery, charged once per round for being a partner chooser (P/Q locus) and
 once for being a reciprocator (M/I/J locus), independent of the game payoffs (see
-**symmetric_c_i.md**). It reframes the whole picture as a supply-and-demand for
-enforcement:
+**symmetric_c_i.md**). It reframes enforcement as two costs:
 
-- **c is the demand.** Rising cooperation cost is rising temptation and risk —
+- **c is cooperation cost (demand).** Rising cooperation cost is rising temptation and risk —
   the pressure the machinery must resist.
-- **Cost is the price.** Rising information cost is a per-round tax on the
-  machinery itself, escapable only by shedding it.
+- **Cost is information cost.** Rising information cost falls on the machinery itself,
+  escapable only by shedding it.
 
 The two are benign alone and destructive together:
 
 - **Information cost is soft on its own** (c = 0): at Cost = 0.40 IJMPQ still
   holds 0.810, versus 0.378 at c = 0.40. With no temptation the population simply
-  sheds the taxed machinery — the enforcement allele collapses (P1 0.67 to 0.02;
+  sheds the machinery under information cost — the enforcement allele collapses (P1 0.67 to 0.02;
   M1 0.44 to 0.02 across the Cost sweep) while cooperation is carried by tax-free
   unconditional cooperators (C1P0, C1M0). **Behavior and mechanism decouple.**
 - **Information cost lowers the c-ceiling.** Because it thins the very apparatus
@@ -192,7 +191,7 @@ The two are benign alone and destructive together:
   equal Cost (a residual chooser minority sorts the whole population; a residual
   TFT minority protects only itself) — the same population-level (P) vs
   individual-level (M) split seen in the payoff-axis fits.
-- **Snowdrift buffers the price** (M/P hold about 0.87 at Cost = 0.40 in
+- **Snowdrift buffers information cost** (M/P hold about 0.87 at Cost = 0.40 in
   dilemma 2 vs 0.54–0.63 in PD): a high cooperation floor makes the apparatus
   optional, so taxing it barely matters — the low-risk snowdrift result, seen on
   the information-cost axis.
@@ -225,4 +224,4 @@ The two are benign alone and destructive together:
 | gs = 4 kills P-based cooperation, M recovers   | the P term drops; risk-led M remains       |
 | Information cost Cost erodes cooperation slowly on the diagonal | machinery is shed harmlessly at c = 0; behavior decouples from mechanism |
 | ...but not on the asymmetric branch             | with c0 fixed above zero there is no harmless-shedding refuge |
-| In both cases Cost lowers the demand ceiling    | Cost thins the apparatus that c or c1 demands (price vs demand) |
+| In both cases Cost lowers the demand ceiling    | Cost thins the apparatus that c or c1 demands (information cost vs cooperation cost) |

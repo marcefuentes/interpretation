@@ -2,8 +2,8 @@
 
 Analysis of mechanisms that combine partner choice with reciprocity: **MP**,
 **MPQ**, **IMP**, and **IJMPQ**. Pure partner choice (P) is in
-**diagonal_partner_choice.md**; pure reciprocity (M, IM, IJM) is in
-**diagonal_reciprocity.md**.
+**symmetric_c_partner_choice.md**; pure reciprocity (M, IM, IJM) is in
+**symmetric_c_reciprocity.md**.
 
 | Mechanism | Loci        | Components                          |
 | --------- | ----------- | ----------------------------------- |
@@ -12,7 +12,7 @@ Analysis of mechanisms that combine partner choice with reciprocity: **MP**,
 | IMP       | C, I, M, P  | Indirect + direct reciprocity + PC  |
 | IJMPQ     | C, I, J, M, P, Q | Full stack with lifetime memory |
 
-For asymmetric costs (c0 ≠ c1), see **mutualism_combined.md**.
+For asymmetric costs (c0 ≠ c1), see **asymmetric_c0_c1_combined.md**.
 
 ## Overview
 
@@ -69,7 +69,7 @@ partner-choice components leverage shuffling for diverse interactions.
 
 ## pop_2 Symmetry: Cooperation Boost vs. Asymmetry Effects
 
-Partner choice (P) shows strong stochastic symmetry breaking (see **diagonal_partner_choice.md**). Combining partner choice and reciprocity (M, IMP, IJMPQ) reveals that the reciprocity components completely override partner choice's tendency to drive population asymmetry, nearly eliminating exploitation:
+Partner choice (P) shows strong stochastic symmetry breaking (see **symmetric_c_partner_choice.md**). Combining partner choice and reciprocity (M, IMP, IJMPQ) reveals that the reciprocity components completely override partner choice's tendency to drive population asymmetry, nearly eliminating exploitation:
 
 | c    | qBSeen_0 | qBSeen_1 | ΔqBSeen | w\_0  | w\_1  | Δw     |
 | ---- | -------- | -------- | ------- | ----- | ----- | ------ |
@@ -95,7 +95,7 @@ PD hierarchy at high c (c = 0.30–0.40):
 1. IJMPQ: 0.939 at c = 0.30, 0.672 at c = 0.40
 2. IMP: 0.804 at c = 0.30, 0.170 at c = 0.40
 3. P / MP / MPQ: 0.55–0.57 at c = 0.30, collapse to ≈ 0.02 at c = 0.40
-4. IJM: 0.084 at c = 0.30 (pure reciprocity — see **diagonal_reciprocity.md**)
+4. IJM: 0.084 at c = 0.30 (pure reciprocity — see **symmetric_c_reciprocity.md**)
 5. IM: 0.062 at c = 0.30
 6. M (shuffle) / \_: near zero
 
@@ -136,7 +136,7 @@ Compared with gs=128:
 ### MP/MPQ recovery at gs=4
 
 With only four individuals per group, pure P collapses by c ≈ 0.08 (see
-**diagonal_partner_choice.md**). MP and MPQ partially recover via reciprocity
+**symmetric_c_partner_choice.md**). MP and MPQ partially recover via reciprocity
 components:
 
 | Mechanism | c=0.20 gs=4 | c=0.20 gs=128 | c=0.30 gs=4 | c=0.30 gs=128 |

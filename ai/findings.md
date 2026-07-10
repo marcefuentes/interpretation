@@ -20,11 +20,11 @@ creates drift. If a result belongs in the analysis, put it in the relevant
 | Topic | Journal doc |
 | ----- | ----------- |
 | Conceptual model: IVs and the three outcomes | framework.md |
-| Cross-study payoff-axis attribution; info-cost axis | synthesis.md |
-| Diagonal P / M+indirect / combined | diagonal_partner_choice.md, diagonal_reciprocity.md, diagonal_combined.md |
+| Cross-study payoff-axis attribution; information cost axis | synthesis.md |
+| symmetric_c P / M+indirect / combined | symmetric_c_partner_choice.md, symmetric_c_reciprocity.md, symmetric_c_combined.md |
 | Information cost of the machinery (Cost x c) | symmetric_c_i.md |
 | Information cost under asymmetry | asymmetric_c1_i.md |
-| Mutualism P / M+indirect / combined | mutualism_partner_choice.md, mutualism_reciprocity.md, mutualism_combined.md |
+| asymmetric_c0_c1 P / M+indirect / combined | asymmetric_c0_c1_partner_choice.md, asymmetric_c0_c1_reciprocity.md, asymmetric_c0_c1_combined.md |
 | Prisoners payoff-plane calibration | prisoners_calibration.md, prisoners_partner_choice.md, prisoners_reciprocity.md |
 | Snowdrift payoff-plane calibration | snowdrift_calibration.md, snowdrift_partner_choice.md, snowdrift_reciprocity.md |
 
@@ -45,7 +45,7 @@ source if the engine changes.
 
 ## Analysis scripts
 
-- `ai/analyze_new_data.py` — cross-study analysis (diagonal, mutualism).
+- `ai/analyze_new_data.py` — cross-study analysis (symmetric_c, asymmetric_c0_c1).
 - `ai/analyze_prisoners.py` — prisoners payoff-axis calibration.
 - `ai/analyze_snowdrift.py` — snowdrift payoff-axis calibration.
 - `ai/analyze_symmetric_c_i.py` — information-cost axis (Cost x c grid).
@@ -71,5 +71,5 @@ source if the engine changes.
 - **Regenerating summaries.** graphgen (`~/code/graph`, venv there) writes the
   `csv_*_for_image.con` and `csv_*_for_movie.con` exports; see
   `.github/copilot-instructions.md` for exact commands. The M dilemma-0 control cells
-  and gs=4 temporal sets were filled 2026-07 (all diagonal-family and
+  and gs=4 temporal sets were filled 2026-07 (all symmetric_c-family and
   prisoners_1run/snowdrift_1run gaps closed).

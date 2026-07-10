@@ -2,9 +2,9 @@
 
 Partner-choice analysis for the equal-cost Diagonal study (mechanism **P**
 only — no reciprocity locus). Pure reciprocity (M, IM, IJM) is in
-**diagonal_reciprocity.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are in
-**diagonal_combined.md**. For asymmetric costs (c0 ≠ c1), see
-**mutualism_partner_choice.md**.
+**symmetric_c_reciprocity.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are in
+**symmetric_c_combined.md**. For asymmetric costs (c0 ≠ c1), see
+**asymmetric_c0_c1_partner_choice.md**.
 
 ## Overview
 
@@ -170,7 +170,7 @@ P holds cooperation through c ≈ 0.08 (0.812) then collapses by c = 0.16
 ### Snowdrift at gs=4
 
 Snowdrift cooperation remains high through moderate c at gs=4, similar to
-gs=128. P stays near ceiling at moderate c; see **diagonal_combined.md**
+gs=128. P stays near ceiling at moderate c; see **symmetric_c_combined.md**
 for IJMPQ snowdrift profiles at gs=4.
 
 ### Shuffle vs noshuffle at gs=4 (P)
@@ -208,7 +208,7 @@ PD, shuffle, pop_1:
 The P threshold shifts from c ≈ 0.34 (gs=128) to c ≈ 0.08 (gs=4). With only
 four individuals per group, mutual C1P1 swaps are too rare to sustain
 cooperation beyond mild costs. MP and MPQ partially recover via reciprocity
-components — see **diagonal_combined.md**.
+components — see **symmetric_c_combined.md**.
 
 ## Summary
 
@@ -221,4 +221,4 @@ components — see **diagonal_combined.md**.
 | pop_2 exploitation    | corr(Δq, Δw) = −0.984; stochastic symmetry breaking                      |
 | pop_3 transition      | Sharp collapse at c = 0.24–0.26; exploitation crossover at c ≈ 0.18   |
 | Snowdrift (P)         | Near ceiling at moderate c; benefit at c = 0.40 (0.679 vs 0.184 control) |
-| vs mutualism          | Diagonal pop_2 symmetry is stochastic; mutualism role split is deterministic |
+| vs asymmetric_c0_c1   | symmetric_c pop_2 symmetry is stochastic; asymmetric_c0_c1 role split is deterministic |

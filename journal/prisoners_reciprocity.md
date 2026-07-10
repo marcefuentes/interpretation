@@ -35,7 +35,7 @@ the value of retaliating is bounded by how bad mutual defection is. When P is
 high (defection comfortable), TFT cannot enforce cooperation and M decays
 toward the control. This is the payoff gap diagonal cannot expose on its own —
 diagonal holds P = K = 0.50 fixed and only ever moves R. It reframes the
-diagonal/mutualism finding that M collapses near c = 0.40 as primarily a
+symmetric_c/asymmetric_c0_c1 finding that M collapses near c = 0.40 as primarily a
 rising-risk effect rather than a vanishing cooperation gap.
 
 ## Shuffle destroys direct reciprocity
@@ -114,4 +114,4 @@ con exports and temporal (movie) exports exist for both gs = 128 and gs = 4. PD 
 | M groupsize            | invariant: 0.730 at gs=128 and gs=4 (stable pairings)            |
 | IM / IJM (shuffle)     | recover to 0.381 / 0.360; IM tracks R − P, IJM reward-limited     |
 | IM / IJM at gs=4       | boosted to 0.521 / 0.706 (closed-pool reputation; diagonal's IJM reversal) |
-| vs diagonal/mutualism  | recasts the c-collapse of M as a rising-risk effect              |
+| vs symmetric_c/asymmetric_c0_c1  | recasts the c-collapse of M as a rising-risk effect              |

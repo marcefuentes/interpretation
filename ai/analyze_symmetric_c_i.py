@@ -3,7 +3,7 @@
 Analyze the symmetric_c_i study: how cooperation depends on the *information
 cost* of carrying reciprocity / partner-choice machinery.
 
-Standard diagonal fixes the per-round module tax at Cost = 0.001 (negligible)
+symmetric_c fixes the information cost at Cost = 0.001 (negligible)
 and sweeps the cooperation cost c in [0, 0.4]. symmetric_c_i adds a second axis:
 Cost (the "information cost" of a module family) is swept jointly with c over a
 triangular grid constrained to Cost + c <= 0.4 (= b). 231 cells:
@@ -18,7 +18,7 @@ family mechanisms (M, P) pay 1 x Cost; the control (_) pays 0. Fitness is
 w = max(0, payoff - cost) each round.
 
 Primary condition: pop_1, PD (dilemma 1), noshuffle, gs=128, fset 0.
-Cell key is (Cost, c) with c = c0 = c1 (the diagonal).
+Cell key is (Cost, c) with c = c0 = c1 (equal-cost slice).
 """
 
 import os
@@ -27,9 +27,9 @@ from collections import defaultdict
 from trps_io import allele, load  # noqa: F401
 
 HC = os.path.expanduser("~/results/symmetric_c_i")
-HAM = os.path.expanduser("~/results/symmetric_c")
+SYM_C = os.path.expanduser("~/results/symmetric_c")
 
-# families touched by each mechanism -> per-round tax multiplier
+# families touched by each mechanism -> information-cost multiplier
 FAMILIES = {"_": 0, "M": 1, "P": 1, "MP": 2, "MPQ": 2, "IMP": 2, "IJMPQ": 2,
             "IM": 1, "IJM": 1}
 MECHS = ["_", "M", "P", "MP", "MPQ", "IMP", "IJMPQ"]
@@ -39,8 +39,8 @@ def hc_path(sh, gs, mech, d, pop, f):
     return f"{HC}/{sh}/{gs}/{mech}/{d}/{pop}/csv_{f}_for_image.con"
 
 
-def ham_path(sh, gs, mech, d, pop, f):
-    return f"{HAM}/{sh}/{gs}/{mech}/{d}/{pop}/csv_{f}_for_image.con"
+def symmetric_c_path(sh, gs, mech, d, pop, f):
+    return f"{SYM_C}/{sh}/{gs}/{mech}/{d}/{pop}/csv_{f}_for_image.con"
 
 
 def grid(sh, gs, mech, d, pop, f):
@@ -70,26 +70,26 @@ print("SYMMETRIC_COST  (K=0.5, b=0.4; triangular Cost x c grid, Cost + c <= 0.4)
 print("Primary: pop_1, PD (d1), noshuffle, gs=128, fset0.  cell=(Cost,c).")
 print("=" * 78)
 
-# ── A. sanity: Cost=0 column reproduces standard diagonal (Cost=0.001) ────────
-print("\n--- A. SANITY: symmetric_c_i Cost=0 slice vs standard diagonal (Cost=0.001) ---")
+# ── A. sanity: Cost=0 column reproduces symmetric_c (Cost=0.001) ──────────────
+print("\n--- A. SANITY: symmetric_c_i Cost=0 slice vs symmetric_c (Cost=0.001) ---")
 print("qBSeen along c (pop_1, PD, noshuffle, gs=128, fset0)")
-print(f"{'mech':6}{'c':>6}  {'HC Cost=0':>10}  {'diagonal':>9}  {'diff':>7}")
+print(f"{'mech':6}{'c':>6}  {'HC Cost=0':>10}  {'symmetric_c':>11}  {'diff':>7}")
 for mech in MECHS:
     d = 1
     g = grid("noshuffle", "128", mech, d, "pop_1", 0)
-    hrows = load(ham_path("noshuffle", "128", mech, d, "pop_1", 0))
-    if g is None or hrows is None:
+    srows = load(symmetric_c_path("noshuffle", "128", mech, d, "pop_1", 0))
+    if g is None or srows is None:
         print(f"  {mech}: missing"); continue
-    hmap = {round(float(r["c0"]), 3): float(r["qBSeen"]) for r in hrows}
+    smap = {round(float(r["c0"]), 3): float(r["qBSeen"]) for r in srows}
     for c in [0.0, 0.1, 0.2, 0.4]:
         hc = cell(g, 0.0, c)
-        hv = hmap.get(round(c, 3))
+        hv = smap.get(round(c, 3))
         if hc and hv is not None:
             print(f"  {mech:6}{c:>6.2f}  {q(hc):>10.3f}  {hv:>9.3f}  {q(hc)-hv:>+7.3f}")
 
 # ── B. pure information-cost collapse at c=0 ─────────────────────────────────
 print("\n--- B. PURE INFORMATION-COST COLLAPSE (c=0: no cooperation cost) ---")
-print("qBSeen vs Cost, pop_1 PD noshuffle gs128 fset0. c=0 so only the module tax bites.")
+print("qBSeen vs Cost, pop_1 PD noshuffle gs128 fset0. c=0 so only the information cost bites.")
 hdr = f"{'mech':6}{'fam':>4}" + "".join(f"{co:>7.2f}" for co in SAMPLE_COST)
 print(hdr)
 for mech in MECHS:
@@ -104,7 +104,7 @@ for mech in MECHS:
 
 # ── C. does the tax act through families x Cost? ─────────────────────────────
 print("\n--- C. FAMILY-SCALING: double-family qB(Cost) vs single-family qB(2*Cost) ---")
-print("If the module tax drives the collapse, a 2-family mech at Cost=X should")
+print("If the information cost drives the collapse, a 2-family mech at Cost=X should")
 print("resemble a 1-family mech at Cost=2X (same per-round burden). c=0, pop_1 PD ns gs128.")
 print(f"{'Cost':>6}  {'P(1fam)@2C':>11}  {'M(1fam)@2C':>11}  {'MP(2fam)@C':>11}  {'IMP(2fam)@C':>12}  {'IJMPQ@C':>9}")
 gP = grid("noshuffle", "128", "P", 1, "pop_1", 0)
@@ -193,7 +193,7 @@ for co in SAMPLE_COST:
 
 # ── F2. CONTROL DECOMPOSITION: cost erodes machinery, dilemma decides if it matters ─
 print("\n--- F2. CONTROL (d0) vs PD (d1) DECOMPOSITION (M, c=0, ns gs128 pop_1) ---")
-print("d0 has no social dilemma: isolates the pure module tax with zero enforcement demand.")
+print("d0 has no social dilemma: isolates the pure information cost with zero enforcement demand.")
 print("If M1 erodes at ~the same rate in d0 and d1, erosion is supply-side (cost), and")
 print("the dilemma only sets whether losing the machinery drags behavior down.")
 g0 = grid("noshuffle", "128", "M", 0, "pop_1", 0)

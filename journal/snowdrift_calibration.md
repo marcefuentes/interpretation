@@ -90,7 +90,7 @@ Direct reciprocity M is perfectly invariant to groupsize (mean qB is 0.599 at bo
 
 ## Summary
 
-| Mechanism family | Limiting payoff axis | −b/a (pop_1) | Diagonal/mutualism reading |
+| Mechanism family | Limiting payoff axis | −b/a (pop_1) | symmetric_c/asymmetric_c0_c1 reading |
 | ---------------- | -------------------- | ------------ | -------------------------- |
 | M | reward R (insensitive to S) | −0.15 | TFT pays S only once; risk is set by P, not S |
 | P | reward R (saturated) | 0.19 | high cooperation floor prevents the chooser bottleneck from collapsing |

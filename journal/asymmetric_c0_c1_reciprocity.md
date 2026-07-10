@@ -5,8 +5,8 @@ reciprocity (**M**) and indirect reciprocity (**IM**, **IJM**), no
 partner-choice locus. M is present under both shuffle and noshuffle; IM and
 IJM exist only under the shuffle conditions, which is precisely where direct
 reciprocity collapses and reputation-based reciprocity earns its keep. Partner
-choice (P) is in **mutualism_partner_choice.md**; combined mechanisms (MP, MPQ,
-IMP, IJMPQ) are in **mutualism_combined.md**.
+choice (P) is in **asymmetric_c0_c1_partner_choice.md**; combined mechanisms (MP, MPQ,
+IMP, IJMPQ) are in **asymmetric_c0_c1_combined.md**.
 
 ## Overview
 
@@ -67,7 +67,7 @@ Along the c0 = 0 column:
 Mechanism M adds little marginal lift for Pop_0 above the snowdrift control.
 The action is in Pop_1, where reciprocity can raise cooperation well above
 the control floor of 0.091. Combined mechanisms (IMP, IJMPQ) elevate Pop_1
-much further — see **mutualism_combined.md**.
+much further — see **asymmetric_c0_c1_combined.md**.
 
 ### Role split (both dilemmas)
 
@@ -203,7 +203,7 @@ the informative regime: shuffling destroys direct reciprocity (M shuffle
 collapses to the control), so any cooperation that IM and IJM sustain is
 attributable to reputation signals (the I locus copies a new partner's last
 move toward a third party; J copies the partner's lifetime cooperation
-average). The pattern mirrors diagonal_reciprocity.md: reputation-based
+average). The pattern mirrors symmetric_c_reciprocity.md: reputation-based
 reciprocity survives partner turnover where memory-based reciprocity cannot,
 and the lifetime signal J (in IJM) is far more robust than the recent-only
 signal I (in IM).
@@ -380,7 +380,7 @@ both populations.
 | M         | Negligible difference               | Negligible difference                      |
 
 Combined mechanisms show different groupsize sensitivity — see
-**mutualism_combined.md**.
+**asymmetric_c0_c1_combined.md**.
 
 ## Summary
 

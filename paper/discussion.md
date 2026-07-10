@@ -24,13 +24,13 @@ differ in cost it is seeded deterministically by the payoff asymmetry. In both, 
 cooperating side is typically exploited — a robust paradox of success — and the
 reward-led combined mechanisms are what soften it.
 
-## Price versus demand for enforcement
+## Information cost versus cooperation cost
 
-Adding an information-cost axis reframes enforcement as supply and demand. The
-cooperation cost c is the demand (temptation and risk the machinery must resist); the
-information cost Cost is the price (a per-round tax escapable only by shedding the
-machinery). Alone each is survivable; together they compound, because the price thins
-the apparatus the demand requires. The striking consequence is that behaviour and
+Adding an information-cost axis reframes enforcement around two costs. The
+cooperation cost c is demand (temptation and risk the machinery must resist); the
+information cost Cost is escapable only by shedding the machinery. Alone each is
+survivable; together they compound, because information cost thins the apparatus
+cooperation cost requires. The striking consequence is that behaviour and
 mechanism decouple: cooperation can persist through unconditional cooperators after
 the expensive conditional machinery has been selected away — cooperation without
 active enforcement, but only where the game does not punish it. The new

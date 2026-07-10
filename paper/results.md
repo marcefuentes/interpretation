@@ -7,7 +7,7 @@ derives and regression-checks them rather than restated in full.*
 ## 1. The level of cooperation and what limits it
 
 Each mechanism sustains cooperation up to a cost threshold and then collapses. The
-single cost axis of diagonal/mutualism cannot say *which* payoff gap drives a
+single cost axis of symmetric_c/asymmetric_c0_c1 cannot say *which* payoff gap drives a
 collapse, because raising c simultaneously raises temptation (T − R), raises risk
 (P − S), and shrinks the cooperation advantage (R − P). The prisoners and snowdrift
 calibration sweeps decouple these, and the attribution is clean and stable
@@ -18,7 +18,7 @@ calibration sweeps decouple these, and the attribution is clean and stable
 - **Direct reciprocity (M) is risk-limited.** Its collapse as c rises is mostly the
   growing mutual-defection risk, not the shrinking R − P — confirmed from the other
   side by snowdrift, where the low sucker gap lets M sustain cooperation it cannot in
-  the PD ([diagonal_reciprocity.md](../journal/diagonal_reciprocity.md)).
+  the PD ([symmetric_c_reciprocity.md](../journal/symmetric_c_reciprocity.md)).
 - **Partner choice (P) is limited by the cooperation advantage R − P.** It tracks
   R − P alone across the orthogonal sweep, which is why it fails at the chooser
   bottleneck as R − P → 0.
@@ -31,7 +31,7 @@ calibration sweeps decouple these, and the attribution is clean and stable
 erodes cooperation only gently, because with no temptation a population can shed the
 apparatus and keep cooperating for free. But because information cost thins the very
 apparatus that resists temptation, it pulls the c-collapse threshold downward where
-the two costs overlap — a price (Cost) that starves the defence a demand (c)
+the two costs overlap — information cost (Cost) starves the defence cooperation cost (c)
 requires.
 
 **Snowdrift raises the floor.** Its high sucker payoff makes cooperation individually
@@ -51,14 +51,14 @@ success. The two faces of the asymmetry (who cooperates, who profits) can diverg
 - **Asymmetric payoffs split deterministically.** In asymmetric_c0_c1 pop_2 the built-in
   c0 < c1 gives the lower-cost population the larger cooperation advantage, so it takes
   the cooperator role in every cell — partner choice converts the R − P gap directly
-  into a cooperation gap ([mutualism_partner_choice.md](../journal/mutualism_partner_choice.md),
+  into a cooperation gap ([asymmetric_c0_c1_partner_choice.md](../journal/asymmetric_c0_c1_partner_choice.md),
   [synthesis.md](../journal/synthesis.md)).
 - **Reward-led mechanisms suppress the split.** Combined mechanisms lift the exploited
   high-cost population and shrink the asymmetry, because being reward-led they no
   longer route the R − P gap into a cooperation gap
-  ([mutualism_combined.md](../journal/mutualism_combined.md)).
+  ([asymmetric_c0_c1_combined.md](../journal/asymmetric_c0_c1_combined.md)).
 - **Information cost compresses the split by collapsing both sides.** On the
-  asymmetric Cost x c1 sweep, taxing the machinery retreats the c1 ceiling and
+  asymmetric Cost x c1 sweep, information cost retreats the c1 ceiling and
   steadily shrinks both the cooperation gap and the fitness gap between the two
   populations; the paradox of success remains while partner choice still functions,
   then disappears mainly because the system is driven to the control floor
@@ -90,5 +90,5 @@ some of the strongest results sit ([symmetric_c_i.md](../journal/symmetric_c_i.m
 - **Free-riding and silent carriers.** Second-order free-riders (C1M0) ride on the
   punishment supplied by reciprocators, and silent carriers (C0P1) accumulate by
   mutation without expressing choice
-  ([diagonal_reciprocity.md](../journal/diagonal_reciprocity.md),
-  [mutualism_reciprocity.md](../journal/mutualism_reciprocity.md)).
+  ([symmetric_c_reciprocity.md](../journal/symmetric_c_reciprocity.md),
+  [asymmetric_c0_c1_reciprocity.md](../journal/asymmetric_c0_c1_reciprocity.md)).

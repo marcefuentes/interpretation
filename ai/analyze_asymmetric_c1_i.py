@@ -19,7 +19,7 @@ from trps_io import allele, corr, load
 BASE = os.path.expanduser("~/results")
 MC = f"{BASE}/asymmetric_c1_i"
 MC1 = f"{BASE}/asymmetric_c1_i_1run"
-MUT = f"{BASE}/mutualism"
+ASYMM = f"{BASE}/asymmetric_c0_c1"
 HC = f"{BASE}/symmetric_c_i"
 
 MECHS = ["_", "M", "P", "MP", "MPQ", "IMP", "IJMPQ"]
@@ -33,8 +33,8 @@ def mc_path(study, sh, gs, mech, d, f, movie=False):
     return f"{BASE}/{study}/{sh}/{gs}/{mech}/{d}/pop_2/csv_{f}_for_{suffix}.con"
 
 
-def mut_path(sh, gs, mech, d, f):
-    return f"{MUT}/{sh}/{gs}/{mech}/{d}/pop_2/csv_{f}_for_image.con"
+def asymmetric_c0_c1_path(sh, gs, mech, d, f):
+    return f"{ASYMM}/{sh}/{gs}/{mech}/{d}/pop_2/csv_{f}_for_image.con"
 
 
 def hc_path(sh, gs, mech, d, pop, f):
@@ -55,7 +55,7 @@ def mc_cell_row(rows, cost, c1):
     return None
 
 
-def mut_cell(rows, c0, c1, col="qBSeen"):
+def asymmetric_c0_c1_cell(rows, c0, c1, col="qBSeen"):
     for r in rows:
         if abs(float(r["c0"]) - c0) < 0.005 and abs(float(r["c1"]) - c1) < 0.005:
             return float(r[col])
@@ -94,22 +94,22 @@ def paired_deltas(mech, d=1, sh="noshuffle", gs="128"):
 
 
 print("=" * 78)
-print("MUTUALISM_COST  (fixed c0=0.10; triangular Cost x c1 grid, Cost+c1<=0.40)")
+print("ASYMMETRIC_C1_I  (fixed c0=0.10; triangular Cost x c1 grid, Cost+c1<=0.40)")
 print("Primary: pop_2, PD (d1), noshuffle, gs=128.  cell=(Cost,c1).")
 print("=" * 78)
 
-print("\n--- A. SANITY: Cost=0 slice vs mutualism at c0=0.10 (PD, ns, gs128) ---")
+print("\n--- A. SANITY: Cost=0 slice vs asymmetric_c0_c1 at c0=0.10 (PD, ns, gs128) ---")
 for mech in MECHS:
     r0 = load(mc_path("asymmetric_c1_i", "noshuffle", "128", mech, 1, 0))
     r1 = load(mc_path("asymmetric_c1_i", "noshuffle", "128", mech, 1, 1))
-    b0 = load(mut_path("noshuffle", "128", mech, 1, 0))
-    b1 = load(mut_path("noshuffle", "128", mech, 1, 1))
+    b0 = load(asymmetric_c0_c1_path("noshuffle", "128", mech, 1, 0))
+    b1 = load(asymmetric_c0_c1_path("noshuffle", "128", mech, 1, 1))
     print(f"  {mech}:")
     for c1 in SAMPLE_C1:
         a0 = mc_cell(r0, 0.0, c1)
         a1 = mc_cell(r1, 0.0, c1)
-        m0 = mut_cell(b0, 0.10, c1)
-        m1 = mut_cell(b1, 0.10, c1)
+        m0 = asymmetric_c0_c1_cell(b0, 0.10, c1)
+        m1 = asymmetric_c0_c1_cell(b1, 0.10, c1)
         print(f"    c1={c1:.2f}: pop0 {a0:.3f} vs {m0:.3f} ({a0-m0:+.3f}), "
               f"pop1 {a1:.3f} vs {m1:.3f} ({a1-m1:+.3f})")
 
@@ -226,7 +226,7 @@ for mech in PRIMARY_MECHS:
     h1 = hc_cell(load(hc_path("noshuffle", "128", mech, 1, "pop_2", 1)), 0.0, 0.10)
     m0 = mc_cell(load(mc_path("asymmetric_c1_i", "noshuffle", "128", mech, 1, 0)), 0.0, 0.12)
     m1 = mc_cell(load(mc_path("asymmetric_c1_i", "noshuffle", "128", mech, 1, 1)), 0.0, 0.12)
-    print(f"  {mech}: diagonal {h0:.3f}/{h1:.3f}  asymmetric_c1_i {m0:.3f}/{m1:.3f}")
+    print(f"  {mech}: symmetric_c_i {h0:.3f}/{h1:.3f}  asymmetric_c1_i {m0:.3f}/{m1:.3f}")
 
 print("\n" + "=" * 78)
 print("DONE")

@@ -3,16 +3,16 @@
 Analysis for the equal-cost diagonal of the mutualism parameter space (c0 = c1 =
 c), split by mechanism family:
 
-- **[diagonal_partner_choice.md](diagonal_partner_choice.md)** — mechanism P:
+- **[symmetric_c_partner_choice.md](symmetric_c_partner_choice.md)** — mechanism P:
   PD and snowdrift cooperation profiles, P1 hitchhiking, population-structure
   contrasts (pop_1, pop_2, pop_3), groupsize effects on partner choice
-- **[diagonal_reciprocity.md](diagonal_reciprocity.md)** — mechanisms M, IM,
+- **[symmetric_c_reciprocity.md](symmetric_c_reciprocity.md)** — mechanisms M, IM,
   IJM: shuffle effects, IJM groupsize reversal, direct vs indirect reciprocity
-- **[diagonal_combined.md](diagonal_combined.md)** — mechanisms MP, MPQ, IMP,
+- **[symmetric_c_combined.md](symmetric_c_combined.md)** — mechanisms MP, MPQ, IMP,
   IJMPQ: mechanism hierarchy, IJMPQ symmetry suppression, groupsize effects
 - **[symmetric_c_i.md](symmetric_c_i.md)** — the information-cost extension:
-  Cost (the per-round tax on carrying the machinery) swept jointly with c, and
-  how a rising price of enforcement interacts with a rising demand for it
+  Cost (information cost on carrying the machinery) swept jointly with c, and
+  how rising information cost interacts with rising cooperation cost
 
 For asymmetric costs (c0 ≠ c1), see **asymmetric_c0_c1.md**. For which payoff gap
 (temptation, risk, or R − P) drives each mechanism's c-collapse, and how the

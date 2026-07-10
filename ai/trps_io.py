@@ -7,7 +7,7 @@ genotype-frequency sums so analyze_*.py and verify_claims.py stay in sync.
 
 Data convention: .con rows are dicts keyed by column name. Genotype columns are
 the 12-char names C0I0J0M0P0Q0 ... C1I1J1M1P1Q1 (each with a matching *SD
-column); game-parameter columns are c0/c1 (diagonal, mutualism) or
+column); game-parameter columns are c0/c1 (symmetric_c, asymmetric_c0_c1) or
 T0/R0/P0/S0 (prisoners, snowdrift).
 """
 
@@ -26,7 +26,7 @@ def load(path):
 def glo(path):
     """Read a two-column `.glo` metadata file into a {key: value} dict (values as
     strings), or None if absent. Keys include K, b, Cost, Runs, Dilemma, GroupSize,
-    Shuffle (diagonal/mutualism), and T0/R0/P0/S0 (prisoners/snowdrift)."""
+    Shuffle (symmetric_c/asymmetric_c0_c1), and T0/R0/P0/S0 (prisoners/snowdrift)."""
     if not os.path.exists(path):
         return None
     out = {}

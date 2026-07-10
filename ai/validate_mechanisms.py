@@ -3,12 +3,12 @@
 Validate two load-bearing mechanistic narratives against the .con data and the
 trps source logic.
 
-1. Cross-population reciprocity hitchhiking (mutualism_reciprocity.md): along the
+1. Cross-population reciprocity hitchhiking (asymmetric_c0_c1_reciprocity.md): along the
    c0 = 0.10 row in PD, Pop_0 evolves reciprocators that police defection,
    forcing Pop_1 to cooperate; Pop_1 then sheds the (costly) M locus and plays
    always-cooperate (C1M0), so Pop_1 M1 falls BELOW the control baseline.
 
-2. IJMPQ shuffle robustness (mutualism_combined.md / diagonal_combined.md):
+2. IJMPQ shuffle robustness (asymmetric_c0_c1_combined.md / symmetric_c_combined.md):
    shuffle disables direct reciprocity (M needs partner == oldpartner), but the
    lifetime loci J (Imimic_lt, copies partner qBSeen_lt) and Q (Choose_lt) are
    shuffle-invariant, so IJMPQ keeps Pop_1 cooperation that IMP (no J, Q) loses.
@@ -23,7 +23,7 @@ import os
 from trps_io import BASE, allele, load
 
 
-def mpath(sh, gs, m, d, f):
+def asym_path(sh, gs, m, d, f):
     return f"{BASE}/asymmetric_c0_c1/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
 
 
@@ -42,9 +42,9 @@ print("=" * 78)
 print("CLAIM 1 — CROSS-POPULATION RECIPROCITY HITCHHIKING (PD, noshuffle, gs=128)")
 print("=" * 78)
 
-M0 = load(mpath("noshuffle", "128", "M", 1, 0))   # Pop_0 (low cost c0)
-M1 = load(mpath("noshuffle", "128", "M", 1, 1))   # Pop_1 (high cost c1)
-C1 = load(mpath("noshuffle", "128", "_", 1, 1))   # control, Pop_1
+M0 = load(asym_path("noshuffle", "128", "M", 1, 0))   # Pop_0 (low cost c0)
+M1 = load(asym_path("noshuffle", "128", "M", 1, 1))   # Pop_1 (high cost c1)
+C1 = load(asym_path("noshuffle", "128", "_", 1, 1))   # control, Pop_1
 
 print("\nDoc assertion (c0=0.10, c1=0.30): Pop_0 M1~0.749, Pop_1 qBSeen=0.616,")
 print("Pop_1 M1=0.370, control Pop_1 M1~0.500.\n")
@@ -127,12 +127,12 @@ print("gap is attributable to the shuffle-invariant lifetime loci J and Q.\n")
 for mech in ("IMP", "IJMPQ"):
     print(f"  {mech}:")
     for sh in ("noshuffle", "shuffle"):
-        r1 = load(mpath(sh, "128", mech, 1, 1))   # Pop_1
+        r1 = load(asym_path(sh, "128", mech, 1, 1))   # Pop_1
         print(f"    {sh:9} Pop_1 mean qBSeen = {mean_col(r1,'qBSeen'):.3f}")
-imp_n = mean_col(load(mpath("noshuffle", "128", "IMP", 1, 1)), "qBSeen")
-imp_s = mean_col(load(mpath("shuffle", "128", "IMP", 1, 1)), "qBSeen")
-ijm_n = mean_col(load(mpath("noshuffle", "128", "IJMPQ", 1, 1)), "qBSeen")
-ijm_s = mean_col(load(mpath("shuffle", "128", "IJMPQ", 1, 1)), "qBSeen")
+imp_n = mean_col(load(asym_path("noshuffle", "128", "IMP", 1, 1)), "qBSeen")
+imp_s = mean_col(load(asym_path("shuffle", "128", "IMP", 1, 1)), "qBSeen")
+ijm_n = mean_col(load(asym_path("noshuffle", "128", "IJMPQ", 1, 1)), "qBSeen")
+ijm_s = mean_col(load(asym_path("shuffle", "128", "IJMPQ", 1, 1)), "qBSeen")
 print(f"\n  shuffle penalty Pop_1: IMP {imp_n:.3f}->{imp_s:.3f} (drop {imp_n-imp_s:.3f}); "
       f"IJMPQ {ijm_n:.3f}->{ijm_s:.3f} (drop {ijm_n-ijm_s:.3f})")
 print(f"  J+Q recovery under shuffle = IJMPQ - IMP = {ijm_s - imp_s:.3f}")
@@ -143,7 +143,7 @@ print("  M1 (inert under shuffle) is not what distinguishes IJMPQ from IMP.")
 print(f"  {'mech':6} {'cond':9} {'I1':>6} {'J1':>6} {'M1':>6} {'P1':>6} {'Q1':>6} {'qBSeen':>7}")
 for mech in ("IMP", "IJMPQ"):
     for sh in ("noshuffle", "shuffle"):
-        r1 = load(mpath(sh, "128", mech, 1, 1))
+        r1 = load(asym_path(sh, "128", mech, 1, 1))
         f = lambda t: sum(allele(x, t) for x in r1) / len(r1)
         print(f"  {mech:6} {sh:9} {f('I1'):6.3f} {f('J1'):6.3f} {f('M1'):6.3f} "
               f"{f('P1'):6.3f} {f('Q1'):6.3f} {mean_col(r1,'qBSeen'):7.3f}")
@@ -152,8 +152,8 @@ print("\n  Isolating J vs Q under shuffle (which lifetime locus does the work?):
 print("  Q contribution: MP (M,P) -> MPQ (M,P,Q); J contribution: IM (I,M) -> IJM (I,J,M)")
 print(f"  {'contrast':18} {'Pop_0':>7} {'Pop_1':>7}")
 for a, b, lab in [("MP", "MPQ", "Q adds (MP->MPQ)"), ("IM", "IJM", "J adds (IM->IJM)")]:
-    ra0 = load(mpath("shuffle", "128", a, 1, 0)); rb0 = load(mpath("shuffle", "128", b, 1, 0))
-    ra1 = load(mpath("shuffle", "128", a, 1, 1)); rb1 = load(mpath("shuffle", "128", b, 1, 1))
+    ra0 = load(asym_path("shuffle", "128", a, 1, 0)); rb0 = load(asym_path("shuffle", "128", b, 1, 0))
+    ra1 = load(asym_path("shuffle", "128", a, 1, 1)); rb1 = load(asym_path("shuffle", "128", b, 1, 1))
     d0 = mean_col(rb0, "qBSeen") - mean_col(ra0, "qBSeen")
     d1 = mean_col(rb1, "qBSeen") - mean_col(ra1, "qBSeen")
     print(f"  {lab:18} {d0:+7.3f} {d1:+7.3f}  ({a} {mean_col(ra0,'qBSeen'):.3f}/{mean_col(ra1,'qBSeen'):.3f}"
@@ -172,16 +172,16 @@ print("    every round, so M is inert under shuffle (matches M1 not driving the 
 print("  - choose_partner.c: Choose_lt (Q) uses lifetime preference; also independent")
 print("    of round-to-round partner continuity.")
 
-print("\n  Diagonal cross-check (pop_2 fset_0, PD, gs=128): is the IJMPQ-over-IMP")
+print("\n  symmetric_c cross-check (pop_2 fset_0, PD, gs=128): is the IJMPQ-over-IMP")
 print("  high-c window also J-led? Isolate at c=0.30 and c=0.40, shuffle.")
 
 
-def hpath(sh, gs, m, d, f):
+def symmetric_c_path(sh, gs, m, d, f):
     return f"{BASE}/symmetric_c/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
 
 
-def h_at_c(sh, m, c):
-    r = load(hpath(sh, "128", m, 1, 0))
+def symmetric_c_at_c(sh, m, c):
+    r = load(symmetric_c_path(sh, "128", m, 1, 0))
     for x in r:
         if abs(float(x["c0"]) - c) < 0.005:
             return float(x["qBSeen"])
@@ -190,11 +190,11 @@ def h_at_c(sh, m, c):
 
 print(f"  {'c':>5} {'MP->MPQ (Q)':>12} {'IM->IJM (J)':>12} {'IMP->IJMPQ':>11}")
 for c in (0.30, 0.40):
-    q = h_at_c("shuffle", "MPQ", c) - h_at_c("shuffle", "MP", c)
-    j = h_at_c("shuffle", "IJM", c) - h_at_c("shuffle", "IM", c)
-    full = h_at_c("shuffle", "IJMPQ", c) - h_at_c("shuffle", "IMP", c)
+    q = symmetric_c_at_c("shuffle", "MPQ", c) - symmetric_c_at_c("shuffle", "MP", c)
+    j = symmetric_c_at_c("shuffle", "IJM", c) - symmetric_c_at_c("shuffle", "IM", c)
+    full = symmetric_c_at_c("shuffle", "IJMPQ", c) - symmetric_c_at_c("shuffle", "IMP", c)
     print(f"  {c:5.2f} {q:+12.3f} {j:+12.3f} {full:+11.3f}")
-print("  (in diagonal the pure-reciprocity IM/IJM collapse at high c, so the")
+print("  (in symmetric_c the pure-reciprocity IM/IJM collapse at high c, so the")
 print("   IJMPQ window is a combined effect — see whether J or Q dominates)")
 
 print("\nDONE")

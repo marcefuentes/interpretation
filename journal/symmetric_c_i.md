@@ -1,6 +1,6 @@
-# Diagonal Cost — The Price of the Enforcement Apparatus
+# symmetric_c_i — Information Cost of the Enforcement Apparatus
 
-Standard diagonal fixes the per-round module tax at Cost = 0.001 (negligible)
+Standard diagonal fixes the information cost at Cost = 0.001 (negligible)
 and sweeps the cooperation cost c from 0 to b = 0.4. **symmetric_c_i** adds a
 second axis: it sweeps Cost jointly with c over a triangular grid, so we can ask
 what happens when carrying reciprocity or partner-choice machinery is itself
@@ -14,7 +14,7 @@ gs = 4, dilemmas 0/1/2, Runs = 30. The companion symmetric_c_i_1run is the
 single-run variant for temporal dynamics.
 
 For how the information-cost axis sits alongside the payoff-axis attributions
-(prisoners/snowdrift) and the cooperation-cost thresholds (diagonal/mutualism),
+(prisoners/snowdrift) and the cooperation-cost thresholds (symmetric_c/asymmetric_c0_c1),
 see **[synthesis.md](synthesis.md)**.
 
 ## What Cost does in the model
@@ -52,7 +52,7 @@ Primary condition throughout: pop_1, PD (dilemma 1), noshuffle, gs = 128,
 fset_0. Cell key is (Cost, c).
 
 Along the **pure information-cost axis** (c = 0, so no temptation — the only
-thing biting is the module tax), cooperation erodes gently and the mechanism
+thing biting is the information cost), cooperation erodes gently and the mechanism
 ordering is preserved:
 
 | Mechanism | families | Cost=0 | Cost=0.08 | Cost=0.20 | Cost=0.40 |
@@ -67,8 +67,8 @@ ordering is preserved:
 
 Two things stand out.
 
-**Information cost is far gentler than cooperation cost.** A cost of 0.40 on the
-Cost axis leaves IJMPQ at 0.810; the same 0.40 on the c axis collapses it to
+**Information cost is far gentler than cooperation cost.** Information cost of 0.40 on the
+Cost axis leaves IJMPQ at 0.810; the same cooperation cost of 0.40 on the c axis collapses it to
 0.378 (and P to 0.066, M to 0.079). The reason is structural: c injects
 temptation and risk into every interaction for everyone, whereas Cost only taxes
 the machinery carriers — and at c = 0 there is no temptation, so a population can
@@ -76,8 +76,8 @@ shed the expensive apparatus and keep cooperating for free.
 
 **Family count does not predict the collapse.** The naive prediction — a
 two-family mechanism pays double, so it should fail first — is wrong. The
-combined mechanisms are the most Cost-robust despite paying the double tax. If
-the per-round tax alone governed the outcome, a two-family mechanism at Cost = X
+combined mechanisms are the most Cost-robust despite paying the double information cost. If
+the information cost alone governed the outcome, a two-family mechanism at Cost = X
 should match a one-family mechanism at Cost = 2X; it does not (MP at Cost = 0.08
 is 0.907, whereas P at Cost = 0.16 is only 0.589). The tax is not the whole
 story — the enforcement architecture is.
@@ -100,7 +100,7 @@ carried by tax-free unconditional cooperators:
 As Cost rises the chooser allele P1 falls from 0.67 to 0.02 and the TFT allele M1
 from 0.44 to 0.02 — the machinery is almost entirely shed. Cooperation does not
 track that collapse because the vacated niche is filled by C1P0 / C1M0 genotypes
-that cooperate unconditionally and pay no module tax. **Behavior and mechanism
+that cooperate unconditionally and pay no information cost. **Behavior and mechanism
 decouple:** the population keeps cooperating while abandoning the apparatus that
 produced the cooperation — because at c = 0 there is no temptation for the
 apparatus to defend against. (In the PD at c = 0, T = R and P = S, so an
@@ -111,7 +111,7 @@ and cooperators simply do well by association.)
 
 Dilemma 0 (the control) has no social dilemma at all — produce-b is dominant, so
 cooperation is favored no matter what anyone does. It therefore isolates the pure
-module tax with **zero demand** for enforcement, which lets us separate two things
+information cost with **zero demand** for enforcement, which lets us separate two things
 the PD alone conflates. The M mechanism, c = 0, noshuffle, gs = 128, pop_1:
 
 | Cost | control qBSeen | control M1 | control C1M0 | PD qBSeen | PD M1 |
@@ -179,11 +179,11 @@ all-c to 0.810 at all-Cost). Per unit, c is far more destructive than Cost; the
 two simply interact where they overlap.
 
 The one-line reading: **c is the demand for enforcement (temptation to defect);
-Cost is the price of enforcement (the module tax). Cooperation persists where the
+Cost is information cost. Cooperation persists where the
 population can afford the machinery the game demands.** With no demand (c = 0) any
-price is survivable — the apparatus is shed harmlessly. With free machinery
-(Cost = 0) the standard diagonal c-profile returns. The interior is where a
-rising price starves the defense that a rising demand requires.
+information cost is survivable — the apparatus is shed harmlessly. With free machinery
+(Cost = 0) the standard diagonal c-profile returns. The interior is where
+rising information cost starves the defense that rising cooperation cost requires.
 
 ## Reciprocity vs partner choice split two ways under cost
 

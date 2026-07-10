@@ -11,7 +11,7 @@ accumulated fitness. Each carries a cooperation locus (C) and a set of mechanism
 that gate conditional behaviour: partner choice on recent or lifetime cooperation
 (P/Q), and reciprocity that copies a partner's behaviour directly, indirectly from a
 third party, or from a lifetime reputation (M/I/J). Per round, fitness is the game
-payoff minus a machinery cost, w = max(0, payoff − cost) (see Information cost).
+payoff minus information cost, w = max(0, payoff − cost) (see Information cost).
 
 The behavioural update and locus semantics are validated against the simulation
 source; the confirmed mechanics (decision precedence J > I > M, the C0P1 silent

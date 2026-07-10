@@ -20,8 +20,8 @@ Most theory treats a single well-mixed population. Many biologically important c
 are mutualisms: two distinct populations (or species) that cooperate across the
 divide, each with its own cost of helping. We treat the single population as the
 baseline and the two-population mutualism as the central case, and ask what the
-second population changes. The equal-cost single population (our "diagonal" case) is
-the diagonal special case of the two-population design (our "mutualism" case) in
+second population changes. The equal-cost single population (symmetric_c) is
+the c0 = c1 special case of the two-population design (asymmetric_c0_c1) in
 which both sides carry the same cost.
 
 ## What we set out to explain
@@ -45,4 +45,4 @@ single cost axis welds together, we (i) attribute each mechanism's collapse to a
 specific payoff gap, (ii) characterise the two routes to the cooperator/exploiter
 role split, and (iii) introduce an information-cost axis showing that taxing the
 machinery erodes the apparatus while cooperation can persist through unconditional
-cooperators — a price-versus-demand view of enforcement.
+cooperators — an information-cost versus cooperation-cost view of enforcement.

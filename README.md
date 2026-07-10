@@ -33,13 +33,13 @@ quantitative work kept separate as a running journal.
 | ---- | ---- |
 | journal/framework.md | Independent variables and the three outcome variables (the conceptual spine) |
 | journal/parameterization.md | Current payoff equations and dilemma-folder reference |
-| journal/synthesis.md | Cross-study: maps prisoners/snowdrift payoff axes onto diagonal/mutualism thresholds; information-cost axis |
+| journal/synthesis.md | Cross-study: maps prisoners/snowdrift payoff axes onto symmetric_c/asymmetric_c0_c1 thresholds; information-cost axis |
 | journal/symmetric_c.md | Index + game parameters for the equal-cost diagonal |
 | journal/symmetric_c_partner_choice.md | Mechanism P; PD and snowdrift; pop_1/2/3; groupsize |
 | journal/symmetric_c_reciprocity.md | M, IM, IJM; shuffle effects; IJM groupsize reversal |
 | journal/symmetric_c_combined.md | MP, MPQ, IMP, IJMPQ; hierarchy; IJMPQ symmetry |
-| journal/symmetric_c_i.md | Cost x c triangular sweep; information cost of the machinery |
-| journal/asymmetric_c1_i.md | Cost x c1 at fixed c0; information price under deterministic cooperator/exploiter roles |
+| journal/symmetric_c_i.md | Cost x c triangular sweep; information cost |
+| journal/asymmetric_c1_i.md | Cost x c1 at fixed c0; information cost under deterministic cooperator/exploiter roles |
 | journal/asymmetric_c0_c1.md | Index + model overview for the primary two-population study |
 | journal/asymmetric_c0_c1_partner_choice.md | P: chooser bottleneck, exploitation, groupsize |
 | journal/asymmetric_c0_c1_reciprocity.md | M (noshuffle + gs=4); IM, IJM (shuffle) |
@@ -62,7 +62,7 @@ quantitative work kept separate as a running journal.
 - **prisoners** and **snowdrift** are auxiliary calibration studies used to interpret
   mechanisms and signatures seen in mutualism and diagonal.
 - **symmetric_c_i** extends diagonal with the information-cost axis.
-- **asymmetric_c1_i** extends the price–demand axis to pinned cooperator/exploiter
+- **asymmetric_c1_i** extends the information-cost axis to pinned cooperator/exploiter
   roles (fixed c0 = 0.10, sweep c1) and shows where the soft diagonal Cost effect
   breaks down — see
   journal/asymmetric_c1_i.md. Part of the single unified manuscript (paper/roadmap.md).

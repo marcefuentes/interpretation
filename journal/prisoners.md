@@ -17,7 +17,7 @@ multi-run sweep.
 
 - **[prisoners_calibration.md](prisoners_calibration.md)** — cross-mechanism
   payoff-axis attribution (which gap limits each mechanism), the shuffle
-  decomposition, and cross-checks against diagonal/mutualism
+  decomposition, and cross-checks against symmetric_c/asymmetric_c0_c1
 - **[prisoners_partner_choice.md](prisoners_partner_choice.md)** — mechanism P:
   cooperation collapses onto R − P, genotype hitchhiking, pop_2 symmetry
   breaking, pop_3
@@ -33,7 +33,7 @@ thresholds, see **[synthesis.md](synthesis.md)**.
 Each mechanism is governed by a different payoff axis — invisible in diagonal,
 where R and P move together:
 
-| Mechanism family | Limiting payoff axis        | Reading for diagonal/mutualism                   |
+| Mechanism family | Limiting payoff axis        | Reading for symmetric_c/asymmetric_c0_c1                   |
 | ---------------- | --------------------------- | ------------------------------------------------ |
 | M                | risk / defection payoff P   | the c-collapse of M is mostly a rising-risk effect |
 | P                | cooperation advantage R − P | the chooser bottleneck is set by R − P            |

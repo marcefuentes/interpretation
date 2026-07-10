@@ -7,7 +7,7 @@ expected value written in that doc. Run before committing doc edits to catch
 drift between prose and data.
 
     python3 ai/verify_claims.py            # all studies
-    python3 ai/verify_claims.py diagonal   # filter by substring
+    python3 ai/verify_claims.py symmetric_c   # filter by substring
 
 Exit code is non-zero if any check fails.
 
@@ -31,11 +31,11 @@ def check(study, label, fn, expected, tol=TOL):
 
 # ── path helpers ──────────────────────────────────────────────────────────────
 
-def hpath(sh, gs, m, d, pop, f):
+def sym_path(sh, gs, m, d, pop, f):
     return f"{BASE}/symmetric_c/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
 
 
-def mpath(sh, gs, m, d, f):
+def asym_path(sh, gs, m, d, f):
     return f"{BASE}/asymmetric_c0_c1/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_image.con"
 
 
@@ -76,13 +76,13 @@ def _grid(rows, col):
     return {(round(float(r["c0"]), 3), round(float(r["c1"]), 3)): float(r[col]) for r in rows}
 
 
-def mp3_evolving_vs_diagonal(m):
+def mp3_evolving_vs_symmetric_c(m):
     """Max |asymmetric_c0_c1 pop_3 evolving qBSeen(c0,c1) - symmetric_c pop_3 qBSeen(c0)| over
-    all 441 cells. Near 0 == the 2D square is the Diagonal 1D sweep (redundant)."""
+    all 441 cells. Near 0 == the 2D square is the symmetric_c 1D sweep (redundant)."""
     ev = load(mp3path("noshuffle", "128", m, 0))
-    ham = load(hpath("noshuffle", "128", m, 1, "pop_3", 0))
-    hmap = {round(float(r["c0"]), 3): float(r["qBSeen"]) for r in ham}
-    return max(abs(float(r["qBSeen"]) - hmap[round(float(r["c0"]), 3)]) for r in ev)
+    sym = load(sym_path("noshuffle", "128", m, 1, "pop_3", 0))
+    smap = {round(float(r["c0"]), 3): float(r["qBSeen"]) for r in sym}
+    return max(abs(float(r["qBSeen"]) - smap[round(float(r["c0"]), 3)]) for r in ev)
 
 
 def mp3_c1_spread(m):
@@ -117,23 +117,23 @@ def mp3_fixed_wmean_residual():
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# DIAGONAL — diagonal_partner_choice.md, diagonal_reciprocity.md, diagonal_combined.md
+# SYMMETRIC_C — symmetric_c_partner_choice.md, symmetric_c_reciprocity.md, symmetric_c_combined.md
 # ════════════════════════════════════════════════════════════════════════════
 
-def ham_P_profile():
-    r = load(hpath("shuffle", "128", "P", 1, "pop_2", 0))
+def sym_P_profile():
+    r = load(sym_path("shuffle", "128", "P", 1, "pop_2", 0))
     return [round(at_c(r, c), 3) for c in (0.0, 0.08, 0.16, 0.24, 0.32, 0.40)]
 
 # partner_choice.md cooperation profile (P, PD, shuffle, pop_2 fset_0)
 for c, exp in zip((0.0, 0.08, 0.16, 0.24, 0.32, 0.40),
                   (0.963, 0.849, 0.728, 0.630, 0.553, 0.022)):
     check("symmetric_c", f"PC: P qBSeen at c={c:.2f}",
-          (lambda cc=c: at_c(load(hpath("shuffle", "128", "P", 1, "pop_2", 0)), cc)), exp)
+          (lambda cc=c: at_c(load(sym_path("shuffle", "128", "P", 1, "pop_2", 0)), cc)), exp)
 
 
-def ham_P_corr():
-    r0 = load(hpath("shuffle", "128", "P", 1, "pop_2", 0))
-    r1 = load(hpath("shuffle", "128", "P", 1, "pop_2", 1))
+def sym_P_corr():
+    r0 = load(sym_path("shuffle", "128", "P", 1, "pop_2", 0))
+    r1 = load(sym_path("shuffle", "128", "P", 1, "pop_2", 1))
     m1 = {round(float(r["c0"]), 4): r for r in r1}
     dq, dw = [], []
     for r in r0:
@@ -144,65 +144,65 @@ def ham_P_corr():
     return corr(dq, dw)
 
 
-check("symmetric_c", "PC: P pop_2 corr(dq,dw) = -0.984", ham_P_corr, -0.984)
+check("symmetric_c", "PC: P pop_2 corr(dq,dw) = -0.984", sym_P_corr, -0.984)
 
 # reciprocity.md: M shuffle vs noshuffle at c=0.10 (pop_2 fset_0)
 check("symmetric_c", "RC: M noshuffle qBSeen c=0.10 = 0.915",
-      lambda: at_c(load(hpath("noshuffle", "128", "M", 1, "pop_2", 0)), 0.10), 0.915)
+      lambda: at_c(load(sym_path("noshuffle", "128", "M", 1, "pop_2", 0)), 0.10), 0.915)
 check("symmetric_c", "RC: M shuffle qBSeen c=0.10 ~ control (<0.06)",
-      lambda: at_c(load(hpath("shuffle", "128", "M", 1, "pop_2", 0)), 0.10), 0.053)
+      lambda: at_c(load(sym_path("shuffle", "128", "M", 1, "pop_2", 0)), 0.10), 0.053)
 
 # reciprocity.md: M1 under M at d0 noshuffle mean = 0.392 (vs control 0.494)
 check("symmetric_c", "RC: d0 M1 mean under M noshuffle = 0.392",
-      lambda: sum(m1sum(r) for r in load(hpath("noshuffle", "128", "M", 0, "pop_2", 0)))
-      / len(load(hpath("noshuffle", "128", "M", 0, "pop_2", 0))), 0.392, 0.01)
+      lambda: sum(m1sum(r) for r in load(sym_path("noshuffle", "128", "M", 0, "pop_2", 0)))
+      / len(load(sym_path("noshuffle", "128", "M", 0, "pop_2", 0))), 0.392, 0.01)
 
 # combined.md: IJMPQ shuffle vs noshuffle at c=0.40
 check("symmetric_c", "CB: IJMPQ shuffle qBSeen c=0.40 = 0.672",
-      lambda: at_c(load(hpath("shuffle", "128", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.672)
+      lambda: at_c(load(sym_path("shuffle", "128", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.672)
 check("symmetric_c", "CB: IJMPQ noshuffle qBSeen c=0.40 = 0.382",
-      lambda: at_c(load(hpath("noshuffle", "128", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.382)
+      lambda: at_c(load(sym_path("noshuffle", "128", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.382)
 
 # combined.md gs=128 PD profile (shuffle, pop_2 fset_0): MP/MPQ collapse, IMP/IJMPQ tail
 check("symmetric_c", "CB: MP shuffle qBSeen c=0.40 = 0.023",
-      lambda: at_c(load(hpath("shuffle", "128", "MP", 1, "pop_2", 0)), 0.40), 0.023)
+      lambda: at_c(load(sym_path("shuffle", "128", "MP", 1, "pop_2", 0)), 0.40), 0.023)
 check("symmetric_c", "CB: MPQ shuffle qBSeen c=0.40 = 0.036",
-      lambda: at_c(load(hpath("shuffle", "128", "MPQ", 1, "pop_2", 0)), 0.40), 0.036)
+      lambda: at_c(load(sym_path("shuffle", "128", "MPQ", 1, "pop_2", 0)), 0.40), 0.036)
 check("symmetric_c", "CB: IMP shuffle qBSeen c=0.08 = 0.951",
-      lambda: at_c(load(hpath("shuffle", "128", "IMP", 1, "pop_2", 0)), 0.08), 0.951)
+      lambda: at_c(load(sym_path("shuffle", "128", "IMP", 1, "pop_2", 0)), 0.08), 0.951)
 check("symmetric_c", "CB: IMP shuffle qBSeen c=0.40 = 0.170",
-      lambda: at_c(load(hpath("shuffle", "128", "IMP", 1, "pop_2", 0)), 0.40), 0.170)
+      lambda: at_c(load(sym_path("shuffle", "128", "IMP", 1, "pop_2", 0)), 0.40), 0.170)
 
 # combined.md gs=4 PD profile (shuffle, pop_2 fset_0): weaker high-c tail
 check("symmetric_c", "CB: IMP gs=4 shuffle qBSeen c=0.40 = 0.065",
-      lambda: at_c(load(hpath("shuffle", "4", "IMP", 1, "pop_2", 0)), 0.40), 0.065)
+      lambda: at_c(load(sym_path("shuffle", "4", "IMP", 1, "pop_2", 0)), 0.40), 0.065)
 check("symmetric_c", "CB: IJMPQ gs=4 shuffle qBSeen c=0.32 = 0.892",
-      lambda: at_c(load(hpath("shuffle", "4", "IJMPQ", 1, "pop_2", 0)), 0.32), 0.892)
+      lambda: at_c(load(sym_path("shuffle", "4", "IJMPQ", 1, "pop_2", 0)), 0.32), 0.892)
 check("symmetric_c", "CB: IJMPQ gs=4 shuffle qBSeen c=0.40 = 0.342",
-      lambda: at_c(load(hpath("shuffle", "4", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.342)
+      lambda: at_c(load(sym_path("shuffle", "4", "IJMPQ", 1, "pop_2", 0)), 0.40), 0.342)
 
 
 # ════════════════════════════════════════════════════════════════════════════
 # MUTUALISM
 # ════════════════════════════════════════════════════════════════════════════
 
-def mut_rolesplit_mean(sh, gs, m, d, f):
-    r = load(mpath(sh, gs, m, d, f))
+def asym_rolesplit_mean(sh, gs, m, d, f):
+    r = load(asym_path(sh, gs, m, d, f))
     return sum(float(x["qBSeen"]) for x in r) / len(r)
 
 
 # partner_choice.md role-split means (P, noshuffle, PD/SD)
 check("asymmetric_c0_c1", "PC: P PD Pop_0 mean = 0.472",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "P", 1, 0), 0.472)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "P", 1, 0), 0.472)
 check("asymmetric_c0_c1", "PC: P PD Pop_1 mean = 0.146",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "P", 1, 1), 0.146)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "P", 1, 1), 0.146)
 check("asymmetric_c0_c1", "PC: control PD Pop_0 mean = 0.103",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "_", 1, 0), 0.103)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "_", 1, 0), 0.103)
 
 
-def mut_exploit(d):
-    r0 = load(mpath("noshuffle", "128", "P", d, 0))
-    r1 = load(mpath("noshuffle", "128", "P", d, 1))
+def asym_exploit(d):
+    r0 = load(asym_path("noshuffle", "128", "P", d, 0))
+    r1 = load(asym_path("noshuffle", "128", "P", d, 1))
     m1 = {(round(float(x["c0"]), 4), round(float(x["c1"]), 4)): x for x in r1}
     dq, dw, nless, defs = [], [], 0, []
     for x in r0:
@@ -217,22 +217,22 @@ def mut_exploit(d):
 
 
 # partner_choice.md exploitation counts/corr/deficit
-check("asymmetric_c0_c1", "PC: P PD corr(dq,dw) = -0.986", lambda: mut_exploit(1)[0], -0.986)
-check("asymmetric_c0_c1", "PC: P PD lower-fitness cells = 210", lambda: mut_exploit(1)[1], 210, None)
-check("asymmetric_c0_c1", "PC: P PD mean deficit = 0.140", lambda: mut_exploit(1)[2], 0.140)
-check("asymmetric_c0_c1", "PC: P SD corr(dq,dw) = -0.144", lambda: mut_exploit(2)[0], -0.144)
-check("asymmetric_c0_c1", "PC: P SD lower-fitness cells = 190", lambda: mut_exploit(2)[1], 190, None)
-check("asymmetric_c0_c1", "PC: P SD mean deficit = 0.116", lambda: mut_exploit(2)[2], 0.116)
+check("asymmetric_c0_c1", "PC: P PD corr(dq,dw) = -0.986", lambda: asym_exploit(1)[0], -0.986)
+check("asymmetric_c0_c1", "PC: P PD lower-fitness cells = 210", lambda: asym_exploit(1)[1], 210, None)
+check("asymmetric_c0_c1", "PC: P PD mean deficit = 0.140", lambda: asym_exploit(1)[2], 0.140)
+check("asymmetric_c0_c1", "PC: P SD corr(dq,dw) = -0.144", lambda: asym_exploit(2)[0], -0.144)
+check("asymmetric_c0_c1", "PC: P SD lower-fitness cells = 190", lambda: asym_exploit(2)[1], 190, None)
+check("asymmetric_c0_c1", "PC: P SD mean deficit = 0.116", lambda: asym_exploit(2)[2], 0.116)
 
 
-def mut_m1_suppressed_total():
+def asym_m1_suppressed_total():
     total = 0
     for sh in ("noshuffle", "shuffle"):
         for gs in ("128", "4"):
             for d in (0, 1, 2):
                 for f in (0, 1):
-                    rM = load(mpath(sh, gs, "M", d, f))
-                    rC = load(mpath(sh, gs, "_", d, f))
+                    rM = load(asym_path(sh, gs, "M", d, f))
+                    rC = load(asym_path(sh, gs, "_", d, f))
                     if not rM or not rC:
                         continue
                     cm = {(round(float(x["c0"]), 4), round(float(x["c1"]), 4)): m1sum(x) for x in rC}
@@ -244,43 +244,43 @@ def mut_m1_suppressed_total():
 
 
 # reciprocity.md: 3,701 cell-conditions with M1 suppressed
-check("asymmetric_c0_c1", "RC: M1 suppressed cell-conditions = 3701", mut_m1_suppressed_total, 3701, None)
+check("asymmetric_c0_c1", "RC: M1 suppressed cell-conditions = 3701", asym_m1_suppressed_total, 3701, None)
 
 # reciprocity.md: M role-split means (PD)
 check("asymmetric_c0_c1", "RC: M PD Pop_0 mean = 0.637",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "M", 1, 0), 0.637)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "M", 1, 0), 0.637)
 check("asymmetric_c0_c1", "RC: M PD Pop_1 mean = 0.551",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "M", 1, 1), 0.551)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "M", 1, 1), 0.551)
 
 # reciprocity.md: shuffle IM/IJM means (PD, Pop_0)
 check("asymmetric_c0_c1", "RC: IM shuffle PD Pop_0 mean = 0.362",
-      lambda: mut_rolesplit_mean("shuffle", "128", "IM", 1, 0), 0.362)
+      lambda: asym_rolesplit_mean("shuffle", "128", "IM", 1, 0), 0.362)
 check("asymmetric_c0_c1", "RC: IJM shuffle PD Pop_0 mean = 0.453",
-      lambda: mut_rolesplit_mean("shuffle", "128", "IJM", 1, 0), 0.453)
+      lambda: asym_rolesplit_mean("shuffle", "128", "IJM", 1, 0), 0.453)
 check("asymmetric_c0_c1", "RC: IJM shuffle PD Pop_1 mean = 0.299",
-      lambda: mut_rolesplit_mean("shuffle", "128", "IJM", 1, 1), 0.299)
+      lambda: asym_rolesplit_mean("shuffle", "128", "IJM", 1, 1), 0.299)
 
 
 # reciprocity.md: cross-population hitchhiking (PD, noshuffle, gs=128, c0=0.10, c1=0.30)
 check("asymmetric_c0_c1", "RC: hitchhike Pop_0 M1 (0.10,0.30) = 0.749",
-      lambda: allele(mcell_row(load(mpath("noshuffle", "128", "M", 1, 0)), 0.10, 0.30), "M1"), 0.749)
+      lambda: allele(mcell_row(load(asym_path("noshuffle", "128", "M", 1, 0)), 0.10, 0.30), "M1"), 0.749)
 check("asymmetric_c0_c1", "RC: hitchhike Pop_1 M1 (0.10,0.30) = 0.370 (< control)",
-      lambda: allele(mcell_row(load(mpath("noshuffle", "128", "M", 1, 1)), 0.10, 0.30), "M1"), 0.370)
+      lambda: allele(mcell_row(load(asym_path("noshuffle", "128", "M", 1, 1)), 0.10, 0.30), "M1"), 0.370)
 check("asymmetric_c0_c1", "RC: hitchhike control Pop_1 M1 (0.10,0.30) = 0.500",
-      lambda: allele(mcell_row(load(mpath("noshuffle", "128", "_", 1, 1)), 0.10, 0.30), "M1"), 0.500, 0.01)
+      lambda: allele(mcell_row(load(asym_path("noshuffle", "128", "_", 1, 1)), 0.10, 0.30), "M1"), 0.500, 0.01)
 
 # combined.md: shuffle lifetime recovery carried by J not Q (PD Pop_1 means, gs=128)
 check("asymmetric_c0_c1", "CB: J adds IM->IJM shuffle Pop_1 = +0.133",
-      lambda: mut_rolesplit_mean("shuffle", "128", "IJM", 1, 1)
-      - mut_rolesplit_mean("shuffle", "128", "IM", 1, 1), 0.133, 0.01)
+      lambda: asym_rolesplit_mean("shuffle", "128", "IJM", 1, 1)
+      - asym_rolesplit_mean("shuffle", "128", "IM", 1, 1), 0.133, 0.01)
 check("asymmetric_c0_c1", "CB: Q adds MP->MPQ shuffle Pop_1 = +0.007 (negligible)",
-      lambda: mut_rolesplit_mean("shuffle", "128", "MPQ", 1, 1)
-      - mut_rolesplit_mean("shuffle", "128", "MP", 1, 1), 0.007, 0.01)
+      lambda: asym_rolesplit_mean("shuffle", "128", "MPQ", 1, 1)
+      - asym_rolesplit_mean("shuffle", "128", "MP", 1, 1), 0.007, 0.01)
 
 
-def mut_dominance(sh, gs, m, d):
-    r0 = load(mpath(sh, gs, m, d, 0))
-    r1 = load(mpath(sh, gs, m, d, 1))
+def asym_dominance(sh, gs, m, d):
+    r0 = load(asym_path(sh, gs, m, d, 0))
+    r1 = load(asym_path(sh, gs, m, d, 1))
     m1 = {(round(float(x["c0"]), 4), round(float(x["c1"]), 4)): float(x["qBSeen"]) for x in r1}
     n = 0
     for x in r0:
@@ -292,45 +292,45 @@ def mut_dominance(sh, gs, m, d):
 
 # combined.md: pop_2 role-split means + dominance counts (noshuffle, gs=128)
 check("asymmetric_c0_c1", "CB: MP PD Pop_0 mean = 0.606",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "MP", 1, 0), 0.606)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "MP", 1, 0), 0.606)
 check("asymmetric_c0_c1", "CB: MP PD Pop_1 mean = 0.410",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "MP", 1, 1), 0.410)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "MP", 1, 1), 0.410)
 check("asymmetric_c0_c1", "CB: IMP PD Pop_0 mean = 0.670",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "IMP", 1, 0), 0.670)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "IMP", 1, 0), 0.670)
 check("asymmetric_c0_c1", "CB: IMP PD Pop_1 mean = 0.505",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "IMP", 1, 1), 0.505)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "IMP", 1, 1), 0.505)
 check("asymmetric_c0_c1", "CB: IJMPQ PD Pop_0 mean = 0.729",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "IJMPQ", 1, 0), 0.729)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "IJMPQ", 1, 0), 0.729)
 check("asymmetric_c0_c1", "CB: IJMPQ PD Pop_1 mean = 0.573",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "IJMPQ", 1, 1), 0.573)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "IJMPQ", 1, 1), 0.573)
 check("asymmetric_c0_c1", "CB: IJMPQ SD Pop_1 mean = 0.609",
-      lambda: mut_rolesplit_mean("noshuffle", "128", "IJMPQ", 2, 1), 0.609)
-check("asymmetric_c0_c1", "CB: MP PD Pop_0>Pop_1 = 210", lambda: mut_dominance("noshuffle", "128", "MP", 1), 210, None)
-check("asymmetric_c0_c1", "CB: IMP PD Pop_0>Pop_1 = 203", lambda: mut_dominance("noshuffle", "128", "IMP", 1), 203, None)
-check("asymmetric_c0_c1", "CB: IJMPQ PD Pop_0>Pop_1 = 198", lambda: mut_dominance("noshuffle", "128", "IJMPQ", 1), 198, None)
-check("asymmetric_c0_c1", "CB: IJMPQ SD Pop_0>Pop_1 = 176", lambda: mut_dominance("noshuffle", "128", "IJMPQ", 2), 176, None)
+      lambda: asym_rolesplit_mean("noshuffle", "128", "IJMPQ", 2, 1), 0.609)
+check("asymmetric_c0_c1", "CB: MP PD Pop_0>Pop_1 = 210", lambda: asym_dominance("noshuffle", "128", "MP", 1), 210, None)
+check("asymmetric_c0_c1", "CB: IMP PD Pop_0>Pop_1 = 203", lambda: asym_dominance("noshuffle", "128", "IMP", 1), 203, None)
+check("asymmetric_c0_c1", "CB: IJMPQ PD Pop_0>Pop_1 = 198", lambda: asym_dominance("noshuffle", "128", "IJMPQ", 1), 198, None)
+check("asymmetric_c0_c1", "CB: IJMPQ SD Pop_0>Pop_1 = 176", lambda: asym_dominance("noshuffle", "128", "IJMPQ", 2), 176, None)
 
 # combined.md: shuffle disables M -> Pop_1 drops (gs=128)
 check("asymmetric_c0_c1", "CB: IMP shuffle PD Pop_1 mean = 0.264",
-      lambda: mut_rolesplit_mean("shuffle", "128", "IMP", 1, 1), 0.264)
+      lambda: asym_rolesplit_mean("shuffle", "128", "IMP", 1, 1), 0.264)
 check("asymmetric_c0_c1", "CB: IJMPQ shuffle PD Pop_1 mean = 0.442",
-      lambda: mut_rolesplit_mean("shuffle", "128", "IJMPQ", 1, 1), 0.442)
+      lambda: asym_rolesplit_mean("shuffle", "128", "IJMPQ", 1, 1), 0.442)
 check("asymmetric_c0_c1", "CB: IJMPQ shuffle SD Pop_1 mean = 0.477",
-      lambda: mut_rolesplit_mean("shuffle", "128", "IJMPQ", 2, 1), 0.477)
+      lambda: asym_rolesplit_mean("shuffle", "128", "IJMPQ", 2, 1), 0.477)
 
 # combined.md: c0=0 column (noshuffle, gs=128, Pop_0 = fset_0)
 check("asymmetric_c0_c1", "CB: M c0=0 c1=0.10 = 0.918",
-      lambda: mcell(load(mpath("noshuffle", "128", "M", 1, 0)), 0.0, 0.10), 0.918)
+      lambda: mcell(load(asym_path("noshuffle", "128", "M", 1, 0)), 0.0, 0.10), 0.918)
 check("asymmetric_c0_c1", "CB: P c0=0 c1=0.10 = 0.864",
-      lambda: mcell(load(mpath("noshuffle", "128", "P", 1, 0)), 0.0, 0.10), 0.864)
+      lambda: mcell(load(asym_path("noshuffle", "128", "P", 1, 0)), 0.0, 0.10), 0.864)
 check("asymmetric_c0_c1", "CB: IMP c0=0 c1=0.02 = 0.961",
-      lambda: mcell(load(mpath("noshuffle", "128", "IMP", 1, 0)), 0.0, 0.02), 0.961)
+      lambda: mcell(load(asym_path("noshuffle", "128", "IMP", 1, 0)), 0.0, 0.02), 0.961)
 check("asymmetric_c0_c1", "CB: IJMPQ c0=0 c1=0.10 = 0.966",
-      lambda: mcell(load(mpath("noshuffle", "128", "IJMPQ", 1, 0)), 0.0, 0.10), 0.966)
+      lambda: mcell(load(asym_path("noshuffle", "128", "IJMPQ", 1, 0)), 0.0, 0.10), 0.966)
 check("asymmetric_c0_c1", "CB: gs=4 IJMPQ PD Pop_1 mean = 0.617",
-      lambda: mut_rolesplit_mean("noshuffle", "4", "IJMPQ", 1, 1), 0.617)
+      lambda: asym_rolesplit_mean("noshuffle", "4", "IJMPQ", 1, 1), 0.617)
 check("asymmetric_c0_c1", "CB: gs=4 IMP PD Pop_0>Pop_1 = 208",
-      lambda: mut_dominance("noshuffle", "4", "IMP", 1), 208, None)
+      lambda: asym_dominance("noshuffle", "4", "IMP", 1), 208, None)
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -426,17 +426,17 @@ check("prisoners", "CAL: R+P=1 locus IJMPQ mean = 0.965", lambda: pris_locus_mea
 
 # combined.md: IMP mutual-cooperation table (PD, c0=0.1, noshuffle gs=128)
 check("asymmetric_c0_c1", "CB: IMP mutual-coop (0.1,0.12) Pop_0 = 0.953",
-      lambda: mcell(load(mpath("noshuffle", "128", "IMP", 1, 0)), 0.10, 0.12), 0.953)
+      lambda: mcell(load(asym_path("noshuffle", "128", "IMP", 1, 0)), 0.10, 0.12), 0.953)
 check("asymmetric_c0_c1", "CB: IMP mutual-coop (0.1,0.12) Pop_1 = 0.952",
-      lambda: mcell(load(mpath("noshuffle", "128", "IMP", 1, 1)), 0.10, 0.12), 0.952)
+      lambda: mcell(load(asym_path("noshuffle", "128", "IMP", 1, 1)), 0.10, 0.12), 0.952)
 
 # combined.md: c0=0 snowdrift column (M holds at ceiling, dilemma 2)
 check("asymmetric_c0_c1", "CB: M c0=0 c1=0.10 snowdrift = 0.950",
-      lambda: mcell(load(mpath("noshuffle", "128", "M", 2, 0)), 0.0, 0.10), 0.950)
+      lambda: mcell(load(asym_path("noshuffle", "128", "M", 2, 0)), 0.0, 0.10), 0.950)
 
-# combined.md: diagonal snowdrift IJMPQ at c=0.40 (shuffle, gs=128)
+# combined.md: symmetric_c snowdrift IJMPQ at c=0.40 (shuffle, gs=128)
 check("symmetric_c", "CB: IJMPQ snowdrift qBSeen c=0.40 = 0.960",
-      lambda: at_c(load(hpath("shuffle", "128", "IJMPQ", 2, "pop_2", 0)), 0.40), 0.960)
+      lambda: at_c(load(sym_path("shuffle", "128", "IJMPQ", 2, "pop_2", 0)), 0.40), 0.960)
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -526,7 +526,7 @@ for m, exp in (("_", 0.517), ("M", 0.627), ("P", 0.539), ("MP", 0.654),
 check("symmetric_c_i", "IJMPQ Cost=0.20 c=0 = 0.886",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.0), 0.886)
 
-# sanity: Cost=0 edge reproduces standard diagonal (Cost=0.001) at c=0.20
+# sanity: Cost=0 edge reproduces symmetric_c (Cost=0.001) at c=0.20
 check("symmetric_c_i", "sanity IJMPQ Cost=0 c=0.20 = 0.951",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.0, 0.20), 0.951)
 
@@ -661,7 +661,7 @@ def mc_time_q(mech, cost, c1, f, t):
     return float("nan")
 
 
-# Cost=0 sample points reproduce the mutualism c0=0.10 slice to within noise.
+# Cost=0 sample points reproduce the asymmetric_c0_c1 c0=0.10 slice to within noise.
 check("asymmetric_c1_i", "sanity P Cost=0 c1=0.20 Pop_0 = 0.603",
       lambda: mc_cell(load(mcpath("asymmetric_c1_i", "noshuffle", "128", "P", 1, 0)), 0.0, 0.20), 0.603)
 check("asymmetric_c1_i", "sanity P Cost=0 c1=0.20 Pop_1 = 0.178",
@@ -734,9 +734,9 @@ check("asymmetric_c1_i", "1run P (0.12,0.20) Pop_0 first snapshot collapsed = 0.
 
 # evolving pop tracks symmetric_c pop_3 at c=c0 across the whole square (bound ~0)
 check("asymmetric_c0_c1_pop_3", "P evolving == symmetric_c pop_3 (max cell dev <= 0.03)",
-      lambda: mp3_evolving_vs_diagonal("P"), 0.0, 0.03)
+      lambda: mp3_evolving_vs_symmetric_c("P"), 0.0, 0.03)
 check("asymmetric_c0_c1_pop_3", "IJMPQ evolving == symmetric_c pop_3 (max cell dev <= 0.03)",
-      lambda: mp3_evolving_vs_diagonal("IJMPQ"), 0.0, 0.03)
+      lambda: mp3_evolving_vs_symmetric_c("IJMPQ"), 0.0, 0.03)
 
 # evolving cooperation depends on c0 only: spread across c1 is within noise
 check("asymmetric_c0_c1_pop_3", "P evolving qBSeen c1-invariant (max c1-spread <= 0.035)",
@@ -763,7 +763,7 @@ def glo_val(study, sh, gs, m, d, pop, key):
     return float(meta[key]) if meta and key in meta else float("nan")
 
 
-# K = 0.5 and b = 0.4 in the cost-parameterized studies (diagonal, mutualism, symmetric_c_i)
+# K = 0.5 and b = 0.4 in the cost-parameterized studies (symmetric_c, asymmetric_c0_c1, symmetric_c_i)
 for study, d, pop in (("symmetric_c", 1, "pop_1"), ("asymmetric_c0_c1", 1, "pop_2"),
                       ("symmetric_c_i", 1, "pop_1")):
     check("parameterization", f"{study} K = 0.5",
@@ -772,15 +772,15 @@ for study, d, pop in (("symmetric_c", 1, "pop_1"), ("asymmetric_c0_c1", 1, "pop_
           (lambda s=study, dd=d, pp=pop: glo_val(s, "noshuffle", "128", "P", dd, pp, "b")), 0.4)
 
 # Cost = 0.001 default everywhere except symmetric_c_i (where Cost is the swept axis)
-check("parameterization", "diagonal Cost = 0.001 (default)",
+check("parameterization", "symmetric_c Cost = 0.001 (default)",
       lambda: glo_val("symmetric_c", "noshuffle", "128", "P", 1, "pop_1", "Cost"), 0.001, 0.0)
 check("parameterization", "prisoners Cost = 0.001 (default)",
       lambda: glo_val("prisoners", "noshuffle", "128", "P", 1, "pop_1", "Cost"), 0.001, 0.0)
 
 # Runs = 30 in the multi-run studies; 1 in the single-run variants
-check("parameterization", "diagonal Runs = 30",
+check("parameterization", "symmetric_c Runs = 30",
       lambda: glo_val("symmetric_c", "noshuffle", "128", "P", 1, "pop_1", "Runs"), 30, None)
-check("parameterization", "mutualism Runs = 30",
+check("parameterization", "asymmetric_c0_c1 Runs = 30",
       lambda: glo_val("asymmetric_c0_c1", "noshuffle", "128", "P", 1, "pop_2", "Runs"), 30, None)
 check("parameterization", "symmetric_c_1run Runs = 1",
       lambda: glo_val("symmetric_c_1run", "noshuffle", "128", "P", 1, "pop_1", "Runs"), 1, None)

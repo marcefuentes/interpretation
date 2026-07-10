@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Analyze mutualism simulation data under the shuffle condition
+Analyze asymmetric_c0_c1 simulation data under the shuffle condition
 and compare it with the noshuffle baseline.
 K=0.5, b=0.4, c0 < c1 (upper-triangular 210-cell grid).
 """
@@ -27,7 +27,7 @@ def coop(row):
 def sorted_rows(rows):
     return sorted(rows, key=lambda r: (float(r["c0"]), float(r["c1"])))
 
-def mut_path(shuffle, gs, mech, dilemma, fset):
+def asymmetric_c0_c1_path(shuffle, gs, mech, dilemma, fset):
     cond = f"{shuffle}/{gs}"
     return os.path.join(BASE, "asymmetric_c0_c1", cond, mech, str(dilemma), "pop_2",
                         f"csv_{fset}_for_image.con")
@@ -38,7 +38,7 @@ def main():
     groupsizes = ["128", "4"]
     
     print("=" * 80)
-    print("MUTUALISM SHUFFLE VS NOSHUFFLE ANALYSIS")
+    print("ASYMMETRIC_C0_C1 SHUFFLE VS NOSHUFFLE ANALYSIS")
     print("=" * 80)
     
     # 1. Overall Cooperation comparison (Mean across all 210 cells)
@@ -51,14 +51,14 @@ def main():
             d_name = "PD (d1)" if dilemma == 1 else "SD (d2)"
             for gs in groupsizes:
                 # Load noshuffle
-                path_no_0 = mut_path("noshuffle", gs, mech, dilemma, 0)
-                path_no_1 = mut_path("noshuffle", gs, mech, dilemma, 1)
+                path_no_0 = asymmetric_c0_c1_path("noshuffle", gs, mech, dilemma, 0)
+                path_no_1 = asymmetric_c0_c1_path("noshuffle", gs, mech, dilemma, 1)
                 rows_no_0 = load_con(path_no_0)
                 rows_no_1 = load_con(path_no_1)
                 
                 # Load shuffle
-                path_sh_0 = mut_path("shuffle", gs, mech, dilemma, 0)
-                path_sh_1 = mut_path("shuffle", gs, mech, dilemma, 1)
+                path_sh_0 = asymmetric_c0_c1_path("shuffle", gs, mech, dilemma, 0)
+                path_sh_1 = asymmetric_c0_c1_path("shuffle", gs, mech, dilemma, 1)
                 rows_sh_0 = load_con(path_sh_0)
                 rows_sh_1 = load_con(path_sh_1)
                 
@@ -83,14 +83,14 @@ def main():
             d_name = "PD (d1)" if dilemma == 1 else "SD (d2)"
             for gs in groupsizes:
                 # Noshuffle
-                p_no_0 = mut_path("noshuffle", gs, mech, dilemma, 0)
-                p_no_1 = mut_path("noshuffle", gs, mech, dilemma, 1)
+                p_no_0 = asymmetric_c0_c1_path("noshuffle", gs, mech, dilemma, 0)
+                p_no_1 = asymmetric_c0_c1_path("noshuffle", gs, mech, dilemma, 1)
                 r_no_0 = load_con(p_no_0)
                 r_no_1 = load_con(p_no_1)
                 
                 # Shuffle
-                p_sh_0 = mut_path("shuffle", gs, mech, dilemma, 0)
-                p_sh_1 = mut_path("shuffle", gs, mech, dilemma, 1)
+                p_sh_0 = asymmetric_c0_c1_path("shuffle", gs, mech, dilemma, 0)
+                p_sh_1 = asymmetric_c0_c1_path("shuffle", gs, mech, dilemma, 1)
                 r_sh_0 = load_con(p_sh_0)
                 r_sh_1 = load_con(p_sh_1)
                 
@@ -121,14 +121,14 @@ def main():
         for dilemma in dilemmas:
             d_name = "PD (d1)" if dilemma == 1 else "SD (d2)"
             # Noshuffle
-            p_no_0 = mut_path("noshuffle", "128", mech, dilemma, 0)
-            p_no_1 = mut_path("noshuffle", "128", mech, dilemma, 1)
+            p_no_0 = asymmetric_c0_c1_path("noshuffle", "128", mech, dilemma, 0)
+            p_no_1 = asymmetric_c0_c1_path("noshuffle", "128", mech, dilemma, 1)
             r_no_0 = load_con(p_no_0)
             r_no_1 = load_con(p_no_1)
             
             # Shuffle
-            p_sh_0 = mut_path("shuffle", "128", mech, dilemma, 0)
-            p_sh_1 = mut_path("shuffle", "128", mech, dilemma, 1)
+            p_sh_0 = asymmetric_c0_c1_path("shuffle", "128", mech, dilemma, 0)
+            p_sh_1 = asymmetric_c0_c1_path("shuffle", "128", mech, dilemma, 1)
             r_sh_0 = load_con(p_sh_0)
             r_sh_1 = load_con(p_sh_1)
             

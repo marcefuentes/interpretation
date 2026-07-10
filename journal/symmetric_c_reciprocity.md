@@ -2,9 +2,9 @@
 
 Pure reciprocity analysis for the equal-cost Diagonal study (mechanisms **M**,
 **IM**, **IJM** — no partner-choice locus). Partner choice (P) is in
-**diagonal_partner_choice.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are
-in **diagonal_combined.md**. For asymmetric costs (c0 ≠ c1), see
-**mutualism_reciprocity.md**.
+**symmetric_c_partner_choice.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are
+in **symmetric_c_combined.md**. For asymmetric costs (c0 ≠ c1), see
+**asymmetric_c0_c1_reciprocity.md**.
 
 ## Overview
 
@@ -45,7 +45,7 @@ Key patterns:
 | M      | 0.888  | 0.963  | 0.960  | 0.949  | 0.916  | 0.182  |
 
 Snowdrift provides a cooperation floor for M. Combined mechanisms (IJMPQ)
-extend cooperation further — see **diagonal_combined.md**.
+extend cooperation further — see **symmetric_c_combined.md**.
 
 ### Folder 0, control baseline
 
@@ -142,7 +142,7 @@ PD hierarchy at high c (c = 0.30–0.40), pure reciprocity only:
 4. M (noshuffle): 0.754 at c = 0.30, 0.084 at c = 0.40
 
 Combined mechanisms (IMP, IJMPQ) and partner choice (P) extend cooperation
-much further — see **diagonal_combined.md** and **diagonal_partner_choice.md**.
+much further — see **symmetric_c_combined.md** and **symmetric_c_partner_choice.md**.
 
 ## Groupsize 4
 
@@ -219,7 +219,7 @@ Stable pairings provide sufficient history regardless of group size.
 3. M shuffle: 0.040 / 0.026
 
 Combined mechanisms rank above pure reciprocity at gs=4 — see
-**diagonal_combined.md**.
+**symmetric_c_combined.md**.
 
 ## Cooperation Boost vs. Asymmetry Effects
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Analyze new diagonal and mutualism simulation data.
+Analyze symmetric_c and asymmetric_c0_c1 simulation data.
 New parameterization: K=0.5, b=0.4 fixed, c varies from 0 to b.
 
 Dilemma folders: 0 (no dilemma), 1 (PD), 2 (snowdrift)
@@ -69,11 +69,11 @@ def payoffs(dilemma, c, k=K, b=B):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# DIAGONAL ANALYSIS
+# SYMMETRIC_C ANALYSIS
 # ══════════════════════════════════════════════════════════════════════════════
 
 print("=" * 80)
-print("DIAGONAL ANALYSIS  (K=0.5, b=0.4, c in [0,0.4])")
+print("SYMMETRIC_C ANALYSIS  (K=0.5, b=0.4, c in [0,0.4])")
 print("=" * 80)
 
 # ── 1. Payoff table ──────────────────────────────────────────────────────────
@@ -97,11 +97,10 @@ CONDITIONS = [
 
 MECHS_FULL = ["_", "M", "P", "MP", "MPQ", "IM", "IJM", "IMP", "IJMPQ"]
 MECHS_PD_ONLY = ["P", "MP", "MPQ", "IM", "IJM", "IMP", "IJMPQ"]
-POPS_HAM = ["pop_1", "pop_2", "pop_3"]
 DILEMMAS = [0, 1, 2]
 
 
-def diagonal_path(shuffle, gs, mech, dilemma, pop, fset):
+def symmetric_c_path(shuffle, gs, mech, dilemma, pop, fset):
     cond = f"{shuffle}/{gs}"
     return os.path.join(BASE, "symmetric_c", cond, mech, str(dilemma), pop,
                         f"csv_{fset}_for_image.con")
@@ -113,7 +112,7 @@ for mech in MECHS_FULL:
     for dilemma in [1]:  # PD as primary
         for pop in ["pop_1", "pop_2"]:
             for fset in [0]:
-                path = diagonal_path("shuffle", "128", mech, dilemma, pop, fset)
+                path = symmetric_c_path("shuffle", "128", mech, dilemma, pop, fset)
                 rows = load_con(path)
                 if rows is None:
                     continue
@@ -128,15 +127,15 @@ for mech in MECHS_FULL:
                 print(f"  {mech:6s} d{dilemma} {pop} fset{fset}: {' | '.join(samples)}")
         print()
 
-# ── 3. Diagonal pop_2 symmetry-breaking (fset_0 vs fset_1) ──────────────────
+# ── 3. symmetric_c pop_2 symmetry-breaking (fset_0 vs fset_1) ───────────────
 
 print("\n--- POP_2 SYMMETRY BREAKING: fset_0 (higher qBSeen) vs fset_1 ---")
 print("(shuffle_128, PD)")
 print(f"{'c':>5}  {'qB_0':>6}  {'qB_1':>6}  {'DeltaqB':>8}  {'w_0':>6}  {'w_1':>6}  {'Deltaw':>8}")
 for mech in ["_", "M", "P", "MP", "IJMPQ"]:
     dilemma = 1
-    path0 = diagonal_path("shuffle", "128", mech, dilemma, "pop_2", 0)
-    path1 = diagonal_path("shuffle", "128", mech, dilemma, "pop_2", 1)
+    path0 = symmetric_c_path("shuffle", "128", mech, dilemma, "pop_2", 0)
+    path1 = symmetric_c_path("shuffle", "128", mech, dilemma, "pop_2", 1)
     rows0 = load_con(path0)
     rows1 = load_con(path1)
     if rows0 is None or rows1 is None:
@@ -166,7 +165,7 @@ for mech in ["_", "M", "P"]:
     paths = {}
     rows_d = {}
     for d in [0, 1, 2]:
-        p = diagonal_path("shuffle", "128", mech, d, "pop_2", 0)
+        p = symmetric_c_path("shuffle", "128", mech, d, "pop_2", 0)
         rows = load_con(p)
         if rows:
             rows_d[d] = {round(float(r["c0"]), 4): r for r in rows}
@@ -184,7 +183,7 @@ print("\n--- GROUPSIZE COMPARISON (shuffle, PD, pop_2 fset_0) ---")
 print("Mech | c=0.0 / c=0.1 / c=0.2 / c=0.3 / c=0.4  [128 | 4]")
 for mech in ["_", "M", "P", "IJMPQ"]:
     for gs in ["128", "4"]:
-        path = diagonal_path("shuffle", gs, mech, 1, "pop_2", 0)
+        path = symmetric_c_path("shuffle", gs, mech, 1, "pop_2", 0)
         rows = load_con(path)
         if rows is None:
             continue
@@ -201,7 +200,7 @@ for mech in ["_", "M", "P", "IJMPQ"]:
 print("\n--- SHUFFLE VS NOSHUFFLE (gs=128, PD, pop_2 fset_0) ---")
 for mech in ["_", "M", "P", "IJMPQ"]:
     for shuffle in ["shuffle", "noshuffle"]:
-        path = diagonal_path(shuffle, "128", mech, 1, "pop_2", 0)
+        path = symmetric_c_path(shuffle, "128", mech, 1, "pop_2", 0)
         rows = load_con(path)
         if rows is None:
             continue
@@ -216,7 +215,7 @@ for mech in ["_", "M", "P", "IJMPQ"]:
 # ── 7. C1P1 / C1P0 / P1 genotype analysis (pop_1, P mechanism) ──────────────
 
 print("\n--- GENOTYPE ANALYSIS (shuffle_128, PD, P mech, pop_1, fset_0) ---")
-path = diagonal_path("shuffle", "128", "P", 1, "pop_1", 0)
+path = symmetric_c_path("shuffle", "128", "P", 1, "pop_1", 0)
 rows = load_con(path)
 if rows:
     rows = sorted_rows(rows)
@@ -232,7 +231,7 @@ if rows:
         print(f"  {c_val:>5.2f}  {qb:>7.3f}  {_c1p1:>7.3f}  {_c1p0:>7.3f}  {_c0p1:>7.3f}  {_p1:>7.3f}  {ratio:>9.1f}")
 
 print("\n--- GENOTYPE ANALYSIS (shuffle_128, PD, P mech, pop_2, fset_0 = higher qB) ---")
-path = diagonal_path("shuffle", "128", "P", 1, "pop_2", 0)
+path = symmetric_c_path("shuffle", "128", "P", 1, "pop_2", 0)
 rows = load_con(path)
 if rows:
     rows = sorted_rows(rows)
@@ -252,7 +251,7 @@ if rows:
 print("\n--- POP_3 ANALYSIS (shuffle_128, PD, P mech, pop_3) ---")
 print("fset_0 = evolving, fset_1 = fixed (25% each C0P0/C0P1/C1P0/C1P1)")
 for fset, label in [(0, "evolving"), (1, "fixed")]:
-    path = diagonal_path("shuffle", "128", "P", 1, "pop_3", fset)
+    path = symmetric_c_path("shuffle", "128", "P", 1, "pop_3", fset)
     rows = load_con(path)
     if rows is None:
         print(f"  fset_{fset}: not found")
@@ -278,7 +277,7 @@ for mech in MECHS_FULL:
     # PD only for mechs that only have PD; else also no-dilemma
     dilemmas_to_check = [0, 1, 2] if mech in ["_", "M"] else [1, 2]
     for d in dilemmas_to_check:
-        path = diagonal_path("shuffle", "128", mech, d, "pop_2", 0)
+        path = symmetric_c_path("shuffle", "128", mech, d, "pop_2", 0)
         rows = load_con(path)
         if rows is None:
             continue
@@ -288,7 +287,7 @@ for mech in MECHS_FULL:
 
 # ── 10. symmetric_c_1run temporal dynamics ──────────────────────────────────────
 
-print("\n--- DIAGONAL_1RUN: TEMPORAL DYNAMICS (shuffle_128, PD, P, pop_2) ---")
+print("\n--- SYMMETRIC_C_1RUN: TEMPORAL DYNAMICS (shuffle_128, PD, P, pop_2) ---")
 
 
 def symmetric_c_1run_path(shuffle, gs, mech, dilemma, pop, fset):
@@ -320,16 +319,16 @@ for fset in [0, 1]:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# MUTUALISM ANALYSIS
+# ASYMMETRIC_C0_C1 ANALYSIS
 # ══════════════════════════════════════════════════════════════════════════════
 
 print("\n" + "=" * 80)
-print("MUTUALISM ANALYSIS  (K=0.5, b=0.4, c0<c1, triangular grid 210 cells)")
+print("ASYMMETRIC_C0_C1 ANALYSIS  (K=0.5, b=0.4, c0<c1, triangular grid 210 cells)")
 print("=" * 80)
 print("pop_2 only; fset_0=higher qBSeen (lower-cost pop), fset_1=lower qBSeen")
 
 
-def mut_path(shuffle, gs, mech, dilemma, fset):
+def asymmetric_c0_c1_path(shuffle, gs, mech, dilemma, fset):
     cond = f"{shuffle}/{gs}"
     return os.path.join(BASE, "asymmetric_c0_c1", cond, mech, str(dilemma), "pop_2",
                         f"csv_{fset}_for_image.con")
@@ -339,7 +338,7 @@ def mut_path(shuffle, gs, mech, dilemma, fset):
 
 print("\n--- COOPERATION LANDSCAPE (noshuffle_128, PD, M mech) ---")
 print("c0/c1 bins: [0-0.1] [0.1-0.2] [0.2-0.3] [0.3-0.4]")
-path0 = mut_path("noshuffle", "128", "M", 1, 0)
+path0 = asymmetric_c0_c1_path("noshuffle", "128", "M", 1, 0)
 rows0 = load_con(path0)
 if rows0:
     # Show cooperation at selected (c0, c1) pairs
@@ -368,8 +367,8 @@ if rows0:
 print("\n--- ROLE SPLIT: fset_0 > fset_1 fraction (PD, noshuffle_128, P mech) ---")
 for mech in ["_", "M", "P", "MP", "IJMPQ"]:
     for dilemma in [1, 2]:
-        path0 = mut_path("noshuffle", "128", mech, dilemma, 0)
-        path1 = mut_path("noshuffle", "128", mech, dilemma, 1)
+        path0 = asymmetric_c0_c1_path("noshuffle", "128", mech, dilemma, 0)
+        path1 = asymmetric_c0_c1_path("noshuffle", "128", mech, dilemma, 1)
         rows0 = load_con(path0)
         rows1 = load_con(path1)
         if rows0 is None or rows1 is None:
@@ -388,8 +387,8 @@ print("\n--- EXPLOITATION: correlation(ΔqBSeen, Δfitness) ---")
 for mech in ["_", "M", "P", "IJMPQ"]:
     for dilemma in [1]:
         for shuffle in ["noshuffle", "shuffle"]:
-            path0 = mut_path(shuffle, "128", mech, dilemma, 0)
-            path1 = mut_path(shuffle, "128", mech, dilemma, 1)
+            path0 = asymmetric_c0_c1_path(shuffle, "128", mech, dilemma, 0)
+            path1 = asymmetric_c0_c1_path(shuffle, "128", mech, dilemma, 1)
             rows0 = load_con(path0)
             rows1 = load_con(path1)
             if rows0 is None or rows1 is None:
@@ -406,17 +405,16 @@ for mech in ["_", "M", "P", "IJMPQ"]:
             c = corr(dqb, dw)
             print(f"  {mech:6s} d{dilemma} {shuffle:10s}: corr(ΔqBSeen, Δfitness) = {c:.3f}")
 
-# ── 14. Mechanism comparison in mutualism (along diagonal slice) ──────────────
+# ── 14. Mechanism comparison at fixed asymmetric cells ─────────────────────
 
-print("\n--- MECHANISM COMPARISON: diagonal slice c0=c1 (noshuffle_128, PD, fset_0) ---")
-# The diagonal study is c0=c1; for mutualism, the diagonal is where c0=c1
-# but in mutualism the triangular grid has c0 < c1 always
+print("\n--- MECHANISM COMPARISON: sample asymmetric cells (noshuffle_128, PD) ---")
+# symmetric_c is the c0=c1 study; asymmetric_c0_c1 keeps c0 < c1 on the triangle.
 # So let's instead compare mechanisms at fixed c0=0.1, c1=0.3 (asymmetric) and c0=0.1, c1=0.2 (mild)
 print("  Sample cells: (c0=0.1, c1=0.3) and (c0=0.1, c1=0.2)")
 for mech in ["_", "M", "P", "MP", "MPQ", "IMP", "IJMPQ"]:
     for dilemma in [1, 2]:
         for fset in [0, 1]:
-            path = mut_path("noshuffle", "128", mech, dilemma, fset)
+            path = asymmetric_c0_c1_path("noshuffle", "128", mech, dilemma, fset)
             rows = load_con(path)
             if rows is None:
                 continue
@@ -426,9 +424,9 @@ for mech in ["_", "M", "P", "MP", "MPQ", "IMP", "IJMPQ"]:
             print(f"  {mech:6s} d{dilemma} fset{fset}: (0.1,0.3)={v1:.3f}  (0.1,0.2)={v2:.3f}")
     print()
 
-# ── 15. Mutualism groupsize/shuffle effects ───────────────────────────────────
+# ── 15. asymmetric_c0_c1 groupsize/shuffle effects ───────────────────────────
 
-print("\n--- MUTUALISM GROUPSIZE/SHUFFLE EFFECTS (PD, M mech, fset_0) ---")
+print("\n--- ASYMMETRIC_C0_C1 GROUPSIZE/SHUFFLE EFFECTS (PD, M mech, fset_0) ---")
 sample_cells = [(0.02, 0.38), (0.1, 0.2), (0.2, 0.38)]
 print(f"  {'cond':20s}", end="")
 for sc in sample_cells:
@@ -436,7 +434,7 @@ for sc in sample_cells:
 print()
 for shuffle in ["shuffle", "noshuffle"]:
     for gs in ["128", "4"]:
-        path = mut_path(shuffle, gs, "M", 1, 0)
+        path = asymmetric_c0_c1_path(shuffle, gs, "M", 1, 0)
         rows = load_con(path)
         if rows is None:
             continue
@@ -453,16 +451,16 @@ for shuffle in ["shuffle", "noshuffle"]:
 
 # ── 16. asymmetric_c0_c1_1run temporal dynamics ─────────────────────────────────────
 
-print("\n--- MUTUALISM_1RUN: TEMPORAL DYNAMICS (noshuffle_128, PD, M, fset_0) ---")
+print("\n--- ASYMMETRIC_C0_C1_1RUN: TEMPORAL DYNAMICS (noshuffle_128, PD, M, fset_0) ---")
 
 
-def mut_1run_path(shuffle, gs, mech, dilemma, fset):
+def asymmetric_c0_c1_1run_path(shuffle, gs, mech, dilemma, fset):
     cond = f"{shuffle}/{gs}"
     return os.path.join(BASE, "asymmetric_c0_c1_1run", cond, mech, str(dilemma), "pop_2",
                         f"csv_{fset}_for_movie.con")
 
 
-path = mut_1run_path("noshuffle", "128", "M", 1, 0)
+path = asymmetric_c0_c1_1run_path("noshuffle", "128", "M", 1, 0)
 rows = load_con(path)
 if rows:
     by_c = defaultdict(list)

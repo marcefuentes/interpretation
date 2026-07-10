@@ -1,4 +1,4 @@
-# Mutualism Cost — Information Price on the Asymmetric Branch
+# asymmetric_c1_i — Information Cost on the Asymmetric Branch
 
 asymmetric_c1_i extends the information-cost axis to the branch where the
 cooperator/exploiter roles are already pinned by payoff asymmetry. It uses the
@@ -7,7 +7,7 @@ Cost jointly with c1 over the triangle Cost + c1 <= 0.40, c1 > c0. The cell key
 is therefore (Cost, c1), with pop_0 the cheap side and pop_1 the expensive side.
 
 This is the missing asymmetric counterpart to symmetric_c_i. On the diagonal
-c0 = c1, symmetric_c_i asks how the price of the machinery interacts with the
+c0 = c1, symmetric_c_i asks how the information cost interacts with the
 demand for that machinery in symmetric populations. asymmetric_c1_i asks the same
 question when the cheap population is already the natural cooperator and the
 expensive one the natural exploiter.
@@ -84,7 +84,7 @@ above qBSeen = 0.5:
 | IJMPQ     | 0   | 0.34   | 0.26      | 0.18      | 0.12      |
 | IJMPQ     | 1   | 0.22   | 0.18      | 0.12      | none      |
 
-This is the asymmetric version of the price-demand interaction from symmetric_c_i:
+This is the asymmetric version of the information-cost versus cooperation-cost interaction from symmetric_c_i:
 raising Cost retreats the demand ceiling. But the retreat is steeper here because
 the demand never falls to zero. At Cost = 0.12, IJMPQ still has a surviving cheap
 side at c1 = 0.12 (pop_0 = 0.570), while the expensive side is already below 0.5
@@ -123,7 +123,7 @@ Cost = 0.20).
 
 ## Control decomposition: Cost erodes M1 supply-side, the dilemma decides the damage
 
-As in symmetric_c_i, the control isolates the pure machinery tax. Mechanism M is
+As in symmetric_c_i, the control isolates the pure information cost. Mechanism M is
 enough to show it:
 
 | Cost | control pop_0 qB | control pop_0 M1 | PD pop_0 qB | PD pop_0 M1 |
@@ -173,7 +173,7 @@ not inherit a stable high-cooperation regime. Once P1 or M1 is mostly gone, the
 population falls with it. This is the clean contrast with symmetric_c_i: the
 diagonal has a harmless-shedding region; the asymmetric branch does not.
 
-## Snowdrift buffers the price only on the cheap side
+## Snowdrift buffers information cost only on the cheap side
 
 Snowdrift again raises the floor, but asymmetrically. The low-cost population is
 almost Cost-proof, while the high-cost population remains stuck in the role split:
@@ -230,6 +230,6 @@ late erosion but whether a cell establishes a defended state at all.
 symmetric_c_i showed that information cost can be shed harmlessly when the game
 does not still demand enforcement. asymmetric_c1_i shows the complementary case:
 once one population is locked at c0 = 0.10 and the other is costlier still, the
-price of the machinery is paid directly in behavior. Cost compresses the
+information cost is paid directly in behavior. Cost compresses the
 cooperator/exploiter split, retreats the c1 ceiling, and largely removes the
 behavior-mechanism decoupling that made the diagonal Cost axis look soft.

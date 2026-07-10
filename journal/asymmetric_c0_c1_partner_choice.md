@@ -2,8 +2,8 @@
 
 Partner-choice analysis for the two-population mutualism study (mechanism **P**
 only — no reciprocity locus). Pure reciprocity (M) is in
-**mutualism_reciprocity.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are in
-**mutualism_combined.md**.
+**asymmetric_c0_c1_reciprocity.md**; combined mechanisms (MP, MPQ, IMP, IJMPQ) are in
+**asymmetric_c0_c1_combined.md**.
 
 ## Overview
 
@@ -333,7 +333,7 @@ cost cells. Near the diagonal, the threshold drops to c0 ≈ 0.08:
 | 0.20 | 0.22 | 0.026 | 0.636  |
 | 0.30 | 0.32 | 0.016 | 0.500  |
 
-This mirrors the **diagonal_partner_choice.md** gs=4 finding: the chooser bottleneck is
+This mirrors the **symmetric_c_partner_choice.md** gs=4 finding: the chooser bottleneck is
 catastrophically worsened by small groups, and partner choice becomes
 effectively non-functional throughout most of the parameter space.
 

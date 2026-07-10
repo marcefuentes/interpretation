@@ -2,8 +2,8 @@
 
 Analysis of mechanisms that combine partner choice with reciprocity: **MP**,
 **MPQ**, **IMP**, and **IJMPQ**. Pure partner choice (P) is in
-**mutualism_partner_choice.md**; pure reciprocity (M, IM, IJM) is in
-**mutualism_reciprocity.md**.
+**asymmetric_c0_c1_partner_choice.md**; pure reciprocity (M, IM, IJM) is in
+**asymmetric_c0_c1_reciprocity.md**.
 
 | Mechanism | Loci        | Components                          |
 | --------- | ----------- | ----------------------------------- |
@@ -12,7 +12,7 @@ Analysis of mechanisms that combine partner choice with reciprocity: **MP**,
 | IMP       | C, I, M, P  | Indirect + direct reciprocity + PC  |
 | IJMPQ     | C, I, J, M, P, Q | Full stack with lifetime memory |
 
-Diagonal (c0 = c1) is the equal-cost special case; see **diagonal_combined.md**.
+Diagonal (c0 = c1) is the equal-cost special case; see **symmetric_c_combined.md**.
 
 ## Overview
 
