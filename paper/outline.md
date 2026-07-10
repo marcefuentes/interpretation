@@ -39,10 +39,10 @@ cooperator/exploiter split.
 | ------------- | -------------------- |
 | Introduction | framework.md |
 | Methods: model, payoffs, grid | parameterization.md, framework.md; symmetric_c.md and asymmetric_c0_c1.md (noise floor, replicates) |
-| Results 1: level of cooperation | synthesis.md, prisoners_calibration.md, snowdrift_calibration.md, diagonal_*.md, mutualism_*.md, symmetric_c_cost.md, asymmetric_c1_cost.md |
-| Results 2: between-population asymmetry | mutualism_partner_choice.md, mutualism_combined.md, asymmetric_c1_cost.md, prisoners_partner_choice.md, synthesis.md |
-| Results 3: composition / route to cooperation | symmetric_c_cost.md, asymmetric_c1_cost.md, diagonal_reciprocity.md, mutualism_reciprocity.md, synthesis.md |
-| Discussion | synthesis.md, symmetric_c_cost.md, asymmetric_c1_cost.md, framework.md |
+| Results 1: level of cooperation | synthesis.md, prisoners_calibration.md, snowdrift_calibration.md, diagonal_*.md, mutualism_*.md, symmetric_c_i.md, asymmetric_c1_i.md |
+| Results 2: between-population asymmetry | mutualism_partner_choice.md, mutualism_combined.md, asymmetric_c1_i.md, prisoners_partner_choice.md, synthesis.md |
+| Results 3: composition / route to cooperation | symmetric_c_i.md, asymmetric_c1_i.md, diagonal_reciprocity.md, mutualism_reciprocity.md, synthesis.md |
+| Discussion | synthesis.md, symmetric_c_i.md, asymmetric_c1_i.md, framework.md |
 
 ## Status
 

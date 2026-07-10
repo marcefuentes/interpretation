@@ -496,11 +496,11 @@ check("snowdrift", "PC: pop_2 fitness-inverted cells = 172", lambda: sd_paradox(
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# SYMMETRIC_COST — symmetric_c_cost.md (information-cost axis; cell key = (Cost, c0))
+# SYMMETRIC_COST — symmetric_c_i.md (information-cost axis; cell key = (Cost, c0))
 # ════════════════════════════════════════════════════════════════════════════
 
 def hcpath(sh, gs, m, d, pop, f):
-    return f"{BASE}/symmetric_c_cost/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
+    return f"{BASE}/symmetric_c_i/{sh}/{gs}/{m}/{d}/{pop}/csv_{f}_for_image.con"
 
 
 def hc_cell(rows, cost, c, col="qBSeen"):
@@ -520,48 +520,48 @@ def hc_cell_row(rows, cost, c):
 # pure information-cost axis (c=0): gentle collapse, combined most robust
 for m, exp in (("_", 0.517), ("M", 0.627), ("P", 0.539), ("MP", 0.654),
                ("MPQ", 0.715), ("IMP", 0.719), ("IJMPQ", 0.810)):
-    check("symmetric_c_cost", f"Cost=0.40 c=0 {m} qBSeen = {exp:.3f}",
+    check("symmetric_c_i", f"Cost=0.40 c=0 {m} qBSeen = {exp:.3f}",
           (lambda mm=m: hc_cell(load(hcpath("noshuffle", "128", mm, 1, "pop_1", 0)), 0.40, 0.0)), exp)
 
-check("symmetric_c_cost", "IJMPQ Cost=0.20 c=0 = 0.886",
+check("symmetric_c_i", "IJMPQ Cost=0.20 c=0 = 0.886",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.0), 0.886)
 
 # sanity: Cost=0 edge reproduces standard diagonal (Cost=0.001) at c=0.20
-check("symmetric_c_cost", "sanity IJMPQ Cost=0 c=0.20 = 0.951",
+check("symmetric_c_i", "sanity IJMPQ Cost=0 c=0.20 = 0.951",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.0, 0.20), 0.951)
 
 # machinery erosion: enforcement allele selected out along the Cost axis (c=0)
-check("symmetric_c_cost", "P1 allele c=0 Cost=0 = 0.671",
+check("symmetric_c_i", "P1 allele c=0 Cost=0 = 0.671",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.0, 0.0), "P1"), 0.671, 0.01)
-check("symmetric_c_cost", "P1 allele c=0 Cost=0.40 = 0.020",
+check("symmetric_c_i", "P1 allele c=0 Cost=0.40 = 0.020",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.40, 0.0), "P1"), 0.020, 0.01)
-check("symmetric_c_cost", "M1 allele c=0 Cost=0.40 = 0.018",
+check("symmetric_c_i", "M1 allele c=0 Cost=0.40 = 0.018",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 1, "pop_1", 0)), 0.40, 0.0), "M1"), 0.018, 0.01)
 
 # control (dilemma 0) decomposes cost from demand: machinery erodes at ~same rate
 # as the PD, but behavior stays pinned at the ceiling (no enforcement needed).
-check("symmetric_c_cost", "control M1 c=0 Cost=0 = 0.383",
+check("symmetric_c_i", "control M1 c=0 Cost=0 = 0.383",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.0, 0.0), "M1"), 0.383, 0.01)
-check("symmetric_c_cost", "control M1 c=0 Cost=0.40 = 0.023 (erodes like PD)",
+check("symmetric_c_i", "control M1 c=0 Cost=0.40 = 0.023 (erodes like PD)",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), "M1"), 0.023, 0.01)
-check("symmetric_c_cost", "control qBSeen c=0 Cost=0 = 0.968 (ceiling)",
+check("symmetric_c_i", "control qBSeen c=0 Cost=0 = 0.968 (ceiling)",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.0, 0.0), 0.968)
-check("symmetric_c_cost", "control qBSeen c=0 Cost=0.40 = 0.978 (pinned; no collapse)",
+check("symmetric_c_i", "control qBSeen c=0 Cost=0.40 = 0.978 (pinned; no collapse)",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), 0.978)
-check("symmetric_c_cost", "control C1M0 c=0 Cost=0.40 = 0.956 (free-coop niche)",
+check("symmetric_c_i", "control C1M0 c=0 Cost=0.40 = 0.956 (free-coop niche)",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 0, "pop_1", 0)), 0.40, 0.0), "C1", "M0"), 0.956, 0.01)
 
 # snowdrift (dilemma 2) buffers information cost: M holds high at Cost=0.40
-check("symmetric_c_cost", "M dilemma2 Cost=0.40 c=0 = 0.870",
+check("symmetric_c_i", "M dilemma2 Cost=0.40 c=0 = 0.870",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 2, "pop_1", 0)), 0.40, 0.0), 0.870)
 
 # interaction: information cost lowers the c-collapse threshold (IJMPQ interior)
-check("symmetric_c_cost", "IJMPQ Cost=0.20 c=0.16 collapsed = 0.049",
+check("symmetric_c_i", "IJMPQ Cost=0.20 c=0.16 collapsed = 0.049",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.16), 0.049)
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# MUTUALISM_COST — asymmetric_c1_cost.md (information cost under built-in asymmetry;
+# MUTUALISM_COST — asymmetric_c1_i.md (information cost under built-in asymmetry;
 # cell key = (Cost, c1), with c0 fixed at 0.10)
 # ════════════════════════════════════════════════════════════════════════════
 
@@ -585,13 +585,13 @@ def mc_cell_row(rows, cost, c1):
 
 
 def mc_cost_mean(m, d, f, cost, sh="noshuffle", gs="128", col="qBSeen"):
-    rows = load(mcpath("asymmetric_c1_cost", sh, gs, m, d, f))
+    rows = load(mcpath("asymmetric_c1_i", sh, gs, m, d, f))
     vals = [float(r[col]) for r in rows if abs(float(r["Cost"]) - cost) < 0.005]
     return sum(vals) / len(vals)
 
 
 def mc_threshold(m, f, cost, sh="noshuffle", gs="128"):
-    rows = load(mcpath("asymmetric_c1_cost", sh, gs, m, 1, f))
+    rows = load(mcpath("asymmetric_c1_i", sh, gs, m, 1, f))
     vals = sorted((float(r["c1"]), float(r["qBSeen"])) for r in rows
                   if abs(float(r["Cost"]) - cost) < 0.005)
     good = [c1 for c1, q in vals if q >= 0.5]
@@ -599,8 +599,8 @@ def mc_threshold(m, f, cost, sh="noshuffle", gs="128"):
 
 
 def mc_gap_mean(m, cost, col):
-    r0 = load(mcpath("asymmetric_c1_cost", "noshuffle", "128", m, 1, 0))
-    r1 = load(mcpath("asymmetric_c1_cost", "noshuffle", "128", m, 1, 1))
+    r0 = load(mcpath("asymmetric_c1_i", "noshuffle", "128", m, 1, 0))
+    r1 = load(mcpath("asymmetric_c1_i", "noshuffle", "128", m, 1, 1))
     m1 = {(round(float(r["Cost"]), 3), round(float(r["c1"]), 3)): r for r in r1}
     vals = []
     for r in r0:
@@ -612,8 +612,8 @@ def mc_gap_mean(m, cost, col):
 
 
 def mc_corr_inv(m):
-    r0 = load(mcpath("asymmetric_c1_cost", "noshuffle", "128", m, 1, 0))
-    r1 = load(mcpath("asymmetric_c1_cost", "noshuffle", "128", m, 1, 1))
+    r0 = load(mcpath("asymmetric_c1_i", "noshuffle", "128", m, 1, 0))
+    r1 = load(mcpath("asymmetric_c1_i", "noshuffle", "128", m, 1, 1))
     m1 = {(round(float(r["Cost"]), 3), round(float(r["c1"]), 3)): r for r in r1}
     dq, dw, inv = [], [], 0
     for r in r0:
@@ -632,10 +632,10 @@ def mc_m1_suppressed_total():
     for sh in ("noshuffle", "shuffle"):
         for gs in ("128", "4"):
             for d in (0, 1, 2):
-                rM0 = load(mcpath("asymmetric_c1_cost", sh, gs, "M", d, 0))
-                rM1 = load(mcpath("asymmetric_c1_cost", sh, gs, "M", d, 1))
-                rC0 = load(mcpath("asymmetric_c1_cost", sh, gs, "_", d, 0))
-                rC1 = load(mcpath("asymmetric_c1_cost", sh, gs, "_", d, 1))
+                rM0 = load(mcpath("asymmetric_c1_i", sh, gs, "M", d, 0))
+                rM1 = load(mcpath("asymmetric_c1_i", sh, gs, "M", d, 1))
+                rC0 = load(mcpath("asymmetric_c1_i", sh, gs, "_", d, 0))
+                rC1 = load(mcpath("asymmetric_c1_i", sh, gs, "_", d, 1))
                 for a, c in zip(rM0, rC0):
                     if allele(a, "M1") < allele(c, "M1"):
                         total += 1
@@ -646,13 +646,13 @@ def mc_m1_suppressed_total():
 
 
 def mc_cost_allele_mean(m, d, f, cost, token, sh="noshuffle", gs="128"):
-    rows = load(mcpath("asymmetric_c1_cost", sh, gs, m, d, f))
+    rows = load(mcpath("asymmetric_c1_i", sh, gs, m, d, f))
     vals = [allele(r, token) for r in rows if abs(float(r["Cost"]) - cost) < 0.005]
     return sum(vals) / len(vals)
 
 
 def mc_time_q(mech, cost, c1, f, t):
-    rows = load(mcpath("asymmetric_c1_cost_1run", "noshuffle", "128", mech, 1, f, movie=True))
+    rows = load(mcpath("asymmetric_c1_i_1run", "noshuffle", "128", mech, 1, f, movie=True))
     for r in rows:
         if (abs(float(r["Cost"]) - cost) < 0.005
                 and abs(float(r["c1"]) - c1) < 0.005
@@ -662,66 +662,66 @@ def mc_time_q(mech, cost, c1, f, t):
 
 
 # Cost=0 sample points reproduce the mutualism c0=0.10 slice to within noise.
-check("asymmetric_c1_cost", "sanity P Cost=0 c1=0.20 Pop_0 = 0.603",
-      lambda: mc_cell(load(mcpath("asymmetric_c1_cost", "noshuffle", "128", "P", 1, 0)), 0.0, 0.20), 0.603)
-check("asymmetric_c1_cost", "sanity P Cost=0 c1=0.20 Pop_1 = 0.178",
-      lambda: mc_cell(load(mcpath("asymmetric_c1_cost", "noshuffle", "128", "P", 1, 1)), 0.0, 0.20), 0.178)
+check("asymmetric_c1_i", "sanity P Cost=0 c1=0.20 Pop_0 = 0.603",
+      lambda: mc_cell(load(mcpath("asymmetric_c1_i", "noshuffle", "128", "P", 1, 0)), 0.0, 0.20), 0.603)
+check("asymmetric_c1_i", "sanity P Cost=0 c1=0.20 Pop_1 = 0.178",
+      lambda: mc_cell(load(mcpath("asymmetric_c1_i", "noshuffle", "128", "P", 1, 1)), 0.0, 0.20), 0.178)
 
 # Cost immediately compresses partner-choice asymmetry and exploitative fitness gap.
-check("asymmetric_c1_cost", "P mean dq at Cost=0 = 0.329",
+check("asymmetric_c1_i", "P mean dq at Cost=0 = 0.329",
       lambda: mc_gap_mean("P", 0.0, "qBSeen"), 0.329)
-check("asymmetric_c1_cost", "P mean dw at Cost=0 = -0.148",
+check("asymmetric_c1_i", "P mean dw at Cost=0 = -0.148",
       lambda: mc_gap_mean("P", 0.0, "wmean"), -0.148)
-check("asymmetric_c1_cost", "P mean dq at Cost=0.20 = 0.017",
+check("asymmetric_c1_i", "P mean dq at Cost=0.20 = 0.017",
       lambda: mc_gap_mean("P", 0.20, "qBSeen"), 0.017)
-check("asymmetric_c1_cost", "P mean dw at Cost=0.20 = -0.006",
+check("asymmetric_c1_i", "P mean dw at Cost=0.20 = -0.006",
       lambda: mc_gap_mean("P", 0.20, "wmean"), -0.006)
-check("asymmetric_c1_cost", "P corr(dq,dw) = -0.998",
+check("asymmetric_c1_i", "P corr(dq,dw) = -0.998",
       lambda: mc_corr_inv("P")[0], -0.998)
-check("asymmetric_c1_cost", "P fitness-inverted cells = 120", lambda: mc_corr_inv("P")[1], 120, None)
+check("asymmetric_c1_i", "P fitness-inverted cells = 120", lambda: mc_corr_inv("P")[1], 120, None)
 
 # No soft pure-Cost edge: even modest Cost collapses M on the asymmetric branch.
-check("asymmetric_c1_cost", "M mean Pop_0 at Cost=0 = 0.689",
+check("asymmetric_c1_i", "M mean Pop_0 at Cost=0 = 0.689",
       lambda: mc_cost_mean("M", 1, 0, 0.0), 0.689)
-check("asymmetric_c1_cost", "M mean Pop_1 at Cost=0 = 0.641",
+check("asymmetric_c1_i", "M mean Pop_1 at Cost=0 = 0.641",
       lambda: mc_cost_mean("M", 1, 1, 0.0), 0.641)
-check("asymmetric_c1_cost", "M mean Pop_0 at Cost=0.08 = 0.061",
+check("asymmetric_c1_i", "M mean Pop_0 at Cost=0.08 = 0.061",
       lambda: mc_cost_mean("M", 1, 0, 0.08), 0.061)
-check("asymmetric_c1_cost", "M mean Pop_1 at Cost=0.08 = 0.032",
+check("asymmetric_c1_i", "M mean Pop_1 at Cost=0.08 = 0.032",
       lambda: mc_cost_mean("M", 1, 1, 0.08), 0.032)
 
 # Combined mechanisms lose c1 ceiling steadily as Cost rises.
-check("asymmetric_c1_cost", "IJMPQ Pop_0 threshold Cost=0 = c1 0.34",
+check("asymmetric_c1_i", "IJMPQ Pop_0 threshold Cost=0 = c1 0.34",
       lambda: mc_threshold("IJMPQ", 0, 0.0), 0.34)
-check("asymmetric_c1_cost", "IJMPQ Pop_0 threshold Cost=0.08 = c1 0.18",
+check("asymmetric_c1_i", "IJMPQ Pop_0 threshold Cost=0.08 = c1 0.18",
       lambda: mc_threshold("IJMPQ", 0, 0.08), 0.18)
-check("asymmetric_c1_cost", "IJMPQ Pop_1 threshold Cost=0 = c1 0.22",
+check("asymmetric_c1_i", "IJMPQ Pop_1 threshold Cost=0 = c1 0.22",
       lambda: mc_threshold("IJMPQ", 1, 0.0), 0.22)
-check("asymmetric_c1_cost", "IJMPQ Pop_1 c1=0.12 at Cost=0.12 = 0.331",
-      lambda: mc_cell(load(mcpath("asymmetric_c1_cost", "noshuffle", "128", "IJMPQ", 1, 1)), 0.12, 0.12), 0.331)
-check("asymmetric_c1_cost", "IJMPQ Pop_1 c1=0.14 at Cost=0.12 = 0.263",
-      lambda: mc_cell(load(mcpath("asymmetric_c1_cost", "noshuffle", "128", "IJMPQ", 1, 1)), 0.12, 0.14), 0.263)
+check("asymmetric_c1_i", "IJMPQ Pop_1 c1=0.12 at Cost=0.12 = 0.331",
+      lambda: mc_cell(load(mcpath("asymmetric_c1_i", "noshuffle", "128", "IJMPQ", 1, 1)), 0.12, 0.12), 0.331)
+check("asymmetric_c1_i", "IJMPQ Pop_1 c1=0.14 at Cost=0.12 = 0.263",
+      lambda: mc_cell(load(mcpath("asymmetric_c1_i", "noshuffle", "128", "IJMPQ", 1, 1)), 0.12, 0.14), 0.263)
 
 # Control decomposition: Cost erodes M1 supply-side, but only the PD pays in behavior.
-check("asymmetric_c1_cost", "M control Pop_0 mean qB at Cost=0.20 = 0.974",
+check("asymmetric_c1_i", "M control Pop_0 mean qB at Cost=0.20 = 0.974",
       lambda: mc_cost_mean("M", 0, 0, 0.20), 0.974)
-check("asymmetric_c1_cost", "M control Pop_0 mean M1 at Cost=0.20 = 0.040",
+check("asymmetric_c1_i", "M control Pop_0 mean M1 at Cost=0.20 = 0.040",
       lambda: mc_cost_allele_mean("M", 0, 0, 0.20, "M1"), 0.040, 0.01)
-check("asymmetric_c1_cost", "M PD Pop_0 mean qB at Cost=0.20 = 0.053",
+check("asymmetric_c1_i", "M PD Pop_0 mean qB at Cost=0.20 = 0.053",
       lambda: mc_cost_mean("M", 1, 0, 0.20), 0.053)
-check("asymmetric_c1_cost", "M suppressed below control in 2001 cell-conditions",
+check("asymmetric_c1_i", "M suppressed below control in 2001 cell-conditions",
       mc_m1_suppressed_total, 2001, None)
 
 # Snowdrift buffers Cost on the low-cost side but not the high-cost side.
-check("asymmetric_c1_cost", "P snowdrift Pop_0 mean at Cost=0.28 = 0.917",
+check("asymmetric_c1_i", "P snowdrift Pop_0 mean at Cost=0.28 = 0.917",
       lambda: mc_cost_mean("P", 2, 0, 0.28), 0.917)
-check("asymmetric_c1_cost", "P snowdrift Pop_1 mean at Cost=0.28 = 0.197",
+check("asymmetric_c1_i", "P snowdrift Pop_1 mean at Cost=0.28 = 0.197",
       lambda: mc_cost_mean("P", 2, 1, 0.28), 0.197)
 
 # Temporal snapshots: established and collapsed cells are already set by the first sample.
-check("asymmetric_c1_cost", "1run P (0,0.20) Pop_0 final = 0.664",
+check("asymmetric_c1_i", "1run P (0,0.20) Pop_0 final = 0.664",
       lambda: mc_time_q("P", 0.0, 0.20, 0, 1048576), 0.664, 0.01)
-check("asymmetric_c1_cost", "1run P (0.12,0.20) Pop_0 first snapshot collapsed = 0.043",
+check("asymmetric_c1_i", "1run P (0.12,0.20) Pop_0 first snapshot collapsed = 0.043",
       lambda: mc_time_q("P", 0.12, 0.20, 0, 131072), 0.043, 0.01)
 
 
@@ -763,15 +763,15 @@ def glo_val(study, sh, gs, m, d, pop, key):
     return float(meta[key]) if meta and key in meta else float("nan")
 
 
-# K = 0.5 and b = 0.4 in the cost-parameterized studies (diagonal, mutualism, symmetric_c_cost)
+# K = 0.5 and b = 0.4 in the cost-parameterized studies (diagonal, mutualism, symmetric_c_i)
 for study, d, pop in (("symmetric_c", 1, "pop_1"), ("asymmetric_c0_c1", 1, "pop_2"),
-                      ("symmetric_c_cost", 1, "pop_1")):
+                      ("symmetric_c_i", 1, "pop_1")):
     check("parameterization", f"{study} K = 0.5",
           (lambda s=study, dd=d, pp=pop: glo_val(s, "noshuffle", "128", "P", dd, pp, "K")), 0.5)
     check("parameterization", f"{study} b = 0.4",
           (lambda s=study, dd=d, pp=pop: glo_val(s, "noshuffle", "128", "P", dd, pp, "b")), 0.4)
 
-# Cost = 0.001 default everywhere except symmetric_c_cost (where Cost is the swept axis)
+# Cost = 0.001 default everywhere except symmetric_c_i (where Cost is the swept axis)
 check("parameterization", "diagonal Cost = 0.001 (default)",
       lambda: glo_val("symmetric_c", "noshuffle", "128", "P", 1, "pop_1", "Cost"), 0.001, 0.0)
 check("parameterization", "prisoners Cost = 0.001 (default)",

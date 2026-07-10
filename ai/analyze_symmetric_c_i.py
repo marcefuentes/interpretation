@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Analyze the symmetric_c_cost study: how cooperation depends on the *information
+Analyze the symmetric_c_i study: how cooperation depends on the *information
 cost* of carrying reciprocity / partner-choice machinery.
 
 Standard diagonal fixes the per-round module tax at Cost = 0.001 (negligible)
-and sweeps the cooperation cost c in [0, 0.4]. symmetric_c_cost adds a second axis:
+and sweeps the cooperation cost c in [0, 0.4]. symmetric_c_i adds a second axis:
 Cost (the "information cost" of a module family) is swept jointly with c over a
 triangular grid constrained to Cost + c <= 0.4 (= b). 231 cells:
 Cost in {0, 0.02, ..., 0.4}; for each Cost, c in {0, 0.02, ..., 0.4 - Cost}.
@@ -26,7 +26,7 @@ from collections import defaultdict
 
 from trps_io import allele, load  # noqa: F401
 
-HC = os.path.expanduser("~/results/symmetric_c_cost")
+HC = os.path.expanduser("~/results/symmetric_c_i")
 HAM = os.path.expanduser("~/results/symmetric_c")
 
 # families touched by each mechanism -> per-round tax multiplier
@@ -71,7 +71,7 @@ print("Primary: pop_1, PD (d1), noshuffle, gs=128, fset0.  cell=(Cost,c).")
 print("=" * 78)
 
 # ── A. sanity: Cost=0 column reproduces standard diagonal (Cost=0.001) ────────
-print("\n--- A. SANITY: symmetric_c_cost Cost=0 slice vs standard diagonal (Cost=0.001) ---")
+print("\n--- A. SANITY: symmetric_c_i Cost=0 slice vs standard diagonal (Cost=0.001) ---")
 print("qBSeen along c (pop_1, PD, noshuffle, gs=128, fset0)")
 print(f"{'mech':6}{'c':>6}  {'HC Cost=0':>10}  {'diagonal':>9}  {'diff':>7}")
 for mech in MECHS:
