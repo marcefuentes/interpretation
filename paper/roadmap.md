@@ -13,8 +13,9 @@ From the current scaffold to a finished manuscript. Companion to outline.md
 - **Venue / type:** full research article, specialist theoretical-biology / evolution
   journal. Implies ~5-7 main figures, a complete Methods, and a supplement.
 - **Scope:** one manuscript — main text = symmetric_c + asymmetric_c0_c1 (baseline demand and
-  two-population roles) + symmetric_c_i + asymmetric_c1_i (information cost vs cooperation cost in symmetric
-  and asymmetric settings); supplement = robustness panels from the primary studies
+  two-population roles) + symmetric_c_i + asymmetric_c1_i + asymmetric_i0_i1
+  (information cost vs cooperation cost; demand, supply, and symmetric-c Cost
+  asymmetry); supplement = robustness panels from the primary studies
   (shuffle, groupsize, dilemma-0 control) plus an attribution table.
 - **Calibration studies (prisoners, snowdrift):** auxiliary only. They justify the
   payoff-gap attributions (M risk-limited, P limited by R − P, combined reward-limited)
@@ -34,11 +35,12 @@ From the current scaffold to a finished manuscript. Companion to outline.md
    in one population (symmetric_c pop_1) and two (symmetric_c pop_2 and asymmetric_c0_c1 pop_2),
    including how partner choice creates or converts the cooperator/exploiter asymmetry.
 3. Headline: make the machinery itself costly (symmetric_c_i; asymmetric_c1_i on the
-   asymmetric branch). Information cost is soft alone but compounds with cooperation
-   cooperation cost (information cost starves the defence cooperation cost requires), and information cost erodes
+   demand-asymmetric branch; asymmetric_i0_i1 on the supply-asymmetric branch).
+   Information cost is soft alone but compounds with cooperation
+   cost (information cost starves the defence cooperation cost requires), and information cost erodes
    the apparatus while cooperation can persist — behaviour and mechanism decouple;
-   under built-in roles, Cost also modulates cooperation and fitness gaps between
-   populations.
+   under built-in roles or Cost asymmetry, Cost also modulates cooperation and fitness
+   gaps between populations (including mechanism-dependent role assignment at symmetric c).
 4. Payoff-axis attribution (why each mechanism has the threshold it does) is stated
    in the main text and summarized in a supplement table; the prisoners/snowdrift
    calibration sweeps that derive it remain in the journal, not the figure set.

@@ -134,7 +134,7 @@ threshold level:
   0.672 shuffle vs 0.382 noshuffle at c = 0.40 in symmetric_c, and the only
   mechanism reward-led in every prisoners condition.
 
-## Symmetry breaking: two routes to the same role split
+## Symmetry breaking: three routes to the role split
 
 Both primary studies show a cooperator/defector role split with the cooperating
 side earning less (the paradox of success), but they reach it differently, and
@@ -151,6 +151,13 @@ prisoners pins the difference to R − P:
   the split (IMP/IJMPQ asymmetry ≈ 0.16 vs 0.325 under P in PD) precisely
   because, being reward-led, they no longer route the R − P gap into a
   cooperation gap.
+- **Asymmetric information cost splits deterministically at symmetric c.**
+  asymmetric_i0_i1 (Cost0 < Cost1 at c0 = c1; see **asymmetric_i0_i1.md**) adds a
+  supply-side route: partner choice assigns the cooperator role to the **low-Cost**
+  population (affordable chooser machinery), while IJMPQ **inverts** the
+  assignment — the high-Cost side sheds into tax-free unconditional cooperation
+  and is exploited by the low-Cost side. Same paradox of success in both cases;
+  the Cost-to-role mapping depends on mechanism family.
 
 ## The information-cost axis: information cost vs cooperation cost
 
@@ -184,6 +191,14 @@ The two are benign alone and destructive together:
   erodes behavior softly, but immediately compresses the cooperator/exploiter split,
   retreats the c1 ceiling, and removes most of the behavior-mechanism decoupling
   that the symmetric c = 0 edge allowed.
+- **Supply-side Cost asymmetry at symmetric c.** asymmetric_i0_i1 (Cost0 < Cost1,
+  c0 = c1) assigns roles deterministically in PD — P to the low-Cost population,
+  IJMPQ inverted via cross-population hitchhiking — but **snowdrift largely removes
+  that lock**: P's cooperation gap becomes Cost-uncorrelated (direction flips across
+  the triangle; both sides ≈ 0.57 at moderate Cost), while IJMPQ keeps the same
+  direction but collapses the gap magnitude (both sides ≈ 0.93+). The supply-side
+  route to deterministic roles is therefore a **PD phenomenon**, not a universal
+  information-cost law.
 - **The reward-led / assortment / risk attributions carry over.** Combined
   reputation-rich mechanisms are the most Cost-robust despite paying the double
   (two-family) tax — family count does not predict the collapse, the enforcement
@@ -219,6 +234,7 @@ The two are benign alone and destructive together:
 | M survives in snowdrift                       | snowdrift has low risk (high S)            |
 | Partner choice collapses near c = 0.40        | R − P → 0 at the chooser bottleneck        |
 | asymmetric_c0_c1 deterministic role split            | c0 < c1 is an R − P asymmetry              |
+| asymmetric_i0_i1 Cost-asymmetry at symmetric c         | supply-side role split; P vs IJMPQ invert  |
 | IMP / IJMPQ hold cooperation at high c        | reward-led; blind to risk P                |
 | Shuffle kills M-based cooperation             | the M term drops from the payoff-axis fit  |
 | gs = 4 kills P-based cooperation, M recovers   | the P term drops; risk-led M remains       |

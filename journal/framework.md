@@ -75,7 +75,9 @@ has two faces that can point at different populations, so we track both:
 
 In symmetric_c pop_2 (symmetric payoffs) the role split is stochastic; in asymmetric_c0_c1
 pop_2 (built-in c0 < c1 asymmetry) it is deterministic, with the lower-cost
-population taking the cooperator role. Same outcome, two routes.
+population taking the cooperator role; in asymmetric_i0_i1 (Cost0 != Cost1 at
+symmetric c) it is again deterministic but mechanism-dependent — see
+asymmetric_i0_i1.md. Three routes in total; see synthesis.md.
 
 ### 3. Genotype composition / route to cooperation
 

@@ -24,6 +24,7 @@ creates drift. If a result belongs in the analysis, put it in the relevant
 | symmetric_c P / M+indirect / combined | symmetric_c_partner_choice.md, symmetric_c_reciprocity.md, symmetric_c_combined.md |
 | Information cost of the machinery (Cost x c) | symmetric_c_i.md |
 | Information cost under asymmetry | asymmetric_c1_i.md |
+| Asymmetric information cost (Cost0 vs Cost1) | asymmetric_i0_i1.md |
 | asymmetric_c0_c1 P / M+indirect / combined | asymmetric_c0_c1_partner_choice.md, asymmetric_c0_c1_reciprocity.md, asymmetric_c0_c1_combined.md |
 | Prisoners payoff-plane calibration | prisoners_calibration.md, prisoners_partner_choice.md, prisoners_reciprocity.md |
 | Snowdrift payoff-plane calibration | snowdrift_calibration.md, snowdrift_partner_choice.md, snowdrift_reciprocity.md |
@@ -31,7 +32,8 @@ creates drift. If a result belongs in the analysis, put it in the relevant
 One-line orientation to the headline results (see the docs for numbers and checks):
 M is risk-limited, P is limited by the cooperation advantage R − P, combined/
 reputation-rich mechanisms are reward-limited; two populations lock into a
-cooperator/exploiter split (stochastic when symmetric, deterministic when c0 < c1);
+cooperator/exploiter split (stochastic when symmetric, deterministic when c0 < c1
+or Cost0 != Cost1 at symmetric c);
 information cost erodes the machinery while cooperation can persist through
 unconditional cooperators (behaviour/mechanism decoupling).
 
@@ -51,6 +53,8 @@ source if the engine changes.
 - `ai/analyze_symmetric_c_i.py` — information-cost axis (Cost x c grid).
 - `ai/analyze_asymmetric_c1_i.py` — information-cost axis under built-in asymmetry
   (Cost x c1 with c0 fixed).
+- `ai/analyze_asymmetric_i0_i1.py` — asymmetric information cost (Cost0 x Cost1
+  at symmetric c).
 - `ai/analyze_single_run.py` — temporal dynamics from `*_1run` studies.
 - `ai/validate_mechanisms.py` — hitchhiking and IJMPQ-shuffle narrative validation
   (genotype decomposition + source gradient).
@@ -70,6 +74,7 @@ source if the engine changes.
   not the path.
 - **Regenerating summaries.** graphgen (`~/code/graph`, venv there) writes the
   `csv_*_for_image.con` and `csv_*_for_movie.con` exports; see
-  `.github/copilot-instructions.md` for exact commands. The M dilemma-0 control cells
-  and gs=4 temporal sets were filled 2026-07 (all symmetric_c-family and
-  prisoners_1run/snowdrift_1run gaps closed).
+  `.github/copilot-instructions.md` for exact commands. For asymmetric_i0_i1,
+  use `--export-slices` to warm the c=0.10 filtered, c=0.20 (`c020`), and movie
+  slice caches. The M dilemma-0 control cells and gs=4 temporal sets were filled
+  2026-07 (all symmetric_c-family and prisoners_1run/snowdrift_1run gaps closed).

@@ -40,6 +40,7 @@ quantitative work kept separate as a running journal.
 | journal/symmetric_c_combined.md | MP, MPQ, IMP, IJMPQ; hierarchy; IJMPQ symmetry |
 | journal/symmetric_c_i.md | Cost x c triangular sweep; information cost |
 | journal/asymmetric_c1_i.md | Cost x c1 at fixed c0; information cost under deterministic cooperator/exploiter roles |
+| journal/asymmetric_i0_i1.md | Cost0 x Cost1 at symmetric c; supply-side role split |
 | journal/asymmetric_c0_c1.md | Index + model overview for the primary two-population study |
 | journal/asymmetric_c0_c1_partner_choice.md | P: chooser bottleneck, exploitation, groupsize |
 | journal/asymmetric_c0_c1_reciprocity.md | M (noshuffle + gs=4); IM, IJM (shuffle) |
@@ -66,6 +67,8 @@ quantitative work kept separate as a running journal.
   roles (fixed c0 = 0.10, sweep c1) and shows where the soft symmetric_c_i Cost effect
   breaks down — see
   journal/asymmetric_c1_i.md. Part of the single unified manuscript (paper/roadmap.md).
+- **asymmetric_i0_i1** sweeps asymmetric per-population information cost (Cost0 x
+  Cost1) at symmetric cooperation cost (c0 = c1); see journal/asymmetric_i0_i1.md.
 
 Each study has a multi-run average (30 runs) and a single-run variant (`*_1run`) for
 temporal inspection.

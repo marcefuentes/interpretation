@@ -726,6 +726,310 @@ check("asymmetric_c1_i", "1run P (0.12,0.20) Pop_0 first snapshot collapsed = 0.
 
 
 # ════════════════════════════════════════════════════════════════════════════
+# ASYMMETRIC_I0_I1 — asymmetric_i0_i1.md (symmetric c; triangle Cost0 < Cost1;
+# cell key = (c, Cost0, Cost1); primary c = 0.10)
+# ════════════════════════════════════════════════════════════════════════════
+
+def ai0path(study, sh, gs, m, d, f, movie=False, slice_tag="filtered"):
+    suffix = "movie" if movie else "image"
+    tag = f"{slice_tag}_" if slice_tag else ""
+    return f"{BASE}/{study}/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_{tag}for_{suffix}.con"
+
+
+def ai0_cell(rows, c, cost0, cost1, col="qBSeen"):
+    for r in rows:
+        if (abs(float(r["c0"]) - c) < 0.005 and abs(float(r["Cost0"]) - cost0) < 0.005
+                and abs(float(r["Cost1"]) - cost1) < 0.005):
+            return float(r[col])
+    return float("nan")
+
+
+def ai0_cell_row(rows, c, cost0, cost1):
+    for r in rows:
+        if (abs(float(r["c0"]) - c) < 0.005 and abs(float(r["Cost0"]) - cost0) < 0.005
+                and abs(float(r["Cost1"]) - cost1) < 0.005):
+            return r
+    return None
+
+
+def ai0_gap_mean(m, col, c=0.10, sh="noshuffle", gs="128", d=1, slice_tag="filtered"):
+    r0 = load(ai0path("asymmetric_i0_i1", sh, gs, m, d, 0, slice_tag=slice_tag))
+    r1 = load(ai0path("asymmetric_i0_i1", sh, gs, m, d, 1, slice_tag=slice_tag))
+    m1 = {(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+           round(float(r["Cost1"]), 2)): r for r in r1}
+    vals = []
+    for r in r0:
+        if abs(float(r["c0"]) - c) > 0.005:
+            continue
+        if float(r["Cost0"]) >= float(r["Cost1"]) - 0.001:
+            continue
+        rr = m1[(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+                 round(float(r["Cost1"]), 2))]
+        vals.append(float(r[col]) - float(rr[col]))
+    return sum(vals) / len(vals)
+
+
+def ai0_corr_dq_dw(m, c=0.10):
+    r0 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, 1, 0))
+    r1 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, 1, 1))
+    m1 = {(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+           round(float(r["Cost1"]), 2)): r for r in r1}
+    dq, dw = [], []
+    for r in r0:
+        if abs(float(r["c0"]) - c) > 0.005:
+            continue
+        if float(r["Cost0"]) >= float(r["Cost1"]) - 0.001:
+            continue
+        rr = m1[(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+                 round(float(r["Cost1"]), 2))]
+        dq.append(float(r["qBSeen"]) - float(rr["qBSeen"]))
+        dw.append(float(r["wmean"]) - float(rr["wmean"]))
+    return corr(dq, dw)
+
+
+def ai0_corr_gap_dq(m, c=0.10, d=1):
+    r0 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, d, 0))
+    r1 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, d, 1))
+    m1 = {(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+           round(float(r["Cost1"]), 2)): r for r in r1}
+    dq, gaps = [], []
+    for r in r0:
+        if abs(float(r["c0"]) - c) > 0.005:
+            continue
+        if float(r["Cost0"]) >= float(r["Cost1"]) - 0.001:
+            continue
+        rr = m1[(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+                 round(float(r["Cost1"]), 2))]
+        dq.append(float(r["qBSeen"]) - float(rr["qBSeen"]))
+        gaps.append(float(r["Cost1"]) - float(r["Cost0"]))
+    return corr(gaps, dq)
+
+
+def ai0_fitness_inv(m, c=0.10):
+    r0 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, 1, 0))
+    r1 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, 1, 1))
+    m1 = {(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+           round(float(r["Cost1"]), 2)): r for r in r1}
+    inv = 0
+    for r in r0:
+        if abs(float(r["c0"]) - c) > 0.005:
+            continue
+        if float(r["Cost0"]) >= float(r["Cost1"]) - 0.001:
+            continue
+        rr = m1[(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+                 round(float(r["Cost1"]), 2))]
+        dq = float(r["qBSeen"]) - float(rr["qBSeen"])
+        dw = float(r["wmean"]) - float(rr["wmean"])
+        if dq * dw < 0:
+            inv += 1
+    return inv
+
+
+def ai0_pop0_coops(m, c=0.10):
+    r0 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, 1, 0))
+    r1 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, 1, 1))
+    m1 = {(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+           round(float(r["Cost1"]), 2)): r for r in r1}
+    n = 0
+    for r in r0:
+        if abs(float(r["c0"]) - c) > 0.005:
+            continue
+        if float(r["Cost0"]) >= float(r["Cost1"]) - 0.001:
+            continue
+        rr = m1[(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+                 round(float(r["Cost1"]), 2))]
+        if float(r["qBSeen"]) - float(rr["qBSeen"]) > 0.02:
+            n += 1
+    return n
+
+
+def ai0_pop0_fitter(m, c=0.10, sh="noshuffle", gs="128"):
+    r0 = load(ai0path("asymmetric_i0_i1", sh, gs, m, 1, 0))
+    r1 = load(ai0path("asymmetric_i0_i1", sh, gs, m, 1, 1))
+    m1 = {(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+           round(float(r["Cost1"]), 2)): r for r in r1}
+    n = 0
+    for r in r0:
+        if abs(float(r["c0"]) - c) > 0.005:
+            continue
+        if float(r["Cost0"]) >= float(r["Cost1"]) - 0.001:
+            continue
+        rr = m1[(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+                 round(float(r["Cost1"]), 2))]
+        if float(r["wmean"]) - float(rr["wmean"]) > 0.005:
+            n += 1
+    return n
+
+
+def ai0_pop1_coops(m, c=0.10, d=1):
+    r0 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, d, 0))
+    r1 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, d, 1))
+    m1 = {(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+           round(float(r["Cost1"]), 2)): r for r in r1}
+    n = 0
+    for r in r0:
+        if abs(float(r["c0"]) - c) > 0.005:
+            continue
+        if float(r["Cost0"]) >= float(r["Cost1"]) - 0.001:
+            continue
+        rr = m1[(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+                 round(float(r["Cost1"]), 2))]
+        if float(rr["qBSeen"]) - float(r["qBSeen"]) > 0.02:
+            n += 1
+    return n
+
+
+def ai0_p_mixed_cost0_rows(m, d=1):
+    r0 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, d, 0))
+    r1 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, d, 1))
+    m1 = {(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+           round(float(r["Cost1"]), 2)): r for r in r1}
+    by_c0 = {}
+    for r in r0:
+        if abs(float(r["c0"]) - 0.10) > 0.005:
+            continue
+        if float(r["Cost0"]) >= float(r["Cost1"]) - 0.001:
+            continue
+        co0 = round(float(r["Cost0"]), 2)
+        rr = m1[(round(float(r["c0"]), 2), co0, round(float(r["Cost1"]), 2))]
+        dq = float(r["qBSeen"]) - float(rr["qBSeen"])
+        by_c0.setdefault(co0, []).append(dq)
+    return sum(1 for dqs in by_c0.values()
+               if any(x > 0.02 for x in dqs) and any(x < -0.02 for x in dqs))
+
+
+def ai0_collapse_cells(m, c=0.10, thresh=0.15):
+    r0 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, 1, 0))
+    r1 = load(ai0path("asymmetric_i0_i1", "noshuffle", "128", m, 1, 1))
+    m1 = {(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+           round(float(r["Cost1"]), 2)): r for r in r1}
+    n = 0
+    for r in r0:
+        if abs(float(r["c0"]) - c) > 0.005:
+            continue
+        if float(r["Cost0"]) >= float(r["Cost1"]) - 0.001:
+            continue
+        rr = m1[(round(float(r["c0"]), 2), round(float(r["Cost0"]), 2),
+                 round(float(r["Cost1"]), 2))]
+        if float(r["qBSeen"]) + float(rr["qBSeen"]) < thresh:
+            n += 1
+    return n
+
+
+# P: low-Cost side cooperates, high-Cost side profits
+check("asymmetric_i0_i1", "P mean dq (pop0-pop1) = 0.110",
+      lambda: ai0_gap_mean("P", "qBSeen"), 0.110)
+check("asymmetric_i0_i1", "P mean dw (pop0-pop1) = -0.046",
+      lambda: ai0_gap_mean("P", "wmean"), -0.046)
+check("asymmetric_i0_i1", "P corr(dq,dw) = -0.981",
+      lambda: ai0_corr_dq_dw("P"), -0.981)
+check("asymmetric_i0_i1", "P pop0 cooperates more in 63/120 cells",
+      lambda: ai0_pop0_coops("P"), 63, None)
+check("asymmetric_i0_i1", "P (0,0.20) pop0 qB = 0.331",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 1, 0)),
+                       0.10, 0.0, 0.20), 0.331)
+check("asymmetric_i0_i1", "P (0,0.20) pop1 qB = 0.153",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 1, 1)),
+                       0.10, 0.0, 0.20), 0.153)
+check("asymmetric_i0_i1", "P (0,0.10) pop0 P1 = 0.799",
+      lambda: allele(ai0_cell_row(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 1, 0)),
+                                  0.10, 0.0, 0.10), "P1"), 0.799, 0.01)
+
+# IJMPQ: high-Cost side cooperates, low-Cost side profits (hitchhiking)
+check("asymmetric_i0_i1", "IJMPQ mean dq = -0.201",
+      lambda: ai0_gap_mean("IJMPQ", "qBSeen"), -0.201)
+check("asymmetric_i0_i1", "IJMPQ mean dw = 0.109",
+      lambda: ai0_gap_mean("IJMPQ", "wmean"), 0.109)
+check("asymmetric_i0_i1", "IJMPQ corr(gap,dq) = -0.612",
+      lambda: ai0_corr_gap_dq("IJMPQ"), -0.612)
+check("asymmetric_i0_i1", "IJMPQ corr(dq,dw) = -0.992",
+      lambda: ai0_corr_dq_dw("IJMPQ"), -0.992)
+check("asymmetric_i0_i1", "IJMPQ (0,0.20) pop0 qB = 0.681",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0)),
+                       0.10, 0.0, 0.20), 0.681)
+check("asymmetric_i0_i1", "IJMPQ (0,0.20) pop1 qB = 0.922",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1)),
+                       0.10, 0.0, 0.20), 0.922)
+check("asymmetric_i0_i1", "IJMPQ (0,0.20) dw gap = 0.158",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0)),
+                       0.10, 0.0, 0.20, "wmean")
+      - ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1)),
+                 0.10, 0.0, 0.20, "wmean"), 0.158)
+check("asymmetric_i0_i1", "IJMPQ (0,0.30) dq = -0.401",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0)),
+                       0.10, 0.0, 0.30)
+      - ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1)),
+                 0.10, 0.0, 0.30), -0.401)
+check("asymmetric_i0_i1", "IJMPQ (0,0.20) pop1 C1P0 = 0.907",
+      lambda: allele(ai0_cell_row(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1)),
+                                  0.10, 0.0, 0.20), "C1", "P0"), 0.907, 0.01)
+check("asymmetric_i0_i1", "IJMPQ fitness-inverted cells = 120",
+      lambda: ai0_fitness_inv("IJMPQ"), 120, None)
+check("asymmetric_i0_i1", "IJMPQ pop0 fitter in 102/120 cells",
+      lambda: ai0_pop0_fitter("IJMPQ"), 102, None)
+
+# IMP flip at (0, 0.20)
+check("asymmetric_i0_i1", "IMP (0,0.20) dq = -0.461",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IMP", 1, 0)),
+                       0.10, 0.0, 0.20)
+      - ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IMP", 1, 1)),
+                 0.10, 0.0, 0.20), -0.461)
+
+# Robustness
+check("asymmetric_i0_i1", "shuffle IJMPQ mean dq = -0.224",
+      lambda: ai0_gap_mean("IJMPQ", "qBSeen", sh="shuffle"), -0.224)
+check("asymmetric_i0_i1", "gs4 P mean dq = 0.000",
+      lambda: ai0_gap_mean("P", "qBSeen", gs="4"), 0.000)
+check("asymmetric_i0_i1", "IJMPQ collapse cells (q sum < 0.15) = 19",
+      lambda: ai0_collapse_cells("IJMPQ"), 19, None)
+
+# Snowdrift (dilemma 2): Cost-independent roles under P; IJMPQ gap shrinks
+check("asymmetric_i0_i1", "P snowdrift corr(gap,dq) = -0.074",
+      lambda: ai0_corr_gap_dq("P", d=2), -0.074)
+check("asymmetric_i0_i1", "P snowdrift pop1 cooperates more in 40/120",
+      lambda: ai0_pop1_coops("P", d=2), 40, None)
+check("asymmetric_i0_i1", "P snowdrift (0,0.20) q0 = 0.576",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 2, 0)),
+                       0.10, 0.0, 0.20), 0.576)
+check("asymmetric_i0_i1", "P snowdrift (0,0.20) q1 = 0.579",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 2, 1)),
+                       0.10, 0.0, 0.20), 0.579)
+check("asymmetric_i0_i1", "P snowdrift Cost0-rows with mixed dq signs = 12",
+      lambda: ai0_p_mixed_cost0_rows("P", d=2), 12, None)
+check("asymmetric_i0_i1", "IJMPQ snowdrift (0,0.20) dq = -0.035",
+      lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 2, 0)),
+                       0.10, 0.0, 0.20)
+      - ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 2, 1)),
+                 0.10, 0.0, 0.20), -0.035)
+check("asymmetric_i0_i1", "IJMPQ snowdrift pop1 cooperates more in 103/120",
+      lambda: ai0_pop1_coops("IJMPQ", d=2), 103, None)
+check("asymmetric_i0_i1", "_ snowdrift corr(gap,dq) = -0.062",
+      lambda: ai0_corr_gap_dq("_", d=2), -0.062)
+
+# Secondary cooperation-cost slice (c = 0.20; csv_*_c020_for_image.con)
+check("asymmetric_i0_i1", "P c=0.20 mean dq = 0.053",
+      lambda: ai0_gap_mean("P", "qBSeen", c=0.20, slice_tag="c020"), 0.053)
+check("asymmetric_i0_i1", "IJMPQ c=0.20 mean dq = -0.070",
+      lambda: ai0_gap_mean("IJMPQ", "qBSeen", c=0.20, slice_tag="c020"), -0.070)
+
+# Temporal: roles established by first snapshot (1run movies)
+def ai0_time_q(mech, co0, co1, pop, time, movie_study="asymmetric_i0_i1_1run"):
+    rows = load(ai0path(movie_study, "noshuffle", "128", mech, 1, pop, movie=True))
+    for r in rows:
+        if (int(float(r["Time"])) == time and abs(float(r["c0"]) - 0.10) < 0.005
+                and abs(float(r["Cost0"]) - co0) < 0.005
+                and abs(float(r["Cost1"]) - co1) < 0.005):
+            return float(r["qBSeen"])
+    return float("nan")
+
+
+check("asymmetric_i0_i1", "1run P (0,0.20) pop0 t=131072 = 0.243",
+      lambda: ai0_time_q("P", 0.0, 0.20, 0, 131072), 0.243, 0.01)
+check("asymmetric_i0_i1", "1run IJMPQ (0,0.20) pop1 t=131072 = 0.933",
+      lambda: ai0_time_q("IJMPQ", 0.0, 0.20, 1, 131072), 0.933, 0.01)
+
+
+# ════════════════════════════════════════════════════════════════════════════
 # MUTUALISM POP_3 — redundant with symmetric_c pop_3 (copilot-instructions.md,
 # "asymmetric_c0_c1 Parameter Space"). Only _0 evolves; _1 is frozen at 25% each, so
 # there is no coevolutionary channel for c1 and the 441-cell square collapses

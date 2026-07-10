@@ -225,6 +225,12 @@ collapsed cells are already collapsed.
 So the image summaries are representative. The interesting event is not a slow
 late erosion but whether a cell establishes a defended state at all.
 
+**Cross-study contrast.** asymmetric_i0_i1 at symmetric c shows the same early
+lock-in pattern, but the *assignment rule* differs: under P, demand asymmetry
+(asymmetric_c1_i) and supply asymmetry (asymmetric_i0_i1) both pin the cooperator
+to the cheap side (low c or low Cost), whereas IJMPQ inverts under supply
+asymmetry but not under demand asymmetry. See **asymmetric_i0_i1.md**.
+
 ## One-line reading
 
 symmetric_c_i showed that information cost can be shed harmlessly when the game
