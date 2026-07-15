@@ -11,7 +11,7 @@ Regenerate any manuscript figure from ~/code/graph with the venv active:
     python -m graphgen.main --study interpretation --figure FIG --groupsize 128 --output ~/figures
 
 The manuscript figure set lives in ../graph/graphgen/studies/interpretation/ as
-m1–m6 (main text) and ms3–ms5 (supplement). Figure ids m1–m6 pull from underlying
+m1–m6 (main text) and ms3–ms7 (supplement). Figure ids m1–m6 pull from underlying
 simulation exports via the interpretation namespace; graphgen study names in the
 pipeline config are internal and do not appear in manuscript prose.
 
@@ -22,7 +22,35 @@ mixes two dilemma types in one figure.
 attributions cited in the text but do not appear as manuscript figures. See the
 supplement table and the journal calibration analyses.
 
-Status: provisional — adjust before locking the manuscript figure set.
+Status: revised 2026-07 — m6 converted to line chart; ms6 added for parameter-
+symmetric vs parameter-asymmetric line contrast. Still provisional before locking.
+
+## Setup audit (2026-07)
+
+| Figure | Renderer | Data source | Verdict |
+| ------ | -------- | ----------- | ------- |
+| m1 | Line (PLOT) | symmetric_c pop_1, P/M/IJMPQ | Correct — mechanism hierarchy |
+| m6 | Line (PLOT) | symmetric_c pop_2, P | **Fixed** — was imshow on 1D data (diagonal-only heatmap); now both populations on shared axes vs c |
+| m2 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Correct — full c0 × c1 triangle |
+| m3 | Heatmap | symmetric_c_i pop_1, IJMPQ | Correct — Cost × c grid |
+| m4 | Heatmap | symmetric_c_i pop_1, P + M | Correct — machinery vs cooperation |
+| m5 | Heatmap | asymmetric_c1_i pop_2, P | Correct — c1 × Cost with c0 fixed |
+| ms3 | Line | symmetric_c pop_1, shuffle | Correct — short-memory robustness |
+| ms4 | Heatmap | asymmetric_c0_c1 pop_2, P, gs = 4 | Correct — small-group robustness |
+| ms5 | Heatmap | symmetric_c_i pop_1, M, dt 0 vs 1 | Correct — dilemma-0 control |
+| ms6 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P | **New** — row 0: c1 = c0 + 0.02; row 1: c0 = c1 from symmetric_c |
+| ms7 | Heatmap | asymmetric_i0_i1 pop_2, P + IJMPQ | **New** — i0 × i1 at c0 = c1 = 0.10; P vs IJMPQ inversion |
+| ms1, ms2 | Heatmap | prisoners / snowdrift calibration | Excluded from supplement (calibration only) |
+
+**Line vs heatmap balance.** Main text now has two line figures (m1, m6) and four
+heatmaps (m2–m5). Supplement has two line figures (ms3, ms6) and two heatmaps
+(ms4, ms5).
+
+**Not yet wired.** The full i0 × i1 square under crossed cost asymmetry remains
+journal-backed and regression-checked but has no interpretation-namespace figure yet
+(optional if the manuscript needs a dedicated panel). The symmetric_i study provides
+an information-cost line reslice at c = 0.10 (presentation-only alternative to m3/m4
+heatmaps).
 
 ## Main text figures (candidates)
 
@@ -38,9 +66,10 @@ Status: provisional — adjust before locking the manuscript figure set.
 ### Panel order notes
 
 1. m1: columns = P, M, IJMPQ; single coevolving population.
-2. m6: two parameter-symmetric populations (c0 = c1) under P; rows = higher- then
-   lower-cooperation-cost population labels; columns = cooperation, fitness. Partner
-   choice produces a stochastic outcome split; fitness inverts (paradox of success).
+2. m6: line chart, two coevolving populations at c0 = c1 under P; columns =
+   cooperation then fitness; red and orange lines = the two populations on shared
+   axes vs c. Stochastic outcome split (one population ~0.5 cooperation plateau,
+   the other sheds cooperators); fitness inverts (paradox of success).
 3. m2: parameter-asymmetric cooperation cost (c0 < c1); rows = P and IJMPQ for high-
    then low-cost side; columns = cooperation, fitness. Contrast with m6: deterministic
    outcome split; IJMPQ lifts the expensive population.
@@ -88,6 +117,8 @@ Robustness and control panels from the primary sweeps only. No calibration heatm
 | S1 | Short-memory comparison: direct-reciprocity branch shifts collapse ordering | ms3 | `... --figure ms3 ...` | ~/figures/interpretation/ms3.png |
 | S2 | Small groups (gs = 4): cooperation-cost asymmetry under partner choice | ms4 | `... --figure ms4 --groupsize 4 ...` | ~/figures/interpretation/ms4.png |
 | S3 | Dilemma-0 control: machinery erodes with and without a social dilemma | ms5 | `... --figure ms5 ...` | ~/figures/interpretation/ms5.png |
+| S4 | Parameter-symmetric vs parameter-asymmetric cooperation cost (line slices) | ms6 | `... --figure ms6 ...` | ~/figures/interpretation/ms6.png |
+| S5 | Information-cost parameter asymmetry at equal cooperation cost (c = 0.10) | ms7 | `... --figure ms7 ...` | ~/figures/interpretation/ms7.png |
 
 ## Supplement table (no figure)
 
@@ -112,3 +143,11 @@ journal synthesis and calibration docs; do not publish full payoff-plane heatmap
 4. Fig 4. When cooperation cost is equal between populations, information cost is soft by itself but lowers the cooperation-cost ceiling once the two costs overlap.
 5. Fig 5. Where cooperation cost is zero, the machinery alleles are selected away before cooperation disappears, so behaviour and mechanism decouple.
 6. Fig 6. With cooperation-cost asymmetry and c0 fixed above zero, the harmless information-cost edge disappears: information cost retreats the cooperation-cost ceiling and compresses the cooperator/exploiter split.
+
+Supplement captions:
+
+S1. Short-memory mechanisms shift the direct-reciprocity collapse ordering relative to the baseline hierarchy (Fig 1).
+S2. At group size 4, cooperation-cost asymmetry under partner choice preserves the deterministic cooperator/exploiter split.
+S3. Under dilemma 0, machinery alleles erode with or without a social dilemma; the decoupling in Fig 5 requires the dilemma case.
+S4. Line slices contrast deterministic split under c1 = c0 + 0.02 (top row) with the stochastic split at c0 = c1 (bottom row; same data as Fig 2).
+S5. At c0 = c1 = 0.10, information-cost asymmetry (i0 < i1) assigns the cooperator role deterministically under partner choice (top rows); combined IJMPQ inverts via cross-population hitchhiking (bottom rows).
