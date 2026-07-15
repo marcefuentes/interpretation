@@ -121,12 +121,16 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       generated via graphgen `--export-slices`.
     - **Remaining:** Study B (crossed c-gap + Cost square) — see item 15.
 
-15. [ ] Study B — crossed asymmetries (`asymmetric_c1_i0_i1`).
+15. [x] Study B — crossed asymmetries (`asymmetric_c1_i0_i1`).
     - Fixed c0 = 0.10, c1 = 0.20; full Cost0 x Cost1 square (176 cells at
       per-axis caps Cmax_p = b - c_p: 16 x 11).
     - Cesga setup added; graphgen manifests added (`asymmetric_c1_i0_i1`,
       `asymmetric_c1_i0_i1_1run`).
-    - Key question: can information cost override the c-gap role assignment?
+    - **Headline result.** c-gap is the primary role assigner (P: pop₀ coops in
+      170/176 cells). IJMPQ hitchhiking wedge survives only on Cost₀ ≈ 0 strip
+      (13 flip cells). journal/asymmetric_c1_i0_i1.md + ai/analyze_asymmetric_c1_i0_i1.py
+      + 28 verifier checks.
+    - **Remaining:** 1run IJMPQ jobs; graphgen `--export-slices` for .con cache.
 
 ## Newly landed data — symmetric_c_i (2026-07)
 

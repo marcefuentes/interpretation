@@ -229,7 +229,9 @@ late erosion but whether a cell establishes a defended state at all.
 lock-in pattern, but the *assignment rule* differs: under P, demand asymmetry
 (asymmetric_c1_i) and supply asymmetry (asymmetric_i0_i1) both pin the cooperator
 to the cheap side (low c or low Cost), whereas IJMPQ inverts under supply
-asymmetry but not under demand asymmetry. See **asymmetric_i0_i1.md**.
+asymmetry but not under demand asymmetry. See **asymmetric_i0_i1.md**. Study B
+(**asymmetric_c1_i0_i1.md**) crosses both axes: the c-gap wins globally, with
+IJMPQ hitchhiking confined to a Cost0 ≈ 0 wedge.
 
 ## One-line reading
 

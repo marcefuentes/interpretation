@@ -199,6 +199,11 @@ The two are benign alone and destructive together:
   direction but collapses the gap magnitude (both sides ≈ 0.93+). The supply-side
   route to deterministic roles is therefore a **PD phenomenon**, not a universal
   information-cost law.
+- **Crossed asymmetries (Study B).** asymmetric_c1_i0_i1 fixes c0 < c1 and sweeps
+  the full Cost0 x Cost1 square (see **asymmetric_c1_i0_i1.md**). The c-gap is the
+  default role assigner (P: pop_0 cooperates in 170/176 cells). IJMPQ/IMP can still
+  invert locally on the Cost0 ≈ 0 strip (13 cells), but cannot overturn the cheap-c
+  side globally; snowdrift removes the wedge entirely.
 - **The reward-led / assortment / risk attributions carry over.** Combined
   reputation-rich mechanisms are the most Cost-robust despite paying the double
   (two-family) tax — family count does not predict the collapse, the enforcement
@@ -235,6 +240,7 @@ The two are benign alone and destructive together:
 | Partner choice collapses near c = 0.40        | R − P → 0 at the chooser bottleneck        |
 | asymmetric_c0_c1 deterministic role split            | c0 < c1 is an R − P asymmetry              |
 | asymmetric_i0_i1 Cost-asymmetry at symmetric c         | supply-side role split; P vs IJMPQ invert  |
+| asymmetric_c1_i0_i1 crossed c-gap + Cost square       | c-gap default; IJMPQ wedge at Cost0 ≈ 0 only |
 | IMP / IJMPQ hold cooperation at high c        | reward-led; blind to risk P                |
 | Shuffle kills M-based cooperation             | the M term drops from the payoff-axis fit  |
 | gs = 4 kills P-based cooperation, M recovers   | the P term drops; risk-led M remains       |

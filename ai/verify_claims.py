@@ -15,10 +15,13 @@ Tolerances: qBSeen / fitness / correlation values are rounded to the same 3
 decimals the docs use, compared with a small tolerance; cell counts are exact.
 """
 
+import csv
+import glob
 import math
+import os
 import sys
 
-from trps_io import BASE, allele, any_glo, corr, gsum, load, m1sum, ols2  # noqa: F401
+from trps_io import BASE, allele, any_glo, corr, glo, gsum, load, m1sum, ols2  # noqa: F401
 
 TOL = 0.006  # docs round to 3 decimals; allow half-ULP plus minor regen jitter
 
@@ -1050,6 +1053,215 @@ check("asymmetric_i0_i1", "1run P (0,0.20) pop0 t=131072 = 0.243",
       lambda: ai0_time_q("P", 0.0, 0.20, 0, 131072), 0.243, 0.01)
 check("asymmetric_i0_i1", "1run IJMPQ (0,0.20) pop1 t=131072 = 0.933",
       lambda: ai0_time_q("IJMPQ", 0.0, 0.20, 1, 131072), 0.933, 0.01)
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# ASYMMETRIC_C1_I0_I1 — asymmetric_c1_i0_i1.md (fixed c-gap; Cost0 x Cost1 square;
+# cell key = (Cost0, Cost1), c0 = 0.10, c1 = 0.20)
+# ════════════════════════════════════════════════════════════════════════════
+
+C1I0I1_C0, C1I0I1_C1 = 0.10, 0.20
+
+
+def c1i0i1path(study, sh, gs, m, d, f, movie=False):
+    suffix = "movie" if movie else "image"
+    return f"{BASE}/{study}/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_filtered_for_{suffix}.con"
+
+
+def c1i0i1_load_from_csv(study, sh, gs, mech, d, f, movie=False):
+    dpath = f"{BASE}/{study}/{sh}/{gs}/{mech}/{d}/pop_2"
+    if not os.path.isdir(dpath):
+        return []
+    out = []
+    for gpath in sorted(glob.glob(f"{dpath}/*.glo")):
+        m = glo(gpath)
+        if m is None:
+            continue
+        if abs(float(m.get("c0", -1)) - C1I0I1_C0) > 0.005:
+            continue
+        if abs(float(m.get("c1", -1)) - C1I0I1_C1) > 0.005:
+            continue
+        co0, co1 = float(m["Cost0"]), float(m["Cost1"])
+        if co0 > 0.30 + 0.005 or co1 > 0.20 + 0.005:
+            continue
+        stem = gpath.replace(".glo", "")
+        cp = f"{stem}_{f}.csv"
+        if not os.path.exists(cp):
+            continue
+        with open(cp) as fh:
+            rows = list(csv.DictReader(fh))
+        if not rows:
+            continue
+        row = dict(rows[-1] if not movie else rows[0])
+        row["Cost0"], row["Cost1"] = str(co0), str(co1)
+        row["c0"], row["c1"] = m["c0"], m["c1"]
+        out.append(row)
+    return out
+
+
+def c1i0i1_load(study, sh, gs, mech, d, f, movie=False):
+    rows = load(c1i0i1path(study, sh, gs, mech, d, f, movie=movie))
+    return rows if rows else c1i0i1_load_from_csv(study, sh, gs, mech, d, f, movie=movie)
+
+
+def c1i0i1_cell(rows, co0, co1, col="qBSeen"):
+    for r in rows:
+        if abs(float(r["Cost0"]) - co0) < 0.005 and abs(float(r["Cost1"]) - co1) < 0.005:
+            return float(r[col])
+    return float("nan")
+
+
+def c1i0i1_cell_row(rows, co0, co1):
+    for r in rows:
+        if abs(float(r["Cost0"]) - co0) < 0.005 and abs(float(r["Cost1"]) - co1) < 0.005:
+            return r
+    return None
+
+
+def c1i0i1_gap_mean(m, col, sh="noshuffle", gs="128", d=1):
+    r0 = c1i0i1_load("asymmetric_c1_i0_i1", sh, gs, m, d, 0)
+    r1 = c1i0i1_load("asymmetric_c1_i0_i1", sh, gs, m, d, 1)
+    m1 = {(round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2)): r for r in r1}
+    vals = []
+    for r in r0:
+        key = (round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2))
+        if key in m1:
+            vals.append(float(r[col]) - float(m1[key][col]))
+    return sum(vals) / len(vals) if vals else float("nan")
+
+
+def c1i0i1_corr_dq_dw(m, sh="noshuffle", gs="128", d=1):
+    r0 = c1i0i1_load("asymmetric_c1_i0_i1", sh, gs, m, d, 0)
+    r1 = c1i0i1_load("asymmetric_c1_i0_i1", sh, gs, m, d, 1)
+    m1 = {(round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2)): r for r in r1}
+    dq, dw = [], []
+    for r in r0:
+        key = (round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2))
+        if key not in m1:
+            continue
+        rr = m1[key]
+        dq.append(float(r["qBSeen"]) - float(rr["qBSeen"]))
+        dw.append(float(r["wmean"]) - float(rr["wmean"]))
+    return corr(dq, dw)
+
+
+def c1i0i1_pairs(m, sh="noshuffle", gs="128", d=1):
+    r0 = c1i0i1_load("asymmetric_c1_i0_i1", sh, gs, m, d, 0)
+    r1 = c1i0i1_load("asymmetric_c1_i0_i1", sh, gs, m, d, 1)
+    m1 = {(round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2)): r for r in r1}
+    for r in r0:
+        key = (round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2))
+        if key in m1:
+            yield r, m1[key]
+
+
+def c1i0i1_pop0_coops(m, sh="noshuffle", gs="128", d=1):
+    return sum(1 for a, b in c1i0i1_pairs(m, sh, gs, d)
+               if float(a["qBSeen"]) - float(b["qBSeen"]) > 0.02)
+
+
+def c1i0i1_flip_count(m, sh="noshuffle", gs="128", d=1):
+    return sum(1 for a, b in c1i0i1_pairs(m, sh, gs, d)
+               if float(a["qBSeen"]) - float(b["qBSeen"]) < -0.02)
+
+
+def c1i0i1_collapse(m, sh="noshuffle", gs="128", d=1):
+    return sum(1 for a, b in c1i0i1_pairs(m, sh, gs, d)
+               if float(a["qBSeen"]) + float(b["qBSeen"]) < 0.15)
+
+
+def c1i0i1_fitness_inverted(m):
+    return sum(1 for a, b in c1i0i1_pairs(m)
+               if (float(a["qBSeen"]) - float(b["qBSeen"]))
+               * (float(a["wmean"]) - float(b["wmean"])) < 0)
+
+
+def c1i0i1_grid_size():
+    return len(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0))
+
+
+# Sanity and grid
+check("asymmetric_c1_i0_i1", "grid cells = 176", c1i0i1_grid_size, 176, None)
+check("asymmetric_c1_i0_i1", "sanity P (0,0) pop0 = 0.602",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+                          0.0, 0.0), 0.602)
+check("asymmetric_c1_i0_i1", "sanity P (0,0) pop1 = 0.189",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 1),
+                          0.0, 0.0), 0.189)
+
+# P role split
+check("asymmetric_c1_i0_i1", "P mean dq = 0.116",
+      lambda: c1i0i1_gap_mean("P", "qBSeen"), 0.116)
+check("asymmetric_c1_i0_i1", "P corr(dq,dw) = -0.976",
+      lambda: c1i0i1_corr_dq_dw("P"), -0.976)
+check("asymmetric_c1_i0_i1", "P pop0 cooperates more in 170/176 cells",
+      lambda: c1i0i1_pop0_coops("P"), 170, None)
+check("asymmetric_c1_i0_i1", "P (0,0) pop0 = 0.602",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+                          0.0, 0.0), 0.602)
+check("asymmetric_c1_i0_i1", "P (0,0.20) pop0 = 0.069",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+                          0.0, 0.20), 0.069)
+check("asymmetric_c1_i0_i1", "P (0,0.20) pop1 = 0.032",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 1),
+                          0.0, 0.20), 0.032)
+check("asymmetric_c1_i0_i1", "P fitness-inverted cells = 172",
+      lambda: c1i0i1_fitness_inverted("P"), 172, None)
+check("asymmetric_c1_i0_i1", "P collapse cells = 102",
+      lambda: c1i0i1_collapse("P"), 102, None)
+
+# IJMPQ wedge and aggregate
+check("asymmetric_c1_i0_i1", "IJMPQ mean dq = 0.160",
+      lambda: c1i0i1_gap_mean("IJMPQ", "qBSeen"), 0.160)
+check("asymmetric_c1_i0_i1", "IJMPQ pop0 cooperates more in 156/176 cells",
+      lambda: c1i0i1_pop0_coops("IJMPQ"), 156, None)
+check("asymmetric_c1_i0_i1", "IJMPQ flip cells (pop1 coops) = 13",
+      lambda: c1i0i1_flip_count("IJMPQ"), 13, None)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0) pop0 = 0.957",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0),
+                          0.0, 0.0), 0.957)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop0 = 0.741",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0),
+                          0.0, 0.20), 0.741)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop1 = 0.911",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1),
+                          0.0, 0.20), 0.911)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop1 C1P0 = 0.897",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128",
+                                                  "IJMPQ", 1, 1), 0.0, 0.20), "C1", "P0"), 0.897)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.30,0) pop0 = 0.715",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0),
+                          0.30, 0.0), 0.715)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.30,0) pop1 = 0.258",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1),
+                          0.30, 0.0), 0.258)
+check("asymmetric_c1_i0_i1", "IJMPQ collapse cells = 45",
+      lambda: c1i0i1_collapse("IJMPQ"), 45, None)
+
+# IMP wedge
+check("asymmetric_c1_i0_i1", "IMP flip cells = 13",
+      lambda: c1i0i1_flip_count("IMP"), 13, None)
+check("asymmetric_c1_i0_i1", "IMP (0,0.20) dq = -0.100",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IMP", 1, 0),
+                          0.0, 0.20)
+      - c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IMP", 1, 1),
+                    0.0, 0.20), -0.100)
+
+# Diagonal nests onto asymmetric_c1_i
+check("asymmetric_c1_i0_i1", "IJMPQ diagonal (0.10,0.10) pop0 = 0.370",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0),
+                          0.10, 0.10), 0.370)
+check("asymmetric_c1_i0_i1", "IJMPQ diagonal (0.10,0.10) pop1 = 0.176",
+      lambda: c1i0i1_cell(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1),
+                          0.10, 0.10), 0.176)
+
+# Snowdrift and groupsize
+check("asymmetric_c1_i0_i1", "P snowdrift mean dq = 0.885",
+      lambda: c1i0i1_gap_mean("P", "qBSeen", d=2), 0.885)
+check("asymmetric_c1_i0_i1", "IJMPQ snowdrift mean dq = 0.626",
+      lambda: c1i0i1_gap_mean("IJMPQ", "qBSeen", d=2), 0.626)
+check("asymmetric_c1_i0_i1", "gs4 P mean dq = 0.023",
+      lambda: c1i0i1_gap_mean("P", "qBSeen", gs="4"), 0.023)
 
 
 # ════════════════════════════════════════════════════════════════════════════

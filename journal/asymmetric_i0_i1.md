@@ -276,6 +276,9 @@ a cell establishes a defended state at all, not a slow late erosion.
 - **asymmetric_c1_i**: demand pins roles (cheap pop cooperates under P); Cost
   compresses that split. asymmetric_i0_i at symmetric c shows supply can **assign
   or invert** roles depending on mechanism, without any c-gap.
+- **asymmetric_c1_i0_i1** (Study B): both asymmetries crossed at c0 = 0.10,
+  c1 = 0.20. The c-gap wins globally (P: 170/176 cells); IJMPQ hitchhiking
+  survives only on the Cost0 ≈ 0 strip (13 cells). See **asymmetric_c1_i0_i1.md**.
 
 ## Caveats
 
