@@ -49,12 +49,16 @@ separate from **parameter** symmetry in the setup (whether c0 = c1, i0 = i1, and
 payoffs match). The bullets below pair parameter conditions with the outcome pattern
 they typically produce; mechanism can override the default mapping.
 
-- **Parameter-symmetric cooperation cost → stochastic outcome (P).** With c0 = c1 and
-  i0 = i1, two identical coevolving populations under partner choice break symmetry by
-  chance: one side becomes the cooperator and is exploited, and carrying the chooser
-  allele correlates with fitness at roughly minus one
-  ([partner choice calibration](../journal/prisoners_partner_choice.md)). Combined
-  reputation mechanisms at the same parameter point stay nearly outcome-symmetric.
+- **Parameter-symmetric cooperation cost → outcome split (game- and mechanism-dependent).**
+  With c0 = c1 and i0 = i1, two coevolving populations under partner choice show a
+  **stochastic** cooperator/exploiter assignment in the prisoner's dilemma: one side
+  carries cooperation, is exploited, and carrying the chooser allele correlates with
+  fitness at roughly minus one — a pattern absent under the no-machinery control
+  (Fig. 2 versus Fig. S6;
+  [partner choice calibration](../journal/prisoners_partner_choice.md)). In snowdrift,
+  a similar split already appears without enforcement machinery; partner choice mainly
+  reshapes high-cooperation-cost outcomes. Combined reputation mechanisms at the same
+  parameter point stay nearly outcome-symmetric in the PD.
 - **Cooperation-cost parameter asymmetry → deterministic outcome (P).** When c0 < c1,
   the lower-cooperation-cost population has the larger cooperation advantage and takes
   the cooperator role in every cell — partner choice converts the R − P gap directly

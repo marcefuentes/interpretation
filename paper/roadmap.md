@@ -52,9 +52,9 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
   ~5-7): fig1 (single-population hierarchy), fig2 (stochastic two-population split,
   **line chart**), fig3 (deterministic split under cooperation-cost asymmetry),
   fig4–fig6 (information-cost panels) — not yet locked.
-- [~] Decide the supplement figure list: figS1–figS5 (shuffle, gs = 4, dilemma-0
+- [~] Decide the supplement figure list: figS1–figS6 (shuffle, gs = 4, dilemma-0
   control, parameter-symmetric vs asymmetric line contrast, information-cost
-  asymmetry at equal c) plus attribution table; cal1–cal2 auxiliary only.
+  asymmetry at equal c, no-enforcement control for Fig. 2) plus attribution table; cal1–cal2 auxiliary only.
 - [x] Generate candidate figures via graphgen; record commands in figures.md.
 - [~] Draft one-sentence captions, each traceable to a journal check; revise when
   the set is finalized.
