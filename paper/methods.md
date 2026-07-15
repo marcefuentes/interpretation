@@ -73,8 +73,10 @@ not sub-establishment ordering ([framework](../journal/framework.md)).
 
 Cooperation level is qBSeen (frequency of cooperative acts); fitness is wmean;
 genotype composition is read from the per-genotype frequency columns (e.g. C1P1,
-C1P0, C0P1, C1M1, C1M0). Between-population asymmetry is the qBSeen gap (cooperation)
-and the wmean gap (exploitation) between the two coevolving populations.
+C1P0, C0P1, C1M1, C1M0). **Between-population asymmetry** is the qBSeen gap
+(cooperation) and the wmean gap (exploitation) between the two coevolving populations —
+an **outcome** variable, distinct from **parameter** symmetry or asymmetry in c0, c1,
+i0, i1, and payoffs.
 
 ## Replicates, noise floor, and verification
 

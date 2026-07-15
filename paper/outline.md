@@ -25,8 +25,10 @@ ecological context. Using an individual-based model swept across these axes, we 
 that (i) the payoff gap each mechanism is limited by is identifiable and stable
 (reciprocity is risk-limited, partner choice is limited by the cooperation
 advantage, reputation-rich mechanisms are reward-limited); (ii) with two populations
-a cooperator/exploiter role split emerges, stochastically when payoffs are symmetric
-and deterministically when they are not; and (iii) making the machinery itself
+a cooperator/exploiter role split emerges — stochastically under parameter symmetry
+(c0 = c1, i0 = i1) with partner choice, deterministically when cooperation cost or
+information cost is parameter-asymmetric, with mechanism-dependent inversions under
+combined reputation; and (iii) making the machinery itself
 costly makes information cost bite whose effects depend on cooperation cost: where
 cooperation cost is zero, cooperation can persist after the apparatus is eroded,
 decoupling behaviour from the mechanism that produced it, but under cooperation-cost

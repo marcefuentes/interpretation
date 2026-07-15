@@ -44,18 +44,26 @@ With two populations, cooperation frequently breaks into a cooperator/exploiter 
 split, and the cooperating side is typically the one that earns less — the paradox of
 success. The two faces of the asymmetry (who cooperates, who profits) can diverge.
 
-- **Symmetric payoffs split stochastically.** With two identical coevolving
-  populations, partner choice breaks symmetry by chance: the cooperating side is
-  exploited, and carrying the chooser allele correlates with fitness at roughly minus
-  one ([partner choice calibration](../journal/prisoners_partner_choice.md)).
-- **Asymmetric payoffs split deterministically.** When c0 < c1, the lower-cooperation-cost
-  population has the larger cooperation advantage and takes the cooperator role in
-  every cell — partner choice converts the R − P gap directly into a cooperation gap
+We measure this as an **outcome** (cooperation and fitness gaps between populations),
+separate from **parameter** symmetry in the setup (whether c0 = c1, i0 = i1, and
+payoffs match). The bullets below pair parameter conditions with the outcome pattern
+they typically produce; mechanism can override the default mapping.
+
+- **Parameter-symmetric cooperation cost → stochastic outcome (P).** With c0 = c1 and
+  i0 = i1, two identical coevolving populations under partner choice break symmetry by
+  chance: one side becomes the cooperator and is exploited, and carrying the chooser
+  allele correlates with fitness at roughly minus one
+  ([partner choice calibration](../journal/prisoners_partner_choice.md)). Combined
+  reputation mechanisms at the same parameter point stay nearly outcome-symmetric.
+- **Cooperation-cost parameter asymmetry → deterministic outcome (P).** When c0 < c1,
+  the lower-cooperation-cost population has the larger cooperation advantage and takes
+  the cooperator role in every cell — partner choice converts the R − P gap directly
+  into a cooperation gap
   ([partner choice under cooperation-cost asymmetry](../journal/asymmetric_c0_c1_partner_choice.md),
   [synthesis](../journal/synthesis.md)).
 - **Reward-led mechanisms suppress the split.** Combined mechanisms lift the exploited
-  high-cooperation-cost population and shrink the asymmetry, because being reward-led
-  they no longer route the R − P gap into a cooperation gap
+  high-cooperation-cost population and shrink the outcome asymmetry, because being
+  reward-led they no longer route the R − P gap into a cooperation gap
   ([combined mechanisms](../journal/asymmetric_c0_c1_combined.md)).
 - **Information cost compresses the split by collapsing both sides.** When one
   population's cooperation cost is fixed above zero and the other's is swept, information
@@ -63,17 +71,18 @@ success. The two faces of the asymmetry (who cooperates, who profits) can diverg
   gap and the fitness gap; the paradox of success remains while partner choice still
   functions, then disappears mainly because the system is driven to the control floor
   ([information cost under cooperation-cost asymmetry](../journal/asymmetric_c1_i.md)).
-- **Information-cost asymmetry at symmetric cooperation cost.** When c0 = c1 but
-  i0 < i1, partner choice assigns the cooperator role to the population with
-  lower information cost, while IJMPQ inverts via cross-population hitchhiking — the
-  high-information-cost side sheds its apparatus into tax-free unconditional
+- **Information-cost parameter asymmetry at equal cooperation cost → deterministic
+  outcome.** When c0 = c1 but i0 < i1, partner choice assigns the cooperator role to
+  the population with lower information cost — not a chance split, despite
+  parameter-symmetric cooperation cost. IJMPQ inverts via cross-population hitchhiking:
+  the high-information-cost side sheds its apparatus into tax-free unconditional
   cooperation ([per-population information cost](../journal/asymmetric_i0_i1.md)).
   Snowdrift largely removes this lock, so the pattern is PD-specific.
-- **When both costs differ, the cooperation-cost gap dominates.** With c0 < c1 fixed
-  and the full i0 × i1 square swept, partner choice assigns the
-  lower-cooperation-cost population as cooperator in 170/176 cells; IJMPQ can invert
-  locally only on the i0 ≈ 0 strip (13 cells), where hitchhiking survives but is
-  attenuated relative to the symmetric-cooperation-cost case. Snowdrift removes the
+- **When both cost axes differ parameter-asymmetrically, cooperation cost dominates
+  the outcome.** With c0 < c1 fixed and the full i0 × i1 square swept, partner choice
+  assigns the lower-cooperation-cost population as cooperator in 170/176 cells; IJMPQ
+  can invert locally only on the i0 ≈ 0 strip (13 cells), where hitchhiking survives
+  but is attenuated relative to the c0 = c1, i0 ≠ i1 case. Snowdrift removes the
   wedge entirely ([both costs asymmetric](../journal/asymmetric_c1_i0_i1.md)).
 
 Single-run movies across the information-cost sweeps confirm that these splits are
@@ -100,16 +109,17 @@ some of the strongest results sit
   there is no refuge at zero cooperation cost, so shedding P1 or M1 no longer leaves
   a stable high-cooperation niche behind
   ([information cost under cooperation-cost asymmetry](../journal/asymmetric_c1_i.md)).
-- **Cross-population hitchhiking under information-cost asymmetry.** At symmetric
-  cooperation cost, IJMPQ can invert the role split: the population with higher
-  information cost sheds active enforcement into tax-free unconditional carriers
-  (C1P0) and cooperates more, while the population with lower information cost
-  retains partial machinery but earns more — the same behaviour–mechanism decoupling
-  route, now routed through between-population assortment
+- **Cross-population hitchhiking under information-cost asymmetry.** At c0 = c1
+  (parameter-symmetric cooperation cost), IJMPQ can invert the outcome split: the
+  population with higher information cost sheds active enforcement into tax-free
+  unconditional carriers (C1P0) and cooperates more, while the population with lower
+  information cost retains partial machinery but earns more — the same
+  behaviour–mechanism decoupling route, now routed through between-population assortment
   ([per-population information cost](../journal/asymmetric_i0_i1.md),
   [both costs asymmetric](../journal/asymmetric_c1_i0_i1.md)). When both
-  cooperation-cost and information-cost asymmetry are present, the hitchhiking wedge
-  survives only where i0 ≈ 0; elsewhere the cooperation-cost gap reasserts control.
+  cooperation-cost and information-cost parameters are asymmetric, the hitchhiking wedge
+  survives only where i0 ≈ 0; elsewhere the cooperation-cost gap reasserts control in
+  the outcome.
 - **Partner choice assorts, reciprocity remembers.** A residual chooser minority sorts
   the whole population so even unconditional cooperators are protected; a residual
   reciprocator minority protects only itself. This population-level vs individual-level

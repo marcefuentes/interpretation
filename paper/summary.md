@@ -34,11 +34,13 @@ threshold. Direct reciprocity is limited by mutual-defection risk; partner choic
 the cooperation advantage R − P; reputation-rich combined mechanisms by reward alone
 and tolerate the highest costs. With two populations, partner choice frequently
 produces a cooperator/exploiter role split in which the cooperating side earns less —
-the paradox of success. When payoffs are symmetric between populations the split is
-stochastic; when one population faces a lower cooperation cost it is deterministic,
-because partner choice converts built-in payoff asymmetry into a cooperation gap.
-Reward-led combined mechanisms suppress this split by lifting the exploited
-population.
+the paradox of success. We distinguish parameter symmetry in the setup (equal costs
+and payoffs) from outcome symmetry (similar cooperation and fitness): symmetric
+parameters do not require symmetric outcomes. Under partner choice, equal costs yield
+a stochastic split; a cooperation-cost gap yields a deterministic one. Asymmetric
+information cost at equal cooperation cost also assigns roles deterministically (and
+can invert them under combined reputation mechanisms). Reward-led combined mechanisms
+suppress outcome asymmetry by lifting the exploited population.
 
 Making the machinery itself costly introduces a trade-off between information cost
 and cooperation cost. Cooperation cost sets the temptation and risk the apparatus
@@ -52,10 +54,10 @@ costlier still, that refuge at zero cooperation cost disappears — information 
 cooperation ceiling directly and compresses the cooperator/exploiter split rather than
 merely changing the genotype route.
 
-When cooperation cost is symmetric but information cost differs between populations,
-partner choice assigns the cooperator role to the side with lower information cost,
-while combined reputation mechanisms can invert that assignment via cross-population
-hitchhiking. When both cooperation cost and information cost differ between
+When cooperation cost is parameter-symmetric (c0 = c1) but information cost differs
+(i0 ≠ i1), partner choice deterministically assigns the cooperator role to the side
+with lower information cost — unlike the stochastic split at i0 = i1 — while combined
+reputation mechanisms can invert that assignment via cross-population hitchhiking. When both cooperation cost and information cost differ between
 populations, the built-in cooperation-cost gap is the default role assigner: partner
 choice favours the population with lower cooperation cost in almost every cell, and
 the hitchhiking inversion survives only in a thin i0 ≈ 0 wedge. Single-run trajectories confirm
@@ -66,8 +68,9 @@ slowly.
 
 Cooperation outcomes are jointly shaped by which enforcement mechanism operates, how
 costly cooperation and the machinery are, and whether one or two populations
-coevolve. Partner choice is the mechanism most closely tied to between-population
-asymmetry: it creates or amplifies a role split that combined reputation-rich
+coevolve. Parameter symmetry in the setup does not imply outcome symmetry between
+populations. Partner choice is the mechanism most closely tied to between-population
+outcome asymmetry: it creates or amplifies a role split that combined reputation-rich
 mechanisms partially undo. Treating enforcement as costly reframes cooperation around
 two separable costs and reveals that decoupling of behaviour from mechanism is real
 but bounded — it requires a refuge where shedding the apparatus is not punished by

@@ -29,8 +29,8 @@ Status: provisional — adjust before locking the manuscript figure set.
 | Fig | Message | Figure id | Command | Output | Journal backing |
 | --- | ------- | --------- | ------- | ------ | --------------- |
 | 1 | Equal cooperation cost: mechanism hierarchy (single population) | m1 | `python -m graphgen.main --study interpretation --figure m1 --groupsize 128 --output ~/figures` | ~/figures/interpretation/m1.png | Baseline partner choice, reciprocity, combined |
-| 2 | Stochastic two-population split under partner choice | m6 | `... --figure m6 ...` | ~/figures/interpretation/m6.png | Two populations, equal cooperation cost |
-| 3 | Deterministic split under cooperation-cost asymmetry; combined mechanisms suppress it | m2 | `... --figure m2 ...` | ~/figures/interpretation/m2.png | Cooperation-cost asymmetry |
+| 2 | Stochastic outcome split under parameter symmetry (c0 = c1) | m6 | `... --figure m6 ...` | ~/figures/interpretation/m6.png | Two populations, equal cooperation cost |
+| 3 | Deterministic outcome split under cooperation-cost parameter asymmetry | m2 | `... --figure m2 ...` | ~/figures/interpretation/m2.png | Cooperation-cost asymmetry |
 | 4 | Information cost versus cooperation cost (equal between populations) | m3 | `... --figure m3 ...` | ~/figures/interpretation/m3.png | Information cost sweep |
 | 5 | Behaviour–mechanism decoupling where cooperation cost is zero | m4 | `... --figure m4 ...` | ~/figures/interpretation/m4.png | Information cost sweep |
 | 6 | Information cost under fixed cooperation-cost asymmetry | m5 | `... --figure m5 ...` | ~/figures/interpretation/m5.png | Fixed c0, i × c1 |
@@ -38,12 +38,12 @@ Status: provisional — adjust before locking the manuscript figure set.
 ### Panel order notes
 
 1. m1: columns = P, M, IJMPQ; single coevolving population.
-2. m6: two equal-cooperation-cost populations under P; rows = higher- then lower-cost
-   population labels; columns = cooperation, fitness. Partner choice stochastically
-   assigns the cooperator role; fitness inverts (paradox of success).
-3. m2: two populations with c0 < c1; rows = P and IJMPQ for high- then low-cost
-   side; columns = cooperation, fitness. Contrast with m6: deterministic split;
-   IJMPQ lifts the expensive population.
+2. m6: two parameter-symmetric populations (c0 = c1) under P; rows = higher- then
+   lower-cooperation-cost population labels; columns = cooperation, fitness. Partner
+   choice produces a stochastic outcome split; fitness inverts (paradox of success).
+3. m2: parameter-asymmetric cooperation cost (c0 < c1); rows = P and IJMPQ for high-
+   then low-cost side; columns = cooperation, fitness. Contrast with m6: deterministic
+   outcome split; IJMPQ lifts the expensive population.
 4. m3: IJMPQ; columns = cooperation, fitness; information cost × cooperation cost grid.
 5. m4: rows = P then M; columns = machinery allele then cooperation.
 6. m5: rows = high- then low-cooperation-cost population under P; columns = cooperation,
@@ -103,8 +103,12 @@ journal synthesis and calibration docs; do not publish full payoff-plane heatmap
 ## Draft captions
 
 1. Fig 1. At equal cooperation cost, partner choice, direct reciprocity, and the reputation-rich combined mechanism define the threshold hierarchy the rest of the paper explains.
-2. Fig 2. With two identical populations, partner choice breaks symmetry stochastically: one population becomes the cooperator and is exploited by the other.
-3. Fig 3. With cooperation-cost asymmetry, partner choice converts the payoff gap into a deterministic cooperator/exploiter split; the combined mechanism lifts the expensive population and softens both cooperation and fitness asymmetry.
+2. Fig 2. Parameter-symmetric populations (c0 = c1): partner choice breaks outcome
+   symmetry stochastically — one population becomes the cooperator and is exploited.
+3. Fig 3. Parameter-asymmetric cooperation cost (c0 < c1): partner choice converts
+   the payoff gap into a deterministic cooperator/exploiter split; the combined
+   mechanism lifts the expensive population and softens both cooperation and fitness
+   gaps.
 4. Fig 4. When cooperation cost is equal between populations, information cost is soft by itself but lowers the cooperation-cost ceiling once the two costs overlap.
 5. Fig 5. Where cooperation cost is zero, the machinery alleles are selected away before cooperation disappears, so behaviour and mechanism decouple.
 6. Fig 6. With cooperation-cost asymmetry and c0 fixed above zero, the harmless information-cost edge disappears: information cost retreats the cooperation-cost ceiling and compresses the cooperator/exploiter split.

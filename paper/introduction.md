@@ -33,8 +33,27 @@ We organise the study around three outcomes (see
    it collapses as costs rise.
 2. **Between-population asymmetry** — when two populations diverge into a cooperator
    and an exploiter, and which one profits (these need not be the same population).
+   This is an **outcome** measure (gaps in cooperation and fitness), not a statement
+   about how the model is parameterised.
 3. **The genotype composition behind the behaviour** — which alleles actually produce
    the cooperation, and whether behaviour and enforcement machinery can come apart.
+
+## Parameter symmetry versus outcome symmetry
+
+Throughout, we keep two levels distinct. **Parameter symmetry** means the two
+populations face the same setup: equal cooperation cost (c0 = c1), equal information
+cost (i0 = i1), and identical payoffs. **Outcome symmetry** means realised cooperation
+and fitness are similar between populations (small q and w gaps). Symmetric
+parameters do **not** imply symmetric outcomes, and asymmetric outcomes can arise
+without any built-in parameter tilt.
+
+Under partner choice, equal costs produce a **stochastic** outcome split
+(spontaneous symmetry breaking). A cooperation-cost gap (c0 < c1) seeds a
+**deterministic** cooperator/exploiter assignment. Asymmetric information cost at
+equal cooperation cost (i0 ≠ i1) also yields a **deterministic** split under P — and
+can **invert** it under combined reputation mechanisms — even though cooperation cost
+remains parameter-symmetric. Which mapping applies depends on mechanism and on which
+cost axes are tilted; snowdrift often removes locks that hold in the PD.
 
 ## Contribution
 
@@ -43,7 +62,9 @@ information cost (including per-population asymmetry i0 ≠ i1), group size, par
 shuffling, population structure, and mechanism,
 and by adding two payoff-plane calibration sweeps that decouple the payoff gaps a
 single cost axis welds together, we (i) attribute each mechanism's collapse to a
-specific payoff gap, (ii) characterise the two routes to the cooperator/exploiter
-role split, and (iii) introduce an information-cost axis showing that taxing the
+specific payoff gap, (ii) characterise how parameter symmetry and asymmetry map to
+outcome splits between populations (stochastic under full parameter symmetry with
+partner choice; deterministic under cooperation-cost or information-cost tilts;
+mechanism-dependent inversions), and (iii) introduce an information-cost axis showing that taxing the
 machinery erodes the apparatus while cooperation can persist through unconditional
 cooperators — an information-cost versus cooperation-cost view of enforcement.

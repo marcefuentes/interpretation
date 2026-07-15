@@ -17,11 +17,17 @@ bound M and P individually.
 
 The second population does not change the *dynamical regime* (both single- and two-
 population cases settle into absorbing states, not cycles). What it changes is the
-*outcome*: two populations can lock into a cooperator/exploiter role split. When the
-populations are symmetric the split is a spontaneous symmetry breaking; when they
-differ in cooperation cost it is seeded deterministically by the payoff asymmetry. In
-both, the cooperating side is typically exploited — a robust paradox of success — and
-the reward-led combined mechanisms are what soften it.
+*outcome*: two populations can lock into a cooperator/exploiter role split even when
+their parameters match.
+
+We separate **parameter symmetry** (c0 = c1, i0 = i1, identical payoffs) from
+**outcome symmetry** (similar cooperation and fitness). Partner choice at parameter
+symmetry produces spontaneous symmetry breaking — a stochastic outcome split. A
+cooperation-cost gap seeds a deterministic assignment. Information-cost asymmetry at
+equal cooperation cost also assigns roles deterministically under P, while IJMPQ can
+invert the mapping; snowdrift often removes these PD locks. In all cases the
+cooperating side is typically exploited — the paradox of success — and reward-led
+combined mechanisms soften the outcome gap.
 
 ## Information cost versus cooperation cost
 
@@ -37,14 +43,15 @@ costlier still, there is no harmless information-cost edge at zero cooperation c
 so information cost retreats the cooperation-cost ceiling directly and compresses the
 cooperator/exploiter split rather than merely changing the genotype route.
 
-**Which cost assigns roles?** When cooperation cost is symmetric but information cost
-differs between populations, per-population information-cost asymmetry alone can assign
-or invert the role split depending on mechanism — partner choice to the side with
-lower information cost, IJMPQ inverted via hitchhiking. When both cooperation cost and
-information cost differ, the cooperation-cost gap is the default role assigner (partner
+**Which cost assigns roles?** Parameter symmetry in cooperation cost does not imply
+outcome symmetry. When c0 = c1 but i0 ≠ i1, per-population information-cost
+asymmetry alone assigns or inverts the role split depending on mechanism — partner
+choice to the side with lower information cost (deterministic), IJMPQ inverted via
+hitchhiking. When both cooperation cost and information cost differ between
+populations, the cooperation-cost gap is the default outcome assigner (partner
 choice: the lower-cooperation-cost population cooperates more in 170/176 cells), and
 the hitchhiking inversion survives only on an i0 ≈ 0 strip (13 cells), attenuated
-relative to the symmetric-cooperation-cost case. Snowdrift removes the wedge entirely.
+relative to the c0 = c1, i0 ≠ i1 case. Snowdrift removes the wedge entirely.
 Cooperation cost therefore sets the baseline; information cost can locally override
 combined mechanisms only where the population with lower cooperation cost pays no
 information cost.
