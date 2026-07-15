@@ -27,22 +27,26 @@ that (i) the payoff gap each mechanism is limited by is identifiable and stable
 advantage, reputation-rich mechanisms are reward-limited); (ii) with two populations
 a cooperator/exploiter role split emerges, stochastically when payoffs are symmetric
 and deterministically when they are not; and (iii) making the machinery itself
-costly makes information cost bite whose effects depend on cooperation cost: on the symmetric
-low-demand edge, cooperation can persist after the apparatus is eroded, decoupling
-behaviour from the mechanism that produced it, but under built-in asymmetry the same
-information cost more directly retreats the cooperation ceiling and compresses the
-cooperator/exploiter split.
+costly makes information cost bite whose effects depend on cooperation cost: where
+cooperation cost is zero, cooperation can persist after the apparatus is eroded,
+decoupling behaviour from the mechanism that produced it, but under cooperation-cost
+asymmetry the same information cost more directly retreats the cooperation ceiling and
+compresses the cooperator/exploiter split; per-population information-cost asymmetry
+at symmetric cooperation cost can assign or invert roles depending on mechanism, but
+when both cooperation cost and information cost differ between populations the
+cooperation-cost gap dominates globally and information cost inverts combined
+mechanisms only in a thin i0 ≈ 0 wedge.
 
 ## Section-to-journal map
 
-| Paper section | Backed by (journal/) |
-| ------------- | -------------------- |
+| Paper section | Topic (journal/) |
+| ------------- | ---------------- |
 | Introduction | framework.md |
-| Methods: model, payoffs, grid | parameterization.md, framework.md; symmetric_c.md and asymmetric_c0_c1.md (noise floor, replicates) |
-| Results 1: level of cooperation | synthesis.md, prisoners_calibration.md, snowdrift_calibration.md, symmetric_c_*.md, asymmetric_c0_c1_*.md, symmetric_c_i.md, asymmetric_c1_i.md |
-| Results 2: between-population asymmetry | asymmetric_c0_c1_partner_choice.md, asymmetric_c0_c1_combined.md, asymmetric_c1_i.md, prisoners_partner_choice.md, synthesis.md |
-| Results 3: composition / route to cooperation | symmetric_c_i.md, asymmetric_c1_i.md, symmetric_c_reciprocity.md, asymmetric_c0_c1_reciprocity.md, synthesis.md |
-| Discussion | synthesis.md, symmetric_c_i.md, asymmetric_c1_i.md, framework.md |
+| Methods: model, payoffs, grid | parameterization.md, framework.md |
+| Results 1: level of cooperation | synthesis.md, calibration docs, baseline and information-cost sweeps |
+| Results 2: between-population asymmetry | cooperation-cost asymmetry, information-cost asymmetry, per-population i0/i1, both costs asymmetric |
+| Results 3: composition / route to cooperation | information-cost sweeps, reciprocity docs, synthesis.md |
+| Discussion | synthesis.md, information-cost analyses, framework.md |
 
 ## Status
 

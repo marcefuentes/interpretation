@@ -18,7 +18,7 @@ For the cross-study framework see [synthesis.md](synthesis.md).
 ## Design and sanity
 
 - Study pair: asymmetric_c1_i0_i1 (Runs = 30) and asymmetric_c1_i0_i1_1run
-  (single-run temporal movies; **IJMPQ not yet run** at time of writing).
+  (single-run temporal movies; both complete).
 - Population structure: pop_2 only.
 - Fixed cooperation costs: c0 = 0.10, c1 = 0.20.
 - Information cost: Cost0 in {0.00, 0.02, ..., 0.30} and Cost1 in
@@ -164,11 +164,46 @@ The hitchhiking wedge is a **PD phenomenon**, as in Study A.
   +0.023; IJMPQ from +0.160 to +0.075. Partner choice needs stable pairing to
   sustain the crossed-asymmetry narrative.
 
-## Temporal dynamics
+## Temporal dynamics: roles fixed by the first snapshot
 
-Single-run movies for IJMPQ are **not yet available** (1run jobs pending). P 1run
-data exist but are not integrated here. Image summaries are expected to be
-representative given the early lock-in pattern seen in the parent studies.
+Single-run movies (`asymmetric_c1_i0_i1_1run`, `csv_*_filtered_for_movie.con`,
+PD, noshuffle, gs = 128) match the image summaries: the population split is in
+place by t = 131072 and then wobbles slightly.
+
+**P at (Cost0, Cost1) = (0, 0):** pop₀ 0.613 → 0.568; pop₁ 0.164 → 0.181 —
+the asymmetric_c0_c1 role split is present from the first snapshot.
+
+**P at (0, 0.20):** pop₀ 0.066 → 0.091; pop₁ 0.022 → 0.029 — both sides near
+collapse, but pop₀ keeps the cooperation lead throughout.
+
+**IJMPQ at (0, 0):** pop₀ 0.949 → 0.953; pop₁ 0.948 → 0.953 from t = 131072
+onward — mutualistic equilibrium with no role split when information is free on
+both sides.
+
+**IJMPQ at (0, 0.20):** pop₀ 0.698 → 0.813; pop₁ 0.909 → 0.937 from t = 131072
+onward — hitchhiking inversion established immediately; pop₁'s tax-free unconditional
+cooperation is present from the first recorded time step.
+
+**IJMPQ at (0.30, 0):** pop₀ 0.804 → 0.730; pop₁ 0.305 → 0.272 at t = 131072 —
+the c-gap cooperator assignment is already in place; taxing pop₀'s information access
+erodes but does not invert the split.
+
+**IJMPQ at (0.30, 0.20):** pop₀ 0.087 → 0.074; pop₁ 0.032 → 0.032 at t = 131072 —
+already collapsed and stable.
+
+This mirrors asymmetric_c1_i, asymmetric_i0_i1, and symmetric_c_i: the
+interesting event is whether a cell establishes a defended state at all, not a
+slow late erosion.
+
+## Caveats
+
+- **Primary slice.** Headline numbers are PD, noshuffle, gs = 128 unless stated.
+- **Noise floor.** Per-cell qBSeen differences below ~0.01–0.02 are within
+  run-to-run noise; the square-wide role-assignment patterns are well outside it.
+- **Temporal.** Movie exports exist for `asymmetric_c1_i0_i1_1run`
+  (`csv_*_filtered_for_movie.con`); temporal claims above use those 1run exports.
+  Snapshot spacing is coarse (first recorded time t = 131072), so sub-establishment
+  ordering is not resolved.
 
 ## Cross-study synthesis
 

@@ -203,7 +203,8 @@ The two are benign alone and destructive together:
   the full Cost0 x Cost1 square (see **asymmetric_c1_i0_i1.md**). The c-gap is the
   default role assigner (P: pop_0 cooperates in 170/176 cells). IJMPQ/IMP can still
   invert locally on the Cost0 ≈ 0 strip (13 cells), but cannot overturn the cheap-c
-  side globally; snowdrift removes the wedge entirely.
+  side globally; snowdrift removes the wedge entirely. Single-run movies confirm
+  early lock-in at t = 131072 for both the c-gap default and the hitchhiking wedge.
 - **The reward-led / assortment / risk attributions carry over.** Combined
   reputation-rich mechanisms are the most Cost-robust despite paying the double
   (two-family) tax — family count does not predict the collapse, the enforcement

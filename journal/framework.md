@@ -95,12 +95,13 @@ the behaviour. This captures findings invisible to level and asymmetry alone:
 
 ## What we deliberately do not treat as an outcome
 
-- **Temporal regime / oscillations.** The single-run studies show absorbing states
-  and one-time tipping events, not cyclic dominance, and this regime does not change
-  between one and two populations. The current instrumentation (30-run averaging plus
-  nine coarse snapshots) could not resolve oscillation even if present. We keep this
-  as an open question, not a measured outcome; resolving it would need dense
-  early-time logging on single runs.
+- **Temporal regime / oscillations.** The *_1run movies confirm that established
+  role splits and collapsed cells are already in place at the first recorded snapshot
+  (t = 131072), including across the per-population information-cost programme
+  (asymmetric_i0_i1_1run, asymmetric_c1_i0_i1_1run). The regime does not change
+  between one and two populations. Nine coarse snapshots cannot resolve oscillation
+  within an interval or sub-establishment ordering; finer early-time logging would
+  be needed for that.
 
 ## How the studies populate the grid
 
@@ -110,6 +111,8 @@ the behaviour. This captures findings invisible to level and asymmetry alone:
 | symmetric_c | pop_1/2/3, c0 = c1 sweep, dilemmas 0/1/2, both groupsizes, shuffle/noshuffle, all mechanisms | The equal-cost special case; single-population baseline |
 | symmetric_c_i | adds the Cost axis (Cost x c triangle) to symmetric_c | Information cost vs cooperation cost (symmetric) |
 | asymmetric_c1_i | pop_2, fixed c0 = 0.10, Cost x c1 triangle | Price vs demand under exploitation asymmetry |
+| asymmetric_i0_i1 | pop_2, c0 = c1, Cost0 < Cost1 triangle | Supply-side information-cost asymmetry (Study A) |
+| asymmetric_c1_i0_i1 | pop_2, fixed c0 < c1, Cost0 x Cost1 square | Crossed c-gap and Cost asymmetry (Study B) |
 | prisoners | (R, P) payoff-plane sweep, PD | Attribute c-collapses to temptation / risk / R minus P |
 | snowdrift | (R, S) payoff-plane sweep, snowdrift | Confirm the low-risk (high S) attribution from the other side |
 | *_1run | single-run variants of the above | Temporal dynamics (limited resolution) |

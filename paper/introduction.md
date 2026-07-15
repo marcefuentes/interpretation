@@ -20,9 +20,9 @@ Most theory treats a single well-mixed population. Many biologically important c
 are mutualisms: two distinct populations (or species) that cooperate across the
 divide, each with its own cost of helping. We treat the single population as the
 baseline and the mutualistic two-population interaction as the central case, and ask what the
-second population changes. The equal-cost single population (symmetric_c) is
-the c0 = c1 special case of the two-population design (asymmetric_c0_c1) in
-which both sides carry the same cost.
+second population changes. The equal-cooperation-cost single-population case is the
+c0 = c1 special case of the two-population design in which both sides carry the same
+cooperation cost.
 
 ## What we set out to explain
 
@@ -39,7 +39,8 @@ We organise the study around three outcomes (see
 ## Contribution
 
 By sweeping an individual-based model across social dilemma, cooperation cost,
-information cost, group size, partner shuffling, population structure, and mechanism,
+information cost (including per-population asymmetry i0 ≠ i1), group size, partner
+shuffling, population structure, and mechanism,
 and by adding two payoff-plane calibration sweeps that decouple the payoff gaps a
 single cost axis welds together, we (i) attribute each mechanism's collapse to a
 specific payoff gap, (ii) characterise the two routes to the cooperator/exploiter

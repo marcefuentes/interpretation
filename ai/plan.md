@@ -130,7 +130,8 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       170/176 cells). IJMPQ hitchhiking wedge survives only on Cost₀ ≈ 0 strip
       (13 flip cells). journal/asymmetric_c1_i0_i1.md + ai/analyze_asymmetric_c1_i0_i1.py
       + 28 verifier checks.
-    - **Remaining:** 1run IJMPQ jobs; graphgen `--export-slices` for .con cache.
+    - 1run companion complete; movie `.con` caches warmed via graphgen
+      `--export-slices --movie` on `asymmetric_c1_i0_i1_1run`.
 
 ## Newly landed data — symmetric_c_i (2026-07)
 

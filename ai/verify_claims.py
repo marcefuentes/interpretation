@@ -1263,6 +1263,23 @@ check("asymmetric_c1_i0_i1", "IJMPQ snowdrift mean dq = 0.626",
 check("asymmetric_c1_i0_i1", "gs4 P mean dq = 0.023",
       lambda: c1i0i1_gap_mean("P", "qBSeen", gs="4"), 0.023)
 
+# Temporal: roles established by first snapshot (1run movies)
+def c1i0i1_time_q(mech, co0, co1, pop, time, movie_study="asymmetric_c1_i0_i1_1run"):
+    rows = load(c1i0i1path(movie_study, "noshuffle", "128", mech, 1, pop, movie=True))
+    for r in rows:
+        if (int(float(r["Time"])) == time and abs(float(r["Cost0"]) - co0) < 0.005
+                and abs(float(r["Cost1"]) - co1) < 0.005):
+            return float(r["qBSeen"])
+    return float("nan")
+
+
+check("asymmetric_c1_i0_i1", "1run P (0,0) pop0 t=131072 = 0.613",
+      lambda: c1i0i1_time_q("P", 0.0, 0.0, 0, 131072), 0.613, 0.01)
+check("asymmetric_c1_i0_i1", "1run IJMPQ (0,0.20) pop1 t=131072 = 0.909",
+      lambda: c1i0i1_time_q("IJMPQ", 0.0, 0.20, 1, 131072), 0.909, 0.01)
+check("asymmetric_c1_i0_i1", "1run IJMPQ (0.30,0) pop0 t=131072 = 0.804",
+      lambda: c1i0i1_time_q("IJMPQ", 0.30, 0.0, 0, 131072), 0.804, 0.01)
+
 
 # ════════════════════════════════════════════════════════════════════════════
 # MUTUALISM POP_3 — redundant with symmetric_c pop_3 (copilot-instructions.md,

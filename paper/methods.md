@@ -1,8 +1,8 @@
 # Methods
 
-*Draft scaffold. Backing: [parameterization.md](../journal/parameterization.md),
-[framework.md](../journal/framework.md); replicate/noise detail in
-[symmetric_c.md](../journal/symmetric_c.md) and [asymmetric_c0_c1.md](../journal/asymmetric_c0_c1.md).*
+*Draft scaffold. Backing: [parameterization](../journal/parameterization.md),
+[framework](../journal/framework.md); replicate and noise-floor detail in the journal
+(regression-checked by ai/verify_claims.py).*
 
 ## Model
 
@@ -29,45 +29,58 @@ swept from 0 to b. The dilemma folders are:
 - **2 — snowdrift:** T = K + b, R = K + b − c/2, P = K, S = K + b − c.
 
 Exact tables, including the two-population form, are in
-[parameterization.md](../journal/parameterization.md),
-[symmetric_c.md](../journal/symmetric_c.md), and [asymmetric_c0_c1.md](../journal/asymmetric_c0_c1.md).
+[parameterization](../journal/parameterization.md) and the journal payoffs docs.
 
 ## Independent variables
 
-The design grid (detailed in [framework.md](../journal/framework.md)): social dilemma
+The design grid (detailed in [framework](../journal/framework.md)): social dilemma
 (control / PD / snowdrift); cooperation cost c (two costs c0, c1 in the two-population
-case); information cost Cost; group size (4 vs 128); partner shuffling (stable vs
-re-drawn each round); population structure (pop_1 single, pop_2 two coevolving, pop_3
-evolving-vs-fixed); and mechanism (_, M, P, MP, MPQ, IMP, IJMPQ, and shuffle-only IM,
-IJM).
+case); information cost (including per-population i0 and i1 in the two-population
+case); group size (4 vs 128); partner shuffling (stable vs re-drawn each round);
+population structure
+(one coevolving population, two coevolving populations, or an evolving-vs-fixed
+control); and mechanism (_, M, P, MP, MPQ, IMP, IJMPQ, and shuffle-only IM, IJM).
 
-## Studies
+## Simulation sweeps
 
-- **asymmetric_c0_c1** (primary): two coevolving populations, a 2D upper-triangular sweep of
-  c0 < c1 (210 cells), dilemmas 1/2, both group sizes, shuffle/noshuffle.
-- **symmetric_c**: symmetric_c (equal-cost, c0 = c1), pop_1/2/3, dilemmas 0/1/2.
-- **symmetric_c_i**: adds the information-cost axis, sweeping Cost jointly with c on a
-  triangular grid (Cost + c ≤ b).
-- **prisoners** and **snowdrift**: payoff-plane calibration sweeps that hold two
-  payoffs fixed and vary the other two, decoupling temptation, risk, and the
-  cooperation advantage R − P that a single cost axis welds together.
-- **\*_1run** variants: single realisations for temporal inspection (limited by coarse
-  snapshot spacing; see [framework.md](../journal/framework.md) on why oscillation is
-  left as an open question rather than a measured outcome).
+The headline sweeps are:
+
+1. **Cooperation cost, equal between populations** — single population and two
+   coevolving populations; c0 = c1; dilemmas 0/1/2; the baseline hierarchy and
+   stochastic two-population split.
+2. **Cooperation cost, unequal between populations** — two coevolving populations;
+   upper-triangular c0 < c1 (210 cells); dilemmas 1/2; deterministic role split.
+3. **Information cost and cooperation cost, equal between populations** — triangular
+   information cost × cooperation cost grid (i + c ≤ b); adds the information-cost
+   axis to the baseline.
+4. **Information cost under fixed cooperation-cost asymmetry** — c0 fixed at 0.10,
+   information cost swept jointly with c1 (i + c1 ≤ b).
+5. **Per-population information cost at symmetric cooperation cost** — c0 = c1,
+   strict triangle i0 < i1 (per-axis cap b − c).
+6. **Both costs asymmetric** — c0 = 0.10, c1 = 0.20 fixed; full i0 × i1 square
+   (176 cells).
+
+Auxiliary **payoff-plane calibration sweeps** hold two payoffs fixed and vary the
+other two, decoupling temptation, risk, and the cooperation advantage R − P that a
+single cooperation-cost axis welds together. These support attribution in the main
+text but are not primary result figures.
+
+**Single-run companions** (nine snapshots from t = 131072 to 10⁶) provide temporal
+inspection: coarse spacing is sufficient to confirm early lock-in of role splits but
+not sub-establishment ordering ([framework](../journal/framework.md)).
 
 ## Outcome measures
 
 Cooperation level is qBSeen (frequency of cooperative acts); fitness is wmean;
 genotype composition is read from the per-genotype frequency columns (e.g. C1P1,
 C1P0, C0P1, C1M1, C1M0). Between-population asymmetry is the qBSeen gap (cooperation)
-and the wmean gap (exploitation) between file sets _0 and _1.
+and the wmean gap (exploitation) between the two coevolving populations.
 
 ## Replicates, noise floor, and verification
 
 Main-study values are means over 30 independent runs, with a companion SD column per
 statistic. The practical noise floor is qBSeen gaps below ~0.01–0.02 and fitness gaps
-below ~0.002; SD peaks in bistable transition cells (details in
-[symmetric_c.md](../journal/symmetric_c.md) and [asymmetric_c0_c1.md](../journal/asymmetric_c0_c1.md)).
-Every headline number in the journal is regression-checked against the exported data
-by `ai/verify_claims.py`, which is run before any documentation edit that changes a
-number.
+below ~0.002; SD peaks in bistable transition cells (details in the journal baseline
+docs). Every headline number in the journal is regression-checked against the exported
+data by `ai/verify_claims.py`, which is run before any documentation edit that
+changes a number.
