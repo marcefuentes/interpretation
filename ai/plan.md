@@ -153,7 +153,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       analysis script, or verifier checks yet. Consider these as an option if the
       manuscript wants a line-chart companion for the information-cost axis
       (see paper/figures.md, Fig 4/5 backing symmetric_c_i.md). Decide before
-      building whether the line reslice adds enough over the m3/m4 heatmaps to earn a
+      building whether the line reslice adds enough over the fig4/fig5 heatmaps to earn a
       figure slot.
 
 ## Decisions needed from maintainer

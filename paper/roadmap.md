@@ -49,10 +49,10 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 ## Phase 1 — figure set (do before Results prose)
 
 - [~] Finalize the main-text figure list from the candidates in figures.md (target
-  ~5-7): m1 (single-population hierarchy), m6 (stochastic two-population split,
-  **line chart**), m2 (deterministic split under cooperation-cost asymmetry),
-  m3–m5 (information-cost panels) — not yet locked.
-- [~] Decide the supplement figure list: ms1–ms5 (shuffle, gs = 4, dilemma-0
+  ~5-7): fig1 (single-population hierarchy), fig2 (stochastic two-population split,
+  **line chart**), fig3 (deterministic split under cooperation-cost asymmetry),
+  fig4–fig6 (information-cost panels) — not yet locked.
+- [~] Decide the supplement figure list: figS1–figS5 (shuffle, gs = 4, dilemma-0
   control, parameter-symmetric vs asymmetric line contrast, information-cost
   asymmetry at equal c) plus attribution table; cal1–cal2 auxiliary only.
 - [x] Generate candidate figures via graphgen; record commands in figures.md.
