@@ -293,9 +293,11 @@ a cell establishes a defended state at all, not a slow late erosion.
   run-to-run noise; the role-assignment patterns and triangle means are well
   outside it.
 - **Temporal.** Movie exports exist for `asymmetric_i0_i1_1run` at c = 0.10
-  (`csv_*_filtered_for_movie.con`); c = 0.20 temporal slices are not yet exported.
-- **1run companion.** Image and movie `.con` caches for both studies; temporal
-  claims above use the 1run movie exports at c = 0.10.
+  (`csv_*_filtered_for_movie.con`) and c = 0.20 (`csv_*_c020_for_movie.con`); regenerate
+  with `python -m graphgen.main --study asymmetric_i0_i1_1run --export-slices --movie
+  --results ~/results` (add `--dilemma-type 1` and `--dilemma-type 2` for PD and snowdrift).
+- **1run companion.** Image and movie `.con` caches for both studies; primary temporal
+  claims above use the c = 0.10 filtered movie exports unless a c = 0.20 slice is cited.
 
 ## One-line reading
 
