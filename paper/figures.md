@@ -10,6 +10,16 @@ Regenerate any manuscript figure from ~/code/graph with the venv active:
     cd ~/code/graph && . .venv/bin/activate
     python -m graphgen.main --study interpretation --figure FIG --groupsize 128 --output ~/figures
 
+Generate all manuscript PNGs and a publication DOCX with legends (figures must
+exist in the output directory first):
+
+    python -m graphgen.main --study interpretation --all --groupsize 128 --output ~/figures
+    python -m graphgen.main --study interpretation --report --groupsize 128 --output ~/figures
+
+The report includes main text Figs 1–6 (m1, m6, m2–m5) and supplement Figs S1–S5
+(ms1–ms5) in manuscript order, with cross-references in each legend. Calibration
+panels cal1–cal2 are omitted. Output: ~/figures/interpretation/interpretation.docx.
+
 The manuscript figure set lives in ../graph/graphgen/studies/interpretation/ as
 m1–m6 (main text) and ms1–ms5 (supplement). Auxiliary payoff-plane calibration
 panels are cal1–cal2 in the same namespace (not published). Figure ids pull from
