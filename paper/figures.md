@@ -21,7 +21,7 @@ The report includes main text Figs 1–6 (fig1–fig6) and supplement Figs S1–
 panels cal1–cal2 are omitted. Outputs:
 
 - DOCX: ~/figures/interpretation/interpretation.docx
-- Markdown mirror: paper/interpretation.md (sibling interpretation repo; PNG embeds
+- Markdown mirror: paper/captions.md (sibling interpretation repo; PNG embeds
   point at the figure output directory used for that run)
 
 The manuscript figure set lives in ../graph/graphgen/studies/interpretation/ as
