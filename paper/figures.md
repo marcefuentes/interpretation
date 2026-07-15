@@ -11,40 +11,41 @@ Regenerate any manuscript figure from ~/code/graph with the venv active:
     python -m graphgen.main --study interpretation --figure FIG --groupsize 128 --output ~/figures
 
 The manuscript figure set lives in ../graph/graphgen/studies/interpretation/ as
-m1–m6 (main text) and ms3–ms7 (supplement). Figure ids m1–m6 pull from underlying
-simulation exports via the interpretation namespace; graphgen study names in the
-pipeline config are internal and do not appear in manuscript prose.
+m1–m6 (main text) and ms1–ms5 (supplement). Auxiliary payoff-plane calibration
+panels are cal1–cal2 in the same namespace (not published). Figure ids pull from
+underlying simulation exports; graphgen study names in the pipeline config are
+internal and do not appear in manuscript prose.
 
-Do not pass --dilemma-type when generating the interpretation study. ms5 intentionally
+Do not pass --dilemma-type when generating the interpretation study. ms3 intentionally
 mixes two dilemma types in one figure.
 
 **Payoff-plane calibration sweeps** are auxiliary — they support the payoff-gap
-attributions cited in the text but do not appear as manuscript figures. See the
-supplement table and the journal calibration analyses.
+attributions cited in the text but do not appear as manuscript figures. Regenerate
+with `--figure cal1` or `--figure cal2` when needed; see the supplement table and
+the journal calibration analyses.
 
-Status: revised 2026-07 — m6 converted to line chart; ms6 added for parameter-
-symmetric vs parameter-asymmetric line contrast. Still provisional before locking.
+Status: revised 2026-07 — supplement ids renumbered ms1–ms5; calibration panels
+renamed cal1–cal2. Still provisional before locking.
 
 ## Setup audit (2026-07)
 
 | Figure | Renderer | Data source | Verdict |
 | ------ | -------- | ----------- | ------- |
 | m1 | Line (PLOT) | symmetric_c pop_1, P/M/IJMPQ | Correct — mechanism hierarchy |
-| m6 | Line (PLOT) | symmetric_c pop_2, P | **Fixed** — was imshow on 1D data (diagonal-only heatmap); now both populations on shared axes vs c |
+| m6 | Line (PLOT) | symmetric_c pop_2, P | Fixed — line chart for stochastic split at c0 = c1 |
 | m2 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Correct — full c0 × c1 triangle |
 | m3 | Heatmap | symmetric_c_i pop_1, IJMPQ | Correct — Cost × c grid |
 | m4 | Heatmap | symmetric_c_i pop_1, P + M | Correct — machinery vs cooperation |
 | m5 | Heatmap | asymmetric_c1_i pop_2, P | Correct — c1 × Cost with c0 fixed |
-| ms3 | Line | symmetric_c pop_1, shuffle | Correct — short-memory robustness |
-| ms4 | Heatmap | asymmetric_c0_c1 pop_2, P, gs = 4 | Correct — small-group robustness |
-| ms5 | Heatmap | symmetric_c_i pop_1, M, dt 0 vs 1 | Correct — dilemma-0 control |
-| ms6 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P | **New** — row 0: c1 = c0 + 0.02; row 1: c0 = c1 from symmetric_c |
-| ms7 | Heatmap | asymmetric_i0_i1 pop_2, P + IJMPQ | **New** — i0 × i1 at c0 = c1 = 0.10; P vs IJMPQ inversion |
-| ms1, ms2 | Heatmap | prisoners / snowdrift calibration | Excluded from supplement (calibration only) |
+| ms1 | Line | symmetric_c pop_1, shuffle | Correct — short-memory robustness |
+| ms2 | Heatmap | asymmetric_c0_c1 pop_2, P, gs = 4 | Correct — small-group robustness |
+| ms3 | Heatmap | symmetric_c_i pop_1, M, dt 0 vs 1 | Correct — dilemma-0 control |
+| ms4 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P | Row 0: c1 = c0 + 0.02; row 1: c0 = c1 |
+| ms5 | Heatmap | asymmetric_i0_i1 pop_2, P + IJMPQ | i0 × i1 at c0 = c1 = 0.10; P vs IJMPQ inversion |
+| cal1, cal2 | Heatmap | prisoners / snowdrift calibration | Auxiliary — not in supplement |
 
-**Line vs heatmap balance.** Main text now has two line figures (m1, m6) and four
-heatmaps (m2–m5). Supplement has two line figures (ms3, ms6) and two heatmaps
-(ms4, ms5).
+**Line vs heatmap balance.** Main text: two line figures (m1, m6) and four heatmaps
+(m2–m5). Supplement: two line figures (ms1, ms4) and three heatmaps (ms2, ms3, ms5).
 
 **Not yet wired.** The full i0 × i1 square under crossed cost asymmetry remains
 journal-backed and regression-checked but has no interpretation-namespace figure yet
@@ -114,11 +115,18 @@ Robustness and control panels from the primary sweeps only. No calibration heatm
 
 | Supp fig | Message | Figure id | Command | Output |
 | -------- | ------- | --------- | ------- | ------ |
-| S1 | Short-memory comparison: direct-reciprocity branch shifts collapse ordering | ms3 | `... --figure ms3 ...` | ~/figures/interpretation/ms3.png |
-| S2 | Small groups (gs = 4): cooperation-cost asymmetry under partner choice | ms4 | `... --figure ms4 --groupsize 4 ...` | ~/figures/interpretation/ms4.png |
-| S3 | Dilemma-0 control: machinery erodes with and without a social dilemma | ms5 | `... --figure ms5 ...` | ~/figures/interpretation/ms5.png |
-| S4 | Parameter-symmetric vs parameter-asymmetric cooperation cost (line slices) | ms6 | `... --figure ms6 ...` | ~/figures/interpretation/ms6.png |
-| S5 | Information-cost parameter asymmetry at equal cooperation cost (c = 0.10) | ms7 | `... --figure ms7 ...` | ~/figures/interpretation/ms7.png |
+| S1 | Short-memory comparison: direct-reciprocity branch shifts collapse ordering | ms1 | `... --figure ms1 ...` | ~/figures/interpretation/ms1.png |
+| S2 | Small groups (gs = 4): cooperation-cost asymmetry under partner choice | ms2 | `... --figure ms2 --groupsize 4 ...` | ~/figures/interpretation/ms2.png |
+| S3 | Dilemma-0 control: machinery erodes with and without a social dilemma | ms3 | `... --figure ms3 ...` | ~/figures/interpretation/ms3.png |
+| S4 | Parameter-symmetric vs parameter-asymmetric cooperation cost (line slices) | ms4 | `... --figure ms4 ...` | ~/figures/interpretation/ms4.png |
+| S5 | Information-cost parameter asymmetry at equal cooperation cost (c = 0.10) | ms5 | `... --figure ms5 ...` | ~/figures/interpretation/ms5.png |
+
+## Auxiliary calibration figures (not in supplement)
+
+| Figure id | Command | Output |
+| --------- | ------- | ------ |
+| cal1 (PD payoff plane) | `... --figure cal1 ...` | ~/figures/interpretation/cal1.png |
+| cal2 (snowdrift payoff plane) | `... --figure cal2 ...` | ~/figures/interpretation/cal2.png |
 
 ## Supplement table (no figure)
 
