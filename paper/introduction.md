@@ -49,7 +49,7 @@ without any built-in parameter tilt.
 
 Under partner choice at equal costs, the outcome mapping is **game-dependent**.
 In the prisoner's dilemma, partner choice produces a **stochastic** cooperator/exploiter
-split that is absent under the no-machinery control (Fig. S6). In snowdrift, a similar
+split that is absent under the no-machinery control (Fig. S2). In snowdrift, a similar
 split already appears without enforcement machinery; partner choice mainly reshapes
 outcomes at high cooperation cost. A cooperation-cost gap (c0 < c1) seeds a
 **deterministic** cooperator/exploiter assignment. Asymmetric information cost at
@@ -67,7 +67,7 @@ and by adding two payoff-plane calibration sweeps that decouple the payoff gaps 
 single cost axis welds together, we (i) attribute each mechanism's collapse to a
 specific payoff gap, (ii) characterise how parameter symmetry and asymmetry map to
 outcome splits between populations (stochastic PD split under partner choice at full
-parameter symmetry, contrast Fig. 2 with Fig. S6; deterministic under cooperation-cost
+parameter symmetry, contrast Fig. 2 with Fig. S2; deterministic under cooperation-cost
 or information-cost tilts; mechanism-dependent inversions), and (iii) introduce an
 information-cost axis showing that taxing the
 machinery erodes the apparatus while cooperation can persist through unconditional

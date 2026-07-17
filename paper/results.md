@@ -54,7 +54,7 @@ they typically produce; mechanism can override the default mapping.
   **stochastic** cooperator/exploiter assignment in the prisoner's dilemma: one side
   carries cooperation, is exploited, and carrying the chooser allele correlates with
   fitness at roughly minus one — a pattern absent under the no-machinery control
-  (Fig. 2 versus Fig. S6;
+  (Fig. 2 versus Fig. S2;
   [partner choice calibration](../journal/prisoners_partner_choice.md)). In snowdrift,
   a similar split already appears without enforcement machinery; partner choice mainly
   reshapes high-cooperation-cost outcomes. Combined reputation mechanisms at the same
