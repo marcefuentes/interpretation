@@ -18,10 +18,14 @@ between this doc and the data fails the verifier.
 | Runs | 30 (multi-run); 1 (`*_1run`) | all studies | .glo `Runs` |
 | MutationRate | 0.01 | all studies | .glo `MutationRate` |
 
-Cost is information cost for expressing machinery, charged once for any
-partner-choice locus (P/Q) plus once for any reciprocity locus (M/I/J):
+Information cost is charged per machinery **allele carried**, not per behavior
+expressed: once for any partner-choice locus (Choose or Choose_lt) plus once for
+any reciprocity locus (Mimic, Imimic, or Imimic_lt):
 cost = Cost × ((Choose or Choose_lt) + (Mimic or Imimic or Imimic_lt)); fitness is
-w = max(0, payoff − cost). See journal/symmetric_c_i.md for the swept-Cost study.
+w = max(0, payoff − cost). Under mechanism \_, partner choice and reciprocity are
+disabled but loci still mutate and carriers still pay; at the default Cost =
+0.001 the tax is negligible. See journal/symmetric_c_i.md for the swept-Cost
+study.
 
 ## symmetric_c / asymmetric_c0_c1 payoffs
 

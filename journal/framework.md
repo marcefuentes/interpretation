@@ -22,16 +22,19 @@ combination of them, and every study is a sweep over some subset.
   the symmetric_c study sits on the equal-cost diagonal c0 = c1 = c. This is the *demand* for
   enforcement: higher c is higher temptation and higher risk.
 - **Information cost Cost.** The per-round metabolic/cognitive overhead of carrying
-  reciprocity or partner-choice machinery, charged once for a partner-choice family
-  (P/Q loci) and once for a reciprocity family (M/I/J loci), independent of the game
-  payoffs. This is information cost. Swept in symmetric_c_i (symmetric
-  c0 = c1) and asymmetric_c1_i (fixed c0, swept c1).
+  reciprocity or partner-choice alleles, charged once per partner-choice locus
+  (Choose / Choose_lt) and once per reciprocity locus (Mimic / Imimic / Imimic_lt),
+  whether or not the run enables the corresponding behavior. Under mechanism \_,
+  enforcement is off but carriers still pay and selection keeps machinery alleles
+  rare when Cost is high. Swept in symmetric_c_i (symmetric c0 = c1) and
+  asymmetric_c1_i (fixed c0, swept c1).
 - **Ecological context.** Groupsize (4 vs 128 individuals per group), partner
   shuffling (stable pairings vs within-group re-draw each round), and population
   structure (see below).
-- **Mechanism.** Which enforcement loci are active: control (_), direct reciprocity
-  (M), partner choice (P), and the combined and reputation-rich families
-  (MP, MPQ, IMP, IJMPQ, and the shuffle-only IM, IJM).
+- **Mechanism.** Which enforcement behaviors are enabled: control (_) turns off
+  partner choice and reciprocity (loci still mutate and still incur Cost), direct
+  reciprocity (M), partner choice (P), and the combined and reputation-rich
+  families (MP, MPQ, IMP, IJMPQ, and the shuffle-only IM, IJM).
 
 ### Population structure is the axis this project is built around
 

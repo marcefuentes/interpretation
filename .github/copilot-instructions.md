@@ -76,7 +76,7 @@ Examples:
 
 **snowdrift**: multi-run (snowdrift, Runs=30) now present — a snowdrift-ordered payoff sweep (T=0.9, P=0.10 fixed; R and S swept; T>R>S>P), dilemma 2, gs=128 and gs=4 image exports. Temporal from snowdrift_1run (Runs=1) movie exports (gs=128 and gs=4). Analysis: snowdrift.md (index), snowdrift_calibration.md (payoff-axis attribution), snowdrift_partner_choice.md (P), snowdrift_reciprocity.md (M, IM, IJM). Cell key is (R0, S0).
 
-**symmetric_c_i**: extends symmetric_c with a 2nd swept axis — Cost, the information cost (recruits.c: cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2xCost, single-family 1x, control 0). Triangular Cost x c grid with Cost+c<=0.4 (231 cells: Cost in {0,0.02,...,0.4}, c in {0,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), pops 1/2/3, Runs=30 (image); symmetric_c_i_1run is the single-run temporal variant. Cell key is (Cost, c0). Analysis: symmetric_c_i.md; ai/analyze_symmetric_c_i.py.
+**symmetric_c_i**: extends symmetric_c with a 2nd swept axis — Cost, the information cost (recruits.c: cost = Cost*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2xCost when both families are carried, single-family 1x; tax is per allele carried, including under mechanism _). Triangular Cost x c grid with Cost+c<=0.4 (231 cells: Cost in {0,0.02,...,0.4}, c in {0,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have dilemma 0), pops 1/2/3, Runs=30 (image); symmetric_c_i_1run is the single-run temporal variant. Cell key is (Cost, c0). Analysis: symmetric_c_i.md; ai/analyze_symmetric_c_i.py.
 
 **asymmetric_c1_i**: extends asymmetric_c0_c1 pop_2 with the same information-cost axis but on the asymmetric branch: c0 is fixed at 0.10 for pop_0, and Cost is swept jointly with c1 over the triangle Cost+c1<=0.4 with c1>c0 (120 cells: Cost in {0,0.02,...,0.28}; c1 in {0.12,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), Runs=30 (image); asymmetric_c1_i_1run is the single-run temporal variant. Cell key is (Cost, c1). Analysis: asymmetric_c1_i.md; ai/analyze_asymmetric_c1_i.py.
 
@@ -98,7 +98,7 @@ Payoffs by dilemma type (folder names 0, 1, 2):
 
 With K = 0.5, b = 0.4: P = 0.5 always. T = 0.5 (folder 0) or 0.9 (folders 1 and 2). R and S vary with c.
 
-Folder 0 is a **control**, not a cooperative game: the dominant strategy when c < b is to produce b (cooperate → K + b − c). Partner moves do not enter payoffs, but M1 still induces suboptimal defection when a focal C1M1 copies a mutant partner at qBSeen = 0; C1M0 (always cooperate) avoids this. At d0 noshuffle, M1 under mechanism M (~0.39 mean) is ~0.10 below the dummy baseline under _ (~0.49); shuffle keeps both near 0.5.
+Folder 0 is a **control**, not a cooperative game: the dominant strategy when c < b is to produce b (cooperate → K + b − c). Partner moves do not enter payoffs, but under mechanism M, M1 still induces suboptimal defection when a focal C1M1 copies a mutant partner at qBSeen = 0; C1M0 (always cooperate) avoids this. At d0 noshuffle, M1 under mechanism M (~0.39 mean) is ~0.10 below the dummy baseline under _ (~0.49); shuffle keeps both near 0.5. Under mechanism _, enforcement is off but loci still mutate and carriers pay Cost; at Cost=0.001 the tax is negligible (near-neutral drift), but on the symmetric_c_i Cost axis machinery alleles are steadily selected out supply-side even under _.
 
 In PD, b is a cross-benefit: focal receives it only when the partner cooperates (absent in S). In snowdrift, b is a shared resource: both players receive it as long as at least one cooperates (present in S as well as T and R).
 
@@ -106,7 +106,7 @@ In PD, b is a cross-benefit: focal receives it only when the partner cooperates 
 
 | Mechanism folder | Active loci                      | Modules enabled                                                   |
 | ---------------- | -------------------------------- | ----------------------------------------------------------------- |
-| \_               | All 6 (only C expressed)         | None (control)                                                    |
+| \_               | All 6 (only C behavior)          | Enforcement off; loci still mutate, carriers pay Cost             |
 | P                | C, P                             | Partner choice                                                    |
 | M                | C, M                             | Direct reciprocity                                                |
 | MP               | C, M, P                          | Reciprocity + partner choice                                      |
@@ -142,7 +142,7 @@ pop_2 remains the non-redundant asymmetric_c0_c1 case: both populations evolve a
 
 | Mechanism folder | Active loci      | Modules enabled                                  | Conditions          |
 | ---------------- | ---------------- | ------------------------------------------------ | ------------------- |
-| \_               | All 6            | None (control)                                   | shuffle + noshuffle |
+| \_               | All 6            | Enforcement off; loci still mutate, carriers pay Cost | shuffle + noshuffle |
 | M                | C, M             | Direct reciprocity                               | shuffle + noshuffle |
 | P                | C, P             | Partner choice                                   | shuffle + noshuffle |
 | MP               | C, M, P          | Reciprocity + partner choice                     | shuffle + noshuffle |
@@ -179,7 +179,7 @@ Results live at ~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{p
 - **shuffle**: shuffle or noshuffle
 - **groupsize**: 128 or 4
 
-Cost (the per-module locus-expression tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except symmetric_c_i, where it is the swept 2nd axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. Cost for expressing any partner-choice locus plus Cost for expressing any reciprocity locus. See decide_qB.c / recruits.c.
+Cost (the per-allele machinery tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except symmetric_c_i and the other Cost-swept studies, where it is a swept axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. once per partner-choice locus carried plus once per reciprocity locus carried, whether or not the run enables partner choice or reciprocity behavior. C1P0/C1M0 (unconditional cooperators with no machinery allele) pay nothing. See recruits.c; behavior routing in decide_qB.c and choose_partner.c.
 
 Example: ~/results/symmetric_c/shuffle/128/P/1/pop_2/csv_0_for_image.con
 
@@ -216,14 +216,14 @@ Full mechanism → trait mapping: ../graph/graphgen/studies/trps/mech_trait_map.
 
 ### The C0P1 Silencing Rule
 
-**P1 is phenotypically silent in defectors.** A C0P1 individual carries the partner-choice allele but never uses it. Only C1P1 individuals actually choose partners. This means:
+**P1 is phenotypically silent in defectors.** A C0P1 individual carries the partner-choice allele but never uses it (only C1P1 individuals actually choose partners). It still pays Cost if Choose=1. This means:
 - P1 allele frequency ≠ fraction of choosers
-- C0P1 accumulates as a neutral carrier via mutation from C1P1, inflating P1 frequency in the transition zone
+- C0P1 accumulates via mutation from C1P1; at Cost=0.001 it is nearly neutral, at high Cost selection keeps it rare
 - Always use C1P1 (= Choosers) for behavioral analysis, P1 only for genetic analysis
 
 ### M locus: dTFT vs dSTFT (C0M1 is not silent)
 
-For mechanism M, graphgen splits genotypes into **dTFT** (C1M1: cooperate by default, then copy partner) and **dSTFT** (C0M1: suspicious TFT — defect on the first round with a partner, then mimic the partner on later rounds with the same oldpartner). C0M1 is **not** a silent carrier unlike C0P1: mimicry is active once age > 0 and partner == oldpartner (see decide_qB.c). M1 allele frequency = dTFT + dSTFT. At folder 0 (control), produce-b is dominant; M1 is slightly selected against because C1M1 can copy a mutant defector and forgo b, while C1M0 always cooperates.
+For mechanism M, graphgen splits genotypes into **dTFT** (C1M1: cooperate by default, then copy partner) and **dSTFT** (C0M1: suspicious TFT — defect on the first round with a partner, then mimic the partner on later rounds with the same oldpartner). C0M1 is **not** a silent carrier unlike C0P1: mimicry is active once age > 0 and partner == oldpartner (see decide_qB.c). M1 allele frequency = dTFT + dSTFT. Under mechanism _, mimicry does not run but Mimic carriers still pay Cost. At folder 0 under M, produce-b is dominant; M1 is slightly selected against because C1M1 can copy a mutant defector and forgo b, while C1M0 always cooperates.
 
 ### File Set _0/_1 Semantics
 

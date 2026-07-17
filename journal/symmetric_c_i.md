@@ -21,18 +21,28 @@ see **[synthesis.md](synthesis.md)**.
 
 From the simulation source (recruits.c), each individual pays, per round,
 cost = Cost × ((Choose or Choose_lt) + (Mimic or Imimic or Imimic_lt)), and
-fitness is w = max(0, payoff − cost). So Cost is charged **once for being a
-partner chooser** (carrying any P/Q locus) and **once for being a reciprocator**
-(carrying any M/I/J locus). The consequences:
+fitness is w = max(0, payoff − cost). So Cost is charged **once for carrying
+a partner-choice locus** (Choose or Choose_lt) and **once for carrying a
+reciprocity locus** (Mimic, Imimic, or Imimic_lt), whether or not that locus
+is expressed in behavior. The consequences:
 
-- The control \_ carries no modules and pays nothing — it is the Cost-invariant baseline.
-- Single-family mechanisms (M; P) pay one unit of Cost per round.
-- Combined mechanisms (MP, MPQ, IMP, IJMPQ) touch both families and pay two units of Cost.
-- Only carriers of an **active** locus pay; a cooperator that has shed the
-  machinery (C1P0, C1M0 — cooperate unconditionally, no chooser/mimic locus)
-  pays nothing.
-
-That last point drives most of the results below.
+- **Cost is per allele carried, not per behavior expressed.** C0P1 (defector
+  with a silent P1 allele) still pays if Choose = 1; under mechanism \_,
+  reciprocity and partner-choice routines do not run, but P and M loci still
+  mutate in and carriers still pay.
+- **Mechanism \_ disables enforcement, not the loci.** PartnerChoice and
+  Reciprocity are off, so chooser and mimic logic never runs. Machinery alleles
+  are nonetheless costly when present; at high Cost selection keeps them rare
+  (e.g. control M1 falls 0.38 → 0.02 across the Cost sweep at c = 0). At the
+  symmetric_c default Cost = 0.001 the tax is negligible and P1/M1 drift near
+  neutral — the usual baseline for comparing active mechanisms.
+- Single-family mechanisms (M; P) enable one family and pay one unit of Cost per
+  round when the corresponding loci are carried.
+- Combined mechanisms (MP, MPQ, IMP, IJMPQ) touch both families and pay two
+  units of Cost per round when loci from both are carried.
+- Cooperators that shed the machinery (C1P0, C1M0 — cooperate unconditionally,
+  no chooser/mimic allele) pay no information cost. That tax-free niche drives
+  most of the results below.
 
 ## The grid
 
@@ -109,10 +119,13 @@ and cooperators simply do well by association.)
 
 ## The control decomposes cost from demand
 
-Dilemma 0 (the control) has no social dilemma at all — produce-b is dominant, so
-cooperation is favored no matter what anyone does. It therefore isolates the pure
-information cost with **zero demand** for enforcement, which lets us separate two things
-the PD alone conflates. The M mechanism, c = 0, noshuffle, gs = 128, pop_1:
+Dilemma 0 (folder 0) has no social dilemma at all — produce-b is dominant, so
+cooperation is favored no matter what anyone does. Runs under mechanism \_ with
+M allowed to mutate isolate the **supply-side** information cost with **zero
+demand** for enforcement: M1 erodes as Cost rises even though mimicry never
+runs. That lets us separate two things the PD alone conflates. Compare mechanism
+\_ (control columns) with mechanism M (PD columns), c = 0, noshuffle, gs = 128,
+pop_1:
 
 | Cost | control qBSeen | control M1 | control C1M0 | PD qBSeen | PD M1 |
 | ---: | -------------: | ---------: | -----------: | --------: | ----: |

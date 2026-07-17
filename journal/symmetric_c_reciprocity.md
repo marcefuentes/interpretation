@@ -69,9 +69,12 @@ is therefore **slightly selected against** at d0, not neutral.
 
 #### M1 allele frequency at d0 (pop_2, gs=128)
 
-Under mechanism **\_**, M1 is a dummy locus (same mutation rate, no behavioral
-effect) and drifts near 0.5. Under **M**, mimicry is active and M1 is selected
-against when produce-b is optimal.
+Under mechanism **\_**, mimicry does not run, so M1 has no behavioral effect,
+but carriers still pay Cost and the locus still mutates. At the default Cost =
+0.001 the tax is negligible and M1 drifts near 0.5 as a nearly neutral dummy;
+on the symmetric_c_i Cost axis the same allele is steadily selected out even
+under \_. Under **M**, mimicry is active and M1 is further selected against
+when produce-b is optimal.
 
 | Condition  | \_ M1 mean | M M1 mean | M − \_ |
 | ---------- | ---------- | --------- | ------ |

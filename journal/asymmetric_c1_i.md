@@ -123,8 +123,9 @@ Cost = 0.20).
 
 ## Control decomposition: Cost erodes M1 supply-side, the dilemma decides the damage
 
-As in symmetric_c_i, the control isolates the pure information cost. Mechanism M is
-enough to show it:
+As in symmetric_c_i, mechanism \_ (enforcement off, loci still costly) isolates
+the supply-side information cost. Mechanism M is enough to show the demand-side
+contrast:
 
 | Cost | control pop_0 qB | control pop_0 M1 | PD pop_0 qB | PD pop_0 M1 |
 | ---: | ---------------: | ---------------: | ----------: | ----------: |
