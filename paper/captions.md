@@ -28,7 +28,7 @@ In the prisoner's dilemma, partner choice stochastically assigns cooperator and 
 
 When c0 < c1 in the prisoner's dilemma, partner choice converts the payoff gap into a stable cooperator/exploiter assignment; combined IJMPQ can lift the expensive population. Prisoner's dilemma only: in snowdrift the cheap population already cooperates at ceiling without enforcement (Fig. S1), so an asymmetric heatmap would repeat payoff-structure effects already shown in Fig. 2 rather than isolate what enforcement adds. Contrast Fig. 2 (control columns versus partner choice) and Fig. S1 (asymmetric no enforcement).
 
-### <strong>Fig. 4.</strong> Information cost versus cooperation cost (equal between populations).
+### <strong>Fig. 4.</strong> Information cost versus cooperation cost (single population).
 
 ![fig4](/home/marcelino/figures/interpretation/fig4.png)
 

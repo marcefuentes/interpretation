@@ -81,7 +81,7 @@ heatmaps).
 | 1 | Equal cooperation cost: mechanism hierarchy (single population) | fig1 | `python -m graphgen.main --study interpretation --figure fig1 --groupsize 128 --output ~/figures` | ~/figures/interpretation/fig1.png | Baseline partner choice, reciprocity, combined |
 | 2 | Outcome asymmetry under parameter symmetry (c0 = c1), partner choice | fig2 | `... --figure fig2 ...` | ~/figures/interpretation/fig2.png | Two populations, equal cooperation cost |
 | 3 | Deterministic outcome split under cooperation-cost parameter asymmetry | fig3 | `... --figure fig3 ...` | ~/figures/interpretation/fig3.png | Cooperation-cost asymmetry |
-| 4 | Information cost versus cooperation cost (equal between populations) | fig4 | `... --figure fig4 ...` | ~/figures/interpretation/fig4.png | Information cost sweep |
+| 4 | Information cost versus cooperation cost (single population) | fig4 | `... --figure fig4 ...` | ~/figures/interpretation/fig4.png | Information cost sweep |
 | 5 | Behaviour–mechanism decoupling where cooperation cost is zero | fig5 | `... --figure fig5 ...` | ~/figures/interpretation/fig5.png | Information cost sweep |
 | 6 | Information cost under fixed cooperation-cost asymmetry | fig6 | `... --figure fig6 ...` | ~/figures/interpretation/fig6.png | Fixed c0, i × c1 |
 
@@ -177,7 +177,7 @@ journal synthesis and calibration docs; do not publish full payoff-plane heatmap
    gaps. Shown for the PD only: snowdrift already sustains high cooperation and
    outcome asymmetry without enforcement (see Fig. 2 snowdrift row and Fig. S1), so
    an asymmetric snowdrift heatmap would not isolate what partner choice adds.
-4. Fig 4. When cooperation cost is equal between populations, information cost is soft by itself but lowers the cooperation-cost ceiling once the two costs overlap.
+4. Fig 4. In a single population, information cost is soft by itself but lowers the cooperation-cost ceiling once the two costs overlap.
 5. Fig 5. Where cooperation cost is zero, the machinery alleles are selected away before cooperation disappears, so behaviour and mechanism decouple.
 6. Fig 6. With cooperation-cost asymmetry and c0 fixed above zero, the harmless information-cost edge disappears: information cost retreats the cooperation-cost ceiling and compresses the cooperator/exploiter split.
 
