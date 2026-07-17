@@ -23,7 +23,11 @@ their parameters match.
 We separate **parameter symmetry** (c0 = c1, i0 = i1, identical payoffs) from
 **outcome symmetry** (similar cooperation and fitness). Partner choice at parameter
 symmetry produces spontaneous symmetry breaking — a stochastic outcome split. A
-cooperation-cost gap seeds a deterministic assignment. Information-cost asymmetry at
+cooperation-cost gap seeds a deterministic assignment in the prisoner's dilemma
+(Fig. 3). We omit a parallel asymmetric snowdrift figure because the sucker payoff
+already sustains cooperation and between-population splits without enforcement
+(Figs. 2 and S2–S3); partner choice under c0 ≠ c1 then adds little beyond that
+floor. Information-cost asymmetry at
 equal cooperation cost also assigns roles deterministically under P, while IJMPQ can
 invert the mapping; snowdrift often removes these PD locks. In all cases the
 cooperating side is typically exploited — the paradox of success — and reward-led

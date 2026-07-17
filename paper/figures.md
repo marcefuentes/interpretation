@@ -92,9 +92,13 @@ heatmaps).
 1. fig1: columns = P, M, IJMPQ; single coevolving population; row 0 = prisoner's dilemma, row 1 = snowdrift.
 2. fig2: line chart, two coevolving populations at c0 = c1 under P; row 0 = prisoner's dilemma, row 1 = snowdrift; columns =
    cooperation then fitness. **PD:** partner choice stochastically assigns cooperator and exploiter roles absent under figS2. **Snowdrift:** outcome asymmetry already present without enforcement machinery; P mainly reshapes high-c regimes. Fitness can invert (paradox of success).
-3. fig3: parameter-asymmetric cooperation cost (c0 < c1), prisoner's dilemma only; rows = P and IJMPQ for high-
+3. fig3: parameter-asymmetric cooperation cost (c0 < c1), **prisoner's dilemma only**; rows = P and IJMPQ for high-
    then low-cost side; columns = cooperation, fitness. Contrast with fig2 (PD row): deterministic
-   outcome split; IJMPQ lifts the expensive population.
+   outcome split; IJMPQ lifts the expensive population. **Why no snowdrift row:** the cheap population
+   already cooperates at ceiling under no enforcement (~0.96), so partner choice adds little beyond the
+   payoff floor; between-population snowdrift asymmetry is shown in fig2 (row 1) and figS2–S3 instead.
+   A full asymmetric snowdrift heatmap would mostly restate game-structure effects, not a new
+   mechanism attribution.
 4. fig4: IJMPQ; row 0 = prisoner's dilemma, row 1 = snowdrift; columns = cooperation, fitness; information cost × cooperation cost grid.
 5. fig5: rows = P then M; columns = machinery allele then cooperation.
 6. fig6: rows = high- then low-cooperation-cost population under P; columns = cooperation,
@@ -167,10 +171,12 @@ journal synthesis and calibration docs; do not publish full payoff-plane heatmap
 
 1. Fig 1. At equal cooperation cost, partner choice, direct reciprocity, and the reputation-rich combined mechanism define the threshold hierarchy the rest of the paper explains.
 2. Fig 2. Two coevolving populations at equal cooperation cost (c0 = c1) under partner choice. In the prisoner's dilemma (top row), partner choice stochastically assigns cooperator and exploiter roles that are absent under the no-machinery control (Fig. S2); the cooperator side can earn lower fitness. In snowdrift (bottom row), a similar split already appears without enforcement machinery; partner choice mainly reshapes outcomes at high cooperation cost.
-3. Fig 3. Parameter-asymmetric cooperation cost (c0 < c1): partner choice converts
+3. Fig 3. Parameter-asymmetric cooperation cost (c0 < c1), prisoner's dilemma: partner choice converts
    the payoff gap into a deterministic cooperator/exploiter split; the combined
    mechanism lifts the expensive population and softens both cooperation and fitness
-   gaps.
+   gaps. Shown for the PD only: snowdrift already sustains high cooperation and
+   outcome asymmetry without enforcement (see Fig. 2 snowdrift row and Fig. S2–S3), so
+   an asymmetric snowdrift heatmap would not isolate what partner choice adds.
 4. Fig 4. When cooperation cost is equal between populations, information cost is soft by itself but lowers the cooperation-cost ceiling once the two costs overlap.
 5. Fig 5. Where cooperation cost is zero, the machinery alleles are selected away before cooperation disappears, so behaviour and mechanism decouple.
 6. Fig 6. With cooperation-cost asymmetry and c0 fixed above zero, the harmless information-cost edge disappears: information cost retreats the cooperation-cost ceiling and compresses the cooperator/exploiter split.

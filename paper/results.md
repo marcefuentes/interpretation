@@ -59,12 +59,21 @@ they typically produce; mechanism can override the default mapping.
   a similar split already appears without enforcement machinery; partner choice mainly
   reshapes high-cooperation-cost outcomes. Combined reputation mechanisms at the same
   parameter point stay nearly outcome-symmetric in the PD.
-- **Cooperation-cost parameter asymmetry → deterministic outcome (P).** When c0 < c1,
+- **Cooperation-cost parameter asymmetry → deterministic outcome (P, PD).** When c0 < c1,
   the lower-cooperation-cost population has the larger cooperation advantage and takes
   the cooperator role in every cell — partner choice converts the R − P gap directly
-  into a cooperation gap
-  ([partner choice under cooperation-cost asymmetry](../journal/asymmetric_c0_c1_partner_choice.md),
-  [synthesis](../journal/synthesis.md)).
+  into a cooperation gap (Fig. 3;
+  [partner choice under cooperation-cost asymmetry](../journal/asymmetric_c0_c1_partner_choice.md),
+  [synthesis](../journal/synthesis.md)). Fig. 3 is prisoner's-dilemma only because that
+  is where the attribution is clean: under no enforcement the cheap population barely
+  cooperates (control mean qBSeen ≈ 0.10), so the full c0 × c1 heatmap shows partner
+  choice *creating* a deterministic cooperator/exploiter split from the parameter gap.
+  In snowdrift the sucker payoff already sustains high cooperation without machinery
+  (control ≈ 0.96 vs partner choice ≈ 0.96 for the cheap side), and outcome asymmetry
+  often appears from payoffs alone (Fig. 2 snowdrift row; Fig. S2–S3). A parallel
+  asymmetric snowdrift panel would largely repeat that payoff-floor story rather than
+  isolate what enforcement adds; the snowdrift between-population pattern is covered in
+  those figures and in the journal asymmetric analyses.
 - **Reward-led mechanisms suppress the split.** Combined mechanisms lift the exploited
   high-cooperation-cost population and shrink the outcome asymmetry, because being
   reward-led they no longer route the R − P gap into a cooperation gap
