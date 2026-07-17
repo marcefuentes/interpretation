@@ -92,7 +92,7 @@ heatmaps).
 1. fig1: columns = P, M, IJMPQ; single coevolving population; row 0 = prisoner's dilemma, row 1 = snowdrift.
 2. fig2: line chart, two coevolving populations at c0 = c1 under P; row 0 = prisoner's dilemma, row 1 = snowdrift; columns =
    cooperation then fitness. **PD:** partner choice stochastically assigns cooperator and exploiter roles absent under figS2. **Snowdrift:** outcome asymmetry already present without enforcement machinery; P mainly reshapes high-c regimes. Fitness can invert (paradox of success).
-3. fig3: parameter-asymmetric cooperation cost (c0 < c1); rows = P and IJMPQ for high-
+3. fig3: parameter-asymmetric cooperation cost (c0 < c1), prisoner's dilemma only; rows = P and IJMPQ for high-
    then low-cost side; columns = cooperation, fitness. Contrast with fig2 (PD row): deterministic
    outcome split; IJMPQ lifts the expensive population.
 4. fig4: IJMPQ; row 0 = prisoner's dilemma, row 1 = snowdrift; columns = cooperation, fitness; information cost × cooperation cost grid.
