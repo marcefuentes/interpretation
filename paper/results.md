@@ -54,7 +54,7 @@ they typically produce; mechanism can override the default mapping.
   **stochastic** cooperator/exploiter assignment in the prisoner's dilemma: one side
   carries cooperation, is exploited, and carrying the chooser allele correlates with
   fitness at roughly minus one — a pattern absent under the no-machinery control
-  (Fig. 2 versus Fig. S2;
+  (Fig. 2 control columns versus partner choice;
   [partner choice calibration](../journal/prisoners_partner_choice.md)). In snowdrift,
   a similar split already appears without enforcement machinery; partner choice mainly
   reshapes high-cooperation-cost outcomes. Combined reputation mechanisms at the same
@@ -70,7 +70,7 @@ they typically produce; mechanism can override the default mapping.
   choice *creating* a deterministic cooperator/exploiter split from the parameter gap.
   In snowdrift the sucker payoff already sustains high cooperation without machinery
   (control ≈ 0.96 vs partner choice ≈ 0.96 for the cheap side), and outcome asymmetry
-  often appears from payoffs alone (Fig. 2 snowdrift row; Fig. S2–S3). A parallel
+  often appears from payoffs alone (Fig. 2 snowdrift row; Fig. S1). A parallel
   asymmetric snowdrift panel would largely repeat that payoff-floor story rather than
   isolate what enforcement adds; the snowdrift between-population pattern is covered in
   those figures and in the journal asymmetric analyses.
