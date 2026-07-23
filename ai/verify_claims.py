@@ -1280,6 +1280,24 @@ check("asymmetric_c1_i0_i1", "1run IJMPQ (0,0.20) pop1 t=131072 = 0.909",
 check("asymmetric_c1_i0_i1", "1run IJMPQ (0.30,0) pop0 t=131072 = 0.804",
       lambda: c1i0i1_time_q("IJMPQ", 0.30, 0.0, 0, 131072), 0.804, 0.01)
 
+# Additional mechanism gap and collapse checks
+check("asymmetric_c1_i0_i1", "M mean dq = 0.035",
+      lambda: c1i0i1_gap_mean("M", "qBSeen"), 0.035)
+check("asymmetric_c1_i0_i1", "IMP mean dq = 0.118",
+      lambda: c1i0i1_gap_mean("IMP", "qBSeen"), 0.118)
+check("asymmetric_c1_i0_i1", "IMP collapse cells = 74",
+      lambda: c1i0i1_collapse("IMP"), 74, None)
+check("asymmetric_c1_i0_i1", "MP collapse cells = 85",
+      lambda: c1i0i1_collapse("MP"), 85, None)
+check("asymmetric_c1_i0_i1", "IM shuffle mean dq = 0.038",
+      lambda: c1i0i1_gap_mean("IM", "qBSeen", sh="shuffle"), 0.038)
+check("asymmetric_c1_i0_i1", "IJM shuffle mean dq = 0.055",
+      lambda: c1i0i1_gap_mean("IJM", "qBSeen", sh="shuffle"), 0.055)
+check("asymmetric_c1_i0_i1", "IMP snowdrift mean dq = 0.734",
+      lambda: c1i0i1_gap_mean("IMP", "qBSeen", d=2), 0.734)
+check("asymmetric_c1_i0_i1", "M snowdrift mean dq = 0.810",
+      lambda: c1i0i1_gap_mean("M", "qBSeen", d=2), 0.810)
+
 
 # ════════════════════════════════════════════════════════════════════════════
 # MUTUALISM POP_3 — redundant with symmetric_c pop_3 (copilot-instructions.md,

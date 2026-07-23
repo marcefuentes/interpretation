@@ -95,8 +95,9 @@ they typically produce; mechanism can override the default mapping.
   the outcome.** With c0 < c1 fixed and the full i0 × i1 square swept, partner choice
   assigns the lower-cooperation-cost population as cooperator in 170/176 cells; IJMPQ
   can invert locally only on the i0 ≈ 0 strip (13 cells), where hitchhiking survives
-  but is attenuated relative to the c0 = c1, i0 ≠ i1 case. Snowdrift removes the
-  wedge entirely ([both costs asymmetric](../journal/asymmetric_c1_i0_i1.md)).
+  but is attenuated relative to the c0 = c1, i0 ≠ i1 case (IMP dq = −0.100 vs −0.461 at
+  Cost0 = 0, Cost1 = 0.20). Snowdrift removes the wedge entirely
+  ([both costs asymmetric](../journal/asymmetric_c1_i0_i1.md)).
 
 Single-run movies across the information-cost sweeps confirm that these splits are
 absorbing states established by the first recorded snapshot (t = 131072), not slow

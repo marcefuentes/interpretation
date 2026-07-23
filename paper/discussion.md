@@ -58,7 +58,10 @@ the hitchhiking inversion survives only on an i0 ≈ 0 strip (13 cells), attenua
 relative to the c0 = c1, i0 ≠ i1 case. Snowdrift removes the wedge entirely.
 Cooperation cost therefore sets the baseline; information cost can locally override
 combined mechanisms only where the population with lower cooperation cost pays no
-information cost.
+information cost. Information costs are also non-fungible across populations: equal total
+information-cost budgets (Cost0 + Cost1 = C) yield vastly different outcomes depending on
+which population pays the tax, because the underlying cooperation-cost gap determines which
+population's machinery is load-bearing.
 
 ## Limitations
 
