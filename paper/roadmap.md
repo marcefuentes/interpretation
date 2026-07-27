@@ -97,13 +97,16 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
   - [x] The bistable threshold is now shown, not just stated. Added opt-in ±1 SD band
     support to the plot renderer (`show_band` source parameter) and enabled it on fig7,
     where the band is wide below the threshold and collapses above it.
-  - [ ] Decide whether the dilemma-0 control (figS4) is promoted to the main text; under
-    this framing it carries the causal attribution rather than being robustness. Would
-    make eight main figures, so it likely displaces something.
-- [x] Supplement figure list locked: figS1–figS8 (no-enforcement control for Fig. 3,
+  - [x] **figS4 stays in the supplement (locked 2026-07).** The dilemma-0 control carries
+    causal attribution for the decoupling claim, but promoting it would break the
+    all-line main text and ask readers to parse one heatmap mid-argument. Fig. 4 and
+    the Results prose cite figS4 explicitly; the control remains one click away, not
+    buried.
+- [x] Supplement figure list locked: figS1–figS9 (no-enforcement control for Fig. 3,
   shuffle, gs = 4, dilemma-0 control, parameter-symmetric vs asymmetric line contrast,
-  information-cost asymmetry at equal c, and the two demoted information-cost heatmaps)
-  plus attribution table; cal1–cal2 auxiliary only.
+  information-cost asymmetry at equal c, the two demoted information-cost heatmaps, and
+  the full cooperation-cost asymmetry grid behind Fig. 3) plus attribution table;
+  cal1–cal2 auxiliary only.
 - [x] Generate figures via graphgen; record commands in figures.md.
 - [x] Draft captions via graphgen report (`paper/captions.md`); revise when Results
   prose is written to final figures.
@@ -131,7 +134,7 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 
 ## Open items / risks
 
-- **Results prose still lags the locked figure set** — Figs. 1–7 and S1–S8 are built and
+- **Results prose still lags the locked figure set** — Figs. 1–7 and S1–S9 are built and
   captioned, but results.md still orders the relational material as a late finding rather
   than the spine. Reordering is a Phase 2 task, not a rewrite.
 - **Related-work layer is absent** — gates Introduction and Discussion.

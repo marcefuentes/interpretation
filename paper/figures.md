@@ -71,7 +71,9 @@ line charts (Fig. 3 converted 2026-07; full c0 × c1 grid demoted to figS9).
 ### Main-text set, locked 2026-07
 
 Line charts carry the main text; heatmaps move to the supplement as full-coverage
-evidence. Seven main figures, all line charts.
+evidence. Seven main figures, all line charts. The dilemma-0 control (figS4) stays in
+the supplement so the main text never mixes renderers; Fig. 4 cites it for the
+decoupling attribution.
 
 | Fig | Content | Renderer | Was |
 | --- | ------- | -------- | --- |
