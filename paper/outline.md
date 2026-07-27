@@ -78,7 +78,7 @@ per-population sweep delivers the relational result the rest supports.
 ## Status
 
 Manuscript prose written through (Introduction–Discussion), figures locked
-(Figs. 1–7, S1–S9), references and supplement table in place. Numbers cite the
+(Figs. 1–6, S1–S9), references and supplement table in place. Numbers cite the
 journal (regression-checked by `ai/verify_claims.py`). Figures are produced by the
 graphgen pipeline rather than stored here. Target journal remains to be chosen
 ([formatting.md](formatting.md)).

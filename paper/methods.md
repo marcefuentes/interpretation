@@ -116,8 +116,8 @@ planes:
    strict triangle i₀ < i₁ (per-axis cap b − c). Deterministic role assignment and
    hitchhiking inversion without a cooperation-cost gap (Fig. S6).
 6. **Both costs asymmetric** — c₀ = 0.10, c₁ = 0.20 fixed; full i₀ × i₁ square
-   (176 cells). Own-versus-partner cost (Fig. 5), iso-budget non-convexity (Fig. 6),
-   and the hitchhiking wedge (Fig. 7).
+   (176 cells). Own-versus-partner cost and iso-budget non-convexity (Fig. 5),
+   and the hitchhiking wedge (Fig. 6).
 
 Auxiliary **payoff-plane calibration sweeps** hold two payoffs fixed and vary the
 other two, decoupling temptation, risk, and R − P. They support the payoff-gap
@@ -151,6 +151,6 @@ success).
 Main-study values are means over 30 independent runs, with a companion standard-
 deviation column per statistic. The practical noise floor is qBSeen gaps below
 approximately 0.01–0.02 and fitness gaps below approximately 0.002; standard deviation
-peaks in bistable transition cells (visible as the ±1 SD bands in Fig. 7). Every
+peaks in bistable transition cells (visible as the ±1 SD bands in Fig. 6). Every
 headline number cited from the journal is regression-checked against the exported
 simulation summaries by `ai/verify_claims.py`.

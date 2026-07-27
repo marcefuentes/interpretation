@@ -37,7 +37,7 @@ bibliography: references.bib
 
 ## House style until a journal is chosen
 
-- **Structure:** IMRaD + numbered main figures (1–7) + supplement (S1–S9, Table S1).
+- **Structure:** IMRaD + numbered main figures (1–6) + supplement (S1–S9, Table S1).
 - **Citations:** pandoc `[@Key]` against `references.bib` ([citing.md](citing.md)).
 - **Numbers:** cite journal docs; do not duplicate full analyses in the manuscript.
 - **Figures:** regenerate via graphgen; do not commit PNG binaries

@@ -2,7 +2,7 @@
 
 *Numbers are cited to the journal analyses that derive and regression-check them
 (`ai/verify_claims.py`) rather than restated in full. Figures are the locked
-main-text set (Figs. 1–7) and supplement (Figs. S1–S9).*
+main-text set (Figs. 1–6) and supplement (Figs. S1–S9).*
 
 ## 1. Mechanism hierarchy and cost thresholds
 
@@ -123,13 +123,13 @@ the other's breaks the confound.
 
 ## 4. Information cost is relational
 
-Figs. 5–7 cross a fixed cooperation-cost gap (c₀ = 0.1, c₁ = 0.2) with independent
-per-population information costs. Each panel of Fig. 5 holds one population's
-information cost at zero and sweeps the other's, so the comparison isolates whose
-cost bites
+Figs. 5–6 cross a fixed cooperation-cost gap (c₀ = 0.1, c₁ = 0.2) with independent
+per-population information costs. The first two columns of Fig. 5 hold one
+population's information cost at zero and sweep the other's, so the comparison
+isolates whose cost bites
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
 
-Under partner choice the two columns tell opposite stories (Fig. 5a,b). Taxing the
+Under partner choice the two strip columns tell opposite stories (Fig. 5a,b). Taxing the
 low-cooperation-cost population to i = 0.20 leaves it essentially flat (0.602 → 0.585)
 and even raises its partner (0.189 → 0.268). Moving the same tax onto the
 high-cooperation-cost population collapses both (0.069 and 0.032). A population under
@@ -138,7 +138,7 @@ its partner's. The bilateral swap rule is why: a chooser is useless without a ch
 to trade with, so assortment is rationed by whichever population has fewest choosers
 to spare — and that is already the high-cost side before any tax is applied.
 
-Under the combined reputation-rich mechanism the binding axis swaps (Fig. 5c,d).
+Under the combined reputation-rich mechanism the binding axis swaps (Fig. 5d,e).
 Taxing the low-cooperation-cost population to i = 0.20 drives its partner from 0.957
 to 0.268 while the payer itself falls only to 0.734 — the partner is hurt more than
 the payer. Taxing the high-cost side instead leaves that side near 0.911. Reciprocity-
@@ -162,21 +162,21 @@ the service the partner depended on.
 
 ## 5. Budget non-convexity and boundary conditions
 
-Equal enforcement budgets are neither fungible nor additive (Fig. 6). Along a line of
+Equal enforcement budgets are neither fungible nor additive (Fig. 5c,f). Along a line of
 constant total information cost (0.20), every reciprocity-bearing mechanism reaches
 its *lowest* total cooperation in the interior rather than at either end. Under IJMPQ
 a budget of 0.20 yields 1.0–1.65 when loaded onto one population but 0.39 when split
-as (0.06, 0.14) (Fig. 6a). Either corner leaves one population with an intact
+as (0.06, 0.14) (Fig. 5f). Either corner leaves one population with an intact
 apparatus, which is enough to hold the pair together; a split breaks both and pushes
 neither over the threshold where machinery-free cooperation takes over. Partner choice
-is monotone instead (Fig. 6b): because only the high-cooperation-cost population's
+is monotone instead (Fig. 5c): because only the high-cooperation-cost population's
 information cost bites, the best outcome sits at the corner that spares that
 population. The non-convexity is therefore a property of reciprocity-bearing
 mechanisms, not of the budget itself
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
 
 When both cost axes differ, the cooperation-cost gap remains the default role
-assigner. Across the full i₀ × i₁ square behind Figs. 5–7, partner choice assigns the
+assigner. Across the full i₀ × i₁ square behind Figs. 5–6, partner choice assigns the
 lower-cooperation-cost population as cooperator in 170/176 cells; IJMPQ inverts
 locally only on the i₀ ≈ 0 strip (13 cells). That hitchhiking inversion is stronger
 when cooperation costs are equal and only information cost differs (Fig. S6: IMP
@@ -187,11 +187,11 @@ erasing the inversion outright for MP and MPQ
 ([per-population information cost](../journal/asymmetric_i0_i1.md),
 [crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
 
-Fig. 7 shows the wedge closing. Each panel fixes the information cost on the
+Fig. 6 shows the wedge closing. Each panel fixes the information cost on the
 low-cooperation-cost population and sweeps the other. The inversion — the expensive
-population's curve above the cheap one's — holds throughout when i₀ = 0 (Fig. 7a),
-survives only past a threshold when i₀ = 0.02 (Fig. 7b), and is gone by i₀ = 0.04 and
-0.1 (Fig. 7c,d). Crossing into the machinery-free state is a bistable threshold, not
+population's curve above the cheap one's — holds throughout when i₀ = 0 (Fig. 6a),
+survives only past a threshold when i₀ = 0.02 (Fig. 6b), and is gone by i₀ = 0.04 and
+0.1 (Fig. 6c,d). Crossing into the machinery-free state is a bistable threshold, not
 a slope: just inside the wedge, doubling a population's own information cost *raises*
 its cooperation by 0.32 as it tips from a defector-heavy mixed state into near-
 complete tax-free unconditional cooperation. Run-to-run variance marks the basin

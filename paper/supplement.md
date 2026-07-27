@@ -14,9 +14,9 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S3 | Cooperation-cost asymmetry at group size 4 | Fig. 3 |
 | Fig. S4 | Dilemma-0 control for machinery erosion | Fig. 4 |
 | Fig. S5 | Parameter-symmetric vs asymmetric line slices | Figs. 2–3 |
-| Fig. S6 | Information-cost asymmetry at equal cooperation cost | Figs. 5–7 |
+| Fig. S6 | Information-cost asymmetry at equal cooperation cost | Figs. 5–6 |
 | Fig. S7 | Information cost × cooperation cost (single population) | Fig. 4 |
-| Fig. S8 | Information cost under fixed cooperation-cost asymmetry | Figs. 5–7 |
+| Fig. S8 | Information cost under fixed cooperation-cost asymmetry | Figs. 5–6 |
 | Fig. S9 | Full c₀ × c₁ cooperation-cost grid | Fig. 3 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
@@ -56,7 +56,7 @@ Small-group robustness (gs = 4): Fig. S3.
 erodes with or without a dilemma; cooperation persists through the shed only with a
 dilemma): Fig. S4. Compression when cooperation cost is held above zero: Fig. S8.
 
-**Figs. 5–7 relational cost.** Equal-c information-cost asymmetry and hitchhiking
+**Figs. 5–6 relational cost.** Equal-c information-cost asymmetry and hitchhiking
 (stronger inversion than under a cooperation-cost gap): Fig. S6. The full i₀ × i₁
 square behind the line reslices remains journal-backed
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)); snowdrift removal of the

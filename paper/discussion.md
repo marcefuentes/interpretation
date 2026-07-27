@@ -59,7 +59,7 @@ cooperator/exploiter split rather than merely changing the genotype route.
 asymmetry alone assigns or inverts the role split depending on mechanism (Fig. S6).
 When both cost axes differ, the cooperation-cost gap is the default outcome assigner
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
-cells), and the hitchhiking inversion survives only on an i₀ ≈ 0 strip (Fig. 7),
+cells), and the hitchhiking inversion survives only on an i₀ ≈ 0 strip (Fig. 6),
 attenuated relative to the equal-c case. Snowdrift removes the wedge entirely.
 What decides whether a mechanism can be overridden at all is the presence of the
 reciprocity family rather than the size of the information bill it pays — a controlled
@@ -72,7 +72,7 @@ The crossed design separates the cost a population pays from the cost its partne
 — a question prior work on costly punishment and monitoring could not ask, because it
 levies those costs inside one population [@BoydRicherson1992; @FehrGachter2002;
 @StevensHauser2004]. Each mechanism turns out to be governed by just one of the two
-axes, for both populations at once, and the families pick opposite axes (Fig. 5).
+axes, for both populations at once, and the families pick opposite axes (Fig. 5a,b,d,e).
 Partner choice is bound by the high-cooperation-cost population's information cost,
 because a swap requires a chooser on both sides and that population is the
 chooser-poor one; the reciprocity-bearing mechanisms are bound by the
@@ -81,7 +81,7 @@ only costs the system when the escaping side carries the cooperation. The sharpe
 illustration is that an untaxed population can end up with fewer *active* choosers,
 and a tenth of the cooperation, of the same population carrying a heavy tax itself.
 
-Equal information-cost budgets are therefore neither fungible nor additive (Fig. 6):
+Equal information-cost budgets are therefore neither fungible nor additive (Fig. 5c,f):
 splitting a budget across both populations is worse than loading it entirely onto
 either one, since each corner leaves one intact apparatus while a split leaves none.
 The dilemma-free control shows that none of this is an artefact of how the tax is
