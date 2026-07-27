@@ -24,9 +24,9 @@ In the prisoner's dilemma, partner choice stochastically assigns cooperator and 
 
 ![fig3](/home/marcelino/figures/interpretation/fig3.png)
 
-<strong>Fig. 3.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–h</strong>) Two coevolving populations. (<strong>a, b</strong>) and (<strong>e, f</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) and (<strong>g, h</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). Prisoner's dilemma. (<strong>a–d</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>e–h</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have the same information cost (0.001).
+<strong>Fig. 3.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–d</strong>) Two coevolving populations. Prisoner's dilemma. (<strong>a, b</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>c, d</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have the same information cost (0.001).
 
-When c0 < c1 in the prisoner's dilemma, partner choice converts the payoff gap into a stable cooperator/exploiter assignment; combined IJMPQ can lift the expensive population. Prisoner's dilemma only: in snowdrift the cheap population already cooperates at ceiling without enforcement (Fig. S1), so an asymmetric heatmap would repeat payoff-structure effects already shown in Fig. 2 rather than isolate what enforcement adds. Contrast Fig. 2 (control columns versus partner choice) and Fig. S1 (asymmetric no enforcement).
+Along the c1 = c0 + 0.02 strip, partner choice converts the payoff gap into a stable cooperator/exploiter assignment; combined IJMPQ can lift the expensive population. Prisoner's dilemma only: in snowdrift the cheap population already cooperates at ceiling without enforcement (Fig. S1), so an asymmetric heatmap would repeat payoff-structure effects already shown in Fig. 2 rather than isolate what enforcement adds. The full c0 × c1 grid is in Fig. S9. Contrast Fig. 2 (control columns versus partner choice) and Fig. S1 (asymmetric no enforcement).
 
 ### <strong>Fig. 4.</strong> Behaviour–mechanism decoupling where cooperation cost is zero.
 
@@ -125,3 +125,11 @@ Information cost is soft by itself but lowers the cooperation ceiling where the 
 <strong>Fig. S8.</strong> Short-memory partner choice. Frequency of cooperators and average fitness when short-memory partner choice is the only cooperation mechanism allowed. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.12 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (0.1). The two populations have the same information cost (from 0 to <em>b</em> - 0.12).
 
 With cooperation-cost asymmetry fixed (c0 = 0.1, c1 swept), information cost retreats the cooperation ceiling and compresses the cooperator/exploiter gap established by partner choice. Fig. S6 instead holds c0 = c1 and varies information cost asymmetrically between populations.
+
+### <strong>Fig. S9.</strong> Full cooperation-cost asymmetry grid (prisoner's dilemma).
+
+![figS9](/home/marcelino/figures/interpretation/figS9.png)
+
+<strong>Fig. S9.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–h</strong>) Two coevolving populations. (<strong>a, b</strong>) and (<strong>e, f</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) and (<strong>g, h</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). Prisoner's dilemma. (<strong>a–d</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>e–h</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have the same information cost (0.001).
+
+Full c0 × c1 coverage behind Fig. 3; the main-text line slice follows c1 = c0 + 0.02 with both populations overlaid.

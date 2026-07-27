@@ -39,11 +39,12 @@ attributions cited in the text but do not appear as manuscript figures. Regenera
 with `--figure cal1` or `--figure cal2` when needed; see the supplement table and
 the journal calibration analyses.
 
-Status: revised 2026-07 — graphgen ids are fig1–fig7 (main) and figS1–figS8
+Status: revised 2026-07 — graphgen ids are fig1–fig7 (main) and figS1–figS9
 (supplement), matching manuscript labels; calibration panels cal1–cal2 are excluded.
 Relational reframe (2026-07): three new line figures added from the
 `asymmetric_c1_i0_i1_lines` study and numbered Figs. 5–7; decoupling renumbered to
-Fig. 4; two heatmaps demoted to figS7 and figS8. Main text is now seven figures.
+Fig. 4; two heatmaps demoted to figS7 and figS8. Main text is now seven figures, all
+line charts (Fig. 3 converted 2026-07; full c0 × c1 grid demoted to figS9).
 
 ## Setup audit (2026-07)
 
@@ -51,7 +52,7 @@ Fig. 4; two heatmaps demoted to figS7 and figS8. Main text is now seven figures.
 | ------ | -------- | ----------- | ------- |
 | fig1 | Line (PLOT) | symmetric_c pop_1, _/P/M/IJMPQ | Mechanism hierarchy with no-enforcement control column |
 | fig2 | Line (PLOT) | symmetric_c pop_2, _/P | Control + partner choice; 2×4 panels (coop/fitness × no enforcement/P) |
-| fig3 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Correct — full c0 × c1 triangle |
+| fig3 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P + IJMPQ at c1 = c0 + 0.02 | Both pops overlaid; full grid → figS9 |
 | fig4 | Line (PLOT) | symmetric_c_i_lines pop_1, P + M at c = 0 | Correct — machinery vs cooperation decoupling |
 | fig5 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | Own- vs partner-cost strips, both populations overlaid |
 | fig6 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ + P | Iso-budget split at a fixed total of 0.2 |
@@ -64,18 +65,19 @@ Fig. 4; two heatmaps demoted to figS7 and figS8. Main text is now seven figures.
 | figS6 | Heatmap | asymmetric_i0_i1 pop_2, P + IJMPQ | i0 × i1 at c0 = c1 = 0.10; P vs IJMPQ inversion |
 | figS7 | Heatmap | symmetric_c_i pop_1, IJMPQ | Cost × c grid; demoted from main text |
 | figS8 | Heatmap | asymmetric_c1_i pop_2, P | c1 × Cost with c0 fixed; demoted from main text |
+| figS9 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Full c0 × c1 grid; demoted from Fig. 3 |
 | cal1, cal2 | Heatmap | prisoners / snowdrift calibration | Auxiliary — not in supplement |
 
 ### Main-text set, locked 2026-07
 
 Line charts carry the main text; heatmaps move to the supplement as full-coverage
-evidence. Seven main figures, five of them line charts.
+evidence. Seven main figures, all line charts.
 
 | Fig | Content | Renderer | Was |
 | --- | ------- | -------- | --- |
 | 1 | Mechanism hierarchy, single population | line | fig1 |
 | 2 | Stochastic role split under parameter symmetry | line | fig2 |
-| 3 | Deterministic split under cooperation-cost asymmetry | heatmap | fig3 |
+| 3 | Deterministic split under cooperation-cost asymmetry | line | fig3 (was heatmap) |
 | 4 | Behaviour–mechanism decoupling | line | old fig5 (was heatmap) |
 | 5 | **Headline:** information cost is relational | line | new |
 | 6 | Shared budget worse than concentrated | line | new |
@@ -85,13 +87,14 @@ Decoupling stays in the main text as slot 4 because the relational argument need
 its setup: the escape route that relieves the payer is exactly what withdraws the
 service its partner depends on, so Figs. 5–7 price a mechanism Fig. 4 establishes.
 
-Demoted: old fig4 → **figS7** (information × cooperation cost square), old fig6 →
-**figS8** (information cost under fixed cooperation-cost asymmetry). The crossed
-`asymmetric_c1_i0_i1` square remains available as coverage evidence for Figs. 5–7.
+Demoted: old fig3 heatmap → **figS9** (full c0 × c1 triangle), old fig4 → **figS7**
+(information × cooperation cost square), old fig6 → **figS8** (information cost under
+fixed cooperation-cost asymmetry). The crossed `asymmetric_c1_i0_i1` square remains
+available as coverage evidence for Figs. 5–7.
 
-**Line vs heatmap balance.** Main text: six line figures (1, 2, 4, 5, 6, 7) and one
-heatmap (3). Supplement: two line figures (figS2, figS5) and six heatmaps (figS1,
-figS3, figS4, figS6, figS7, figS8).
+**Line vs heatmap balance.** Main text: seven line figures (1–7). Supplement: two line
+figures (figS2, figS5) and seven heatmaps (figS1, figS3, figS4, figS6, figS7, figS8,
+figS9).
 
 **Dilemma rows.** Single-row figures (fig1, fig2, figS7, figS2) stack prisoner's dilemma
 (row 0) and snowdrift (row 1). Multi-row figures keep their existing row semantics
@@ -126,13 +129,13 @@ line reslice at c = 0.10 (presentation-only alternative to the fig4/figS7 heatma
    stochastically assigns cooperator and exploiter roles absent in the left control columns.
    **Snowdrift:** outcome asymmetry already present without enforcement; P mainly reshapes
    high-c regimes. Fitness can invert (paradox of success).
-3. fig3: parameter-asymmetric cooperation cost (c0 < c1), **prisoner's dilemma only**; rows = P and IJMPQ for high-
-   then low-cost side; columns = cooperation, fitness. Contrast with fig2 (PD row): deterministic
-   outcome split; IJMPQ lifts the expensive population. **Why no snowdrift row:** the cheap population
-   already cooperates at ceiling under no enforcement (~0.96), so partner choice adds little beyond the
-   payoff floor; between-population snowdrift asymmetry is shown in fig2 (row 1) and figS1 instead.
-   A full asymmetric snowdrift heatmap would mostly restate game-structure effects, not a new
-   mechanism attribution.
+3. fig3: **c1 = c0 + 0.02 strip**, prisoner's dilemma only; rows = P then IJMPQ;
+   both populations overlaid (orange = cheap c0, red = expensive c1); columns =
+   cooperation, fitness. Contrast with fig2 (PD row): deterministic outcome split;
+   IJMPQ lifts the expensive population. Full c0 × c1 triangle → figS9. **Why no
+   snowdrift row:** the cheap population already cooperates at ceiling under no
+   enforcement (~0.96), so partner choice adds little beyond the payoff floor;
+   between-population snowdrift asymmetry is shown in fig2 (row 1) and figS1 instead.
 4. fig4: rows = P then M; columns = machinery allele then cooperation; **c = 0 slice**
    sweeping information cost (Cost 0 → b). Full Cost × c grid → figS7.
 5. fig5: rows = P then IJMPQ; columns = i0 taxed then i1 taxed; both populations overlaid.
@@ -158,7 +161,22 @@ line reslice at c = 0.10 (presentation-only alternative to the fig4/figS7 heatma
 7. Fig 7 — fig7
    - python -m graphgen.main --study interpretation --figure fig7 --groupsize 128 --output ~/figures
 
-Figs 4–7 need the line-slice caches warmed first; see the sections below.
+Figs 3–7 need the line-slice caches warmed first; see the sections below.
+
+## Cooperation-cost asymmetry: line reslice at c1 = c0 + 0.02 (built 2026-07)
+
+Fig. 3 overlays both populations on the asymmetric offset strip rather than the full
+c0 × c1 heatmap (figS9). The deterministic cooperator/exploiter split under partner
+choice reads immediately as one high and one low curve; IJMPQ lifts the expensive
+population on the same axes.
+
+Uses the existing `asymmetric_c0_c1_lines` study with filter `asymmetric_offset`
+(c1 = c0 + 0.02). Same slice as figS5 top row; caches live under
+`asymmetric_c0_c1/.../csv_*_asymmetric_offset_for_image.con`. Warm with:
+
+```bash
+python -m graphgen.main --study asymmetric_c0_c1_lines --export-slices --groupsize 128
+```
 
 ## Behaviour–mechanism decoupling: line reslice at c = 0 (built 2026-07)
 
@@ -247,6 +265,7 @@ Robustness panels from the primary sweeps only. No-enforcement control for Fig. 
 | S6 | Information-cost parameter asymmetry at equal cooperation cost (c = 0.10) | figS6 | `... --figure figS6 ...` | ~/figures/interpretation/figS6.png |
 | S7 | Information cost versus cooperation cost, single population (was Fig 4) | figS7 | `... --figure figS7 ...` | ~/figures/interpretation/figS7.png |
 | S8 | Information cost under fixed cooperation-cost asymmetry (was Fig 6) | figS8 | `... --figure figS8 ...` | ~/figures/interpretation/figS8.png |
+| S9 | Full cooperation-cost asymmetry grid, prisoner's dilemma (was Fig 3) | figS9 | `... --figure figS9 ...` | ~/figures/interpretation/figS9.png |
 
 ## Auxiliary calibration figures (not in supplement)
 
@@ -270,12 +289,9 @@ journal synthesis and calibration docs; do not publish full payoff-plane heatmap
 
 1. Fig 1. At equal cooperation cost, the no-enforcement control and the partner-choice, direct-reciprocity, and reputation-rich combined mechanisms define the threshold hierarchy the rest of the paper explains.
 2. Fig 2. Two coevolving populations at equal cooperation cost (c0 = c1). Left columns: no enforcement; right columns: partner choice. In the prisoner's dilemma (top row), partner choice stochastically assigns cooperator and exploiter roles absent in the control columns; the cooperator side can earn lower fitness. In snowdrift (bottom row), a similar split already appears without enforcement; partner choice mainly reshapes outcomes at high cooperation cost.
-3. Fig 3. Parameter-asymmetric cooperation cost (c0 < c1), prisoner's dilemma: partner choice converts
-   the payoff gap into a deterministic cooperator/exploiter split; the combined
-   mechanism lifts the expensive population and softens both cooperation and fitness
-   gaps. Shown for the PD only: snowdrift already sustains high cooperation and
-   outcome asymmetry without enforcement (see Fig. 2 snowdrift row and Fig. S1), so
-   an asymmetric snowdrift heatmap would not isolate what partner choice adds.
+3. Fig 3. Along c1 = c0 + 0.02 with both populations overlaid, partner choice converts
+   the payoff gap into a deterministic cooperator/exploiter split; combined IJMPQ lifts
+   the expensive population. Full c0 × c1 grid → Fig. S9.
 4. Fig 4. Where cooperation cost is zero, the machinery alleles are selected away before cooperation disappears, so behaviour and mechanism decouple. This is the escape route the next three figures price.
 5. Fig 5. Holding one population's information cost at zero and sweeping the other's shows that the binding axis is not the one a population pays: under partner choice each population is nearly flat in its own cost and collapses under its partner's, and under the combined mechanism the two axes swap. Taxing the cheap-cooperation-cost population costs its partner more (0.957 → 0.268) than it costs the payer (0.957 → 0.734).
 6. Fig 6. Along a fixed total information-cost budget, the combined mechanism cooperates least at an interior split and most at either extreme, so an enforcement budget is not fungible between populations. Partner choice is monotone, placing the non-convexity with reciprocity rather than with the budget.
@@ -291,3 +307,4 @@ S5. Line slices contrast deterministic split under c1 = c0 + 0.02 (top row) with
 S6. At c0 = c1 = 0.10, information-cost asymmetry (i0 < i1) assigns the cooperator role deterministically under partner choice (top rows); combined IJMPQ inverts via cross-population hitchhiking (bottom rows).
 S7. In a single population, information cost is soft by itself but lowers the cooperation-cost ceiling once the two costs overlap. Full-coverage grid behind Fig 4.
 S8. With cooperation-cost asymmetry and c0 fixed above zero, the harmless information-cost edge disappears: information cost retreats the cooperation-cost ceiling and compresses the cooperator/exploiter split. Full-coverage grid complementing Figs 5–7, which cross both asymmetries.
+S9. Full c0 × c1 cooperation-cost asymmetry grid behind Fig 3; prisoner's dilemma, partner choice and combined IJMPQ rows.
