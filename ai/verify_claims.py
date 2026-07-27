@@ -631,6 +631,12 @@ def mc_corr_inv(m):
 
 
 def mc_m1_suppressed_total():
+    """Count cells where M1 under mechanism M is below the no-enforcement control.
+
+    Iterates noshuffle/shuffle × gs × dilemma. Condition blocks whose ``.con``
+    exports are missing (notably shuffle ``_`` controls, which were never run for
+    this study) are skipped rather than aborting the census.
+    """
     total = 0
     for sh in ("noshuffle", "shuffle"):
         for gs in ("128", "4"):
@@ -639,6 +645,8 @@ def mc_m1_suppressed_total():
                 rM1 = load(mcpath("asymmetric_c1_i", sh, gs, "M", d, 1))
                 rC0 = load(mcpath("asymmetric_c1_i", sh, gs, "_", d, 0))
                 rC1 = load(mcpath("asymmetric_c1_i", sh, gs, "_", d, 1))
+                if None in (rM0, rM1, rC0, rC1):
+                    continue
                 for a, c in zip(rM0, rC0):
                     if allele(a, "M1") < allele(c, "M1"):
                         total += 1
@@ -712,8 +720,8 @@ check("asymmetric_c1_i", "M control Pop_0 mean M1 at Cost=0.20 = 0.040",
       lambda: mc_cost_allele_mean("M", 0, 0, 0.20, "M1"), 0.040, 0.01)
 check("asymmetric_c1_i", "M PD Pop_0 mean qB at Cost=0.20 = 0.053",
       lambda: mc_cost_mean("M", 1, 0, 0.20), 0.053)
-check("asymmetric_c1_i", "M suppressed below control in 2001 cell-conditions",
-      mc_m1_suppressed_total, 2001, None)
+check("asymmetric_c1_i", "M suppressed below control in 1006 cell-conditions",
+      mc_m1_suppressed_total, 1006, None)
 
 # Snowdrift buffers Cost on the low-cost side but not the high-cost side.
 check("asymmetric_c1_i", "P snowdrift Pop_0 mean at Cost=0.28 = 0.917",

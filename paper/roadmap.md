@@ -108,44 +108,57 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
   the full cooperation-cost asymmetry grid behind Fig. 3) plus attribution table;
   cal1–cal2 auxiliary only.
 - [x] Generate figures via graphgen; record commands in figures.md.
-- [x] Draft captions via graphgen report (`paper/captions.md`); revise when Results
-  prose is written to final figures.
+- [x] Draft captions via graphgen report (`paper/captions.md`).
+- [x] Revise captions against the Results write-through (2026-07; source:
+  `graphgen/studies/interpretation/manifest.py` `manuscript_report` contexts).
 
 ## Phase 2 — prose (scaffold -> manuscript)
 
-- [ ] **Methods** — closest to done; complete model, IV grid, replicates/verification.
-- [ ] **Results** — write to final figures; cite journal, not internal study names.
-- [ ] **Introduction** — related work; information cost versus cooperation cost.
-- [ ] **Discussion** — interpretation, limitations, future directions.
+- [x] **Methods** — model, payoffs, information cost, IV grid, sweeps↔figures,
+  replicates/verification written through (2026-07).
+- [x] **Results** — reordered to the outline spine and written through to Figs. 1–7
+  (2026-07); journal links retained for number provenance.
+- [x] **Introduction** — related work; information cost versus cooperation cost;
+  contribution locked to the relational framing (2026-07).
+- [x] **Discussion** — interpretation against prior work; limitations; future
+  directions (2026-07).
 
-### Phase 2b — related work / references (biggest content gap)
+### Phase 2b — related work / references
 
-- [ ] Bibliography: reciprocity, partner choice, reputation, cost of cognition, mutualism.
-- [ ] Citation system for the repo.
-- [ ] Position information-cost contribution against prior work.
+- [x] Bibliography: reciprocity, partner choice, reputation, cost of cognition /
+  second-order free riding, mutualism (`paper/references.bib`).
+- [x] Citation system for the repo (`paper/citing.md`; pandoc `[@Key]` → `.bib`).
+- [x] Position information-cost contribution against prior work (Intro + Discussion).
 
 ## Phase 3 — front matter and polish
 
-- [ ] Abstract and title.
-- [ ] Author list, affiliations, keywords.
-- [ ] Consistency pass; ai/verify_claims.py; link check.
-- [ ] Supplement cross-referencing and caption polish.
-- [ ] Target-journal formatting.
+- [x] **Abstract and title** — [frontmatter.md](frontmatter.md);
+  structured mirror in [summary.md](summary.md).
+- [x] **Author list, affiliations, keywords** — Marcelino Fuentes, Department of
+  Biology, University of A Coruña, A Coruña, Spain; marcelino.fuentes@udc.es.
+- [x] **Consistency pass; ai/verify_claims.py; link check** — 353 passed, 0 failed,
+  0 skipped (2026-07; missing asymmetric_c1_i `.con` exports warmed from raw CSVs;
+  M-suppressed census scoped to condition blocks with both M and `_` present).
+  Journal links from `paper/` resolve; no internal study-name leakage in
+  Intro/Results/Discussion/front matter.
+- [x] **Supplement cross-referencing** — [supplement.md](supplement.md) (Figs. S1–S9
+  anchors + Table S1 attribution); captions already revised against Results.
+- [x] **Target-journal formatting** — portable pandoc assembly notes in
+  [formatting.md](formatting.md); venue-specific class/CSL deferred until journal
+  chosen.
 
 ## Open items / risks
 
-- **Results prose still lags the locked figure set** — Figs. 1–7 and S1–S9 are built and
-  captioned, but results.md still orders the relational material as a late finding rather
-  than the spine. Reordering is a Phase 2 task, not a rewrite.
-- **Related-work layer is absent** — gates Introduction and Discussion.
-- **Attribution without calibration figures** — supplement table must carry payoff-gap claims.
+- **Venue TBD** — pick journal + CSL before submission (formatting.md).
 - **Tooling stays authoritative** — headline numbers trace to journal + verify_claims.py.
 
 ## Definition of done
 
 Submittable IMRaD prose, finalized figures, referenced Introduction/Discussion,
-assembled supplement, abstract/title, green verify_claims.py.
+assembled supplement, abstract/title, green verify_claims.py — **met in-repo**
+aside from journal-specific template.
 
 ## Suggested order
 
-Phase 1 and Phase 2b in parallel; then Methods → Results → Introduction → Discussion → Phase 3.
+Phase 3 complete for in-repo manuscript readiness. Remaining submission chore:
+pick venue + CSL, run pandoc assembly from formatting.md.

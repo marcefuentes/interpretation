@@ -276,9 +276,10 @@ Robustness panels from the primary sweeps only. No-enforcement control for Fig. 
 | cal1 (PD payoff plane) | `... --figure cal1 ...` | ~/figures/interpretation/cal1.png |
 | cal2 (snowdrift payoff plane) | `... --figure cal2 ...` | ~/figures/interpretation/cal2.png |
 
-## Supplement table (no figure)
+## Supplement table (Table S1)
 
-Payoff-axis attribution from auxiliary calibration sweeps. Reproduce numbers from
+Payoff-axis attribution from auxiliary calibration sweeps. Canonical copy for the
+manuscript supplement: [supplement.md](supplement.md). Reproduce numbers from
 journal synthesis and calibration docs; do not publish full payoff-plane heatmaps.
 
 | Mechanism family | Limiting payoff gap | Journal source |
@@ -289,24 +290,27 @@ journal synthesis and calibration docs; do not publish full payoff-plane heatmap
 
 ## Draft captions
 
-1. Fig 1. At equal cooperation cost, the no-enforcement control and the partner-choice, direct-reciprocity, and reputation-rich combined mechanisms define the threshold hierarchy the rest of the paper explains.
-2. Fig 2. Two coevolving populations at equal cooperation cost (c0 = c1). Left columns: no enforcement; right columns: partner choice. In the prisoner's dilemma (top row), partner choice stochastically assigns cooperator and exploiter roles absent in the control columns; the cooperator side can earn lower fitness. In snowdrift (bottom row), a similar split already appears without enforcement; partner choice mainly reshapes outcomes at high cooperation cost.
-3. Fig 3. Along c1 = c0 + 0.02 with both populations overlaid, partner choice converts
-   the payoff gap into a deterministic cooperator/exploiter split; combined IJMPQ lifts
-   the expensive population. Full c0 × c1 grid → Fig. S9.
-4. Fig 4. Where cooperation cost is zero, the machinery alleles are selected away before cooperation disappears, so behaviour and mechanism decouple. This is the escape route the next three figures price.
-5. Fig 5. Holding one population's information cost at zero and sweeping the other's shows that the binding axis is not the one a population pays: under partner choice each population is nearly flat in its own cost and collapses under its partner's, and under the combined mechanism the two axes swap. Taxing the cheap-cooperation-cost population costs its partner more (0.957 → 0.268) than it costs the payer (0.957 → 0.734).
-6. Fig 6. Along a fixed total information-cost budget, the combined mechanism cooperates least at an interior split and most at either extreme, so an enforcement budget is not fungible between populations. Partner choice is monotone, placing the non-convexity with reciprocity rather than with the budget.
-7. Fig 7. The role inversion occupies a narrow wedge: it holds when the cheap population pays nothing, survives past a threshold when it pays 0.02, and is gone by 0.04. The ±1 SD bands show runs splitting between two attractors below that threshold.
+Aligned with the Results write-through (2026-07). Authoritative source:
+`graphgen/studies/interpretation/manifest.py` (`manuscript_report` context);
+regenerate `paper/captions.md` with `--report`.
+
+1. Fig 1. No-enforcement → M → P → IJMPQ raise the ceiling in that order; snowdrift softens the hierarchy (e–h). Fig. S2 for shuffle variants.
+2. Fig 2. At c₀ = c₁, partner choice yields a stochastic cooperator/exploiter split absent without enforcement (PD); snowdrift already splits in the control columns. Paradox of success in the fitness panels.
+3. Fig 3. Along c₁ = c₀ + 0.02, partner choice pins a deterministic split; IJMPQ lifts the expensive population. PD only — Fig. S1 shows partner choice creates the split; snowdrift floor is Fig. 2e–h. Full grid → Fig. S9; gs = 4 → Fig. S3.
+4. Fig 4. At c = 0, machinery alleles fall while cooperation holds on unconditional cooperators. Fig. S7 full grid; Fig. S4 dilemma-0 control. Escape route priced by Figs. 5–7.
+5. Fig 5. Own- vs partner-cost strips: under P both populations flat in own cost, collapse under partner's; under IJMPQ the axes swap (taxing cheap side: partner 0.957 → 0.268, payer → 0.734).
+6. Fig 6. Fixed total information cost 0.2: IJMPQ interior minimum (shared budget worse); P monotone. Non-convexity is a reciprocity property.
+7. Fig 7. Wedge closes as i₀ rises (holds at 0, threshold at 0.02, gone by 0.04). ±1 SD bands mark bistability. Equal-c hitchhiking contrast → Fig. S6.
 
 Supplement captions:
 
-S1. Control baseline for Fig. 3: enforcement off with cooperation-cost parameter asymmetry. Partner choice is what pins the deterministic cooperator/exploiter split.
-S2. Short-memory mechanisms shift the direct-reciprocity collapse ordering relative to the baseline hierarchy (Fig 1).
-S3. At group size 4, cooperation-cost asymmetry under partner choice preserves the deterministic cooperator/exploiter split.
-S4. Under dilemma 0, machinery alleles erode with or without a social dilemma; the decoupling in Fig 4 requires the dilemma case.
-S5. Line slices contrast deterministic split under c1 = c0 + 0.02 (top row) with the stochastic split at c0 = c1 (bottom row; same data as Fig 2).
-S6. At c0 = c1 = 0.10, information-cost asymmetry (i0 < i1) assigns the cooperator role deterministically under partner choice (top rows); combined IJMPQ inverts via cross-population hitchhiking (bottom rows).
-S7. In a single population, information cost is soft by itself but lowers the cooperation-cost ceiling once the two costs overlap. Full-coverage grid behind Fig 4.
-S8. With cooperation-cost asymmetry and c0 fixed above zero, the harmless information-cost edge disappears: information cost retreats the cooperation-cost ceiling and compresses the cooperator/exploiter split. Full-coverage grid complementing Figs 5–7, which cross both asymmetries.
-S9. Full c0 × c1 cooperation-cost asymmetry grid behind Fig 3; prisoner's dilemma, partner choice and combined IJMPQ rows.
+S1. No-enforcement control for Fig. 3: cheap PD population barely cooperates, so partner choice creates the deterministic split.
+S2. Shuffle short-memory variants: M ordering can shift; P vs combined contrast remains.
+S3. Fig. 3 asymmetry at gs = 4: deterministic split survives.
+S4. Machinery erodes with or without a dilemma; cooperation persists through the shed only with a dilemma (cf. Fig. 4).
+S5. Deterministic strip (Fig. 3) vs stochastic strip (Fig. 2) on shared axes.
+S6. At c₀ = c₁, i-asymmetry assigns roles under P and inverts under IJMPQ; hitchhiking stronger than in Figs. 5–7.
+S7. Cost × c grid behind Fig. 4: information cost soft alone, lowers the ceiling where costs overlap.
+S8. With c₀ > 0 fixed, information cost compresses the partner-choice split (refuge gone). Complements Figs. 5–7.
+S9. Full c₀ × c₁ grid behind Fig. 3 (P and IJMPQ).
+

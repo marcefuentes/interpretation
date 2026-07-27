@@ -7,13 +7,19 @@ is also our record for answering referee questions later.
 
 Section files:
 
-- summary.md — draft publication summary (structured abstract)
+- frontmatter.md — title, authors, keywords, abstract
+- summary.md — structured abstract mirror
 - introduction.md
 - methods.md
 - results.md
 - discussion.md
+- supplement.md — Figs. S1–S9 cross-refs + Table S1 (payoff-gap attribution)
 - figures.md — figure manifest (provenance + graphgen commands; no image binaries in-repo)
-- roadmap.md — plan from scaffold to finished manuscript (framing, phases, open items)
+- captions.md — regenerated figure legends
+- references.bib — bibliography (pandoc keys)
+- citing.md — citation convention
+- formatting.md — target-journal / pandoc assembly notes
+- roadmap.md — plan from scaffold to finished manuscript
 
 ## One-paragraph thesis
 
@@ -60,18 +66,19 @@ per-population sweep delivers the relational result the rest supports.
 
 | Paper section | Topic (journal/) | Figure(s) |
 | ------------- | ---------------- | --------- |
-| Introduction | framework.md | — |
+| Introduction | framework.md; references.bib | — |
 | Methods: model, payoffs, information cost, grid | parameterization.md, framework.md | — |
 | Results 1: mechanism hierarchy and cost thresholds | synthesis.md, calibration docs, baseline sweeps | 1 |
 | Results 2: the two-population role split | cooperation-cost asymmetry, reciprocity docs | 2–3 |
 | Results 3: costly machinery, decoupling, and why symmetry hides the question | symmetric information-cost sweeps | 4, S7 |
 | Results 4 (headline): information cost is relational | per-population i0/i1, both costs asymmetric | 5 |
 | Results 5: budget non-convexity and the boundary conditions | both costs asymmetric, snowdrift, dilemma-0 control | 6–7, S4 |
-| Discussion | synthesis.md, information-cost analyses, framework.md | — |
+| Discussion | synthesis.md, information-cost analyses, framework.md; references.bib | — |
 
 ## Status
 
-First-draft scaffold. Prose is provisional and numbers are cited rather than
-restated in full; consult the linked journal doc for the exact values (all
-regression-checked by `ai/verify_claims.py`). Figures are produced by the graphgen
-pipeline (`../graph/graphgen/`) rather than stored here.
+Manuscript prose written through (Introduction–Discussion), figures locked
+(Figs. 1–7, S1–S9), references and supplement table in place. Numbers cite the
+journal (regression-checked by `ai/verify_claims.py`). Figures are produced by the
+graphgen pipeline rather than stored here. Target journal remains to be chosen
+([formatting.md](formatting.md)).
