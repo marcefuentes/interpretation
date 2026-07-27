@@ -119,7 +119,7 @@ line reslice at c = 0.10 (presentation-only alternative to the fig4/figS7 heatma
 
 ### Panel order notes
 
-1. fig1: columns = no enforcement (_), P, M, IJMPQ; single coevolving population; row 0 = prisoner's dilemma, row 1 = snowdrift.
+1. fig1: columns = no enforcement (_), M, P, IJMPQ (increasing robustness to c); single coevolving population; row 0 = prisoner's dilemma, row 1 = snowdrift.
 2. fig2: line chart, two coevolving populations at c0 = c1; columns = no enforcement (_)
    then partner choice (P), each expanded by cooperation and fitness (`multi_trait` → 2×4
    panels). Row 0 = prisoner's dilemma, row 1 = snowdrift. **PD:** partner choice
