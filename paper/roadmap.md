@@ -82,32 +82,31 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 
 ## Phase 1 — figure set (do before Results prose)
 
-- [x] **Main-text figure list locked (2026-07), six figures.** Line charts carry the
+- [x] **Main-text figure list locked (2026-07), five figures.** Line charts carry the
   main text and heatmaps move to the supplement as coverage evidence, because the
   headline claims are dose-response comparisons and a flat-versus-cliff contrast is not
-  legible as a colour field. fig1 (single-population hierarchy), fig2 (stochastic
-  two-population split), fig3 (deterministic split under cooperation-cost asymmetry),
-  fig4 (behaviour–mechanism decoupling), fig5 (relational result: own versus partner
-  cost strips plus iso-budget non-convexity), fig6 (wedge boundary). fig5–fig6 are built
-  from the `asymmetric_c1_i0_i1_lines` graphgen study (fig5 fused the former strip and
-  iso-budget panels into one 2×3); the two demoted heatmaps became figS7 and figS8.
-  See figures.md for the slot table.
-  - [x] Decoupling stays in the main text as fig4 because the relational argument needs
+  legible as a colour field. fig1 (stochastic two-population split), fig2 (deterministic
+  split under cooperation-cost asymmetry), fig3 (behaviour–mechanism decoupling), fig4
+  (relational result: own versus partner cost strips plus iso-budget non-convexity),
+  fig5 (wedge boundary). The single-population hierarchy is figS10. fig4–fig5 are built
+  from the `asymmetric_c1_i0_i1_lines` graphgen study (fig4 fused the former strip and
+  iso-budget panels into one 2×3). See figures.md for the slot table.
+  - [x] Decoupling stays in the main text as fig3 because the relational argument needs
     it as setup — the escape route that relieves the payer is what withdraws the
     service its partner depends on.
   - [x] The bistable threshold is now shown, not just stated. Added opt-in ±1 SD band
-    support to the plot renderer (`show_band` source parameter) and enabled it on fig6,
+    support to the plot renderer (`show_band` source parameter) and enabled it on fig5,
     where the band is wide below the threshold and collapses above it.
   - [x] **figS4 stays in the supplement (locked 2026-07).** The dilemma-0 control carries
     causal attribution for the decoupling claim, but promoting it would break the
-    all-line main text and ask readers to parse one heatmap mid-argument. Fig. 4 and
+    all-line main text and ask readers to parse one heatmap mid-argument. Fig. 3 and
     the Results prose cite figS4 explicitly; the control remains one click away, not
     buried.
-- [x] Supplement figure list locked: figS1–figS9 (no-enforcement control for Fig. 3,
+- [x] Supplement figure list locked: figS1–figS10 (no-enforcement control for Fig. 2,
   shuffle, gs = 4, dilemma-0 control, parameter-symmetric vs asymmetric line contrast,
-  information-cost asymmetry at equal c, the two demoted information-cost heatmaps, and
-  the full cooperation-cost asymmetry grid behind Fig. 3) plus attribution table;
-  cal1–cal2 auxiliary only.
+  information-cost asymmetry at equal c, the two demoted information-cost heatmaps,
+  the full cooperation-cost asymmetry grid behind Fig. 2, and the demoted mechanism
+  hierarchy) plus attribution table; cal1–cal2 auxiliary only.
 - [x] Generate figures via graphgen; record commands in figures.md.
 - [x] Draft captions via graphgen report (`paper/captions.md`).
 - [x] Revise captions against the Results write-through (2026-07; source:
@@ -117,7 +116,7 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 
 - [x] **Methods** — model, payoffs, information cost, IV grid, sweeps↔figures,
   replicates/verification written through (2026-07).
-- [x] **Results** — reordered to the outline spine and written through to Figs. 1–6
+- [x] **Results** — reordered to the outline spine and written through to Figs. 1–5
   (2026-07); journal links retained for number provenance.
 - [x] **Introduction** — related work; information cost versus cooperation cost;
   contribution locked to the relational framing (2026-07).
@@ -142,7 +141,7 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
   M-suppressed census scoped to condition blocks with both M and `_` present).
   Journal links from `paper/` resolve; no internal study-name leakage in
   Intro/Results/Discussion/front matter.
-- [x] **Supplement cross-referencing** — [supplement.md](supplement.md) (Figs. S1–S9
+- [x] **Supplement cross-referencing** — [supplement.md](supplement.md) (Figs. S1–S10
   anchors + Table S1 attribution); captions already revised against Results.
 - [x] **Target-journal formatting** — portable pandoc assembly notes in
   [formatting.md](formatting.md); venue-specific class/CSL deferred until journal

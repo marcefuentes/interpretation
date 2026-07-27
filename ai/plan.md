@@ -151,7 +151,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       visually parallel to the existing symmetric_c cooperation-vs-c line figures.
     - Status: registered here as candidate figure material only. No journal doc,
       analysis script, or verifier checks yet. Weaker now that the manuscript already has
-      an information-cost line-chart pair: Figs. 5–6 reslice the two-population crossed
+      an information-cost line-chart pair: Figs. 4–5 reslice the two-population crossed
       square (see paper/figures.md), so a single-population reslice at c = 0.10 would add
       a line view of the fig4/figS7 grids but cannot show a relational effect, which is
       what the main text is about. Only worth a slot if the single-population dose

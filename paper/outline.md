@@ -13,7 +13,7 @@ Section files:
 - methods.md
 - results.md
 - discussion.md
-- supplement.md — Figs. S1–S9 cross-refs + Table S1 (payoff-gap attribution)
+- supplement.md — Figs. S1–S10 cross-refs + Table S1 (payoff-gap attribution)
 - figures.md — figure manifest (provenance + graphgen commands; no image binaries in-repo)
 - captions.md — regenerated figure legends
 - references.bib — bibliography (pandoc keys)
@@ -68,17 +68,17 @@ per-population sweep delivers the relational result the rest supports.
 | ------------- | ---------------- | --------- |
 | Introduction | framework.md; references.bib | — |
 | Methods: model, payoffs, information cost, grid | parameterization.md, framework.md | — |
-| Results 1: mechanism hierarchy and cost thresholds | synthesis.md, calibration docs, baseline sweeps | 1 |
-| Results 2: the two-population role split | cooperation-cost asymmetry, reciprocity docs | 2–3 |
-| Results 3: costly machinery, decoupling, and why symmetry hides the question | symmetric information-cost sweeps | 4, S7 |
-| Results 4 (headline): information cost is relational | per-population i0/i1, both costs asymmetric | 5 |
-| Results 5: budget non-convexity and the boundary conditions | both costs asymmetric, snowdrift, dilemma-0 control | 6–7, S4 |
+| Results 1: mechanism hierarchy and cost thresholds | synthesis.md, calibration docs, baseline sweeps | S10 |
+| Results 2: the two-population role split | cooperation-cost asymmetry, reciprocity docs | 1–2 |
+| Results 3: costly machinery, decoupling, and why symmetry hides the question | symmetric information-cost sweeps | 3, S7 |
+| Results 4 (headline): information cost is relational | per-population i0/i1, both costs asymmetric | 4 |
+| Results 5: budget non-convexity and the boundary conditions | both costs asymmetric, snowdrift, dilemma-0 control | 4–5, S4 |
 | Discussion | synthesis.md, information-cost analyses, framework.md; references.bib | — |
 
 ## Status
 
 Manuscript prose written through (Introduction–Discussion), figures locked
-(Figs. 1–6, S1–S9), references and supplement table in place. Numbers cite the
+(Figs. 1–5, S1–S10), references and supplement table in place. Numbers cite the
 journal (regression-checked by `ai/verify_claims.py`). Figures are produced by the
 graphgen pipeline rather than stored here. Target journal remains to be chosen
 ([formatting.md](formatting.md)).

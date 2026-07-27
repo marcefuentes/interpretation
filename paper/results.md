@@ -2,16 +2,16 @@
 
 *Numbers are cited to the journal analyses that derive and regression-check them
 (`ai/verify_claims.py`) rather than restated in full. Figures are the locked
-main-text set (Figs. 1–6) and supplement (Figs. S1–S9).*
+main-text set (Figs. 1–5) and supplement (Figs. S1–S10).*
 
 ## 1. Mechanism hierarchy and cost thresholds
 
 At equal cooperation cost in a single population, each enforcement architecture
-sustains cooperation up to a characteristic cost and then collapses (Fig. 1). The
-no-enforcement control (Fig. 1a) stays near the floor across the prisoner's-dilemma
-sweep; direct reciprocity (Fig. 1b), partner choice (Fig. 1c), and the combined
-reputation-rich mechanism (Fig. 1d) raise that ceiling in that order. The same
-columns under snowdrift (Fig. 1e–h) sit much higher: the elevated sucker payoff
+sustains cooperation up to a characteristic cost and then collapses (Fig. S10). The
+no-enforcement control (Fig. S10a) stays near the floor across the prisoner's-dilemma
+sweep; direct reciprocity (Fig. S10b), partner choice (Fig. S10c), and the combined
+reputation-rich mechanism (Fig. S10d) raise that ceiling in that order. The same
+columns under snowdrift (Fig. S10e–h) sit much higher: the elevated sucker payoff
 already favours cooperation without enforcement, so the hierarchy softens and the
 c-collapse matters far less than in the PD
 ([synthesis](../journal/synthesis.md)).
@@ -32,7 +32,7 @@ sweeps (not shown; Table S1) decouple these
   bottleneck as R − P → 0.
 - **Combined and reputation-rich mechanisms (MP, MPQ, IMP, IJMPQ) are reward-limited**
   and largely blind to the defection baseline, which is why they hold cooperation to
-  the highest costs (Fig. 1d).
+  the highest costs (Fig. S10d).
 
 These attributions recover a mechanistic distinction that foreshadows the relational
 result below. A residual chooser minority sorts the whole population, so even
@@ -40,7 +40,7 @@ unconditional cooperators are protected; a residual reciprocator minority protec
 only itself ([reciprocity](../journal/symmetric_c_reciprocity.md)). Partner choice
 assorts at the population level; reciprocity remembers at the individual level.
 Short-memory and shuffle variants shift the direct-reciprocity collapse ordering
-relative to Fig. 1 but leave the partner-choice versus combined contrast intact
+relative to Fig. S10 but leave the partner-choice versus combined contrast intact
 (Fig. S2).
 
 ## 2. The two-population role split
@@ -53,28 +53,28 @@ payoffs match). Mechanism can override the default mapping.
 
 When costs and payoffs match (c₀ = c₁, i₀ = i₁), partner choice produces a
 **stochastic** assignment in the prisoner's dilemma that is absent without
-enforcement (Fig. 2a–d). One population carries cooperation and is exploited; carrying
+enforcement (Fig. 1a–d). One population carries cooperation and is exploited; carrying
 the chooser allele correlates with fitness at roughly minus one
 ([partner choice calibration](../journal/prisoners_partner_choice.md)). In snowdrift
 the same split already appears in the no-enforcement columns; partner choice mainly
-reshapes high-cooperation-cost outcomes (Fig. 2e–h). Combined reputation mechanisms
+reshapes high-cooperation-cost outcomes (Fig. 1e–h). Combined reputation mechanisms
 at the same parameter point stay nearly outcome-symmetric in the PD.
 
 A small cooperation-cost gap converts that chance split into a deterministic one.
 Along the strip c₁ = c₀ + 0.02, partner choice assigns the lower-cooperation-cost
 population as cooperator in every cell and converts the R − P gap into a stable
-cooperation gap (Fig. 3a,b;
+cooperation gap (Fig. 2a,b;
 [partner choice under cooperation-cost asymmetry](../journal/asymmetric_c0_c1_partner_choice.md),
 [synthesis](../journal/synthesis.md)). Combined IJMPQ lifts the expensive population
-and shrinks the outcome asymmetry on the same axes (Fig. 3c,d), because reward-led
+and shrinks the outcome asymmetry on the same axes (Fig. 2c,d), because reward-led
 mechanisms no longer route R − P into a cooperation gap
-([combined mechanisms](../journal/asymmetric_c0_c1_combined.md)). Fig. 3 is
+([combined mechanisms](../journal/asymmetric_c0_c1_combined.md)). Fig. 2 is
 prisoner's-dilemma only: under no enforcement the cheap population barely cooperates
 in the PD (control mean ≈ 0.10), so partner choice is what *creates* the
 deterministic split from the parameter gap (Fig. S1; full c₀ × c₁ grid in Fig. S9).
 In snowdrift the sucker payoff already sustains high cooperation without machinery
 (control ≈ 0.96 vs partner choice ≈ 0.96 for the cheap side), and between-population
-asymmetry often appears from payoffs alone (Fig. 2e–h). A parallel asymmetric
+asymmetry often appears from payoffs alone (Fig. 1e–h). A parallel asymmetric
 snowdrift panel would repeat that floor rather than isolate what enforcement adds.
 Fig. S5 contrasts the deterministic and stochastic strips on shared axes; the split
 survives small-group stochasticity at group size 4 (Fig. S3).
@@ -94,10 +94,10 @@ because a population can shed the apparatus and keep cooperating for free. Where
 two costs overlap, information cost thins the defence cooperation cost requires and
 pulls the c-collapse threshold downward (Fig. S7).
 
-At zero cooperation cost the genotype route makes the escape visible (Fig. 4). As
+At zero cooperation cost the genotype route makes the escape visible (Fig. 3). As
 information cost rises, active enforcement alleles are selected out — chooser P1
-(Fig. 4a) and TFT M1 (Fig. 4c) both fall toward zero — while cooperation remains high
-on tax-free unconditional cooperators (Fig. 4b,d: C1P0, C1M0). Behaviour and
+(Fig. 3a) and TFT M1 (Fig. 3c) both fall toward zero — while cooperation remains high
+on tax-free unconditional cooperators (Fig. 3b,d: C1P0, C1M0). Behaviour and
 mechanism decouple. A dilemma-free control shows that machinery erodes with or
 without a social dilemma; cooperation persists through the shed only when the dilemma
 is present, so the tax drives the erosion and the dilemma decides whether losing the
@@ -123,13 +123,13 @@ the other's breaks the confound.
 
 ## 4. Information cost is relational
 
-Figs. 5–6 cross a fixed cooperation-cost gap (c₀ = 0.1, c₁ = 0.2) with independent
-per-population information costs. The first two columns of Fig. 5 hold one
+Figs. 4–5 cross a fixed cooperation-cost gap (c₀ = 0.1, c₁ = 0.2) with independent
+per-population information costs. The first two columns of Fig. 4 hold one
 population's information cost at zero and sweep the other's, so the comparison
 isolates whose cost bites
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
 
-Under partner choice the two strip columns tell opposite stories (Fig. 5a,b). Taxing the
+Under partner choice the two strip columns tell opposite stories (Fig. 4a,b). Taxing the
 low-cooperation-cost population to i = 0.20 leaves it essentially flat (0.602 → 0.585)
 and even raises its partner (0.189 → 0.268). Moving the same tax onto the
 high-cooperation-cost population collapses both (0.069 and 0.032). A population under
@@ -138,7 +138,7 @@ its partner's. The bilateral swap rule is why: a chooser is useless without a ch
 to trade with, so assortment is rationed by whichever population has fewest choosers
 to spare — and that is already the high-cost side before any tax is applied.
 
-Under the combined reputation-rich mechanism the binding axis swaps (Fig. 5d,e).
+Under the combined reputation-rich mechanism the binding axis swaps (Fig. 4d,e).
 Taxing the low-cooperation-cost population to i = 0.20 drives its partner from 0.957
 to 0.268 while the payer itself falls only to 0.734 — the partner is hurt more than
 the payer. Taxing the high-cost side instead leaves that side near 0.911. Reciprocity-
@@ -156,27 +156,27 @@ is expressed (C1P1 = 0.044, against 0.187 in the same population when it carries
 with; the population collapses to defection and the allele survives only in silent
 defector carriers.
 
-The escape route that made information cost survivable under symmetry (Fig. 4) is
+The escape route that made information cost survivable under symmetry (Fig. 3) is
 what makes it destructive under asymmetry: shedding relieves the payer and withdraws
 the service the partner depended on.
 
 ## 5. Budget non-convexity and boundary conditions
 
-Equal enforcement budgets are neither fungible nor additive (Fig. 5c,f). Along a line of
+Equal enforcement budgets are neither fungible nor additive (Fig. 4c,f). Along a line of
 constant total information cost (0.20), every reciprocity-bearing mechanism reaches
 its *lowest* total cooperation in the interior rather than at either end. Under IJMPQ
 a budget of 0.20 yields 1.0–1.65 when loaded onto one population but 0.39 when split
-as (0.06, 0.14) (Fig. 5f). Either corner leaves one population with an intact
+as (0.06, 0.14) (Fig. 4f). Either corner leaves one population with an intact
 apparatus, which is enough to hold the pair together; a split breaks both and pushes
 neither over the threshold where machinery-free cooperation takes over. Partner choice
-is monotone instead (Fig. 5c): because only the high-cooperation-cost population's
+is monotone instead (Fig. 4c): because only the high-cooperation-cost population's
 information cost bites, the best outcome sits at the corner that spares that
 population. The non-convexity is therefore a property of reciprocity-bearing
 mechanisms, not of the budget itself
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
 
 When both cost axes differ, the cooperation-cost gap remains the default role
-assigner. Across the full i₀ × i₁ square behind Figs. 5–6, partner choice assigns the
+assigner. Across the full i₀ × i₁ square behind Figs. 4–5, partner choice assigns the
 lower-cooperation-cost population as cooperator in 170/176 cells; IJMPQ inverts
 locally only on the i₀ ≈ 0 strip (13 cells). That hitchhiking inversion is stronger
 when cooperation costs are equal and only information cost differs (Fig. S6: IMP
@@ -187,11 +187,11 @@ erasing the inversion outright for MP and MPQ
 ([per-population information cost](../journal/asymmetric_i0_i1.md),
 [crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
 
-Fig. 6 shows the wedge closing. Each panel fixes the information cost on the
+Fig. 5 shows the wedge closing. Each panel fixes the information cost on the
 low-cooperation-cost population and sweeps the other. The inversion — the expensive
-population's curve above the cheap one's — holds throughout when i₀ = 0 (Fig. 6a),
-survives only past a threshold when i₀ = 0.02 (Fig. 6b), and is gone by i₀ = 0.04 and
-0.1 (Fig. 6c,d). Crossing into the machinery-free state is a bistable threshold, not
+population's curve above the cheap one's — holds throughout when i₀ = 0 (Fig. 5a),
+survives only past a threshold when i₀ = 0.02 (Fig. 5b), and is gone by i₀ = 0.04 and
+0.1 (Fig. 5c,d). Crossing into the machinery-free state is a bistable threshold, not
 a slope: just inside the wedge, doubling a population's own information cost *raises*
 its cooperation by 0.32 as it tips from a defector-heavy mixed state into near-
 complete tax-free unconditional cooperation. Run-to-run variance marks the basin

@@ -101,13 +101,13 @@ The manuscript is built from six headline sweeps and two auxiliary calibration
 planes:
 
 1. **Equal cooperation cost** — single population and two coevolving populations;
-   c₀ = c₁; dilemmas 0/1/2. Baseline hierarchy (Fig. 1) and stochastic two-population
-   split (Fig. 2).
+   c₀ = c₁; dilemmas 0/1/2. Baseline hierarchy (Fig. S10) and stochastic two-population
+   split (Fig. 1).
 2. **Unequal cooperation cost** — two coevolving populations; upper-triangular
-   c₀ < c₁ (210 cells); dilemmas 1/2. Deterministic role split (Fig. 3; full grid
+   c₀ < c₁ (210 cells); dilemmas 1/2. Deterministic role split (Fig. 2; full grid
    Fig. S9; no-enforcement control Fig. S1).
 3. **Information cost × cooperation cost at equal c** — triangular i + c ≤ b grid.
-   Decoupling at c = 0 (Fig. 4) and the soft-versus-compounding Cost × c surface
+   Decoupling at c = 0 (Fig. 3) and the soft-versus-compounding Cost × c surface
    (Fig. S7); dilemma-0 control (Fig. S4).
 4. **Information cost under fixed cooperation-cost asymmetry** — c₀ = 0.10, i swept
    jointly with c₁ (i + c₁ ≤ b). Compression of the partner-choice split when the
@@ -116,8 +116,8 @@ planes:
    strict triangle i₀ < i₁ (per-axis cap b − c). Deterministic role assignment and
    hitchhiking inversion without a cooperation-cost gap (Fig. S6).
 6. **Both costs asymmetric** — c₀ = 0.10, c₁ = 0.20 fixed; full i₀ × i₁ square
-   (176 cells). Own-versus-partner cost and iso-budget non-convexity (Fig. 5),
-   and the hitchhiking wedge (Fig. 6).
+   (176 cells). Own-versus-partner cost and iso-budget non-convexity (Fig. 4),
+   and the hitchhiking wedge (Fig. 5).
 
 Auxiliary **payoff-plane calibration sweeps** hold two payoffs fixed and vary the
 other two, decoupling temptation, risk, and R − P. They support the payoff-gap
@@ -151,6 +151,6 @@ success).
 Main-study values are means over 30 independent runs, with a companion standard-
 deviation column per statistic. The practical noise floor is qBSeen gaps below
 approximately 0.01–0.02 and fitness gaps below approximately 0.002; standard deviation
-peaks in bistable transition cells (visible as the ±1 SD bands in Fig. 6). Every
+peaks in bistable transition cells (visible as the ±1 SD bands in Fig. 5). Every
 headline number cited from the journal is regression-checked against the exported
 simulation summaries by `ai/verify_claims.py`.

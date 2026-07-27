@@ -1496,8 +1496,8 @@ check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.04) pop1 C0 = 0.073",
       lambda: c1i0i1_allele("IJMPQ", 0.02, 0.04, 1, "C0"), 0.073)
 
 
-# ── Fig. 5 strip endpoints: the flat axis and the cliff axis swap by mechanism ──
-# These are the curve endpoints the Fig. 5 caption quotes for columns a,b / d,e.
+# ── Fig. 4 strip endpoints: the flat axis and the cliff axis swap by mechanism ──
+# These are the curve endpoints the Fig. 4 caption quotes for columns a,b / d,e.
 # Both strips start from the same untaxed corner, so the endpoints alone carry the
 # contrast. Iso-budget (columns c, f) is checked separately below.
 check("asymmetric_c1_i0_i1", "fig5 untaxed corner pop0 = 0.957",
@@ -1523,7 +1523,7 @@ check("asymmetric_c1_i0_i1", "fig5 P untaxed corner pop0 = 0.602",
       lambda: c1i0i1_q("P", 0.0, 0.0, 0), 0.602)
 
 
-# ── Fig. 5 iso-budget: sharing the tax is worse than concentrating it ─────────
+# ── Fig. 4 iso-budget: sharing the tax is worse than concentrating it ─────────
 def c1i0i1_isobudget(mech, budget, what):
     """Total cooperation along Cost0+Cost1=budget: 'lo' end, 'hi' end, or 'min'."""
     t0 = {(round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2)): float(r["qBSeen"])
