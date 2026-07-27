@@ -32,9 +32,9 @@ When c0 < c1 in the prisoner's dilemma, partner choice converts the payoff gap i
 
 ![fig4](/home/marcelino/figures/interpretation/fig4.png)
 
-<strong>Fig. 4.</strong> Simulation results for different cooperation mechanisms. Frequency of machinery allele (P1 in a; M1 in c) and frequency of cooperators. (<strong>a–d</strong>) One population. (<strong>a, b</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>c, d</strong>) When direct reciprocity is the only cooperation mechanism allowed. The population has the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost.
+<strong>Fig. 4.</strong> Simulation results for different cooperation mechanisms. Frequency of machinery allele (P1 in a; M1 in c) and frequency of cooperators. The figure shows One population.(<strong>a, b</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>c, d</strong>) When direct reciprocity is the only cooperation mechanism allowed. The population has the same cooperation cost (0) and the same information cost (from 0 to <em>b</em> (0.4), where <em>b</em> is the benefit to the partner).
 
-Same information-cost × cooperation-cost grid as Fig. S7, but panels track machinery alleles alongside cooperation. Where cooperation cost is zero, alleles for enforcement machinery are selected away before cooperation disappears. This escape route is what Figs. 5-7 then price: relieving the payer withdraws the service its partner depends on. Fig. S4 shows the dilemma-0 control for this decoupling claim.
+At c = 0, information cost erodes enforcement alleles while cooperation is carried by tax-free unconditional cooperators; the full Cost × c grid is in Fig. S7. This escape route is what Figs. 5–7 then price: relieving the payer withdraws the service its partner depends on. Fig. S4 shows the dilemma-0 control for this decoupling claim.
 
 ### <strong>Fig. 5.</strong> Information cost is relational: whose cost binds depends on the mechanism.
 

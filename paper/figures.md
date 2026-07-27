@@ -52,7 +52,7 @@ Fig. 4; two heatmaps demoted to figS7 and figS8. Main text is now seven figures.
 | fig1 | Line (PLOT) | symmetric_c pop_1, _/P/M/IJMPQ | Mechanism hierarchy with no-enforcement control column |
 | fig2 | Line (PLOT) | symmetric_c pop_2, _/P | Control + partner choice; 2×4 panels (coop/fitness × no enforcement/P) |
 | fig3 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Correct — full c0 × c1 triangle |
-| fig4 | Heatmap | symmetric_c_i pop_1, P + M | Correct — machinery vs cooperation |
+| fig4 | Line (PLOT) | symmetric_c_i_lines pop_1, P + M at c = 0 | Correct — machinery vs cooperation decoupling |
 | fig5 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | Own- vs partner-cost strips, both populations overlaid |
 | fig6 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ + P | Iso-budget split at a fixed total of 0.2 |
 | fig7 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ | Wedge family, i0 fixed per panel; ±1 SD bands |
@@ -76,7 +76,7 @@ evidence. Seven main figures, five of them line charts.
 | 1 | Mechanism hierarchy, single population | line | fig1 |
 | 2 | Stochastic role split under parameter symmetry | line | fig2 |
 | 3 | Deterministic split under cooperation-cost asymmetry | heatmap | fig3 |
-| 4 | Behaviour–mechanism decoupling | heatmap | old fig5 |
+| 4 | Behaviour–mechanism decoupling | line | old fig5 (was heatmap) |
 | 5 | **Headline:** information cost is relational | line | new |
 | 6 | Shared budget worse than concentrated | line | new |
 | 7 | Wedge boundary and its closing | line | new |
@@ -89,8 +89,8 @@ Demoted: old fig4 → **figS7** (information × cooperation cost square), old fi
 **figS8** (information cost under fixed cooperation-cost asymmetry). The crossed
 `asymmetric_c1_i0_i1` square remains available as coverage evidence for Figs. 5–7.
 
-**Line vs heatmap balance.** Main text: five line figures (1, 2, 5, 6, 7) and two
-heatmaps (3, 4). Supplement: two line figures (figS2, figS5) and six heatmaps (figS1,
+**Line vs heatmap balance.** Main text: six line figures (1, 2, 4, 5, 6, 7) and one
+heatmap (3). Supplement: two line figures (figS2, figS5) and six heatmaps (figS1,
 figS3, figS4, figS6, figS7, figS8).
 
 **Dilemma rows.** Single-row figures (fig1, fig2, figS7, figS2) stack prisoner's dilemma
@@ -133,7 +133,8 @@ line reslice at c = 0.10 (presentation-only alternative to the fig4/figS7 heatma
    payoff floor; between-population snowdrift asymmetry is shown in fig2 (row 1) and figS1 instead.
    A full asymmetric snowdrift heatmap would mostly restate game-structure effects, not a new
    mechanism attribution.
-4. fig4: rows = P then M; columns = machinery allele then cooperation.
+4. fig4: rows = P then M; columns = machinery allele then cooperation; **c = 0 slice**
+   sweeping information cost (Cost 0 → b). Full Cost × c grid → figS7.
 5. fig5: rows = P then IJMPQ; columns = i0 taxed then i1 taxed; both populations overlaid.
 6. fig6: rows = IJMPQ then P; iso-budget split at a fixed total of 0.2.
 7. fig7: IJMPQ; columns = i0 held at 0, 0.02, 0.04, 0.1 while i1 is swept; ±1 SD bands.
@@ -157,7 +158,20 @@ line reslice at c = 0.10 (presentation-only alternative to the fig4/figS7 heatma
 7. Fig 7 — fig7
    - python -m graphgen.main --study interpretation --figure fig7 --groupsize 128 --output ~/figures
 
-Figs 5–7 need the line-slice caches warmed first; see the section below.
+Figs 4–7 need the line-slice caches warmed first; see the sections below.
+
+## Behaviour–mechanism decoupling: line reslice at c = 0 (built 2026-07)
+
+Fig. 4 is a dose-response line chart at zero cooperation cost rather than the full
+Cost × c heatmap (figS7). At c = 0 the decoupling reads immediately: machinery alleles
+fall while cooperation stays high on unconditional cooperators.
+
+Study `symmetric_c_i_lines` reslices the same `symmetric_c_i` square with filter
+`c_zero` (keeps c0 = 0, sweeps Cost). Warm caches with:
+
+```bash
+python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 128
+```
 
 ## Relational information cost: line reslices (built 2026-07)
 
@@ -212,12 +226,12 @@ A full i0 × i1 square (c0 and c1 fixed) is available as imshow heatmaps in grap
 remains the full-coverage evidence for the supplement, but the line reslices above now
 carry the claims in the main text.
 
-### Available alternative: single-population information-cost line charts
+### Available alternative: single-population information-cost line charts at c = 0.10
 
-The information-cost axis backing Fig. 4 and figS7 also exists as a 1D line-chart
-reslice at fixed cooperation cost c = 0.10. It carries no new numbers beyond the
-information-cost sweep journal doc — presentation option only, and unlike Figs. 5–7 it
-cannot show a relational effect because it has only one population. See ai/plan.md.
+The information-cost axis also exists as a 1D line-chart reslice at fixed cooperation
+cost c = 0.10 (`symmetric_i`). It carries no new numbers beyond the information-cost
+sweep journal doc — presentation option only, and unlike Figs. 5–7 it cannot show a
+relational effect because it has only one population. See ai/plan.md.
 
 ## Supplement figures
 
