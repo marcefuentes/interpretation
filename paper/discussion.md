@@ -58,10 +58,35 @@ the hitchhiking inversion survives only on an i0 ≈ 0 strip (13 cells), attenua
 relative to the c0 = c1, i0 ≠ i1 case. Snowdrift removes the wedge entirely.
 Cooperation cost therefore sets the baseline; information cost can locally override
 combined mechanisms only where the population with lower cooperation cost pays no
-information cost. Information costs are also non-fungible across populations: equal total
-information-cost budgets (Cost0 + Cost1 = C) yield vastly different outcomes depending on
-which population pays the tax, because the underlying cooperation-cost gap determines which
-population's machinery is load-bearing.
+information cost. What decides whether a mechanism can be overridden at all is the
+presence of the reciprocity family rather than the size of the information bill it
+pays. Because the tax is levied once per family carried rather than once per locus,
+direct reciprocity and partner choice pay exactly the same amount, and the four
+combined mechanisms pay exactly the same amount as each other; in both matched pairs
+the inversion follows reciprocity and not the amount paid. Every reciprocity-bearing
+mechanism inverts somewhere in that strip and no mechanism without one does, because
+reciprocity is what supplies the second-order-free-rider niche the inversion runs
+through.
+
+**Information cost is a relational cost, not a private one.** The crossed square makes
+a distinction the single-axis sweeps could not: it separates the cost a population pays
+from the cost its partner pays. Each mechanism turns out to be governed by just one of
+the two, for both populations at once, and the families pick opposite axes. Partner
+choice is bound by the high-cooperation-cost population's information cost, because a
+swap requires a chooser on both sides and that population is the chooser-poor one; the
+reciprocity-bearing mechanisms are bound by the low-cooperation-cost population's,
+because shedding machinery into unconditional cooperation is an escape that only costs
+the system when the escaping side is the one carrying the cooperation. The sharpest
+illustration is that an untaxed population can end up with fewer *active* choosers, and
+a tenth of the cooperation, of the same population carrying a heavy tax itself. This
+also makes equal information-cost budgets non-fungible and, more surprisingly,
+non-convex: splitting a budget across both populations is worse than loading it entirely
+onto either one, since each corner leaves one intact apparatus while a split leaves
+none. The
+dilemma-free control shows that none of this is an artefact of how the tax is charged —
+without a social dilemma the tax has no cross-population channel at all, and machinery
+loss tracks only the cost a population pays itself. The coupling is created by the
+dilemma, not by the accounting.
 
 ## Limitations
 
@@ -74,6 +99,12 @@ population's machinery is load-bearing.
   recorded time step across the per-population information-cost sweeps. They are too
   coarse, however, to resolve sub-establishment ordering or to rule out low-amplitude
   cycling within a snapshot interval.
+- **Bistable cells report mixtures.** At the edge of the hitchhiking wedge the
+  across-run standard deviation reaches 0.25, meaning runs settle in different
+  attractors and the cell mean describes no single run. Cell means in that narrow band
+  should be read as basin-occupancy fractions, not equilibrium levels; elsewhere the
+  across-run spread is an order of magnitude smaller
+  ([both costs asymmetric](../journal/asymmetric_c1_i0_i1.md)).
 - **Evolving-vs-fixed control redundancy.** The three-population design in which one
   side does not evolve adds nothing over the equal-cooperation-cost baseline and is
   excluded from interpretation (regression-locked in

@@ -1,6 +1,7 @@
 # asymmetric_i0_i1 — Asymmetric Information Cost at Symmetric Cooperation Cost
 
-asymmetric_i0_i1 is Study A of the per-population information-cost programme: both
+asymmetric_i0_i1 is the equal-cooperation-cost arm of the per-population
+information-cost programme: both
 populations face the same cooperation cost (c0 = c1 = c) while information cost
 is asymmetric (Cost0 != Cost1). It asks whether taxing one population's enforcement
 machinery more than the other's creates a deterministic cooperator/exploiter split,
@@ -276,7 +277,7 @@ a cell establishes a defended state at all, not a slow late erosion.
 - **asymmetric_c1_i**: demand pins roles (cheap pop cooperates under P); Cost
   compresses that split. asymmetric_i0_i at symmetric c shows supply can **assign
   or invert** roles depending on mechanism, without any c-gap.
-- **asymmetric_c1_i0_i1** (Study B): both asymmetries crossed at c0 = 0.10,
+- **asymmetric_c1_i0_i1**: both asymmetries crossed at c0 = 0.10,
   c1 = 0.20. The c-gap wins globally (P: 170/176 cells); IJMPQ hitchhiking
   survives only on the Cost0 ≈ 0 strip (13 cells). See **asymmetric_c1_i0_i1.md**.
 

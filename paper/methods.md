@@ -31,6 +31,27 @@ swept from 0 to b. The dilemma folders are:
 Exact tables, including the two-population form, are in
 [parameterization](../journal/parameterization.md) and the journal payoffs docs.
 
+## Information cost
+
+Information cost is charged every round, per *family* of mechanism loci carried
+rather than per locus:
+
+cost = i × ( (P ∨ Q) + (M ∨ I ∨ J) )
+
+An individual therefore owes 0, 1 or 2 units of i. Carrying both partner-choice loci
+costs the same as carrying one; carrying all three reciprocity loci costs the same as
+carrying one. Two consequences matter for interpretation. First, mechanisms are
+directly comparable in what they pay: direct reciprocity and partner choice both cost
+one unit, and every combined mechanism costs two, however many loci it enables — so
+contrasts within those matched sets isolate mechanism identity from expense. Second,
+the charge is levied on loci carried, not on machinery used, so loci that are
+behaviourally inert under a given mechanism are still taxed and are still purged by
+selection; and shedding part of a family saves nothing, which makes families
+disappear as blocks rather than locus by locus.
+
+In the two-population sweeps the rate is per population (i0, i1), so an individual
+pays its own population's rate on the families it carries.
+
 ## Independent variables
 
 The design grid (detailed in [framework](../journal/framework.md)): social dilemma

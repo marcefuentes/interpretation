@@ -26,10 +26,15 @@ a partner-choice locus** (Choose or Choose_lt) and **once for carrying a
 reciprocity locus** (Mimic, Imimic, or Imimic_lt), whether or not that locus
 is expressed in behavior. The consequences:
 
-- **Cost is per allele carried, not per behavior expressed.** C0P1 (defector
-  with a silent P1 allele) still pays if Choose = 1; under mechanism \_,
-  reciprocity and partner-choice routines do not run, but P and M loci still
-  mutate in and carriers still pay.
+- **Cost is per family carried, not per allele and not per behavior expressed.**
+  Each term is a boolean OR over its family, so P1Q1 and P1Q0 pay the same single
+  unit, as do M1I1J1, M1I1J0 and M1I0J0, and no individual ever pays more than
+  2 × Cost. C0P1 (defector with a silent P1 allele) still pays if Choose = 1;
+  under mechanism \_, reciprocity and partner-choice routines do not run, but P
+  and M loci still mutate in and carriers still pay.
+- **A family has to go as a block before the saving arrives.** Dropping M while
+  keeping I or J saves nothing, so selection cannot walk down the tax gradient one
+  locus at a time; it removes whole families.
 - **Mechanism \_ disables enforcement, not the loci.** PartnerChoice and
   Reciprocity are off, so chooser and mimic logic never runs. Machinery alleles
   are nonetheless costly when present; at high Cost selection keeps them rare
@@ -40,9 +45,13 @@ is expressed in behavior. The consequences:
   round when the corresponding loci are carried.
 - Combined mechanisms (MP, MPQ, IMP, IJMPQ) touch both families and pay two
   units of Cost per round when loci from both are carried.
-- Cooperators that shed the machinery (C1P0, C1M0 — cooperate unconditionally,
-  no chooser/mimic allele) pay no information cost. That tax-free niche drives
-  most of the results below.
+- Cooperators that shed the machinery cooperate unconditionally and pay no
+  information cost. That tax-free niche drives most of the results below. Note
+  that C1P0 and C1M0, the usual single-locus summaries for it, are proxies: a
+  C1M0 individual still owes a reciprocity unit if it carries I1 or J1, and a
+  C1P0 individual still owes a choice unit if it carries Q1. The exactly untaxed
+  cooperator is C1I0J0M0P0Q0, and the proxies track it closely only once the whole
+  family has been swept.
 
 ## The grid
 

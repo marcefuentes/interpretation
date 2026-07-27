@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Analyze Study B (asymmetric_c1_i0_i1): fixed cooperation-cost gap c0=0.10, c1=0.20
+Analyze asymmetric_c1_i0_i1: fixed cooperation-cost gap c0=0.10, c1=0.20
 with full Cost0 x Cost1 square (176 valid cells).
 
 Both asymmetries are present at once: cooperation cost c0 < c1 **and** independent
@@ -198,9 +198,9 @@ for mech in PRIMARY:
             print(f"    {mech} Cost={cost:.2f}: square {q0:.3f}/{q1:.3f}  "
                   f"c1_i {m0:.3f}/{m1:.3f}")
 
-# ── E2. CROSS-STUDY: same (Cost0, Cost1) point in Study A ────────────
-print("\n--- E2. vs asymmetric_i0_i1 (Study A) at same (Cost0, Cost1) point ---")
-print("Study A has c0=c1=0.10 (symmetric c); Study B has c0=0.10, c1=0.20.")
+# ── E2. CROSS-STUDY: same (Cost0, Cost1) point without the c-gap ─────
+print("\n--- E2. vs asymmetric_i0_i1 at same (Cost0, Cost1) point ---")
+print("equal-c = asymmetric_i0_i1 (c0=c1=0.10); c-gap = this study (c0=0.10, c1=0.20).")
 for mech in PRIMARY:
     for co0, co1 in ((0.0, 0.20), (0.0, 0.10), (0.10, 0.20)):
         r0b = load_con(STUDY, "noshuffle", "128", mech, 1, 0)
@@ -576,6 +576,195 @@ for co0, co1 in ((0.0, 0.0), (0.10, 0.0), (0.20, 0.0), (0.0, 0.20)):
     qsh = cell(rsh0, co0, co1) if rsh0 else float("nan")
     qc = cell(rc0, co0, co1) if rc0 else float("nan")
     print(f"  ({co0:.2f},{co1:.2f}): M noshuffle={qns:.3f}  M shuffle={qsh:.3f}  _={qc:.3f}")
+
+# ── S. OWN vs PARTNER INFORMATION COST ───────────────────────────────
+print("\n--- S. OWN vs PARTNER information cost (PD, ns, gs128) ---")
+print("Each population's cooperation vs the cost IT pays and the cost its PARTNER pays.")
+print("Matched dose-response strips hold one axis at 0 and sweep the other.")
+for mech in ("P", "M", "IMP", "IJMPQ"):
+    r0 = load_con(STUDY, "noshuffle", "128", mech, 1, 0)
+    r1 = load_con(STUDY, "noshuffle", "128", mech, 1, 1)
+    if not r0:
+        continue
+    print(f"\n  {mech}:")
+    print(f"    {'Cost':>5}  {'tax on pop_0 (Cost1=0)':>24}  "
+          f"{'tax on pop_1 (Cost0=0)':>24}")
+    for c in (0.0, 0.04, 0.08, 0.10, 0.14, 0.20):
+        a0, a1 = cell(r0, c, 0.0), cell(r1, c, 0.0)
+        b0, b1 = cell(r0, 0.0, c), cell(r1, 0.0, c)
+        if a0 == a0 and b0 == b0:
+            print(f"    {c:>5.2f}  {a0:>11.3f} /{a1:>11.3f}  "
+                  f"{b0:>11.3f} /{b1:>11.3f}")
+
+print("\n  Iso-budget 0.20 contrast for pop_0 (identical total tax, different payer):")
+for mech in ("P", "M", "IMP", "IJMPQ"):
+    r0 = load_con(STUDY, "noshuffle", "128", mech, 1, 0)
+    if not r0:
+        continue
+    own = cell(r0, 0.20, 0.0)
+    partner = cell(r0, 0.0, 0.20)
+    if own == own:
+        print(f"    {mech:6}: pop_0 pays 0.20 -> q={own:.3f};  "
+              f"pop_1 pays 0.20 -> q={partner:.3f}  (diff {own-partner:+.3f})")
+
+print("\n  Active choosers (C1P1) behind the P contrast:")
+for co0, co1 in ((0.20, 0.0), (0.0, 0.20)):
+    for f in (0, 1):
+        rows = load_con(STUDY, "noshuffle", "128", "P", 1, f)
+        r = cell_row(rows, co0, co1)
+        if r:
+            print(f"    ({co0:.2f},{co1:.2f}) pop_{f}: q={float(r['qBSeen']):.3f} "
+                  f"P1={allele(r, 'P1'):.3f} C1P1={allele(r, 'C1', 'P1'):.3f} "
+                  f"C0={allele(r, 'C0'):.3f}")
+
+# ── T. WEDGE LOCUS BY MECHANISM ──────────────────────────────────────
+print("\n--- T. WEDGE LOCUS: which mechanisms invert, and where ---")
+print("Flip = pop_1 cooperates more (dq < -0.02). Strip = Cost0 <= 0.02.")
+for mech in MECHS:
+    r0 = load_con(STUDY, "noshuffle", "128", mech, 1, 0)
+    r1 = load_con(STUDY, "noshuffle", "128", mech, 1, 1)
+    if not r0:
+        continue
+    inside, outside, cells = 0, 0, []
+    for a, b in square_pairs(r0, r1):
+        dq = float(a["qBSeen"]) - float(b["qBSeen"])
+        if dq < -0.02:
+            co0 = round(float(a["Cost0"]), 2)
+            cells.append((co0, round(float(b["Cost1"]), 2), dq))
+            if co0 <= 0.025:
+                inside += 1
+            else:
+                outside += 1
+    print(f"  {mech:6} (M-locus: {'yes' if 'M' in mech else 'no ':3}): "
+          f"strip {inside:2}, elsewhere {outside}")
+    if cells:
+        cells.sort(key=lambda x: x[2])
+        print("        " + ", ".join(f"({a:.2f},{b:.2f})={d:+.3f}"
+                                     for a, b, d in cells[:6]))
+
+# ── U. BISTABILITY: run-to-run SD across the wedge threshold ─────────
+print("\n--- U. BISTABILITY at the wedge threshold (IJMPQ, Cost0=0.02) ---")
+print("High qBSeenSD across 30 runs = runs split between two attractors.")
+for f in (0, 1):
+    print(f"  pop_{f}:")
+    for co1 in (0.0, 0.02, 0.04, 0.06, 0.08):
+        rows = load_con(STUDY, "noshuffle", "128", "IJMPQ", 1, f)
+        r = cell_row(rows, 0.02, co1)
+        if r:
+            print(f"    Cost1={co1:.2f}: q={float(r['qBSeen']):.3f} "
+                  f"SD={float(r['qBSeenSD']):.3f}")
+print("  reference row Cost0=0.00 (single attractor):")
+for f in (0, 1):
+    for co1 in (0.0, 0.10, 0.20):
+        rows = load_con(STUDY, "noshuffle", "128", "IJMPQ", 1, f)
+        r = cell_row(rows, 0.0, co1)
+        if r:
+            print(f"    pop_{f} Cost1={co1:.2f}: q={float(r['qBSeen']):.3f} "
+                  f"SD={float(r['qBSeenSD']):.3f}")
+
+print("\n  Genotype shift across the threshold (Cost0=0.02):")
+for f in (0, 1):
+    for co1 in (0.02, 0.04):
+        rows = load_con(STUDY, "noshuffle", "128", "IJMPQ", 1, f)
+        r = cell_row(rows, 0.02, co1)
+        if r:
+            print(f"    pop_{f} Cost1={co1:.2f}: q={float(r['qBSeen']):.3f} "
+                  f"P1={allele(r, 'P1'):.3f} C1P0={allele(r, 'C1', 'P0'):.3f} "
+                  f"C0={allele(r, 'C0'):.3f}")
+
+# ── V. ISO-BUDGET: is sharing worse than concentrating? ──────────────
+print("\n--- V. ISO-BUDGET SHAPE: concentrate the tax or share it? ---")
+print("Total cooperation q0+q1 along Cost0+Cost1 = budget.")
+for mech in MECHS:
+    r0 = load_con(STUDY, "noshuffle", "128", mech, 1, 0)
+    r1 = load_con(STUDY, "noshuffle", "128", mech, 1, 1)
+    if not r0:
+        continue
+    print(f"  {mech}:")
+    for budget in (0.10, 0.20):
+        pts = []
+        for co0 in COSTS:
+            co1 = round(budget - co0, 2)
+            q0 = cell(r0, co0, co1)
+            q1 = cell(r1, co0, co1)
+            if q0 == q0 and q1 == q1:
+                pts.append((co0, co1, q0 + q1))
+        if len(pts) >= 3:
+            worst = min(pts, key=lambda p: p[2])
+            shared = worst[2] < min(pts[0][2], pts[-1][2]) - 0.05
+            print(f"    budget={budget:.2f}: all-on-pop_1 {pts[0][2]:.3f}, "
+                  f"all-on-pop_0 {pts[-1][2]:.3f}, worst split {worst[2]:.3f} "
+                  f"at ({worst[0]:.2f},{worst[1]:.2f})  "
+                  f"[sharing worse: {'YES' if shared else 'no'}]")
+
+# ── W. d0 CROSS-COUPLING CONTROL ─────────────────────────────────────
+print("\n--- W. d0 CONTROL: is the information tax purely own-population? ---")
+print("Without a dilemma, M1 should track only the cost its own population pays.")
+for f in (0, 1):
+    rows = load_con(STUDY, "noshuffle", "128", "M", 0, f)
+    if not rows:
+        print(f"  pop_{f}: MISSING")
+        continue
+    own, oth, m1s = [], [], []
+    for r in rows:
+        own.append(float(r[f"Cost{f}"]))
+        oth.append(float(r[f"Cost{1 - f}"]))
+        m1s.append(allele(r, "M1"))
+    print(f"  pop_{f}: corr(M1, own Cost)={corr(own, m1s):+.3f}, "
+          f"corr(M1, partner Cost)={corr(oth, m1s):+.3f}, n={len(m1s)}")
+    print(f"    {'Cost0':>6}" + "".join(f"  C1={c:.2f}" for c in [0.0, 0.04, 0.10, 0.20]))
+    for co0 in (0.0, 0.04, 0.10, 0.20, 0.30):
+        line = f"    {co0:>6.2f}"
+        for co1 in (0.0, 0.04, 0.10, 0.20):
+            r = cell_row(rows, co0, co1)
+            line += f"  {allele(r, 'M1'):>7.3f}" if r else f"  {'--':>7}"
+        print(line)
+
+# ── X. EQUAL-C vs UNEQUAL-C, ALL MECHANISMS ──────────────────────────
+print("\n--- X. equal-c vs unequal-c at shared (Cost0, Cost1) ---")
+print("equal-c: asymmetric_i0_i1, c0=c1=0.10.  unequal-c: this study, c0=0.10, c1=0.20.")
+print("shift = dq(unequal-c) - dq(equal-c): how much the c-gap moves the role split.")
+for mech in MECHS:
+    r0 = load_con(STUDY, "noshuffle", "128", mech, 1, 0)
+    r1 = load_con(STUDY, "noshuffle", "128", mech, 1, 1)
+    a0 = load(f"{I0I1}/noshuffle/128/{mech}/1/pop_2/csv_0_filtered_for_image.con")
+    a1 = load(f"{I0I1}/noshuffle/128/{mech}/1/pop_2/csv_1_filtered_for_image.con")
+    if not r0 or not a0:
+        print(f"  {mech}: MISSING")
+        continue
+    print(f"  {mech}:")
+    for co0, co1 in ((0.0, 0.10), (0.0, 0.20), (0.04, 0.10), (0.10, 0.20)):
+        q0a = i0i1_cell(a0, 0.10, co0, co1)
+        q1a = i0i1_cell(a1, 0.10, co0, co1)
+        q0b, q1b = cell(r0, co0, co1), cell(r1, co0, co1)
+        if q0a == q0a and q0b == q0b:
+            da, db = q0a - q1a, q0b - q1b
+            print(f"    ({co0:.2f},{co1:.2f}): equal-c {q0a:.3f}/{q1a:.3f} "
+                  f"dq={da:+.3f}   unequal-c {q0b:.3f}/{q1b:.3f} dq={db:+.3f}   "
+                  f"shift={db - da:+.3f}")
+
+print("\n  Cells favouring pop_1, equal-c triangle (120) vs unequal-c square (176):")
+for mech in MECHS:
+    a0 = load(f"{I0I1}/noshuffle/128/{mech}/1/pop_2/csv_0_filtered_for_image.con")
+    a1 = load(f"{I0I1}/noshuffle/128/{mech}/1/pop_2/csv_1_filtered_for_image.con")
+    r0 = load_con(STUDY, "noshuffle", "128", mech, 1, 0)
+    r1 = load_con(STUDY, "noshuffle", "128", mech, 1, 1)
+    if not a0 or not r0:
+        continue
+    m1 = {(round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2)): r for r in a1
+          if abs(float(r["c0"]) - 0.10) < 0.005}
+    dqa = []
+    for r in a0:
+        if abs(float(r["c0"]) - 0.10) > 0.005:
+            continue
+        key = (round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2))
+        if key in m1:
+            dqa.append(float(r["qBSeen"]) - float(m1[key]["qBSeen"]))
+    dqb = [float(a["qBSeen"]) - float(b["qBSeen"]) for a, b in square_pairs(r0, r1)]
+    fa = sum(1 for x in dqa if x < -0.02)
+    fb = sum(1 for x in dqb if x < -0.02)
+    print(f"    {mech:6}: equal-c {fa:3}/{len(dqa)} (mean dq {mean(dqa):+.3f})   "
+          f"unequal-c {fb:3}/{len(dqb)} (mean dq {mean(dqb):+.3f})")
 
 print("\n" + "=" * 78)
 print("DONE")

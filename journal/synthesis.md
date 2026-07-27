@@ -199,12 +199,29 @@ The two are benign alone and destructive together:
   direction but collapses the gap magnitude (both sides ≈ 0.93+). The supply-side
   route to deterministic roles is therefore a **PD phenomenon**, not a universal
   information-cost law.
-- **Crossed asymmetries (Study B).** asymmetric_c1_i0_i1 fixes c0 < c1 and sweeps
+- **Crossed asymmetries.** asymmetric_c1_i0_i1 fixes c0 < c1 and sweeps
   the full Cost0 x Cost1 square (see **asymmetric_c1_i0_i1.md**). The c-gap is the
   default role assigner (P: pop_0 cooperates in 170/176 cells). IJMPQ/IMP can still
   invert locally on the Cost0 ≈ 0 strip (13 cells), but cannot overturn the cheap-c
   side globally; snowdrift removes the wedge entirely. Single-run movies confirm
   early lock-in at t = 131072 for both the c-gap default and the hitchhiking wedge.
+- **Cost is a relational quantity, not a private one (asymmetric_c1_i0_i1).** Only the full
+  square separates the cost a population pays from the cost its partner pays, and the
+  separation matters more than the override verdict. Under P, pop_0 is nearly
+  insensitive to its own Cost (0.602 -> 0.585 across Cost0 = 0 -> 0.20) and collapses
+  under pop_1's (0.602 -> 0.069): the swap needs C1P1 on both sides, so the binding
+  constraint is the chooser supply of whichever population has least of it. Hence
+  equal Cost budgets are non-fungible **and** non-convex — for every M-bearing
+  mechanism, splitting a budget across both populations is worse than loading it on
+  either one (IJMPQ, budget 0.20: corners 1.652 and 1.003, worst split 0.390). The
+  wedge itself is gated by the reciprocity family, not by the tax paid — and because
+  the charge is one unit per family carried, that comparison is controlled on both
+  sides: M and P both pay one unit yet invert in 10 cells and 0, while MP, MPQ, IMP
+  and IJMPQ all pay two units yet invert in 3, 1, 13 and 13. No mechanism lacking the
+  reciprocity family inverts there at all. The
+  dilemma-0 control shows the tax has **no** cross-population channel of its own
+  (corr(M1, partner Cost) = +0.05 for both populations), so the coupling is a property
+  of the dilemma, not of the cost accounting.
 - **The reward-led / assortment / risk attributions carry over.** Combined
   reputation-rich mechanisms are the most Cost-robust despite paying the double
   (two-family) tax — family count does not predict the collapse, the enforcement
@@ -242,6 +259,8 @@ The two are benign alone and destructive together:
 | asymmetric_c0_c1 deterministic role split            | c0 < c1 is an R − P asymmetry              |
 | asymmetric_i0_i1 Cost-asymmetry at symmetric c         | supply-side role split; P vs IJMPQ invert  |
 | asymmetric_c1_i0_i1 crossed c-gap + Cost square       | c-gap default; IJMPQ wedge at Cost0 ≈ 0 only |
+| P cares about its partner's Cost, not its own          | the swap needs C1P1 on both sides           |
+| Splitting a Cost budget beats neither corner           | one intact apparatus suffices; two broken ones do not |
 | IMP / IJMPQ hold cooperation at high c        | reward-led; blind to risk P                |
 | Shuffle kills M-based cooperation             | the M term drops from the payoff-axis fit  |
 | gs = 4 kills P-based cooperation, M recovers   | the P term drops; risk-led M remains       |

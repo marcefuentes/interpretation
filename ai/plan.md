@@ -109,7 +109,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
 ## Proposed — asymmetric information cost (2026-07)
 
-14. [x] Asymmetric information-cost study — Study A (asymmetric_i0_i1).
+14. [x] Asymmetric information-cost study at symmetric c (asymmetric_i0_i1).
     - **Question.** Per-population Cost0/Cost1 at symmetric c (the supply-side
       counterpart to asymmetric_c1_i's demand asymmetry). See journal/asymmetric_i0_i1.md.
     - **Headline result.** Deterministic role split, but mechanism-dependent: P
@@ -119,9 +119,9 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       (183/183 pass on full suite; 12 skipped unchanged).
     - c = 0.20 slice exports (`csv_*_c020_for_image.con`) and 1run movie `.con`
       generated via graphgen `--export-slices`.
-    - **Remaining:** Study B (crossed c-gap + Cost square) — see item 15.
+    - **Remaining:** the crossed c-gap + Cost square — see item 15.
 
-15. [x] Study B — crossed asymmetries (`asymmetric_c1_i0_i1`).
+15. [x] Crossed asymmetries (`asymmetric_c1_i0_i1`).
     - Fixed c0 = 0.10, c1 = 0.20; full Cost0 x Cost1 square (176 cells at
       per-axis caps Cmax_p = b - c_p: 16 x 11).
     - Cesga setup added; graphgen manifests added (`asymmetric_c1_i0_i1`,
@@ -150,17 +150,18 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       split). This gives a clean cooperation-vs-Cost line view at one load-bearing c,
       visually parallel to the existing symmetric_c cooperation-vs-c line figures.
     - Status: registered here as candidate figure material only. No journal doc,
-      analysis script, or verifier checks yet. Consider these as an option if the
-      manuscript wants a line-chart companion for the information-cost axis
-      (see paper/figures.md, Fig 4/5 backing symmetric_c_i.md). Decide before
-      building whether the line reslice adds enough over the fig4/fig5 heatmaps to earn a
-      figure slot.
+      analysis script, or verifier checks yet. Weaker now that the manuscript already has
+      an information-cost line-chart trio: Figs. 5-7 reslice the two-population crossed
+      square (see paper/figures.md), so a single-population reslice at c = 0.10 would add
+      a line view of the fig4/figS7 grids but cannot show a relational effect, which is
+      what the main text is about. Only worth a slot if the single-population dose
+      response needs its own panel.
 
 ## Decisions needed from maintainer
 
 - (a) Keep or drop asymmetric_c0_c1 pop_3 (item 6).
 - (b) Is snowdrift in scope enough to justify generating multi-run data (item 7)?
-- (c) Study B scope (item 15 open decisions).
+- (c) asymmetric_c1_i0_i1 scope (item 15 open decisions).
 
 ## Suggested order
 

@@ -34,6 +34,33 @@ information cost thins the very apparatus that resists temptation, it pulls the
 c-collapse threshold downward where the two costs overlap — information cost starves
 the defence cooperation cost requires.
 
+**Which population pays matters more than how much is paid — and the mechanisms
+disagree about which one.** With two populations paying independent information costs,
+each mechanism turns out to be governed by *one* of the two costs, for both populations
+at once, but partner choice and the reciprocity-bearing mechanisms pick opposite axes
+([both costs asymmetric](../journal/asymmetric_c1_i0_i1.md)). Partner choice is bound by
+the cost paid by the *high*-cooperation-cost population: taxing the low-cost side to
+i = 0.20 leaves it at 0.585 and even lifts its partner, while moving the same tax onto
+the high-cost side collapses both to 0.069 and 0.032. The reason is the bilateral swap
+rule — a chooser is useless without a chooser to trade with — so assortment is rationed
+by whichever population has fewest choosers to spare, and that is the high-cost side
+before any tax is applied. The reciprocity-bearing mechanisms are bound by the opposite
+cost, the one paid by the *low*-cooperation-cost population, because a taxed population
+can always shed its machinery into unconditional cooperation: harmless when the taxed
+side contributes little cooperation, destructive when it is the side carrying most of
+it.
+
+**A shared information-cost budget is worse than a concentrated one.** Along lines of
+constant total information cost, every mechanism carrying the reciprocity locus reaches
+its *lowest* total cooperation in the interior rather than at either end: under IJMPQ a
+budget of 0.20 yields 1.0–1.65 loaded onto one population but 0.39 split as
+(0.06, 0.14). Either corner leaves one population with an intact apparatus, which is
+enough to hold the pair together; a split budget breaks both and pushes neither over the
+threshold where machinery-free cooperation takes over. Partner choice is the exception:
+because only the high-cooperation-cost population's information cost bites, its
+iso-budget line is monotone and the best outcome sits at the corner that spares that
+population.
+
 **Snowdrift raises the floor.** Its high sucker payoff makes cooperation individually
 favoured even without enforcement, so both the c-collapse and the information-cost
 tax matter far less than in the PD.
@@ -96,7 +123,24 @@ they typically produce; mechanism can override the default mapping.
   assigns the lower-cooperation-cost population as cooperator in 170/176 cells; IJMPQ
   can invert locally only on the i0 ≈ 0 strip (13 cells), where hitchhiking survives
   but is attenuated relative to the c0 = c1, i0 ≠ i1 case (IMP dq = −0.100 vs −0.461 at
-  Cost0 = 0, Cost1 = 0.20). Snowdrift removes the wedge entirely
+  Cost0 = 0, Cost1 = 0.20). Differencing the two studies at shared information-cost
+  points shows the cooperation-cost gap moving every reciprocity-bearing mechanism
+  toward the cheap-cooperation-cost population, by enough to erase the inversion
+  outright for MP and MPQ. Snowdrift removes the wedge entirely
+  ([both costs asymmetric](../journal/asymmetric_c1_i0_i1.md)).
+- **The inversion is gated by the reciprocity family, not by the information cost the
+  mechanism pays.** Information cost is charged per family carried — one unit for
+  partner choice, one for reciprocity — so a mechanism owes 0, 1 or 2 units however many
+  loci it enables. That makes the comparison controlled in both directions. At one unit,
+  direct reciprocity and partner choice pay identically, yet reciprocity inverts in 10
+  cells of the i0 ≈ 0 strip and partner choice in none. At two units, the four combined
+  mechanisms pay identically, yet invert in 3, 1, 13 and 13 cells. Across the crossed
+  square every mechanism carrying the reciprocity family inverts somewhere in that strip
+  and no mechanism lacking it does. Reciprocity supplies
+  the second-order-free-rider niche that unconditional cooperation occupies once active
+  machinery becomes unaffordable, and the inversion runs through that niche. Partner
+  choice does lose the lead in 3 cells, but in the opposite corner of the square and by
+  the opposite route: a transient crossing while its *own* machinery collapses
   ([both costs asymmetric](../journal/asymmetric_c1_i0_i1.md)).
 
 Single-run movies across the information-cost sweeps confirm that these splits are
@@ -134,6 +178,22 @@ some of the strongest results sit
   cooperation-cost and information-cost parameters are asymmetric, the hitchhiking wedge
   survives only where i0 ≈ 0; elsewhere the cooperation-cost gap reasserts control in
   the outcome.
+- **An allele can be present at full frequency and still be silent.** The clearest
+  genotype evidence that partner choice is limited by the *partner's* information cost
+  is a population that pays nothing yet loses its choosers. At (i0, i1) = (0, 0.20) the
+  untaxed population's chooser allele sits at its neutral frequency, as it must with no
+  tax selecting against it (P1 = 0.519, alongside inert Q1 = 0.498 and M1 = 0.504), but
+  almost none of it is expressed: C1P1 = 0.044, against 0.187 in the same population
+  when it is the one carrying a 0.20 tax. With the partner's choosers taxed away there
+  is nobody to swap with, the population collapses to defection, and the allele survives
+  only in silent defector carriers ([both costs
+  asymmetric](../journal/asymmetric_c1_i0_i1.md)).
+- **Crossing into the machinery-free state is a threshold, not a slope.** Just inside
+  the wedge, doubling a population's own information cost *raises* its cooperation by
+  0.32 as it tips from a defector-heavy mixed state into near-complete tax-free
+  unconditional cooperation. Run-to-run variance identifies the transition as a basin
+  boundary: below it the 30-run standard deviation reaches 0.25 (runs split between two
+  attractors), above it 0.009 (every run locks into the same state).
 - **Partner choice assorts, reciprocity remembers.** A residual chooser minority sorts
   the whole population so even unconditional cooperators are protected; a residual
   reciprocator minority protects only itself. This population-level vs individual-level

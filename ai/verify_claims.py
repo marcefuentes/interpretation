@@ -1299,6 +1299,460 @@ check("asymmetric_c1_i0_i1", "M snowdrift mean dq = 0.810",
       lambda: c1i0i1_gap_mean("M", "qBSeen", d=2), 0.810)
 
 
+# ── Own vs partner information cost ────────────────────────────────────────
+# The square's two axis strips isolate the tax a population pays from the tax its
+# partner pays. Under P the strips diverge completely: pop_0 is flat under its own
+# tax and collapses under pop_1's, because a swap needs C1P1 on both sides.
+
+def c1i0i1_q(mech, co0, co1, f, d=1, sh="noshuffle", gs="128"):
+    return c1i0i1_cell(
+        c1i0i1_load("asymmetric_c1_i0_i1", sh, gs, mech, d, f), co0, co1)
+
+
+def c1i0i1_allele(mech, co0, co1, f, *tokens, d=1):
+    row = c1i0i1_cell_row(
+        c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", mech, d, f), co0, co1)
+    return allele(row, *tokens) if row else float("nan")
+
+
+# P: own tax leaves pop_0 flat (0.602 -> 0.585), partner tax collapses it to 0.069
+check("asymmetric_c1_i0_i1", "P own-tax strip pop0 (0.20,0) = 0.585",
+      lambda: c1i0i1_q("P", 0.20, 0.0, 0), 0.585)
+check("asymmetric_c1_i0_i1", "P partner-tax strip pop0 (0,0.20) = 0.069",
+      lambda: c1i0i1_q("P", 0.0, 0.20, 0), 0.069)
+check("asymmetric_c1_i0_i1", "P own-vs-partner pop0 difference = 0.516",
+      lambda: c1i0i1_q("P", 0.20, 0.0, 0) - c1i0i1_q("P", 0.0, 0.20, 0), 0.516)
+check("asymmetric_c1_i0_i1", "P own-tax strip pop0 (0.10,0) = 0.620",
+      lambda: c1i0i1_q("P", 0.10, 0.0, 0), 0.620)
+check("asymmetric_c1_i0_i1", "P partner-tax strip pop0 (0,0.10) = 0.313",
+      lambda: c1i0i1_q("P", 0.0, 0.10, 0), 0.313)
+# genotypes: untaxed pop_0 keeps MORE P1 but almost none of it active
+check("asymmetric_c1_i0_i1", "P (0,0.20) pop0 P1 = 0.519",
+      lambda: c1i0i1_allele("P", 0.0, 0.20, 0, "P1"), 0.519)
+check("asymmetric_c1_i0_i1", "P (0,0.20) pop0 C1P1 = 0.044",
+      lambda: c1i0i1_allele("P", 0.0, 0.20, 0, "C1", "P1"), 0.044)
+check("asymmetric_c1_i0_i1", "P (0.20,0) pop0 P1 = 0.202",
+      lambda: c1i0i1_allele("P", 0.20, 0.0, 0, "P1"), 0.202)
+check("asymmetric_c1_i0_i1", "P (0.20,0) pop0 C1P1 = 0.187",
+      lambda: c1i0i1_allele("P", 0.20, 0.0, 0, "C1", "P1"), 0.187)
+check("asymmetric_c1_i0_i1", "P (0,0.20) pop1 C1P1 = 0.006",
+      lambda: c1i0i1_allele("P", 0.0, 0.20, 1, "C1", "P1"), 0.006)
+
+# Under P, taxing pop_0 does not merely spare pop_1 -- it lifts it.
+check("asymmetric_c1_i0_i1", "P own-tax strip pop1 (0.20,0) = 0.268 (rises)",
+      lambda: c1i0i1_q("P", 0.20, 0.0, 1), 0.268)
+check("asymmetric_c1_i0_i1", "P partner-tax strip pop1 (0,0.20) = 0.032",
+      lambda: c1i0i1_q("P", 0.0, 0.20, 1), 0.032)
+# pop_1 is chooser-poor before any tax, which is why taxing it binds partner choice
+check("asymmetric_c1_i0_i1", "P (0,0) pop0 C1P1 = 0.532",
+      lambda: c1i0i1_allele("P", 0.0, 0.0, 0, "C1", "P1"), 0.532)
+check("asymmetric_c1_i0_i1", "P (0,0) pop1 C1P1 = 0.167",
+      lambda: c1i0i1_allele("P", 0.0, 0.0, 1, "C1", "P1"), 0.167)
+check("asymmetric_c1_i0_i1", "P (0,0) pop1 C0 = 0.811",
+      lambda: c1i0i1_allele("P", 0.0, 0.0, 1, "C0"), 0.811)
+
+
+# Binding-axis correlations: which Cost governs each population's cooperation.
+def c1i0i1_axis_corr(mech, f, axis):
+    rows = c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", mech, 1, f)
+    xs = [float(r[f"Cost{axis}"]) for r in rows]
+    ys = [float(r["qBSeen"]) for r in rows]
+    return corr(xs, ys)
+
+
+# P: Cost1 dominates for BOTH populations
+check("asymmetric_c1_i0_i1", "P pop0 corr(q, Cost1) = -0.696",
+      lambda: c1i0i1_axis_corr("P", 0, 1), -0.696, 0.02)
+check("asymmetric_c1_i0_i1", "P pop0 corr(q, Cost0) = -0.466",
+      lambda: c1i0i1_axis_corr("P", 0, 0), -0.466, 0.02)
+check("asymmetric_c1_i0_i1", "P pop1 corr(q, Cost1) = -0.708",
+      lambda: c1i0i1_axis_corr("P", 1, 1), -0.708, 0.02)
+check("asymmetric_c1_i0_i1", "P pop1 corr(q, Cost0) = -0.314",
+      lambda: c1i0i1_axis_corr("P", 1, 0), -0.314, 0.02)
+# IJMPQ / IMP: the opposite axis binds -- pop_1 is hit by Cost0, not its own Cost1
+check("asymmetric_c1_i0_i1", "IJMPQ pop1 corr(q, Cost0) = -0.674",
+      lambda: c1i0i1_axis_corr("IJMPQ", 1, 0), -0.674, 0.02)
+check("asymmetric_c1_i0_i1", "IJMPQ pop1 corr(q, Cost1) = -0.261",
+      lambda: c1i0i1_axis_corr("IJMPQ", 1, 1), -0.261, 0.02)
+check("asymmetric_c1_i0_i1", "IMP pop1 corr(q, Cost0) = -0.663",
+      lambda: c1i0i1_axis_corr("IMP", 1, 0), -0.663, 0.02)
+check("asymmetric_c1_i0_i1", "IMP pop1 corr(q, Cost1) = -0.351",
+      lambda: c1i0i1_axis_corr("IMP", 1, 1), -0.351, 0.02)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.20,0) pop0 = 0.734",
+      lambda: c1i0i1_q("IJMPQ", 0.20, 0.0, 0), 0.734)
+check("asymmetric_c1_i0_i1", "IMP (0.10,0) pop0 = 0.665",
+      lambda: c1i0i1_q("IMP", 0.10, 0.0, 0), 0.665)
+check("asymmetric_c1_i0_i1", "IMP (0.10,0) pop1 = 0.261",
+      lambda: c1i0i1_q("IMP", 0.10, 0.0, 1), 0.261)
+check("asymmetric_c1_i0_i1", "IMP (0,0.10) pop0 = 0.797",
+      lambda: c1i0i1_q("IMP", 0.0, 0.10, 0), 0.797)
+check("asymmetric_c1_i0_i1", "IMP (0,0.10) pop1 = 0.908",
+      lambda: c1i0i1_q("IMP", 0.0, 0.10, 1), 0.908)
+check("asymmetric_c1_i0_i1", "IMP (0.20,0) pop0 = 0.616",
+      lambda: c1i0i1_q("IMP", 0.20, 0.0, 0), 0.616)
+check("asymmetric_c1_i0_i1", "IMP (0.20,0) pop1 = 0.227",
+      lambda: c1i0i1_q("IMP", 0.20, 0.0, 1), 0.227)
+# M is the wash case: both iso-budget corners give the same total
+check("asymmetric_c1_i0_i1", "M budget 0.20 all-on-pop1 total = 0.206",
+      lambda: c1i0i1_isobudget("M", 0.20, "lo"), 0.206)
+check("asymmetric_c1_i0_i1", "M budget 0.20 all-on-pop0 total = 0.206",
+      lambda: c1i0i1_isobudget("M", 0.20, "hi"), 0.206)
+
+
+# ── Wedge is gated by the M locus ──────────────────────────────────────────
+def c1i0i1_flips_in_strip(mech, inside=True, bound=0.025):
+    n = 0
+    for a, b in c1i0i1_pairs(mech):
+        if float(a["qBSeen"]) - float(b["qBSeen"]) < -0.02:
+            if (round(float(a["Cost0"]), 2) <= bound) == inside:
+                n += 1
+    return n
+
+
+check("asymmetric_c1_i0_i1", "M flips inside Cost0<=0.02 strip = 10",
+      lambda: c1i0i1_flips_in_strip("M"), 10, None)
+check("asymmetric_c1_i0_i1", "MP flips inside strip = 3",
+      lambda: c1i0i1_flips_in_strip("MP"), 3, None)
+check("asymmetric_c1_i0_i1", "MPQ flips inside strip = 1",
+      lambda: c1i0i1_flips_in_strip("MPQ"), 1, None)
+check("asymmetric_c1_i0_i1", "IMP flips inside strip = 13",
+      lambda: c1i0i1_flips_in_strip("IMP"), 13, None)
+check("asymmetric_c1_i0_i1", "IJMPQ flips inside strip = 13",
+      lambda: c1i0i1_flips_in_strip("IJMPQ"), 13, None)
+check("asymmetric_c1_i0_i1", "P flips inside strip = 0 (no M locus)",
+      lambda: c1i0i1_flips_in_strip("P"), 0, None)
+check("asymmetric_c1_i0_i1", "_ flips inside strip = 0",
+      lambda: c1i0i1_flips_in_strip("_"), 0, None)
+# P's 3 flips are all OUTSIDE the strip, during its own-machinery collapse
+check("asymmetric_c1_i0_i1", "P flips outside strip = 3",
+      lambda: c1i0i1_flips_in_strip("P", inside=False), 3, None)
+check("asymmetric_c1_i0_i1", "P own-collapse flip (0.24,0) dq = -0.053",
+      lambda: c1i0i1_q("P", 0.24, 0.0, 0) - c1i0i1_q("P", 0.24, 0.0, 1), -0.053)
+check("asymmetric_c1_i0_i1", "P pre-flip (0.22,0) dq = +0.125",
+      lambda: c1i0i1_q("P", 0.22, 0.0, 0) - c1i0i1_q("P", 0.22, 0.0, 1), 0.125)
+check("asymmetric_c1_i0_i1", "P (0.24,0) pop1 still holds P1 = 0.678",
+      lambda: c1i0i1_allele("P", 0.24, 0.0, 1, "P1"), 0.678)
+
+
+# ── Paradox of success holds throughout the wedge ──────────────────────────
+def c1i0i1_wedge_paradox(mech):
+    """Flip cells in which pop_0 (the less cooperative side) is also the fitter."""
+    n = 0
+    for a, b in c1i0i1_pairs(mech):
+        if (float(a["qBSeen"]) - float(b["qBSeen"]) < -0.02
+                and float(a["wmean"]) - float(b["wmean"]) > 0.005):
+            n += 1
+    return n
+
+
+check("asymmetric_c1_i0_i1", "IJMPQ paradox holds in all 13 flip cells",
+      lambda: c1i0i1_wedge_paradox("IJMPQ"), 13, None)
+check("asymmetric_c1_i0_i1", "IMP paradox holds in all 13 flip cells",
+      lambda: c1i0i1_wedge_paradox("IMP"), 13, None)
+check("asymmetric_c1_i0_i1", "M paradox holds in all 10 flip cells",
+      lambda: c1i0i1_wedge_paradox("M"), 10, None)
+
+
+# ── Bistable threshold at the wedge edge ───────────────────────────────────
+# Below the threshold the 30-run SD is huge (runs split between attractors);
+# above it every run locks into the machinery-free cooperative state.
+def c1i0i1_sd(mech, co0, co1, f):
+    row = c1i0i1_cell_row(
+        c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", mech, 1, f), co0, co1)
+    return float(row["qBSeenSD"]) if row else float("nan")
+
+
+check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.02) pop1 qB = 0.621",
+      lambda: c1i0i1_q("IJMPQ", 0.02, 0.02, 1), 0.621)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.04) pop1 qB = 0.942",
+      lambda: c1i0i1_q("IJMPQ", 0.02, 0.04, 1), 0.942)
+check("asymmetric_c1_i0_i1", "IJMPQ own-cost jump raises pop1 by 0.321",
+      lambda: c1i0i1_q("IJMPQ", 0.02, 0.04, 1) - c1i0i1_q("IJMPQ", 0.02, 0.02, 1),
+      0.321)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.02) pop1 SD = 0.244 (bistable)",
+      lambda: c1i0i1_sd("IJMPQ", 0.02, 0.02, 1), 0.244)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.00) pop1 SD = 0.249 (bistable)",
+      lambda: c1i0i1_sd("IJMPQ", 0.02, 0.0, 1), 0.249)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.04) pop1 SD = 0.009 (locked)",
+      lambda: c1i0i1_sd("IJMPQ", 0.02, 0.04, 1), 0.009)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop0 SD = 0.044 (single attractor)",
+      lambda: c1i0i1_sd("IJMPQ", 0.0, 0.20, 0), 0.044)
+# genotype route across the threshold: C0 collapses, C1P0 takes over
+check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.02) pop1 C1P0 = 0.306",
+      lambda: c1i0i1_allele("IJMPQ", 0.02, 0.02, 1, "C1", "P0"), 0.306)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.04) pop1 C1P0 = 0.747",
+      lambda: c1i0i1_allele("IJMPQ", 0.02, 0.04, 1, "C1", "P0"), 0.747)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.02) pop1 C0 = 0.515",
+      lambda: c1i0i1_allele("IJMPQ", 0.02, 0.02, 1, "C0"), 0.515)
+check("asymmetric_c1_i0_i1", "IJMPQ (0.02,0.04) pop1 C0 = 0.073",
+      lambda: c1i0i1_allele("IJMPQ", 0.02, 0.04, 1, "C0"), 0.073)
+
+
+# ── Fig. 5 panel endpoints: the flat axis and the cliff axis swap by mechanism ──
+# These are the curve endpoints the Fig. 5 caption quotes. Both strips start from
+# the same untaxed corner, so the endpoints alone carry the contrast.
+check("asymmetric_c1_i0_i1", "fig5 untaxed corner pop0 = 0.957",
+      lambda: c1i0i1_q("IJMPQ", 0.0, 0.0, 0), 0.957)
+check("asymmetric_c1_i0_i1", "fig5 untaxed corner pop1 = 0.957",
+      lambda: c1i0i1_q("IJMPQ", 0.0, 0.0, 1), 0.957)
+# IJMPQ: taxing pop_0 costs its partner more than it costs the payer.
+check("asymmetric_c1_i0_i1", "fig5 IJMPQ i0=0.20 payer pop0 = 0.734",
+      lambda: c1i0i1_q("IJMPQ", 0.20, 0.0, 0), 0.734)
+check("asymmetric_c1_i0_i1", "fig5 IJMPQ i0=0.20 partner pop1 = 0.268",
+      lambda: c1i0i1_q("IJMPQ", 0.20, 0.0, 1), 0.268)
+# IJMPQ: the other axis barely binds, so this panel is the flat one.
+check("asymmetric_c1_i0_i1", "fig5 IJMPQ i1=0.20 partner pop0 = 0.741",
+      lambda: c1i0i1_q("IJMPQ", 0.0, 0.20, 0), 0.741)
+check("asymmetric_c1_i0_i1", "fig5 IJMPQ i1=0.20 payer pop1 = 0.911",
+      lambda: c1i0i1_q("IJMPQ", 0.0, 0.20, 1), 0.911)
+# P reverses which panel is flat: own cost barely moves it, partner cost collapses it.
+check("asymmetric_c1_i0_i1", "fig5 P i0=0.20 pop0 = 0.585 (flat in own cost)",
+      lambda: c1i0i1_q("P", 0.20, 0.0, 0), 0.585)
+check("asymmetric_c1_i0_i1", "fig5 P i1=0.20 pop0 = 0.069 (collapses)",
+      lambda: c1i0i1_q("P", 0.0, 0.20, 0), 0.069)
+check("asymmetric_c1_i0_i1", "fig5 P untaxed corner pop0 = 0.602",
+      lambda: c1i0i1_q("P", 0.0, 0.0, 0), 0.602)
+
+
+# ── Iso-budget: sharing the tax is worse than concentrating it ─────────────
+def c1i0i1_isobudget(mech, budget, what):
+    """Total cooperation along Cost0+Cost1=budget: 'lo' end, 'hi' end, or 'min'."""
+    t0 = {(round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2)): float(r["qBSeen"])
+          for r in c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", mech, 1, 0)}
+    t1 = {(round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2)): float(r["qBSeen"])
+          for r in c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", mech, 1, 1)}
+    pts = []
+    for i in range(21):
+        co0 = round(0.02 * i, 2)
+        co1 = round(budget - co0, 2)
+        if (co0, co1) in t0 and (co0, co1) in t1:
+            pts.append(t0[(co0, co1)] + t1[(co0, co1)])
+    if len(pts) < 3:
+        return float("nan")
+    return {"lo": pts[0], "hi": pts[-1], "min": min(pts)}[what]
+
+
+check("asymmetric_c1_i0_i1", "IJMPQ budget 0.20 all-on-pop1 total = 1.652",
+      lambda: c1i0i1_isobudget("IJMPQ", 0.20, "lo"), 1.652)
+check("asymmetric_c1_i0_i1", "IJMPQ budget 0.20 all-on-pop0 total = 1.003",
+      lambda: c1i0i1_isobudget("IJMPQ", 0.20, "hi"), 1.003)
+check("asymmetric_c1_i0_i1", "IJMPQ budget 0.20 worst split total = 0.390",
+      lambda: c1i0i1_isobudget("IJMPQ", 0.20, "min"), 0.390)
+check("asymmetric_c1_i0_i1", "IMP budget 0.20 worst split total = 0.288",
+      lambda: c1i0i1_isobudget("IMP", 0.20, "min"), 0.288)
+check("asymmetric_c1_i0_i1", "M budget 0.20 worst split total = 0.084",
+      lambda: c1i0i1_isobudget("M", 0.20, "min"), 0.084)
+# P is the exception: its iso-budget line is monotone, minimum sits at an end
+check("asymmetric_c1_i0_i1", "P budget 0.20 minimum is the all-on-pop1 end (0.102)",
+      lambda: c1i0i1_isobudget("P", 0.20, "min"), 0.102)
+check("asymmetric_c1_i0_i1", "P budget 0.20 all-on-pop0 total = 0.854",
+      lambda: c1i0i1_isobudget("P", 0.20, "hi"), 0.854)
+
+
+# ── d0 control: the tax has no cross-population channel ────────────────────
+def c1i0i1_d0_m1_corr(f, own=True):
+    rows = c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128", "M", 0, f)
+    idx = f if own else 1 - f
+    xs = [float(r[f"Cost{idx}"]) for r in rows]
+    ys = [allele(r, "M1") for r in rows]
+    return corr(xs, ys)
+
+
+check("asymmetric_c1_i0_i1", "d0 pop0 corr(M1, own Cost) = -0.787",
+      lambda: c1i0i1_d0_m1_corr(0, True), -0.787, 0.02)
+check("asymmetric_c1_i0_i1", "d0 pop0 corr(M1, partner Cost) = +0.054",
+      lambda: c1i0i1_d0_m1_corr(0, False), 0.054, 0.02)
+check("asymmetric_c1_i0_i1", "d0 pop1 corr(M1, own Cost) = -0.822",
+      lambda: c1i0i1_d0_m1_corr(1, True), -0.822, 0.02)
+check("asymmetric_c1_i0_i1", "d0 pop1 corr(M1, partner Cost) = +0.039",
+      lambda: c1i0i1_d0_m1_corr(1, False), 0.039, 0.02)
+# pop_1's M1 is flat down the Cost0 column and steep across the Cost1 row
+check("asymmetric_c1_i0_i1", "d0 pop1 M1 at (0,0) = 0.430",
+      lambda: c1i0i1_allele("M", 0.0, 0.0, 1, "M1", d=0), 0.430)
+check("asymmetric_c1_i0_i1", "d0 pop1 M1 at (0.30,0) = 0.556 (partner taxed, flat)",
+      lambda: c1i0i1_allele("M", 0.30, 0.0, 1, "M1", d=0), 0.556)
+check("asymmetric_c1_i0_i1", "d0 pop1 M1 at (0,0.20) = 0.033 (own tax, collapsed)",
+      lambda: c1i0i1_allele("M", 0.0, 0.20, 1, "M1", d=0), 0.033)
+check("asymmetric_c1_i0_i1", "d0 pop0 M1 at (0.30,0.20) = 0.026",
+      lambda: c1i0i1_allele("M", 0.30, 0.20, 0, "M1", d=0), 0.026)
+
+
+# ── equal-c vs unequal-c: the c-gap contains the information-cost wedge ────
+# asymmetric_i0_i1 is the same information-cost geometry with the c-gap removed
+# (c0 = c1 = 0.10); this study has c0 = 0.10, c1 = 0.20. Differencing the two
+# isolates what the cooperation-cost gap does to the role split.
+def ai0_dq_at(mech, co0, co1):
+    a0 = load(f"{BASE}/asymmetric_i0_i1/noshuffle/128/{mech}/1/pop_2/"
+              f"csv_0_filtered_for_image.con")
+    a1 = load(f"{BASE}/asymmetric_i0_i1/noshuffle/128/{mech}/1/pop_2/"
+              f"csv_1_filtered_for_image.con")
+    if not a0 or not a1:
+        return float("nan")
+
+    def pick(rows):
+        for r in rows:
+            if (abs(float(r["c0"]) - 0.10) < 0.005
+                    and abs(float(r["Cost0"]) - co0) < 0.005
+                    and abs(float(r["Cost1"]) - co1) < 0.005):
+                return float(r["qBSeen"])
+        return float("nan")
+    return pick(a0) - pick(a1)
+
+
+def ai0_pop1_favoured(mech):
+    a0 = load(f"{BASE}/asymmetric_i0_i1/noshuffle/128/{mech}/1/pop_2/"
+              f"csv_0_filtered_for_image.con")
+    a1 = load(f"{BASE}/asymmetric_i0_i1/noshuffle/128/{mech}/1/pop_2/"
+              f"csv_1_filtered_for_image.con")
+    if not a0 or not a1:
+        return float("nan")
+    m1 = {(round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2)): r for r in a1
+          if abs(float(r["c0"]) - 0.10) < 0.005}
+    n = 0
+    for r in a0:
+        if abs(float(r["c0"]) - 0.10) > 0.005:
+            continue
+        key = (round(float(r["Cost0"]), 2), round(float(r["Cost1"]), 2))
+        if key in m1 and float(r["qBSeen"]) - float(m1[key]["qBSeen"]) < -0.02:
+            n += 1
+    return n
+
+
+# the c-gap erases the inversion outright for MP and MPQ at (0, 0.20)
+check("asymmetric_c1_i0_i1", "MP (0,0.20): equal-c dq = -0.460",
+      lambda: ai0_dq_at("MP", 0.0, 0.20), -0.460)
+check("asymmetric_c1_i0_i1", "MP (0,0.20): unequal-c dq = -0.002",
+      lambda: c1i0i1_q("MP", 0.0, 0.20, 0) - c1i0i1_q("MP", 0.0, 0.20, 1), -0.002)
+check("asymmetric_c1_i0_i1", "MPQ (0,0.20): equal-c dq = -0.498",
+      lambda: ai0_dq_at("MPQ", 0.0, 0.20), -0.498)
+check("asymmetric_c1_i0_i1", "MPQ (0,0.20): unequal-c dq = +0.029",
+      lambda: c1i0i1_q("MPQ", 0.0, 0.20, 0) - c1i0i1_q("MPQ", 0.0, 0.20, 1), 0.029)
+check("asymmetric_c1_i0_i1", "M (0,0.20): equal-c dq = -0.168",
+      lambda: ai0_dq_at("M", 0.0, 0.20), -0.168)
+# without the c-gap, inversion is the majority outcome for every M-bearing mechanism
+check("asymmetric_c1_i0_i1", "equal-c IJMPQ pop1-favoured cells = 85/120",
+      lambda: ai0_pop1_favoured("IJMPQ"), 85, None)
+check("asymmetric_c1_i0_i1", "equal-c IMP pop1-favoured cells = 76/120",
+      lambda: ai0_pop1_favoured("IMP"), 76, None)
+check("asymmetric_c1_i0_i1", "equal-c MPQ pop1-favoured cells = 62/120",
+      lambda: ai0_pop1_favoured("MPQ"), 62, None)
+check("asymmetric_c1_i0_i1", "equal-c MP pop1-favoured cells = 57/120",
+      lambda: ai0_pop1_favoured("MP"), 57, None)
+check("asymmetric_c1_i0_i1", "equal-c M pop1-favoured cells = 44/120",
+      lambda: ai0_pop1_favoured("M"), 44, None)
+check("asymmetric_c1_i0_i1", "equal-c P pop1-favoured cells = 0/120",
+      lambda: ai0_pop1_favoured("P"), 0, None)
+
+
+# ── family-level tax accounting ──────────────────────────────────────────────
+# cost = Cost * ((P||Q) + (M||I||J)) (recruits.c). Each term is a boolean OR, so
+# the bill is 0/1/2 units and C1P0 / C1M0 are proxies, not tax-free genotypes.
+def _geno_cols(r):
+    return [k for k in r if not k.endswith("SD") and len(k) == 12 and k[0] == "C"]
+
+
+def _fam(name):
+    b = {loc: name[name.index(loc) + 1] for loc in "CIJMPQ"}
+    return (b["P"] == "1" or b["Q"] == "1"), (b["M"] == "1" or b["I"] == "1"
+                                              or b["J"] == "1")
+
+
+def c1i0i1_taxfree_coop(m, co0, co1, f):
+    """Frequency of C1I0J0M0P0Q0 — the exactly untaxed cooperator."""
+    r = c1i0i1_cell_row(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128",
+                                    m, 1, f), co0, co1)
+    cols = _geno_cols(r)
+    tot = sum(float(r[c]) for c in cols)
+    return sum(float(r[c]) for c in cols
+               if c[1] == "1" and not any(_fam(c))) / tot
+
+
+def c1i0i1_tax_units(m, co0, co1, f):
+    """Mean number of Cost units owed per individual (0, 1 or 2)."""
+    r = c1i0i1_cell_row(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128",
+                                    m, 1, f), co0, co1)
+    cols = _geno_cols(r)
+    tot = sum(float(r[c]) for c in cols)
+    return sum(float(r[c]) * sum(_fam(c)) for c in cols) / tot
+
+
+def c1i0i1_no_family(m, co0, co1, f):
+    r = c1i0i1_cell_row(c1i0i1_load("asymmetric_c1_i0_i1", "noshuffle", "128",
+                                    m, 1, f), co0, co1)
+    cols = _geno_cols(r)
+    tot = sum(float(r[c]) for c in cols)
+    return sum(float(r[c]) for c in cols if not any(_fam(c))) / tot
+
+
+# wedge apex: pop_1 sheds BOTH families, pop_0 (untaxed) keeps its machinery
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop1 carries no taxable family = 0.822",
+      lambda: c1i0i1_no_family("IJMPQ", 0.0, 0.20, 1), 0.822)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop0 carries no taxable family = 0.069",
+      lambda: c1i0i1_no_family("IJMPQ", 0.0, 0.20, 0), 0.069)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop1 fully tax-free cooperators = 0.773",
+      lambda: c1i0i1_taxfree_coop("IJMPQ", 0.0, 0.20, 1), 0.773)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop0 fully tax-free cooperators = 0.021",
+      lambda: c1i0i1_taxfree_coop("IJMPQ", 0.0, 0.20, 0), 0.021)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop1 mean tax units = 0.185",
+      lambda: c1i0i1_tax_units("IJMPQ", 0.0, 0.20, 1), 0.185)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop0 mean tax units = 1.478",
+      lambda: c1i0i1_tax_units("IJMPQ", 0.0, 0.20, 0), 1.478)
+# both families go as a block, since shedding part of one saves nothing
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop1 M1 = 0.031",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1),
+          0.0, 0.20), "M1"), 0.031)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop1 I1 = 0.030",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1),
+          0.0, 0.20), "I1"), 0.030)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop1 J1 = 0.035",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1),
+          0.0, 0.20), "J1"), 0.035)
+check("asymmetric_c1_i0_i1", "IJMPQ (0,0.20) pop1 Q1 = 0.051",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1),
+          0.0, 0.20), "Q1"), 0.051)
+# C1P0 overstates the untaxed fraction (Q1 carriers still owe a choice unit)
+check("asymmetric_c1_i0_i1", "P (0.20,0) pop0 C1P0 proxy = 0.398",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+          0.20, 0.0), "C1", "P0"), 0.398)
+check("asymmetric_c1_i0_i1", "P (0.20,0) pop0 exactly tax-free = 0.359",
+      lambda: c1i0i1_taxfree_coop("P", 0.20, 0.0, 0), 0.359)
+# cost purges behaviourally inert loci: under mechanism P, Q/M are unused but taxed
+check("asymmetric_c1_i0_i1", "P (0,0) pop0 inert Q1 at neutral = 0.511",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+          0.0, 0.0), "Q1"), 0.511)
+check("asymmetric_c1_i0_i1", "P (0,0) pop0 inert M1 at neutral = 0.498",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+          0.0, 0.0), "M1"), 0.498)
+check("asymmetric_c1_i0_i1", "P (0.20,0) pop0 inert Q1 purged by tax = 0.069",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+          0.20, 0.0), "Q1"), 0.069)
+check("asymmetric_c1_i0_i1", "P (0.20,0) pop0 inert M1 purged by tax = 0.026",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+          0.20, 0.0), "M1"), 0.026)
+# untaxed pop_0 at (0,0.20): P1 sits at the neutral value, so it is not "retention"
+check("asymmetric_c1_i0_i1", "P (0,0.20) pop0 untaxed P1 near neutral = 0.519",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+          0.0, 0.20), "P1"), 0.519)
+check("asymmetric_c1_i0_i1", "P (0,0.20) pop0 untaxed inert Q1 also neutral = 0.498",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+          0.0, 0.20), "Q1"), 0.498)
+check("asymmetric_c1_i0_i1", "P (0,0.20) pop0 untaxed inert M1 also neutral = 0.504",
+      lambda: allele(c1i0i1_cell_row(c1i0i1_load(
+          "asymmetric_c1_i0_i1", "noshuffle", "128", "P", 1, 0),
+          0.0, 0.20), "M1"), 0.504)
+
+
 # ════════════════════════════════════════════════════════════════════════════
 # MUTUALISM POP_3 — redundant with symmetric_c pop_3 (copilot-instructions.md,
 # "asymmetric_c0_c1 Parameter Space"). Only _0 evolves; _1 is frozen at 25% each, so

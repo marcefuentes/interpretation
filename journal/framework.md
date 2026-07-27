@@ -22,9 +22,11 @@ combination of them, and every study is a sweep over some subset.
   the symmetric_c study sits on the equal-cost diagonal c0 = c1 = c. This is the *demand* for
   enforcement: higher c is higher temptation and higher risk.
 - **Information cost Cost.** The per-round metabolic/cognitive overhead of carrying
-  reciprocity or partner-choice alleles, charged once per partner-choice locus
-  (Choose / Choose_lt) and once per reciprocity locus (Mimic / Imimic / Imimic_lt),
-  whether or not the run enables the corresponding behavior. Under mechanism \_,
+  reciprocity or partner-choice alleles, charged once for carrying any locus of the
+  partner-choice family (Choose / Choose_lt) and once for carrying any locus of the
+  reciprocity family (Mimic / Imimic / Imimic_lt), whether or not the run enables
+  the corresponding behavior. Each term is a boolean OR over its family, so the bill
+  is 0, 1 or 2 × Cost and is insensitive to how many loci within a family are carried. Under mechanism \_,
   enforcement is off but carriers still pay and selection keeps machinery alleles
   rare when Cost is high. Swept in symmetric_c_i (symmetric c0 = c1) and
   asymmetric_c1_i (fixed c0, swept c1).
@@ -114,8 +116,8 @@ the behaviour. This captures findings invisible to level and asymmetry alone:
 | symmetric_c | pop_1/2/3, c0 = c1 sweep, dilemmas 0/1/2, both groupsizes, shuffle/noshuffle, all mechanisms | The equal-cost special case; single-population baseline |
 | symmetric_c_i | adds the Cost axis (Cost x c triangle) to symmetric_c | Information cost vs cooperation cost (symmetric) |
 | asymmetric_c1_i | pop_2, fixed c0 = 0.10, Cost x c1 triangle | Price vs demand under exploitation asymmetry |
-| asymmetric_i0_i1 | pop_2, c0 = c1, Cost0 < Cost1 triangle | Supply-side information-cost asymmetry (Study A) |
-| asymmetric_c1_i0_i1 | pop_2, fixed c0 < c1, Cost0 x Cost1 square | Crossed c-gap and Cost asymmetry (Study B) |
+| asymmetric_i0_i1 | pop_2, c0 = c1, Cost0 < Cost1 triangle | Supply-side information-cost asymmetry, no c-gap |
+| asymmetric_c1_i0_i1 | pop_2, fixed c0 < c1, Cost0 x Cost1 square | Crossed c-gap and Cost asymmetry |
 | prisoners | (R, P) payoff-plane sweep, PD | Attribute c-collapses to temptation / risk / R minus P |
 | snowdrift | (R, S) payoff-plane sweep, snowdrift | Confirm the low-risk (high S) attribution from the other side |
 | *_1run | single-run variants of the above | Temporal dynamics (limited resolution) |
