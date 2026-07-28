@@ -9,17 +9,17 @@ are regression-checked by `ai/verify_claims.py`.
 
 | Item | Role | Main-text anchor |
 | ---- | ---- | ---------------- |
-| Fig. S3 | No-enforcement control under cooperation-cost asymmetry | Fig. 2 |
-| Fig. S2 | Short-memory / shuffle reciprocity branches | Fig. S1 |
-| Fig. S6 | Cooperation-cost asymmetry at group size 4 | Fig. 2 |
-| Fig. S8 | Dilemma-0 control for machinery erosion | Fig. 3 |
-| Fig. S5 | Parameter-symmetric vs asymmetric line slices | Figs. 1–2 |
-| Fig. S11 | Information-cost asymmetry at equal cooperation cost | Figs. 4–5 |
-| Fig. S7 | Information cost × cooperation cost (single population) | Fig. 3 |
-| Fig. S9 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
-| Fig. S4 | Full c₀ × c₁ cooperation-cost grid | Fig. 2 |
 | Fig. S1 | Mechanism hierarchy at equal cooperation cost | Results §1 |
+| Fig. S2 | Short-memory / shuffle reciprocity branches | Fig. S1 |
+| Fig. S3 | No-enforcement control under cooperation-cost asymmetry | Fig. 2 |
+| Fig. S4 | Full c₀ × c₁ cooperation-cost grid | Fig. 2 |
+| Fig. S5 | Parameter-symmetric vs asymmetric line slices | Figs. 1–2 |
+| Fig. S6 | Cooperation-cost asymmetry at group size 4 | Fig. 2 |
+| Fig. S7 | Information cost × cooperation cost (single population) | Fig. 3 |
+| Fig. S8 | Dilemma-0 control for machinery erosion | Fig. 3 |
+| Fig. S9 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
 | Fig. S10 | Fitness counterpart of Fig. 4 (same relational slices) | Fig. 4 |
+| Fig. S11 | Information-cost asymmetry at equal cooperation cost | Figs. 4–5 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
 Captions for Figs. S1–S11 are in [captions.md](captions.md) (regenerated from the

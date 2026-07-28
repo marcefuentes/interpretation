@@ -54,17 +54,17 @@ near-zero-i₀ inversion regime; decoupling is Fig. 3. Main text is five line fi
 | fig3 | Line (PLOT) | symmetric_c_i_lines pop_1, P + M at c = 0 | Machinery vs cooperation decoupling |
 | fig4 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | 2×3: own/partner strips + iso-budget |
 | fig5 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ | Wedge family; cooperation + fitness rows with ±1 SD bands |
-| figS3 | Heatmap | asymmetric_c0_c1 pop_2, _ | No enforcement; contrast for fig2 |
-| figS2 | Line | symmetric_c pop_1, shuffle | Short-memory robustness |
-| figS6 | Heatmap | asymmetric_c0_c1 pop_2, P, gs = 4 | Small-group robustness |
-| figS8 | Heatmap | symmetric_c_i pop_1, M, dt 0 vs 1 | Dilemma-0 control |
-| figS5 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P | Row 0: c1 = c0 + 0.02; row 1: c0 = c1 |
-| figS11 | Heatmap | asymmetric_i0_i1 pop_2, P + IJMPQ | i0 × i1 at c0 = c1 = 0.10 |
-| figS7 | Heatmap | symmetric_c_i pop_1, IJMPQ | Cost × c grid |
-| figS9 | Heatmap | asymmetric_c1_i pop_2, P | c1 × Cost with c0 fixed |
-| figS4 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Full c0 × c1 grid behind Fig. 2 |
 | figS1 | Line (PLOT) | symmetric_c pop_1, _/P/M/IJMPQ | Mechanism hierarchy (demoted) |
+| figS2 | Line | symmetric_c pop_1, shuffle | Short-memory robustness |
+| figS3 | Heatmap | asymmetric_c0_c1 pop_2, _ | No enforcement; contrast for fig2 |
+| figS4 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Full c0 × c1 grid behind Fig. 2 |
+| figS5 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P | Row 0: c1 = c0 + 0.02; row 1: c0 = c1 |
+| figS6 | Heatmap | asymmetric_c0_c1 pop_2, P, gs = 4 | Small-group robustness |
+| figS7 | Heatmap | symmetric_c_i pop_1, IJMPQ | Cost × c grid |
+| figS8 | Heatmap | symmetric_c_i pop_1, M, dt 0 vs 1 | Dilemma-0 control |
+| figS9 | Heatmap | asymmetric_c1_i pop_2, P | c1 × Cost with c0 fixed |
 | figS10 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | Fitness counterpart of Fig. 4 slices |
+| figS11 | Heatmap | asymmetric_i0_i1 pop_2, P + IJMPQ | i0 × i1 at c0 = c1 = 0.10 |
 | cal1, cal2 | Heatmap | prisoners / snowdrift calibration | Auxiliary — not in supplement |
 
 ### Main-text set, locked 2026-07
@@ -204,17 +204,17 @@ Robustness panels from the primary sweeps only. No-enforcement control for Fig. 
 
 | Supp fig | Message | Figure id | Command | Output |
 | -------- | ------- | --------- | ------- | ------ |
-| S3 | No-enforcement control for Fig. 2 (asymmetric two populations) | figS3 | `... --figure figS3 ...` | ~/figures/interpretation/figS3.png |
-| S2 | Short-memory comparison: direct-reciprocity branch shifts collapse ordering | figS2 | `... --figure figS2 ...` | ~/figures/interpretation/figS2.png |
-| S6 | Small groups (gs = 4): cooperation-cost asymmetry under partner choice | figS6 | `... --figure figS6 --groupsize 4 ...` | ~/figures/interpretation/figS6.png |
-| S8 | Dilemma-0 control: machinery erodes with and without a social dilemma | figS8 | `... --figure figS8 ...` | ~/figures/interpretation/figS8.png |
-| S5 | Parameter-symmetric vs parameter-asymmetric cooperation cost (line slices) | figS5 | `... --figure figS5 ...` | ~/figures/interpretation/figS5.png |
-| S11 | Information-cost parameter asymmetry at equal cooperation cost (c = 0.10) | figS11 | `... --figure figS11 ...` | ~/figures/interpretation/figS11.png |
-| S7 | Information cost versus cooperation cost, single population (was Fig 4) | figS7 | `... --figure figS7 ...` | ~/figures/interpretation/figS7.png |
-| S9 | Information cost under fixed cooperation-cost asymmetry (was Fig 6) | figS9 | `... --figure figS9 ...` | ~/figures/interpretation/figS9.png |
-| S4 | Full cooperation-cost asymmetry grid, prisoner's dilemma (was Fig 3) | figS4 | `... --figure figS4 ...` | ~/figures/interpretation/figS4.png |
 | S1 | Mechanism hierarchy at equal cooperation cost (demoted from main text) | figS1 | `... --figure figS1 ...` | ~/figures/interpretation/figS1.png |
+| S2 | Short-memory comparison: direct-reciprocity branch shifts collapse ordering | figS2 | `... --figure figS2 ...` | ~/figures/interpretation/figS2.png |
+| S3 | No-enforcement control for Fig. 2 (asymmetric two populations) | figS3 | `... --figure figS3 ...` | ~/figures/interpretation/figS3.png |
+| S4 | Full cooperation-cost asymmetry grid, prisoner's dilemma (was Fig 3) | figS4 | `... --figure figS4 ...` | ~/figures/interpretation/figS4.png |
+| S5 | Parameter-symmetric vs parameter-asymmetric cooperation cost (line slices) | figS5 | `... --figure figS5 ...` | ~/figures/interpretation/figS5.png |
+| S6 | Small groups (gs = 4): cooperation-cost asymmetry under partner choice | figS6 | `... --figure figS6 --groupsize 4 ...` | ~/figures/interpretation/figS6.png |
+| S7 | Information cost versus cooperation cost, single population (was Fig 4) | figS7 | `... --figure figS7 ...` | ~/figures/interpretation/figS7.png |
+| S8 | Dilemma-0 control: machinery erodes with and without a social dilemma | figS8 | `... --figure figS8 ...` | ~/figures/interpretation/figS8.png |
+| S9 | Information cost under fixed cooperation-cost asymmetry (was Fig 6) | figS9 | `... --figure figS9 ...` | ~/figures/interpretation/figS9.png |
 | S10 | Fitness counterpart of Fig. 4 (same relational slices) | figS10 | `... --figure figS10 ...` | ~/figures/interpretation/figS10_wmean.png |
+| S11 | Information-cost parameter asymmetry at equal cooperation cost (c = 0.10) | figS11 | `... --figure figS11 ...` | ~/figures/interpretation/figS11.png |
 
 ## Auxiliary calibration figures (not in supplement)
 
@@ -249,15 +249,15 @@ regenerate `paper/captions.md` with `--report`.
 
 Supplement captions:
 
-S3. No-enforcement control for Fig. 2: cheap PD population barely cooperates, so partner choice creates the deterministic split.
-S2. Shuffle short-memory variants of Fig. S1: M ordering can shift; P vs combined contrast remains.
-S6. Fig. 2 asymmetry at gs = 4: deterministic split survives.
-S8. Machinery erodes with or without a dilemma; cooperation persists through the shed only with a dilemma (cf. Fig. 3).
-S5. Deterministic strip (Fig. 2) vs stochastic strip (Fig. 1) on shared axes.
-S11. At c₀ = c₁, i-asymmetry assigns roles under P and inverts under IJMPQ; hitchhiking stronger than in Figs. 4–5.
-S7. Cost × c grid behind Fig. 3: information cost soft alone, lowers the ceiling where costs overlap.
-S9. With c₀ > 0 fixed, information cost compresses the partner-choice split (refuge gone). Complements Figs. 4–5.
-S4. Full c₀ × c₁ grid behind Fig. 2 (P and IJMPQ).
 S1. No-enforcement → M → P → IJMPQ raise the ceiling in that order; snowdrift softens the hierarchy (e–h).
+S2. Shuffle short-memory variants of Fig. S1: M ordering can shift; P vs combined contrast remains.
+S3. No-enforcement control for Fig. 2: cheap PD population barely cooperates, so partner choice creates the deterministic split.
+S4. Full c₀ × c₁ grid behind Fig. 2 (P and IJMPQ).
+S5. Deterministic strip (Fig. 2) vs stochastic strip (Fig. 1) on shared axes.
+S6. Fig. 2 asymmetry at gs = 4: deterministic split survives.
+S7. Cost × c grid behind Fig. 3: information cost soft alone, lowers the ceiling where costs overlap.
+S8. Machinery erodes with or without a dilemma; cooperation persists through the shed only with a dilemma (cf. Fig. 3).
+S9. With c₀ > 0 fixed, information cost compresses the partner-choice split (refuge gone). Complements Figs. 4–5.
 S10. Fitness counterpart of Fig. 4 on the same own-cost, partner-cost, and iso-budget slices: relational axis swap and iso-budget interior penalties persist in fitness.
+S11. At c₀ = c₁, i-asymmetry assigns roles under P and inverts under IJMPQ; hitchhiking stronger than in Figs. 4–5.
 
