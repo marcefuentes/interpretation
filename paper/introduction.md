@@ -55,10 +55,10 @@ riders enjoy the benefits of enforcement without paying for it
 punishment is costly to the punisher [@FehrGachter2002; @BoydGintisBowles2003;
 @SigmundHauertNowak2001]. Cognitive and psychological constraints further limit how
 much conditional behaviour animals can sustain [@StevensHauser2004; @Dunbar1998].
-These literatures establish that enforcement is not free, but they typically levy the
-cost on individuals *within* one population. They do not ask whose information cost —
-own or partner's — limits cooperation when two populations interact and each pays its
-own cognitive bill.
+These literatures establish that enforcement is not free, but they typically place
+the cost on individuals *within* one population. They do not ask whether the burden
+created by one population's information cost can fall mainly on its partner when two
+populations interact and each pays its own cognitive bill.
 
 **Dilemma structure.** Whether cooperation is a prisoner's dilemma or a snowdrift
 (chicken) game changes both the baseline incentive to help and which mechanisms can
@@ -75,11 +75,11 @@ payoff price of helping — temptation and risk in the game. Information cost is
 per-round metabolic or cognitive overhead charged for carrying enforcement loci. Alone,
 each pressure is often survivable; together they compound, because information cost
 thins the apparatus that resists temptation. On a symmetric information-cost design,
-that thinning can look like a private escape: active machinery is selected out while
+that thinning can look like a local escape: active machinery is selected out while
 cooperation persists through tax-free unconditional cooperators, decoupling behaviour
 from mechanism. Decoupling sits close to established second-order free-rider results
 [@Yamagishi1986; @PanchanathanBoyd2004]. What a symmetric design *cannot* do is
-separate the cost a population pays from the cost its partner pays.
+separate the cost a population pays from the burden that cost creates for its partner.
 
 Second, **parameter symmetry** versus **outcome symmetry**. Parameter symmetry means
 the two populations face the same setup (equal cooperation cost, equal information
@@ -88,25 +88,25 @@ similar between them. Symmetric parameters do not imply symmetric outcomes: part
 choice at equal costs can produce a stochastic cooperator/exploiter split, and cost
 asymmetries can pin or invert that split depending on mechanism and game.
 
-We therefore sweep an individual-based model across social dilemma, cooperation cost,
+We therefore vary an individual-based model across social dilemma, cooperation cost,
 per-population information cost, group size, partner shuffling, population structure,
-and mechanism, and add orthogonal payoff-plane calibration sweeps that decouple the
+and mechanism, and add orthogonal payoff-plane calibration analyses that decouple the
 payoff gaps a single cooperation-cost axis welds together. The single-population
 equal-cost case is the baseline; the two-population case with independently assigned
 costs is the primary biological scenario.
 
 ## Contribution
 
-The central result is that **the cost of enforcement is not borne privately**.
-Enforcement machinery is itself costly, and because it operates *between*
-populations, a single population's information cost can govern the cooperation of
-both — which population that is depends on the mechanism family. Under partner choice
-a population is nearly insensitive to its own information cost and collapses under its
-partner's, because assortment is a bilateral service limited by whichever side
-supplies fewer active choosers. Reciprocity-bearing mechanisms protect only their
-carriers and are bound by the focal population's own cost. Removing the social dilemma
-removes the coupling, identifying it as a property of the dilemma rather than of the
-cost accounting.
+The central result is that **the burden created by information cost often does not
+stay with the payer**. Enforcement machinery is itself costly, and because it
+operates *between* populations, one population's information cost can determine the
+cooperation of both — which population matters most depends on the mechanism family.
+Under partner choice a population is nearly insensitive to its own information cost
+and collapses under its partner's, because assortment needs active choosers on both
+sides. Reciprocity-bearing mechanisms protect only their carriers, so raising the
+information cost paid by the low-cooperation-cost population can impose a larger
+burden on its partner than on the payer. Removing the social dilemma removes this
+coupling, identifying it as a property of the dilemma rather than of the accounting.
 
 Two consequences follow. Equal enforcement budgets are neither fungible nor additive:
 splitting a budget across both populations yields less total cooperation than loading
@@ -117,5 +117,5 @@ partner depended on. Supporting this, we attribute each mechanism's cooperation-
 collapse to a specific payoff gap (reciprocity risk-limited, partner choice limited by
 the cooperation advantage, reputation-rich mechanisms reward-limited), and show that
 when both cost axes differ the cooperation-cost gap remains the default role assigner,
-with information cost inverting roles only in a thin wedge that vanishes under
+with information cost inverting roles only in a thin near-zero-i₀ regime that vanishes under
 snowdrift.

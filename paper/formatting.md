@@ -19,7 +19,7 @@ pandoc frontmatter.md introduction.md methods.md results.md discussion.md \
 YAML for a future `manuscript.yaml` / journal template:
 
 ```yaml
-title: "The cost of enforcement is not private: information cost between coevolving populations"
+title: "The cost of enforcement can burden both partners: information cost between coevolving populations"
 author:
   - name: Marcelino Fuentes
     email: marcelino.fuentes@udc.es
@@ -37,7 +37,7 @@ bibliography: references.bib
 
 ## House style until a journal is chosen
 
-- **Structure:** IMRaD + numbered main figures (1–5) + supplement (S1–S10, Table S1).
+- **Structure:** IMRaD + numbered main figures (1–5) + supplement (S1–S11, Table S1).
 - **Citations:** pandoc `[@Key]` against `references.bib` ([citing.md](citing.md)).
 - **Numbers:** cite journal docs; do not duplicate full analyses in the manuscript.
 - **Figures:** regenerate via graphgen; do not commit PNG binaries

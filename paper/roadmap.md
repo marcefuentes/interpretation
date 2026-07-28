@@ -7,12 +7,13 @@ From the current scaffold to a finished manuscript. Companion to outline.md
 ## Framing decisions (locked 2026-07)
 
 - **Central contribution (relocked 2026-07 after the crossed-asymmetry study):** the
-  cost of enforcement is **not borne privately**. Enforcement machinery is itself
-  costly, and because enforcement operates *between* populations, a single
-  population's information cost governs the cooperation of both — which population
-  that is depends on the mechanism family. Behaviour–mechanism decoupling is retained
-  as the *mechanism* of this result rather than as the headline: shedding the
-  apparatus relieves the payer and withdraws the service the partner depended on.
+  burden created by enforcement cost often does **not** stay with the payer.
+  Enforcement machinery is itself costly, and because enforcement operates *between*
+  populations, a single population's information cost can govern the cooperation of
+  both — which population matters most depends on the mechanism family.
+  Behaviour–mechanism decoupling is retained as the process behind this result rather
+  than as the headline: shedding the apparatus relieves the payer and withdraws the
+  service the partner depended on.
   Corollaries carried in the main text: enforcement budgets are non-fungible and
   non-convex (concentrating beats splitting), and role assignment under crossed
   asymmetry stays with the cooperation-cost gap.
@@ -52,25 +53,26 @@ From the current scaffold to a finished manuscript. Companion to outline.md
    one population and two (equal and unequal cooperation cost between populations),
    including how partner choice creates or converts the cooperator/exploiter asymmetry
    and why the cooperating side is often the less fit one.
-3. Make the machinery costly. On the symmetric branch information cost looks like a
-   private burden: it erodes the apparatus while cooperation persists through tax-free
+3. Make the machinery costly. On the symmetric branch information cost first looks
+   local: it erodes the apparatus while cooperation persists through tax-free
    unconditional cooperators, so behaviour and mechanism decouple. Note the
    methodological limit — a symmetric design *cannot* separate the cost a population
-   pays from the cost its partner pays, which motivates the per-population sweep.
-4. **Headline:** sweep information cost per population and the burden turns out to be
-   relational. One cost axis governs both populations, and which one depends on the
+   pays from the burden that cost creates for its partner, which motivates the per-population analysis.
+4. **Headline:** vary information cost per population and the burden often falls across
+   populations. One population's information cost can govern both populations, and which
+   one matters most depends on the
    mechanism family: under partner choice a population is nearly insensitive to its own
    cost and collapses under its partner's, because assortment is a service needing
    active carriers on both sides and the pair is limited by whichever supplies fewer;
-   reciprocity-bearing mechanisms protect only their carriers, so their binding axis is
-   the focal population's own. The dilemma-0 control shows the coupling is created by
+   reciprocity-bearing mechanisms protect only their carriers, so the main burden can
+   come from the focal population's own information cost. The dilemma-0 control shows the coupling is created by
    the dilemma, not by the cost accounting.
 5. Consequences: enforcement budgets are non-fungible and non-convex (splitting is
    worse than concentrating); and the escape route from step 3 is what makes the cost
    destructive in step 4 — shedding relieves the payer and withdraws the partner's
    service.
 6. Boundary conditions: the effect needs a genuine dilemma (snowdrift removes the
-   wedge); role inversion needs the cheap-cooperation-cost side to pay nothing; the
+   near-zero-i₀ inversion regime); role inversion needs the cheap-cooperation-cost side to pay little or nothing; the
    crossing into the machinery-free state is a bistable threshold, not a slope; shuffle
    and group size locate which loci carry the effect.
 7. Payoff-axis attribution is stated in the main text and summarized in a supplement
@@ -88,7 +90,7 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
   legible as a colour field. fig1 (stochastic two-population split), fig2 (deterministic
   split under cooperation-cost asymmetry), fig3 (behaviour–mechanism decoupling), fig4
   (relational result: own versus partner cost strips plus iso-budget non-convexity),
-  fig5 (wedge boundary). The single-population hierarchy is figS10. fig4–fig5 are built
+  fig5 (near-zero-i₀ boundary). The single-population hierarchy is figS10. fig4–fig5 are built
   from the `asymmetric_c1_i0_i1_lines` graphgen study (fig4 fused the former strip and
   iso-budget panels into one 2×3). See figures.md for the slot table.
   - [x] Decoupling stays in the main text as fig3 because the relational argument needs
@@ -102,7 +104,7 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
     all-line main text and ask readers to parse one heatmap mid-argument. Fig. 3 and
     the Results prose cite figS4 explicitly; the control remains one click away, not
     buried.
-- [x] Supplement figure list locked: figS1–figS10 (no-enforcement control for Fig. 2,
+- [x] Supplement figure list locked: figS1–figS11 (no-enforcement control for Fig. 2,
   shuffle, gs = 4, dilemma-0 control, parameter-symmetric vs asymmetric line contrast,
   information-cost asymmetry at equal c, the two demoted information-cost heatmaps,
   the full cooperation-cost asymmetry grid behind Fig. 2, and the demoted mechanism
@@ -141,7 +143,7 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
   M-suppressed census scoped to condition blocks with both M and `_` present).
   Journal links from `paper/` resolve; no internal study-name leakage in
   Intro/Results/Discussion/front matter.
-- [x] **Supplement cross-referencing** — [supplement.md](supplement.md) (Figs. S1–S10
+- [x] **Supplement cross-referencing** — [supplement.md](supplement.md) (Figs. S1–S11
   anchors + Table S1 attribution); captions already revised against Results.
 - [x] **Target-journal formatting** — portable pandoc assembly notes in
   [formatting.md](formatting.md); venue-specific class/CSL deferred until journal

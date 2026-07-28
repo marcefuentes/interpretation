@@ -6,38 +6,40 @@ Publication summary. Canonical title, authors, keywords, and abstract:
 
 ## Title
 
-The cost of enforcement is not private: information cost between coevolving
-populations
+The information cost of enforcement can burden both partners: between
+coevolving populations
 
 ## Structured abstract
 
-**Background.** Cooperation between unrelated individuals needs enforcement —
-direct reciprocity, partner choice, or reputation — yet models usually treat that
-machinery as free and most theory uses one well-mixed population. In mutualisms two
-populations interact, each with its own cost of helping, and the cognitive apparatus
-that sustains cooperation may carry a separate cost.
+**Background.** Cooperation is often explained with enforcement mechanisms
+(reciprocity, partner choice, reputation), but their cognitive/informational
+machinery is usually treated as free. In two-population mutualisms this omission is
+especially consequential, because the same information cost can affect not only the
+population that pays it but also its partner.
 
-**Methods.** Individual-based evolutionary model with cooperation and mechanism loci.
-Information cost is charged per family of loci carried (partner choice; reciprocity),
-so mechanisms owe zero, one, or two units and are comparable in what they pay. Sweeps:
-cooperation cost, per-population information cost, dilemma type (prisoner's dilemma
-and snowdrift), group size, partner shuffling, and one- versus two-population
-structure. Orthogonal payoff-plane calibrations (not shown; Table S1) attribute each
-mechanism's cost threshold to a payoff gap.
+**Methods.** We used an individual-based evolutionary model with one cooperation
+locus and five enforcement loci. Information cost is charged per machinery family
+carried (choice family, reciprocity family), so mechanisms are directly comparable in
+their cognitive bill. We varied cooperation cost, per-population information cost,
+game structure (prisoner's dilemma, snowdrift), ecology (group size, shuffling), and
+population structure (one vs two populations), with payoff-plane calibrations (Table
+S1) to attribute mechanism limits.
 
-**Results.** Direct reciprocity is risk-limited; partner choice is limited by R − P;
-reputation-rich combined mechanisms are reward-limited. Partner choice produces a
-cooperator/exploiter role split (stochastic under equal costs, deterministic under
-asymmetry) in which the cooperating side often earns less. Taxing the machinery can
-decouple behaviour from mechanism where cooperation cost is zero, but a symmetric tax
-cannot separate own from partner information cost. With independent per-population
-taxes the burden is relational: under partner choice populations collapse under the
-partner's cost; reciprocity-bearing mechanisms are bound by their own. Shared
-enforcement budgets are non-fungible and non-convex. The coupling vanishes without a
-social dilemma and under snowdrift; role inversion under crossed asymmetries is
-confined to a thin wedge where the cheap-cooperation-cost population pays nothing.
+**Results.** The main finding is that the burden created by information cost often
+extends beyond the population that pays it. Under partner choice, cooperation is set
+mainly by whether the partner population can maintain enough active choosers; under
+reciprocity-bearing mechanisms, raising the information cost paid by the
+low-cooperation-cost population can damage its partner more than the payer. This
+difference explains why equal total enforcement budgets are not equivalent to
+different allocations of the same budget, and why splitting a fixed total between
+populations can be worse than concentrating it on one side. Cooperation and fitness
+repeatedly come apart: the more cooperative population is often the less fit one.
+Classical one-population patterns (including behaviour-mechanism decoupling at zero
+cooperation cost) still appear, but they miss the two-population effect. This effect
+weakens when dilemma pressure is removed (snowdrift or no-dilemma controls).
 
-**Conclusions.** The cost of enforcement is not borne where it is levied. Because
-mechanisms operate between populations, the limiting burden is frequently the one the
-partner carries, so the distribution of enforcement cost — not only its total —
-determines mutualistic outcomes.
+**Conclusions.** In mutualisms, enforcement is not just a property of the population
+that pays for it. Because enforcement works through partner-dependent interactions,
+the decisive variable is often the distribution of burden across populations, not only
+the size of the cost itself. Models that ignore this can misidentify both stability
+conditions and who benefits from cooperation.

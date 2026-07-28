@@ -19,9 +19,10 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S8 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
 | Fig. S9 | Full c₀ × c₁ cooperation-cost grid | Fig. 2 |
 | Fig. S10 | Mechanism hierarchy at equal cooperation cost | Results §1 |
+| Fig. S11 | Fitness counterpart of Fig. 4 (same relational slices) | Fig. 4 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S10 are in [captions.md](captions.md) (regenerated from the
+Captions for Figs. S1–S11 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). The panels below are not republished as main-text
 figures; they are coverage and robustness evidence for claims stated in the
 Results.
@@ -61,7 +62,8 @@ dilemma): Fig. S4. Compression when cooperation cost is held above zero: Fig. S8
 (stronger inversion than under a cooperation-cost gap): Fig. S6. The full i₀ × i₁
 square behind the line reslices remains journal-backed
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)); snowdrift removal of the
-wedge is reported in the main text and that journal entry.
+near-zero-i₀ inversion regime is reported in the main text and that journal entry. Fitness on the same
+Fig. 4 relational slices is in Fig. S11.
 
 ## What is intentionally not in the supplement figures
 

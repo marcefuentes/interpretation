@@ -35,8 +35,8 @@ asymmetric snowdrift figure because the sucker payoff already sustains cooperati
 between-population splits without enforcement (Fig. 1 and Fig. S1). Information-cost
 asymmetry at equal cooperation cost also assigns roles deterministically under P, while
 IJMPQ can invert the mapping; snowdrift often removes these PD locks. In all cases the
-cooperating side is typically exploited — the paradox of success — and reward-led
-combined mechanisms soften the outcome gap.
+more cooperative side is typically the less fit one, and reward-led combined
+mechanisms soften the outcome gap.
 
 ## Information cost versus cooperation cost
 
@@ -60,23 +60,24 @@ asymmetry alone assigns or inverts the role split depending on mechanism (Fig. S
 When both cost axes differ, the cooperation-cost gap is the default outcome assigner
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and the hitchhiking inversion survives only on an i₀ ≈ 0 strip (Fig. 5),
-attenuated relative to the equal-c case. Snowdrift removes the wedge entirely.
+attenuated relative to the equal-c case. Snowdrift removes this regime entirely.
 What decides whether a mechanism can be overridden at all is the presence of the
 reciprocity family rather than the size of the information bill it pays — a controlled
 comparison the per-family tax makes possible, because direct reciprocity and partner
 choice pay identically, as do the four combined mechanisms among themselves.
 
-## The cost of enforcement is relational
+## The information cost of enforcement can burden both populations
 
-The crossed design separates the cost a population pays from the cost its partner pays
-— a question prior work on costly punishment and monitoring could not ask, because it
-levies those costs inside one population [@BoydRicherson1992; @FehrGachter2002;
-@StevensHauser2004]. Each mechanism turns out to be governed by just one of the two
-axes, for both populations at once, and the families pick opposite axes (Fig. 4a,b,d,e).
-Partner choice is bound by the high-cooperation-cost population's information cost,
+The crossed design separates the cost a population pays from the burden that cost
+creates for its partner — a question prior work on costly punishment and monitoring
+could not ask, because it levies those costs inside one population
+[@BoydRicherson1992; @FehrGachter2002; @StevensHauser2004]. Each mechanism turns out
+to depend mainly on one population's information cost, for both populations at once,
+and the two mechanism families depend on opposite populations (Fig. 4a,b,d,e).
+Partner choice depends mainly on the high-cooperation-cost population's information cost,
 because a swap requires a chooser on both sides and that population is the
-chooser-poor one; the reciprocity-bearing mechanisms are bound by the
-low-cooperation-cost population's, because shedding into unconditional cooperation
+chooser-poor one; the reciprocity-bearing mechanisms depend mainly on the
+low-cooperation-cost population's information cost, because shedding into unconditional cooperation
 only costs the system when the escaping side carries the cooperation. The sharpest
 illustration is that an untaxed population can end up with fewer *active* choosers,
 and a tenth of the cooperation, of the same population carrying a heavy tax itself.
@@ -85,24 +86,27 @@ Equal information-cost budgets are therefore neither fungible nor additive (Fig.
 splitting a budget across both populations is worse than loading it entirely onto
 either one, since each corner leaves one intact apparatus while a split leaves none.
 The dilemma-free control shows that none of this is an artefact of how the tax is
-charged — without a social dilemma the tax has no cross-population channel, and
+charged — without a social dilemma the tax has no cross-population effect, and
 machinery loss tracks only the cost a population pays itself (Fig. S4). The coupling
 is created by the dilemma, not by the accounting. In that sense the headline result
 extends, rather than replaces, the second-order free-rider literature: decoupling is
-the *mechanism* by which a private-looking tax becomes a relational burden once
-enforcement is a between-population service.
+the process by which a cost that looks local in one population becomes a burden shared
+across populations once enforcement is a between-population service.
+One consequence is that, in the threshold hitchhiking regime, a population can gain
+fitness from interacting with a partner whose information cost is higher, because the
+partner is pushed into a more cooperative but less fit state.
 
 ## Limitations
 
-- **Calibration is structural, not literal.** The payoff-plane calibration sweeps fix
-  payoffs that slide with cooperation cost in the main sweeps, so the overlays
-  identify which axis governs a mechanism, not absolute thresholds (see caveats in
+- **Calibration is structural, not literal.** The payoff-plane calibration analyses fix
+  payoffs that slide with cooperation cost in the main analyses, so the overlays
+  identify which payoff variable governs a mechanism, not absolute thresholds (see caveats in
   [synthesis](../journal/synthesis.md)).
 - **Temporal resolution.** Single-run snapshots (t = 131072 onward) confirm that
   established role splits and collapsed cells are already in place at the first
   recorded time step. They are too coarse to resolve sub-establishment ordering or to
   rule out low-amplitude cycling within a snapshot interval.
-- **Bistable cells report mixtures.** At the edge of the hitchhiking wedge the
+- **Bistable cells report mixtures.** At the edge of the near-zero-i₀ hitchhiking regime the
   across-run standard deviation reaches 0.25, so the cell mean describes no single
   run. Cell means in that narrow band should be read as basin-occupancy fractions, not
   equilibrium levels ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).

@@ -117,7 +117,7 @@ planes:
    hitchhiking inversion without a cooperation-cost gap (Fig. S6).
 6. **Both costs asymmetric** — c₀ = 0.10, c₁ = 0.20 fixed; full i₀ × i₁ square
    (176 cells). Own-versus-partner cost and iso-budget non-convexity (Fig. 4),
-   and the hitchhiking wedge (Fig. 5).
+   and the near-zero-i₀ hitchhiking regime (Fig. 5).
 
 Auxiliary **payoff-plane calibration sweeps** hold two payoffs fixed and vary the
 other two, decoupling temptation, risk, and R − P. They support the payoff-gap
@@ -143,8 +143,7 @@ C0M1 reciprocity carriers).
 (who profits) between the two coevolving populations. These are **outcome** variables,
 distinct from **parameter** symmetry or asymmetry in c₀, c₁, i₀, i₁, and payoffs. The
 two faces need not point at the same population: under partner choice in the
-prisoner's dilemma the cooperating side is typically the less fit one (paradox of
-success).
+prisoner's dilemma the more cooperative side is typically the less fit one.
 
 ## Replicates, noise floor, and verification
 

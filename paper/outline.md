@@ -13,7 +13,7 @@ Section files:
 - methods.md
 - results.md
 - discussion.md
-- supplement.md — Figs. S1–S10 cross-refs + Table S1 (payoff-gap attribution)
+- supplement.md — Figs. S1–S11 cross-refs + Table S1 (payoff-gap attribution)
 - figures.md — figure manifest (provenance + graphgen commands; no image binaries in-repo)
 - captions.md — regenerated figure legends
 - references.bib — bibliography (pandoc keys)
@@ -25,21 +25,23 @@ Section files:
 
 Cooperation between unrelated individuals is sustained by direct reciprocity, partner
 choice, and reputation, and models normally treat that enforcement machinery as free.
-We make it costly and ask who bears the cost. Using an individual-based model of two
-coevolving populations swept across cooperation cost, per-population information cost,
-dilemma type, group size, and partner mixing, we show that **the cost of enforcement is
-not borne privately**. Where both populations face the same costs, information cost
-looks like a private burden: it erodes enforcement alleles while cooperation persists
-through tax-free unconditional cooperators, decoupling behaviour from the mechanism
-that produced it — but a symmetric design cannot separate the cost a population pays
-from the cost its partner pays. Sweeping the two independently shows the burden is
-relational. A single population's information cost governs the cooperation of both, and
-which population that is depends on the enforcement mechanism: under partner choice a
-population is nearly insensitive to its own cost and collapses under its partner's,
-because assortment is a service that needs active carriers on both sides and the pair
-is limited by whichever population supplies fewer, whereas reciprocity-bearing
-mechanisms protect only their carriers and are bound by the focal population's own
-cost. Removing the social dilemma removes the coupling entirely, identifying it as a
+We make it costly and ask who bears the burden created by that cost. Using an
+individual-based model of two coevolving populations varied across cooperation cost,
+per-population information cost, dilemma type, group size, and partner mixing, we show
+that **the effects of enforcement cost often extend beyond the population that pays it**.
+Where both populations face the same costs, information cost can look local: it erodes
+enforcement alleles while cooperation persists through tax-free unconditional
+cooperators, decoupling behaviour from the mechanism that produced it — but a
+symmetric design cannot separate the cost a population pays from the burden that cost
+creates for its partner. Varying the two populations independently shows that one
+population's information cost can govern the cooperation of both, and which
+population's cost matters most depends on the enforcement mechanism: under partner
+choice a population is nearly insensitive to its own information cost and collapses
+under its partner's, because assortment needs active carriers on both sides and the
+pair is limited by whichever population supplies fewer; reciprocity-bearing mechanisms
+protect only their carriers, so raising the information cost paid by the
+low-cooperation-cost population can impose a larger burden on its partner than on the
+payer. Removing the social dilemma removes the coupling entirely, identifying it as a
 property of the dilemma rather than of the cost accounting. Two consequences follow.
 Equal enforcement budgets are neither fungible nor additive: splitting a budget across
 both populations yields less total cooperation than loading it on either one, because
@@ -51,9 +53,9 @@ gap limiting each mechanism (reciprocity risk-limited, partner choice limited by
 cooperation advantage, reputation-rich mechanisms reward-limited), and show that
 parameter symmetry does not imply outcome symmetry: partner choice produces a
 cooperator/exploiter role split — stochastic under equal costs, deterministic under
-asymmetry — in which the cooperating side is frequently the less fit one. When both
+asymmetry — in which the more cooperative side is frequently the less fit one. When both
 cost axes differ, the cooperation-cost gap remains the default role assigner and
-information cost inverts roles only in a thin wedge where the cheap-cooperation-cost
+information cost inverts roles only in a thin near-zero-i₀ regime where the cheap-cooperation-cost
 population pays nothing; the effect requires a genuine dilemma and vanishes under
 snowdrift.
 
@@ -78,7 +80,7 @@ per-population sweep delivers the relational result the rest supports.
 ## Status
 
 Manuscript prose written through (Introduction–Discussion), figures locked
-(Figs. 1–5, S1–S10), references and supplement table in place. Numbers cite the
+(Figs. 1–5, S1–S11), references and supplement table in place. Numbers cite the
 journal (regression-checked by `ai/verify_claims.py`). Figures are produced by the
 graphgen pipeline rather than stored here. Target journal remains to be chosen
 ([formatting.md](formatting.md)).

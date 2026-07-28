@@ -16,8 +16,8 @@ output directory first):
     python -m graphgen.main --study interpretation --all --groupsize 128 --output ~/figures
     python -m graphgen.main --study interpretation --report --groupsize 128 --output ~/figures
 
-The report includes main text Figs 1–5 (fig1–fig5) and supplement Figs S1–S10
-(figS1–figS10) in manuscript order, with cross-references in each legend. Calibration
+The report includes main text Figs 1–5 (fig1–fig5) and supplement Figs S1–S11
+(figS1–figS11) in manuscript order, with cross-references in each legend. Calibration
 panels cal1–cal2 are omitted. Outputs:
 
 - DOCX: ~/figures/interpretation/interpretation.docx
@@ -25,7 +25,7 @@ panels cal1–cal2 are omitted. Outputs:
   point at the figure output directory used for that run)
 
 The manuscript figure set lives in ../graph/graphgen/studies/interpretation/ as
-fig1–fig5 (main text) and figS1–figS10 (supplement). Graphgen ids match how figures
+fig1–fig5 (main text) and figS1–figS11 (supplement). Graphgen ids match how figures
 are called in the manuscript (Fig. 1 → fig1, Fig. S1 → figS1). Auxiliary payoff-plane
 calibration panels are cal1–cal2 in the same namespace (not published). Underlying
 simulation export names in the pipeline config are internal and do not appear in
@@ -39,11 +39,11 @@ attributions cited in the text but do not appear as manuscript figures. Regenera
 with `--figure cal1` or `--figure cal2` when needed; see the supplement table and
 the journal calibration analyses.
 
-Status: revised 2026-07 — graphgen ids are fig1–fig5 (main) and figS1–figS10
+Status: revised 2026-07 — graphgen ids are fig1–fig5 (main) and figS1–figS11
 (supplement), matching manuscript labels; calibration panels cal1–cal2 are excluded.
 The single-population mechanism hierarchy was demoted to **figS10**. Relational
-reframe: Fig. 4 is the fused 2×3 (own/partner strips + iso-budget); Fig. 5 is the
-wedge; decoupling is Fig. 3. Main text is five line figures.
+reframe: Fig. 4 is the fused 2×3 (own/partner strips + iso-budget); Fig. 5 tracks the
+near-zero-i₀ inversion regime; decoupling is Fig. 3. Main text is five line figures.
 
 ## Setup audit (2026-07)
 
@@ -53,7 +53,7 @@ wedge; decoupling is Fig. 3. Main text is five line figures.
 | fig2 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P + IJMPQ at c1 = c0 + 0.02 | Both pops overlaid; full grid → figS9 |
 | fig3 | Line (PLOT) | symmetric_c_i_lines pop_1, P + M at c = 0 | Machinery vs cooperation decoupling |
 | fig4 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | 2×3: own/partner strips + iso-budget |
-| fig5 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ | Wedge family; ±1 SD bands |
+| fig5 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ | Wedge family; cooperation + fitness rows with ±1 SD bands |
 | figS1 | Heatmap | asymmetric_c0_c1 pop_2, _ | No enforcement; contrast for fig2 |
 | figS2 | Line | symmetric_c pop_1, shuffle | Short-memory robustness |
 | figS3 | Heatmap | asymmetric_c0_c1 pop_2, P, gs = 4 | Small-group robustness |
@@ -64,6 +64,7 @@ wedge; decoupling is Fig. 3. Main text is five line figures.
 | figS8 | Heatmap | asymmetric_c1_i pop_2, P | c1 × Cost with c0 fixed |
 | figS9 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Full c0 × c1 grid behind Fig. 2 |
 | figS10 | Line (PLOT) | symmetric_c pop_1, _/P/M/IJMPQ | Mechanism hierarchy (demoted) |
+| figS11 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | Fitness counterpart of Fig. 4 slices |
 | cal1, cal2 | Heatmap | prisoners / snowdrift calibration | Auxiliary — not in supplement |
 
 ### Main-text set, locked 2026-07
@@ -86,8 +87,8 @@ setup for the relational claim (Figs. 4–5).
 | 1 | Outcome asymmetry under parameter symmetry (c0 = c1), partner choice | fig1 | `... --figure fig1 ...` | ~/figures/interpretation/fig1.png | Two populations, equal cooperation cost |
 | 2 | Deterministic outcome split under cooperation-cost parameter asymmetry | fig2 | `... --figure fig2 ...` | ~/figures/interpretation/fig2.png | Cooperation-cost asymmetry |
 | 3 | Behaviour–mechanism decoupling where cooperation cost is zero | fig3 | `... --figure fig3 ...` | ~/figures/interpretation/fig3.png | Information cost sweep |
-| 4 | Information cost is relational: binding axis and budget non-convexity | fig4 | `... --figure fig4 ...` | ~/figures/interpretation/fig4_qBSeen.png | Crossed cost asymmetries |
-| 5 | The role inversion is confined to a wedge | fig5 | `... --figure fig5 ...` | ~/figures/interpretation/fig5_qBSeen.png | Crossed cost asymmetries |
+| 4 | Information cost is relational: whose information cost matters and why shared budgets can perform poorly | fig4 | `... --figure fig4 ...` | ~/figures/interpretation/fig4_qBSeen.png | Crossed cost asymmetries |
+| 5 | Role inversion appears only when the cheap population's information cost is near zero (cooperation + fitness rows) | fig5 | `... --figure fig5 ...` | ~/figures/interpretation/fig5_qBSeen.png | Crossed cost asymmetries |
 
 ### Panel order notes
 
@@ -96,7 +97,7 @@ setup for the relational claim (Figs. 4–5).
 2. fig2: c1 = c0 + 0.02 strip, PD only; rows = P then IJMPQ; both populations overlaid.
 3. fig3: rows = P then M; columns = machinery allele then cooperation; c = 0 slice.
 4. fig4: rows = P then IJMPQ; columns = i0 strip, i1 strip, iso-budget.
-5. fig5: IJMPQ; columns = i0 held at 0, 0.02, 0.04, 0.1 while i1 is swept; ±1 SD bands.
+5. fig5: IJMPQ; columns = i0 held at 0, 0.02, 0.04, 0.1 while i1 is swept; row 1 = cooperation, row 2 = fitness; both rows show ±1 SD bands.
 
 ### Exact commands for the main-text set
 
@@ -155,7 +156,7 @@ cooperation-cost gap and then cuts one line through the square. Slices get their
 | Fig | Message | Slices used |
 | --- | ------- | ----------- |
 | 4 | **Headline.** Binding axis (own vs partner cost) and budget non-convexity | `tax_on_pop_0`, `tax_on_pop_1`, `iso_budget` |
-| 5 | The role inversion is confined to a wedge where the cheap population pays nothing | `wedge_c0_000/002/004/010` |
+| 5 | Role inversion appears only when the cheap population's information cost is near zero | `wedge_c0_000/002/004/010` |
 
 ### What each shows
 
@@ -172,12 +173,14 @@ cooperation-cost gap and then cuts one line through the square. Slices get their
    both ends; P is monotone, so the non-convexity belongs to reciprocity-bearing
    mechanisms rather than to the budget. Curve endpoints quoted here are pinned in
    ai/verify_claims.py.
-2. **Fig. 5** — 1 × 4, IJMPQ, i0 fixed per panel. The inversion is the expensive
-   population's curve lying above the cheap one's: present throughout at i0 = 0,
-   appearing only past a threshold at i0 = 0.02 (visible as a discontinuity), absent
-   at 0.04 and 0.1. Shaded ±1 SD bands over 30 runs show the basin boundary directly:
-   the band is wide below the threshold (SD 0.249 at i1 = 0, 0.244 at 0.02) and
-   collapses above it (0.009 at 0.04).
+2. **Fig. 5** — 2 × 4, IJMPQ, i0 fixed per column. Top row is cooperation; the
+   inversion is the expensive population's curve lying above the cheap one's: present
+   throughout at i0 = 0, appearing only past a threshold at i0 = 0.02 (visible as a
+   discontinuity), absent at 0.04 and 0.1. Bottom row is fitness on the same slices,
+   showing the corresponding closure of the high-cooperation/low-fitness inversion as
+   i0 rises. Shaded ±1 SD bands over 30 runs are shown on both rows to mark the basin
+   boundary directly: the cooperation band is wide below the threshold (SD 0.249 at i1
+   = 0, 0.244 at 0.02) and collapses above it (0.009 at 0.04).
 
 Bands are opt-in per figure via a `show_band` source parameter, set only on Fig. 5 —
 elsewhere the runs sit inside a single basin and a band would only add clutter.
@@ -211,6 +214,7 @@ Robustness panels from the primary sweeps only. No-enforcement control for Fig. 
 | S8 | Information cost under fixed cooperation-cost asymmetry (was Fig 6) | figS8 | `... --figure figS8 ...` | ~/figures/interpretation/figS8.png |
 | S9 | Full cooperation-cost asymmetry grid, prisoner's dilemma (was Fig 3) | figS9 | `... --figure figS9 ...` | ~/figures/interpretation/figS9.png |
 | S10 | Mechanism hierarchy at equal cooperation cost (demoted from main text) | figS10 | `... --figure figS10 ...` | ~/figures/interpretation/figS10.png |
+| S11 | Fitness counterpart of Fig. 4 (same relational slices) | figS11 | `... --figure figS11 ...` | ~/figures/interpretation/figS11_wmean.png |
 
 ## Auxiliary calibration figures (not in supplement)
 
@@ -255,4 +259,5 @@ S7. Cost × c grid behind Fig. 3: information cost soft alone, lowers the ceilin
 S8. With c₀ > 0 fixed, information cost compresses the partner-choice split (refuge gone). Complements Figs. 4–5.
 S9. Full c₀ × c₁ grid behind Fig. 2 (P and IJMPQ).
 S10. No-enforcement → M → P → IJMPQ raise the ceiling in that order; snowdrift softens the hierarchy (e–h).
+S11. Fitness counterpart of Fig. 4 on the same own-cost, partner-cost, and iso-budget slices: relational axis swap and iso-budget interior penalties persist in fitness.
 
