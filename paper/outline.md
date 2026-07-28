@@ -70,7 +70,7 @@ per-population sweep delivers the relational result the rest supports.
 | ------------- | ---------------- | --------- |
 | Introduction | framework.md; references.bib | — |
 | Methods: model, payoffs, information cost, grid | parameterization.md, framework.md | — |
-| Results 1: mechanism hierarchy and cost thresholds | synthesis.md, calibration docs, baseline sweeps | S10 |
+| Results 1: mechanism hierarchy and cost thresholds | synthesis.md, calibration docs, baseline sweeps | S1 |
 | Results 2: the two-population role split | cooperation-cost asymmetry, reciprocity docs | 1–2 |
 | Results 3: costly machinery, decoupling, and why symmetry hides the question | symmetric information-cost sweeps | 3, S7 |
 | Results 4 (headline): information cost is relational | per-population i0/i1, both costs asymmetric | 4 |

@@ -33,7 +33,7 @@ We separate **parameter symmetry** (c₀ = c₁, i₀ = i₁, identical payoffs)
 symmetry produces a stochastic outcome split in the prisoner's dilemma (Fig. 1). A
 cooperation-cost gap seeds a deterministic assignment (Fig. 2). We omit a parallel
 asymmetric snowdrift figure because the sucker payoff already sustains cooperation and
-between-population splits without enforcement (Fig. 1 and Fig. S1). Information-cost
+between-population splits without enforcement (Fig. 1 and Fig. S3). Information-cost
 asymmetry at equal cooperation cost also assigns roles deterministically under P, while
 IJMPQ can invert the mapping; snowdrift often removes these PD locks. In all cases the
 more cooperative side is typically the less fit one, and reward-led combined
@@ -57,7 +57,7 @@ so information cost retreats the cooperation-cost ceiling directly and compresse
 cooperator/exploiter split rather than merely changing the genotype route.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, per-population information-cost
-asymmetry alone assigns or inverts the role split depending on mechanism (Fig. S6).
+asymmetry alone assigns or inverts the role split depending on mechanism (Fig. S11).
 When both cost axes differ, the cooperation-cost gap is the default outcome assigner
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and the hitchhiking inversion survives only on an i₀ ≈ 0 strip (Fig. 5),
@@ -88,7 +88,7 @@ splitting a budget across both populations is worse than loading it entirely ont
 either one, since each corner leaves one intact apparatus while a split leaves none.
 The dilemma-free control shows that none of this is an artefact of how the tax is
 charged — without a social dilemma the tax has no cross-population effect, and
-machinery loss tracks only the cost a population pays itself (Fig. S4). The coupling
+machinery loss tracks only the cost a population pays itself (Fig. S8). The coupling
 is created by the dilemma, not by the accounting. In that sense the headline result
 extends, rather than replaces, the second-order free-rider literature: decoupling is
 the process by which a cost that looks local in one population becomes a burden shared

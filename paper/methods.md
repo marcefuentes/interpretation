@@ -101,20 +101,20 @@ The manuscript is built from six headline sweeps and two auxiliary calibration
 planes:
 
 1. **Equal cooperation cost** — single population and two coevolving populations;
-   c₀ = c₁; dilemmas 0/1/2. Baseline hierarchy (Fig. S10) and stochastic two-population
+   c₀ = c₁; dilemmas 0/1/2. Baseline hierarchy (Fig. S1) and stochastic two-population
    split (Fig. 1).
 2. **Unequal cooperation cost** — two coevolving populations; upper-triangular
    c₀ < c₁ (210 cells); dilemmas 1/2. Deterministic role split (Fig. 2; full grid
-   Fig. S9; no-enforcement control Fig. S1).
+   Fig. S4; no-enforcement control Fig. S3).
 3. **Information cost × cooperation cost at equal c** — triangular i + c ≤ b grid.
    Decoupling at c = 0 (Fig. 3) and the soft-versus-compounding Cost × c surface
-   (Fig. S7); dilemma-0 control (Fig. S4).
+   (Fig. S7); dilemma-0 control (Fig. S8).
 4. **Information cost under fixed cooperation-cost asymmetry** — c₀ = 0.10, i swept
    jointly with c₁ (i + c₁ ≤ b). Compression of the partner-choice split when the
-   zero-cost refuge is removed (Fig. S8).
+   zero-cost refuge is removed (Fig. S9).
 5. **Per-population information cost at equal cooperation cost** — c₀ = c₁ = 0.10;
    strict triangle i₀ < i₁ (per-axis cap b − c). Deterministic role assignment and
-   hitchhiking inversion without a cooperation-cost gap (Fig. S6).
+   hitchhiking inversion without a cooperation-cost gap (Fig. S11).
 6. **Both costs asymmetric** — c₀ = 0.10, c₁ = 0.20 fixed; full i₀ × i₁ square
    (176 cells). Own-versus-partner cost and iso-budget non-convexity (Fig. 4),
    and the near-zero-i₀ hitchhiking regime (Fig. 5).

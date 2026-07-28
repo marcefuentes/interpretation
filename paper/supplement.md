@@ -9,17 +9,17 @@ are regression-checked by `ai/verify_claims.py`.
 
 | Item | Role | Main-text anchor |
 | ---- | ---- | ---------------- |
-| Fig. S1 | No-enforcement control under cooperation-cost asymmetry | Fig. 2 |
-| Fig. S2 | Short-memory / shuffle reciprocity branches | Fig. S10 |
-| Fig. S3 | Cooperation-cost asymmetry at group size 4 | Fig. 2 |
-| Fig. S4 | Dilemma-0 control for machinery erosion | Fig. 3 |
+| Fig. S3 | No-enforcement control under cooperation-cost asymmetry | Fig. 2 |
+| Fig. S2 | Short-memory / shuffle reciprocity branches | Fig. S1 |
+| Fig. S6 | Cooperation-cost asymmetry at group size 4 | Fig. 2 |
+| Fig. S8 | Dilemma-0 control for machinery erosion | Fig. 3 |
 | Fig. S5 | Parameter-symmetric vs asymmetric line slices | Figs. 1–2 |
-| Fig. S6 | Information-cost asymmetry at equal cooperation cost | Figs. 4–5 |
+| Fig. S11 | Information-cost asymmetry at equal cooperation cost | Figs. 4–5 |
 | Fig. S7 | Information cost × cooperation cost (single population) | Fig. 3 |
-| Fig. S8 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
-| Fig. S9 | Full c₀ × c₁ cooperation-cost grid | Fig. 2 |
-| Fig. S10 | Mechanism hierarchy at equal cooperation cost | Results §1 |
-| Fig. S11 | Fitness counterpart of Fig. 4 (same relational slices) | Fig. 4 |
+| Fig. S9 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
+| Fig. S4 | Full c₀ × c₁ cooperation-cost grid | Fig. 2 |
+| Fig. S1 | Mechanism hierarchy at equal cooperation cost | Results §1 |
+| Fig. S10 | Fitness counterpart of Fig. 4 (same relational slices) | Fig. 4 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
 Captions for Figs. S1–S11 are in [captions.md](captions.md) (regenerated from the
@@ -47,23 +47,23 @@ Journal sources: [synthesis](../journal/synthesis.md),
 
 ## Cross-references from the main text
 
-**Fig. S10 hierarchy.** Shuffle short-memory variants that can shift the
+**Fig. S1 hierarchy.** Shuffle short-memory variants that can shift the
 direct-reciprocity collapse ordering: Fig. S2.
 
-**Figs. 1–2 role split.** No-enforcement asymmetric control: Fig. S1. Deterministic
-versus stochastic strips on shared axes: Fig. S5. Full c₀ × c₁ coverage: Fig. S9.
-Small-group robustness (gs = 4): Fig. S3.
+**Figs. 1–2 role split.** No-enforcement asymmetric control: Fig. S3. Deterministic
+versus stochastic strips on shared axes: Fig. S5. Full c₀ × c₁ coverage: Fig. S4.
+Small-group robustness (gs = 4): Fig. S6.
 
 **Fig. 3 decoupling.** Full Cost × c surface: Fig. S7. Dilemma-0 control (machinery
 erodes with or without a dilemma; cooperation persists through the shed only with a
-dilemma): Fig. S4. Compression when cooperation cost is held above zero: Fig. S8.
+dilemma): Fig. S8. Compression when cooperation cost is held above zero: Fig. S9.
 
 **Figs. 4–5 relational cost.** Equal-c information-cost asymmetry and hitchhiking
-(stronger inversion than under a cooperation-cost gap): Fig. S6. The full i₀ × i₁
+(stronger inversion than under a cooperation-cost gap): Fig. S11. The full i₀ × i₁
 square behind the line reslices remains journal-backed
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)); snowdrift removal of the
 near-zero-i₀ inversion regime is reported in the main text and that journal entry. Fitness on the same
-Fig. 4 relational slices is in Fig. S11.
+Fig. 4 relational slices is in Fig. S10.
 
 ## What is intentionally not in the supplement figures
 

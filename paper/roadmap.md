@@ -90,7 +90,7 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
   legible as a colour field. fig1 (stochastic two-population split), fig2 (deterministic
   split under cooperation-cost asymmetry), fig3 (behaviour–mechanism decoupling), fig4
   (relational result: own versus partner cost strips plus iso-budget non-convexity),
-  fig5 (near-zero-i₀ boundary). The single-population hierarchy is figS10. fig4–fig5 are built
+  fig5 (near-zero-i₀ boundary). The single-population hierarchy is figS1. fig4–fig5 are built
   from the `asymmetric_c1_i0_i1_lines` graphgen study (fig4 fused the former strip and
   iso-budget panels into one 2×3). See figures.md for the slot table.
   - [x] Decoupling stays in the main text as fig3 because the relational argument needs
@@ -99,12 +99,12 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
   - [x] The bistable threshold is now shown, not just stated. Added opt-in ±1 SD band
     support to the plot renderer (`show_band` source parameter) and enabled it on fig5,
     where the band is wide below the threshold and collapses above it.
-  - [x] **figS4 stays in the supplement (locked 2026-07).** The dilemma-0 control carries
+  - [x] **figS8 stays in the supplement (locked 2026-07).** The dilemma-0 control carries
     causal attribution for the decoupling claim, but promoting it would break the
     all-line main text and ask readers to parse one heatmap mid-argument. Fig. 3 and
-    the Results prose cite figS4 explicitly; the control remains one click away, not
+    the Results prose cite figS8 explicitly; the control remains one click away, not
     buried.
-- [x] Supplement figure list locked: figS1–figS11 (no-enforcement control for Fig. 2,
+- [x] Supplement figure list locked: figS1–S11 (no-enforcement control for Fig. 2,
   shuffle, gs = 4, dilemma-0 control, parameter-symmetric vs asymmetric line contrast,
   information-cost asymmetry at equal c, the two demoted information-cost heatmaps,
   the full cooperation-cost asymmetry grid behind Fig. 2, and the demoted mechanism
