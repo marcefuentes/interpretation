@@ -6,40 +6,9 @@ Publication summary. Canonical title, authors, keywords, and abstract:
 
 ## Title
 
-The information cost of enforcement can burden both partners: between
-coevolving populations
+Who pays the information cost of enforcement determines cooperation outcomes in mutualisms
 
-## Structured abstract
+## Abstract
 
-**Background.** Cooperation is often explained with enforcement mechanisms
-(reciprocity, partner choice, reputation), but their cognitive/informational
-machinery is usually treated as free. In two-population mutualisms this omission is
-especially consequential, because the same information cost can affect not only the
-population that pays it but also its partner.
+Cooperation is often explained with enforcement mechanisms such as reciprocity, partner choice and reputation, but models usually treat their informational machinery as free once it exists. In mutualisms this is a strong simplification, because the same information cost can have consequences for both populations, not only for the one that pays it. We test this with an individual-based evolutionary model that separates cooperation cost from per-population information cost and varies game structure, ecology and mechanism type. The main finding is simple: how a population behaves often depends more on its partner's information cost than on its own. Under partner choice, cooperation is set mainly by whether the partner population can afford enough active choosers. Under reciprocity-bearing mechanisms, the main burden falls differently: raising the information cost paid by the low-cooperation-cost population can damage its partner more than the payer. This difference also explains why two allocations of the same total information cost can produce very different outcomes, and why splitting a fixed total between populations can be worse than concentrating it on one side. Across these regimes, cooperation and fitness repeatedly come apart: the more cooperative population is often the less fit one. Familiar one-population results still appear, including machinery shedding when cooperation cost is zero, but they miss the cross-population burden that dominates in two-population interactions. Snowdrift and no-dilemma controls weaken these effects, showing that they depend on genuine dilemma structure. The results therefore shift attention from the size of enforcement costs alone to how the burden created by those costs is distributed across interacting populations.
 
-**Methods.** We used an individual-based evolutionary model with one cooperation
-locus and five enforcement loci. Information cost is charged per machinery family
-carried (choice family, reciprocity family), so mechanisms are directly comparable in
-their cognitive bill. We varied cooperation cost, per-population information cost,
-game structure (prisoner's dilemma, snowdrift), ecology (group size, shuffling), and
-population structure (one vs two populations), with payoff-plane calibrations (Table
-S1) to attribute mechanism limits.
-
-**Results.** The main finding is that the burden created by information cost often
-extends beyond the population that pays it. Under partner choice, cooperation is set
-mainly by whether the partner population can maintain enough active choosers; under
-reciprocity-bearing mechanisms, raising the information cost paid by the
-low-cooperation-cost population can damage its partner more than the payer. This
-difference explains why equal total enforcement budgets are not equivalent to
-different allocations of the same budget, and why splitting a fixed total between
-populations can be worse than concentrating it on one side. Cooperation and fitness
-repeatedly come apart: the more cooperative population is often the less fit one.
-Classical one-population patterns (including behaviour-mechanism decoupling at zero
-cooperation cost) still appear, but they miss the two-population effect. This effect
-weakens when dilemma pressure is removed (snowdrift or no-dilemma controls).
-
-**Conclusions.** In mutualisms, enforcement is not just a property of the population
-that pays for it. Because enforcement works through partner-dependent interactions,
-the decisive variable is often the distribution of burden across populations, not only
-the size of the cost itself. Models that ignore this can misidentify both stability
-conditions and who benefits from cooperation.

@@ -23,9 +23,10 @@ reward leads, the defection baseline stops setting the collapse.
 The second population does not change the *dynamical regime* (both single- and two-
 population cases settle into absorbing states, not cycles). What it changes is the
 *outcome*: two populations can lock into a cooperator/exploiter role split even when
-their parameters match — spontaneous symmetry breaking of the kind mutualism theory
-expects when costs or rates differ [@DoebeliKnowlton1998; @BergstromLachmann2003], but
-here available even under full parameter symmetry via partner choice.
+their parameters match — spontaneous symmetry breaking. While recently demonstrated
+in spatial models assuming almost no dispersal [@HauertSzabo2024], and expected when
+costs or rates differ [@DoebeliKnowlton1998; @BergstromLachmann2003], here it emerges
+even under full parameter symmetry in mixed populations via partner choice.
 
 We separate **parameter symmetry** (c₀ = c₁, i₀ = i₁, identical payoffs) from
 **outcome symmetry** (similar cooperation and fitness). Partner choice at parameter

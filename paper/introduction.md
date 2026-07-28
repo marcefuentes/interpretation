@@ -37,7 +37,7 @@ partners, cooperators can assort without remembering a long personal history
 models make the same point in evolutionary games [@Aktipis2004;
 @McNamaraBartaHouston2004]. In interspecific mutualisms, partner choice and sanctions
 are among the main proposed stabilisers [@Bronstein1994; @Sachs2004;
-@BsharyGrutter2006].
+@Kiers2003; @BsharyGrutter2006].
 
 **One population versus two.** Most formal theory treats a single well-mixed
 population. Many biologically important cases are mutualisms: two distinct
@@ -54,7 +54,9 @@ riders enjoy the benefits of enforcement without paying for it
 [@Yamagishi1986; @BoydRicherson1992; @PanchanathanBoyd2004], and altruistic
 punishment is costly to the punisher [@FehrGachter2002; @BoydGintisBowles2003;
 @SigmundHauertNowak2001]. Cognitive and psychological constraints further limit how
-much conditional behaviour animals can sustain [@StevensHauser2004; @Dunbar1998].
+much conditional behaviour animals can sustain [@StevensHauser2004; @Dunbar1998],
+and maintaining the required informational or learning machinery carries direct
+metabolic and fitness costs even outside primates [@MeryKawecki2003].
 These literatures establish that enforcement is not free, but they typically place
 the cost on individuals *within* one population. They do not ask whether the burden
 created by one population's information cost can fall mainly on its partner when two
