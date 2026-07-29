@@ -29,8 +29,8 @@ From the current scaffold to a finished manuscript. Companion to outline.md
   Conditions where the effect *vanishes* (snowdrift; non-zero Cost0) are reported in
   the main text, not hidden in the supplement — the journal and
   `ai/verify_claims.py` keep every de-emphasised condition auditable.
-- **Venue / type:** full research article, specialist theoretical-biology / evolution
-  journal. Implies ~5-7 main figures, a complete Methods, and a supplement.
+- **Venue / type:** The American Naturalist — Major Article (~7,500 words, abstract
+  ≤ 200 words, ≤ 6 print figures). See [paper/amnat-instructions.md](../paper/amnat-instructions.md).
 - **Scope:** one manuscript — baseline cooperation-cost sweeps (single and two
   populations) plus the full information-cost programme (information cost × cooperation
   cost at equal cooperation cost; information cost under cooperation-cost asymmetry;
@@ -134,8 +134,8 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
 
 ## Phase 3 — front matter and polish
 
-- [x] **Abstract and title** — [frontmatter.md](frontmatter.md);
-  structured mirror in [summary.md](summary.md).
+- [x] **Abstract and title** — [paper/abstract.md](../paper/abstract.md),
+  [paper/title-page.md](../paper/title-page.md); structured mirror in [summary.md](summary.md).
 - [x] **Author list, affiliations, keywords** — Marcelino Fuentes, Department of
   Biology, University of A Coruña, A Coruña, Spain; marcelino.fuentes@udc.es.
 - [x] **Consistency pass; ai/verify_claims.py; link check** — 353 passed, 0 failed,
@@ -143,24 +143,25 @@ Decisions above recorded. Thesis paragraph drafted in outline.md.
   M-suppressed census scoped to condition blocks with both M and `_` present).
   Journal links from `paper/` resolve; no internal study-name leakage in
   Intro/Results/Discussion/front matter.
-- [x] **Supplement cross-referencing** — [supplement.md](supplement.md) (Figs. S1–S11
+- [x] **Supplement cross-referencing** — [paper/supplement.md](../paper/supplement.md) (Figs. S1–S11
   anchors + Table S1 attribution); captions already revised against Results.
-- [x] **Target-journal formatting** — portable pandoc assembly notes in
-  [formatting.md](formatting.md); venue-specific class/CSL deferred until journal
-  chosen.
+- [x] **Target-journal formatting** — [paper/README.md](../paper/README.md);
+  production reference style deferred until acceptance.
 
 ## Open items / risks
 
-- **Venue TBD** — pick journal + CSL before submission (formatting.md).
+- **Production formatting** — Am Nat reference style at acceptance
+  ([paper/amnat-instructions.md](../paper/amnat-instructions.md)).
 - **Tooling stays authoritative** — headline numbers trace to journal + verify_claims.py.
 
 ## Definition of done
 
 Submittable IMRaD prose, finalized figures, referenced Introduction/Discussion,
-assembled supplement, abstract/title, green verify_claims.py — **met in-repo**
-aside from journal-specific template.
+assembled supplement, Am Nat bundle in `paper/`, green verify_claims.py —
+**met in-repo** aside from production template and word-count sign-off.
 
 ## Suggested order
 
-Phase 3 complete for in-repo manuscript readiness. Remaining submission chore:
-pick venue + CSL, run pandoc assembly from formatting.md.
+Phase 3 complete for in-repo manuscript readiness. Remaining submission chores:
+verify main-text word count, archive data/code, run pandoc assembly from
+[paper/README.md](../paper/README.md).

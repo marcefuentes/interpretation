@@ -1,0 +1,13 @@
+---
+description: Pointer to the canonical AI harness for this repository
+alwaysApply: true
+---
+
+# Repository harness
+
+Read **[ai/harness.md](ai/harness.md)** before substantive work: repo layout, graphgen,
+data paths, study status, writing rules, and `verify_claims.py` workflow.
+
+Analytical index: [ai/findings.md](ai/findings.md).
+
+Other harness entry points (Copilot, Gemini, Antigravity) also point to `ai/harness.md`.

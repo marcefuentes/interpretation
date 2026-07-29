@@ -8,7 +8,10 @@ creates drift. If a result belongs in the analysis, put it in the relevant
 
 ## Where things live
 
-- **paper/** — IMRaD manuscript scaffold; cites journal for numbers.
+- **ai/harness.md** — operational guide for agents (graphgen, data layout, studies,
+  verification workflow).
+- **paper/** — Am Nat submission bundle; cites journal for numbers.
+- **manuscript/** — internal planning (outline, roadmap); not submission files.
 - **journal/** — the analytical record. Start at `journal/framework.md` (the
   independent/outcome-variable model) and `journal/synthesis.md` (cross-study).
 - **journal/parameterization.md** — canonical model constants and payoffs
@@ -40,7 +43,7 @@ unconditional cooperators (behaviour/mechanism decoupling).
 ## Model mechanics (source-validated)
 
 The locus semantics and payoff matrices are validated against `~/code/trps` and
-documented in `.github/copilot-instructions.md` (decision precedence J > I > M; the
+documented in [ai/harness.md](harness.md) (decision precedence J > I > M; the
 C0P1 silent carrier; dTFT/dSTFT; the per-family Cost tax in recruits.c). Treat that
 section plus `journal/parameterization.md` as the reference; re-validate against
 source if the engine changes.
@@ -74,7 +77,7 @@ source if the engine changes.
   not the path.
 - **Regenerating summaries.** graphgen (`~/code/graph`, venv there) writes the
   `csv_*_for_image.con` and `csv_*_for_movie.con` exports; see
-  `.github/copilot-instructions.md` for exact commands. For asymmetric_i0_i1,
+  [ai/harness.md](harness.md) for exact commands. For asymmetric_i0_i1,
   use `--export-slices` to warm the c=0.10 filtered, c=0.20 (`c020`), and movie
   slice caches. The M dilemma-0 control cells and gs=4 temporal sets were filled
   2026-07 (all symmetric_c-family and prisoners_1run/snowdrift_1run gaps closed).

@@ -10,7 +10,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
      gs=4 shuffle, snowdrift), asymmetric_c0_c1_combined mean-qB / dominance-count /
      mutual-coop tables, c0 = 0 columns, hitchhiking, J-vs-Q shuffle split,
      prisoners pop_2 paradox of success, and the R+P=1 locus. Documented "run
-     before committing doc edits" in README and .github/copilot-instructions.md.
+     before committing doc edits" in README and ai/harness.md.
      All 82 checks pass, 0 skipped.
 
 2. [x] Prisoners noise-floor consistency.
@@ -69,7 +69,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 
 10. [x] snowdrift multi-run confirmed present (Runs=30); all snowdrift doc claims verify.
     Updated the stale "snowdrift is single-run only / dir empty" notes in findings.md and
-    copilot-instructions.md.
+    ai/harness.md.
 
 11. [x] symmetric_c_i + symmetric_c_i_1run (new information-cost study).
     - Wrote symmetric_c_i.md; added the information-cost vs cooperation-cost section to synthesis.md.
@@ -82,9 +82,8 @@ Status legend: [ ] todo, [~] in progress, [x] done.
 ## Paper restructure (2026-07)
 
 12. [x] Reorganised the repo into two layers for the eventual IMRaD manuscript.
-    - paper/ — manuscript scaffold (outline, introduction, methods, results,
-      discussion); narrative, cites journal/ for all numbers. results.md is
-      organised around the three outcome variables.
+    - paper/ — Am Nat submission bundle (IMRaD, supplement, captions, references).
+    - manuscript/ — internal planning (outline, roadmap, structured abstract).
     - journal/ — moved all analysis docs (study indexes, mechanism write-ups,
       synthesis.md) plus new.md -> parameterization.md; added framework.md fixing
       the independent variables (dilemma x costs x ecology x mechanism, population
@@ -92,7 +91,7 @@ Status legend: [ ] todo, [~] in progress, [x] done.
       asymmetry = cooperation + exploitation/fitness; genotype composition / route).
     - Temporal dynamics dropped as a standalone outcome (regime is absorbing-state,
       invariant to population count, and under-instrumented for oscillation).
-    - README, copilot-instructions, findings.md updated to the journal/ paths;
+    - README, ai/harness.md, findings.md updated to the journal/ paths;
       no broken relative links; verifier 121/121.
 
 ## Completed — asymmetric_c1_i integration (2026-07)

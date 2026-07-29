@@ -1763,7 +1763,7 @@ check("asymmetric_c1_i0_i1", "P (0,0.20) pop0 untaxed inert M1 also neutral = 0.
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# MUTUALISM POP_3 — redundant with symmetric_c pop_3 (copilot-instructions.md,
+# MUTUALISM POP_3 — redundant with symmetric_c pop_3 (ai/harness.md,
 # "asymmetric_c0_c1 Parameter Space"). Only _0 evolves; _1 is frozen at 25% each, so
 # there is no coevolutionary channel for c1 and the 441-cell square collapses
 # onto the symmetric_c pop_3 1D c-sweep. These bound checks lock that redundancy.

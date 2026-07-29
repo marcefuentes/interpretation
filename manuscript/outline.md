@@ -7,19 +7,25 @@ is also our record for answering referee questions later.
 
 Section files:
 
-- frontmatter.md — title, authors, keywords, abstract
-- summary.md — structured abstract mirror
-- introduction.md
-- methods.md
-- results.md
-- discussion.md
-- supplement.md — Figs. S1–S11 cross-refs + Table S1 (payoff-gap attribution)
-- figures.md — figure manifest (provenance + graphgen commands; no image binaries in-repo)
-- captions.md — regenerated figure legends
-- references.bib — bibliography (pandoc keys)
-- citing.md — citation convention
-- formatting.md — target-journal / pandoc assembly notes
+**Submission (`paper/`):**
+
+- [paper/introduction.md](../paper/introduction.md)
+- [paper/methods.md](../paper/methods.md)
+- [paper/results.md](../paper/results.md)
+- [paper/discussion.md](../paper/discussion.md)
+- [paper/supplement.md](../paper/supplement.md) — Figs. S1–S11 + Table S1
+- [paper/figures.md](../paper/figures.md) — figure manifest (graphgen commands)
+- [paper/captions.md](../paper/captions.md) — figure legends
+- [paper/references.bib](../paper/references.bib)
+- [paper/citing.md](../paper/citing.md)
+
+**Internal (`manuscript/`):**
+
+- summary.md — structured abstract (not submission format)
+- formatting.md — assembly notes
 - roadmap.md — plan from scaffold to finished manuscript
+- frontmatter.md — redirect to `paper/`
+- journal-fit-summaries.md — alternative journal framings
 
 ## One-paragraph thesis
 
@@ -82,5 +88,4 @@ per-population sweep delivers the relational result the rest supports.
 Manuscript prose written through (Introduction–Discussion), figures locked
 (Figs. 1–5, S1–S11), references and supplement table in place. Numbers cite the
 journal (regression-checked by `ai/verify_claims.py`). Figures are produced by the
-graphgen pipeline rather than stored here. Target journal remains to be chosen
-([formatting.md](formatting.md)).
+graphgen pipeline rather than stored here. Target: Am Nat ([paper/README.md](../paper/README.md)).
