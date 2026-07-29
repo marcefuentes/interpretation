@@ -98,6 +98,15 @@ asymmetries can pin or invert that split depending on mechanism and game. Becaus
 each population carries its own cooperation cost and information cost, both axes
 can be varied independently and their relative roles compared.
 
+Prior work on asymmetric **cooperation costs** in mutualisms shows that unequal costs
+or evolutionary rates can assign cooperator and exploiter roles
+[@DoebeliKnowlton1998; @BergstromLachmann2003], but rarely with explicit enforcement
+machinery or an independent information-cost axis. To our knowledge, no model varies
+**per-population information cost** in coevolving mutualists and asks which partner
+bears the burden of enforcement: cognitive-cost and punishment studies are largely
+within-population or do not separate the cost a population pays from the burden that
+cost creates for its partner.
+
 We therefore vary an individual-based model across social dilemma, cooperation cost,
 per-population information cost, group size, partner shuffling, population structure,
 and mechanism, and add orthogonal payoff-plane calibration analyses that decouple the
