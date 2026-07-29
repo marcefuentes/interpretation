@@ -17,7 +17,7 @@ marcelino.fuentes@udc.es
 
 ## ORCID
 
-*Add if available*
+0000-0003-2351-2650 ([orcid.org/0000-0003-2351-2650](https://orcid.org/0000-0003-2351-2650))
 
 ## Author contribution statement
 
