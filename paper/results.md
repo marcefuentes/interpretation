@@ -88,6 +88,9 @@ the first recorded snapshot (t = 131072), not slow late erosions. The temporal
 regime does not differ between one and two populations
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
 
+With this cooperation-cost baseline established, we next ask how information-cost
+asymmetry reshapes or overrides the role split.
+
 ## 3. Costly machinery, decoupling, and why symmetry hides the question
 
 Making the enforcement apparatus itself costly introduces a pressure orthogonal to

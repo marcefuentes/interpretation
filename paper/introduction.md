@@ -49,8 +49,12 @@ and the mutualistic two-population interaction as the central case.
 
 **The cost of enforcement.** Models usually treat reciprocity, partner choice, and
 reputation as free once the loci or strategies are present. That is an idealisation.
-Sanctioning and monitoring are themselves public-goods problems: second-order free
-riders enjoy the benefits of enforcement without paying for it
+Enforcement machinery carries fixed costs — observing or communicating others'
+behaviour, keeping it in memory, identifying individuals, and making decisions. We use
+*information cost* as shorthand for these per-genotype overheads throughout the paper,
+and not for variable costs such as punishment or sanctions. Sanctioning and monitoring
+are themselves public-goods problems: second-order free riders enjoy the benefits of
+enforcement without paying for it
 [@Yamagishi1986; @BoydRicherson1992; @PanchanathanBoyd2004], and altruistic
 punishment is costly to the punisher [@FehrGachter2002; @BoydGintisBowles2003;
 @SigmundHauertNowak2001]. Cognitive and psychological constraints further limit how
@@ -65,7 +69,7 @@ populations interact and each pays its own cognitive bill.
 **Dilemma structure.** Whether cooperation is a prisoner's dilemma or a snowdrift
 (chicken) game changes both the baseline incentive to help and which mechanisms can
 rescue it [@HauertDoebeli2004; @DoebeliHauert2005]. We keep both games in view so that
-claims about enforcement costs can be separated from claims about payoff structure.
+claims about information costs can be separated from claims about payoff structure.
 
 ## Gap and approach
 
@@ -73,8 +77,10 @@ Two distinctions organise the present study (see
 [framework.md](../journal/framework.md)).
 
 First, **cooperation cost** versus **information cost**. Cooperation cost is the
-payoff price of helping — temptation and risk in the game. Information cost is a
-per-round metabolic or cognitive overhead charged for carrying enforcement loci. Alone,
+payoff price of helping — temptation and risk in the game. Information cost, as
+defined above, is the fixed per-genotype overhead charged for carrying enforcement
+loci in the model (a per-round metabolic or cognitive bill, not contingent on
+per-round behaviour). Alone,
 each pressure is often survivable; together they compound, because information cost
 thins the apparatus that resists temptation. On a symmetric information-cost design,
 that thinning can look like a local escape: active machinery is selected out while
@@ -88,7 +94,9 @@ the two populations face the same setup (equal cooperation cost, equal informati
 cost, identical payoffs). Outcome symmetry means realised cooperation and fitness are
 similar between them. Symmetric parameters do not imply symmetric outcomes: partner
 choice at equal costs can produce a stochastic cooperator/exploiter split, and cost
-asymmetries can pin or invert that split depending on mechanism and game.
+asymmetries can pin or invert that split depending on mechanism and game. Because
+each population carries its own cooperation cost and information cost, both axes
+can be varied independently and their relative roles compared.
 
 We therefore vary an individual-based model across social dilemma, cooperation cost,
 per-population information cost, group size, partner shuffling, population structure,
@@ -109,6 +117,9 @@ sides. Reciprocity-bearing mechanisms protect only their carriers, so raising th
 information cost paid by the low-cooperation-cost population can impose a larger
 burden on its partner than on the payer. Removing the social dilemma removes this
 coupling, identifying it as a property of the dilemma rather than of the accounting.
+Throughout, cooperation-cost asymmetry remains the default role assigner;
+information-cost asymmetry mostly modulates that baseline and inverts roles only when
+the low-cooperation-cost population's information cost is near zero.
 
 Two consequences follow. Equal enforcement budgets are neither fungible nor additive:
 splitting a budget across both populations yields less total cooperation than loading
