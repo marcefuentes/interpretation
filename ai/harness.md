@@ -176,6 +176,20 @@ The 7 base mechanisms are run for all three dilemma folders (0, 1, 2) under both
 
 - Do not use backticks in Markdown documentation.
 
+### Manuscript prose style
+
+Prefer **I/my** over **we/our** unless a target journal forbids it (American Naturalist does not; avoid only self-identifying citations under blind review).
+
+Prose defaults for `paper/` (and aligned planning abstracts):
+
+- Short sentences over long compounds.
+- Active voice over passive when the actor is clear.
+- Succinctness: few adjectives and adverbs. Cut intensifiers (*very*, *much*, *highly*, *substantially*, *essentially*, *clearly*, *simply*, and similar) when the claim is unchanged without them.
+- Keep frequency or magnitude words (*often*, *mainly*, *nearly*, *slightly*) only when they carry a real empirical hedge; otherwise delete or replace with a sharper verb.
+- **Verb over noun.** Put meaning on the verb, not on a nominalization. Prefer *I visited* to *I paid a visit*; *I hoped* to *I was hopeful*; *populations split* to *a role split emerges*; *populations cooperate less* to *cooperation declines*. Avoid weak verb + noun packages (*produce an assignment*, *create a burden*, *remain the assigner*) when a stronger verb can carry the claim.
+- **Active subjects.** Prefer an agent that can act. In this study, prefer **organisms** first, then **populations**. Prefer *populations that pay a higher information cost shed choosers* to *information-cost asymmetry modulates outcomes*. Use abstract nouns (*asymmetry*, *burden*, *outcome*, *mechanism*) as subjects only when no organism or population can honestly own the verb.
+- **Cost versus burden (term of art).** Keep these distinct — this is the paper's message. A **cost** is a parameter a population pays (`c` or `i`). The **burden** (or **benefit**) is the effect of that cost on outcomes (cooperation, fitness). One population's cost can place a burden — or confer a benefit — on that population, its partner, or both. Example: `i₀` is paid by population 0; its burden can fall on populations 0 and 1. Never write that a population "bears the cost" when you mean it bears the *burden* of a cost another population may pay. Prefer *pays a cost* / *bears a burden* (or *receives a benefit*).
+
 ### Markdown Table Formatting
 
 When editing Markdown tables, keep raw-source alignment readable in plain text editors (especially Vim with conceal enabled):

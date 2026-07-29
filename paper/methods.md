@@ -7,7 +7,7 @@ manuscript are regression-checked by `ai/verify_claims.py`.*
 
 ## Model
 
-We use an individual-based evolutionary model. Individuals live in fixed groups,
+I use an individual-based evolutionary model. Individuals live in fixed groups,
 interact in pairs over repeated rounds, and reproduce in proportion to accumulated
 fitness. Mutation rate is 0.01 per locus per reproduction event. Each individual
 carries six binary loci: a cooperation locus C and five mechanism loci that gate
@@ -143,7 +143,7 @@ C0M1 reciprocity carriers).
 (who profits) between the two coevolving populations. These are **outcome** variables,
 distinct from **parameter** symmetry or asymmetry in c₀, c₁, i₀, i₁, and payoffs. The
 two faces need not point at the same population: under partner choice in the
-prisoner's dilemma the more cooperative side is typically the less fit one.
+prisoner's dilemma the more cooperative side is the less fit one.
 
 ## Replicates, noise floor, and verification
 

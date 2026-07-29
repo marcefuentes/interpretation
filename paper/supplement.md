@@ -39,7 +39,7 @@ figures; the attributions they support are:
 | ---------------- | ------------------- | -------- |
 | Direct reciprocity (M) | Risk / mutual-defection payoff P | PD calibration; snowdrift confirms low-risk rescue of M |
 | Partner choice (P) | Cooperation advantage R − P | PD calibration; collapse as R − P → 0 |
-| Combined / reputation-rich (MP, MPQ, IMP, IJMPQ) | Reward / mutual-cooperation payoff R | PD calibration; largely blind to the defection baseline |
+| Combined / reputation-rich (MP, MPQ, IMP, IJMPQ) | Reward / mutual-cooperation payoff R | PD calibration; blind to the defection baseline |
 
 Journal sources: [synthesis](../journal/synthesis.md),
 [PD calibration](../journal/prisoners_calibration.md),

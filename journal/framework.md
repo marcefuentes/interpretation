@@ -55,6 +55,12 @@ question. Comparing them is the project's spine.
 
 ## Outcome variables (what we measure)
 
+Keep **cost** and **burden** distinct. A cost is an independent variable a population
+pays (`c` or `i` / Cost). The burden (or benefit) is the effect of that cost on an
+outcome below. Population 0 can pay `i₀` while population 1 bears much of the burden;
+sometimes the same cost confers a benefit on a partner. Paying a cost and bearing its
+burden are different questions — the paper's central message.
+
 Three outcomes carry the analysis. Each is measured per cell of the
 independent-variable grid.
 
