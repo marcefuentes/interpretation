@@ -19,13 +19,13 @@ Section files:
 - [paper/references.bib](../paper/references.bib)
 - [paper/citing.md](../paper/citing.md)
 
-**Internal (`manuscript/`):**
+**Planning (`planning/`):**
 
-- summary.md — structured abstract (not submission format)
-- formatting.md — assembly notes
-- roadmap.md — plan from scaffold to finished manuscript
-- frontmatter.md — redirect to `paper/`
-- journal-fit-summaries.md — alternative journal framings
+- [summary.md](summary.md) — structured abstract (not submission format)
+- [roadmap.md](roadmap.md) — framing and status
+- [journal-fit-summaries.md](journal-fit-summaries.md) — alternative journal framings
+
+Active venue front matter: [paper/submission/amnat/](../paper/submission/amnat/).
 
 ## One-paragraph thesis
 

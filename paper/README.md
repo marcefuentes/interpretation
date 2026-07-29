@@ -1,50 +1,45 @@
-# American Naturalist submission
+# Manuscript and submission
 
-Blind-review manuscript for *The American Naturalist* (Major Article). Requirements:
-[amnat-instructions.md](amnat-instructions.md).
+**Venue-agnostic body** (IMRaD, supplement, figures, bibliography) plus **venue-specific
+submission** files under [submission/](submission/README.md).
 
-Internal planning (outline, roadmap, structured abstract): [../manuscript/README.md](../manuscript/README.md).
+**Active target:** The American Naturalist — [submission/amnat/](submission/amnat/).
 
-## Manuscript order (blind review PDF)
+Internal planning (outline, structured abstract, fallback venues):
+[../planning/README.md](../planning/README.md).
 
-| Order | File | In blind MS? |
-| ----- | ---- | ------------ |
-| 1 | [title-page.md](title-page.md) | Yes (no author names) |
-| 2 | [abstract.md](abstract.md) | Yes |
-| 3 | [introduction.md](introduction.md) | Yes |
-| 4 | [methods.md](methods.md) | Yes |
-| 5 | [results.md](results.md) | Yes |
-| 6 | [discussion.md](discussion.md) | Yes |
-| 7 | Literature Cited | Yes (from `references.bib`) |
-| 8 | [supplement.md](supplement.md) | Yes (or author-supplied supplement PDF) |
-| 9 | [captions.md](captions.md) | Review: inline preferred; production: after Literature Cited |
+## Manuscript body (reuse across journals)
 
-**Not in blind manuscript** (Editorial Manager only): [authors-submission.md](authors-submission.md), [acknowledgments-submission.md](acknowledgments-submission.md).
+| File | Role |
+| ---- | ---- |
+| [introduction.md](introduction.md) | Introduction |
+| [methods.md](methods.md) | Methods |
+| [results.md](results.md) | Results |
+| [discussion.md](discussion.md) | Discussion |
+| [supplement.md](supplement.md) | Supplement (Figs. S1–S11, Table S1) |
+| [captions.md](captions.md) | Figure legends |
+| [figures.md](figures.md) | Figure manifest (graphgen commands) |
+| [references.bib](references.bib) | Bibliography |
+| [citing.md](citing.md) | Citation convention |
 
-## Build review draft (pandoc)
+## Build review PDF (current venue: Am Nat)
 
 From `paper/`:
 
 ```bash
-pandoc title-page.md abstract.md introduction.md methods.md results.md discussion.md \
+pandoc submission/amnat/title-page.md submission/amnat/abstract.md \
+  introduction.md methods.md results.md discussion.md \
   supplement.md captions.md \
   --citeproc --bibliography=references.bib \
   -o interpretation-amnat-review.docx
 ```
 
-Before export:
+Before export: double-space, line numbers, embed figures at first citation.
 
-- Double-space and add line numbers in Word/LibreOffice (required for review).
-- Embed figures at first citation (paths from [figures.md](figures.md)); regenerate via graphgen.
-- Run word count on main text and update [title-page.md](title-page.md).
-- Confirm abstract ≤ 200 words (`wc -w abstract.md` — count paragraph only).
-
-LaTeX: [official Am Nat template](https://www.journals.uchicago.edu/pb-assets/docs/journals/AmNat_MS_template-1683838715810.tex).
-
-## Word count (main text only)
+Main-text word count (Introduction–Discussion):
 
 ```bash
 pandoc introduction.md methods.md results.md discussion.md -t plain | wc -w
 ```
 
-Excludes Literature Cited, supplement, and captions — matches Major Article limit (≤ 7,500 words).
+See [submission/amnat/instructions.md](submission/amnat/instructions.md) for Am Nat limits and checklist.

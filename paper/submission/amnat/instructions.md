@@ -59,10 +59,11 @@ Exact Am Nat reference style not required at first submission; required at accep
 
 ## Manuscript file order (this repo)
 
-Mapped to files in `paper/`. See [README.md](README.md).
+Mapped to `paper/` (body) + `paper/submission/amnat/` (this venue). See
+[../../README.md](../../README.md) and [../README.md](../README.md).
 
-1. **Title page** — `title-page.md` (no authors on blind MS)
-2. **Abstract** — `abstract.md` (separate page; ≤ 200 words)
+1. **Title page** — `submission/amnat/title-page.md`
+2. **Abstract** — `submission/amnat/abstract.md` (≤ 200 words)
 3. **Introduction** — `introduction.md`
 4. **Methods** — `methods.md`
 5. **Results** — `results.md`
@@ -90,7 +91,7 @@ Keywords and short title are also entered in Editorial Manager at submission.
 - **Same text** pasted into Editorial Manager abstract field
 - Optional secondary abstract in another language (secondary title field)
 
-Internal structured mirror for planning: `manuscript/summary.md` (not for submission).
+Internal structured mirror for planning: [../../../planning/summary.md](../../../planning/summary.md).
 
 ## Keywords
 
@@ -165,15 +166,15 @@ Supplement references are typeset in the main Literature Cited list.
 
 | Am Nat element | Repo file |
 | -------------- | --------- |
-| Instructions (this note) | `paper/amnat-instructions.md` |
+| Instructions (this note) | `paper/submission/amnat/instructions.md` |
 | Assembly guide | `paper/README.md` |
-| Title page (blind) | `paper/title-page.md` |
-| Abstract | `paper/abstract.md` |
-| Authors (EM only) | `paper/authors-submission.md` |
-| Acknowledgments (EM / post-acceptance) | `paper/acknowledgments-submission.md` |
+| Title page (blind) | `paper/submission/amnat/title-page.md` |
+| Abstract | `paper/submission/amnat/abstract.md` |
+| Authors (EM only) | `paper/submission/amnat/authors-submission.md` |
+| Acknowledgments (EM / post-acceptance) | `paper/submission/amnat/acknowledgments-submission.md` |
 | Body | `paper/introduction.md` … `paper/discussion.md` |
 | Supplement | `paper/supplement.md` |
 | Captions | `paper/captions.md` |
 | Bibliography | `paper/references.bib` |
 | Figure provenance | `paper/figures.md` |
-| Internal planning | `manuscript/` |
+| Internal planning | `planning/` |

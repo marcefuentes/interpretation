@@ -8,26 +8,23 @@ contexts.
 Current parameterization: K = 0.5, b = 0.4 fixed, c varies from 0 to b. See
 `journal/parameterization.md` for the payoff/folder reference.
 
-## Two layers: paper and journal
+## Two layers: analysis, paper, and planning
 
-The repository is organised for an eventual IMRaD manuscript, with the detailed
-quantitative work kept separate as a running journal.
+The repository separates quantitative analysis, the active manuscript, and drafting notes.
 
-- **paper/** — Am Nat submission bundle (title page, abstract, IMRaD, supplement,
-  captions, bibliography). See `paper/README.md` and `paper/amnat-instructions.md`.
-- **manuscript/** — internal planning (outline, roadmap, structured abstract).
-  Narrative in `paper/` cites **journal/** for every number. Prior work: pandoc keys
-  against `paper/references.bib` (`paper/citing.md`). Figures: `paper/figures.md`
-  (graphgen; not stored in-repo). Start at `paper/README.md` or `manuscript/outline.md`.
-- **journal/** — the analytical record: per-study and per-mechanism write-ups, the
-  cross-study synthesis, the parameterization reference, and the framework note that
-  fixes the independent- and outcome-variable model. This is where the numbers,
-  derivations, and reasoning live, and our record for answering referee questions
-  later. Start at `journal/framework.md`.
+- **journal/** — analytical record (numbers, derivations, reasoning). Start at
+  `journal/framework.md`.
+- **paper/** — manuscript body (IMRaD, supplement, figures, bibliography) plus
+  venue-specific submission under `paper/submission/amnat/`. See `paper/README.md`.
+- **planning/** — internal drafting (outline, roadmap, structured abstract, fallback
+  journal abstracts). Not part of any submission PDF.
 - **ai/** — agent harness ([ai/harness.md](ai/harness.md); entry points: [AGENTS.md](AGENTS.md),
   [GEMINI.md](GEMINI.md), [.github/copilot-instructions.md](.github/copilot-instructions.md),
   [.cursor/rules/harness.mdc](.cursor/rules/harness.mdc)), findings index,
   verify_claims.py, analysis scripts.
+
+Narrative in `paper/` cites **journal/** for every number. Figures: `paper/figures.md`
+(graphgen). Start at `paper/README.md` or `planning/outline.md`.
 
 ## Journal contents
 
@@ -68,7 +65,7 @@ quantitative work kept separate as a running journal.
 - **asymmetric_c1_i** extends the information-cost axis to pinned cooperator/exploiter
   roles (fixed c0 = 0.10, sweep c1) and shows where the soft symmetric_c_i Cost effect
   breaks down — see
-  journal/asymmetric_c1_i.md. Part of the single unified manuscript (manuscript/roadmap.md).
+  journal/asymmetric_c1_i.md. See [planning/roadmap.md](planning/roadmap.md).
 - **asymmetric_i0_i1** sweeps asymmetric per-population information cost (Cost0 x
   Cost1) at symmetric cooperation cost (c0 = c1); see journal/asymmetric_i0_i1.md.
 

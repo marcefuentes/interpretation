@@ -11,7 +11,7 @@ creates drift. If a result belongs in the analysis, put it in the relevant
 - **ai/harness.md** — operational guide for agents (graphgen, data layout, studies,
   verification workflow).
 - **paper/** — Am Nat submission bundle; cites journal for numbers.
-- **manuscript/** — internal planning (outline, roadmap); not submission files.
+- **planning/** — internal drafting (outline, roadmap); not submission files.
 - **journal/** — the analytical record. Start at `journal/framework.md` (the
   independent/outcome-variable model) and `journal/synthesis.md` (cross-study).
 - **journal/parameterization.md** — canonical model constants and payoffs

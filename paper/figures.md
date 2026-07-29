@@ -196,7 +196,7 @@ carry the claims in the main text.
 The information-cost axis also exists as a 1D line-chart reslice at fixed cooperation
 cost c = 0.10 (`symmetric_i`). It carries no new numbers beyond the information-cost
 sweep journal doc — presentation option only, and unlike Figs. 4–5 it cannot show a
-relational effect because it has only one population. See ai/plan.md.
+relational effect because it has only one population. See planning/archive/plan.md.
 
 ## Supplement figures
 

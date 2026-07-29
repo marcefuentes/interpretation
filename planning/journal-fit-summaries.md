@@ -2,8 +2,8 @@
 
 Alternative title + abstract framings for different target journals.
 
-**Primary target:** The American Naturalist — use [paper/abstract.md](../paper/abstract.md)
-and [paper/amnat-instructions.md](../paper/amnat-instructions.md). The sections below are archival
+**Primary target:** The American Naturalist — use [paper/submission/amnat/abstract.md](../paper/submission/amnat/abstract.md)
+and [paper/submission/amnat/instructions.md](../paper/submission/amnat/instructions.md). The sections below are archival
 alternatives.
 
 ## American Naturalist style

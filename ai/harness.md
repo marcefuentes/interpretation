@@ -2,7 +2,7 @@
 
 Operational guide for AI agents working in this repository (Cursor, Copilot, Gemini,
 Antigravity, etc.). Entry index for analytical findings: [findings.md](findings.md).
-Planning history: [plan.md](plan.md).
+Planning history: [../planning/archive/plan.md](../planning/archive/plan.md).
 
 ## Harness entry points
 
@@ -26,12 +26,10 @@ Current parameterization: K = 0.5, b = 0.4 fixed, c varies 0 to b. The analysis 
 
 ## Repo Layout
 
-The repo is organised in two layers for an eventual IMRaD manuscript:
-
-- paper/ — Am Nat submission bundle (README.md, title page, abstract, IMRaD, supplement, captions, references.bib). Narrative cites journal/ for numbers.
-- manuscript/ — internal planning (outline, roadmap, structured abstract); not part of submission PDF.
-- journal/ — the analytical record (per-study and per-mechanism write-ups, synthesis.md, framework.md, parameterization.md). This is where numbers, derivations, and reasoning live, and the record for referee questions. All headline numbers here are regression-checked.
-- ai/ — agent support: this file, [findings.md](findings.md), [plan.md](plan.md), analysis scripts, verify_claims.py.
+- **journal/** — analytical record; regression-checked headline numbers.
+- **paper/** — IMRaD body + `paper/submission/{venue}/` front matter (active: amnat).
+- **planning/** — internal drafting; not submission files.
+- **ai/** — this file, [findings.md](findings.md), analysis scripts, verify_claims.py.
 
 When citing an analysis doc, use its journal/ path (e.g. journal/symmetric_c_i.md).
 

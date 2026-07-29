@@ -34,10 +34,10 @@ cd paper && pandoc introduction.md methods.md results.md discussion.md -t plain 
 | Element | Count | Notes |
 | ------- | ----- | ----- |
 | Main figures | 5 | Figs. 1–5; inline in Results |
-| Supplement figures | 11 | Figs. S1–S11; [supplement.md](supplement.md) |
+| Supplement figures | 11 | Figs. S1–S11; [supplement.md](../../supplement.md) |
 | Tables | 1 | Table S1 (payoff-gap attribution) |
 | Boxes | 0 | |
 | Print appendix | 0 | |
 | Online supplement | yes | Supplement PDF or inline supplement section |
 
-Data and code: archived per [amnat-instructions.md](amnat-instructions.md); README in repository.
+Data and code: archived per [instructions.md](instructions.md); README in repository.

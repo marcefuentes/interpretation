@@ -1,6 +1,7 @@
-# Next Steps Plan
+# Next Steps Plan (archived)
 
-Roadmap for the interpretation repo after the prisoners calibration work.
+Historical analysis-repo roadmap (completed). Current manuscript status:
+[../roadmap.md](../roadmap.md).
 Status legend: [ ] todo, [~] in progress, [x] done.
 
 ## Near-term (cheap, no new data)

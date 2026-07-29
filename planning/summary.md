@@ -2,10 +2,11 @@
 
 **Internal planning document** — structured abstract for drafting. **Not** American
 Naturalist format (Am Nat requires a single ≤200-word narrative abstract in
-[paper/abstract.md](../paper/abstract.md)).
+[paper/submission/amnat/abstract.md](../paper/submission/amnat/abstract.md)).
 
-Submission bundle: [paper/README.md](../paper/README.md). Numbers: journal/
-(regression-checked by `ai/verify_claims.py`).
+Submission bundle: [paper/README.md](../paper/README.md). Planning:
+[planning/README.md](../planning/README.md). Numbers: journal/ (regression-checked by
+`ai/verify_claims.py`).
 
 ## Title
 
