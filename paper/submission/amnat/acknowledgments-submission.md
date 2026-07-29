@@ -5,9 +5,9 @@ Manager Author Comments on submission; restore after acceptance with funding det
 
 ## Draft
 
-*Funding sources to be added before acceptance.*
+No funding to declare.
 
-I thank colleagues who commented on earlier versions of this work.
+I thank the Galicia Supercomputing Center (CESGA) for computing resources.
 
 ## Data and code accessibility statement (after acceptance)
 
