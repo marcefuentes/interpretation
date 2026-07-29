@@ -10,7 +10,7 @@ Submission bundle: [paper/README.md](../paper/README.md). Planning:
 
 ## Title
 
-Who pays the information cost of enforcement determines cooperation outcomes in mutualisms
+Canonical submission title: [paper/submission/amnat/title-page.md](../paper/submission/amnat/title-page.md).
 
 ## Structured abstract
 

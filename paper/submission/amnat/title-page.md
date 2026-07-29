@@ -1,7 +1,8 @@
 # Title page
 
-*American Naturalist Major Article — first page of the blind review manuscript (no
-author names). Authors and affiliations: [authors-submission.md](authors-submission.md).*
+*Single canonical title for the Am Nat submission. Do not duplicate elsewhere; link
+here. Blind review manuscript — no author names. Authors:
+[authors-submission.md](authors-submission.md).*
 
 ## Article type
 
@@ -9,11 +10,11 @@ Major Article
 
 ## Title
 
-Who pays the information cost of enforcement determines cooperation outcomes in mutualisms
+Who pays the cost of enforcement determines cooperation outcomes in mutualisms
 
 ## Short title (running head)
 
-≤ 40 characters including spaces. Current draft (37 characters):
+≤ 40 characters including spaces (37 characters):
 
 Who pays enforcement cost in mutualisms
 

@@ -2,8 +2,9 @@
 
 Alternative title + abstract framings for journals **other than the active target**.
 
-**Active venue:** The American Naturalist — [paper/submission/amnat/abstract.md](../paper/submission/amnat/abstract.md)
-and [paper/submission/amnat/instructions.md](../paper/submission/amnat/instructions.md).
+**Active venue:** The American Naturalist — title, abstract, and instructions in
+[paper/submission/amnat/](../paper/submission/amnat/). Sections below are **fallback
+framings only** (different titles by design).
 
 ## Journal of Evolutionary Biology style
 
