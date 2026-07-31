@@ -112,9 +112,7 @@ pushed into a more cooperative but less fit state.
   across-run standard deviation reaches 0.25, so the cell mean describes no single
   run. Cell means in that narrow band should be read as basin-occupancy fractions, not
   equilibrium levels ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
-- **Evolving-vs-fixed control redundancy.** The design in which one side does not
-  evolve adds nothing over the equal-cooperation-cost baseline and is excluded from
-  interpretation ([synthesis](../journal/synthesis.md)).
+
 - **Cognitive cost is abstracted.** Information cost is a per-family metabolic tax, not
   a process model of memory, perception, or error [@StevensHauser2004; @Dunbar1998].
   That abstraction is what makes mechanisms comparable; it is also a limit on

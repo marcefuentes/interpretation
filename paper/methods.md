@@ -10,22 +10,23 @@ manuscript are regression-checked by `ai/verify_claims.py`.*
 I use an individual-based evolutionary model. Individuals live in fixed groups,
 interact in pairs over repeated rounds, and reproduce in proportion to accumulated
 fitness. Mutation rate is 0.01 per locus per reproduction event. Each individual
-carries six binary loci: a cooperation locus C and five mechanism loci that gate
+carries six loci: a cooperation locus C and five mechanism loci that control
 conditional behaviour — partner choice on recent (P) or lifetime (Q) cooperation, and
 reciprocity that copies a partner's recent act directly (M), indirectly from a third
-party (I), or from a lifetime reputation (J). Behavioural update follows decision
-precedence J > I > M when more than one reciprocity locus is carried. Per round,
-fitness is the game payoff minus information cost, w = max(0, payoff − cost).
+party (I), or from a lifetime reputation (J). Each locus is binary — C1 helps its
+partner, C0 defects; M1 copies its partner, M0 does not; and so on. An individual
+behaves according to decision precedence Q1 > P1, and J1 > I1 > M1 when more than one
+mechanism allele is carried. Per round, fitness is the game payoff minus information
+cost, w = max(0, payoff − cost).
 
 Under partner choice, assortment is a bilateral swap: two active choosers (C1P1)
 mutually rematch, each trading a non-cooperative partner for the other chooser; the
-two abandoned partners end up paired with each other. A chooser is therefore useless
-without a chooser to trade with. The partner-choice allele is phenotypically silent in
-defectors (C0P1 carries P1 but never chooses); reciprocity is not silent in the same
-way — C0M1 still mimics once a partnership is established. Mechanisms differ in which
-behaviours are enabled, not in which loci can mutate: under the no-enforcement control
-(_), partner choice and reciprocity do not run, but mechanism loci still mutate and
-still incur information cost when carried.
+two abandoned partners end up paired with each other. The partner-choice allele is
+phenotypically silent in defectors (C0P1 carries P1 but never chooses). Reciprocity is
+not silent in the same way — C0M1 still mimics once a partnership is established.
+Mechanisms differ in which behaviours are enabled, not in which loci can mutate: under
+the no-enforcement control (_), partner choice and reciprocity do not run, but mechanism
+loci still mutate and still incur information cost when carried.
 
 ## Social dilemmas
 
@@ -33,17 +34,17 @@ Baseline fitness K = 0.5 and benefit b = 0.4 are fixed; cooperation cost c is sw
 from 0 to b ([parameterization](../journal/parameterization.md)). The three payoff
 structures are:
 
-- **Control (no social dilemma):** T = P and R = S; a partner's move does not affect
-  the focal payoff.
-- **Prisoner's dilemma:** T = K + b, R = K + b − c, P = K, S = K − c.
-- **Snowdrift:** T = K + b, R = K + b − c/2, P = K, S = K + b − c.
+- **Control (no social dilemma):** An individual's payoff does not depend on its partner's behavior.
+- **Prisoner's dilemma:** Delivers benefit b to the partner.
+- **Snowdrift:** Treats b as a shared resource received whenever at least one player cooperates.
 
-Raising c on a single axis simultaneously raises temptation (T − R = c), raises risk
-(P − S = c), and shrinks the cooperation advantage (R − P = b − c). In the
-two-population form each population pays its own cooperation cost (c₀, c₁), with
-c₀ < c₁ in every asymmetric cell, so the lower-cost population always has the larger
-R − P. The prisoner's dilemma delivers benefit b to the partner; snowdrift treats b as
-a shared resource received whenever at least one player cooperates.
+| Game Structure           | T (Temptation) | R (Reward)  | P (Penalty) | S (Sucker) | T − R (Temptation gap) | P − S (Risk)  | R − P (Cooperation advantage)  |
+| ------------------------ | -------------- | ----------- | ----------- | ---------- | ---------------------- | ------------- | ------------------------ |
+| **Control (No dilemma)** | K              | K + b − c   | K           | K + b − c  | c − b (rises)          | c − b (rises) | b − c (shrinks)          |
+| **Prisoner's dilemma**   | K + b          | K + b − c   | K           | K − c      | c (rises)              | c (rises)     | b − c (shrinks)          |
+| **Snowdrift**            | K + b          | K + b − c/2 | K           | K + b − c  | c/2 (rises slowly)     | c − b (rises) | b − c/2 (shrinks slowly) |
+
+In the two-population form each population pays its own cooperation cost (c₀, c₁), with c₀ < c₁ in every asymmetric cell, so the lower-cost population always has the larger R − P.
 
 ## Information cost
 
@@ -70,13 +71,10 @@ a negligible 0.001.
 
 ## Population structure and ecology
 
-Three population structures are available. In a single population (pop₁), individuals
+Two population structures are available. In a single population (pop₁), individuals
 pair within the population. In two coevolving populations (pop₂), all pairing is
 between populations — the biologically central mutualism case, and the structure used
-for every two-population result in the main text. An evolving-versus-fixed control
-(pop₃) freezes the partner population; it is redundant with the equal-cost single-
-population case for the questions asked here and is not reported in the figures
-([framework](../journal/framework.md)).
+for every two-population result in the main text.
 
 Ecological context is group size (4 or 128 individuals per group) and partner
 shuffling. Groups are fixed memory segments for the whole run; shuffling only redraws

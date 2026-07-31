@@ -68,5 +68,3 @@ Fig. 4 relational slices is in Fig. S10.
 ## What is intentionally not in the supplement figures
 
 - Payoff-plane calibration heatmaps (cal1, cal2) — attributions only, via Table S1.
-- Evolving-versus-fixed (pop₃) panels — redundant with the equal-cost baseline
-  ([framework](../journal/framework.md)).
