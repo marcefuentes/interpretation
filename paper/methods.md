@@ -7,17 +7,32 @@ manuscript are regression-checked by `ai/verify_claims.py`.*
 
 ## Model
 
-I use an individual-based evolutionary model. Individuals live in fixed groups,
-interact in pairs over repeated rounds, and reproduce in proportion to accumulated
-fitness. Mutation rate is 0.01 per locus per reproduction event. Each individual
-carries six loci: a cooperation locus C and five mechanism loci that control
-conditional behaviour — partner choice on recent (P) or lifetime (Q) cooperation, and
-reciprocity that copies a partner's recent act directly (M), indirectly from a third
-party (I), or from a lifetime reputation (J). Each locus is binary — C1 helps its
-partner, C0 defects; M1 copies its partner, M0 does not; and so on. An individual
-behaves according to decision precedence Q1 > P1, and J1 > I1 > M1 when more than one
-mechanism allele is carried. Per round, fitness is the game payoff minus information
-cost, w = max(0, payoff − cost).
+I use an individual-based evolutionary model. Each population holds 4096
+individuals — a size divisible by both group sizes used below. Individuals live in
+fixed groups, interact in pairs over repeated rounds, and reproduce in proportion to
+fitness. Every round each individual dies with probability 2^−7. That mortality is
+low enough that lasting partners meet many times (about 64 rounds on average under
+noshuffle with partner choice off), yet high enough that runs reach equilibrium in a
+tractable time. Dead adults are replaced by offspring sampled from the whole
+population in proportion to fitness, so a recruit need not share its parent's group.
+The recruit inherits the parent's genotype, subject to mutation, and takes the dead
+individual's partner. Mutation rate is 0.01 per locus per reproduction event. Main
+runs last 2^20 rounds.
+
+Within each time step the order is fixed: compute fitness; if shuffling is on,
+redraw pairs within each group; if partner choice is on, rematch choosers; replace
+deaths with fitness-weighted recruits; then, if reciprocity is on, set each
+survivor's next act toward its current partner. The next time step begins again with
+fitness.
+
+Each individual carries six loci: a cooperation locus C and five mechanism loci
+that control conditional behaviour — partner choice on recent (P) or lifetime (Q)
+cooperation, and reciprocity that copies a partner's recent act directly (M),
+indirectly from a third party (I), or from a lifetime reputation (J). Each locus is
+binary — C1 helps its partner, C0 defects; M1 copies its partner, M0 does not; and so
+on. An individual behaves according to decision precedence Q1 > P1, and J1 > I1 > M1
+when more than one mechanism allele is carried. Per round, fitness is the game payoff
+minus information cost, w = max(0, payoff − cost).
 
 Under partner choice, assortment is a bilateral swap: two active choosers (C1P1)
 mutually rematch, each trading a non-cooperative partner for the other chooser; the
@@ -72,15 +87,17 @@ a negligible 0.001.
 ## Population structure and ecology
 
 Two population structures are available. In a single population (pop₁), individuals
-pair within the population. In two coevolving populations (pop₂), all pairing is
-between populations — the biologically central mutualism case, and the structure used
-for every two-population result in the main text.
+pair within the population. In two coevolving populations (pop₂), each side has its
+own 4096 individuals and all pairing is between populations — the biologically
+central mutualism case, and the structure used for every two-population result in the
+main text.
 
 Ecological context is group size (4 or 128 individuals per group) and partner
-shuffling. Groups are fixed memory segments for the whole run; shuffling only redraws
-pairings within the same group each round, whereas noshuffle keeps partnerships stable
-across rounds. Primary results use noshuffle and group size 128; shuffle and group size
-4 appear as robustness (Figs. S2, S3).
+shuffling. Groups are fixed memory segments for the whole run; an individual never
+moves to another group. Shuffling only redraws pairings within the same group each
+round, whereas noshuffle keeps partnerships stable across rounds until death or a
+partner-choice swap. Primary results use noshuffle and group size 128; shuffle and
+group size 4 appear as robustness (Figs. S2, S3).
 
 ## Independent variables and mechanisms
 
