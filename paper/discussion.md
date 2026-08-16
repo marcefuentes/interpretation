@@ -1,9 +1,5 @@
 # Discussion
 
-*Backing: [synthesis](../journal/synthesis.md) and linked journal analyses
-(regression-checked by `ai/verify_claims.py`). Citations:
-[references.bib](references.bib).*
-
 ## What each mechanism is really limited by
 
 Decoupling the payoff gaps turns three vague "collapses as cost rises" statements into
@@ -90,7 +86,7 @@ leaves one intact apparatus while a split leaves none.
 The dilemma-free control shows that none of this is an artefact of how the tax is
 charged — without a social dilemma neither population bears a burden from its
 partner's cost, and each sheds machinery only as it pays itself (Fig. S8). Populations couple
-through the dilemma, not through the accounting. In that sense the headline result
+through the dilemma, not through the accounting. That result
 extends the second-order free-rider literature rather than replacing it: when
 individuals shed local enforcement costs, partners across the mutualism can bear the
 burden of losing the service those costs once bought.
@@ -100,23 +96,18 @@ pushed into a more cooperative but less fit state.
 
 ## Limitations
 
-- **Calibration is structural, not literal.** The payoff-plane calibration analyses fix
-  payoffs that slide with cooperation cost in the main analyses, so the overlays
-  identify which payoff variable governs a mechanism, not absolute thresholds (see caveats in
-  [synthesis](../journal/synthesis.md)).
-- **Temporal resolution.** Single-run snapshots (t = 131072 onward) confirm that
-  established role splits and collapsed cells are already in place at the first
-  recorded time step. They are too coarse to resolve sub-establishment ordering or to
-  rule out low-amplitude cycling within a snapshot interval.
-- **Bistable cells report mixtures.** At the edge of the near-zero-i₀ hitchhiking regime the
-  across-run standard deviation reaches 0.25, so the cell mean describes no single
-  run. Cell means in that narrow band should be read as basin-occupancy fractions, not
-  equilibrium levels ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
-
-- **Cognitive cost is abstracted.** Information cost is a per-family metabolic tax, not
-  a process model of memory, perception, or error [@StevensHauser2004; @Dunbar1998].
-  That abstraction is what makes mechanisms comparable; it is also a limit on
-  psychological realism.
+The payoff-plane calibration analyses fix payoffs that slide with cooperation cost in
+the main analyses, so the overlays identify which payoff variable governs a mechanism,
+not absolute thresholds. Single-run snapshots (t = 131072 onward) confirm that
+established role splits and collapsed states are already in place at the first recorded
+time step; they are too coarse to resolve the order in which those states first appear
+or to rule out low-amplitude cycling within a snapshot interval. At the edge of the
+near-zero-i₀ hitchhiking regime the across-run standard deviation reaches 0.25, so the
+mean over runs describes no single run; means in that narrow band should be read as
+basin-occupancy fractions, not equilibrium levels. Information cost is a per-family
+metabolic tax, not a process model of memory, perception, or error
+[@StevensHauser2004; @Dunbar1998]. That abstraction is what makes mechanisms
+comparable; it is also a limit on psychological realism.
 
 ## Future directions
 

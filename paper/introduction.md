@@ -1,8 +1,5 @@
 # Introduction
 
-*Conceptual backing: [framework.md](../journal/framework.md). Citations resolve
-against [references.bib](references.bib); see [citing.md](citing.md).*
-
 ## The problem
 
 Cooperation between unrelated individuals is costly to the actor and beneficial to a
@@ -73,7 +70,7 @@ claims about information costs can be separated from claims about payoff structu
 ## Gap and approach
 
 Three distinctions organise the present study (see
-[framework.md](../journal/framework.md)).
+).
 
 First, **cooperation cost** versus **information cost**. Cooperation cost is the
 payoff price of helping — temptation and risk in the game. Information cost, as

@@ -1,9 +1,5 @@
 # Results
 
-*Numbers are cited to the journal analyses that derive and regression-check them
-(`ai/verify_claims.py`) rather than restated in full. Figures are the locked
-main-text set (Figs. 1–5) and supplement (Figs. S1–S11).*
-
 ## 1. Mechanism hierarchy and cost thresholds
 
 At equal cooperation cost in a single population, each enforcement architecture
@@ -13,31 +9,25 @@ range; direct reciprocity (Fig. S1b), partner choice (Fig. S1c), and the combine
 reputation-rich mechanism (Fig. S1d) raise that ceiling in that order. The same
 columns under snowdrift (Fig. S1e–h) sit higher: the elevated sucker payoff
 already favours cooperation without enforcement, so the hierarchy softens and the
-c-collapse matters less than in the PD
-([synthesis](../journal/synthesis.md)).
+c-collapse matters less than in the PD.
 
 A single cooperation-cost axis cannot say *which* payoff gap drives a collapse,
 because raising c simultaneously raises temptation (T − R), raises risk (P − S),
 and shrinks the cooperation advantage (R − P). Orthogonal payoff-plane calibration
-analyses (not shown; Table S1) decouple these
-([PD calibration](../journal/prisoners_calibration.md),
-[snowdrift calibration](../journal/snowdrift_calibration.md)):
-
-- **Direct reciprocity (M) is risk-limited.** Collapse as c rises tracks the growing
-  mutual-defection risk rather than the shrinking R − P — confirmed from the other
-  side in snowdrift, where the low sucker gap lets M sustain cooperation it cannot in
-  the PD ([direct reciprocity](../journal/symmetric_c_reciprocity.md)).
-- **Partner choice (P) is limited by the cooperation advantage R − P.** It tracks
-  R − P alone across the orthogonal calibration, which is why it fails at the chooser
-  bottleneck as R − P → 0.
-- **Combined and reputation-rich mechanisms (MP, MPQ, IMP, IJMPQ) are reward-limited**
-  and blind to the defection baseline, which is why they hold cooperation to the
-  highest costs (Fig. S1d).
+analyses (Table S1) decouple these gaps. Direct reciprocity (M) is risk-limited:
+collapse as c rises tracks the growing mutual-defection risk rather than the
+shrinking R − P — confirmed from the other side in snowdrift, where the low sucker
+gap lets M sustain cooperation it cannot in the PD. Partner choice (P) is limited by
+the cooperation advantage R − P: it tracks R − P alone across the orthogonal
+calibration, which is why it fails at the chooser bottleneck as R − P → 0. Combined
+and reputation-rich mechanisms (MP, MPQ, IMP, IJMPQ) are reward-limited and blind to
+the defection baseline, which is why they hold cooperation to the highest costs
+(Fig. S1d).
 
 These attributions recover a mechanistic distinction that foreshadows the relational
 result below. A residual chooser minority sorts the whole population, so even
 unconditional cooperators are protected; a residual reciprocator minority protects
-only itself ([reciprocity](../journal/symmetric_c_reciprocity.md)). Partner choice
+only itself. Partner choice
 assorts at the population level; reciprocity remembers at the individual level.
 Short-memory and shuffle variants shift the direct-reciprocity collapse ordering
 relative to Fig. S1 but leave the partner-choice versus combined contrast intact
@@ -55,8 +45,7 @@ When costs and payoffs match (c₀ = c₁, i₀ = i₁), partner-choice populati
 **stochastically** split into cooperators and exploiters in the prisoner's dilemma —
 a split that does not appear without enforcement (Fig. 1a–d). One population carries
 cooperation and is exploited; carrying the chooser allele correlates with fitness at
-roughly minus one
-([partner choice calibration](../journal/prisoners_partner_choice.md)). In snowdrift
+roughly minus one. In snowdrift
 populations already split without enforcement; partner choice then reshapes
 high-cooperation-cost outcomes (Fig. 1e–h). Combined reputation mechanisms at the
 same parameter point leave the two populations nearly matched in the PD.
@@ -66,12 +55,9 @@ same parameter point leave the two populations nearly matched in the PD.
 When one population pays a slightly lower cooperation cost, that chance split becomes
 deterministic. Along the strip c₁ = c₀ + 0.02, the lower-cooperation-cost population
 cooperates in every cell under partner choice, and the R − P gap becomes a stable
-cooperation gap (Fig. 2a,b;
-[partner choice under cooperation-cost asymmetry](../journal/asymmetric_c0_c1_partner_choice.md),
-[synthesis](../journal/synthesis.md)). Under combined IJMPQ the expensive population
+cooperation gap (Fig. 2a,b). Under combined IJMPQ the expensive population
 cooperates more and the outcome gap shrinks on the same axes (Fig. 2c,d), because
-reward-led mechanisms no longer route R − P into a cooperation gap
-([combined mechanisms](../journal/asymmetric_c0_c1_combined.md)). Fig. 2 is
+reward-led mechanisms no longer route R − P into a cooperation gap. Fig. 2 is
 prisoner's-dilemma only: without enforcement the cheap population barely cooperates
 in the PD (control mean ≈ 0.10), so partner choice is what lets populations lock the
 parameter gap into a deterministic split (Fig. S3; full c₀ × c₁ grid in Fig. S4).
@@ -86,8 +72,7 @@ survives small-group stochasticity at group size 4 (Fig. S6).
 
 Single-run trajectories confirm that these roles are absorbing states locked in by
 the first recorded snapshot (t = 131072), not slow late erosions. The temporal
-regime does not differ between one and two populations
-([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
+regime does not differ between one and two populations.
 
 With this cooperation-cost baseline established, I next ask how populations respond
 when they differ in information cost.
@@ -95,8 +80,7 @@ when they differ in information cost.
 ## 3. Costly machinery, decoupling, and why symmetry hides the question
 
 Making the enforcement apparatus itself costly introduces a pressure orthogonal to
-cooperation cost
-([information cost at equal cooperation cost](../journal/symmetric_c_i.md)). Taxing
+cooperation cost. Taxing
 the machinery alone erodes cooperation only gently where temptation is absent,
 because a population can shed the apparatus and keep cooperating for free. Where the
 two costs overlap, information cost thins the defence cooperation cost requires and
@@ -115,15 +99,12 @@ machinery drags behavior down (Fig. S8).
 
 That refuge disappears once cooperation cost is held above zero. Machinery loss and
 behavioral loss then move together: shedding P1 or M1 no longer leaves a stable
-high-cooperation niche behind
-([information cost under cooperation-cost asymmetry](../journal/asymmetric_c1_i.md)).
+high-cooperation niche behind.
 With a fixed cooperation-cost gap, as information cost rises populations cooperate less
 and both the cooperation gap and the fitness gap shrink; the more cooperative
 population remains less fit while partner choice still functions, then both fall to
 the control floor (Fig. S9). Second-order free-riders (C1M0)
-and silent carriers (C0P1) accumulate along the same routes
-([reciprocity](../journal/symmetric_c_reciprocity.md),
-[reciprocity under cooperation-cost asymmetry](../journal/asymmetric_c0_c1_reciprocity.md)).
+and silent carriers (C0P1) accumulate along the same routes.
 
 A symmetric information-cost design cannot separate the cost a population pays from
 the burden that cost places on its partner. The decoupling route looks like a local escape — shed
@@ -136,8 +117,7 @@ the other's breaks the confound.
 Figs. 4–5 cross a fixed cooperation-cost gap (c₀ = 0.1, c₁ = 0.2) with independent
 per-population information costs. The first two columns of Fig. 4 hold one
 population's information cost at zero and sweep the other's, so I can see which
-population's cost places the larger burden on its partner
-([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
+population's cost places the larger burden on its partner.
 
 Under partner choice the two strip columns tell opposite stories (Fig. 4a,b). When the
 low-cooperation-cost population pays i = 0.20 it barely changes (0.602 → 0.585)
@@ -187,8 +167,7 @@ split breaks both and pushes neither over the threshold where machinery-free
 cooperation takes over. Partner choice is monotone instead (Fig. 4c): because only the
 high-cooperation-cost population's information cost bites, the best outcome sits at
 the corner that spares that population. The non-convexity is therefore a property of
-reciprocity-bearing mechanisms, not of the budget itself
-([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
+reciprocity-bearing mechanisms, not of the budget itself.
 
 When both cost axes differ, populations still follow the cooperation-cost gap.
 Across the full i₀ × i₁ square behind Figs. 4–5, under partner choice the
@@ -198,9 +177,7 @@ when populations differ only in information cost (Fig. S11: IMP
 dq = −0.461 at Cost0 = 0, Cost1 = 0.20) and weaker once a cooperation-cost
 gap is present (IMP dq = −0.100 at the same information-cost point). The gap moves
 every reciprocity-bearing mechanism toward the cheap-cooperation-cost population,
-erasing the inversion outright for MP and MPQ
-([per-population information cost](../journal/asymmetric_i0_i1.md),
-[crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
+erasing the inversion outright for MP and MPQ.
 
 Fig. 5 shows the near-zero-i₀ inversion regime narrowing. Each panel fixes the information cost on the
 low-cooperation-cost population and sweeps the other. The inversion — the expensive
@@ -235,8 +212,7 @@ unaffordable. Partner choice does lose the lead in three cells, but in the oppos
 corner of the square and by the opposite route: a transient crossing while its *own*
 machinery collapses.
 
-Snowdrift removes this regime entirely, identifying this cross-population burden as a property
-of the dilemma rather than of the cost accounting
-([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)). The dilemma-0 control
-makes the same point for the decoupling claim (Fig. S8). Shuffle and group-size
-panels locate which loci carry the baseline effects (Figs. S2, S3).
+Snowdrift removes this regime entirely, identifying this cross-population burden as a
+property of the dilemma rather than of the cost accounting. The dilemma-free control
+makes the same point for the decoupling claim (Fig. S8). Shuffled partnerships and
+group size 4 are reported in Figs. S2 and S6.
