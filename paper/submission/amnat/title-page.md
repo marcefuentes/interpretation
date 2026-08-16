@@ -35,10 +35,13 @@ cd paper && pandoc introduction.md methods.md results.md discussion.md -t plain 
 | Element | Count | Notes |
 | ------- | ----- | ----- |
 | Main figures | 5 | Figs. 1–5; inline in Results |
+| Main tables | 1 | Table 1 (payoff structures); Methods |
 | Supplement figures | 11 | Figs. S1–S11; [supplement.md](../../supplement.md) |
-| Tables | 1 | Table S1 (payoff-gap attribution) |
+| Supplement tables | 1 | Table S1 (payoff-gap attribution) |
 | Boxes | 0 | |
 | Print appendix | 0 | |
 | Online supplement | yes | Supplement PDF or inline supplement section |
+
+Print figure + table count is 6 (Am Nat Major Article limit).
 
 Data and code: archived per [instructions.md](instructions.md); README in repository.

@@ -183,20 +183,26 @@ loci still mutate and still incur information cost when carried.
 ## Social dilemmas
 
 Baseline fitness K = 0.5 and benefit b = 0.4 are fixed; cooperation cost c is swept
-from 0 to b ([parameterization](../journal/parameterization.md)). The three payoff
-structures are:
+from 0 to b ([parameterization](../journal/parameterization.md)). Table 1 gives the
+three payoff structures. In the control, an individual's payoff does not depend on its
+partner's behavior. In the prisoner's dilemma, cooperation delivers benefit b to the
+partner. In the snowdrift, b is a shared resource received whenever at least one player
+cooperates.
 
-- **Control (no social dilemma):** An individual's payoff does not depend on its partner's behavior.
-- **Prisoner's dilemma:** Delivers benefit b to the partner.
-- **Snowdrift:** Treats b as a shared resource received whenever at least one player cooperates.
+Table 1. Payoff structures for the three social dilemmas.
 
-| Game Structure           | T (Temptation) | R (Reward)  | P (Penalty) | S (Sucker) | T − R (Temptation gap) | P − S (Risk)  | R − P (Cooperation advantage)  |
+| Game structure           | T (temptation) | R (reward)  | P (penalty) | S (sucker) | T − R (temptation gap) | P − S (risk)  | R − P (cooperation advantage)  |
 | ------------------------ | -------------- | ----------- | ----------- | ---------- | ---------------------- | ------------- | ------------------------ |
-| **Control (No dilemma)** | K              | K + b − c   | K           | K + b − c  | c − b (rises)          | c − b (rises) | b − c (shrinks)          |
-| **Prisoner's dilemma**   | K + b          | K + b − c   | K           | K − c      | c (rises)              | c (rises)     | b − c (shrinks)          |
-| **Snowdrift**            | K + b          | K + b − c/2 | K           | K + b − c  | c/2 (rises slowly)     | c − b (rises) | b − c/2 (shrinks slowly) |
+| Control (no dilemma)     | K              | K + b − c   | K           | K + b − c  | c − b (rises)          | c − b (rises) | b − c (shrinks)          |
+| Prisoner's dilemma       | K + b          | K + b − c   | K           | K − c      | c (rises)              | c (rises)     | b − c (shrinks)          |
+| Snowdrift                | K + b          | K + b − c/2 | K           | K + b − c  | c/2 (rises slowly)     | c − b (rises) | b − c/2 (shrinks slowly) |
 
-In the two-population form each population pays its own cooperation cost (c₀, c₁), with c₀ < c₁ in every asymmetric cell, so the lower-cost population always has the larger R − P.
+Note: Columns T − R, P − S, and R − P show how each gap changes as cooperation cost c
+rises.
+
+In the two-population form each population pays its own cooperation cost (c₀, c₁), with
+c₀ < c₁ in every asymmetric cell, so the lower-cost population always has the larger
+R − P.
 
 ## Information cost
 

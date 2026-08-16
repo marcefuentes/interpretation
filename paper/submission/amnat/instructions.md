@@ -120,10 +120,15 @@ Supplement references are typeset in the main Literature Cited list.
 
 ## Tables
 
+- Number print tables consecutively in order of appearance (table 1, table 2, …);
+  supplement tables as table S1, etc.
+- Refer to every table in the text at or before its first appearance
 - No vertical/horizontal rules in table body; no colors/shading/panels in tables (use a figure instead)
-- Table title short; notes after table
+- Table title short, concise, and descriptive; all other information in a table note after the table
+- Same column headings throughout a table; changing headings means a new table
+- Print figures + tables together ≤ 6 for a Major Article
 - For production: after Literature Cited, before figure legends
-- For review: may be inline where cited
+- For review: embed where first cited (preferred)
 
 ## Figures
 
