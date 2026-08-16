@@ -105,16 +105,16 @@ pulls the c-collapse threshold downward (Fig. S7).
 At zero cooperation cost the genotype route makes the escape visible (Fig. 3). As
 information cost rises, active enforcement alleles are selected out — chooser P1
 (Fig. 3a) and TFT M1 (Fig. 3c) both fall toward zero — while cooperation remains high
-on tax-free unconditional cooperators (Fig. 3b,d: C1P0, C1M0). Behaviour and
+on tax-free unconditional cooperators (Fig. 3b,d: C1P0, C1M0). Behavior and
 mechanism decouple. A dilemma-free control shows that machinery erodes with or
 without a social dilemma; cooperation persists through the shed only when the dilemma
 is present, so the tax drives the erosion and the dilemma decides whether losing the
-machinery drags behaviour down (Fig. S8).
+machinery drags behavior down (Fig. S8).
 
 **Figure 3: Information cost decouples cooperation from enforcement machinery when cooperation is free.** Frequency of the active machinery allele (chooser P1 in **A**; tit-for-tat M1 in **C**) and overall frequency of cooperators (**B, D**) in a single population. **A, B**, Short-memory partner choice alone. **C, D**, Direct reciprocity alone. The cooperation cost is fixed at zero while the information cost is swept from 0 to the partner benefit ($b = 0.4$). Rising information cost selects against active enforcement alleles, but cooperation remains high because populations shed the costly machinery in favour of tax-free unconditional cooperation.
 
 That refuge disappears once cooperation cost is held above zero. Machinery loss and
-behavioural loss then move together: shedding P1 or M1 no longer leaves a stable
+behavioral loss then move together: shedding P1 or M1 no longer leaves a stable
 high-cooperation niche behind
 ([information cost under cooperation-cost asymmetry](../journal/asymmetric_c1_i.md)).
 With a fixed cooperation-cost gap, as information cost rises populations cooperate less

@@ -50,7 +50,7 @@ and the mutualistic two-population interaction as the central case.
 **The cost of enforcement.** Models treat reciprocity, partner choice, and
 reputation as free once the loci or strategies are present. That is an idealisation.
 Enforcement machinery carries fixed costs — observing or communicating others'
-behaviour, keeping it in memory, identifying individuals, and making decisions. I use
+behavior, keeping it in memory, identifying individuals, and making decisions. I use
 *information cost* as shorthand for these per-genotype overheads throughout the paper,
 and not for variable costs such as punishment or sanctions. Sanctioning and monitoring
 are themselves public-goods problems: second-order free riders enjoy the benefits of
@@ -58,7 +58,7 @@ enforcement without paying for it
 [@Yamagishi1986; @BoydRicherson1992; @PanchanathanBoyd2004], and altruistic
 punishment is costly to the punisher [@FehrGachter2002; @BoydGintisBowles2003;
 @SigmundHauertNowak2001]. Cognitive and psychological constraints further limit how
-much conditional behaviour animals can sustain [@StevensHauser2004; @Dunbar1998],
+much conditional behavior animals can sustain [@StevensHauser2004; @Dunbar1998],
 and maintaining the required informational or learning machinery carries direct
 metabolic and fitness costs even outside primates [@MeryKawecki2003].
 These literatures establish that enforcement is not free, but they place the cost
@@ -79,11 +79,11 @@ First, **cooperation cost** versus **information cost**. Cooperation cost is the
 payoff price of helping — temptation and risk in the game. Information cost, as
 defined above, is the fixed per-genotype overhead charged for carrying enforcement
 loci in the model (a per-round metabolic or cognitive bill, not contingent on
-per-round behaviour). Alone, each pressure is survivable; together they compound,
+per-round behavior). Alone, each pressure is survivable; together they compound,
 because information cost thins the apparatus that resists temptation. On a symmetric
 information-cost design,
 that thinning can look like a local escape: active machinery is selected out while
-cooperation persists through tax-free unconditional cooperators, decoupling behaviour
+cooperation persists through tax-free unconditional cooperators, decoupling behavior
 from mechanism. Decoupling sits close to established second-order free-rider results
 [@Yamagishi1986; @PanchanathanBoyd2004]. What a symmetric design *cannot* do is
 separate the cost a population pays from the burden that cost places on its partner.

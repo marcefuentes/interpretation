@@ -50,7 +50,7 @@ and the mutualistic two-population interaction as the central case.
 **The cost of enforcement.** Models treat reciprocity, partner choice, and
 reputation as free once the loci or strategies are present. That is an idealisation.
 Enforcement machinery carries fixed costs — observing or communicating others'
-behaviour, keeping it in memory, identifying individuals, and making decisions. I use
+behavior, keeping it in memory, identifying individuals, and making decisions. I use
 *information cost* as shorthand for these per-genotype overheads throughout the paper,
 and not for variable costs such as punishment or sanctions. Sanctioning and monitoring
 are themselves public-goods problems: second-order free riders enjoy the benefits of
@@ -58,7 +58,7 @@ enforcement without paying for it
 [@Yamagishi1986; @BoydRicherson1992; @PanchanathanBoyd2004], and altruistic
 punishment is costly to the punisher [@FehrGachter2002; @BoydGintisBowles2003;
 @SigmundHauertNowak2001]. Cognitive and psychological constraints further limit how
-much conditional behaviour animals can sustain [@StevensHauser2004; @Dunbar1998],
+much conditional behavior animals can sustain [@StevensHauser2004; @Dunbar1998],
 and maintaining the required informational or learning machinery carries direct
 metabolic and fitness costs even outside primates [@MeryKawecki2003].
 These literatures establish that enforcement is not free, but they place the cost
@@ -79,11 +79,11 @@ First, **cooperation cost** versus **information cost**. Cooperation cost is the
 payoff price of helping — temptation and risk in the game. Information cost, as
 defined above, is the fixed per-genotype overhead charged for carrying enforcement
 loci in the model (a per-round metabolic or cognitive bill, not contingent on
-per-round behaviour). Alone, each pressure is survivable; together they compound,
+per-round behavior). Alone, each pressure is survivable; together they compound,
 because information cost thins the apparatus that resists temptation. On a symmetric
 information-cost design,
 that thinning can look like a local escape: active machinery is selected out while
-cooperation persists through tax-free unconditional cooperators, decoupling behaviour
+cooperation persists through tax-free unconditional cooperators, decoupling behavior
 from mechanism. Decoupling sits close to established second-order free-rider results
 [@Yamagishi1986; @PanchanathanBoyd2004]. What a symmetric design *cannot* do is
 separate the cost a population pays from the burden that cost places on its partner.
@@ -163,7 +163,7 @@ I use an individual-based evolutionary model. Individuals live in fixed groups,
 interact in pairs over repeated rounds, and reproduce in proportion to accumulated
 fitness. Mutation rate is 0.01 per locus per reproduction event. Each individual
 carries six loci: a cooperation locus C and five mechanism loci that control
-conditional behaviour — partner choice on recent (P) or lifetime (Q) cooperation, and
+conditional behavior — partner choice on recent (P) or lifetime (Q) cooperation, and
 reciprocity that copies a partner's recent act directly (M), indirectly from a third
 party (I), or from a lifetime reputation (J). Each locus is binary — C1 helps its
 partner, C0 defects; M1 copies its partner, M0 does not; and so on. An individual
@@ -176,7 +176,7 @@ mutually rematch, each trading a non-cooperative partner for the other chooser; 
 two abandoned partners end up paired with each other. The partner-choice allele is
 phenotypically silent in defectors (C0P1 carries P1 but never chooses). Reciprocity is
 not silent in the same way — C0M1 still mimics once a partnership is established.
-Mechanisms differ in which behaviours are enabled, not in which loci can mutate: under
+Mechanisms differ in which behaviors are enabled, not in which loci can mutate: under
 the no-enforcement control (_), partner choice and reciprocity do not run, but mechanism
 loci still mutate and still incur information cost when carried.
 
@@ -211,7 +211,7 @@ carrying one. Two consequences matter for interpretation. First, mechanisms are
 directly comparable in what they pay: direct reciprocity and partner choice both cost
 one unit, and every combined mechanism costs two, however many loci it enables — so
 contrasts within those matched sets isolate mechanism identity from expense. Second,
-loci that are behaviourally inert under a given mechanism are still taxed, and
+loci that are behaviorally inert under a given mechanism are still taxed, and
 shedding part of a family saves nothing, so families disappear as blocks rather than
 locus by locus. The genuinely untaxed cooperator is the full null C1I0J0M0P0Q0;
 single-locus proxies such as C1P0 or C1M0 remain taxed if a sibling locus in the same
@@ -240,7 +240,7 @@ The design grid is the Cartesian product of social dilemma, cooperation cost (c,
 c₀ and c₁), information cost (i, or i₀ and i₁), group size, partner shuffling,
 population structure, and mechanism
 ([framework](../journal/framework.md)). Mechanisms enable subsets of the conditional
-behaviours: no enforcement (_); direct reciprocity (M); partner choice (P); and the
+behaviors: no enforcement (_); direct reciprocity (M); partner choice (P); and the
 combined and reputation-rich families (MP, MPQ, IMP, IJMPQ), plus shuffle-only IM and
 IJM. Main-text figures feature _, M, P, and IJMPQ as the hierarchy and the
 reciprocity-bearing combined case.
@@ -412,16 +412,16 @@ pulls the c-collapse threshold downward (Fig. S7).
 At zero cooperation cost the genotype route makes the escape visible (Fig. 3). As
 information cost rises, active enforcement alleles are selected out — chooser P1
 (Fig. 3a) and TFT M1 (Fig. 3c) both fall toward zero — while cooperation remains high
-on tax-free unconditional cooperators (Fig. 3b,d: C1P0, C1M0). Behaviour and
+on tax-free unconditional cooperators (Fig. 3b,d: C1P0, C1M0). Behavior and
 mechanism decouple. A dilemma-free control shows that machinery erodes with or
 without a social dilemma; cooperation persists through the shed only when the dilemma
 is present, so the tax drives the erosion and the dilemma decides whether losing the
-machinery drags behaviour down (Fig. S8).
+machinery drags behavior down (Fig. S8).
 
 **Figure 3: Information cost decouples cooperation from enforcement machinery when cooperation is free.** Frequency of the active machinery allele (chooser P1 in **A**; tit-for-tat M1 in **C**) and overall frequency of cooperators (**B, D**) in a single population. **A, B**, Short-memory partner choice alone. **C, D**, Direct reciprocity alone. The cooperation cost is fixed at zero while the information cost is swept from 0 to the partner benefit ($b = 0.4$). Rising information cost selects against active enforcement alleles, but cooperation remains high because populations shed the costly machinery in favour of tax-free unconditional cooperation.
 
 That refuge disappears once cooperation cost is held above zero. Machinery loss and
-behavioural loss then move together: shedding P1 or M1 no longer leaves a stable
+behavioral loss then move together: shedding P1 or M1 no longer leaves a stable
 high-cooperation niche behind
 ([information cost under cooperation-cost asymmetry](../journal/asymmetric_c1_i.md)).
 With a fixed cooperation-cost gap, as information cost rises populations cooperate less
@@ -596,7 +596,7 @@ Adding an information-cost axis reframes enforcement around two costs. Cooperati
 cost sets the temptation and risk the machinery must resist; information cost is
 escapable only by shedding the machinery. Alone each is survivable; together they
 compound, because information cost thins the apparatus cooperation cost requires.
-The genotype-level consequence is that behaviour and mechanism decouple:
+The genotype-level consequence is that behavior and mechanism decouple:
 cooperation can persist through unconditional cooperators after the expensive
 conditional machinery has been selected away — but only where the game does not
 punish that shed. That pattern is the evolutionary counterpart of second-order free

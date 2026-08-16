@@ -45,7 +45,7 @@ Adding an information-cost axis reframes enforcement around two costs. Cooperati
 cost sets the temptation and risk the machinery must resist; information cost is
 escapable only by shedding the machinery. Alone each is survivable; together they
 compound, because information cost thins the apparatus cooperation cost requires.
-The genotype-level consequence is that behaviour and mechanism decouple:
+The genotype-level consequence is that behavior and mechanism decouple:
 cooperation can persist through unconditional cooperators after the expensive
 conditional machinery has been selected away — but only where the game does not
 punish that shed. That pattern is the evolutionary counterpart of second-order free

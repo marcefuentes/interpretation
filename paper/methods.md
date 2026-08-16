@@ -26,7 +26,7 @@ survivor's next act toward its current partner. The next time step begins again 
 fitness.
 
 Each individual carries six loci: a cooperation locus C and five mechanism loci
-that control conditional behaviour — partner choice on recent (P) or lifetime (Q)
+that control conditional behavior — partner choice on recent (P) or lifetime (Q)
 cooperation, and reciprocity that copies a partner's recent act directly (M),
 indirectly from a third party (I), or from a lifetime reputation (J). Each locus is
 binary — C1 helps its partner, C0 defects; M1 copies its partner, M0 does not; and so
@@ -39,7 +39,7 @@ mutually rematch, each trading a non-cooperative partner for the other chooser; 
 two abandoned partners end up paired with each other. The partner-choice allele is
 phenotypically silent in defectors (C0P1 carries P1 but never chooses). Reciprocity is
 not silent in the same way — C0M1 still mimics once a partnership is established.
-Mechanisms differ in which behaviours are enabled, not in which loci can mutate: under
+Mechanisms differ in which behaviors are enabled, not in which loci can mutate: under
 the no-enforcement control (_), partner choice and reciprocity do not run, but mechanism
 loci still mutate and still incur information cost when carried.
 
@@ -74,7 +74,7 @@ carrying one. Two consequences matter for interpretation. First, mechanisms are
 directly comparable in what they pay: direct reciprocity and partner choice both cost
 one unit, and every combined mechanism costs two, however many loci it enables — so
 contrasts within those matched sets isolate mechanism identity from expense. Second,
-loci that are behaviourally inert under a given mechanism are still taxed, and
+loci that are behaviorally inert under a given mechanism are still taxed, and
 shedding part of a family saves nothing, so families disappear as blocks rather than
 locus by locus. The genuinely untaxed cooperator is the full null C1I0J0M0P0Q0;
 single-locus proxies such as C1P0 or C1M0 remain taxed if a sibling locus in the same
@@ -105,7 +105,7 @@ The design grid is the Cartesian product of social dilemma, cooperation cost (c,
 c₀ and c₁), information cost (i, or i₀ and i₁), group size, partner shuffling,
 population structure, and mechanism
 ([framework](../journal/framework.md)). Mechanisms enable subsets of the conditional
-behaviours: no enforcement (_); direct reciprocity (M); partner choice (P); and the
+behaviors: no enforcement (_); direct reciprocity (M); partner choice (P); and the
 combined and reputation-rich families (MP, MPQ, IMP, IJMPQ), plus shuffle-only IM and
 IJM. Main-text figures feature _, M, P, and IJMPQ as the hierarchy and the
 reciprocity-bearing combined case.

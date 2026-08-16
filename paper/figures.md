@@ -76,7 +76,7 @@ setup for the relational claim (Figs. 4–5).
 | --- | ------- | -------- | --- |
 | 1 | Stochastic role split under parameter symmetry | line | former fig2 |
 | 2 | Deterministic split under cooperation-cost asymmetry | line | former fig3 |
-| 3 | Behaviour–mechanism decoupling | line | former fig4 |
+| 3 | Behavior–mechanism decoupling | line | former fig4 |
 | 4 | **Headline:** information cost is relational (strips + iso-budget) | line | fused former fig5+fig6 |
 | 5 | Wedge boundary and its closing | line | former fig7 |
 
@@ -86,7 +86,7 @@ setup for the relational claim (Figs. 4–5).
 | --- | ------- | --------- | ------- | ------ | --------------- |
 | 1 | Outcome asymmetry under parameter symmetry (c0 = c1), partner choice | fig1 | `... --figure fig1 ...` | ~/figures/interpretation/fig1.png | Two populations, equal cooperation cost |
 | 2 | Deterministic outcome split under cooperation-cost parameter asymmetry | fig2 | `... --figure fig2 ...` | ~/figures/interpretation/fig2.png | Cooperation-cost asymmetry |
-| 3 | Behaviour–mechanism decoupling where cooperation cost is zero | fig3 | `... --figure fig3 ...` | ~/figures/interpretation/fig3.png | Information cost sweep |
+| 3 | Behavior–mechanism decoupling where cooperation cost is zero | fig3 | `... --figure fig3 ...` | ~/figures/interpretation/fig3.png | Information cost sweep |
 | 4 | Information cost is relational: whose information cost matters and why shared budgets can perform poorly | fig4 | `... --figure fig4 ...` | ~/figures/interpretation/fig4_qBSeen.png | Crossed cost asymmetries |
 | 5 | Role inversion appears only when the cheap population's information cost is near zero (cooperation + fitness rows) | fig5 | `... --figure fig5 ...` | ~/figures/interpretation/fig5_qBSeen.png | Crossed cost asymmetries |
 
@@ -124,7 +124,7 @@ Uses the existing `asymmetric_c0_c1_lines` study with filter `asymmetric_offset`
 python -m graphgen.main --study asymmetric_c0_c1_lines --export-slices --groupsize 128
 ```
 
-## Behaviour–mechanism decoupling: line reslice at c = 0 (built 2026-07)
+## Behavior–mechanism decoupling: line reslice at c = 0 (built 2026-07)
 
 Fig. 3 is a dose-response line chart at zero cooperation cost rather than the full
 Cost × c heatmap (figS7). At c = 0 the decoupling reads immediately: machinery alleles
