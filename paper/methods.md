@@ -20,29 +20,19 @@ group. The offspring inherits the parent's genotype, subject to mutation, and ta
 the dead individual's partner. Mutation rate is 0.01 per locus per reproduction
 event. Main runs last 2^20 rounds.
 
-Within each time step the order is fixed: compute fitness; if shuffling is on,
-redraw pairs within each group; if partner choice is on, rematch choosers; replace
-deaths with fitness-weighted offspring; then, if reciprocity is on, set each
-survivor's next act toward its current partner. The next time step begins again with
-fitness.
-
 Each individual carries six loci: a cooperation locus C and five mechanism loci
 that control conditional behavior — partner choice on recent (P) or lifetime (Q)
 cooperation, and reciprocity that copies a partner's recent act directly (M),
 indirectly from a third party (I), or from a lifetime reputation (J). Each locus is
 binary — C1 helps its partner, C0 defects; M1 copies its partner, M0 does not; and so
 on. An individual behaves according to decision precedence Q1 > P1, and J1 > I1 > M1
-when more than one mechanism allele is carried. Per round, fitness is the game payoff
-minus information cost, w = max(0, payoff − cost).
+when more than one mechanism allele is carried.
 
 Under partner choice, assortment is a bilateral swap: two active choosers (C1P1)
 mutually rematch, each trading a non-cooperative partner for the other chooser; the
 two abandoned partners end up paired with each other. The partner-choice allele is
 phenotypically silent in defectors (C0P1 carries P1 but never chooses). Reciprocity is
 not silent in the same way — C0M1 still mimics once a partnership is established.
-Mechanisms differ in which behaviors are enabled, not in which loci can mutate: under
-the no-enforcement control, partner choice and reciprocity do not run, but mechanism
-loci still mutate and still incur information cost when carried.
 
 ## Social dilemmas
 
@@ -90,18 +80,41 @@ In two-population designs the rate is per population (i₀, i₁): an individual
 own population's rate on the families it carries. Unless otherwise varied, i is held
 at a negligible 0.001.
 
+Mechanisms differ in which behaviors are enabled, not in which loci can mutate: under
+the no-enforcement control, partner choice and reciprocity do not run, but mechanism
+loci still mutate and still incur information cost when carried.
+
+## Timestep order
+
+Per round, fitness is the game payoff minus information cost, w = max(0, payoff − cost),
+with payoff from Table 1. Within each time step the order is fixed: compute fitness; if
+shuffling is on, redraw pairs within each group; if partner choice is on, rematch
+choosers; replace deaths with fitness-weighted offspring; then, if reciprocity is on,
+set each survivor's next act toward its current partner. The next time step begins
+again with fitness.
+
 ## Independent variables and mechanisms
 
-I vary social dilemma, cooperation cost (c, or c₀ and c₁), information cost (i, or i₀
-and i₁), group size, partner shuffling, population structure, and which conditional
-behaviors are enabled. Mechanisms are abbreviated by the loci they enable: no
-enforcement (none of the conditional behaviors run); direct reciprocity (M); partner
-choice (P); and the combined and reputation-rich families (MP, MPQ, IMP, IJMPQ).
-Indirect reciprocity with recent (IM) or lifetime (IJM) reputation is included only
-when partners are shuffled. Main-text results use groups of 128 without shuffling;
-shuffled partners and groups of 4 are in Figs. S2 and S6. Main-text figures feature
-no enforcement, M, P, and IJMPQ as the hierarchy and the reciprocity-bearing combined
-case.
+I vary the parameters above together with which conditional behaviors are enabled.
+Mechanisms are abbreviated by the loci they enable: no enforcement (none of the
+conditional behaviors run); direct reciprocity (M); partner choice (P); and the
+combined and reputation-rich families (MP, MPQ, IMP, IJMPQ). Indirect reciprocity with
+recent (IM) or lifetime (IJM) reputation is included only when partners are
+shuffled. Main-text results use groups of 128 without shuffling; shuffled partners and
+groups of 4 are in Figs. S2 and S6. Main-text figures feature no enforcement, M, P,
+and IJMPQ as the hierarchy and the reciprocity-bearing combined case.
+
+## Outcome measures
+
+Cooperation level is the frequency of cooperative acts. Fitness is mean payoff net of
+information cost. Genotype composition is read from per-genotype frequencies
+aggregated to the alleles and composites defined above.
+
+Between-population asymmetry is the gap in cooperation and the gap in fitness between
+the two coevolving populations. These are outcome variables, distinct from parameter
+symmetry or asymmetry in c₀, c₁, i₀, i₁, and payoffs. The two faces need not point at
+the same population: under partner choice in the prisoner's dilemma the more
+cooperative side is the less fit one.
 
 ## Simulation designs
 
@@ -131,20 +144,6 @@ the Results and Table S1 but are not published as figures.
 Single-run time series record nine snapshots from t = 131072 to 10⁶. That spacing is
 enough to confirm that role splits and collapses are already locked in at the first
 recorded snapshot, but not to resolve the order in which they first appear.
-
-## Outcome measures
-
-Cooperation level is the frequency of cooperative acts. Fitness is mean payoff net of
-information cost. Genotype composition is read from per-genotype frequencies
-aggregated to the relevant alleles and composites (for example C1P1 active choosers,
-C1P0 / C1M0 unconditional cooperators, C0P1 silent carriers, C1M1 / C0M1 reciprocity
-carriers).
-
-Between-population asymmetry is the gap in cooperation and the gap in fitness between
-the two coevolving populations. These are outcome variables, distinct from parameter
-symmetry or asymmetry in c₀, c₁, i₀, i₁, and payoffs. The two faces need not point at
-the same population: under partner choice in the prisoner's dilemma the more
-cooperative side is the less fit one.
 
 ## Replicates and noise floor
 
