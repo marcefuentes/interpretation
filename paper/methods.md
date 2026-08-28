@@ -2,10 +2,16 @@
 
 ## Model
 
-I use an individual-based evolutionary model. Each population holds 4096
-individuals — a size divisible by both group sizes used below. Individuals live in
-fixed groups, interact in pairs over repeated rounds, and reproduce in proportion to
-fitness. Every round each individual dies with probability 2^−7. That mortality is
+I use an individual-based evolutionary model with two population structures. In a
+single population, 4096 individuals pair within the population. In two coevolving
+populations, each side has its own 4096 individuals — a size divisible by both group
+sizes — and all pairing is between populations. Individuals live in fixed groups of
+4 or 128, interact in pairs over repeated rounds, and reproduce in proportion to
+fitness. Group membership is permanent: an individual never moves to another group.
+With shuffling, pairs are redrawn within the group each round; without it,
+partnerships persist until death or a partner-choice swap.
+
+Every round each individual dies with probability 2^−7. That mortality is
 low enough that lasting partners meet many times (about 64 rounds on average when
 individuals do not change partners), yet high enough that runs reach equilibrium in a
 tractable time. Dead adults are replaced by offspring sampled from the whole
@@ -84,19 +90,6 @@ In two-population designs the rate is per population (i₀, i₁): an individual
 own population's rate on the families it carries. Unless otherwise varied, i is held
 at a negligible 0.001.
 
-## Population structure and ecology
-
-I use two population structures. In a single population, individuals pair within the
-population. In two coevolving populations, each side has its own 4096 individuals and
-all pairing is between populations — the mutualism case.
-
-Ecological context is group size (4 or 128 individuals per group) and whether partners
-are reshuffled within groups each round. Group membership is permanent: an individual
-never moves to another group. With shuffling, pairs are redrawn within the group each
-round. Without it, partnerships persist until death or a partner-choice swap. Main-text
-results use groups of 128 without shuffling; shuffled partners and groups of 4 are in
-Figs. S2 and S6.
-
 ## Independent variables and mechanisms
 
 I vary social dilemma, cooperation cost (c, or c₀ and c₁), information cost (i, or i₀
@@ -105,8 +98,10 @@ behaviors are enabled. Mechanisms are abbreviated by the loci they enable: no
 enforcement (none of the conditional behaviors run); direct reciprocity (M); partner
 choice (P); and the combined and reputation-rich families (MP, MPQ, IMP, IJMPQ).
 Indirect reciprocity with recent (IM) or lifetime (IJM) reputation is included only
-when partners are shuffled. Main-text figures feature no enforcement, M, P, and IJMPQ
-as the hierarchy and the reciprocity-bearing combined case.
+when partners are shuffled. Main-text results use groups of 128 without shuffling;
+shuffled partners and groups of 4 are in Figs. S2 and S6. Main-text figures feature
+no enforcement, M, P, and IJMPQ as the hierarchy and the reciprocity-bearing combined
+case.
 
 ## Simulation designs
 
