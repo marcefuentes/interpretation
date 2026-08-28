@@ -3,22 +3,27 @@
 ## Model
 
 I use an individual-based evolutionary model with two population structures. In a
-single population, 4096 individuals pair within the population. In two coevolving
-populations, each side has its own 4096 individuals — a size divisible by both group
-sizes — and all pairing is between populations. Individuals live in fixed groups of
-4 or 128, interact in pairs over repeated rounds, and reproduce in proportion to
-fitness. Group membership is permanent: an individual never moves to another group.
-With shuffling, pairs are redrawn within the group each round; without it,
-partnerships persist until death or a partner-choice swap.
+single population, individuals pair within the population. In two coevolving
+populations, pairing is between populations.
 
-Every round each individual dies with probability 2^−7. That mortality is
-low enough that lasting partners meet many times (about 64 rounds on average when
-individuals do not change partners), yet high enough that runs reach equilibrium in a
-tractable time. Dead adults are replaced by offspring sampled from the whole
-population in proportion to fitness, so an offspring need not share its parent's
-group. The offspring inherits the parent's genotype, subject to mutation, and takes
-the dead individual's partner. Mutation rate is 0.01 per locus per reproduction
-event. Main runs last 2^20 rounds.
+Individuals live in fixed groups of 4 or 128. Groups bound local interaction in two
+ways. When partner choice is on, a chooser can rematch only within its group. When
+shuffling is on, pairs are redrawn within the group each round; without it,
+partnerships persist until death or a partner-choice swap. In a single population a
+group holds that many individuals from the population. In the two-population case it
+holds that many from each population, so each individual faces that many potential
+partners from the other side.
+
+Each population holds 4096 individuals — a size divisible by both group sizes.
+Adults never change group. Every round each individual dies with probability 2^−7.
+That mortality is low enough that lasting partners meet many times (about 64 rounds on
+average when individuals do not change partners), yet high enough that runs reach
+equilibrium in a tractable time. Dead adults are replaced by offspring drawn from the
+whole population in proportion to fitness; the offspring inherits the parent's
+genotype, subject to mutation, fills the vacant slot, and takes the dead individual's
+partner. Recruitment is the only route between groups, and an offspring need not
+share its parent's group. Mutation rate is 0.01 per locus per reproduction event.
+Main runs last 2^20 rounds.
 
 Each individual carries six loci: a cooperation locus C and five mechanism loci
 that control conditional behavior — partner choice on recent (P) or lifetime (Q)
