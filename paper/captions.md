@@ -26,7 +26,7 @@ Along c₁ = c₀ + 0.02 with both populations overlaid, partner choice converts
 
 <strong>Fig. 3.</strong> Simulation results for different cooperation mechanisms. Frequency of machinery allele (P1 in a; M1 in c) and frequency of cooperators. The figure shows One population.(<strong>a, b</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>c, d</strong>) When direct reciprocity is the only cooperation mechanism allowed. The population has the same cooperation cost (0) and the same information cost (from 0 to <em>b</em> (0.4), where <em>b</em> is the benefit to the partner).
 
-At c = 0, information cost selects out active enforcement alleles (chooser P1 in a; TFT M1 in c) while cooperation remains high on tax-free unconditional cooperators (b, d). Behavior and mechanism decouple. The full Cost × c grid is in Fig. S7; Fig. S8 shows that machinery erodes with or without a dilemma, but cooperation persists through the shed only when the dilemma is present. This escape route is what Figs. 4–5 price: relieving the payer withdraws the service its partner depends on.
+At c = 0, information cost selects out active enforcement alleles (chooser P1 in a; TFT M1 in c) while cooperation remains high on tax-free unconditional cooperators (b, d). Behavior and mechanism decouple. The full information-cost × cooperation-cost grid is in Fig. S7; Fig. S8 shows that machinery erodes with or without a dilemma, but cooperation persists through the shed only when the dilemma is present. This escape route is what Figs. 4–5 price: relieving the payer withdraws the service its partner depends on.
 
 ### <strong>Fig. 4.</strong> Information cost is relational: binding axis and budget non-convexity.
 
@@ -100,9 +100,9 @@ Same cooperation-cost parameter asymmetry as Fig. 2 but at group size 4. The det
 
 <strong>Fig. S7.</strong> Partner choice and indirect reciprocity. Frequency of cooperators and average fitness when partner choice and indirect reciprocity are both allowed. (<strong>a–d</strong>) One population. (<strong>a, b</strong>) Prisoner's dilemma. (<strong>c, d</strong>) Snowdrift. The population has the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost.
 
-Information cost is soft by itself but lowers the cooperation-cost ceiling where the two costs overlap. Full-coverage Cost × c grid behind Fig. 3, which shows the c = 0 machinery-versus-behavior slice rather than combined IJMPQ alone.
+Information cost is soft by itself but lowers the cooperation-cost ceiling where the two costs overlap. Full-coverage information-cost × cooperation-cost grid behind Fig. 3, which shows the c = 0 machinery-versus-behavior slice rather than combined IJMPQ alone.
 
-### <strong>Fig. S8.</strong> Dilemma-0 control for machinery erosion.
+### <strong>Fig. S8.</strong> No-enforcement control for machinery erosion.
 
 ![figS8](/home/marcelino/figures/interpretation/figS8.png)
 

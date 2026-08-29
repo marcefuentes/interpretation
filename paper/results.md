@@ -71,7 +71,7 @@ survives small-group stochasticity at group size 4 (Fig. S6).
 **Figure 2: Deterministic role splits emerge from cooperation-cost asymmetries.** Frequency of cooperators and average fitness for two coevolving populations under the prisoner's dilemma, evaluated along the parameter strip $c_1 = c_0 + 0.02$ (with both populations overlaid). **A, B**, Short-memory partner choice alone. **C, D**, Combined partner choice and indirect reciprocity. Both populations pay identical information costs ($0.001$). A small cooperation-cost gap allows partner choice to convert the payoff asymmetry into a stable cooperator/exploiter assignment (**A, B**). The combined reputation-rich mechanism lifts the expensive population, shrinking the outcome asymmetry (**C, D**).
 
 Single-run trajectories confirm that these roles are absorbing states locked in by
-the first recorded snapshot (t = 131072), not slow late erosions. The temporal
+the first recorded snapshot (2^17 rounds), not slow late erosions. The temporal
 regime does not differ between one and two populations.
 
 With this cooperation-cost baseline established, I next ask how populations respond
@@ -173,9 +173,10 @@ When both cost axes differ, populations still follow the cooperation-cost gap.
 Across the full i₀ × i₁ square behind Figs. 4–5, under partner choice the
 lower-cooperation-cost population cooperates in 170/176 cells; under IJMPQ they invert
 locally only on the i₀ ≈ 0 strip (13 cells). That hitchhiking inversion is stronger
-when populations differ only in information cost (Fig. S11: IMP
-dq = −0.461 at Cost0 = 0, Cost1 = 0.20) and weaker once a cooperation-cost
-gap is present (IMP dq = −0.100 at the same information-cost point). The gap moves
+when populations differ only in information cost (Fig. S11: under IMP, the
+cooperation gap reaches −0.461 when i₀ = 0 and i₁ = 0.20) and weaker once a
+cooperation-cost gap is present (cooperation gap −0.100 at the same
+information-cost point). The gap moves
 every reciprocity-bearing mechanism toward the cheap-cooperation-cost population,
 erasing the inversion outright for MP and MPQ.
 

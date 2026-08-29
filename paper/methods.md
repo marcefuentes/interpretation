@@ -23,7 +23,7 @@ whole population in proportion to fitness; the offspring inherits the parent's
 genotype, subject to mutation, fills the vacant slot, and takes the dead individual's
 partner. Recruitment is the only route between groups, and an offspring need not
 share its parent's group. Mutation rate is 0.01 per locus per reproduction event.
-Runs last 2^20 rounds.
+Each run lasts 2^20 rounds.
 
 Each individual carries six loci: a cooperation locus C and five mechanism loci
 that control conditional behavior — partner choice on recent (P) or lifetime (Q)
@@ -41,11 +41,12 @@ not silent in the same way — C0M1 still mimics once a partnership is establish
 
 ## Social dilemmas
 
-Baseline fitness K = 0.5 and benefit b = 0.4 are fixed; cooperation cost c is swept
-from 0 to b. Table 1 gives the three payoff structures. In the control, an
-individual's payoff does not depend on its partner's behavior. In the prisoner's
-dilemma, cooperation delivers benefit b to the partner. In the snowdrift, b is a
-shared resource received whenever at least one player cooperates.
+Cooperation cost c is what a cooperator pays to produce the good at stake in the
+dilemma. In the prisoner's dilemma that good is given to the partner; in the
+snowdrift it is shared between the pair whenever at least one player cooperates.
+Baseline fitness K = 0.5 and benefit b = 0.4 are fixed; c is swept from 0 to b.
+Table 1 gives the three payoff structures. In the control, an individual's payoff
+does not depend on its partner's behavior.
 
 Table 1. Payoff structures for the three social dilemmas.
 
@@ -106,11 +107,10 @@ conditional behaviors run); direct reciprocity (M); partner choice (P); and the
 combined and reputation-rich families (MP, MPQ, IMP, IJMPQ). Indirect reciprocity with
 recent (IM) or lifetime (IJM) reputation is included only when partners are
 shuffled. Main-text results use groups of 128 without shuffling; shuffled partners and
-groups of 4 are in Figs. S2 and S6. Fig. S1 compares no enforcement, M, P, and IJMPQ
-at equal cooperation cost; each sustains cooperation to a higher cost before collapse,
-in that order. Main-text figures use that four-mechanism set: no enforcement as a
-control, M and P for single-family contrasts, and IJMPQ as the combined case that
-includes reciprocity.
+groups of 4 are in Figs. S2 and S6. Fig. S1 reports no enforcement, M, P, and IJMPQ
+at equal cooperation cost; main-text figures use that four-mechanism set: no
+enforcement as a control, M and P for single-family contrasts, and IJMPQ as the
+combined case that includes reciprocity.
 
 ## Outcome measures
 
@@ -121,37 +121,38 @@ information cost.
 
 ## Simulation designs
 
-I report six main designs and two auxiliary payoff-plane calibrations.
+Six sweeps vary cooperation cost, per-population information cost, or both; two
+further sweeps vary the payoffs themselves. All use the ecology above. Unless
+noted, group size is 128, partnerships are not shuffled, information cost is
+i = 0.001, and two-population designs pair one coevolving population on each side
+of the interaction.
 
-Equal cooperation cost (c₀ = c₁) in a single population and in two coevolving
-populations, across the control, prisoner's dilemma, and snowdrift, yields the
-baseline comparison of cooperation-cost ceilings by mechanism (Fig. S1) and the
-stochastic two-population split
-(Fig. 1). Unequal cooperation cost in two coevolving populations, with c₀ < c₁ over
-210 cost pairs, yields the deterministic role split (Fig. 2; full grid Fig. S4;
-no-enforcement control Fig. S3). Jointly varying information cost and cooperation
-cost at equal c, under the constraint i + c ≤ b, yields decoupling at c = 0 (Fig. 3)
-and the surface on which the two costs compound (Fig. S7), with a dilemma-free control
-(Fig. S8). Holding c₀ = 0.10 and jointly varying i with c₁ (i + c₁ ≤ b) shows how the
-partner-choice split compresses once the zero-cost refuge is removed (Fig. S9).
-Per-population information cost at equal cooperation cost (c₀ = c₁ = 0.10; i₀ < i₁
-with each axis capped at b − c) assigns roles and can invert them by hitchhiking
-without a cooperation-cost gap (Fig. S11). Crossing both asymmetries (c₀ = 0.10,
-c₁ = 0.20 fixed; full i₀ × i₁ square, 176 combinations) separates own from partner
-information cost and shows non-additive sharing of a fixed information-cost budget
-(Fig. 4), including the near-zero-i₀ hitchhiking regime (Fig. 5).
+Equal cooperation cost (c₀ = c₁) is swept from 0 to b in one population and in two
+coevolving populations, for the control, prisoner's dilemma, and snowdrift (Fig. S1;
+Fig. 1). Cooperation-cost asymmetry fixes c₀ < c₁ on a grid of 210 ordered pairs with
+c₀ ∈ [0, 0.38] and c₁ ∈ [0.02, 0.40] (Fig. 2; full grid Fig. S4; no-enforcement
+control Fig. S3). Information cost and cooperation cost are varied jointly at equal c
+under i + c ≤ b on a triangular grid of 231 (i, c) cells (Fig. 3; full grid Fig. S7;
+dilemma-free control Fig. S8). With c₀ fixed at 0.10, information cost and c₁ are
+jointly swept under i + c₁ ≤ b (120 cells; Fig. S9). Per-population information cost
+is swept at fixed c₀ = c₁ = 0.10 on a triangle with i₀ < i₁ and each axis capped at
+b − c (120 cells; Fig. S11). Both asymmetries are crossed with c₀ = 0.10, c₁ = 0.20,
+and all (i₀, i₁) pairs on a 176-cell square with i₀ ≤ 0.30 and i₁ ≤ 0.20 (Figs. 4–5).
 
-Auxiliary payoff-plane calibrations hold two payoffs fixed and vary the other two,
-decoupling temptation, risk, and R − P. They support the payoff-gap attributions in
-the Results and Table S1 but are not published as figures.
+The payoff-plane sweeps hold two payoffs fixed and vary the other two, which breaks
+the coupling that cooperation cost imposes on the temptation, risk, and
+cooperation-advantage gaps at once. The prisoner's-dilemma sweep fixes T = 0.90 and
+S = 0.10 and varies R and P over an 18 × 18 grid, keeping the 172 cells that satisfy
+T > R > P > S; the snowdrift sweep fixes T = 0.90 and P = 0.10 and varies R and S
+over the same grid, keeping the 172 cells that satisfy T > R > S > P. Table S1
+reports which payoff gap limits each mechanism family.
 
-Single-run time series record nine snapshots from t = 131072 to 10⁶. That spacing is
-enough to confirm that role splits and collapses are already locked in at the first
-recorded snapshot, but not to resolve the order in which they first appear.
+Selected cells are re-run with a single replicate and sampled at nine time points from
+2^17 to 10⁶ rounds to check temporal stability of the reported equilibria.
 
 ## Replicates and noise floor
 
 Reported values are means over 30 independent runs, each with its standard
 deviation. The practical noise floor is cooperation gaps below
-approximately 0.01–0.02 and fitness gaps below approximately 0.002; standard deviation
-peaks at bistable transitions (visible as the ±1 SD bands in Fig. 5).
+approximately 0.01–0.02 and fitness gaps below approximately 0.002; standard
+deviation peaks at bistable transitions (visible as the ±1 SD bands in Fig. 5).

@@ -98,7 +98,7 @@ pushed into a more cooperative but less fit state.
 
 The payoff-plane calibration analyses fix payoffs that slide with cooperation cost in
 the main analyses, so the overlays identify which payoff variable governs a mechanism,
-not absolute thresholds. Single-run snapshots (t = 131072 onward) confirm that
+not absolute thresholds. Single-run snapshots from 2^17 rounds onward confirm that
 established role splits and collapsed states are already in place at the first recorded
 time step; they are too coarse to resolve the order in which those states first appear
 or to rule out low-amplitude cycling within a snapshot interval. At the edge of the

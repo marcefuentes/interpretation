@@ -16,7 +16,7 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S5 | Parameter-symmetric vs asymmetric line slices | Figs. 1–2 |
 | Fig. S6 | Cooperation-cost asymmetry at group size 4 | Fig. 2 |
 | Fig. S7 | Information cost × cooperation cost (single population) | Fig. 3 |
-| Fig. S8 | Dilemma-0 control for machinery erosion | Fig. 3 |
+| Fig. S8 | No-enforcement control for machinery erosion | Fig. 3 |
 | Fig. S9 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
 | Fig. S10 | Fitness counterpart of Fig. 4 (same relational slices) | Fig. 4 |
 | Fig. S11 | Information-cost asymmetry at equal cooperation cost | Figs. 4–5 |
@@ -52,9 +52,10 @@ direct-reciprocity collapse ordering: Fig. S2.
 
 **Figs. 1–2 role split.** No-enforcement asymmetric control: Fig. S3. Deterministic
 versus stochastic strips on shared axes: Fig. S5. Full c₀ × c₁ coverage: Fig. S4.
-Small-group robustness (gs = 4): Fig. S6.
+Small-group robustness (groups of 4): Fig. S6.
 
-**Fig. 3 decoupling.** Full Cost × c surface: Fig. S7. Dilemma-0 control (machinery
+**Fig. 3 decoupling.** Full information-cost × cooperation-cost surface: Fig. S7.
+No-enforcement control (machinery
 erodes with or without a dilemma; cooperation persists through the shed only with a
 dilemma): Fig. S8. Compression when cooperation cost is held above zero: Fig. S9.
 
@@ -67,4 +68,4 @@ Fig. 4 relational slices is in Fig. S10.
 
 ## What is intentionally not in the supplement figures
 
-- Payoff-plane calibration heatmaps (cal1, cal2) — attributions only, via Table S1.
+- Payoff-plane calibration heatmaps — attributions only, via Table S1.
