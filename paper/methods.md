@@ -122,10 +122,8 @@ information cost.
 ## Simulation designs
 
 Six sweeps vary cooperation cost, per-population information cost, or both; two
-further sweeps vary the payoffs themselves. All use the ecology above. Unless
-noted, group size is 128, partnerships are not shuffled, information cost is
-i = 0.001, and two-population designs pair one coevolving population on each side
-of the interaction.
+further sweeps vary the payoffs themselves. Unless noted, group size is 128,
+partnerships are not shuffled, and information cost is i = 0.001.
 
 Equal cooperation cost (c₀ = c₁) is swept from 0 to b in one population and in two
 coevolving populations, for the control, prisoner's dilemma, and snowdrift (Fig. S1;
