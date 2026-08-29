@@ -1,3 +1,10 @@
+# Methods (reference snapshot)
+
+Pre–methods-backlog copy of `methods.md`, kept for comparison. Do not edit for
+submission; edit `methods.md` instead.
+
+---
+
 # Methods
 
 ## Model
@@ -19,50 +26,25 @@ Adults never change group. Every round each individual dies with probability 2^�
 That mortality is low enough that lasting partners meet many times (about 64 rounds on
 average when individuals do not change partners), yet high enough that runs reach
 equilibrium in a tractable time. Dead adults are replaced by offspring drawn from the
-whole population in proportion to fitness via roulette-wheel selection on cumulative
-round fitness. Reproduction is asexual and haploid: the offspring clones one parent's
+whole population in proportion to fitness; the offspring inherits the parent's
 genotype, subject to mutation, fills the vacant slot, and takes the dead individual's
 partner. Recruitment is the only route between groups, and an offspring need not
 share its parent's group. Mutation rate is 0.01 per locus per reproduction event.
 Each run lasts 2^20 rounds.
 
-Each individual carries six binary loci: a cooperation locus C and five mechanism
-loci that control conditional behavior. Allele C1 is the default act — cooperate
-unconditionally when no mechanism overrides it; C0 defects. The mechanism loci are
-partner choice on recent cooperation (P) or lifetime cooperation rate (Q), and
-reciprocity that copies a partner's previous-round act when the partnership is
-unbroken (M), copies the current partner's previous-round act without requiring
-partnership continuity (I), or follows a lifetime reputation score (J). M1 copies,
-M0 does not; and so on for the other mechanism alleles.
+Each individual carries six loci: a cooperation locus C and five mechanism loci
+that control conditional behavior — partner choice on recent (P) or lifetime (Q)
+cooperation, and reciprocity that copies a partner's recent act directly (M),
+indirectly from a third party (I), or from a lifetime reputation (J). Each locus is
+binary — C1 helps its partner, C0 defects; M1 copies its partner, M0 does not; and so
+on. An individual behaves according to decision precedence Q1 > P1, and J1 > I1 > M1
+when it carries more than one mechanism allele.
 
-When partner choice runs, P1 rematches if its current partner did not cooperate in
-the previous round; Q1 rematches if a candidate partner's lifetime cooperation rate
-exceeds its current partner's. When reciprocity runs, each individual starts from its
-C allele and may override: M1 copies the partner's previous-round act if they are
-still paired; I1 copies the partner's previous-round act regardless of partnership
-continuity; J1 cooperates if the partner's lifetime cooperation rate rounds to
-cooperation. Recent cooperation is a single-round indicator updated after each
-fitness calculation; lifetime reputation is the mean cooperation rate since birth,
-updated each round when Q or J is enabled.
-
-An individual behaves according to decision precedence Q1 > P1 within partner choice
-and J1 > I1 > M1 within reciprocity when it carries more than one mechanism allele
-in the same family. Partner choice and reciprocity are applied at separate stages of
-each round (below), so precedence across families never arises.
-
-Under partner choice, assortment is a bilateral swap: two active choosers (C1P1 who
-cooperated while their partner defected in the previous round) mutually rematch,
-each trading a non-cooperative partner for the other chooser; the two abandoned
-partners end up paired with each other. Active choosers within a group are shuffled
-and paired in adjacent pairs for swapping; if their number is odd, one chooser does
-not rematch that round. The partner-choice allele is phenotypically silent in
-defectors (C0P1 carries P1 but never chooses). Reciprocity is not silent in the
-same way — C0M1 still mimics once a partnership is established.
-
-At run start every individual carries the null allele at all six loci and defects.
-Pairs are assigned within groups (and across populations in the two-population form)
-before the first round. Diversity enters only through mutation; there is no external
-seeding of cooperative or mechanism alleles.
+Under partner choice, assortment is a bilateral swap: two active choosers (C1P1)
+mutually rematch, each trading a non-cooperative partner for the other chooser; the
+two abandoned partners end up paired with each other. The partner-choice allele is
+phenotypically silent in defectors (C0P1 carries P1 but never chooses). Reciprocity is
+not silent in the same way — C0M1 still mimics once a partnership is established.
 
 ## Social dilemmas
 
@@ -97,11 +79,9 @@ cost = i × ( (P ∨ Q) + (M ∨ I ∨ J) ).
 
 An individual therefore owes 0, 1 or 2 units of i. Carrying both partner-choice loci
 costs the same as carrying one; carrying all three reciprocity loci costs the same as
-carrying one. Direct reciprocity and partner choice each cost one unit; carrying at
-least one partner-choice family allele and at least one reciprocity family allele
-costs two units (one per family), however many loci each family enables — so contrasts
-within those matched sets isolate mechanism identity from expense. Loci that are
-behaviorally inert under a
+carrying one. Direct reciprocity and partner choice each cost one unit; every combined
+mechanism costs two, however many loci it enables — so contrasts within those matched
+sets isolate mechanism identity from expense. Loci that are behaviorally inert under a
 given mechanism are still taxed, and shedding part of a family saves nothing, so
 families disappear as blocks rather than locus by locus. The genuinely untaxed
 cooperator is the full null C1I0J0M0P0Q0; single-locus proxies such as C1P0 or C1M0
@@ -117,19 +97,12 @@ mechanism loci still mutate and still incur information cost when carried.
 
 ## Timestep order
 
-Per round, an individual's act toward its current partner is the value set at the end
-of the previous round — or, for a newborn, its inherited C allele at replacement.
-Fitness is the game payoff minus information cost, w = max(0, payoff − cost), with
-payoff from Table 1 evaluated on that act and the partner's act. Within each time step
-the order is fixed: compute fitness from current acts; if shuffling is on, redraw
-pairs within each group; if partner choice is on, rematch choosers; replace deaths
-with fitness-weighted offspring (each newborn's act is reset to its inherited C
-allele); then, if reciprocity is on, set each survivor's act toward its current
-partner for the next round. The next time step begins again with fitness.
-
-When reciprocity is disabled, an individual's act equals its C allele, fixed at birth
-and unchanged until death. When reciprocity is enabled, each round's act starts from
-C and is overridden only by active M, I, or J alleles.
+Per round, fitness is the game payoff minus information cost, w = max(0, payoff − cost),
+with payoff from Table 1. Within each time step the order is fixed: compute fitness; if
+shuffling is on, redraw pairs within each group; if partner choice is on, rematch
+choosers; replace deaths with fitness-weighted offspring; then, if reciprocity is on,
+set each survivor's next act toward its current partner. The next time step begins
+again with fitness.
 
 ## Independent variables and mechanisms
 
