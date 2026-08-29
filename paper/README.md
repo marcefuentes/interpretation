@@ -21,6 +21,7 @@ Internal planning (outline, structured abstract, fallback venues):
 | [figures.md](figures.md) | Figure manifest (graphgen commands) |
 | [references.bib](references.bib) | Bibliography |
 | [citing.md](citing.md) | Citation convention |
+| [manuscript_review_agent.md](manuscript_review_agent.md) | Copy-out template for external manuscript-only review (not used in-repo) |
 
 ## Build review PDF (current venue: Am Nat)
 

@@ -176,6 +176,21 @@ The 7 base mechanisms are run for all three dilemma folders (0, 1, 2) under both
 
 - Do not use backticks in Markdown documentation.
 
+### External manuscript-only review
+
+[paper/manuscript_review_agent.md](../paper/manuscript_review_agent.md) is a **copy-out
+template** for a folder **outside this repo** (manuscript bundle + figures + that
+file only). There the agent produces a **review list** — critiques and questions,
+no edits, no code, no data.
+
+**In this repo, do not follow that file by default.** Manuscript work here uses this
+harness, TRPS, journal/, and data as needed; edit paper/ when the user asks. Apply
+manuscript_review_agent.md only if the user explicitly requests an isolated,
+external-style review pass (still without treating it as permission to skip harness
+for in-repo fixes afterward).
+
+The author triages the external review list back in this repo.
+
 ### Manuscript prose style
 
 Prefer **I/my** over **we/our** unless a target journal forbids it (American Naturalist does not; avoid only self-identifying citations under blind review).
