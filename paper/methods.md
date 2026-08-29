@@ -114,7 +114,9 @@ includes reciprocity.
 
 ## Outcome measures
 
-Cooperation level is the frequency of cooperative acts. Fitness is mean payoff net of
+I report the frequency of cooperators: the share of individuals who behave
+cooperatively in a given round. This is not the frequency of C1 — a C0M1 reciprocator
+counts when it copies a partner's cooperation. Fitness is mean payoff net of
 information cost. Genotype composition is read from per-genotype frequencies
 aggregated to the alleles and composites defined above.
 

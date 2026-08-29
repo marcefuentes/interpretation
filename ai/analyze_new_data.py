@@ -24,7 +24,7 @@ B = 0.4
 # ── helpers ──────────────────────────────────────────────────────────────────
 
 def coop(row):
-    """Total cooperation = C1* allele frequency = qBSeen from file (faster)."""
+    """Population frequency of cooperators (qBSeen export column)."""
     return float(row["qBSeen"])
 
 

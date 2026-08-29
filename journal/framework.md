@@ -64,9 +64,12 @@ burden are different questions — the paper's central message.
 Three outcomes carry the analysis. Each is measured per cell of the
 independent-variable grid.
 
-### 1. Level of cooperation
+### 1. Frequency of cooperators
 
-The frequency of cooperative acts, qBSeen. This is the primary readout everywhere:
+The share of individuals who behave cooperatively in a given round — not C1 allele
+frequency. A C0M1 reciprocator can cooperate by mimicking its partner and therefore
+counts without carrying C1. In exports this readout is qBSeen; in the manuscript and
+figures it is the frequency of cooperators. This is the primary readout everywhere:
 where each mechanism sustains cooperation, and where it collapses as c (or Cost)
 rises. The prisoners and snowdrift calibration sweeps exist to attribute a given
 collapse to a specific payoff gap (temptation, risk, or the cooperation advantage
