@@ -175,8 +175,12 @@ Table S1 reports which payoff gap limits each mechanism family.
 ### Temporal companions
 
 Each main sweep has a single-replicate companion over the same parameter grid,
-logged at nine evenly spaced snapshots (t = 1, 2^17, …, 2^20 rounds) to check
-temporal stability of the reported equilibria.
+logged at nine evenly spaced snapshots (t = 1, 2^17, …, 2^20 rounds). These
+trajectories check that reported equilibria are stable once established rather than
+late erosions, and under matched costs in two populations they distinguish
+early-locking role assignment and within-run metastability from slow drift. Which
+population becomes cooperator under parameter symmetry is a 30-run question; a
+single companion shows only one realized split.
 
 ## Replicates and variation
 
