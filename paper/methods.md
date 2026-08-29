@@ -145,12 +145,16 @@ T > R > P > S; the snowdrift sweep fixes T = 0.90 and P = 0.10 and varies R and 
 over the same grid, keeping the 172 cells that satisfy T > R > S > P. Table S1
 reports which payoff gap limits each mechanism family.
 
-Selected cells are re-run with a single replicate and sampled at nine time points from
-2^17 to 10⁶ rounds to check temporal stability of the reported equilibria.
+Each main sweep has a single-replicate companion over the same parameter grid,
+logged at nine evenly spaced snapshots (t = 1, 2^17, …, 2^20 rounds) to check
+temporal stability of the reported equilibria.
 
 ## Replicates and noise floor
 
-Reported values are means over 30 independent runs, each with its standard
-deviation. The practical noise floor is cooperation gaps below
-approximately 0.01–0.02 and fitness gaps below approximately 0.002; standard
-deviation peaks at bistable transitions (visible as the ±1 SD bands in Fig. 5).
+Reported values are means over 30 independent runs. Standard deviations are
+computed from the same replicates but plotted only in Fig. 5, where run-to-run
+spread is largest; elsewhere they are typically too small to read on the figure
+scales (median cooperation SD ≈ 0.01–0.04; fitness SD ≈ 0.001–0.01). The
+practical noise floor is cooperation gaps below approximately 0.01–0.02 and
+fitness gaps below approximately 0.002; spread peaks at bistable transitions
+(Fig. 5).

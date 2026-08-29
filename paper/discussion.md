@@ -98,11 +98,11 @@ pushed into a more cooperative but less fit state.
 
 The payoff-plane calibration analyses fix payoffs that slide with cooperation cost in
 the main analyses, so the overlays identify which payoff variable governs a mechanism,
-not absolute thresholds. Single-run snapshots from 2^17 rounds onward confirm that
-established role splits and collapsed states are already in place at the first recorded
-time step; they are too coarse to resolve the order in which those states first appear
-or to rule out low-amplitude cycling within a snapshot interval. At the edge of the
-near-zero-i₀ hitchhiking regime the across-run standard deviation reaches 0.25, so the
+not absolute thresholds. Single-run trajectories (nine snapshots from t = 1 to
+2^20) show that established role splits and collapsed states, once present, change
+little across the logged interval; snapshot spacing is too coarse to resolve when
+they first appear or to rule out low-amplitude cycling within an interval. At the edge
+of the near-zero-i₀ hitchhiking regime the across-run standard deviation reaches 0.25, so the
 mean over runs describes no single run; means in that narrow band should be read as
 basin-occupancy fractions, not equilibrium levels. Information cost is a per-family
 metabolic tax, not a process model of memory, perception, or error
