@@ -116,15 +116,8 @@ includes reciprocity.
 
 I report the frequency of cooperators: the share of individuals who behave
 cooperatively in a given round. This is not the frequency of C1 — a C0M1 reciprocator
-counts when it copies a partner's cooperation. Fitness is mean payoff net of
-information cost. Genotype composition is read from per-genotype frequencies
-aggregated to the alleles and composites defined above.
-
-Between-population asymmetry is the gap in cooperation and the gap in fitness between
-the two coevolving populations. These are outcome variables, distinct from parameter
-symmetry or asymmetry in c₀, c₁, i₀, i₁, and payoffs. The two faces need not point at
-the same population: under partner choice in the prisoner's dilemma the more
-cooperative side is the less fit one.
+counts when it copies a partner's cooperation. Fitness is mean payoff minus
+information cost.
 
 ## Simulation designs
 
