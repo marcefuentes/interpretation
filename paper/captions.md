@@ -46,13 +46,13 @@ Top row: cooperation (qBSeen). Bottom row: fitness (wmean). Each column fixes i�
 
 ## Supplement figures
 
-### <strong>Fig. S1.</strong> Mechanism hierarchy at equal cooperation cost (single population).
+### <strong>Fig. S1.</strong> Cooperation-cost ceilings by mechanism (single population).
 
 ![figS1](/home/marcelino/figures/interpretation/figS1.png)
 
 <strong>Fig. S1.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators. The figure shows one population (dark green). (<strong>a, e</strong>) When no cooperation mechanisms are allowed. (<strong>b, f</strong>) When direct reciprocity is the only cooperation mechanism allowed. (<strong>c, g</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>d, h</strong>) When partner choice and indirect reciprocity are both allowed. (<strong>a–d</strong>) Prisoner's dilemma. (<strong>e–h</strong>) Snowdrift. The population has the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost (0.001).
 
-No-enforcement control, direct reciprocity, partner choice, and the combined reputation-rich mechanism raise the cooperation-cost ceiling in that order (a–d). Under snowdrift (e–h) the elevated sucker payoff already favours cooperation without enforcement, so the hierarchy softens. Negligible information cost (0.001) matches the two-population figures below; only the mechanism column varies. Short-memory shuffle variants are in Fig. S2.
+No-enforcement control, direct reciprocity, partner choice, and the combined reputation-rich mechanism raise the cooperation-cost ceiling in that order (a–d). Under snowdrift (e–h) the elevated sucker payoff already favours cooperation without enforcement, so the ceiling ordering flattens. Negligible information cost (0.001) matches the two-population figures below; only the mechanism column varies. Short-memory shuffle variants are in Fig. S2.
 
 ### <strong>Fig. S2.</strong> Short-memory comparison of reciprocity branches.
 
@@ -60,7 +60,7 @@ No-enforcement control, direct reciprocity, partner choice, and the combined rep
 
 <strong>Fig. S2.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators. The figure shows one population (dark green). (<strong>a, e</strong>) When direct reciprocity is the only cooperation mechanism allowed. (<strong>b, f</strong>) When partner choice and direct reciprocity are both allowed. (<strong>c, g</strong>) When short-memory indirect reciprocity is the only cooperation mechanism allowed. (<strong>d, h</strong>) When partner choice and indirect reciprocity are both allowed. (<strong>a–d</strong>) Prisoner's dilemma. (<strong>e–h</strong>) Snowdrift. The population has the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost (0.001).
 
-Shuffle-enabled short-memory variants of the mechanisms in Fig. S1. The direct-reciprocity collapse ordering can shift relative to the baseline hierarchy while the partner-choice versus combined contrast remains.
+Shuffle-enabled short-memory variants of the mechanisms in Fig. S1. The direct-reciprocity collapse ordering can shift relative to Fig. S1 while the partner-choice versus combined contrast remains.
 
 ### <strong>Fig. S3.</strong> No-enforcement control for Fig. 2 (parameter-asymmetric two populations).
 

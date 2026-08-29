@@ -1,6 +1,6 @@
 # Results
 
-## 1. Mechanism hierarchy and cost thresholds
+## 1. Mechanism cost thresholds
 
 At equal cooperation cost in a single population, each enforcement architecture
 sustains cooperation up to a characteristic cost and then collapses (Fig. S1). The
@@ -8,7 +8,7 @@ no-enforcement control (Fig. S1a) stays near the floor across the prisoner's-dil
 range; direct reciprocity (Fig. S1b), partner choice (Fig. S1c), and the combined
 reputation-rich mechanism (Fig. S1d) raise that ceiling in that order. The same
 columns under snowdrift (Fig. S1e–h) sit higher: the elevated sucker payoff
-already favours cooperation without enforcement, so the hierarchy softens and the
+already favours cooperation without enforcement, so the ceiling ordering flattens and the
 c-collapse matters less than in the PD.
 
 A single cooperation-cost axis cannot say *which* payoff gap drives a collapse,

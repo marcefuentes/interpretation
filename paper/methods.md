@@ -23,7 +23,7 @@ whole population in proportion to fitness; the offspring inherits the parent's
 genotype, subject to mutation, fills the vacant slot, and takes the dead individual's
 partner. Recruitment is the only route between groups, and an offspring need not
 share its parent's group. Mutation rate is 0.01 per locus per reproduction event.
-Main runs last 2^20 rounds.
+Runs last 2^20 rounds.
 
 Each individual carries six loci: a cooperation locus C and five mechanism loci
 that control conditional behavior — partner choice on recent (P) or lifetime (Q)
@@ -31,7 +31,7 @@ cooperation, and reciprocity that copies a partner's recent act directly (M),
 indirectly from a third party (I), or from a lifetime reputation (J). Each locus is
 binary — C1 helps its partner, C0 defects; M1 copies its partner, M0 does not; and so
 on. An individual behaves according to decision precedence Q1 > P1, and J1 > I1 > M1
-when more than one mechanism allele is carried.
+when it carries more than one mechanism allele.
 
 Under partner choice, assortment is a bilateral swap: two active choosers (C1P1)
 mutually rematch, each trading a non-cooperative partner for the other chooser; the
@@ -106,8 +106,11 @@ conditional behaviors run); direct reciprocity (M); partner choice (P); and the
 combined and reputation-rich families (MP, MPQ, IMP, IJMPQ). Indirect reciprocity with
 recent (IM) or lifetime (IJM) reputation is included only when partners are
 shuffled. Main-text results use groups of 128 without shuffling; shuffled partners and
-groups of 4 are in Figs. S2 and S6. Main-text figures feature no enforcement, M, P,
-and IJMPQ as the hierarchy and the reciprocity-bearing combined case.
+groups of 4 are in Figs. S2 and S6. Fig. S1 compares no enforcement, M, P, and IJMPQ
+at equal cooperation cost; each sustains cooperation to a higher cost before collapse,
+in that order. Main-text figures use that four-mechanism set: no enforcement as a
+control, M and P for single-family contrasts, and IJMPQ as the combined case that
+includes reciprocity.
 
 ## Outcome measures
 
@@ -127,7 +130,8 @@ I report six main designs and two auxiliary payoff-plane calibrations.
 
 Equal cooperation cost (c₀ = c₁) in a single population and in two coevolving
 populations, across the control, prisoner's dilemma, and snowdrift, yields the
-baseline mechanism hierarchy (Fig. S1) and the stochastic two-population split
+baseline comparison of cooperation-cost ceilings by mechanism (Fig. S1) and the
+stochastic two-population split
 (Fig. 1). Unequal cooperation cost in two coevolving populations, with c₀ < c₁ over
 210 cost pairs, yields the deterministic role split (Fig. 2; full grid Fig. S4;
 no-enforcement control Fig. S3). Jointly varying information cost and cooperation

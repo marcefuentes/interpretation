@@ -9,7 +9,7 @@ are regression-checked by `ai/verify_claims.py`.
 
 | Item | Role | Main-text anchor |
 | ---- | ---- | ---------------- |
-| Fig. S1 | Mechanism hierarchy at equal cooperation cost | Results §1 |
+| Fig. S1 | Cooperation-cost ceilings by mechanism at equal c | Results §1 |
 | Fig. S2 | Short-memory / shuffle reciprocity branches | Fig. S1 |
 | Fig. S3 | No-enforcement control under cooperation-cost asymmetry | Fig. 2 |
 | Fig. S4 | Full c₀ × c₁ cooperation-cost grid | Fig. 2 |
@@ -47,7 +47,7 @@ Journal sources: [synthesis](../journal/synthesis.md),
 
 ## Cross-references from the main text
 
-**Fig. S1 hierarchy.** Shuffle short-memory variants that can shift the
+**Fig. S1 cost thresholds.** Shuffle short-memory variants that can shift the
 direct-reciprocity collapse ordering: Fig. S2.
 
 **Figs. 1–2 role split.** No-enforcement asymmetric control: Fig. S3. Deterministic

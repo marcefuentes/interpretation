@@ -19,7 +19,7 @@ Locked framing and status. Structure: [outline.md](outline.md). Figure manifest:
 ## Narrative arc
 
 1. Enforcement mechanisms; models treat machinery as free.
-2. Mechanism hierarchy and two-population role split (cooperation-cost asymmetry).
+2. Mechanism cost thresholds and two-population role split (cooperation-cost asymmetry).
 3. Costly machinery and decoupling; symmetric design cannot separate payer from burden.
 4. **Headline:** per-population information cost; cross-population burden by mechanism.
 5. Budget non-convexity; shedding as destructive under asymmetry.

@@ -68,7 +68,7 @@ snowdrift.
 ## Section-to-journal map
 
 Results are ordered to build the central claim rather than to tour the sweep axes:
-the baseline establishes the mechanism hierarchy and the role split, the symmetric
+the baseline establishes cooperation-cost ceilings by mechanism and the role split, the symmetric
 information-cost branch establishes decoupling *and* its methodological limit, and the
 per-population sweep delivers the relational result the rest supports.
 
@@ -76,7 +76,7 @@ per-population sweep delivers the relational result the rest supports.
 | ------------- | ---------------- | --------- |
 | Introduction | framework.md; references.bib | — |
 | Methods: model, payoffs, information cost, grid | parameterization.md, framework.md | — |
-| Results 1: mechanism hierarchy and cost thresholds | synthesis.md, calibration docs, baseline sweeps | S1 |
+| Results 1: mechanism cost thresholds | synthesis.md, calibration docs, baseline sweeps | S1 |
 | Results 2: the two-population role split | cooperation-cost asymmetry, reciprocity docs | 1–2 |
 | Results 3: costly machinery, decoupling, and why symmetry hides the question | symmetric information-cost sweeps | 3, S7 |
 | Results 4 (headline): information cost is relational | per-population i0/i1, both costs asymmetric | 4 |

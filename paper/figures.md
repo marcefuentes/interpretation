@@ -41,7 +41,7 @@ the journal calibration analyses.
 
 Status: revised 2026-07 — graphgen ids are fig1–fig5 (main) and figS1–S11
 (supplement), matching manuscript labels; calibration panels cal1–cal2 are excluded.
-The single-population mechanism hierarchy was demoted to **figS1**. Relational
+The single-population cooperation-cost ceiling comparison was demoted to **figS1**. Relational
 reframe: Fig. 4 is the fused 2×3 (own/partner strips + iso-budget); Fig. 5 tracks the
 near-zero-i₀ inversion regime; decoupling is Fig. 3. Main text is five line figures.
 
@@ -54,7 +54,7 @@ near-zero-i₀ inversion regime; decoupling is Fig. 3. Main text is five line fi
 | fig3 | Line (PLOT) | symmetric_c_i_lines pop_1, P + M at c = 0 | Machinery vs cooperation decoupling |
 | fig4 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | 2×3: own/partner strips + iso-budget |
 | fig5 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ | Wedge family; cooperation + fitness rows with ±1 SD bands |
-| figS1 | Line (PLOT) | symmetric_c pop_1, _/P/M/IJMPQ | Mechanism hierarchy (demoted) |
+| figS1 | Line (PLOT) | symmetric_c pop_1, _/P/M/IJMPQ | Cooperation-cost ceilings by mechanism (demoted) |
 | figS2 | Line | symmetric_c pop_1, shuffle | Short-memory robustness |
 | figS3 | Heatmap | asymmetric_c0_c1 pop_2, _ | No enforcement; contrast for fig2 |
 | figS4 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Full c0 × c1 grid behind Fig. 2 |
@@ -69,7 +69,7 @@ near-zero-i₀ inversion regime; decoupling is Fig. 3. Main text is five line fi
 
 ### Main-text set, locked 2026-07
 
-Five main line figures. Hierarchy demoted to Fig. S1. Decoupling (Fig. 3) stays as
+Five main line figures. The cost-threshold comparison demoted to Fig. S1. Decoupling (Fig. 3) stays as
 setup for the relational claim (Figs. 4–5).
 
 | Fig | Content | Renderer | Was |
@@ -204,7 +204,7 @@ Robustness panels from the primary sweeps only. No-enforcement control for Fig. 
 
 | Supp fig | Message | Figure id | Command | Output |
 | -------- | ------- | --------- | ------- | ------ |
-| S1 | Mechanism hierarchy at equal cooperation cost (demoted from main text) | figS1 | `... --figure figS1 ...` | ~/figures/interpretation/figS1.png |
+| S1 | Cooperation-cost ceilings by mechanism at equal c (demoted from main text) | figS1 | `... --figure figS1 ...` | ~/figures/interpretation/figS1.png |
 | S2 | Short-memory comparison: direct-reciprocity branch shifts collapse ordering | figS2 | `... --figure figS2 ...` | ~/figures/interpretation/figS2.png |
 | S3 | No-enforcement control for Fig. 2 (asymmetric two populations) | figS3 | `... --figure figS3 ...` | ~/figures/interpretation/figS3.png |
 | S4 | Full cooperation-cost asymmetry grid, prisoner's dilemma (was Fig 3) | figS4 | `... --figure figS4 ...` | ~/figures/interpretation/figS4.png |
@@ -249,7 +249,7 @@ regenerate `paper/captions.md` with `--report`.
 
 Supplement captions:
 
-S1. No-enforcement → M → P → IJMPQ raise the ceiling in that order; snowdrift softens the hierarchy (e–h).
+S1. No-enforcement → M → P → IJMPQ raise the ceiling in that order; snowdrift flattens the ceiling ordering (e–h).
 S2. Shuffle short-memory variants of Fig. S1: M ordering can shift; P vs combined contrast remains.
 S3. No-enforcement control for Fig. 2: cheap PD population barely cooperates, so partner choice creates the deterministic split.
 S4. Full c₀ × c₁ grid behind Fig. 2 (P and IJMPQ).
