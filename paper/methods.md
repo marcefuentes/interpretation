@@ -106,11 +106,12 @@ In two-population designs the rate is per population (i₀, i₁): an individual
 own population's rate on the families it carries. Unless otherwise varied, i is held
 at a negligible 0.001.
 
-Different runs enable different sets of conditional behaviors. A P1 individual
-rematches only when partner choice is on for that run; an M1, I1, or J1
-individual copies only when reciprocity is on. Under the no-enforcement
-mechanism neither family runs. Enabling behaviors independently lets me test
-each mechanism and combinations of them.
+Different runs enable different sets of those behaviors. Mechanism M lets only
+M1 copy; IJM lets M, I, and J determine the act; P lets only P1 rematch;
+combined labels (MP, IJMPQ, and so on) enable loci from both families. Alleles
+at loci a run does not enable stay silent but remain costly. Under no
+enforcement none of those behaviors run. Enabling loci independently lets me
+test each mechanism and combinations of them.
 
 ## Timestep order
 
