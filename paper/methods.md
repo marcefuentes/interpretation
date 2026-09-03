@@ -26,38 +26,32 @@ partner. Recruitment is the only route between groups, and an offspring need not
 share its parent's group. Mutation rate is 0.01 per locus per reproduction event.
 Each run lasts 2^20 rounds.
 
-Each individual carries six binary loci: a cooperation locus C and five mechanism
-loci that control conditional behavior. Allele C1 is the default act — cooperate
-unconditionally when no mechanism overrides it; C0 defects. The mechanism loci are
-partner choice on recent cooperation (P) or lifetime cooperation rate (Q), and
-reciprocity that copies a partner's previous-round act when the partnership is
-unbroken (M), copies the current partner's previous-round act without requiring
-partnership continuity (I), or follows a lifetime reputation score (J). M1 copies,
-M0 does not; and so on for the other mechanism alleles.
+Each individual carries six binary loci: a cooperation locus C and five
+mechanism loci that control conditional behavior. Allele C1 is the default act
+— cooperate unconditionally when no mechanism overrides it; C0 defects. The
+mechanism loci are partner choice on recent cooperation (P) or lifetime
+cooperation rate (Q), and reciprocity — including tit-for-tat, third-party
+indirect reciprocity, and image scoring — that copies a partner's previous-round
+act when the partnership is unbroken (M), copies the current partner's
+previous-round act without requiring partnership continuity (I), or adopts that
+partner's lifetime reputation as its act by rounding the rate to cooperate or
+defect (J). M1 copies, M0 does not; and so on for the other mechanism alleles.
+Recent cooperation is the last act played; lifetime reputation is the running
+mean of those acts since birth. An individual behaves according to decision
+precedence Q1 > P1 within partner choice and J1 > I1 > M1 within reciprocity
+when it carries more than one mechanism allele in the same family. Partner
+choice and reciprocity are applied at separate stages of each round (below), so
+precedence across families never arises.
 
-When partner choice runs, P1 rematches if its current partner did not cooperate in
-the previous round; Q1 rematches if a candidate partner's lifetime cooperation rate
-exceeds its current partner's. When reciprocity runs, each individual starts from its
-C allele and may override: M1 copies the partner's previous-round act if they are
-still paired; I1 copies the partner's previous-round act regardless of partnership
-continuity; J1 cooperates if the partner's lifetime cooperation rate rounds to
-cooperation. Recent cooperation is a single-round indicator updated after each
-fitness calculation; lifetime reputation is the mean cooperation rate since birth,
-updated each round when Q or J is enabled.
-
-An individual behaves according to decision precedence Q1 > P1 within partner choice
-and J1 > I1 > M1 within reciprocity when it carries more than one mechanism allele
-in the same family. Partner choice and reciprocity are applied at separate stages of
-each round (below), so precedence across families never arises.
-
-Under partner choice, assortment is a bilateral swap: two active choosers (C1P1 who
-cooperated while their partner defected in the previous round) mutually rematch,
-each trading a non-cooperative partner for the other chooser; the two abandoned
-partners end up paired with each other. Active choosers within a group are shuffled
-and paired in adjacent pairs for swapping; if their number is odd, one chooser does
-not rematch that round. The partner-choice allele is phenotypically silent in
-defectors (C0P1 carries P1 but never chooses). Reciprocity is not silent in the
-same way — C0M1 still mimics once a partnership is established.
+Under partner choice, P1 rematches only if it cooperated while its current partner
+defected in the previous round; Q1 rematches when each of two individuals prefers
+the other on lifetime cooperation rate. Assortment is a bilateral swap. For P,
+active choosers within a group are shuffled and paired in adjacent pairs; if their
+number is odd, one does not rematch that round; each trades a non-cooperative
+partner for the other chooser, and the two abandoned partners end up paired with
+each other. The partner-choice allele is phenotypically silent in defectors (C0P1
+carries P1 but never chooses). Reciprocity is not silent in the same way — C0M1
+still mimics once a partnership is established.
 
 At run start every individual carries the null allele at all six loci and defects.
 Pairs are assigned within groups (and across populations in the two-population form)
@@ -111,9 +105,10 @@ In two-population designs the rate is per population (i₀, i₁): an individual
 own population's rate on the families it carries. Unless otherwise varied, i is held
 at a negligible 0.001.
 
-Mechanisms differ in which behaviors are enabled, not in which loci can mutate. Under
-the no-enforcement mechanism, partner choice and reciprocity do not run, but
-mechanism loci still mutate and still incur information cost when carried.
+Each run enables a subset of those behaviors. A P1 individual rematches only when
+partner choice is on for that run; an M1, I1, or J1 individual copies only when
+reciprocity is on. Under the no-enforcement mechanism neither family runs. Enabling
+families independently lets me test each mechanism and combinations of them.
 
 ## Timestep order
 
