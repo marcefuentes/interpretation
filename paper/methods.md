@@ -60,14 +60,15 @@ seeding of cooperative or mechanism alleles.
 
 ## Social dilemmas
 
-Cooperation cost c is what a cooperator pays to produce the good at stake in the
-dilemma. In the prisoner's dilemma that good is given to the partner; in the
-snowdrift it is shared between the pair whenever at least one player cooperates.
-Baseline fitness K = 0.5 and benefit b = 0.4 are fixed; c is swept from 0 to b.
-Table 1 gives the three payoff structures. Under the control payoff structure,
-an individual's payoff does not depend on its partner's behavior.
+Cooperation cost c is what a cooperator pays to produce the good at stake in
+the dilemma. In the prisoner's dilemma that good is given to the partner; in
+the snowdrift it is shared between the pair whenever at least one player
+cooperates. Under the control payoff structure, nothing is shared and an
+individual's payoff does not depend on its partner's behavior. Baseline fitness
+K = 0.5 and benefit b = 0.4 are fixed; c is swept from 0 to b. Table 1 gives
+the three payoff structures. 
 
-Table 1. Payoff structures for the three social dilemmas.
+Table 1. Payoff structures for the three social settings.
 
 | Game structure           | T (temptation) | R (reward)  | P (penalty) | S (sucker) | T − R (temptation gap) | P − S (risk)  | R − P (cooperation advantage)  |
 | ------------------------ | -------------- | ----------- | ----------- | ---------- | ---------------------- | ------------- | ------------------------ |
@@ -89,26 +90,27 @@ not per locus and not on machinery used:
 
 cost = i × ( (P ∨ Q) + (M ∨ I ∨ J) ).
 
-An individual therefore owes 0, 1 or 2 units of i. Carrying both partner-choice loci
-costs the same as carrying one; carrying all three reciprocity loci costs the same as
-carrying one. Direct reciprocity and partner choice each cost one unit; carrying at
-least one partner-choice family allele and at least one reciprocity family allele
-costs two units (one per family), however many loci each family enables — so contrasts
-within those matched sets isolate mechanism identity from expense. Loci that are
-behaviorally inert under a
-given mechanism are still taxed, and shedding part of a family saves nothing, so
-families disappear as blocks rather than locus by locus. The genuinely untaxed
-cooperator is the full null C1I0J0M0P0Q0; single-locus proxies such as C1P0 or C1M0
-remain taxed if a sibling locus in the same family is carried.
+An individual therefore owes 0, 1 or 2 units of i. Carrying both partner-choice
+loci costs the same as carrying one; carrying all three reciprocity loci costs
+the same as carrying one. Direct reciprocity and partner choice each cost one
+unit; carrying at least one partner-choice family allele and at least one
+reciprocity family allele costs two units (one per family), however many loci
+each family enables — so contrasts within those matched sets isolate mechanism
+identity from expense. Loci that are behaviorally inert under a given mechanism
+are still taxed, and shedding part of a family saves nothing, so families
+disappear as blocks rather than locus by locus. The genuinely untaxed
+cooperator is the full null C1I0J0M0P0Q0; single-locus proxies such as C1P0 or
+C1M0 remain taxed if a sibling locus in the same family is carried.
 
 In two-population designs the rate is per population (i₀, i₁): an individual pays its
 own population's rate on the families it carries. Unless otherwise varied, i is held
 at a negligible 0.001.
 
-Each run enables a subset of those behaviors. A P1 individual rematches only when
-partner choice is on for that run; an M1, I1, or J1 individual copies only when
-reciprocity is on. Under the no-enforcement mechanism neither family runs. Enabling
-families independently lets me test each mechanism and combinations of them.
+Different runs enable different sets of conditional behaviors. A P1 individual
+rematches only when partner choice is on for that run; an M1, I1, or J1
+individual copies only when reciprocity is on. Under the no-enforcement
+mechanism neither family runs. Enabling behaviors independently lets me test
+each mechanism and combinations of them.
 
 ## Timestep order
 
