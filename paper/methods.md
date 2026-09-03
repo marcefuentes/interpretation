@@ -115,15 +115,16 @@ test each mechanism and combinations of them.
 
 ## Timestep order
 
-Per round, an individual's act toward its current partner is the value set at the end
-of the previous round — or, for a newborn, its inherited C allele at replacement.
-Fitness is the game payoff minus information cost, w = max(0, payoff − cost), with
-payoff from Table 1 evaluated on that act and the partner's act. Within each time step
-the order is fixed: compute fitness from current acts; if shuffling is on, redraw
-pairs within each group; if partner choice is on, rematch choosers; replace deaths
-with fitness-weighted offspring (each newborn's act is reset to its inherited C
-allele); then, if reciprocity is on, set each survivor's act toward its current
-partner for the next round. The next time step begins again with fitness.
+Per round, an individual's act toward its current partner is the value set at
+the end of the previous round — or, for a newborn, its inherited C allele at
+replacement.  Fitness is the game payoff minus information cost, with payoff
+from Table 1 evaluated on that act and the partner's act. Within each time step
+the order is fixed: compute fitness from current acts; if shuffling is on,
+redraw pairs within each group; if partner choice is on, rematch choosers;
+replace deaths with fitness-weighted offspring (each newborn's act is reset to
+its inherited C allele); then, if reciprocity is on, set each survivor's act
+toward its current partner for the next round. The next time step begins again
+with fitness.
 
 When reciprocity is disabled, an individual's act equals its C allele, fixed at birth
 and unchanged until death. When reciprocity is enabled, each round's act starts from
