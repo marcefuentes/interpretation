@@ -180,20 +180,19 @@ b − c; 120 cells; Fig. S11), and crossing both asymmetries (c₀ = 0.10, c₁ 
 176-cell square with i₀ ≤ 0.30 and i₁ ≤ 0.20; Figs. 4–5) compare own-cost versus
 partner-cost effects and whether equal enforcement budgets are fungible.
 
-A single cooperation-cost axis welds temptation, risk, and the cooperation advantage
-together. Orthogonal payoff-plane sweeps in a single population break that coupling:
-the prisoner's-dilemma plane fixes T = 0.90 and S = 0.10 and varies R and P (172 cells
-with T > R > P > S); the snowdrift plane fixes T = 0.90 and P = 0.10 and varies R and
-S (172 cells with T > R > S > P). Table S1 reports which payoff gap limits each
-mechanism family.
+To attribute each mechanism's collapse along the cooperation-cost axis, I also ran
+orthogonal payoff-plane sweeps that vary payoffs independently of c. The
+prisoner's-dilemma plane fixes T = 0.90 and S = 0.10 and varies R and P (172 cells
+with T > R > P > S); the snowdrift plane fixes T = 0.90 and P = 0.10 and varies R
+and S (172 cells with T > R > S > P). Attributions are in Table S1; the heatmaps
+are not published.
 
-Each main sweep has a single-replicate temporal companion over the same grid, logged
-at nine evenly spaced snapshots (t = 1, 2^17, …, 2^20 rounds). Those trajectories
-check that reported equilibria are stable once established rather than late erosions,
-and under matched costs in two populations they distinguish early-locking role
-assignment and within-run metastability from slow drift. Which population becomes
-cooperator under parameter symmetry is a 30-run question; a single companion shows
-only one realized split.
+Every run is logged at nine evenly spaced snapshots (t = 1, 2^17, …, 2^20 rounds),
+so both the 30-run series and single-replicate trajectories can show whether outcomes
+are already in place by mid-run or still shifting late. Single-replicate companions
+over the same grids show one trajectory without averaging — under matched costs in
+two populations, which population becomes the cooperator is a 30-run question, and a
+companion shows only one realized split.
 
 ## Replicates and variation
 
