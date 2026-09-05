@@ -132,19 +132,16 @@ C and is overridden only by active M, I, or J alleles.
 
 ## Independent variables and mechanisms
 
-I vary the parameters above together with which conditional behaviors are enabled.
-Mechanisms are abbreviated by the loci they enable: direct reciprocity (M); partner
-choice (P); combined and reputation-rich families (MP, MPQ, IMP, IJMPQ); and no
-enforcement, where conditional behaviors are disabled while loci still mutate.
-Combined labels name which locus families are enabled; Table S1 lists the compositions
-used in the payoff-plane attributions. Indirect reciprocity with recent (IM) or
-lifetime (IJM) reputation is included only when partners are shuffled. The control
-payoff structure (Table 1, first row) is separate from mechanism choice: under it, a
-partner's behavior does not change payoffs. Main-text results use groups of 128
-without shuffling; shuffled partners and groups of 4 are in Figs. S2 and S6. Fig. S1
-reports no enforcement, M, P, and IJMPQ at equal cooperation cost; main-text figures
-use that four-mechanism set. Fig. 3 compares P and M only; Fig. S8 pairs M with the
-control payoff structure to test whether machinery erosion requires a dilemma.
+I vary the parameters above together with which conditional behaviors are allowed
+to determine acts and rematching. Mechanisms are abbreviated by the loci that do
+so: direct reciprocity (M); partner choice (P); combined and reputation-rich
+sets (MP, MPQ, IMP, IJMPQ); and no enforcement, where those behaviors stay off
+while loci still mutate. Table S1 reports which payoff gap limits each mechanism
+family in the payoff-plane attributions. Indirect reciprocity with recent or
+lifetime reputation appears as standalone mechanisms (IM, IJM) only when partners
+are shuffled, and with partner choice in combined mechanisms (IMP, IJMPQ). The
+control payoff structure (Table 1, first row) is separate from mechanism choice:
+under it, a partner's behavior does not change payoffs.
 
 ## Outcome measures
 
@@ -155,65 +152,48 @@ information cost.
 
 ## Simulation designs
 
-Six sweeps vary cooperation cost, per-population information cost, or both; two
-further sweeps vary the payoffs themselves. Unless noted, group size is 128,
-partnerships are not shuffled, and information cost is i = 0.001. The constraint
-i + c ≤ b (and i + c₁ ≤ b where c₁ is swept) keeps total cost from exceeding the
-cooperation benefit.
+Unless noted, group size is 128 and partnerships are not shuffled. The
+constraint i + c ≤ b (and i + c₁ ≤ b where c₁ is swept) keeps total cost from
+exceeding the cooperation benefit.
 
-### Equal cooperation cost
+I first establish baselines under equal cooperation cost. In a single population,
+sweeping c from 0 to b across mechanisms and payoff structures shows how high each
+enforcement architecture can push cooperation before it collapses, and whether that
+ordering depends on the dilemma (Fig. S1). The same equal-cost sweep in two
+coevolving populations asks whether matched parameters produce matched outcomes, or
+whether mechanisms themselves can create cooperator and exploiter roles (Fig. 1).
 
-Equal cooperation cost (c₀ = c₁) is swept from 0 to b in one population and in two
-coevolving populations, for the control payoff structure, prisoner's dilemma, and
-snowdrift (Fig. S1; Fig. 1).
+I then break parameter symmetry along one axis at a time. Cooperation-cost
+asymmetry (c₀ < c₁ on a grid of 210 ordered pairs with c₀ ∈ [0, 0.38] and
+c₁ ∈ [0.02, 0.40]) tests whether unequal helping costs pin cooperator/exploiter
+roles (Fig. 2; full grid Fig. S4; no-enforcement control Fig. S3). Information
+cost is introduced next at equal c on a triangular grid of 231 (i, c) cells under
+i + c ≤ b (Fig. 3; full grid Fig. S7), to separate thinning of enforcement
+machinery from the payoff price of helping, including under the control payoff
+structure where partners do not enter payoffs (Fig. S8).
 
-### Cooperation-cost asymmetry
+The central designs ask who bears the burden of an information cost. Holding a
+cooperation-cost gap and sweeping information cost (c₀ = 0.10, i and c₁ joint under
+i + c₁ ≤ b; 120 cells; Fig. S9), holding equal cooperation cost and sweeping
+per-population information cost (c₀ = c₁ = 0.10, i₀ < i₁, each axis capped at
+b − c; 120 cells; Fig. S11), and crossing both asymmetries (c₀ = 0.10, c₁ = 0.20,
+176-cell square with i₀ ≤ 0.30 and i₁ ≤ 0.20; Figs. 4–5) compare own-cost versus
+partner-cost effects and whether equal enforcement budgets are fungible.
 
-Cooperation-cost asymmetry fixes c₀ < c₁ on a grid of 210 ordered pairs with
-c₀ ∈ [0, 0.38] and c₁ ∈ [0.02, 0.40] (Fig. 2; full grid Fig. S4; no-enforcement
-mechanism Fig. S3).
+A single cooperation-cost axis welds temptation, risk, and the cooperation advantage
+together. Orthogonal payoff-plane sweeps in a single population break that coupling:
+the prisoner's-dilemma plane fixes T = 0.90 and S = 0.10 and varies R and P (172 cells
+with T > R > P > S); the snowdrift plane fixes T = 0.90 and P = 0.10 and varies R and
+S (172 cells with T > R > S > P). Table S1 reports which payoff gap limits each
+mechanism family.
 
-### Information cost and cooperation cost
-
-Information cost and cooperation cost are varied jointly at equal c under i + c ≤ b
-on a triangular grid of 231 (i, c) cells (Fig. 3; full grid Fig. S7; M under the
-control payoff structure Fig. S8).
-
-### Information cost under cooperation-cost asymmetry
-
-With c₀ fixed at 0.10, information cost and c₁ are jointly swept under i + c₁ ≤ b
-(120 cells; Fig. S9).
-
-### Per-population information cost
-
-Per-population information cost is swept at fixed c₀ = c₁ = 0.10 on a triangle with
-i₀ < i₁ and each axis capped at b − c (120 cells; Fig. S11).
-
-### Crossed asymmetries
-
-Both asymmetries are crossed with c₀ = 0.10, c₁ = 0.20, and all (i₀, i₁) pairs on a
-176-cell square with i₀ ≤ 0.30 and i₁ ≤ 0.20 (Figs. 4–5).
-
-### Payoff-plane sweeps
-
-The payoff-plane sweeps hold two payoffs fixed and vary the other two, which breaks
-the coupling that cooperation cost imposes on the temptation, risk, and
-cooperation-advantage gaps at once. Each runs in a single population (30 runs per
-cell) over the mechanism families in Table S1. The prisoner's-dilemma sweep fixes
-T = 0.90 and S = 0.10 and varies R and P over an 18 × 18 grid, keeping the 172 cells
-that satisfy T > R > P > S; the snowdrift sweep fixes T = 0.90 and P = 0.10 and
-varies R and S over the same grid, keeping the 172 cells that satisfy T > R > S > P.
-Table S1 reports which payoff gap limits each mechanism family.
-
-### Temporal companions
-
-Each main sweep has a single-replicate companion over the same parameter grid,
-logged at nine evenly spaced snapshots (t = 1, 2^17, …, 2^20 rounds). These
-trajectories check that reported equilibria are stable once established rather than
-late erosions, and under matched costs in two populations they distinguish
-early-locking role assignment and within-run metastability from slow drift. Which
-population becomes cooperator under parameter symmetry is a 30-run question; a
-single companion shows only one realized split.
+Each main sweep has a single-replicate temporal companion over the same grid, logged
+at nine evenly spaced snapshots (t = 1, 2^17, …, 2^20 rounds). Those trajectories
+check that reported equilibria are stable once established rather than late erosions,
+and under matched costs in two populations they distinguish early-locking role
+assignment and within-run metastability from slow drift. Which population becomes
+cooperator under parameter symmetry is a 30-run question; a single companion shows
+only one realized split.
 
 ## Replicates and variation
 
