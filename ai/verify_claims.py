@@ -630,29 +630,58 @@ def mc_corr_inv(m):
     return corr(dq, dw), inv
 
 
+# Full 12-block M-vs-control census (both file sets). Missing listed exports → -1.
+MC_M1_SUPPRESSION_BLOCKS = (
+    ("noshuffle", "128", 0),
+    ("noshuffle", "128", 1),
+    ("noshuffle", "128", 2),
+    ("noshuffle", "4", 0),
+    ("noshuffle", "4", 1),
+    ("noshuffle", "4", 2),
+    ("shuffle", "128", 0),
+    ("shuffle", "128", 1),
+    ("shuffle", "128", 2),
+    ("shuffle", "4", 0),
+    ("shuffle", "4", 1),
+    ("shuffle", "4", 2),
+)
+
+
+def mc_m1_suppressed_block(sh, gs, d):
+    """Count M1-below-control cells for one shuffle × groupsize × dilemma block.
+
+    Both file sets are included. Returns -1 if any required ``.con`` is missing
+    so the check fails instead of undercounting.
+    """
+    rM0 = load(mcpath("asymmetric_c1_i", sh, gs, "M", d, 0))
+    rM1 = load(mcpath("asymmetric_c1_i", sh, gs, "M", d, 1))
+    rC0 = load(mcpath("asymmetric_c1_i", sh, gs, "_", d, 0))
+    rC1 = load(mcpath("asymmetric_c1_i", sh, gs, "_", d, 1))
+    if None in (rM0, rM1, rC0, rC1):
+        return -1
+    n = 0
+    for a, c in zip(rM0, rC0):
+        if allele(a, "M1") < allele(c, "M1"):
+            n += 1
+    for a, c in zip(rM1, rC1):
+        if allele(a, "M1") < allele(c, "M1"):
+            n += 1
+    return n
+
+
 def mc_m1_suppressed_total():
     """Count cells where M1 under mechanism M is below the no-enforcement control.
 
-    Iterates noshuffle/shuffle × gs × dilemma. Condition blocks whose ``.con``
-    exports are missing (notably shuffle ``_`` controls, which were never run for
-    this study) are skipped rather than aborting the census.
+    Census over all 12 condition blocks (noshuffle/shuffle × gs 128/4 ×
+    dilemmas 0/1/2, both file sets). Returns -1 if any listed block is missing
+    so the aggregate cannot silently undercount.
     """
     total = 0
-    for sh in ("noshuffle", "shuffle"):
-        for gs in ("128", "4"):
-            for d in (0, 1, 2):
-                rM0 = load(mcpath("asymmetric_c1_i", sh, gs, "M", d, 0))
-                rM1 = load(mcpath("asymmetric_c1_i", sh, gs, "M", d, 1))
-                rC0 = load(mcpath("asymmetric_c1_i", sh, gs, "_", d, 0))
-                rC1 = load(mcpath("asymmetric_c1_i", sh, gs, "_", d, 1))
-                if None in (rM0, rM1, rC0, rC1):
-                    continue
-                for a, c in zip(rM0, rC0):
-                    if allele(a, "M1") < allele(c, "M1"):
-                        total += 1
-                for a, c in zip(rM1, rC1):
-                    if allele(a, "M1") < allele(c, "M1"):
-                        total += 1
+    for sh, gs, d in MC_M1_SUPPRESSION_BLOCKS:
+        n = mc_m1_suppressed_block(sh, gs, d)
+        if n < 0:
+            return -1
+        total += n
     return total
 
 
@@ -720,8 +749,33 @@ check("asymmetric_c1_i", "M control Pop_0 mean M1 at Cost=0.20 = 0.040",
       lambda: mc_cost_allele_mean("M", 0, 0, 0.20, "M1"), 0.040, 0.01)
 check("asymmetric_c1_i", "M PD Pop_0 mean qB at Cost=0.20 = 0.053",
       lambda: mc_cost_mean("M", 1, 0, 0.20), 0.053)
-check("asymmetric_c1_i", "M suppressed below control in 1006 cell-conditions",
-      mc_m1_suppressed_total, 1006, None)
+# Per-block M-suppression census (both file sets). Missing listed exports → -1.
+check("asymmetric_c1_i", "M suppressed noshuffle gs128 d0 = 173",
+      lambda: mc_m1_suppressed_block("noshuffle", "128", 0), 173, None)
+check("asymmetric_c1_i", "M suppressed noshuffle gs128 d1 = 109",
+      lambda: mc_m1_suppressed_block("noshuffle", "128", 1), 109, None)
+check("asymmetric_c1_i", "M suppressed noshuffle gs128 d2 = 240",
+      lambda: mc_m1_suppressed_block("noshuffle", "128", 2), 240, None)
+check("asymmetric_c1_i", "M suppressed noshuffle gs4 d0 = 175",
+      lambda: mc_m1_suppressed_block("noshuffle", "4", 0), 175, None)
+check("asymmetric_c1_i", "M suppressed noshuffle gs4 d1 = 115",
+      lambda: mc_m1_suppressed_block("noshuffle", "4", 1), 115, None)
+check("asymmetric_c1_i", "M suppressed noshuffle gs4 d2 = 240",
+      lambda: mc_m1_suppressed_block("noshuffle", "4", 2), 240, None)
+check("asymmetric_c1_i", "M suppressed shuffle gs128 d0 = 129",
+      lambda: mc_m1_suppressed_block("shuffle", "128", 0), 129, None)
+check("asymmetric_c1_i", "M suppressed shuffle gs128 d1 = 109",
+      lambda: mc_m1_suppressed_block("shuffle", "128", 1), 109, None)
+check("asymmetric_c1_i", "M suppressed shuffle gs128 d2 = 155",
+      lambda: mc_m1_suppressed_block("shuffle", "128", 2), 155, None)
+check("asymmetric_c1_i", "M suppressed shuffle gs4 d0 = 164",
+      lambda: mc_m1_suppressed_block("shuffle", "4", 0), 164, None)
+check("asymmetric_c1_i", "M suppressed shuffle gs4 d1 = 155",
+      lambda: mc_m1_suppressed_block("shuffle", "4", 1), 155, None)
+check("asymmetric_c1_i", "M suppressed shuffle gs4 d2 = 237",
+      lambda: mc_m1_suppressed_block("shuffle", "4", 2), 237, None)
+check("asymmetric_c1_i", "M suppressed below control in 2001 cell-conditions",
+      mc_m1_suppressed_total, 2001, None)
 
 # Snowdrift buffers Cost on the low-cost side but not the high-cost side.
 check("asymmetric_c1_i", "P snowdrift Pop_0 mean at Cost=0.28 = 0.917",

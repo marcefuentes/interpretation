@@ -77,6 +77,7 @@ Examples:
 - Run python3 ai/verify_claims.py before committing any doc edit that changes a number; it exits non-zero on a prose/data mismatch and prints PASS/FAIL/SKIP per check.
 - When you add or change a headline number, add or update the matching check so the claim stays covered.
 - SKIP means the underlying .con is absent — generate it with graphgen to activate the check; SKIP is not a pass.
+- Counts aggregated over condition blocks must not silently skip missing exports and then re-lock the total. Either list the blocks the census requires and fail when one is absent, or register a separate check per block.
 
 ## Architecture
 
