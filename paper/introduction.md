@@ -4,7 +4,7 @@
 
 Cooperation between unrelated individuals is costly to the actor and beneficial to a
 partner, so it is vulnerable to defectors who take the benefit without paying the cost
-[@Hamilton1964; @WestGriffinGardner2007]. Several mechanisms can stabilise it when
+[@Hamilton1964; @WestGriffinGardner2007]. Several mechanisms can stabilize it when
 encounters are structured: direct reciprocity (help those who helped you)
 [@Trivers1971; @AxelrodHamilton1981; @Axelrod1984], partner choice (leave defectors
 and re-pair with cooperators) [@BullRice1991; @NoeHammerstein1994; @Aktipis2004], and
@@ -33,7 +33,7 @@ partners, cooperators can assort without remembering a long personal history
 [@BullRice1991; @NoeHammerstein1994; @NoeHammerstein1995]. Walk-away and choosiness
 models make the same point in evolutionary games [@Aktipis2004;
 @McNamaraBartaHouston2004]. In interspecific mutualisms, partner choice and sanctions
-are among the main proposed stabilisers [@Bronstein1994; @Sachs2004;
+are among the main proposed stabilizers [@Bronstein1994; @Sachs2004;
 @Kiers2003; @BsharyGrutter2006].
 
 **One population versus two.** Most formal theory treats a single well-mixed
@@ -69,8 +69,7 @@ claims about information costs can be separated from claims about payoff structu
 
 ## Gap and approach
 
-Three distinctions organise the present study (see
-).
+Three distinctions organize the present study.
 
 First, **cooperation cost** versus **information cost**. Cooperation cost is the
 payoff price of helping — temptation and risk in the game. Information cost, as

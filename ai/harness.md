@@ -196,12 +196,16 @@ The author triages the external review list back in this repo.
 
 Prefer **I/my** over **we/our** unless a target journal forbids it (American Naturalist does not; avoid only self-identifying citations under blind review).
 
+**American spelling** for `paper/` and Am Nat submission files (*favor*, *behavior*, *organize*, *stabilize*, *artifact*, *color*). Do not copy British spelling from other venues (e.g. Sci Rep). Leave published titles in `references.bib` in their original spelling.
+
 Prose defaults for `paper/` (and aligned planning abstracts):
 
+- **Edit conservatively.** Do not restyle prose that already works. Polish only weak spots; leave strong passages alone even when a synonym exists.
 - Short sentences over long compounds.
 - Active voice over passive when the actor is clear.
-- Succinctness: few adjectives and adverbs. Cut intensifiers (*very*, *much*, *highly*, *substantially*, *essentially*, *clearly*, *simply*, and similar) when the claim is unchanged without them.
-- Keep frequency or magnitude words (*often*, *mainly*, *nearly*, *slightly*) only when they carry a real empirical hedge; otherwise delete or replace with a sharper verb.
+- **Finding before explanation.** State the result, then the mechanism or interpretation. Prefer *I attribute X to Y* / *populations cooperate less when…* to meta-writing about the prose (*turns vague statements into*, *reframes*, *foreshadows*).
+- Succinctness: few adjectives and adverbs. Cut empty intensifiers (*very*, *highly*, *substantially*, *essentially*, *clearly*, *simply*, *crucially*, and similar) when the claim is unchanged without them.
+- Keep frequency or magnitude words (*often*, *mainly*, *nearly*, *slightly*, *much*) only when they carry a real empirical hedge; otherwise delete or replace with a sharper verb. *Cooperate much less* stays when the drop is large; *much* as padding does not.
 - **Verb over noun.** Put meaning on the verb, not on a nominalization. Prefer *I visited* to *I paid a visit*; *I hoped* to *I was hopeful*; *populations split* to *a role split emerges*; *populations cooperate less* to *cooperation declines*. Avoid weak verb + noun packages (*produce an assignment*, *create a burden*, *remain the assigner*) when a stronger verb can carry the claim.
 - **Active subjects.** Prefer an agent that can act. In this study, prefer **organisms** first, then **populations**. Prefer *populations that pay a higher information cost lose choosers* to *information-cost asymmetry modulates outcomes*. Use abstract nouns (*asymmetry*, *burden*, *outcome*, *mechanism*) as subjects only when no organism or population can honestly own the verb.
 - **Literal over metaphor.** Prefer the concrete process or quantity over figurative wording throughout `paper/`. Prefer *pays* / *incurs* to *is charged*; *restrict* to *bound*; *frequencies stabilize* to *runs settle*; *probability proportional to fitness* to *roulette wheel*; *do not affect behavior* to *silent*; *loss of mechanism alleles* to *thinning of machinery*; *diverge to different outcomes* to *split between attractors*. Keep established terms of art when they carry the paper's message (cost vs burden below); otherwise replace metaphors with what actually happens.

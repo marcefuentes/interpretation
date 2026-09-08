@@ -6,7 +6,7 @@ Manuscript prose uses **pandoc-citeproc** keys that resolve against
 ## In Markdown
 
 ```markdown
-Direct reciprocity can stabilise cooperation [@Trivers1971; @AxelrodHamilton1981].
+Direct reciprocity can stabilize cooperation [@Trivers1971; @AxelrodHamilton1981].
 Partner choice is reviewed by @NoeHammerstein1994.
 ```
 

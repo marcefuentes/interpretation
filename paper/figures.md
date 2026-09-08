@@ -141,7 +141,7 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 
 Under the relational framing the headline claims are dose-response comparisons, so
 they are rendered as line charts rather than heatmaps. Reading a *flat* response
-against a *cliff* off a colour field is a judgment call; on a shared y-axis it is
+against a *cliff* off a color field is a judgment call; on a shared y-axis it is
 immediate, the magnitudes are recoverable, and both populations fit in one panel so a
 role inversion reads as one curve crossing another.
 

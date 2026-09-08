@@ -8,7 +8,7 @@ control (Fig. S1a) stays near zero across the prisoner's-dilemma range; direct
 reciprocity (Fig. S1b), partner choice (Fig. S1c), and the combined mechanism that
 includes lifetime reputation (Fig. S1d) raise that cost threshold in that order. The
 same columns under snowdrift (Fig. S1e–h) sit higher: the elevated sucker payoff
-already favours cooperation without enforcement, so the threshold ordering flattens
+already favors cooperation without enforcement, so the threshold ordering flattens
 and the fall in cooperation as c rises matters less than in the PD.
 
 A single cooperation-cost axis cannot say *which* payoff gap drives the fall in
@@ -24,11 +24,11 @@ R − P → 0. Combined mechanisms and those that include lifetime reputation (M
 IMP, IJMPQ) are reward-limited and unaffected by the defection baseline, which is why
 they hold cooperation to the highest costs (Fig. S1d).
 
-These attributions recover a mechanistic distinction that foreshadows the relational
-result below. A residual chooser minority sorts the whole population, so even
-unconditional cooperators are protected; a residual reciprocator minority protects
-only itself. Partner choice
-assorts at the population level; reciprocity remembers at the individual level.
+These attributions recover a mechanistic distinction that matters again when
+information cost is relational. A residual chooser minority sorts the whole
+population, so even unconditional cooperators are protected; a residual reciprocator
+minority protects only itself. Partner choice assorts at the population level;
+reciprocity remembers at the individual level.
 Short-memory and shuffle variants shift the direct-reciprocity ordering
 relative to Fig. S1 but leave the partner-choice versus combined contrast intact
 (Fig. S2).
@@ -96,7 +96,7 @@ persists after those alleles are lost only when the dilemma is present, so the
 information cost drives the allele loss and the dilemma decides whether losing the
 alleles reduces cooperation (Fig. S8).
 
-**Figure 3: Information cost separates cooperation from enforcement alleles when cooperation is free.** Frequency of the active enforcement allele (chooser P1 in **A**; tit-for-tat M1 in **C**) and overall frequency of cooperators (**B, D**) in a single population. **A, B**, Short-memory partner choice alone. **C, D**, Direct reciprocity alone. The cooperation cost is fixed at zero while the information cost is swept from 0 to the partner benefit ($b = 0.4$). Rising information cost selects against active enforcement alleles, but cooperation remains high because populations lose the costly alleles in favour of unconditional cooperation that pays no information cost.
+**Figure 3: Information cost separates cooperation from enforcement alleles when cooperation is free.** Frequency of the active enforcement allele (chooser P1 in **A**; tit-for-tat M1 in **C**) and overall frequency of cooperators (**B, D**) in a single population. **A, B**, Short-memory partner choice alone. **C, D**, Direct reciprocity alone. The cooperation cost is fixed at zero while the information cost is swept from 0 to the partner benefit ($b = 0.4$). Rising information cost selects against active enforcement alleles, but cooperation remains high because populations lose the costly alleles in favor of unconditional cooperation that pays no information cost.
 
 That refuge disappears once cooperation cost is held above zero. Allele loss and
 behavioral loss then move together: losing P1 or M1 no longer leaves a stable
@@ -110,7 +110,7 @@ and carriers that never choose (C0P1) accumulate along the same paths.
 A symmetric information-cost design cannot separate the cost a population pays from
 the burden that cost places on its partner. Losing mechanism alleles while keeping
 cooperation looks like a local solution — pay no information cost, keep cooperating —
-but that reading is an artefact of applying the same information cost to both sides at
+but that reading is an artifact of applying the same information cost to both sides at
 once. Holding one population's information cost at zero and varying the other's
 breaks the confound.
 
@@ -121,7 +121,7 @@ per-population information costs. The first two columns of Fig. 4 hold one
 population's information cost at zero and sweep the other's, so I can see which
 population's cost places the larger burden on its partner.
 
-Under partner choice the two strip columns tell opposite stories (Fig. 4a,b). When the
+Under partner choice the two strip columns show opposite patterns (Fig. 4a,b). When the
 low-cooperation-cost population pays i = 0.20 it barely changes (0.602 → 0.585)
 and its partner even rises (0.189 → 0.268). When the high-cooperation-cost population
 pays the same information cost, both fall to low cooperation (0.069 and 0.032). Under
@@ -157,7 +157,7 @@ symmetry (Fig. 3) is what places a burden on its partner under asymmetry: losing
 mechanism alleles relieves the payer and removes the assortment or conditional help
 the partner needed.
 
-**Figure 4: The relational burden of information cost.** Frequency of cooperators in two coevolving populations under the prisoner's dilemma. One population (orange) has a lower cooperation cost ($c_0 = 0.1$) than the other (red; $c_1 = 0.2$). **A–C**, Short-memory partner choice alone. **D–F**, Combined partner choice and indirect reciprocity. **A, D**, Information cost is applied only to the low-cooperation-cost population ($i_1 = 0$; $i_0$ swept). **B, E**, Information cost is applied only to the high-cooperation-cost population ($i_0 = 0$; $i_1$ swept). **C, F**, The total information cost is fixed at $i_0 + i_1 = 0.2$ while the distribution between populations varies. Under partner choice (**A, B**), populations are robust to their own information costs but cooperate much less under their partner's. Under the combined reputation mechanism (**D, E**), this relationship reverses: raising information cost on the low-cost population severely harms its high-cost partner. Furthermore, reciprocity-bearing mechanisms suffer an interior penalty where splitting the total harms the pair more than concentrating it on one side (**F**).
+**Figure 4: The relational burden of information cost.** Frequency of cooperators in two coevolving populations under the prisoner's dilemma. One population (orange) has a lower cooperation cost ($c_0 = 0.1$) than the other (red; $c_1 = 0.2$). **A–C**, Short-memory partner choice alone. **D–F**, Combined partner choice and indirect reciprocity. **A, D**, Information cost is applied only to the low-cooperation-cost population ($i_1 = 0$; $i_0$ swept). **B, E**, Information cost is applied only to the high-cooperation-cost population ($i_0 = 0$; $i_1$ swept). **C, F**, The total information cost is fixed at $i_0 + i_1 = 0.2$ while the distribution between populations varies. Under partner choice (**A, B**), populations are robust to their own information costs but cooperate much less under their partner's. Under the combined reputation mechanism (**D, E**), this relationship reverses: raising information cost on the low-cost population reduces cooperation more in its high-cost partner than in the payer. Reciprocity-bearing mechanisms also suffer an interior penalty where splitting the total harms the pair more than concentrating it on one side (**F**).
 
 ## 5. Non-additivity of shared information cost and boundary conditions
 
@@ -198,7 +198,7 @@ bands — wide below the threshold (SD ≈ 0.25; runs diverge to different outco
 narrow above it (SD ≈ 0.009).
 In the paired fitness panels (Fig. 5e–h), the same cooperation-fitness mismatch holds
 in every column: the population with higher cooperation is the one with lower fitness,
-even when the colour ordering switches as i₀ rises.
+even when the color ordering switches as i₀ rises.
 In this threshold regime, increasing population 1's own information cost can confer
 a fitness benefit on population 0 even while population 1 becomes slightly less fit,
 showing that one population can benefit from a partner that pays more for enforcement
