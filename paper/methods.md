@@ -9,49 +9,70 @@ populations, pairing is between populations.
 Individuals live in fixed groups of 4 or 128. Groups bound local interaction in two
 ways. When partner choice is on, a chooser can rematch only within its group. When
 shuffling is on, pairs are redrawn within the group each round; without it,
-partnerships persist until death or a partner-choice swap. In a single population a
-group holds that many individuals from the population. In the two-population case it
-holds that many from each population, so each individual faces that many potential
-partners from the other side.
+partnerships persist until death or a partner-choice swap. A group in a single
+population holds 4 or 128 members of that population. In the two-population case it
+holds the same number from each side, so every individual faces 4 or 128 potential
+partners.
 
-Each population holds 4096 individuals — a size divisible by both group sizes.
-Adults never change group. Every round each individual dies with probability 2^−7.
-That mortality is low enough that lasting partners meet many times (about 64 rounds on
-average when individuals do not change partners), yet high enough that runs reach
-equilibrium in a tractable time. Dead adults are replaced by offspring drawn from the
-whole population in proportion to fitness via roulette-wheel selection on cumulative
-round fitness. Reproduction is asexual and haploid: the offspring clones one parent's
-genotype, subject to mutation, fills the vacant slot, and takes the dead individual's
-partner. Recruitment is the only route between groups, and an offspring need not
-share its parent's group. Mutation rate is 0.01 per locus per reproduction event.
-Each run lasts 2^20 rounds.
+Each population holds 4096 individuals — a size divisible by both group sizes, which
+splits it into 1024 small groups or 32 large ones. Adults never change group. Each
+round every adult dies with probability 2^−7: I draw the number of deaths from a
+binomial distribution, then draw that many victims uniformly among individuals born in
+an earlier round, so a newborn never dies before it has played once. That mortality is
+low enough that lasting partners meet many times (about 64 rounds on average when
+individuals do not change partners), yet high enough that runs settle well before they
+end (snapshots below).
 
-Each individual carries six binary loci: a cooperation locus C and five
-mechanism loci that control conditional behavior. Allele C1 is the default act
-— cooperate unconditionally when no mechanism overrides it; C0 defects. The
-mechanism loci are partner choice on recent cooperation (P) or lifetime
-cooperation rate (Q), and reciprocity — including tit-for-tat, third-party
-indirect reciprocity, and image scoring — that copies a partner's previous-round
-act when the partnership is unbroken (M), copies the current partner's
-previous-round act without requiring partnership continuity (I), or adopts that
-partner's lifetime reputation as its act by rounding the rate to cooperate or
-defect (J). M1 copies, M0 does not; and so on for the other mechanism alleles.
-Recent cooperation is the last act played; lifetime reputation is the running
-mean of those acts since birth. An individual behaves according to decision
-precedence Q1 > P1 within partner choice and J1 > I1 > M1 within reciprocity
-when it carries more than one mechanism allele in the same family. Partner
-choice and reciprocity are applied at separate stages of each round (below), so
-precedence across families never arises.
+Selection acts only through parentage; mortality ignores fitness. Each death is filled
+by one offspring whose parent I draw from the whole population by roulette wheel,
+weighting each candidate by
+its fitness in the current round rather than by payoff accumulated over its life.
+Reproduction is asexual and haploid: the offspring clones its parent's genotype,
+subject to mutation, fills the vacant slot, and takes the dead individual's partner.
+Recruitment is the only route between groups, and an offspring need not share its
+parent's group. Mutation rate is 0.01 per locus per reproduction event. Each run lasts
+2^20 rounds, about 8000 average lifetimes.
 
-Under partner choice, P1 rematches only if it cooperated while its current partner
-defected in the previous round; Q1 rematches when each of two individuals prefers
-the other on lifetime cooperation rate. Assortment is a bilateral swap. For P,
-active choosers within a group are shuffled and paired in adjacent pairs; if their
-number is odd, one does not rematch that round; each trades a non-cooperative
-partner for the other chooser, and the two abandoned partners end up paired with
-each other. The partner-choice allele is phenotypically silent in defectors (C0P1
-carries P1 but never chooses). Reciprocity is not silent in the same way — C0M1
-still mimics once a partnership is established.
+Each individual carries six binary loci: a cooperation locus C and five mechanism
+loci that control conditional behavior. Throughout, upright capitals name loci and
+alleles (C, C1, IJMPQ) and italic lowercase names parameters (b, c, i). Allele C1
+sets the default act — cooperate unless a mechanism overrides it; C0 defects.
+
+Two loci choose partners, on recent cooperation (P) or on lifetime cooperation rate
+(Q). Three loci copy a partner's behavior. M copies the partner's previous act, but
+only while the partnership is unbroken, which makes it tit-for-tat. I copies the
+partner's previous act whether or not the pair has met before. J adopts the partner's
+lifetime reputation, rounding that rate to cooperate or defect, in the manner of image
+scoring. Whom I and J report on depends on partner turnover. While a partnership
+persists, the partner's last act was directed at the focal individual, so I reduces to
+direct reciprocity; once pairs are redrawn, that act was directed at a third party, and
+copying it becomes indirect reciprocity. Recent cooperation is the last act played;
+lifetime reputation is the running mean of those acts since birth. M1 copies, M0 does
+not; and so on for the other mechanism alleles.
+
+An individual behaves according to decision precedence Q1 > P1 within partner choice
+and J1 > I1 > M1 within reciprocity when it carries more than one mechanism allele in
+the same family. Partner choice and reciprocity are applied at separate stages of each
+round (below), so precedence across families never arises.
+
+Under partner choice, an individual becomes an active chooser when its own last act
+was to cooperate and its current partner defected. Assortment is then a bilateral
+swap: I shuffle the active choosers within a group and pair them in adjacent pairs, so
+one does not rematch that round when their number is odd. Each chooser trades a
+non-cooperative partner for the other chooser, and the two abandoned partners end up
+paired with each other.
+
+The lifetime locus Q replaces that rule rather than supplementing it. Where Q is
+enabled, a chooser is active whenever it carries P1 or Q1, and two choosers swap only
+if each ranks the other above its own current partner — on lifetime cooperation rate
+for a Q1 chooser, on the last act for a P1 chooser. A contrast between MP and MPQ
+therefore changes the partner-choice rule as well as adding a locus.
+
+Choosing is gated on behavior, not on the C allele. A defector by default that
+cooperated through reciprocity can choose, and a C1 individual that copied a defecting
+partner cannot. So under partner choice alone, where the act follows C directly, C0P1
+carries the allele and never chooses. Reciprocity has no comparable gate — C0M1 still
+mimics once a partnership is established.
 
 At run start every individual carries the null allele at all six loci and defects.
 Pairs are assigned within groups (and across populations in the two-population form)
@@ -63,10 +84,11 @@ seeding of cooperative or mechanism alleles.
 Cooperation cost c is what a cooperator pays to produce the good at stake in
 the dilemma. In the prisoner's dilemma that good is given to the partner; in
 the snowdrift it is shared between the pair whenever at least one player
-cooperates. Under the control payoff structure, nothing is shared and an
-individual's payoff does not depend on its partner's behavior. Baseline fitness
-K = 0.5 and benefit b = 0.4 are fixed; c is swept from 0 to b. Table 1 gives
-the three payoff structures. 
+cooperates. Under the control payoff structure nothing is shared, and an
+individual's payoff does not depend on its partner's behavior: producing the good
+pays b − c whatever the partner does, so cooperation dominates while c < b. Baseline
+fitness K = 0.5 and benefit b = 0.4 are fixed; c is swept from 0 to b. Table 1 gives
+the three payoff structures.
 
 Table 1. Payoff structures for the three social settings.
 
@@ -77,7 +99,8 @@ Table 1. Payoff structures for the three social settings.
 | Snowdrift                | K + b          | K + b − c/2 | K           | K + b − c  | c/2 (rises slowly)     | c − b (rises) | b − c/2 (shrinks slowly) |
 
 Note: Columns T − R, P − S, and R − P show how each gap changes as cooperation cost c
-rises.
+rises. In the control row R exceeds T and S exceeds P, so the first two gaps are
+negative and neither temptation nor risk applies.
 
 In the two-population form each population pays its own cooperation cost (c₀, c₁), with
 c₀ < c₁ whenever they are asymmetrical. The lower-cost population always has the
@@ -85,46 +108,45 @@ larger cooperation advantage (R − P).
 
 ## Information cost
 
-Information cost is charged every round on the *families* of mechanism loci carried,
-not per locus and not on machinery used:
+Information cost is charged every round on the *families* of mechanism loci an
+individual carries, not per locus and not on machinery it uses:
 
-cost = i × ( (P ∨ Q) + (M ∨ I ∨ J) ).
+cost = i × ( partner-choice family carried + reciprocity family carried ),
 
-An individual therefore owes 0, 1 or 2 units of i. Carrying both partner-choice
-loci costs the same as carrying one; carrying all three reciprocity loci costs
-the same as carrying one. Direct reciprocity and partner choice each cost one
-unit; carrying at least one partner-choice family allele and at least one
-reciprocity family allele costs two units (one per family), however many loci
-each family enables — so contrasts within those matched sets isolate mechanism
-identity from expense. Loci that are behaviorally inert under a given mechanism
-are still taxed, and shedding part of a family saves nothing, so families
-disappear as blocks rather than locus by locus. The genuinely untaxed
-cooperator is the full null C1I0J0M0P0Q0; single-locus proxies such as C1P0 or
-C1M0 remain taxed if a sibling locus in the same family is carried.
+where each term counts 1 if the individual carries any allele of that family — P1 or
+Q1 for partner choice, M1, I1 or J1 for reciprocity — and 0 otherwise.
 
-In two-population designs the rate is per population (i₀, i₁): an individual pays its
-own population's rate on the families it carries. Unless otherwise varied, i is held
-at a negligible 0.001.
+An individual therefore owes 0, 1 or 2 units of i. One family costs one unit however
+many of its loci the individual carries, so a mechanism drawn from a single family
+costs one unit and any combined mechanism costs two, whatever its locus count — which
+lets contrasts within those matched sets isolate mechanism identity from expense.
+Loci that are behaviorally inert under a given mechanism are still taxed, and shedding
+part of a family saves nothing, so families disappear as blocks rather than locus by
+locus. The genuinely untaxed cooperator is the full null C1I0J0M0P0Q0; single-locus
+proxies such as C1P0 or C1M0 remain taxed if a sibling locus in the same family is
+carried.
 
-Different runs enable different sets of those behaviors. Mechanism M lets only
-M1 copy; IJM lets M, I, and J determine the act; P lets only P1 rematch;
-combined labels (MP, IJMPQ, and so on) enable loci from both families. Alleles
-at loci a run does not enable stay silent but remain costly. Under no
-enforcement none of those behaviors run. Enabling loci independently lets me
-test each mechanism and combinations of them.
+Each population is charged its own rate (i₀, i₁), and an individual pays its own
+population's rate on the families it carries. Two designs sweep those rates apart;
+elsewhere the two populations pay alike. Unless a design varies it, i is held at
+0.001, so even a carrier of both families pays under half a percent of baseline
+fitness.
 
 ## Timestep order
 
 Per round, an individual's act toward its current partner is the value set at
 the end of the previous round — or, for a newborn, its inherited C allele at
-replacement.  Fitness is the game payoff minus information cost, with payoff
-from Table 1 evaluated on that act and the partner's act. Within each time step
-the order is fixed: compute fitness from current acts; if shuffling is on,
-redraw pairs within each group; if partner choice is on, rematch choosers;
-replace deaths with fitness-weighted offspring (each newborn's act is reset to
-its inherited C allele); then, if reciprocity is on, set each survivor's act
-toward its current partner for the next round. The next time step begins again
-with fitness.
+replacement. Fitness is the game payoff minus information cost, floored at zero:
+w = max(0, payoff − cost), with payoff from Table 1 evaluated on that act and the
+partner's act. The floor binds only where information cost outruns the payoff, which
+happens for carriers of both families in the most expensive cells of the
+information-cost sweeps.
+
+Within each time step the order is fixed: compute fitness from current acts; if
+shuffling is on, redraw pairs within each group; if partner choice is on, rematch
+choosers; replace deaths with fitness-weighted offspring (each newborn's act is reset
+to its inherited C allele); then, if reciprocity is on, set each survivor's act toward
+its current partner for the next round. The next time step begins again with fitness.
 
 When reciprocity is disabled, an individual's act equals its C allele, fixed at birth
 and unchanged until death. When reciprocity is enabled, each round's act starts from
@@ -132,29 +154,54 @@ C and is overridden only by active M, I, or J alleles.
 
 ## Independent variables and mechanisms
 
-I vary the parameters above together with which conditional behaviors are allowed
-to determine acts and rematching. Mechanisms are abbreviated by the loci that do
-so: direct reciprocity (M); partner choice (P); combined and reputation-rich
-sets (MP, MPQ, IMP, IJMPQ); and no enforcement, where those behaviors stay off
-while loci still mutate. Table S1 reports which payoff gap limits each mechanism
-family in the payoff-plane attributions. Indirect reciprocity with recent or
-lifetime reputation appears as standalone mechanisms (IM, IJM) only when partners
-are shuffled, and with partner choice in combined mechanisms (IMP, IJMPQ). The
-control payoff structure (Table 1, first row) is separate from mechanism choice:
-under it, a partner's behavior does not change payoffs.
+I vary the parameters above together with which conditional behaviors may determine
+acts and rematching. Each mechanism label names the loci a run allows to act: direct
+reciprocity (M); partner choice (P); the combined and reputation-rich sets (MP, MPQ,
+IMP, IJMPQ); and no enforcement, where none of those behaviors run while the loci
+still mutate and still cost. Alleles at loci a run does not enable stay silent but
+remain costly. Enabling loci independently lets me test each mechanism and
+combinations of them.
+
+Indirect reciprocity stands alone as a mechanism (IM, IJM) only under shuffling,
+because persistent pairs leave I copying the partner's act toward the focal individual
+itself, which is direct reciprocity; alongside partner choice it appears in the
+combined mechanisms IMP and IJMPQ. Table S1 reports which payoff gap limits each
+mechanism family in the payoff-plane attributions. The control payoff structure
+(Table 1, first row) is separate from mechanism choice: under it, a partner's behavior
+does not change payoffs.
 
 ## Outcome measures
 
-I report the frequency of cooperators: the share of individuals who behave
-cooperatively in a given round. This is not the frequency of C1 — a C0M1 reciprocator
-counts when it copies a partner's cooperation. Fitness is mean payoff minus
-information cost.
+Outside the temporal comparisons, I read every reported value at the last logged
+round (t = 2^20), from the state after that round's payoffs and before its shuffling,
+rematching and replacement.
+
+Three measures carry the analysis. The frequency of cooperators is the share of
+individuals who behave cooperatively in that round. This is not the frequency of C1 —
+a C0M1 reciprocator counts when it copies a partner's cooperation. Fitness is mean w,
+the floored payoff net of information cost. Allele and genotype frequencies give the
+third measure, which says what produces the cooperation: active choosers (C1P1),
+tax-free unconditional cooperators (C1P0, C1M0), and silent carriers (C0P1).
+
+For two populations I report each measure per population and the gap between them.
+To summarize who profits, I correlate the two gaps across the cells of a sweep — the
+Pearson correlation between the cooperation gap and the fitness gap. A value near
+minus one means the population that cooperates more earns less.
+
+Where costs and payoffs match, the two populations start interchangeable, so I label
+them by outcome: within each run and snapshot, the more cooperative population is
+reported first. That keeps a role split from averaging away across runs, but it also
+makes the reported gap a rank statistic, which cannot be zero even without a real
+split. I therefore read symmetric-case asymmetry against the no-enforcement column,
+labeled the same way, rather than against zero. Single-replicate runs keep their
+original labels, so their two curves are not rank-ordered. Where costs or payoffs
+differ, the labels follow the parameters.
 
 ## Simulation designs
 
-Unless noted, group size is 128 and partnerships are not shuffled. The
-constraint i + c ≤ b (and i + c₁ ≤ b where c₁ is swept) keeps total cost from
-exceeding the cooperation benefit.
+Unless noted, group size is 128 and partnerships are not shuffled; shuffled partners
+and groups of 4 appear in the supplement. The constraint i + c ≤ b (and i + c₁ ≤ b
+where c₁ is swept) keeps total cost from exceeding the cooperation benefit.
 
 I first establish baselines under equal cooperation cost. In a single population,
 sweeping c from 0 to b across mechanisms and payoff structures shows how high each
@@ -181,25 +228,37 @@ b − c; 120 cells; Fig. S11), and crossing both asymmetries (c₀ = 0.10, c₁ 
 partner-cost effects and whether equal enforcement budgets are fungible.
 
 To attribute each mechanism's collapse along the cooperation-cost axis, I also ran
-orthogonal payoff-plane sweeps that vary payoffs independently of c. The
-prisoner's-dilemma plane fixes T = 0.90 and S = 0.10 and varies R and P (172 cells
-with T > R > P > S); the snowdrift plane fixes T = 0.90 and P = 0.10 and varies R
-and S (172 cells with T > R > S > P). Attributions are in Table S1; the heatmaps
-are not published.
+orthogonal payoff-plane sweeps in a single population that vary payoffs independently
+of c. The prisoner's-dilemma plane fixes T = 0.90 and S = 0.10 and varies R and P
+(172 cells with T > R > P > S); the snowdrift plane fixes T = 0.90 and P = 0.10 and
+varies R and S (172 cells with T > R > S > P). Attributions are in Table S1; the
+heatmaps are not published.
 
-Every run is logged at nine evenly spaced snapshots (t = 1, 2^17, …, 2^20 rounds),
-so both the 30-run series and single-replicate trajectories can show whether outcomes
-are already in place by mid-run or still shifting late. Single-replicate companions
-over the same grids show one trajectory without averaging — under matched costs in
-two populations, which population becomes the cooperator is a 30-run question, and a
-companion shows only one realized split.
+Every run is logged at nine snapshots: the first round, then eight points spaced
+2^17 rounds apart up to 2^20. Both the 30-run series and the single-replicate
+trajectories can therefore show whether outcomes are already in place by mid-run or
+still shifting late. Single-replicate companions over the same grids show one
+trajectory without averaging — under matched costs in two populations, which
+population becomes the cooperator is a 30-run question, and a companion shows only
+one realized split.
+
+The simulation is written in C and draws random numbers from a Tausworthe generator
+seeded from the clock, so runs replicate in distribution rather than exactly.
+Simulation code, analysis scripts, and the summary exports behind every figure are
+archived in the repository cited on the title page.
 
 ## Replicates and variation
 
 Reported values are means over 30 independent runs. I also computed standard
 deviations but plotted them only in Fig. 5, where run-to-run spread is largest;
-elsewhere they are typically too small to read on the figure scales (median
-cooperation SD ≈ 0.01–0.04; fitness SD ≈ 0.001–0.01). Spread peaks where runs split
-between attractors (Fig. 5). Cooperation differences below about 0.01–0.02 and fitness
-differences below about 0.002 fall within run-to-run variation and are not treated as
-meaningful effects.
+elsewhere they are too small to read on the figure scales. Taken over the cells of a
+sweep, median standard deviations run about 0.01–0.04 for cooperation and 0.001–0.01
+for fitness. Spread peaks where runs split between attractors (Fig. 5).
+
+I run no hypothesis tests. The design is a grid rather than a sample, so I judge
+differences against that run-to-run spread: cooperation differences below about
+0.01–0.02 and fitness differences below about 0.002 fall within it and are not
+treated as meaningful effects. Gaps between rank-labeled populations under matched
+parameters carry a bias of the same order, which is why the parameter-symmetric
+claims rest on the contrast with no enforcement rather than on the size of the gap
+alone.
