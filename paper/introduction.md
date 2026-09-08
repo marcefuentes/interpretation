@@ -10,11 +10,11 @@ encounters are structured: direct reciprocity (help those who helped you)
 and re-pair with cooperators) [@BullRice1991; @NoeHammerstein1994; @Aktipis2004], and
 indirect reciprocity or reputation (help those with a good standing)
 [@NowakSigmund1998; @NowakSigmund2005; @LeimarHammerstein2001]. Comparative reviews
-place these beside kinship and other routes to cooperation
-[@Nowak2006; @LehmannKeller2006; @Sachs2004]. What remains less settled is how the
+place these beside kinship and other paths to cooperation
+[@Nowak2006; @LehmannKeller2006; @Sachs2004]. What remains less clear is how the
 mechanisms compare when the same model faces the conditions that vary in nature —
 how hard the social dilemma is, how expensive cooperation is, how expensive the
-enforcement machinery itself is, and the ecological setting of group size and
+enforcement alleles themselves are, and the ecological setting of group size and
 partner turnover.
 
 ## Related work
@@ -46,7 +46,7 @@ and the mutualistic two-population interaction as the central case.
 
 **The cost of enforcement.** Models treat reciprocity, partner choice, and
 reputation as free once the loci or strategies are present. That is an idealisation.
-Enforcement machinery carries fixed costs — observing or communicating others'
+Carrying enforcement alleles incurs fixed costs — observing or communicating others'
 behavior, keeping it in memory, identifying individuals, and making decisions. I use
 *information cost* as shorthand for these per-genotype overheads throughout the paper,
 and not for variable costs such as punishment or sanctions. Sanctioning and monitoring
@@ -56,7 +56,7 @@ enforcement without paying for it
 punishment is costly to the punisher [@FehrGachter2002; @BoydGintisBowles2003;
 @SigmundHauertNowak2001]. Cognitive and psychological constraints further limit how
 much conditional behavior animals can sustain [@StevensHauser2004; @Dunbar1998],
-and maintaining the required informational or learning machinery carries direct
+and maintaining the required informational or learning capacity carries direct
 metabolic and fitness costs even outside primates [@MeryKawecki2003].
 These literatures establish that enforcement is not free, but they place the cost
 on individuals *within* one population. They do not ask whether an information cost
@@ -74,14 +74,15 @@ Three distinctions organise the present study (see
 
 First, **cooperation cost** versus **information cost**. Cooperation cost is the
 payoff price of helping — temptation and risk in the game. Information cost, as
-defined above, is the fixed per-genotype overhead charged for carrying enforcement
-loci in the model (a per-round metabolic or cognitive bill, not contingent on
-per-round behavior). Alone, each pressure is survivable; together they compound,
-because information cost thins the apparatus that resists temptation. On a symmetric
-information-cost design,
-that thinning can look like a local escape: active machinery is selected out while
-cooperation persists through tax-free unconditional cooperators, decoupling behavior
-from mechanism. Decoupling sits close to established second-order free-rider results
+defined above, is the fixed per-genotype overhead paid for carrying enforcement
+loci in the model (a per-round metabolic or cognitive cost, not contingent on
+per-round behavior). Alone, each pressure need not eliminate cooperation; together they
+reduce it further, because information cost selects against the mechanism alleles that
+resist temptation. On a symmetric information-cost design,
+that loss can look local: active alleles are selected out while
+cooperation persists through unconditional cooperators that pay no information cost,
+so cooperation frequency and mechanism-allele frequency diverge. That separation sits
+close to established second-order free-rider results
 [@Yamagishi1986; @PanchanathanBoyd2004]. What a symmetric design *cannot* do is
 separate the cost a population pays from the burden that cost places on its partner.
 
@@ -96,14 +97,14 @@ the two populations face the same setup (equal cooperation cost, equal informati
 cost, identical payoffs). Outcome symmetry means realised cooperation and fitness are
 similar between them. Symmetric parameters do not imply symmetric outcomes: partner
 choice at equal costs can produce a stochastic cooperator/exploiter split, and cost
-asymmetries can pin or invert that split depending on mechanism and game. Because
+asymmetries can determine or invert that split depending on mechanism and game. Because
 each population carries its own cooperation cost and information cost, both axes
 can be varied independently and their relative roles compared.
 
 Prior work on asymmetric **cooperation costs** in mutualisms shows that unequal costs
 or evolutionary rates can assign cooperator and exploiter roles
 [@DoebeliKnowlton1998; @BergstromLachmann2003], but rarely with explicit enforcement
-machinery or an independent information-cost axis. To my knowledge, no model varies
+alleles or an independent information-cost axis. To my knowledge, no model varies
 **per-population information cost** in coevolving mutualists and asks which partner
 bears the burden of that cost: cognitive-cost and punishment studies are
 within-population or do not separate the cost a population pays from the burden that
@@ -111,37 +112,38 @@ cost places on its partner.
 
 I therefore vary an individual-based model across social dilemma, cooperation cost,
 per-population information cost, group size, partner shuffling, population structure,
-and mechanism, and add orthogonal payoff-plane calibration analyses that decouple the
-payoff gaps a single cooperation-cost axis welds together. The single-population
+and mechanism, and add orthogonal payoff-plane calibration analyses that separate the
+payoff gaps a single cooperation-cost axis joins. The single-population
 equal-cost case is the baseline; the two-population case with independently assigned
 costs is the primary biological scenario.
 
 ## Contribution
 
 The central result is that **the burden of an information cost need not fall on the
-population that pays it**. Enforcement machinery is itself costly, and because it
-operates *between* populations, the information cost paid by one population can place
+population that pays it**. Enforcement alleles are themselves costly, and because they
+operate *between* populations, the information cost paid by one population can place
 a burden on both — which population bears more of that burden depends on the
 mechanism family.
 Under partner choice a population barely changes when it pays more information cost,
-but collapses when its partner does, because assortment needs active choosers on both
-sides. Reciprocity-bearing mechanisms protect only their carriers, so when the
-low-cooperation-cost population pays a higher information cost, its partner can bear
-a larger burden than the payer. Remove the social dilemma and populations no
+but cooperates much less when its partner does, because assortment needs active
+choosers on both sides. Reciprocity-bearing mechanisms protect only their carriers, so
+when the low-cooperation-cost population pays a higher information cost, its partner
+can bear a larger burden than the payer. Remove the social dilemma and populations no
 longer couple this way: the coupling belongs to the dilemma, not to the accounting.
 Throughout, populations that differ in cooperation cost keep their cooperator and
 exploiter roles; populations that differ in information cost shift those roles and
 invert them only when the low-cooperation-cost population pays near-zero information
 cost.
 
-Two consequences follow. Equal enforcement budgets are neither fungible nor additive:
-when both populations share a budget they cooperate less in total than when either
-one pays it alone. And the escape that lets a population survive information cost under
-symmetry — shedding machinery into unconditional cooperation — is what destroys the
-partner under asymmetry, because the payer stops supplying the service the partner
-needed. Supporting this, I attribute each mechanism's cooperation-cost collapse to a
-specific payoff gap (reciprocity risk-limited, partner choice limited by the
-cooperation advantage, reputation-rich mechanisms reward-limited), and show that when
-both cost axes differ, populations still follow the cooperation-cost gap unless the
-low-cooperation-cost population pays near-zero information cost — a thin regime that
-vanishes under snowdrift.
+Two consequences follow. Equal information-cost totals are neither interchangeable nor
+additive: when both populations share a total they cooperate less in total than when
+either one pays it alone. And the pattern that lets a population keep cooperating under
+information cost under symmetry — losing mechanism alleles while switching to
+unconditional cooperation — is what harms the partner under asymmetry, because the
+payer stops providing the assortment or conditional help the partner needed.
+Supporting this, I attribute each mechanism's loss of cooperation along the
+cooperation-cost axis to a specific payoff gap (reciprocity risk-limited, partner
+choice limited by the cooperation advantage, mechanisms that include lifetime
+reputation reward-limited), and show that when both cost axes differ, populations still
+follow the cooperation-cost gap unless the low-cooperation-cost population pays
+near-zero information cost — a thin regime that vanishes under snowdrift.

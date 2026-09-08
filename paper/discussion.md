@@ -2,22 +2,24 @@
 
 ## What each mechanism is really limited by
 
-Decoupling the payoff gaps turns three vague "collapses as cost rises" statements into
-specific attributions: direct reciprocity is limited by risk (the cost of its own
-punishment outcome, mutual defection), partner choice by the cooperation advantage
-R − P (the fuel for assortment), and reputation-rich mechanisms by reward alone (they
-ignore the defection baseline). This ranking is consistent with the classical contrast
-between memory-based reciprocity and market-like partner choice
+Separating the payoff gaps turns three vague "cooperation falls as cost rises"
+statements into specific attributions: direct reciprocity is limited by risk (the cost
+of its own punishment outcome, mutual defection), partner choice by the cooperation
+advantage R − P (the quantity assortment uses), and mechanisms that include lifetime
+reputation by reward alone (they ignore the defection baseline). This ranking is
+consistent with the classical contrast between memory-based reciprocity and
+market-like partner choice
 [@Trivers1971; @NoeHammerstein1994; @Nowak2006], and with the finding that snowdrift
-payoffs raise the cooperation floor relative to the prisoner's dilemma
-[@HauertDoebeli2004; @DoebeliHauert2005]. It also explains why combined
-reputation-rich mechanisms break the ceilings that bound M and P individually: once
-reward leads, the defection baseline stops setting the collapse.
+payoffs raise baseline cooperation relative to the prisoner's dilemma
+[@HauertDoebeli2004; @DoebeliHauert2005]. It also explains why combined mechanisms
+that include lifetime reputation exceed the cost thresholds that limit M and P
+individually: once reward leads, the defection baseline no longer determines when
+cooperation falls.
 
 ## Two populations: what the second one changes
 
 The second population does not change the *dynamical regime* (both single- and two-
-population cases settle into absorbing states, not cycles). What it changes is the
+population cases reach stable end states, not cycles). What it changes is the
 *outcome*: two populations can lock into cooperator and exploiter roles even when
 their parameters match — spontaneous symmetry breaking. While recently demonstrated
 in spatial models with little dispersal [@HauertSzabo2024], and expected when costs
@@ -38,30 +40,34 @@ reward-led combined mechanisms shrink that gap.
 ## Information cost versus cooperation cost
 
 Adding an information-cost axis reframes enforcement around two costs. Cooperation
-cost sets the temptation and risk the machinery must resist; information cost is
-escapable only by shedding the machinery. Alone each is survivable; together they
-compound, because information cost thins the apparatus cooperation cost requires.
-The genotype-level consequence is that behavior and mechanism decouple:
-cooperation can persist through unconditional cooperators after the expensive
-conditional machinery has been selected away — but only where the game does not
-punish that shed. That pattern is the evolutionary counterpart of second-order free
-riding on enforcement [@Yamagishi1986; @PanchanathanBoyd2004; @BoydGintisBowles2003]:
-carriers of tax-free unconditional cooperation enjoy assortment or punishment supplied
-by others. Once one population sits above zero cooperation cost and the second is
-costlier still, populations cannot shed machinery for free at zero cooperation cost,
-so as information cost rises they cooperate less and the cooperator/exploiter gap
-shrinks instead of only changing which genotypes carry the help.
+cost sets the temptation and risk the mechanism alleles must resist; information cost
+is avoided only by losing those alleles. Alone each need not eliminate cooperation;
+together they reduce it further, because information cost selects against the alleles
+cooperation cost requires.
+The genotype-level consequence is that cooperation frequency and mechanism-allele
+frequency can diverge: cooperation can persist through unconditional cooperators after
+the expensive conditional alleles have been selected away — but only where the game
+does not punish that loss. That pattern is the evolutionary counterpart of
+second-order free riding on enforcement
+[@Yamagishi1986; @PanchanathanBoyd2004; @BoydGintisBowles2003]: carriers of
+unconditional cooperation that pay no information cost enjoy assortment or punishment
+supplied by others. Once one population sits above zero cooperation cost and the
+second is costlier still, populations cannot lose mechanism alleles for free at zero
+cooperation cost, so as information cost rises they cooperate less and the
+cooperator/exploiter gap shrinks instead of only changing which genotypes carry the
+help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
 in information cost still lock or invert roles depending on mechanism (Fig. S11).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
-cells), and hitchhiking inversion survives only on an i₀ ≈ 0 strip (Fig. 5),
+cells), and role inversion survives only on an i₀ ≈ 0 strip (Fig. 5),
 weaker than in the equal-c case. Snowdrift removes this regime entirely.
 What decides whether a mechanism can be overridden at all is whether populations
-carry the reciprocity family, not how large an information bill they pay — a controlled
-comparison the per-family tax makes possible, because direct reciprocity and partner
-choice pay identically, as do the four combined mechanisms among themselves.
+carry the reciprocity family, not how large an information cost they pay — a controlled
+comparison the per-family information cost makes possible, because direct reciprocity
+and partner choice pay identically, as do the four combined mechanisms among
+themselves.
 
 ## Cost versus burden across populations
 
@@ -74,46 +80,49 @@ mechanism families place that burden on opposite populations (Fig. 4a,b,d,e). Un
 partner choice, populations bear the burden of the high-cooperation-cost population's
 information cost, because a swap needs a chooser on both sides and that population
 supplies fewer choosers; under reciprocity-bearing mechanisms, populations bear the
-burden of the low-cooperation-cost population's information cost, because shedding
-into unconditional cooperation hurts the pair only when the escaping side carries the
-cooperation. The clearest case is that an untaxed population can end up with fewer
-*active* choosers, and a tenth of the cooperation, of the same population when it
-pays a heavy tax itself.
+burden of the low-cooperation-cost population's information cost, because switching
+to unconditional cooperation hurts the pair only when the side that loses alleles
+carries the cooperation. The clearest case is that a population that pays no
+information cost can end up with fewer *active* choosers, and a tenth of the
+cooperation, of the same population when it pays a heavy information cost itself.
 
-Equal information-cost budgets are therefore neither fungible nor additive (Fig. 4c,f):
-both populations share a budget worse than either paying it alone, since each corner
-leaves one intact apparatus while a split leaves none.
-The dilemma-free control shows that none of this is an artefact of how the tax is
-charged — without a social dilemma neither population bears a burden from its
-partner's cost, and each sheds machinery only as it pays itself (Fig. S8). Populations couple
-through the dilemma, not through the accounting. That result
-extends the second-order free-rider literature rather than replacing it: when
-individuals shed local enforcement costs, partners across the mutualism can bear the
-burden of losing the service those costs once bought.
-One consequence is that, in the threshold hitchhiking regime, a population can receive
-a benefit from a partner that pays higher information cost, because that partner is
-pushed into a more cooperative but less fit state.
+Equal information-cost totals are therefore neither interchangeable nor additive
+(Fig. 4c,f): both populations sharing a total cooperate less than when either pays it
+alone, since each corner leaves one population still carrying mechanism alleles while
+a split leaves neither.
+The dilemma-free control shows that none of this is an artefact of how the
+information cost is applied — without a social dilemma neither population bears a
+burden from its partner's cost, and each loses mechanism alleles only as it pays
+itself (Fig. S8). Populations couple through the dilemma, not through the accounting.
+That result extends the second-order free-rider literature rather than replacing it:
+when individuals lose local enforcement alleles, partners across the mutualism can
+bear the burden of losing the assortment or conditional help those alleles once
+provided.
+One consequence is that, in the threshold role-inversion regime, a population can
+receive a benefit from a partner that pays higher information cost, because that
+partner is pushed into a more cooperative but less fit state.
 
 ## Limitations
 
 The payoff-plane calibration analyses fix payoffs that slide with cooperation cost in
 the main analyses, so the overlays identify which payoff variable governs a mechanism,
 not absolute thresholds. Single-run trajectories (nine snapshots from t = 1 to
-2^20) show that established role splits and collapsed states, once present, change
-little across the logged interval; snapshot spacing is too coarse to resolve when
-they first appear or to rule out low-amplitude cycling within an interval. At the edge
-of the near-zero-i₀ hitchhiking regime the across-run standard deviation reaches 0.25, so the
-mean over runs describes no single run; means in that narrow band should be read as
-basin-occupancy fractions, not equilibrium levels. Information cost is a per-family
-metabolic tax, not a process model of memory, perception, or error
+2^20) show that established role splits and low-cooperation states, once present,
+change little across the logged interval; snapshot spacing is too coarse to resolve
+when they first appear or to rule out low-amplitude cycling within an interval. At the
+edge of the near-zero-i₀ role-inversion regime the across-run standard deviation
+reaches 0.25, so the mean over runs describes no single run; means in that narrow band
+should be read as fractions of runs in each outcome, not equilibrium levels.
+Information cost is a per-family metabolic cost, not a process model of memory,
+perception, or error
 [@StevensHauser2004; @Dunbar1998]. That abstraction is what makes mechanisms
 comparable; it is also a limit on psychological realism.
 
 ## Future directions
 
-Finer temporal logging to settle the oscillation question; explicit error-prone
-perception or reputation updating on top of the per-family tax; and extensions to
-mutualisms in which the two sides differ in generation time or group size as well as
-in cost [@BergstromLachmann2003; @BsharyGrutter2006]. The relational-budget result
-also suggests a practical question: when enforcement is shared across partners, does
-concentrating cognitive investment outperform splitting it?
+Finer temporal logging to resolve the oscillation question; explicit error-prone
+perception or reputation updating on top of the per-family information cost; and
+extensions to mutualisms in which the two sides differ in generation time or group
+size as well as in cost [@BergstromLachmann2003; @BsharyGrutter2006]. The shared
+information-cost result also suggests a practical question: when enforcement is shared
+across partners, does concentrating cognitive investment outperform splitting it?

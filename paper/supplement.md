@@ -9,14 +9,14 @@ are regression-checked by `ai/verify_claims.py`.
 
 | Item | Role | Main-text anchor |
 | ---- | ---- | ---------------- |
-| Fig. S1 | Cooperation-cost ceilings by mechanism at equal c | Results §1 |
+| Fig. S1 | Cooperation-cost thresholds by mechanism at equal c | Results §1 |
 | Fig. S2 | Short-memory / shuffle reciprocity branches | Fig. S1 |
 | Fig. S3 | No-enforcement control under cooperation-cost asymmetry | Fig. 2 |
 | Fig. S4 | Full c₀ × c₁ cooperation-cost grid | Fig. 2 |
 | Fig. S5 | Parameter-symmetric vs asymmetric line slices | Figs. 1–2 |
 | Fig. S6 | Cooperation-cost asymmetry at group size 4 | Fig. 2 |
 | Fig. S7 | Information cost × cooperation cost (single population) | Fig. 3 |
-| Fig. S8 | No-enforcement control for machinery erosion | Fig. 3 |
+| Fig. S8 | No-enforcement control for loss of mechanism alleles | Fig. 3 |
 | Fig. S9 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
 | Fig. S10 | Fitness counterpart of Fig. 4 (same relational slices) | Fig. 4 |
 | Fig. S11 | Information-cost asymmetry at equal cooperation cost | Figs. 4–5 |
@@ -29,17 +29,17 @@ Results.
 
 ## Table S1. Payoff-gap attribution
 
-A single cooperation-cost axis welds temptation (T − R), risk (P − S), and the
+A single cooperation-cost axis joins temptation (T − R), risk (P − S), and the
 cooperation advantage (R − P) together. Orthogonal payoff-plane calibration sweeps
 (prisoner's dilemma: R and P varied at fixed T, S; snowdrift: R and S varied at
-fixed T, P) decouple these gaps. The sweeps are auxiliary and are not published as
+fixed T, P) separate these gaps. The sweeps are auxiliary and are not published as
 figures; the attributions they support are:
 
 | Mechanism family | Limiting payoff gap | Evidence |
 | ---------------- | ------------------- | -------- |
 | Direct reciprocity (M) | Risk / mutual-defection payoff P | PD calibration; snowdrift confirms low-risk rescue of M |
-| Partner choice (P) | Cooperation advantage R − P | PD calibration; collapse as R − P → 0 |
-| Combined / reputation-rich (MP, MPQ, IMP, IJMPQ) | Reward / mutual-cooperation payoff R | PD calibration; blind to the defection baseline |
+| Partner choice (P) | Cooperation advantage R − P | PD calibration; cooperation falls as R − P → 0 |
+| Combined / with lifetime reputation (MP, MPQ, IMP, IJMPQ) | Reward / mutual-cooperation payoff R | PD calibration; unaffected by the defection baseline |
 
 Journal sources: [synthesis](../journal/synthesis.md),
 [PD calibration](../journal/prisoners_calibration.md),
@@ -48,18 +48,18 @@ Journal sources: [synthesis](../journal/synthesis.md),
 ## Cross-references from the main text
 
 **Fig. S1 cost thresholds.** Shuffle short-memory variants that can shift the
-direct-reciprocity collapse ordering: Fig. S2.
+direct-reciprocity ordering: Fig. S2.
 
 **Figs. 1–2 role split.** No-enforcement asymmetric control: Fig. S3. Deterministic
 versus stochastic strips on shared axes: Fig. S5. Full c₀ × c₁ coverage: Fig. S4.
 Small-group robustness (groups of 4): Fig. S6.
 
-**Fig. 3 decoupling.** Full information-cost × cooperation-cost surface: Fig. S7.
-No-enforcement control (machinery
-erodes with or without a dilemma; cooperation persists through the shed only with a
-dilemma): Fig. S8. Compression when cooperation cost is held above zero: Fig. S9.
+**Fig. 3: cooperation after allele loss.** Full information-cost × cooperation-cost
+surface: Fig. S7. No-enforcement control (mechanism alleles decline with or without a
+dilemma; cooperation persists after those alleles are lost only with a dilemma):
+Fig. S8. Compression when cooperation cost is held above zero: Fig. S9.
 
-**Figs. 4–5 relational cost.** Equal-c information-cost asymmetry and hitchhiking
+**Figs. 4–5 relational cost.** Equal-c information-cost asymmetry and role inversion
 (stronger inversion than under a cooperation-cost gap): Fig. S11. The full i₀ × i₁
 square behind the line reslices remains journal-backed
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)); snowdrift removal of the
