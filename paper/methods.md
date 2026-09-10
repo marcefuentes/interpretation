@@ -136,19 +136,17 @@ fitness.
 
 ## Timestep order
 
-Per round, an individual's act toward its current partner is the value set at
-the end of the previous round — or, for a newborn, its inherited C allele at
-replacement. Fitness is the game payoff minus information cost, floored at zero:
-w = max(0, payoff − cost), with payoff from Table 1 evaluated on that act and the
-partner's act. Fitness is zero only where information cost exceeds the payoff, which
-happens for carriers of both families in the most expensive cells of the
+Fitness is the game payoff minus information cost, floored at zero:
+w = max(0, payoff − cost), with payoff from Table 1 evaluated on each individual's
+current act and its partner's. Fitness is zero only where information cost exceeds the
+payoff, which happens for carriers of both families in the most expensive cells of the
 information-cost sweeps.
 
-Within each time step the order is fixed: compute fitness from current acts; if
-shuffling is on, redraw pairs within each group; if partner choice is on, rematch
-choosers; replace deaths with fitness-weighted offspring (each newborn's act is reset
-to its inherited C allele); then, if reciprocity is on, set each survivor's act toward
-its current partner for the next round. The next time step begins again with fitness.
+Within each time step the order is fixed: if shuffling is on, redraw pairs within each
+group; if partner choice is on, rematch choosers; replace deaths with offspring weighted
+by the previous round's fitness (each newborn's act is reset to its inherited C
+allele); then, if reciprocity is on, set each survivor's act toward its current partner;
+finally compute fitness from those acts.
 
 When reciprocity is disabled, an individual's act equals its C allele, fixed at birth
 and unchanged until death. When reciprocity is enabled, each round's act starts from
@@ -175,8 +173,7 @@ does not change payoffs.
 ## Outcome measures
 
 Outside the temporal comparisons, I record every reported value at the last logged
-round (t = 2^20), from the state after that round's payoffs and before its shuffling,
-rematching and replacement.
+round (t = 2^20), from the state at the end of that round after payoffs.
 
 I use three measures. The frequency of cooperators is the share of
 individuals who behave cooperatively in that round. This is not the frequency of C1 —
