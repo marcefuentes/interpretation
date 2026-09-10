@@ -154,8 +154,9 @@ C and is overridden only by active M, I, or J alleles.
 
 ## Independent variables and mechanisms
 
-I vary the parameters above together with which conditional behaviors may determine
-acts and rematching. Each mechanism label names the loci a run allows to act: direct
+I vary population number (one or two), group size, whether partnerships shuffle,
+payoff structure, cooperation cost, and information cost, together with which
+conditional behaviors may determine acts and rematching. Each mechanism label names the loci a run allows to act: direct
 reciprocity (M); partner choice (P); the combined mechanisms and those that include
 lifetime reputation (MP, MPQ, IMP, IJMPQ); and no enforcement, where none of those
 behaviors run while the loci still mutate and still cost. Alleles at loci a run does
@@ -166,22 +167,21 @@ Indirect reciprocity stands alone as a mechanism (IM, IJM) only under shuffling,
 because persistent pairs leave I copying the partner's act toward the focal individual
 itself, which is direct reciprocity; alongside partner choice it appears in the
 combined mechanisms IMP and IJMPQ. Table S1 reports which payoff gap limits each
-mechanism family in the payoff-plane attributions. The control payoff structure
-(Table 1, first row) is separate from mechanism choice: under it, a partner's behavior
-does not change payoffs.
+mechanism family in the payoff-plane attributions. The control row of Table 1 is a payoff structure, not a mechanism: under it a
+partner's act does not change payoffs, while mechanisms may still be enabled or
+disabled as in the other games.
 
 ## Outcome measures
 
 Outside the temporal comparisons, I record every reported value at the last logged
-round (t = 2^20), from the state at the end of that round after payoffs.
-
-I use three measures. The frequency of cooperators is the share of
-individuals who behave cooperatively in that round. This is not the frequency of C1 —
-a C0M1 reciprocator counts when it copies a partner's cooperation. Fitness is mean w,
-the floored payoff net of information cost. Allele and genotype frequencies give the
-third measure, which shows what produces the cooperation: active choosers (C1P1),
-unconditional cooperators that pay no information cost (C1P0, C1M0), and carriers that
-never choose (C0P1).
+round (t = 2^20), from the state at the end of that round after payoffs. I use three
+measures. The frequency of cooperators is the share of individuals who behave
+cooperatively in that round. This is not the frequency of C1 — a C0M1 reciprocator
+counts when it copies a partner's cooperation. Fitness is mean w, the floored payoff
+net of information cost. Allele and genotype frequencies give the third measure, which
+shows what produces the cooperation: active choosers (C1P1), reciprocators that
+copy a partner (C0M1), unconditional cooperators that pay no information cost
+(C1P0, C1M0), and carriers that never choose (C0P1).
 
 For two populations I report each measure per population and the gap between them.
 To summarize who profits, I correlate the two gaps across the cells of a sweep — the
@@ -192,10 +192,11 @@ Where costs and payoffs match, the two populations start interchangeable, so I l
 them by outcome: within each run and snapshot, the more cooperative population is
 reported first. That prevents role differences from canceling when averaged across
 runs, but it also makes the reported gap a rank statistic, which cannot be zero even
-without a real split. I therefore read symmetric-case asymmetry against the
-no-enforcement column, labeled the same way, rather than against zero. Single-replicate
-runs keep their original labels, so their two curves are not rank-ordered. Where costs
-or payoffs differ, the labels follow the parameters.
+without a real split. To separate that labeling artifact from a true role assignment,
+I compare each mechanism's matched-parameter gap to the gap under no enforcement,
+ranked the same way, rather than asking whether the gap differs from zero.
+Single-replicate runs keep their original labels, so their two curves are not
+rank-ordered. Where costs or payoffs differ, the labels follow the parameters.
 
 ## Simulation designs
 
@@ -220,13 +221,14 @@ the payoff cost of helping, including under the control payoff structure where a
 partner's act does not affect payoffs (Fig. S8).
 
 The central designs ask who bears the burden of an information cost. Holding a
-cooperation-cost gap and sweeping information cost (c₀ = 0.10, i and c₁ joint under
-i + c₁ ≤ b; 120 cells; Fig. S9), holding equal cooperation cost and sweeping
-per-population information cost (c₀ = c₁ = 0.10, i₀ < i₁, each axis capped at
-b − c; 120 cells; Fig. S11), and crossing both asymmetries (c₀ = 0.10, c₁ = 0.20,
-176-cell square with i₀ ≤ 0.30 and i₁ ≤ 0.20; Figs. 4–5) compare own-cost versus
-partner-cost effects and whether equal information-cost totals have the same effect
-regardless of how they are split between populations.
+cooperation-cost gap and jointly sweeping information cost with the higher
+cooperation cost (c₀ = 0.10; i and c₁ under i + c₁ ≤ b; 120 cells; Fig. S9), holding
+equal cooperation cost and sweeping per-population information cost (c₀ = c₁ = 0.10,
+i₀ < i₁, each axis capped at b − c; 120 cells; Fig. S11), and crossing both
+asymmetries (c₀ = 0.10, c₁ = 0.20, 176-cell square with i₀ ≤ 0.30 and i₁ ≤ 0.20;
+Figs. 4–5) compare own-cost versus partner-cost effects and whether equal
+information-cost totals have the same effect regardless of how they are split between
+populations.
 
 To attribute each mechanism's loss of cooperation along the cooperation-cost axis, I
 also ran orthogonal payoff-plane sweeps in a single population that vary payoffs
@@ -239,14 +241,11 @@ Every run is logged at nine snapshots: the first round, then eight points spaced
 2^17 rounds apart up to 2^20. Both the 30-run series and the single-replicate
 trajectories can therefore show whether outcomes are already stable by mid-run or
 still changing late. Single-replicate companions over the same grids show one
-trajectory without averaging — under matched costs in two populations, which
-population becomes the cooperator is a 30-run question, and a companion shows only
-one realized split.
+unaveraged trajectory. When costs match in two populations, which side becomes the
+cooperator varies across runs, so a companion records only that run's assignment.
 
-The simulation is written in C and draws random numbers from a Tausworthe generator
-seeded from the clock, so runs replicate in distribution rather than exactly.
-Simulation code, analysis scripts, and the summary exports behind every figure are
-archived in the repository cited on the title page.
+The simulation is written in C. Simulation code, analysis scripts, and the summary
+exports behind every figure are archived in the repository cited on the title page.
 
 ## Replicates and variation
 
@@ -255,11 +254,3 @@ deviations but plotted them only in Fig. 5, where run-to-run spread is largest;
 elsewhere they are too small to read on the figure scales. Taken over the cells of a
 sweep, median standard deviations are about 0.01–0.04 for cooperation and 0.001–0.01
 for fitness. Spread is largest where runs diverge to different outcomes (Fig. 5).
-
-I run no hypothesis tests. The design is a grid rather than a sample, so I judge
-differences against that run-to-run spread: cooperation differences below about
-0.01–0.02 and fitness differences below about 0.002 fall within it and are not
-treated as meaningful effects. Gaps between rank-labeled populations under matched
-parameters carry a bias of the same order, which is why the parameter-symmetric
-claims depend on the contrast with no enforcement rather than on the size of the gap
-alone.
