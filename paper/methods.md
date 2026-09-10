@@ -160,8 +160,9 @@ conditional behaviors may determine acts and rematching. Each mechanism label na
 reciprocity (M); partner choice (P); the combined mechanisms and those that include
 lifetime reputation (MP, MPQ, IMP, IJMPQ); and no enforcement, where none of those
 behaviors run while the loci still mutate and still cost. Alleles at loci a run does
-not enable do not affect behavior but remain costly. Enabling loci independently lets
-me test each mechanism and combinations of them.
+not enable do not affect behavior but remain costly. Frequencies near one-half are
+the mutation-only expectation for such unused alleles. Enabling loci independently
+lets me test each mechanism and combinations of them.
 
 Indirect reciprocity stands alone as a mechanism (IM, IJM) only under shuffling,
 because persistent pairs leave I copying the partner's act toward the focal individual
@@ -178,15 +179,16 @@ round (t = 2^20), from the state at the end of that round after payoffs. I use t
 measures. The frequency of cooperators is the share of individuals who behave
 cooperatively in that round. This is not the frequency of C1 — a C0M1 reciprocator
 counts when it copies a partner's cooperation. Fitness is mean w, the floored payoff
-net of information cost. Allele and genotype frequencies give the third measure, which
-shows what produces the cooperation: active choosers (C1P1), reciprocators that
-copy a partner (C0M1), unconditional cooperators that pay no information cost
-(C1P0, C1M0), and carriers that never choose (C0P1).
+net of information cost. Allele and genotype frequencies give the third measure —
+active choosers (C1P1), reciprocators that copy a partner (C0M1), unconditional
+cooperators that pay no information cost (C1P0, C1M0), and carriers that never choose
+(C0P1).
 
 For two populations I report each measure per population and the gap between them.
 To summarize who profits, I correlate the two gaps across the cells of a sweep — the
 Pearson correlation between the cooperation gap and the fitness gap. A value near
-minus one means the population that cooperates more earns less.
+minus one means the population that cooperates more earns less. Under partner choice I
+also correlate chooser-allele frequency with fitness across cells of a sweep.
 
 Where costs and payoffs match, the two populations start interchangeable, so I label
 them by outcome: within each run and snapshot, the more cooperative population is
@@ -204,45 +206,39 @@ Unless noted, group size is 128 and partnerships are not shuffled; shuffled part
 and groups of 4 appear in the supplement. The constraint i + c ≤ b (and i + c₁ ≤ b
 where c₁ is swept) keeps total cost from exceeding the cooperation benefit.
 
-I first establish baselines under equal cooperation cost. In a single population,
-sweeping c from 0 to b across mechanisms and payoff structures shows how high each
-mechanism can raise cooperation before cooperation falls, and whether that
-ordering depends on the dilemma (Fig. S1). The same equal-cost sweep in two
-coevolving populations asks whether matched parameters produce matched outcomes, or
-whether mechanisms themselves can create cooperator and exploiter roles (Fig. 1).
+I first establish baselines under equal cooperation cost. In a single population I
+sweep c from 0 to b across mechanisms and payoff structures (Fig. S1). Shuffled
+short-memory variants of that set are in Fig. S2. The same equal-cost sweep in two
+coevolving populations is Fig. 1.
 
 I then vary parameters asymmetrically along one axis at a time. Cooperation-cost
-asymmetry (c₀ < c₁ on a grid of 210 ordered pairs with c₀ ∈ [0, 0.38] and
-c₁ ∈ [0.02, 0.40]) tests whether unequal helping costs determine cooperator/exploiter
-roles (Fig. 2; full grid Fig. S4; no-enforcement control Fig. S3). Information
-cost is introduced next at equal c on a triangular grid of 231 (i, c) cells under
-i + c ≤ b (Fig. 3; full grid Fig. S7), to separate loss of mechanism alleles from
-the payoff cost of helping, including under the control payoff structure where a
-partner's act does not affect payoffs (Fig. S8).
+asymmetry uses a grid of 210 ordered pairs with c₀ < c₁, c₀ ∈ [0, 0.38] and
+c₁ ∈ [0.02, 0.40] (Fig. 2 reports the strip c₁ = c₀ + 0.02; full grid Fig. S4;
+no-enforcement control Fig. S3; Fig. S5 places that strip beside the matched-cost case
+of Fig. 1). Information cost is introduced next at equal c on a triangular grid of
+231 (i, c) cells under i + c ≤ b (Fig. 3; full grid Fig. S7), including under the
+control payoff structure (Fig. S8).
 
-The central designs ask who bears the burden of an information cost. Holding a
-cooperation-cost gap and jointly sweeping information cost with the higher
-cooperation cost (c₀ = 0.10; i and c₁ under i + c₁ ≤ b; 120 cells; Fig. S9), holding
-equal cooperation cost and sweeping per-population information cost (c₀ = c₁ = 0.10,
-i₀ < i₁, each axis capped at b − c; 120 cells; Fig. S11), and crossing both
-asymmetries (c₀ = 0.10, c₁ = 0.20, 176-cell square with i₀ ≤ 0.30 and i₁ ≤ 0.20;
-Figs. 4–5) compare own-cost versus partner-cost effects and whether equal
-information-cost totals have the same effect regardless of how they are split between
-populations.
+The central designs vary who pays an information cost. One holds a cooperation-cost
+gap and jointly sweeps information cost with the higher cooperation cost (c₀ = 0.10;
+i and c₁ under i + c₁ ≤ b; 120 cells; Fig. S9). One holds equal cooperation cost and
+sweeps per-population information cost (c₀ = c₁ = 0.10, i₀ < i₁, each axis capped at
+b − c; 120 cells; Fig. S11). One crosses both asymmetries (c₀ = 0.10, c₁ = 0.20,
+176-cell square with i₀ ≤ 0.30 and i₁ ≤ 0.20; Figs. 4–5; fitness counterpart
+Fig. S10). Fig. 4's first two columns hold one population's information cost at zero
+and sweep the other's; the third holds total information cost fixed while the split
+varies. I also ran that crossed design under snowdrift.
 
-To attribute each mechanism's loss of cooperation along the cooperation-cost axis, I
+Along the cooperation-cost axis, raising c changes several payoff gaps at once. I
 also ran orthogonal payoff-plane sweeps in a single population that vary payoffs
 independently of c. The prisoner's-dilemma plane fixes T = 0.90 and S = 0.10 and
 varies R and P (172 cells with T > R > P > S); the snowdrift plane fixes T = 0.90 and
-P = 0.10 and varies R and S (172 cells with T > R > S > P). Attributions are in
-Table S1; the heatmaps are not published.
+P = 0.10 and varies R and S (172 cells with T > R > S > P). Table S1 reports the
+payoff-gap attribution for each mechanism family; the heatmaps are not published.
 
 Every run is logged at nine snapshots: the first round, then eight points spaced
-2^17 rounds apart up to 2^20. Both the 30-run series and the single-replicate
-trajectories can therefore show whether outcomes are already stable by mid-run or
-still changing late. Single-replicate companions over the same grids show one
-unaveraged trajectory. When costs match in two populations, which side becomes the
-cooperator varies across runs, so a companion records only that run's assignment.
+2^17 rounds apart up to 2^20. The 30-run series and the single-replicate companions
+over the same grids use those snapshots; each companion is one unaveraged trajectory.
 
 The simulation is written in C. Simulation code, analysis scripts, and the summary
 exports behind every figure are archived in the repository cited on the title page.
@@ -250,7 +246,6 @@ exports behind every figure are archived in the repository cited on the title pa
 ## Replicates and variation
 
 Reported values are means over 30 independent runs. I also computed standard
-deviations but plotted them only in Fig. 5, where run-to-run spread is largest;
-elsewhere they are too small to read on the figure scales. Taken over the cells of a
-sweep, median standard deviations are about 0.01–0.04 for cooperation and 0.001–0.01
-for fitness. Spread is largest where runs diverge to different outcomes (Fig. 5).
+deviations but plotted them only in Fig. 5; elsewhere they are too small to read on
+the figure scales. Taken over the cells of a sweep, median standard deviations are
+about 0.01–0.04 for cooperation and 0.001–0.01 for fitness.
