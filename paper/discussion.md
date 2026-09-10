@@ -8,8 +8,8 @@ defection), partner choice by the cooperation advantage R − P (the quantity as
 uses), and mechanisms that include lifetime reputation by reward alone (they ignore the
 defection baseline). This ranking is consistent with the classical contrast between
 memory-based reciprocity and market-like partner choice
-[@Trivers1971; @NoeHammerstein1994; @Nowak2006], and with the finding that snowdrift
-payoffs raise baseline cooperation relative to the prisoner's dilemma
+[@Trivers1971; @NoeHammerstein1994; @Nowak2006], and with the finding that the snowdrift
+game raises baseline cooperation relative to the prisoner's dilemma
 [@HauertDoebeli2004; @DoebeliHauert2005]. It also explains why combined mechanisms that
 include lifetime reputation exceed the cost thresholds that limit M and P individually:
 once reward leads, the defection baseline no longer determines when cooperation falls.
@@ -87,7 +87,7 @@ Equal information-cost totals are therefore neither interchangeable nor additive
 (Fig. 4c,f): both populations sharing a total cooperate less than when either pays it
 alone, since each corner leaves one population still carrying mechanism alleles while
 a split leaves neither.
-The dilemma-free control shows that none of this is an artifact of how the
+The control game shows that none of this is an artifact of how the
 information cost is applied — without a social dilemma neither population bears a
 burden from its partner's cost, and each loses mechanism alleles only as it pays
 itself (Fig. S8). Populations couple through the dilemma, not through the accounting.

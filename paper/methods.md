@@ -80,20 +80,21 @@ Pairs are assigned within groups (and across populations in the two-population f
 before the first round. Allelic diversity arises only by mutation; cooperative and
 mechanism alleles are not introduced at initialization.
 
-## Social dilemmas
+## Game types
 
-Cooperation cost c is what a cooperator pays to produce the benefit in
-the dilemma. In the prisoner's dilemma that benefit is given to the partner; in
-the snowdrift it is shared between the pair whenever at least one player
-cooperates. Under the control payoff structure nothing is shared, and an
-individual's payoff does not depend on its partner's behavior: producing the benefit
-pays b − c whatever the partner does, so cooperation dominates while c < b. Baseline
-fitness K = 0.5 and benefit b = 0.4 are fixed; c is swept from 0 to b. Table 1 gives
-the three payoff structures.
+I study three game types: the prisoner's dilemma, the snowdrift, and a control with
+no dilemma. Cooperation cost c sets the payoffs within a type. In the prisoner's
+dilemma a cooperator pays c to give benefit b to the partner; in the snowdrift that
+benefit is shared between the pair whenever at least one player cooperates. Under the
+control game nothing is shared, and an individual's payoff does not depend on its
+partner's behavior: producing the benefit pays b − c whatever the partner does, so
+cooperation dominates while c < b. Baseline fitness K = 0.5 and benefit b = 0.4 are
+fixed; c is swept from 0 to b. Table 1 gives the three game types and how their
+payoffs move with c.
 
-Table 1. Payoff structures for the three social settings.
+Table 1. Game types and payoffs.
 
-| Game structure           | T (temptation) | R (reward)  | P (penalty) | S (sucker) | T − R (temptation gap) | P − S (risk)  | R − P (cooperation advantage)  |
+| Game type                | T (temptation) | R (reward)  | P (penalty) | S (sucker) | T − R (temptation gap) | P − S (risk)  | R − P (cooperation advantage)  |
 | ------------------------ | -------------- | ----------- | ----------- | ---------- | ---------------------- | ------------- | ------------------------ |
 | Control (no dilemma)     | K              | K + b − c   | K           | K + b − c  | c − b (increases)      | c − b (increases) | b − c (decreases)      |
 | Prisoner's dilemma       | K + b          | K + b − c   | K           | K − c      | c (increases)          | c (increases) | b − c (decreases)          |
@@ -155,7 +156,7 @@ C and is overridden only by active M, I, or J alleles.
 ## Independent variables and mechanisms
 
 I vary population number (one or two), group size, whether partnerships shuffle,
-payoff structure, cooperation cost, and information cost, together with which
+game type, cooperation cost, and information cost, together with which
 conditional behaviors may determine acts and rematching. Each mechanism label names the loci a run allows to act: direct
 reciprocity (M); partner choice (P); the combined mechanisms and those that include
 lifetime reputation (MP, MPQ, IMP, IJMPQ); and no enforcement, where none of those
@@ -168,7 +169,7 @@ Indirect reciprocity stands alone as a mechanism (IM, IJM) only under shuffling,
 because persistent pairs leave I copying the partner's act toward the focal individual
 itself, which is direct reciprocity; alongside partner choice it appears in the
 combined mechanisms IMP and IJMPQ. Table S1 reports which payoff gap limits each
-mechanism family in the payoff-plane attributions. The control row of Table 1 is a payoff structure, not a mechanism: under it a
+mechanism family in the payoff-plane attributions. The control row of Table 1 is a game type, not a mechanism: under it a
 partner's act does not change payoffs, while mechanisms may still be enabled or
 disabled as in the other games.
 
@@ -190,15 +191,15 @@ Pearson correlation between the cooperation gap and the fitness gap. A value nea
 minus one means the population that cooperates more earns less. Under partner choice I
 also correlate chooser-allele frequency with fitness across cells of a sweep.
 
-Where costs and payoffs match, the two populations start interchangeable, so I label
-them by outcome: within each run and snapshot, the more cooperative population is
-reported first. That prevents role differences from canceling when averaged across
+Where costs match and both populations play the same game, the two populations start
+interchangeable, so I label them by outcome: within each run and snapshot, the more
+cooperative population is reported first. That prevents role differences from canceling when averaged across
 runs, but it also makes the reported gap a rank statistic, which cannot be zero even
 without a real split. To separate that labeling artifact from a true role assignment,
 I compare each mechanism's matched-parameter gap to the gap under no enforcement,
 ranked the same way, rather than asking whether the gap differs from zero.
 Single-replicate runs keep their original labels, so their two curves are not
-rank-ordered. Where costs or payoffs differ, the labels follow the parameters.
+rank-ordered. Where costs differ, the labels follow the parameters.
 
 ## Simulation designs
 
@@ -207,7 +208,7 @@ and groups of 4 appear in the supplement. The constraint i + c ≤ b (and i + c�
 where c₁ is swept) keeps total cost from exceeding the cooperation benefit.
 
 I first establish baselines under equal cooperation cost. In a single population I
-sweep c from 0 to b across mechanisms and payoff structures (Fig. S1). Shuffled
+sweep c from 0 to b across mechanisms and game types (Fig. S1). Shuffled
 short-memory variants of that set are in Fig. S2. The same equal-cost sweep in two
 coevolving populations is Fig. 1.
 
@@ -217,7 +218,7 @@ c₁ ∈ [0.02, 0.40] (Fig. 2 reports the strip c₁ = c₀ + 0.02; full grid Fi
 no-enforcement control Fig. S3; Fig. S5 places that strip beside the matched-cost case
 of Fig. 1). Information cost is introduced next at equal c on a triangular grid of
 231 (i, c) cells under i + c ≤ b (Fig. 3; full grid Fig. S7), including under the
-control payoff structure (Fig. S8).
+control game (Fig. S8).
 
 The central designs vary who pays an information cost. One holds a cooperation-cost
 gap and jointly sweeps information cost with the higher cooperation cost (c₀ = 0.10;

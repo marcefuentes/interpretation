@@ -61,7 +61,7 @@ near-zero-i₀ inversion regime; cooperation after allele loss is Fig. 3. Main t
 | figS5 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P | Row 0: c1 = c0 + 0.02; row 1: c0 = c1 |
 | figS6 | Heatmap | asymmetric_c0_c1 pop_2, P, gs = 4 | Small-group robustness |
 | figS7 | Heatmap | symmetric_c_i pop_1, IJMPQ | Cost × c grid |
-| figS8 | Heatmap | symmetric_c_i pop_1, M, dt 0 vs 1 | Dilemma-0 control |
+| figS8 | Heatmap | symmetric_c_i pop_1, M, dt 0 vs 1 | Control game |
 | figS9 | Heatmap | asymmetric_c1_i pop_2, P | c1 × Cost with c0 fixed |
 | figS10 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | Fitness counterpart of Fig. 4 slices |
 | figS11 | Heatmap | asymmetric_i0_i1 pop_2, P + IJMPQ | i0 × i1 at c0 = c1 = 0.10 |
@@ -211,7 +211,7 @@ Robustness panels from the primary sweeps only. No-enforcement control for Fig. 
 | S5 | Parameter-symmetric vs parameter-asymmetric cooperation cost (line slices) | figS5 | `... --figure figS5 ...` | ~/figures/interpretation/figS5.png |
 | S6 | Small groups (gs = 4): cooperation-cost asymmetry under partner choice | figS6 | `... --figure figS6 --groupsize 4 ...` | ~/figures/interpretation/figS6.png |
 | S7 | Information cost versus cooperation cost, single population (was Fig 4) | figS7 | `... --figure figS7 ...` | ~/figures/interpretation/figS7.png |
-| S8 | Dilemma-0 control: mechanism alleles decline with and without a social dilemma | figS8 | `... --figure figS8 ...` | ~/figures/interpretation/figS8.png |
+| S8 | Control game: mechanism alleles decline with and without a social dilemma | figS8 | `... --figure figS8 ...` | ~/figures/interpretation/figS8.png |
 | S9 | Information cost under fixed cooperation-cost asymmetry (was Fig 6) | figS9 | `... --figure figS9 ...` | ~/figures/interpretation/figS9.png |
 | S10 | Fitness counterpart of Fig. 4 (same relational slices) | figS10 | `... --figure figS10 ...` | ~/figures/interpretation/figS10_wmean.png |
 | S11 | Information-cost parameter asymmetry at equal cooperation cost (c = 0.10) | figS11 | `... --figure figS11 ...` | ~/figures/interpretation/figS11.png |
@@ -243,7 +243,7 @@ regenerate `paper/captions.md` with `--report`.
 
 1. Fig 1. At c₀ = c₁, partner choice yields a stochastic cooperator/exploiter split absent without enforcement (PD); snowdrift already splits in the control columns. Paradox of success in the fitness panels.
 2. Fig 2. Along c₁ = c₀ + 0.02, partner choice determines a deterministic split; IJMPQ raises cooperation in the expensive population. PD only — Fig. S3 shows partner choice creates the split; snowdrift already-high cooperation is Fig. 1e–h. Full grid → Fig. S4; gs = 4 → Fig. S6.
-3. Fig 3. At c = 0, enforcement alleles fall while cooperation holds on unconditional cooperators that pay no information cost. Fig. S7 full grid; Fig. S8 dilemma-0 control. That pattern is priced by Figs. 4–5.
+3. Fig 3. At c = 0, enforcement alleles fall while cooperation holds on unconditional cooperators that pay no information cost. Fig. S7 full grid; Fig. S8 control game. That pattern is priced by Figs. 4–5.
 4. Fig 4. Own- vs partner-cost strips plus fixed total: under P both populations flat in own cost, cooperate much less under partner's; under IJMPQ the pattern reverses (raising i on cheap side: partner 0.957 → 0.268, payer → 0.734). Third column: IJMPQ interior minimum (shared total worse); P monotone.
 5. Fig 5. Wedge closes as i₀ rises (holds at 0, threshold at 0.02, gone by 0.04). ±1 SD bands mark bistability. Equal-c role-inversion contrast → Fig. S11.
 
@@ -256,7 +256,7 @@ S4. Full c₀ × c₁ grid behind Fig. 2 (P and IJMPQ).
 S5. Deterministic strip (Fig. 2) vs stochastic strip (Fig. 1) on shared axes.
 S6. Fig. 2 asymmetry at gs = 4: deterministic split survives.
 S7. Cost × c grid behind Fig. 3: information cost alone has a weak effect, lowers the threshold where costs overlap.
-S8. Mechanism alleles decline with or without a dilemma; cooperation persists after those alleles are lost only with a dilemma (cf. Fig. 3).
+S8. Mechanism alleles decline in the prisoner's dilemma and in the control game; cooperation persists after those alleles are lost only with a dilemma (cf. Fig. 3).
 S9. With c₀ > 0 fixed, information cost compresses the partner-choice split (refuge gone). Complements Figs. 4–5.
 S10. Fitness counterpart of Fig. 4 on the same own-cost, partner-cost, and fixed-total slices: relational pattern reverse and fixed-total interior penalties persist in fitness.
 S11. At c₀ = c₁, i-asymmetry assigns roles under P and inverts under IJMPQ; role inversion stronger than in Figs. 4–5.

@@ -26,7 +26,7 @@ Along c₁ = c₀ + 0.02 with both populations overlaid, partner choice converts
 
 <strong>Fig. 3.</strong> Simulation results for different cooperation mechanisms. Frequency of the enforcement allele (P1 in a; M1 in c) and frequency of cooperators. The figure shows one population. (<strong>a, b</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>c, d</strong>) When direct reciprocity is the only cooperation mechanism allowed. The population has the same cooperation cost (0) and the same information cost (from 0 to <em>b</em> (0.4), where <em>b</em> is the benefit to the partner).
 
-At c = 0, information cost selects out active enforcement alleles (chooser P1 in a; TFT M1 in c) while cooperation remains high on unconditional cooperators that pay no information cost (b, d). Cooperation frequency and mechanism-allele frequency diverge. The full information-cost × cooperation-cost grid is in Fig. S7; Fig. S8 shows that mechanism alleles decline with or without a dilemma, but cooperation persists after those alleles are lost only when the dilemma is present. That pattern is what Figs. 4–5 price: relieving the payer removes the assortment or conditional help its partner depends on.
+At c = 0, information cost selects out active enforcement alleles (chooser P1 in a; TFT M1 in c) while cooperation remains high on unconditional cooperators that pay no information cost (b, d). Cooperation frequency and mechanism-allele frequency diverge. The full information-cost × cooperation-cost grid is in Fig. S7; Fig. S8 shows that mechanism alleles decline in the prisoner's dilemma and in the control game, but cooperation persists after those alleles are lost only when the dilemma is present. That pattern is what Figs. 4–5 price: relieving the payer removes the assortment or conditional help its partner depends on.
 
 ### <strong>Fig. 4.</strong> Information cost is relational: which population's cost binds, and shared totals are not additive.
 
@@ -68,7 +68,7 @@ Shuffle-enabled short-memory variants of the mechanisms in Fig. S1. The direct-r
 
 <strong>Fig. S3.</strong> No cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). The two populations have the same information cost (0.001).
 
-Same cooperation-cost parameter asymmetry as Fig. 2 but without enforcement alleles. Under the prisoner's dilemma the cheap population barely cooperates, so partner choice is what converts the R − P gap into a deterministic cooperator/exploiter split. Snowdrift can break symmetry from payoffs alone (Fig. 1e–h).
+Same cooperation-cost parameter asymmetry as Fig. 2 but without enforcement alleles. Under the prisoner's dilemma the cheap population barely cooperates, so partner choice is what converts the R − P gap into a deterministic cooperator/exploiter split. Snowdrift can break symmetry from the game alone (Fig. 1e–h).
 
 ### <strong>Fig. S4.</strong> Full cooperation-cost asymmetry grid (prisoner's dilemma).
 
@@ -102,13 +102,13 @@ Same cooperation-cost parameter asymmetry as Fig. 2 but at group size 4. The det
 
 Information cost alone has a weak effect but lowers the cooperation-cost threshold where the two costs overlap. Full-coverage information-cost × cooperation-cost grid behind Fig. 3, which shows the c = 0 allele-versus-behavior slice rather than combined IJMPQ alone.
 
-### <strong>Fig. S8.</strong> No-enforcement control for loss of mechanism alleles.
+### <strong>Fig. S8.</strong> Control game for loss of mechanism alleles.
 
 ![figS8](/home/marcelino/figures/interpretation/figS8.png)
 
-<strong>Fig. S8.</strong> Direct reciprocity. Frequency of the enforcement allele (M1 in a and c) and frequency of cooperators when direct reciprocity is the only cooperation mechanism allowed. (<strong>a–d</strong>) One population. (<strong>a, b</strong>) No dilemma. (<strong>c, d</strong>) Prisoner's dilemma. The population has the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost.
+<strong>Fig. S8.</strong> Direct reciprocity. Frequency of the enforcement allele (M1 in a and c) and frequency of cooperators when direct reciprocity is the only cooperation mechanism allowed. (<strong>a–d</strong>) One population. (<strong>a, b</strong>) Control game (no dilemma). (<strong>c, d</strong>) Prisoner's dilemma. The population has the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost.
 
-Mechanism alleles decline with (c, d) or without (a, b) a social dilemma; cooperation persists after those alleles are lost only when the dilemma is present. The information cost drives the allele loss; the dilemma decides whether losing the alleles reduces cooperation (cf. Fig. 3).
+Mechanism alleles decline in the prisoner's dilemma (c, d) and in the control game (a, b); cooperation persists after those alleles are lost only when the dilemma is present. The information cost drives the allele loss; the game type decides whether losing the alleles reduces cooperation (cf. Fig. 3).
 
 ### <strong>Fig. S9.</strong> Information cost under fixed cooperation-cost asymmetry.
 

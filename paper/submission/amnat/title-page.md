@@ -35,7 +35,7 @@ cd paper && pandoc introduction.md methods.md results.md discussion.md -t plain 
 | Element | Count | Notes |
 | ------- | ----- | ----- |
 | Main figures | 5 | Figs. 1–5; inline in Results |
-| Main tables | 1 | Table 1 (payoff structures); Methods |
+| Main tables | 1 | Table 1 (game types); Methods |
 | Supplement figures | 11 | Figs. S1–S11; [supplement.md](../../supplement.md) |
 | Supplement tables | 1 | Table S1 (payoff-gap attribution) |
 | Boxes | 0 | |

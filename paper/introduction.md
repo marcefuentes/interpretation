@@ -62,10 +62,11 @@ These literatures establish that enforcement is not free, but they place the cos
 on individuals *within* one population. They do not ask whether an information cost
 paid by one population can place a burden — or confer a benefit — on its partner.
 
-**Dilemma structure.** Whether cooperation is a prisoner's dilemma or a snowdrift
+**Game type.** Whether cooperation is a prisoner's dilemma or a snowdrift
 (chicken) game changes both the baseline incentive to help and which mechanisms can
-rescue it [@HauertDoebeli2004; @DoebeliHauert2005]. I keep both games in view so that
-claims about information costs can be separated from claims about payoff structure.
+rescue it [@HauertDoebeli2004; @DoebeliHauert2005]. I keep both games, and a
+no-dilemma control, in view so that claims about information costs can be separated
+from claims about game type.
 
 ## Gap and approach
 
@@ -109,7 +110,7 @@ bears the burden of that cost: cognitive-cost and punishment studies are
 within-population or do not separate the cost a population pays from the burden that
 cost places on its partner.
 
-I therefore vary an individual-based model across social dilemma, cooperation cost,
+I therefore vary an individual-based model across game type, cooperation cost,
 per-population information cost, group size, partner shuffling, population structure,
 and mechanism, and add orthogonal payoff-plane calibration analyses that separate the
 payoff gaps a single cooperation-cost axis joins. The single-population

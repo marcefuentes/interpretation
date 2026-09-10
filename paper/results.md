@@ -38,10 +38,12 @@ relative to Fig. S1 but leave the partner-choice versus combined contrast intact
 With two coevolving populations, one population often cooperates while the other
 exploits it, and the more cooperative population earns less fitness. I distinguish
 this **outcome** asymmetry (gaps in cooperation and fitness) from **parameter**
-symmetry in the setup (whether c₀ = c₁, i₀ = i₁, and payoffs match). Mechanism can
+symmetry in the setup (whether c₀ = c₁, i₀ = i₁, and both populations play the same
+game). Mechanism can
 override the default mapping.
 
-When costs and payoffs match (c₀ = c₁, i₀ = i₁), partner-choice populations
+When costs match and both populations play the same game (c₀ = c₁, i₀ = i₁),
+partner-choice populations
 **stochastically** split into cooperators and exploiters in the prisoner's dilemma —
 a split that does not appear without enforcement (Fig. 1a–d). One population carries
 cooperation and is exploited; carrying the chooser allele correlates with fitness at
@@ -63,12 +65,12 @@ in the PD (control mean ≈ 0.10), so partner choice is what lets populations lo
 parameter gap into a deterministic split (Fig. S3; full c₀ × c₁ grid in Fig. S4).
 In snowdrift the sucker payoff already lets populations cooperate highly without
 mechanism alleles (control ≈ 0.96 vs partner choice ≈ 0.96 for the cheap side), and
-populations often diverge from payoffs alone (Fig. 1e–h). A parallel asymmetric snowdrift
+populations often diverge from the game alone (Fig. 1e–h). A parallel asymmetric snowdrift
 panel would repeat that already-high cooperation rather than isolate what enforcement adds.
 Fig. S5 contrasts the deterministic and stochastic strips on shared axes; the split
 survives small-group stochasticity at group size 4 (Fig. S6).
 
-**Figure 2: Deterministic role splits emerge from cooperation-cost asymmetries.** Frequency of cooperators and average fitness for two coevolving populations under the prisoner's dilemma, evaluated along the parameter strip $c_1 = c_0 + 0.02$ (with both populations overlaid). **A, B**, Short-memory partner choice alone. **C, D**, Combined partner choice and indirect reciprocity. Both populations pay identical information costs ($0.001$). A small cooperation-cost gap allows partner choice to convert the payoff asymmetry into a stable cooperator/exploiter assignment (**A, B**). The combined mechanism that includes lifetime reputation raises cooperation in the expensive population, shrinking the outcome asymmetry (**C, D**).
+**Figure 2: Deterministic role splits emerge from cooperation-cost asymmetries.** Frequency of cooperators and average fitness for two coevolving populations under the prisoner's dilemma, evaluated along the parameter strip $c_1 = c_0 + 0.02$ (with both populations overlaid). **A, B**, Short-memory partner choice alone. **C, D**, Combined partner choice and indirect reciprocity. Both populations pay identical information costs ($0.001$). A small cooperation-cost gap allows partner choice to convert the cooperation-cost asymmetry into a stable cooperator/exploiter assignment (**A, B**). The combined mechanism that includes lifetime reputation raises cooperation in the expensive population, shrinking the outcome asymmetry (**C, D**).
 
 Single-run trajectories confirm that these roles are stable end states: cooperation
 and fitness at t = 2^17 already match the final snapshot at t = 2^20, not slow
@@ -90,7 +92,7 @@ At zero cooperation cost the genotype pattern makes that separation visible (Fig
 As information cost rises, active enforcement alleles are selected out — chooser P1
 (Fig. 3a) and TFT M1 (Fig. 3c) both fall toward zero — while cooperation remains high
 on unconditional cooperators that pay no information cost (Fig. 3b,d: C1P0, C1M0).
-Cooperation frequency and mechanism-allele frequency diverge. A dilemma-free control
+Cooperation frequency and mechanism-allele frequency diverge. A control game
 shows that mechanism alleles decline with or without a social dilemma; cooperation
 persists after those alleles are lost only when the dilemma is present, so the
 information cost drives the allele loss and the dilemma decides whether losing the
@@ -220,7 +222,7 @@ the lead in three cells, but in the opposite corner of the square and by the opp
 route: a transient crossing while its *own* alleles fall.
 
 Snowdrift removes this regime entirely, identifying this cross-population burden as a
-property of the dilemma rather than of the cost accounting. The dilemma-free control
+property of game type rather than of the cost accounting. The control game
 makes the same point for the claim that cooperation can persist after mechanism
 alleles are lost (Fig. S8). Shuffled partnerships and group size 4 are reported in
 Figs. S2 and S6.
