@@ -233,7 +233,7 @@ journal synthesis and calibration docs; do not publish full payoff-plane heatmap
 | ---------------- | ------------------- | -------------- |
 | M (direct reciprocity) | Risk / defection payoff P | PD and snowdrift calibration |
 | P (partner choice) | Cooperation advantage R − P | PD calibration |
-| MP, MPQ, IMP, IJMPQ (combined / with lifetime reputation) | Reward / temptation R | PD calibration |
+| MP, MPQ, IMP, IJMPQ (combined) | Reward / temptation R | PD calibration |
 
 ## Draft captions
 

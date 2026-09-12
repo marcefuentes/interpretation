@@ -3,16 +3,17 @@
 ## What limits each mechanism
 
 I attribute the fall in cooperation under each mechanism to a specific payoff gap.
-Direct reciprocity is limited by risk (the cost of its own punishment outcome, mutual
-defection), partner choice by the cooperation advantage R − P (the quantity assortment
-uses), and mechanisms that include lifetime reputation by reward alone (they ignore the
-defection baseline). This ranking is consistent with the classical contrast between
-memory-based reciprocity and market-like partner choice
+Direct reciprocity (M) is risk-limited: its fall tracks risk (the cost of its own
+punishment outcome, mutual defection). Partner choice (P) is limited by the
+cooperation advantage R − P (the quantity assortment uses). The combined mechanisms
+MP, MPQ, IMP, and IJMPQ are reward-limited and ignore the defection baseline. This
+ranking is consistent with the classical contrast between memory-based reciprocity and
+market-like partner choice
 [@Trivers1971; @NoeHammerstein1994; @Nowak2006], and with the finding that the snowdrift
 game raises baseline cooperation relative to the prisoner's dilemma
-[@HauertDoebeli2004; @DoebeliHauert2005]. It also explains why combined mechanisms that
-include lifetime reputation exceed the cost thresholds that limit M and P individually:
-once reward leads, the defection baseline no longer determines when cooperation falls.
+[@HauertDoebeli2004; @DoebeliHauert2005]. It also explains why those combined mechanisms
+exceed the cost thresholds that limit M and P individually: once they are
+reward-limited, the defection baseline no longer determines when cooperation falls.
 
 ## Two populations: what the second one changes
 
@@ -33,7 +34,7 @@ populations already cooperate and diverge without enforcement when the sucker pa
 is high (Fig. 1 and Fig. S3). When populations differ only in information cost,
 partner choice still locks roles, while IJMPQ can invert them; snowdrift removes these
 PD locks. In all cases the more cooperative population earns less fitness, and
-reward-led combined mechanisms shrink that gap.
+reward-limited combined mechanisms shrink that gap.
 
 ## Information cost versus cooperation cost
 
@@ -63,8 +64,7 @@ weaker than in the equal-c case. Snowdrift removes this regime entirely.
 What decides whether a mechanism can be overridden at all is whether populations
 carry the reciprocity family, not how large an information cost they pay — a controlled
 comparison the per-family information cost makes possible, because direct reciprocity
-and partner choice pay identically, as do the four combined mechanisms among
-themselves.
+and partner choice pay identically, as do MP, MPQ, IMP, and IJMPQ among themselves.
 
 ## Cost versus burden across populations
 
