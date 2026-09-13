@@ -13,26 +13,28 @@ no-enforcement control (Fig. S1a). Cooperation collapses at successively higher
 costs under direct reciprocity M (Fig. S1b), short-memory partner choice P
 (Fig. S1c), and the combined mechanism IJMPQ (Fig. S1d), in that order.
 
-In the prisoner's dilemma, P > S, so raising c raises temptation (T − R), raises
-risk (P − S), and shrinks the cooperation advantage (R − P). I run a separate set
-of simulations that vary those gaps independently to sort out which drives the
-fall in cooperation (Table S1). A mechanism is risk-limited if its cooperation
-tracks P − S across those independent sweeps, and reward-limited if it tracks the
-mutual-cooperation payoff R rather than those gaps. Direct reciprocity (M) is
-risk-limited: mimicking a defector is the safe reply (it earns P instead of S),
-and the fall in cooperation as c rises tracks the growing mutual-defection risk
-rather than the shrinking R − P. In snowdrift, S > P, so there is no risk and
-mimicking a defector is costly (it earns the worst payoff P instead of S). The
-same columns (Fig. S1e–h) show more cooperation without enforcement —
-unconditional cooperators keep cooperating while reciprocity alleles are selected
-against — and the ordering among mechanisms flattens. Partner choice (P) never
-mimics: it rematches, and it is limited by the cooperation advantage R − P in
-both games. It tracks R − P alone across those independent sweeps, which is why
-it fails as R − P → 0. The combined mechanisms MP, MPQ, IMP, and IJMPQ are
-reward-limited and do not track the mutual-defection payoff P, which is why they
-sustain cooperation to the highest costs (Fig. S1d). Short-memory and shuffle
-variants shift the direct-reciprocity ordering relative to Fig. S1 but leave the
-partner-choice versus combined contrast intact (Fig. S2).
+In the prisoner's dilemma, P > S (payoffs as in Table 1), so raising c raises
+temptation (T − R), raises risk (P − S), and shrinks the cooperation advantage
+(R − P). I run a separate set of simulations that vary those gaps independently
+to sort out which drives the fall in cooperation (Table S1). A mechanism is
+risk-limited if its cooperation tracks P − S across those independent sweeps,
+and reward-limited if it tracks the mutual-cooperation payoff R rather than
+those gaps. Direct reciprocity (M) is risk-limited: mimicking a defector is the
+safe reply (it earns P instead of S), and the fall in cooperation as c rises
+tracks the growing mutual-defection risk rather than the shrinking R − P. In
+snowdrift, S > P, so there is no risk and mimicking a defector is costly (it
+earns the worst payoff P instead of S). The same columns (Fig. S1e–h) show more
+cooperation without enforcement — unconditional cooperators keep cooperating
+while reciprocity alleles are selected against — and the ordering among
+mechanisms flattens. Partner choice (P) is limited by the cooperation advantage
+R − P in both games. It tracks R − P alone across those independent sweeps,
+which is why it fails as R − P → 0. The combined mechanisms MP, MPQ, IMP, and
+IJMPQ are reward-limited and do not track the mutual-defection payoff P, which
+is why they sustain cooperation to the highest costs (Fig. S1d). Fig. S2
+repeats the cost sweep under shuffled partnerships for M, MP, IM, and IMP:
+shuffle collapses direct reciprocity, while short-memory indirect reciprocity
+and the partner-choice combinations still sustain cooperation farther. Partner
+choice alone is nearly unchanged by shuffle, so that panel is omitted.
 
 ## 2. The two-population role split
 

@@ -58,9 +58,11 @@ No-enforcement control, direct reciprocity (M), partner choice (P), and IJMPQ ra
 
 ![figS2](/home/marcelino/figures/interpretation/figS2.png)
 
-<strong>Fig. S2.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators. The figure shows one population (dark green). (<strong>a, e</strong>) When direct reciprocity is the only cooperation mechanism allowed. (<strong>b, f</strong>) When partner choice and direct reciprocity are both allowed. (<strong>c, g</strong>) When short-memory indirect reciprocity is the only cooperation mechanism allowed. (<strong>d, h</strong>) When IMP is allowed. (<strong>a–d</strong>) Prisoner's dilemma. (<strong>e–h</strong>) Snowdrift. The population has the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost (0.001).
+<strong>Fig. S2.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators. The figure shows one population (dark green). (<strong>a, e</strong>) When direct reciprocity is the only cooperation mechanism allowed. (<strong>b, f</strong>) When partner choice and direct reciprocity are both allowed. (<strong>c, g</strong>) When short-memory indirect reciprocity is the only cooperation mechanism allowed. (<strong>d, h</strong>) When partner choice and indirect reciprocity are both allowed. (<strong>a–d</strong>) Prisoner's dilemma. (<strong>e–h</strong>) Snowdrift. The population has the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost (0.001).
 
-Shuffle-enabled short-memory variants of the mechanisms in Fig. S1. The direct-reciprocity ordering can shift relative to Fig. S1 while the partner-choice versus combined contrast remains.
+Shuffle-enabled short-memory variants of the mechanisms in Fig. S1 (M, MP, IM,
+and IMP). Shuffle collapses direct reciprocity, while short-memory indirect
+reciprocity and the partner-choice combinations still sustain cooperation farther.
 
 ### <strong>Fig. S3.</strong> No-enforcement control for Fig. 2 (parameter-asymmetric two populations).
 

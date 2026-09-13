@@ -250,7 +250,7 @@ regenerate `paper/captions.md` with `--report`.
 Supplement captions:
 
 S1. No-enforcement → M → P → IJMPQ raise the cooperation-cost threshold in that order; snowdrift flattens the threshold ordering (e–h).
-S2. Shuffle short-memory variants of Fig. S1: M ordering can shift; P vs combined contrast remains.
+S2. Shuffle short-memory variants (M, MP, IM, IMP): shuffle collapses M; IM and partner-choice combinations hold farther.
 S3. No-enforcement control for Fig. 2: cheap PD population barely cooperates, so partner choice creates the deterministic split.
 S4. Full c₀ × c₁ grid behind Fig. 2 (P and IJMPQ).
 S5. Deterministic strip (Fig. 2) vs stochastic strip (Fig. 1) on shared axes.
