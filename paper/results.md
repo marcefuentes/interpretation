@@ -19,17 +19,20 @@ of simulations that vary those gaps independently to sort out which drives the
 fall in cooperation (Table S1). A mechanism is risk-limited if its cooperation
 tracks P − S across those independent sweeps, and reward-limited if it tracks the
 mutual-cooperation payoff R rather than those gaps. Direct reciprocity (M) is
-risk-limited: the fall in cooperation as c rises tracks the growing
-mutual-defection risk rather than the shrinking R − P. In snowdrift, S > P, so
-there is no risk: the same columns (Fig. S1e–h) show more cooperation without
-enforcement, M sustains cooperation it cannot in the prisoner's dilemma, and the
-ordering among mechanisms flattens. Partner choice (P) is limited by the
-cooperation advantage R − P: it tracks R − P alone across those independent
-sweeps, which is why it fails as R − P → 0. The combined mechanisms MP, MPQ, IMP,
-and IJMPQ are reward-limited and do not track the mutual-defection payoff P, which
-is why they sustain cooperation to the highest costs (Fig. S1d). Short-memory and
-shuffle variants shift the direct-reciprocity ordering relative to Fig. S1 but leave
-the partner-choice versus combined contrast intact (Fig. S2).
+risk-limited: mimicking a defector is the safe reply (it earns P instead of S),
+and the fall in cooperation as c rises tracks the growing mutual-defection risk
+rather than the shrinking R − P. In snowdrift, S > P, so there is no risk and
+mimicking a defector is costly (it earns the worst payoff P instead of S). The
+same columns (Fig. S1e–h) show more cooperation without enforcement —
+unconditional cooperators keep cooperating while reciprocity alleles are selected
+against — and the ordering among mechanisms flattens. Partner choice (P) never
+mimics: it rematches, and it is limited by the cooperation advantage R − P in
+both games. It tracks R − P alone across those independent sweeps, which is why
+it fails as R − P → 0. The combined mechanisms MP, MPQ, IMP, and IJMPQ are
+reward-limited and do not track the mutual-defection payoff P, which is why they
+sustain cooperation to the highest costs (Fig. S1d). Short-memory and shuffle
+variants shift the direct-reciprocity ordering relative to Fig. S1 but leave the
+partner-choice versus combined contrast intact (Fig. S2).
 
 ## 2. The two-population role split
 
