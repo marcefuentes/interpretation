@@ -124,8 +124,11 @@ Table 1. Game types and payoffs.
 | Snowdrift                | K + b          | K + b − c/2 | K           | K + b − c  | c/2 (increases slowly) | c − b (increases) | b − c/2 (decreases slowly) |
 
 Note: Columns T − R, P − S, and R − P show how each gap changes as cooperation cost c
-rises. In the control row R exceeds T and S exceeds P, so the first two gaps are
-negative and neither temptation nor risk applies.
+rises. Temptation applies only when T > R, and risk only when P > S. In the control
+row both gaps are negative, so neither applies. In snowdrift S > P for all c < b, so
+there is no risk on the interior of the sweep even though P − S = c − b rises toward
+zero. In the prisoner's dilemma both temptation and risk are positive for c > 0 and
+rise with c.
 
 In the two-population form each population pays its own cooperation cost (c₀, c₁), with
 c₀ < c₁ whenever they are asymmetrical. The lower-cost population always has the
