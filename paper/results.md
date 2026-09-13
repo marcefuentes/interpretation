@@ -1,11 +1,10 @@
 # Results
 
 I first compare mechanisms under equal cooperation cost in one population, then in
-two. I next raise information cost at equal cooperation cost, then let the two
-populations differ in who pays that cost, and finally hold a fixed information-cost
-total while varying its split, and vary both cost axes together.
+two. I next raise information cost when both populations pay alike, then let them
+differ in who pays that cost, and finally vary both information costs together.
 
-## 1. Mechanism cost thresholds
+## 1. Equal cooperation cost in one population
 
 I start with equal cooperation cost in a single population (Fig. S1). In the
 prisoner's dilemma, cooperation stays near zero irrespective of cost in the
@@ -36,7 +35,7 @@ short-memory indirect reciprocity and the partner-choice combinations still
 sustain cooperation farther. Partner choice alone is nearly unchanged by shuffle,
 so that panel is omitted.
 
-## 2. The two-population role split
+## 2. Equal and unequal cooperation cost in two populations
 
 With two coevolving populations, one population often cooperates while the other
 exploits it, and the more cooperative population earns less fitness. When costs
@@ -58,8 +57,8 @@ deterministic. Along the strip c₁ = c₀ + 0.02, the lower-cooperation-cost po
 cooperates in every cell under partner choice, and the R − P gap becomes a stable
 cooperation gap (Fig. 2a,b). Under IJMPQ — partner choice on recent and lifetime
 cooperation plus direct and indirect reciprocity — the expensive population cooperates
-more and the outcome gap shrinks on the same axes (Fig. 2c,d), because reward-limited
-mechanisms no longer turn R − P into a cooperation gap. Fig. 2 is
+more and the outcome gap shrinks on the same axes (Fig. 2c,d): IJMPQ is
+reward-limited, so unlike partner choice it does not track R − P. Fig. 2 is
 prisoner's-dilemma only: without enforcement the cheap population barely cooperates
 (control mean ≈ 0.10), so partner choice is what converts the parameter gap into a
 deterministic split (Fig. S3; full c₀ × c₁ grid in Fig. S4).
@@ -67,19 +66,13 @@ In snowdrift there is no risk (S > P), so populations already cooperate highly w
 mechanism alleles (control ≈ 0.96 vs partner choice ≈ 0.96 for the cheap side), and
 populations often diverge from the game alone (Fig. 1e–h). A parallel asymmetric snowdrift
 panel would repeat that already-high cooperation rather than isolate what enforcement adds.
-Fig. S5 contrasts the deterministic and stochastic strips on shared axes; the split
-survives small-group stochasticity at group size 4 (Fig. S6).
+Fig. S5 places the small cost-gap strip of Fig. 2 beside the matched-cost split of
+Fig. 1 on the same axes. The deterministic split still holds at group size 4
+(Fig. S6).
 
 **Figure 2: Deterministic role splits emerge from cooperation-cost asymmetries.** Frequency of cooperators and average fitness for two coevolving populations under the prisoner's dilemma, evaluated along the parameter strip $c_1 = c_0 + 0.02$ (with both populations overlaid). **A, B**, Short-memory partner choice (P). **C, D**, Combined mechanism IJMPQ. Both populations pay identical information costs ($0.001$). A small cooperation-cost gap allows partner choice to convert the cooperation-cost asymmetry into a stable cooperator/exploiter assignment (**A, B**). IJMPQ raises cooperation in the expensive population, shrinking the outcome asymmetry (**C, D**).
 
-Single-run companion trajectories confirm that these roles are stable end states:
-frequency of cooperators and fitness at t = 2^17 already match the final snapshot at
-t = 2^20, with no slow late decline. That early stabilization holds in both the one-
-and two-population designs.
-
-I next vary information cost.
-
-## 3. Symmetric information cost conflates own cost with partner burden
+## 3. Matched information cost
 
 Making the enforcement alleles themselves costly adds a second cost, separate from
 cooperation cost. Raising the information cost alone reduces cooperation only
@@ -117,7 +110,7 @@ but that reading is an artifact of applying the same information cost to both si
 once. Holding one population's information cost at zero and varying the other's
 breaks the confound.
 
-## 4. Information cost is relational
+## 4. Independent per-population information costs
 
 Under partner choice, with a fixed cooperation-cost gap (c₀ = 0.1, c₁ = 0.2) and
 independent per-population information costs, a population barely bears a burden from
@@ -125,7 +118,8 @@ its own information cost and cooperates much less under the burden of its partne
 (Fig. 4a,b). Figs. 4–5 cross that cooperation-cost gap with those information costs;
 mechanisms are rows and designs are columns. The first two columns of Fig. 4 hold one
 population's information cost at zero and sweep the other's, so each column shows
-which population's cost places the larger burden on its partner.
+which population's cost places the larger burden on its partner. The third column
+holds the total information cost fixed while the split varies.
 
 When the low-cooperation-cost population's information cost rises from i = 0 to
 i = 0.20, its frequency of cooperators barely changes (0.602 → 0.585) and its
@@ -159,15 +153,6 @@ defection and the allele survives only in defector carriers that never choose. P
 choice therefore assorts at the population level — a residual chooser minority can
 still sort both sides — while reciprocity protects only its carriers.
 
-The pattern that let a population keep cooperating under information cost under
-symmetry (Fig. 3) is what places a burden on its partner under asymmetry: losing
-mechanism alleles relieves the payer and removes the assortment or conditional help
-the partner needed.
-
-**Figure 4: The relational burden of information cost.** Frequency of cooperators in two coevolving populations under the prisoner's dilemma. One population (orange) has a lower cooperation cost ($c_0 = 0.1$) than the other (red; $c_1 = 0.2$). **A–C**, Short-memory partner choice (P). **D–F**, Combined mechanism IJMPQ. **A, D**, Information cost is applied only to the low-cooperation-cost population ($i_1 = 0$; $i_0$ swept). **B, E**, Information cost is applied only to the high-cooperation-cost population ($i_0 = 0$; $i_1$ swept). **C, F**, The total information cost is fixed at $i_0 + i_1 = 0.2$ while the distribution between populations varies. Under partner choice (**A, B**), populations are robust to their own information costs but cooperate much less under their partner's. Under IJMPQ (**D, E**), this relationship reverses: raising information cost on the low-cost population reduces cooperation more in its high-cost partner than in the payer. Reciprocity-bearing mechanisms also reach their lowest cooperation at an interior split of a fixed total (**F**).
-
-## 5. Non-additivity, role assignment, and the bistable threshold
-
 The same total information cost does not yield the same cooperation: equal totals are
 neither interchangeable nor additive (Fig. 4c,f). Along a line of constant total
 information cost (0.20), every reciprocity-bearing mechanism reaches its *lowest*
@@ -185,18 +170,26 @@ non-additivity is therefore a property of reciprocity-bearing mechanisms, not of
 total itself. The fitness counterpart of these slices shows the same cross-population
 burdens and the same interior minimum under a fixed total (Fig. S10).
 
-When both cost axes differ, the cooperation-cost gap still usually decides which
-population cooperates more. Across the full i₀ × i₁ square behind Figs. 4–5, under
-partner choice the lower-cooperation-cost population cooperates more than its partner
-in 170/176 cells; under IJMPQ they show role inversion — the expensive population's
-cooperation above the cheap one's — locally only on the i₀ ≈ 0 strip (13 cells). That
-role inversion is stronger when populations differ only in information cost
-(Fig. S11 shows the assignment under P and the inversion under IJMPQ; under IMP at
-the same design, the cooperation gap, cheap minus expensive, reaches −0.461 when
-i₀ = 0 and i₁ = 0.20) and weaker once a cooperation-cost gap is present (cooperation
-gap −0.100 at the same information-cost point). The cooperation-cost gap moves every
-reciprocity-bearing mechanism toward the cheap-cooperation-cost population, erasing
-the inversion outright for MP and MPQ.
+The pattern that let a population keep cooperating under information cost under
+symmetry (Fig. 3) is what places a burden on its partner under asymmetry: losing
+mechanism alleles relieves the payer and removes the assortment or conditional help
+the partner needed.
+
+**Figure 4: The relational burden of information cost.** Frequency of cooperators in two coevolving populations under the prisoner's dilemma. One population (orange) has a lower cooperation cost ($c_0 = 0.1$) than the other (red; $c_1 = 0.2$). **A–C**, Short-memory partner choice (P). **D–F**, Combined mechanism IJMPQ. **A, D**, Information cost is applied only to the low-cooperation-cost population ($i_1 = 0$; $i_0$ swept). **B, E**, Information cost is applied only to the high-cooperation-cost population ($i_0 = 0$; $i_1$ swept). **C, F**, The total information cost is fixed at $i_0 + i_1 = 0.2$ while the distribution between populations varies. Under partner choice (**A, B**), populations are robust to their own information costs but cooperate much less under their partner's. Under IJMPQ (**D, E**), this relationship reverses: raising information cost on the low-cost population reduces cooperation more in its high-cost partner than in the payer. Reciprocity-bearing mechanisms also reach their lowest cooperation at an interior split of a fixed total (**F**).
+
+## 5. Both information costs vary
+
+Across the full i₀ × i₁ square behind Figs. 4–5, under partner choice the
+lower-cooperation-cost population cooperates more than its partner in 170/176 cells;
+under IJMPQ they show role inversion — the expensive population's cooperation above
+the cheap one's — locally only on the i₀ ≈ 0 strip (13 cells). That role inversion is
+stronger when populations differ only in information cost (Fig. S11 shows the
+assignment under P and the inversion under IJMPQ; under IMP at the same design, the
+cooperation gap, cheap minus expensive, reaches −0.461 when i₀ = 0 and i₁ = 0.20) and
+weaker once a cooperation-cost gap is present (cooperation gap −0.100 at the same
+information-cost point). The cooperation-cost gap moves every reciprocity-bearing
+mechanism toward the cheap-cooperation-cost population, erasing the inversion
+outright for MP and MPQ.
 
 Fig. 5 shows how that inversion shrinks as the low-cooperation-cost population's
 information cost rises from zero. Each panel fixes i₀ and sweeps i₁. The inversion —
