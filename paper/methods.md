@@ -247,7 +247,12 @@ without a real split. To separate that labeling artifact from a true role assign
 I compare each mechanism's matched-parameter gap to the gap under no enforcement,
 ranked the same way, rather than asking whether the gap differs from zero.
 Single-replicate runs keep their original labels, so their two curves are not
-rank-ordered. Where costs differ, the labels follow the parameters.
+rank-ordered. Where costs differ, the labels follow the parameters. In the
+figures, orange and red curves mark parameter-asymmetric designs (orange for the
+lower-cost population, red for the higher-cost population when costs differ).
+Green curves mark parameter-symmetric designs or a single population; when two
+populations are labeled by outcome, light green is the population with the lower
+frequency of cooperators and dark green the other.
 
 ## Simulation designs
 
