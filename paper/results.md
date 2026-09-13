@@ -13,28 +13,28 @@ no-enforcement control (Fig. S1a). Cooperation collapses at successively higher
 costs under direct reciprocity M (Fig. S1b), short-memory partner choice P
 (Fig. S1c), and the combined mechanism IJMPQ (Fig. S1d), in that order.
 
-In the prisoner's dilemma, P > S (payoffs as in Table 1), so raising c raises
-temptation (T − R), raises risk (P − S), and shrinks the cooperation advantage
-(R − P). I run a separate set of simulations that vary those gaps independently
-to sort out which drives the fall in cooperation (Table S1). A mechanism is
-risk-limited if its cooperation tracks P − S across those independent sweeps,
-and reward-limited if it tracks the mutual-cooperation payoff R rather than
-those gaps. Direct reciprocity (M) is risk-limited: mimicking a defector is the
-safe reply (it earns P instead of S), and the fall in cooperation as c rises
-tracks the growing mutual-defection risk rather than the shrinking R − P. In
-snowdrift, S > P, so there is no risk and mimicking a defector is costly (it
-earns the worst payoff P instead of S). The same columns (Fig. S1e–h) show more
-cooperation without enforcement — unconditional cooperators keep cooperating
-while reciprocity alleles are selected against — and the ordering among
-mechanisms flattens. Partner choice (P) is limited by the cooperation advantage
-R − P in both games. It tracks R − P alone across those independent sweeps,
-which is why it fails as R − P → 0. The combined mechanisms MP, MPQ, IMP, and
-IJMPQ are reward-limited and do not track the mutual-defection payoff P, which
-is why they sustain cooperation to the highest costs (Fig. S1d). Fig. S2
-repeats the cost sweep under shuffled partnerships for M, MP, IM, and IMP:
-shuffle collapses direct reciprocity, while short-memory indirect reciprocity
-and the partner-choice combinations still sustain cooperation farther. Partner
-choice alone is nearly unchanged by shuffle, so that panel is omitted.
+Raising c decreases R and S and leaves T and P unchanged (Table 1), so a single
+cooperation-cost sweep cannot say which payoff drives the fall in cooperation. I
+run a separate set of simulations that vary those payoffs independently
+(Table S1). A mechanism is risk-limited if its cooperation tracks P − S across
+those sweeps, and reward-limited if it tracks the mutual-cooperation payoff R
+rather than the other payoffs. In the prisoner's dilemma, P > S, so mimicking a
+defector is the safe reply (it earns P instead of S). Direct reciprocity (M) is
+risk-limited: the fall in cooperation as c rises tracks the growing
+mutual-defection risk rather than the shrinking R − P. In snowdrift, S > P, so
+there is no risk and mimicking a defector is costly (it earns the worst payoff P
+instead of S). The same columns (Fig. S1e–h) show more cooperation without
+enforcement — unconditional cooperators keep cooperating while reciprocity alleles
+are selected against — and the ordering among mechanisms flattens. Partner choice
+(P) is limited by the cooperation advantage R − P in both games: it tracks R − P
+alone across those independent sweeps, which is why it fails as R − P → 0. The
+combined mechanisms MP, MPQ, IMP, and IJMPQ are reward-limited and do not track
+the mutual-defection payoff P, which is why they sustain cooperation to the
+highest costs (Fig. S1d). Fig. S2 repeats the cost sweep under shuffled
+partnerships for M, MP, IM, and IMP: shuffle collapses direct reciprocity, while
+short-memory indirect reciprocity and the partner-choice combinations still
+sustain cooperation farther. Partner choice alone is nearly unchanged by shuffle,
+so that panel is omitted.
 
 ## 2. The two-population role split
 
@@ -47,13 +47,9 @@ One population cooperates more and is exploited; across cells of the sweep, P1
 frequency and fitness correlate at about −1: the population with more choosers is
 the one earning less. In snowdrift, where there is no risk (S > P), populations
 already split without enforcement; partner choice then extends that split to higher
-cooperation costs (Fig. 1e–h). At the same matched parameter point, IJMPQ leaves the
-two populations nearly matched in the prisoner's dilemma.
-
-I distinguish this **outcome** asymmetry (gaps in cooperation and fitness) from
-**parameter** symmetry in the setup (whether c₀ = c₁, i₀ = i₁, and both populations
-play the same game). Which population takes which role is not fixed by the
-parameters: the mechanism in play can reverse it.
+cooperation costs (Fig. 1e–h). Under IJMPQ at those same matched costs, the two
+populations cooperate similarly in the prisoner's dilemma — no cooperator/exploiter
+split.
 
 **Figure 1: Outcome asymmetry under parameter-symmetric cooperation cost.** Frequency of cooperators and average fitness in two coevolving populations (light green indicates the population with the lower frequency of cooperators; dark green the other). **A–D**, Prisoner's dilemma. **E–H**, Snowdrift game. **A, E**, Frequency of cooperators without enforcement (_). **B, F**, Frequency of cooperators under short-memory partner choice (P). **C, G**, Fitness without enforcement. **D, H**, Fitness under partner choice. Both populations pay identical cooperation costs ($c$, swept from 0 to the partner benefit $b$) and identical information costs ($0.001$). Under matched costs, partner choice generates a stochastic cooperator/exploiter role split in the prisoner's dilemma that is absent without enforcement. In the snowdrift game, the split already exists in the baseline and partner choice primarily extends it to higher costs.
 
