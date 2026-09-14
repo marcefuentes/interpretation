@@ -155,6 +155,25 @@ check("symmetric_c", "RC: M noshuffle qBSeen c=0.10 = 0.915",
 check("symmetric_c", "RC: M shuffle qBSeen c=0.10 ~ control (<0.06)",
       lambda: at_c(load(sym_path("shuffle", "128", "M", 1, "pop_2", 0)), 0.10), 0.053)
 
+# reciprocity.md: matched-cost snowdrift (pop_2, noshuffle). The payoffs alone split the
+# two populations from c = 0.04 on; M prevents that split only while c <= 0.08 and then
+# lets it return (narrower than the control), whereas IJMPQ holds both sides near 0.96.
+def sym_lo(m, d, c):
+    """Lower of the two populations' qBSeen at cost c (matched-cost pop_2)."""
+    return min(at_c(load(sym_path("noshuffle", "128", m, d, "pop_2", f)), c) for f in (0, 1))
+
+
+check("symmetric_c", "RC: SD control low side c=0.08 = 0.240 (payoffs split)",
+      lambda: sym_lo("_", 2, 0.08), 0.240)
+check("symmetric_c", "RC: SD M low side c=0.08 = 0.901 (split prevented)",
+      lambda: sym_lo("M", 2, 0.08), 0.901)
+check("symmetric_c", "RC: SD M low side c=0.16 = 0.254 (split returns, > control 0.107)",
+      lambda: sym_lo("M", 2, 0.16), 0.254)
+check("symmetric_c", "RC: SD control low side c=0.16 = 0.107",
+      lambda: sym_lo("_", 2, 0.16), 0.107)
+check("symmetric_c", "CB: SD IJMPQ low side stays >= 0.94 over the sweep",
+      lambda: min(sym_lo("IJMPQ", 2, round(0.02 * i, 2)) for i in range(21)), 0.947, 0.01)
+
 # reciprocity.md: M1 under M at d0 noshuffle mean = 0.392 (vs control 0.494)
 check("symmetric_c", "RC: d0 M1 mean under M noshuffle = 0.392",
       lambda: sum(m1sum(r) for r in load(sym_path("noshuffle", "128", "M", 0, "pop_2", 0)))

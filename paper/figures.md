@@ -54,7 +54,7 @@ near-zero-i₀ inversion regime; cooperation after allele loss is Fig. 3. Main t
 | fig3 | Line (PLOT) | symmetric_c_i_lines pop_1, P + M at c = 0 | Enforcement alleles vs cooperation |
 | fig4 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | 2×3: own/partner strips + fixed total |
 | fig5 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ | Wedge family; cooperation + fitness rows with ±1 SD bands |
-| figS1 | Line (PLOT) | symmetric_c pop_1, _/P/M/IJMPQ | Cooperation-cost thresholds by mechanism (demoted) |
+| figS1 | Line (PLOT) | symmetric_c pop_1 + pop_2, _/P/M/IJMPQ | Cooperation-cost thresholds by mechanism (demoted); pop_2 rows cover the matched-cost role split |
 | figS2 | Line | symmetric_c pop_1, shuffle | Short-memory robustness |
 | figS3 | Heatmap | asymmetric_c0_c1 pop_2, _ | No enforcement; contrast for fig2 |
 | figS4 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | Full c0 × c1 grid behind Fig. 2 |
@@ -204,7 +204,7 @@ Robustness panels from the primary sweeps only. No-enforcement control for Fig. 
 
 | Supp fig | Message | Figure id | Command | Output |
 | -------- | ------- | --------- | ------- | ------ |
-| S1 | Cooperation-cost thresholds by mechanism at equal c (demoted from main text) | figS1 | `... --figure figS1 ...` | ~/figures/interpretation/figS1.png |
+| S1 | Cooperation-cost thresholds by mechanism at equal c, one population above two (demoted from main text) | figS1 | `... --figure figS1 ...` | ~/figures/interpretation/figS1.png |
 | S2 | Short-memory comparison: direct-reciprocity branch shifts ordering | figS2 | `... --figure figS2 ...` | ~/figures/interpretation/figS2.png |
 | S3 | No-enforcement control for Fig. 2 (asymmetric two populations) | figS3 | `... --figure figS3 ...` | ~/figures/interpretation/figS3.png |
 | S4 | Full cooperation-cost asymmetry grid, prisoner's dilemma (was Fig 3) | figS4 | `... --figure figS4 ...` | ~/figures/interpretation/figS4.png |
@@ -249,7 +249,7 @@ regenerate `paper/captions.md` with `--report`.
 
 Supplement captions:
 
-S1. No-enforcement → M → P → IJMPQ raise the cooperation-cost threshold in that order; snowdrift flattens the threshold ordering (e–h).
+S1. No-enforcement → M → P → IJMPQ raise the cooperation-cost threshold in that order; snowdrift flattens the threshold ordering (e–h). With two populations (i–p), partner choice splits roles in PD (k) while reciprocity keeps both matched (j, l); in snowdrift the payoffs split them (m), M delays the split (n), IJMPQ removes it (p).
 S2. Shuffle short-memory variants (M, MP, IM, IMP): shuffle collapses M; IM and partner-choice combinations hold farther.
 S3. No-enforcement control for Fig. 2: cheap PD population barely cooperates, so partner choice creates the deterministic split.
 S4. Full c₀ × c₁ grid behind Fig. 2 (P and IJMPQ).

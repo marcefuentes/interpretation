@@ -9,7 +9,7 @@ are regression-checked by `ai/verify_claims.py`.
 
 | Item | Role | Main-text anchor |
 | ---- | ---- | ---------------- |
-| Fig. S1 | Cooperation-cost thresholds by mechanism at equal c | Results §1 |
+| Fig. S1 | Cooperation-cost thresholds by mechanism at equal c, in one and two populations | Results §1–2 |
 | Fig. S2 | Short-memory / shuffle reciprocity branches | Fig. S1 |
 | Fig. S3 | No-enforcement control under cooperation-cost asymmetry | Fig. 2 |
 | Fig. S4 | Full c₀ × c₁ cooperation-cost grid | Fig. 2 |
@@ -47,8 +47,10 @@ Journal sources: [synthesis](../journal/synthesis.md),
 
 ## Cross-references from the main text
 
-**Fig. S1 cost thresholds.** Shuffle short-memory variants that can shift the
-direct-reciprocity ordering: Fig. S2.
+**Fig. S1 cost thresholds.** One-population rows (a–h) carry the mechanism ordering of
+Results §1; two-population rows (i–p) add the mechanisms Fig. 1 omits, covering the
+matched-cost role-split claims of Results §2. Shuffle short-memory variants that can
+shift the direct-reciprocity ordering: Fig. S2.
 
 **Figs. 1–2 role split.** No-enforcement asymmetric control: Fig. S3. Deterministic
 versus stochastic strips on shared axes: Fig. S5. Full c₀ × c₁ coverage: Fig. S4.

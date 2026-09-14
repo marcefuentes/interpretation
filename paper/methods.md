@@ -198,15 +198,15 @@ Table 2. Mechanisms.
 
 | Label | Loci enabled     | Info-cost units | Structures                        | Where reported                        |
 | ----- | ---------------- | --------------- | --------------------------------- | ------------------------------------- |
-| \_    | none behavioral  | 0-2 if carried  | one or two pops; shuffle optional | baselines; Fig. S1a,e; Fig. S3        |
+| \_    | none behavioral  | 0-2 if carried  | one or two pops; shuffle optional | baselines; Fig. S1a,e,i,m; Fig. S3    |
 | M     | C, M             | 1               | one or two pops; shuffle optional | Figs. S1-S2; Fig. 3c,d                |
-| P     | C, P             | 1               | one or two pops; shuffle optional | main short-memory figures; Fig. S1c,g |
+| P     | C, P             | 1               | one or two pops; shuffle optional | main short-memory figs; Fig. S1c,g,k,o |
 | MP    | C, M, P          | 2               | one or two pops; shuffle optional | matched contrasts; Fig. S2            |
 | MPQ   | C, M, P, Q       | 2               | one or two pops; shuffle optional | matched contrasts                     |
 | IM    | C, I, M          | 1               | shuffle only                      | Fig. S2; not in main noshuffle panels |
 | IJM   | C, I, J, M       | 1               | shuffle only                      | Fig. S2; not in main noshuffle panels |
 | IMP   | C, I, M, P       | 2               | one or two pops; shuffle optional | equal-c i design; unit-accounting     |
-| IJMPQ | C, I, J, M, P, Q | 2               | one or two pops; shuffle optional | Figs. 2, 4-5; Fig. S1d,h; Fig. S11    |
+| IJMPQ | C, I, J, M, P, Q | 2               | one or two pops; shuffle optional | Figs. 2, 4-5; Fig. S1d,h,l,p; Fig. S11 |
 
 No enforcement (_) disables partner choice and reciprocity while the loci still mutate
 and still cost. Indirect reciprocity stands alone as a mechanism (IM, IJM) only under
@@ -268,7 +268,7 @@ Table 3. Simulation designs.
 | Design                      | Pops | Mechanisms (typical)   | Axes / ranges                                      | Step | Cells | Figures        |
 | --------------------------- | ---- | ---------------------- | -------------------------------------------------- | ---- | ----- | -------------- |
 | Equal-c baseline, one pop   | 1    | \_, M, P, IJMPQ       | c ∈ [0, b]                                         | 0.02 | 21    | Fig. S1; S2    |
-| Equal-c baseline, two pops  | 2    | \_, P                 | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Fig. 1         |
+| Equal-c baseline, two pops  | 2    | \_, M, P, IJMPQ       | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Fig. 1; S1     |
 | Cooperation-cost asymmetry  | 2    | \_, P, IJMPQ          | c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Figs. 2, S3–S6 |
 | Symmetric information cost  | 1    | P, M                   | i + c ≤ b                                          | 0.02 | 231   | Figs. 3, S7–S8 |
 | Fixed c-gap × shared i      | 2    | P                      | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Fig. S9        |
@@ -277,8 +277,9 @@ Table 3. Simulation designs.
 | PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
 | Snowdrift payoff plane      | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
-I first establish baselines under equal cooperation cost (Fig. S1; shuffled
-short-memory variants in Fig. S2; two-population equal-cost sweep in Fig. 1). I then
+I first establish baselines under equal cooperation cost (Fig. S1 reports both
+population designs; shuffled short-memory variants in Fig. S2; the two-population
+control and partner-choice sweep is Fig. 1). I then
 vary parameters asymmetrically along one axis at a time: cooperation-cost asymmetry
 (Fig. 2 reports the strip c₁ = c₀ + 0.02; full grid Fig. S4; no-enforcement control
 Fig. S3; Fig. S5 places that strip beside the matched-cost case of Fig. 1), then
