@@ -42,24 +42,24 @@ role, and the population that cooperates more earns less fitness. Which mechanis
 they carry decides whether those roles appear; the game decides whether they need
 a mechanism at all.
 
-At matched costs (c₀ = c₁, i₀ = i₁) the two games start from opposite baselines.
-Without enforcement, prisoner's-dilemma populations both stay near defection and
-take no roles (Fig. 1a,c), whereas snowdrift populations split **stochastically**
-on the payoffs alone, because S > P leaves no risk in cooperating with a defector
-(Fig. 1e,g).
-Partner choice splits the prisoner's-dilemma populations the same way: one
-cooperates more and is exploited, and the cooperation gap and the fitness gap
-correlate at −0.98, so the population that cooperates more earns less (Fig. 1b,d).
-In snowdrift, partner choice extends the payoff-driven split to higher cooperation
-costs (Fig. 1f,h). Direct reciprocity (M) and IJMPQ leave the two
-prisoner's-dilemma populations cooperating at similar frequencies, with no
-cooperator/exploiter split: each side cooperates only as much as its partner does
-(Fig. S1j,l). In snowdrift, direct reciprocity holds both populations near 0.92
-while c ≤ 0.08, where the payoffs alone already split them; above that cost one
-population falls behind and the split returns, narrower than without enforcement
-(Fig. S1n). IJMPQ holds both populations near 0.96 across the whole cost sweep
-(Fig. S1p). Fig. S1 sweeps all four mechanisms in both designs, one population
-(Fig. S1a–h) above two (Fig. S1i–p).
+At matched costs (c₀ = c₁, i₀ = i₁) the two games start from opposite
+baselines.  Without enforcement, prisoner's-dilemma populations both stay near
+defection and take no roles (Fig. 1a,c), whereas snowdrift populations split
+**stochastically** on the payoffs alone, because S > P leaves no risk in
+cooperating with a defector (Fig. 1e,g).  Partner choice splits the
+prisoner's-dilemma populations the same way: one cooperates more and is
+exploited, and the cooperation gap and the fitness gap correlate at −0.98, so
+the population that cooperates more earns less (Fig. 1b,d).  In snowdrift,
+partner choice extends the payoff-driven split to higher cooperation costs
+(Fig. 1f,h). Direct reciprocity (M) and IJMPQ leave the two prisoner's-dilemma
+populations cooperating at similar frequencies, with no cooperator/exploiter
+split: each side cooperates only as much as its partner does (Fig. S1j,l). In
+snowdrift, direct reciprocity holds both populations near 0.92 while c ≤ 0.08,
+where the payoffs alone already split them; above that cost one population
+falls behind and the split returns, narrower than without enforcement (Fig.
+S1n). IJMPQ holds both populations near 0.96 across the whole cost sweep (Fig.
+S1p). Fig. S1 sweeps all four mechanisms in both designs, one population (Fig.
+S1a–h) above two (Fig. S1i–p).
 
 **Figure 1: Outcome asymmetry under parameter-symmetric cooperation cost.** Frequency of cooperators and average fitness in two coevolving populations (light green indicates the population with the lower frequency of cooperators; dark green the other). **A–D**, Prisoner's dilemma. **E–H**, Snowdrift game. **A, E**, Frequency of cooperators without enforcement (_). **B, F**, Frequency of cooperators under short-memory partner choice (P). **C, G**, Fitness without enforcement. **D, H**, Fitness under partner choice. Both populations pay identical cooperation costs ($c$, swept from 0 to the partner benefit $b$) and identical information costs ($0.001$). Under matched costs, partner choice generates a stochastic cooperator/exploiter role split in the prisoner's dilemma that is absent without enforcement. In the snowdrift game, the split already exists in the baseline and partner choice primarily extends it to higher costs.
 
