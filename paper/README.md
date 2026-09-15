@@ -16,7 +16,7 @@ Internal planning (outline, structured abstract, fallback venues):
 | [methods.md](methods.md) | Methods |
 | [results.md](results.md) | Results |
 | [discussion.md](discussion.md) | Discussion |
-| [supplement.md](supplement.md) | Supplement (Figs. S1–S11, Table S1) |
+| [supplement.md](supplement.md) | Supplement (Figs. S1–S10, Table S1) |
 | [captions.md](captions.md) | Figure legends |
 | [figures.md](figures.md) | Figure manifest (graphgen commands) |
 | [references.bib](references.bib) | Bibliography |

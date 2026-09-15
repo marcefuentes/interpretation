@@ -548,6 +548,22 @@ for m, exp in (("_", 0.517), ("M", 0.627), ("P", 0.539), ("MP", 0.654),
 check("symmetric_c_i", "IJMPQ Cost=0.20 c=0 = 0.886",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.0), 0.886)
 
+# free-mechanism end of the same axis (Results §3 paragraph 1)
+for m, exp in (("_", 0.498), ("M", 0.942), ("P", 0.963), ("IJMPQ", 0.968)):
+    check("symmetric_c_i", f"Cost=0 c=0 {m} qBSeen = {exp:.3f}",
+          (lambda mm=m: hc_cell(load(hcpath("noshuffle", "128", mm, 1, "pop_1", 0)), 0.0, 0.0)), exp)
+
+# equal tax per round, unequal robustness: family count does not set the outcome
+check("symmetric_c_i", "MP Cost=0.08 c=0 = 0.907 (2 units, 0.16/round)",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "MP", 1, "pop_1", 0)), 0.08, 0.0), 0.907)
+check("symmetric_c_i", "P Cost=0.16 c=0 = 0.765 (1 unit, 0.16/round)",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.16, 0.0), 0.765)
+
+# per unit paid, cooperation cost is far more destructive than information cost
+for m, exp in (("M", 0.079), ("P", 0.066), ("IJMPQ", 0.378)):
+    check("symmetric_c_i", f"Cost=0 c=0.40 {m} qBSeen = {exp:.3f}",
+          (lambda mm=m: hc_cell(load(hcpath("noshuffle", "128", mm, 1, "pop_1", 0)), 0.0, 0.40)), exp)
+
 # sanity: Cost=0 edge reproduces symmetric_c (Cost=0.001) at c=0.20
 check("symmetric_c_i", "sanity IJMPQ Cost=0 c=0.20 = 0.951",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.0, 0.20), 0.951)
@@ -557,8 +573,20 @@ check("symmetric_c_i", "P1 allele c=0 Cost=0 = 0.671",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.0, 0.0), "P1"), 0.671, 0.01)
 check("symmetric_c_i", "P1 allele c=0 Cost=0.40 = 0.020",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.40, 0.0), "P1"), 0.020, 0.01)
+check("symmetric_c_i", "M1 allele c=0 Cost=0 = 0.438",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 1, "pop_1", 0)), 0.0, 0.0), "M1"), 0.438, 0.01)
 check("symmetric_c_i", "M1 allele c=0 Cost=0.40 = 0.018",
       lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 1, "pop_1", 0)), 0.40, 0.0), "M1"), 0.018, 0.01)
+
+# the vacated niche: cooperators carrying neither locus of the taxed family
+check("symmetric_c_i", "C1P0 c=0 Cost=0 = 0.316",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.0, 0.0), "C1", "P0"), 0.316, 0.01)
+check("symmetric_c_i", "C1P0 c=0 Cost=0.40 = 0.527",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "P", 1, "pop_1", 0)), 0.40, 0.0), "C1", "P0"), 0.527, 0.01)
+check("symmetric_c_i", "C1M0 c=0 Cost=0 = 0.534",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 1, "pop_1", 0)), 0.0, 0.0), "C1", "M0"), 0.534, 0.01)
+check("symmetric_c_i", "C1M0 c=0 Cost=0.40 = 0.616",
+      lambda: allele(hc_cell_row(load(hcpath("noshuffle", "128", "M", 1, "pop_1", 0)), 0.40, 0.0), "C1", "M0"), 0.616, 0.01)
 
 # control (dilemma 0) decomposes cost from demand: machinery erodes at ~same rate
 # as the PD, but behavior stays pinned at the ceiling (no enforcement needed).
@@ -577,9 +605,53 @@ check("symmetric_c_i", "control C1M0 c=0 Cost=0.40 = 0.956 (free-coop niche)",
 check("symmetric_c_i", "M dilemma2 Cost=0.40 c=0 = 0.870",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "M", 2, "pop_1", 0)), 0.40, 0.0), 0.870)
 
+check("symmetric_c_i", "P dilemma2 Cost=0.40 c=0 = 0.870",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "P", 2, "pop_1", 0)), 0.40, 0.0), 0.870)
+check("symmetric_c_i", "IJMPQ dilemma2 Cost=0.40 c=0 = 0.892",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 2, "pop_1", 0)), 0.40, 0.0), 0.892)
+
 # interaction: information cost lowers the c-collapse threshold (IJMPQ interior)
+check("symmetric_c_i", "IJMPQ Cost=0 c=0.16 = 0.957",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.0, 0.16), 0.957)
 check("symmetric_c_i", "IJMPQ Cost=0.20 c=0.16 collapsed = 0.049",
       lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 1, "pop_1", 0)), 0.20, 0.16), 0.049)
+
+
+def hc_threshold(m, d, cost):
+    """Highest c at which qBSeen stays >= 0.5, scanning c upward at fixed Cost."""
+    rows = load(hcpath("noshuffle", "128", m, d, "pop_1", 0))
+    cells = sorted((round(float(r["c0"]), 2), float(r["qBSeen"])) for r in rows
+                   if abs(float(r["Cost"]) - cost) < 0.005)
+    last = float("nan")
+    for c, q in cells:
+        if q < 0.5:
+            break
+        last = c
+    return last
+
+
+def hc_grid_stat(m, d, stat):
+    """Cells below 0.5, total cells, or the minimum, over the whole Cost x c grid."""
+    rows = load(hcpath("noshuffle", "128", m, d, "pop_1", 0))
+    vals = [float(r["qBSeen"]) for r in rows]
+    return {"below": sum(1 for v in vals if v < 0.5), "cells": len(vals),
+            "min": min(vals)}[stat]
+
+
+check("symmetric_c_i", "IJMPQ PD threshold at Cost=0 = c 0.38",
+      lambda: hc_threshold("IJMPQ", 1, 0.0), 0.38, 0.001)
+check("symmetric_c_i", "IJMPQ PD threshold at Cost=0.20 = c 0.08",
+      lambda: hc_threshold("IJMPQ", 1, 0.20), 0.08, 0.001)
+
+# snowdrift removes the interaction: no cell of the grid falls below 0.5
+check("symmetric_c_i", "IJMPQ snowdrift grid cells = 231",
+      lambda: hc_grid_stat("IJMPQ", 2, "cells"), 231, None)
+check("symmetric_c_i", "IJMPQ snowdrift cells below 0.5 = 0",
+      lambda: hc_grid_stat("IJMPQ", 2, "below"), 0, None)
+check("symmetric_c_i", "IJMPQ snowdrift grid minimum = 0.695",
+      lambda: hc_grid_stat("IJMPQ", 2, "min"), 0.695)
+check("symmetric_c_i", "IJMPQ snowdrift Cost=0.20 c=0.16 = 0.817",
+      lambda: hc_cell(load(hcpath("noshuffle", "128", "IJMPQ", 2, "pop_1", 0)), 0.20, 0.16), 0.817)
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -727,6 +799,14 @@ check("asymmetric_c1_i", "sanity P Cost=0 c1=0.20 Pop_1 = 0.178",
       lambda: mc_cell(load(mcpath("asymmetric_c1_i", "noshuffle", "128", "P", 1, 1)), 0.0, 0.20), 0.178)
 
 # Cost immediately compresses partner-choice asymmetry and exploitative fitness gap.
+# no refuge once c0 > 0: chooser allele and cooperation fall together (Results §3)
+check("asymmetric_c1_i", "P Pop_0 Cost=0.12 c1=0.20 = 0.048",
+      lambda: mc_cell(load(mcpath("asymmetric_c1_i", "noshuffle", "128", "P", 1, 0)), 0.12, 0.20), 0.048)
+check("asymmetric_c1_i", "P Pop_0 P1 allele Cost=0 c1=0.20 = 0.797",
+      lambda: allele(mc_cell_row(load(mcpath("asymmetric_c1_i", "noshuffle", "128", "P", 1, 0)), 0.0, 0.20), "P1"), 0.797, 0.01)
+check("asymmetric_c1_i", "P Pop_0 P1 allele Cost=0.12 c1=0.20 = 0.042",
+      lambda: allele(mc_cell_row(load(mcpath("asymmetric_c1_i", "noshuffle", "128", "P", 1, 0)), 0.12, 0.20), "P1"), 0.042, 0.01)
+
 check("asymmetric_c1_i", "P mean dq at Cost=0 = 0.329",
       lambda: mc_gap_mean("P", 0.0, "qBSeen"), 0.329)
 check("asymmetric_c1_i", "P mean dw at Cost=0 = -0.148",

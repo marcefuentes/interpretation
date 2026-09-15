@@ -56,7 +56,7 @@ cooperator/exploiter gap shrinks instead of only changing which genotypes carry 
 help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
-in information cost still lock or invert roles depending on mechanism (Fig. S11).
+in information cost still lock or invert roles depending on mechanism (Fig. S10).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and role inversion survives only on an i₀ ≈ 0 strip (Fig. 5),
@@ -87,10 +87,6 @@ Equal information-cost totals are therefore neither interchangeable nor additive
 (Fig. 4c,f): both populations sharing a total cooperate less than when either pays it
 alone, since each corner leaves one population still carrying mechanism alleles while
 a split leaves neither.
-The control game shows that none of this is an artifact of how the
-information cost is applied — without a social dilemma neither population bears a
-burden from its partner's cost, and each loses mechanism alleles only as it pays
-itself (Fig. S8). Populations couple through the dilemma, not through the accounting.
 That result extends the second-order free-rider literature rather than replacing it:
 when individuals lose local enforcement alleles, partners across the mutualism can
 bear the burden of losing the assortment or conditional help those alleles once

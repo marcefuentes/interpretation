@@ -98,7 +98,9 @@ two-family mechanism pays double, so it should fail first — is wrong. The
 combined mechanisms are the most Cost-robust despite paying the double information cost. If
 the information cost alone governed the outcome, a two-family mechanism at Cost = X
 should match a one-family mechanism at Cost = 2X; it does not (MP at Cost = 0.08
-is 0.907, whereas P at Cost = 0.16 is only 0.589). The tax is not the whole
+is 0.907, whereas P at Cost = 0.16 — the same 0.16 paid per round — is 0.765).
+The same comparison at the top of the axis: IJMPQ at Cost = 0.20 is 0.886 against
+P at Cost = 0.40 (0.539), again the same 0.40 per round. The tax is not the whole
 story — the enforcement architecture is.
 
 ## Why the machinery erodes but cooperation survives

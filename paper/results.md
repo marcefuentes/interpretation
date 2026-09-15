@@ -86,41 +86,47 @@ in groups of 4, where each population samples few partners per round (Fig. S6).
 
 ## 3. Matched information cost
 
-Making the enforcement alleles themselves costly adds a second cost, separate from
-cooperation cost. Raising the information cost alone reduces cooperation only
-gently where temptation is absent (c = 0, so T = R), because a population can lose the
-alleles and keep cooperating for free. Where both costs are positive at once,
-information cost selects against the mechanism alleles cooperation cost requires and
-lowers the cooperation-cost threshold at which cooperation falls (Fig. S7).
+Individuals pay an information cost for each mechanism family they carry, whether or
+not they express it (Methods). Where cooperation is free (c = 0, so T = R), that cost
+alone reduces cooperation only gently (Fig. 3b,d); the no-enforcement control stays
+near 0.50. The same value as a cooperation cost is harsher: at c = 0.40 with a nearly
+free mechanism, partner choice and direct reciprocity both collapse (Fig. S1b,c).
+IJMPQ carries both families and so pays two units per round; at an information cost of
+0.20 it therefore pays 0.40 per round, the same amount partner choice pays at 0.40,
+yet it still cooperates at high frequency while partner choice has fallen
+(Fig. S7a; Fig. 3b).
 
-At zero cooperation cost the genotype pattern makes that separation visible (Fig. 3).
-As information cost rises, active enforcement alleles are selected out — chooser P1
-(Fig. 3a) and tit-for-tat M1 (Fig. 3c) both fall toward zero — while cooperation
-remains high on unconditional cooperators that pay no information cost (Fig. 3b,d:
-C1P0, C1M0). Cooperation frequency and mechanism-allele frequency diverge. A control
-game shows that mechanism alleles decline with or without a social dilemma;
-cooperation persists after those alleles are lost only when the dilemma is present, so
-the information cost drives the allele loss and the dilemma decides whether losing the
-alleles reduces cooperation (Fig. S8).
+Cooperation survives at c = 0 because populations keep cooperating unconditionally.
+Across that sweep the chooser allele P1 and the tit-for-tat allele M1 both fall toward
+zero (Fig. 3a,c), while cooperators that carry neither locus become more common.
+Cooperation frequency and mechanism-allele frequency diverge (Fig. 3b,d).
 
 **Figure 3: Information cost separates cooperation from enforcement alleles when cooperation is free.** Frequency of the active enforcement allele (chooser P1 in **A**; tit-for-tat M1 in **C**) and overall frequency of cooperators (**B, D**) in a single population. **A, B**, Short-memory partner choice (P). **C, D**, Direct reciprocity (M). The cooperation cost is fixed at zero while the information cost is swept from 0 to the partner benefit ($b = 0.4$). Rising information cost selects against active enforcement alleles, but cooperation remains high because populations lose the costly alleles in favor of unconditional cooperation that pays no information cost.
 
-That cost-free high-cooperation outcome is stable only at c = 0. It disappears once
-cooperation cost is held above zero. Allele loss and behavioral loss then move
-together: losing P1 or M1 no longer leaves a stable high-cooperation outcome behind.
-With a fixed cooperation-cost gap, as information cost rises populations cooperate less
-and both the cooperation gap and the fitness gap shrink; the more cooperative
-population remains less fit while partner choice still functions, then both fall to
-the no-enforcement baseline (Fig. S9). Second-order free-riders — cooperators that pay
-no information cost for enforcement (C1M0) — and carriers that never choose (C0P1)
-accumulate as those alleles are lost.
+The information cost lowers the cooperation cost a population can withstand. Under
+IJMPQ in the prisoner's dilemma, cooperation holds to high c when the mechanism is
+nearly free and collapses at far lower c once the information cost is 0.20 (Fig. S7a).
+Snowdrift removes that interaction: cooperation stays high across the whole
+information-cost × c grid, including the cell where the prisoner's dilemma collapses
+(Fig. S7c). Because S > P, cooperation is favored without enforcement, so losing the
+alleles costs little.
 
-A symmetric information-cost design cannot separate the cost a population pays from
-the burden that cost places on its partner. Losing mechanism alleles while keeping
-cooperation looks like a local solution — pay no information cost, keep cooperating —
-but that reading is an artifact of applying the same information cost to both sides at
-once. Holding one population's information cost at zero and varying the other's
-breaks the confound.
+Populations keep cooperating after losing the alleles only where cooperation is free.
+Once every individual pays a cooperation cost, alleles and behavior fall together.
+Fig. S8 holds the cooperation-cost gap of section 2 and raises a shared information
+cost: the partner-choice split shrinks as that cost rises, rather than reversing.
+Direct reciprocity collapses both prisoner's-dilemma populations together once the
+information cost rises, with no residual split. IJMPQ postpones that collapse but
+does not restore the free-cooperation outcome. In snowdrift the cheap population
+stays near full cooperation under partner choice, direct reciprocity, and IJMPQ even
+at high information cost, while the expensive population remains the exploiter;
+IJMPQ raises that side at low information cost and then loses it as the cost rises.
+
+A matched information cost cannot separate the cost a population pays from the burden
+that cost places on its partner. Both populations pay the same information cost in
+every cell above, so a fall in cooperation cannot be assigned to the payer or to its
+partner. Holding one population's information cost at zero and sweeping the other's
+separates the two.
 
 ## 4. Independent per-population information costs
 
@@ -180,7 +186,7 @@ only the high-cooperation-cost population's information cost matters, total
 cooperation is highest when that population pays none of the total. That
 non-additivity is therefore a property of reciprocity-bearing mechanisms, not of the
 total itself. The fitness counterpart of these slices shows the same cross-population
-burdens and the same interior minimum under a fixed total (Fig. S10).
+burdens and the same interior minimum under a fixed total (Fig. S9).
 
 The pattern that let a population keep cooperating under information cost under
 symmetry (Fig. 3) is what places a burden on its partner under asymmetry: losing
@@ -195,7 +201,7 @@ Across the full i₀ × i₁ square behind Figs. 4–5, under partner choice the
 lower-cooperation-cost population cooperates more than its partner in 170/176 cells;
 under IJMPQ they show role inversion — the expensive population's cooperation above
 the cheap one's — locally only on the i₀ ≈ 0 strip (13 cells). That role inversion is
-stronger when populations differ only in information cost (Fig. S11 shows the
+stronger when populations differ only in information cost (Fig. S10 shows the
 assignment under P and the inversion under IJMPQ; under IMP at the same design, the
 cooperation gap, cheap minus expensive, reaches −0.461 when i₀ = 0 and i₁ = 0.20) and
 weaker once a cooperation-cost gap is present (cooperation gap −0.100 at the same
@@ -242,6 +248,5 @@ alleles are falling, not through that reciprocity free-rider route.
 
 Snowdrift has no risk (S > P) and removes this inversion regime entirely on the same
 crossed design, identifying this cross-population burden as a property of game type
-rather than of the cost accounting. The control game makes the same point for
-cooperation after mechanism alleles are lost (Fig. S8). Shuffled partnerships and
-group size 4 leave the main contrasts intact (Figs. S2 and S6).
+rather than of the cost accounting. Shuffled partnerships and group size 4 leave the
+main contrasts intact (Figs. S2 and S6).

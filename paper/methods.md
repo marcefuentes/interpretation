@@ -206,7 +206,7 @@ Table 2. Mechanisms.
 | IM    | C, I, M          | 1               | shuffle only                      | Fig. S2; not in main noshuffle panels |
 | IJM   | C, I, J, M       | 1               | shuffle only                      | Fig. S2; not in main noshuffle panels |
 | IMP   | C, I, M, P       | 2               | one or two pops; shuffle optional | equal-c i design; unit-accounting     |
-| IJMPQ | C, I, J, M, P, Q | 2               | one or two pops; shuffle optional | Figs. 2, 4-5; Fig. S1d,h,l,p; Fig. S11 |
+| IJMPQ | C, I, J, M, P, Q | 2               | one or two pops; shuffle optional | Figs. 2, 4-5; Fig. S1d,h,l,p; Fig. S10 |
 
 No enforcement (_) disables partner choice and reciprocity while the loci still mutate
 and still cost. Indirect reciprocity stands alone as a mechanism (IM, IJM) only under
@@ -270,10 +270,10 @@ Table 3. Simulation designs.
 | Equal-c baseline, one pop   | 1    | \_, M, P, IJMPQ       | c ∈ [0, b]                                         | 0.02 | 21    | Fig. S1; S2    |
 | Equal-c baseline, two pops  | 2    | \_, M, P, IJMPQ       | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Fig. 1; S1     |
 | Cooperation-cost asymmetry  | 2    | \_, P, IJMPQ          | c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Figs. 2, S3–S6 |
-| Symmetric information cost  | 1    | P, M                   | i + c ≤ b                                          | 0.02 | 231   | Figs. 3, S7–S8 |
-| Fixed c-gap × shared i      | 2    | P                      | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Fig. S9        |
-| Per-population i, equal c   | 2    | P, IMP, IJMPQ          | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Fig. S11       |
-| Crossed c and i asymmetries | 2    | P, MP, MPQ, IMP, IJMPQ | c₀ = 0.10, c₁ = 0.20; i₀ ≤ 0.30, i₁ ≤ 0.20         | 0.02 | 176   | Figs. 4–5, S10 |
+| Symmetric information cost  | 1    | P, M, IJMPQ            | i + c ≤ b                                          | 0.02 | 231   | Figs. 3, S7     |
+| Fixed c-gap × shared i      | 2    | P                      | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Fig. S8        |
+| Per-population i, equal c   | 2    | P, IMP, IJMPQ          | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Fig. S10       |
+| Crossed c and i asymmetries | 2    | P, MP, MPQ, IMP, IJMPQ | c₀ = 0.10, c₁ = 0.20; i₀ ≤ 0.30, i₁ ≤ 0.20         | 0.02 | 176   | Figs. 4–5, S9  |
 | PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
 | Snowdrift payoff plane      | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
@@ -283,10 +283,10 @@ control and partner-choice sweep is Fig. 1). I then
 vary parameters asymmetrically along one axis at a time: cooperation-cost asymmetry
 (Fig. 2 reports the strip c₁ = c₀ + 0.02; full grid Fig. S4; no-enforcement control
 Fig. S3; Fig. S5 places that strip beside the matched-cost case of Fig. 1), then
-information cost at equal c (Fig. 3; full grid Fig. S7; control game Fig. S8).
+information cost at equal c (Fig. 3; full grid Fig. S7).
 
-The central designs vary who pays an information cost (Fig. S9; Fig. S11; Figs. 4–5
-with fitness counterpart Fig. S10). Fig. 4's first two columns hold one population's
+The central designs vary who pays an information cost (Fig. S8; Fig. S10; Figs. 4–5
+with fitness counterpart Fig. S9). Fig. 4's first two columns hold one population's
 information cost at zero and sweep the other's; the third holds total information cost
 fixed while the split varies. I also run that crossed design under snowdrift.
 

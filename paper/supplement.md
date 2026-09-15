@@ -16,13 +16,12 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S5 | Parameter-symmetric vs asymmetric line slices | Figs. 1–2 |
 | Fig. S6 | Cooperation-cost asymmetry at group size 4 | Fig. 2 |
 | Fig. S7 | Information cost × cooperation cost (single population) | Fig. 3 |
-| Fig. S8 | No-enforcement control for loss of mechanism alleles | Fig. 3 |
-| Fig. S9 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
-| Fig. S10 | Fitness counterpart of Fig. 4 (same relational slices) | Fig. 4 |
-| Fig. S11 | Information-cost asymmetry at equal cooperation cost | Figs. 4–5 |
+| Fig. S8 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
+| Fig. S9 | Fitness counterpart of Fig. 4 (same relational slices) | Fig. 4 |
+| Fig. S10 | Information-cost asymmetry at equal cooperation cost | Figs. 4–5 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S11 are in [captions.md](captions.md) (regenerated from the
+Captions for Figs. S1–S10 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). The panels below are not republished as main-text
 figures; they are coverage and robustness evidence for claims stated in the
 Results.
@@ -57,16 +56,14 @@ versus stochastic strips on shared axes: Fig. S5. Full c₀ × c₁ coverage: Fi
 Small-group robustness (groups of 4): Fig. S6.
 
 **Fig. 3: cooperation after allele loss.** Full information-cost × cooperation-cost
-surface: Fig. S7. No-enforcement control (mechanism alleles decline with or without a
-dilemma; cooperation persists after those alleles are lost only with a dilemma):
-Fig. S8. Compression when cooperation cost is held above zero: Fig. S9.
+surface: Fig. S7. Compression when cooperation cost is held above zero: Fig. S8.
 
 **Figs. 4–5 relational cost.** Equal-c information-cost asymmetry and role inversion
-(stronger inversion than under a cooperation-cost gap): Fig. S11. The full i₀ × i₁
+(stronger inversion than under a cooperation-cost gap): Fig. S10. The full i₀ × i₁
 square behind the line reslices remains journal-backed
 ([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)); snowdrift removal of the
 near-zero-i₀ inversion regime is reported in the main text and that journal entry. Fitness on the same
-Fig. 4 relational slices is in Fig. S10.
+Fig. 4 relational slices is in Fig. S9.
 
 ## What is intentionally not in the supplement figures
 
