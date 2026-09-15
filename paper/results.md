@@ -38,9 +38,8 @@ so that panel is omitted.
 ## 2. Equal and unequal cooperation cost in two populations
 
 Two coevolving populations often settle into a cooperator role and an exploiter
-role, and the population that cooperates more earns less fitness. Which mechanism
-they carry decides whether those roles appear; the game decides whether they need
-a mechanism at all.
+role, and the population that cooperates more earns less fitness. Whether those
+roles appear depends on the game and on the enforcement mechanism.
 
 At matched costs (c₀ = c₁, i₀ = i₁) the two games start from opposite
 baselines.  Without enforcement, prisoner's-dilemma populations both stay near
@@ -57,9 +56,9 @@ split: each side cooperates only as much as its partner does (Fig. S1j,l). In
 snowdrift, direct reciprocity holds both populations near 0.92 while c ≤ 0.08,
 where the payoffs alone already split them; above that cost one population
 falls behind and the split returns, narrower than without enforcement (Fig.
-S1n). IJMPQ holds both populations near 0.96 across the whole cost sweep (Fig.
-S1p). Fig. S1 sweeps all four mechanisms in both designs, one population (Fig.
-S1a–h) above two (Fig. S1i–p).
+S1n), while IJMPQ holds both populations near 0.96 across the whole cost sweep
+(Fig. S1p). Fig. S1 sweeps all four mechanisms in both designs, one population
+(Fig. S1a–h) above two (Fig. S1i–p).
 
 **Figure 1: Outcome asymmetry under parameter-symmetric cooperation cost.** Frequency of cooperators and average fitness in two coevolving populations (light green indicates the population with the lower frequency of cooperators; dark green the other). **A–D**, Prisoner's dilemma. **E–H**, Snowdrift game. **A, E**, Frequency of cooperators without enforcement (_). **B, F**, Frequency of cooperators under short-memory partner choice (P). **C, G**, Fitness without enforcement. **D, H**, Fitness under partner choice. Both populations pay identical cooperation costs ($c$, swept from 0 to the partner benefit $b$) and identical information costs ($0.001$). Under matched costs, partner choice generates a stochastic cooperator/exploiter role split in the prisoner's dilemma that is absent without enforcement. In the snowdrift game, the split already exists in the baseline and partner choice primarily extends it to higher costs.
 
@@ -70,17 +69,18 @@ and the expensive one 0.03, so the gap alone assigns no roles (Fig. S3), while
 snowdrift populations again split on the payoffs (0.96 for the cheap side, 0.09
 for the expensive one). Under partner choice the cheap prisoner's-dilemma
 population cooperates more in all 210 cells of that grid and earns less fitness in
-all of them (cooperation and fitness gaps correlate at −0.99). Fig. 2 follows the
-smallest gap in the grid, the strip c₁ = c₀ + 0.02 (Fig. 2a,b). Under M and IJMPQ
-on that strip, both populations cooperate at similar frequencies and their fitness
-differs only by the 0.02 cost gap (Fig. 2c,d). In snowdrift the mechanisms differ
-in how far they close the payoff-driven split: partner choice leaves it nearly
-unchanged (0.96 and 0.10), direct reciprocity lifts the expensive population to
-0.19, and IJMPQ to 0.61.
+all of them (cooperation and fitness gaps correlate at −0.99; Fig. S4). Fig. 2
+follows the smallest gap in the grid, the strip c₁ = c₀ + 0.02 (Fig. 2a,b). Under
+M and IJMPQ on that strip, both populations cooperate at similar frequencies and
+their fitness differs only by the 0.02 cost gap (Fig. 2c,d). In snowdrift the
+mechanisms differ in how far they close the payoff-driven split: partner choice
+leaves it nearly unchanged (0.96 and 0.10), direct reciprocity lifts the expensive
+population to 0.19, and IJMPQ to 0.61.
 
-The full c₀ × c₁ grid is in Fig. S4, Fig. S5 places the small cost-gap strip
-beside the matched-cost sweep on shared axes, and the deterministic split holds at
-group size 4 (Fig. S6).
+Two further comparisons support that reading. Fig. S5 draws the small cost gap of
+Fig. 2 and the matched costs of Fig. 1 on the same axes, so the deterministic and
+the stochastic split can be read side by side. The split also stays deterministic
+in groups of 4, where each population samples few partners per round (Fig. S6).
 
 **Figure 2: Deterministic role splits emerge from cooperation-cost asymmetries.** Frequency of cooperators and average fitness for two coevolving populations under the prisoner's dilemma, evaluated along the parameter strip $c_1 = c_0 + 0.02$ (with both populations overlaid). **A, B**, Short-memory partner choice (P). **C, D**, Combined mechanism IJMPQ. Both populations pay identical information costs ($0.001$). A small cooperation-cost gap allows partner choice to convert the cooperation-cost asymmetry into a stable cooperator/exploiter assignment (**A, B**); the more cooperative population earns less. Under IJMPQ both populations cooperate at similar frequencies and earn similar fitness aside from the 0.02 cost gap (**C, D**). In snowdrift the cost gap already splits populations without enforcement, so Fig. 2 is prisoner's-dilemma only.
 
