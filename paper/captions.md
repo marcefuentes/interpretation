@@ -18,7 +18,7 @@ With matched costs (c₀ = c₁), partner choice produces a stochastic cooperato
 
 <strong>Fig. 2.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–d</strong>) Two coevolving populations. Prisoner's dilemma. (<strong>a, b</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>c, d</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have the same information cost (0.001).
 
-Along c₁ = c₀ + 0.02 with both populations overlaid, partner choice converts the R − P gap into a stable cooperator/exploiter assignment (a, b); combined IJMPQ lifts the expensive population and shrinks the outcome asymmetry (c, d). Prisoner's dilemma only in the main text: under no enforcement the cheap population barely cooperates (Fig. S3), so partner choice creates the deterministic split from the parameter gap. The snowdrift counterpart is Fig. S11 (payoffs already split without machinery; partner choice and IJMPQ reshape rather than create the split). Full c₀ × c₁ coverage is in Fig. S4 (snowdrift: Fig. S13); the split survives group size 4 (Fig. S6; snowdrift: Fig. S15).
+Along c₁ = c₀ + 0.02 with both populations overlaid, partner choice converts the R − P gap into a stable cooperator/exploiter assignment (a, b); combined IJMPQ lifts the expensive population and shrinks the outcome asymmetry (c, d). Prisoner's dilemma only: under no enforcement the cheap population barely cooperates (Fig. S3), so partner choice creates the deterministic split from the parameter gap. In snowdrift the sucker payoff already sustains high cooperation without machinery (Fig. 1e–h), so a parallel asymmetric panel would repeat that floor. Full c₀ × c₁ coverage is in Fig. S4; the split survives group size 4 (Fig. S6).
 
 ### <strong>Fig. 3.</strong> Behaviour–mechanism decoupling where cooperation cost is zero.
 
@@ -26,7 +26,7 @@ Along c₁ = c₀ + 0.02 with both populations overlaid, partner choice converts
 
 <strong>Fig. 3.</strong> Simulation results for different cooperation mechanisms. Frequency of machinery allele (P1 in a; M1 in c) and frequency of cooperators. The figure shows One population.(<strong>a, b</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>c, d</strong>) When direct reciprocity is the only cooperation mechanism allowed. The population has the same cooperation cost (0) and the same information cost (from 0 to <em>b</em> (0.4), where <em>b</em> is the benefit to the partner).
 
-At c = 0, information cost selects out active enforcement alleles (chooser P1 in a; TFT M1 in c) while cooperation remains high on tax-free unconditional cooperators (b, d). Behaviour and mechanism decouple. The full Cost × c grid is in Fig. S7. This escape route is what Figs. 4–5 price: relieving the payer withdraws the service its partner depends on. Snowdrift counterpart of this c = 0 slice: Fig. S21.
+At c = 0, information cost selects out active enforcement alleles (chooser P1 in a; TFT M1 in c) while cooperation remains high on tax-free unconditional cooperators (b, d). Behaviour and mechanism decouple. The full Cost × c grid is in Fig. S7. This escape route is what Figs. 4–5 price: relieving the payer withdraws the service its partner depends on.
 
 ### <strong>Fig. 4.</strong> Information cost is relational: binding axis and budget non-convexity.
 
@@ -34,7 +34,7 @@ At c = 0, information cost selects out active enforcement alleles (chooser P1 in
 
 <strong>Fig. 4.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators. (<strong>a–f</strong>) Two coevolving populations. Prisoner's dilemma. (<strong>a–c</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept; orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>b, e</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept; orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>c, f</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Each of the first two columns holds one population's information cost at zero and sweeps the other's, separating the cost a population pays from the cost its partner pays. Under partner choice (a, b) both populations are nearly flat in their own cost and collapse under the partner's — assortment needs an active chooser on each side and is limited by whichever supplies fewer. Under the combined reputation-rich mechanism (d, e) the binding axis swaps: taxing the low-cooperation-cost population to i = 0.20 drives its partner from 0.957 to 0.268 while the payer falls only to 0.734. Common x-range on those strips is the tighter per-population cap b − cₚ. The third column holds total information cost at 0.2 while the split varies, so every point costs the pair the same. Under the combined mechanism (f) both populations reach their lowest cooperation at an interior split rather than at either end: each extreme leaves one intact apparatus, enough to hold the pair together, whereas a split breaks both. Partner choice (c) is monotone instead — only the high-cooperation-cost population's information cost bites — so the non-convexity is a property of reciprocity-bearing mechanisms, not of the budget. Snowdrift counterpart: Fig. S17.
+Each of the first two columns holds one population's information cost at zero and sweeps the other's, separating the cost a population pays from the cost its partner pays. Under partner choice (a, b) both populations are nearly flat in their own cost and collapse under the partner's — assortment needs an active chooser on each side and is limited by whichever supplies fewer. Under the combined reputation-rich mechanism (d, e) the binding axis swaps: taxing the low-cooperation-cost population to i = 0.20 drives its partner from 0.957 to 0.268 while the payer falls only to 0.734. Common x-range on those strips is the tighter per-population cap b − cₚ. The third column holds total information cost at 0.2 while the split varies, so every point costs the pair the same. Under the combined mechanism (f) both populations reach their lowest cooperation at an interior split rather than at either end: each extreme leaves one intact apparatus, enough to hold the pair together, whereas a split breaks both. Partner choice (c) is monotone instead — only the high-cooperation-cost population's information cost bites — so the non-convexity is a property of reciprocity-bearing mechanisms, not of the budget. Full i₀ × i₁ coverage is in Fig. S11.
 
 ### <strong>Fig. 5.</strong> Role inversion appears only when the cheap population's information cost is near zero.
 
@@ -42,7 +42,7 @@ Each of the first two columns holds one population's information cost at zero an
 
 <strong>Fig. 5.</strong> Partner choice and indirect reciprocity. Frequency of cooperators when partner choice and indirect reciprocity are both allowed. (<strong>a–h</strong>) Two coevolving populations. Prisoner's dilemma. (<strong>a, e</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0 while i₁ is swept (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>b, f</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0.02 while i₁ is swept (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>c, g</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0.04 while i₁ is swept (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>d, h</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0.1 while i₁ is swept (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Top row: cooperation. Bottom row: fitness. Each column fixes i₀ on the low-cooperation-cost population and sweeps i₁. The cooperation inversion — the expensive population's curve above the cheap one — holds throughout when i₀ = 0, survives only past a threshold when i₀ = 0.02, and is gone by i₀ = 0.04 and 0.1. Shaded ±1 SD bands over 30 runs mark a bistable threshold: wide below it (runs split between attractors) and collapsed above it. Fitness stays decoupled from cooperation in the inversion regime: the expensive population can cooperate more while remaining less fit. Snowdrift removes this regime (Fig. S18). The equal-c hitchhiking contrast is Fig. S10 (snowdrift: Fig. S20).
+Top row: cooperation. Bottom row: fitness. Each column fixes i₀ on the low-cooperation-cost population and sweeps i₁. The cooperation inversion — the expensive population's curve above the cheap one — holds throughout when i₀ = 0, survives only past a threshold when i₀ = 0.02, and is gone by i₀ = 0.04 and 0.1. Shaded ±1 SD bands over 30 runs mark a bistable threshold: wide below it (runs split between attractors) and collapsed above it. Fitness stays decoupled from cooperation in the inversion regime: the expensive population can cooperate more while remaining less fit. Snowdrift removes this regime. The equal-c hitchhiking contrast is Fig. S10. Full i₀ × i₁ coverage behind these strips is Fig. S11.
 
 ## Supplement figures
 
@@ -66,9 +66,9 @@ Shuffle-enabled short-memory variants of the mechanisms in Fig. S1. Shuffling pa
 
 ![figS3](/home/marcelino/figures/interpretation/figS3.png)
 
-<strong>Fig. S3.</strong> No cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). Prisoner's dilemma. The two populations have the same information cost (0.001).
+<strong>Fig. S3.</strong> No cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). The two populations have the same information cost (0.001).
 
-Same cooperation-cost parameter asymmetry as Fig. 2 but without enforcement machinery. Under the prisoner's dilemma the cheap population barely cooperates, so partner choice is what converts the R − P gap into a deterministic cooperator/exploiter split. Snowdrift counterpart: Fig. S12 (payoffs can break symmetry without machinery; cf. Fig. 1e–h).
+Same cooperation-cost parameter asymmetry as Fig. 2 but without enforcement machinery. Under the prisoner's dilemma the cheap population barely cooperates, so partner choice is what converts the R − P gap into a deterministic cooperator/exploiter split. Snowdrift can break symmetry from payoffs alone (Fig. 1e–h).
 
 ### <strong>Fig. S4.</strong> Full cooperation-cost asymmetry grid (prisoner's dilemma).
 
@@ -76,7 +76,7 @@ Same cooperation-cost parameter asymmetry as Fig. 2 but without enforcement mach
 
 <strong>Fig. S4.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–h</strong>) Two coevolving populations. (<strong>a, b</strong>) and (<strong>e, f</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) and (<strong>g, h</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). Prisoner's dilemma. (<strong>a–d</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>e–h</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have the same information cost (0.001).
 
-Full c₀ × c₁ coverage behind Fig. 2; the main-text line slice follows c₁ = c₀ + 0.02 with both populations overlaid. Partner choice (a–d) and combined IJMPQ (e–h). Snowdrift counterpart: Fig. S13.
+Full c₀ × c₁ coverage behind Fig. 2; the main-text line slice follows c₁ = c₀ + 0.02 with both populations overlaid. Partner choice (a–d) and combined IJMPQ (e–h).
 
 ### <strong>Fig. S5.</strong> Line slices contrasting parameter-symmetric and parameter-asymmetric cooperation cost.
 
@@ -84,15 +84,15 @@ Full c₀ × c₁ coverage behind Fig. 2; the main-text line slice follows c₁ 
 
 <strong>Fig. S5.</strong> Short-memory partner choice. Frequency of cooperators and average fitness when short-memory partner choice is the only cooperation mechanism allowed. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Cooperation costs follow c₁ = c₀ + 0.02 (red line: c₁; orange line: c₀). (<strong>c, d</strong>) Cooperation costs follow c₁ = c₀ (light green line: population with the lower frequency of cooperators; dark green line: the other). The two populations have the same information cost (0.001).
 
-Top row: small cooperation-cost gap (deterministic split; same strip as Fig. 2). Bottom row: parameter symmetry (stochastic split; same data as Fig. 1). Contrast Fig. 1 control columns for the no-enforcement symmetric baseline. Snowdrift counterpart: Fig. S14.
+Top row: small cooperation-cost gap (deterministic split; same strip as Fig. 2). Bottom row: parameter symmetry (stochastic split; same data as Fig. 1). Contrast Fig. 1 control columns for the no-enforcement symmetric baseline.
 
 ### <strong>Fig. S6.</strong> Cooperation-cost asymmetry under partner choice at group size 4.
 
 ![figS6](/home/marcelino/figures/interpretation/figS6.png)
 
-<strong>Fig. S6.</strong> Short-memory partner choice. Frequency of cooperators and average fitness when short-memory partner choice is the only cooperation mechanism allowed. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). Prisoner's dilemma. The two populations have the same information cost (0.001).
+<strong>Fig. S6.</strong> Short-memory partner choice. Frequency of cooperators and average fitness when short-memory partner choice is the only cooperation mechanism allowed. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). The two populations have the same information cost (0.001).
 
-Same cooperation-cost parameter asymmetry as Fig. 2 but at group size 4. The deterministic cooperator/exploiter split survives small-group stochasticity. Snowdrift counterpart: Fig. S15.
+Same cooperation-cost parameter asymmetry as Fig. 2 but at group size 4. The deterministic cooperator/exploiter split survives small-group stochasticity.
 
 ### <strong>Fig. S7.</strong> Information cost versus cooperation cost (single population).
 
@@ -108,7 +108,7 @@ Information cost is soft by itself but lowers the cooperation-cost ceiling where
 
 <strong>Fig. S8.</strong> Short-memory partner choice. Frequency of cooperators and average fitness when short-memory partner choice is the only cooperation mechanism allowed. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.12 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (0.1). The two populations have the same information cost (from 0 to <em>b</em> - 0.12).
 
-With c₀ fixed above zero and c₁ swept, the refuge at zero cooperation cost disappears: information cost retreats the cooperation ceiling and compresses the cooperator/exploiter gap established by partner choice. Fig. S10 instead holds c₀ = c₁ and varies information cost asymmetrically; Figs. 4–5 cross both asymmetries. Snowdrift counterpart: Fig. S16.
+With c₀ fixed above zero and c₁ swept, the refuge at zero cooperation cost disappears: information cost retreats the cooperation ceiling and compresses the cooperator/exploiter gap established by partner choice. Fig. S10 instead holds c₀ = c₁ and varies information cost asymmetrically; Figs. 4–5 cross both asymmetries.
 
 ### <strong>Fig. S9.</strong> Fitness counterpart of Fig. 4 (relational information-cost slices).
 
@@ -116,7 +116,7 @@ With c₀ fixed above zero and c₁ swept, the refuge at zero cooperation cost d
 
 <strong>Fig. S9.</strong> Fitness. Average fitness. (<strong>a–f</strong>) Two coevolving populations. Prisoner's dilemma. (<strong>a–c</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept; orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>b, e</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept; orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>c, f</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Same slices and layout as Fig. 4, but with fitness. Under partner choice, taxing the high-cooperation-cost population lowers fitness on both sides more strongly than taxing the low-cost side. Under IJMPQ the binding axis swaps, matching the cooperation-side relational claim: taxing the low-cooperation-cost population imposes the larger fitness penalty on its partner. Along the iso-budget column, splitting a fixed information-cost budget can underperform concentrating it at a corner. Snowdrift counterpart: Fig. S19.
+Same slices and layout as Fig. 4, but with fitness. Under partner choice, taxing the high-cooperation-cost population lowers fitness on both sides more strongly than taxing the low-cost side. Under IJMPQ the binding axis swaps, matching the cooperation-side relational claim: taxing the low-cooperation-cost population imposes the larger fitness penalty on its partner. Along the iso-budget column, splitting a fixed information-cost budget can underperform concentrating it at a corner. Full i₀ × i₁ coverage is in Fig. S11.
 
 ### <strong>Fig. S10.</strong> Information-cost asymmetry at equal cooperation cost (c = 0.10).
 
@@ -124,92 +124,12 @@ Same slices and layout as Fig. 4, but with fitness. Under partner choice, taxing
 
 <strong>Fig. S10.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–h</strong>) Two coevolving populations. (<strong>a, b</strong>) and (<strong>e, f</strong>) Population with the higher information cost (<em>i<sub>1</sub></em>, from 0 to <em>b</em> - 0.1). (<strong>c, d</strong>) and (<strong>g, h</strong>) Population with the lower information cost (<em>i<sub>0</sub></em>, from 0 to <em>b</em> - 0.1). (<strong>a–d</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>e–h</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.1).
 
-With c₀ = c₁, information-cost asymmetry assigns the cooperator role deterministically under partner choice (a–d); combined IJMPQ inverts via cross-population hitchhiking (e–h). That hitchhiking is stronger here than once a cooperation-cost gap is present (Figs. 4–5). Fig. S8 instead holds cooperation-cost asymmetry and varies information cost symmetrically. Snowdrift counterpart: Fig. S20.
+With c₀ = c₁, information-cost asymmetry assigns the cooperator role deterministically under partner choice (a–d); combined IJMPQ inverts via cross-population hitchhiking (e–h). That hitchhiking is stronger here than once a cooperation-cost gap is present (Figs. 4–5). Fig. S8 instead holds cooperation-cost asymmetry and varies information cost symmetrically.
 
-### <strong>Fig. S11.</strong> Deterministic outcome split under cooperation-cost asymmetry (snowdrift).
+### <strong>Fig. S11.</strong> Full information-cost asymmetry grid under a cooperation-cost gap (prisoner's dilemma).
 
 ![figS11](/home/marcelino/figures/interpretation/figS11.png)
 
-<strong>Fig. S11.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–d</strong>) Two coevolving populations. Snowdrift. (<strong>a, b</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>c, d</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have the same information cost (0.001).
+<strong>Fig. S11.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–h</strong>) Two coevolving populations. (<strong>a, b</strong>) and (<strong>e, f</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em> = 0.2). (<strong>c, d</strong>) and (<strong>g, h</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em> = 0.1). Prisoner's dilemma. (<strong>a–d</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>e–h</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Snowdrift counterpart of Fig. 2 along c₁ = c₀ + 0.02 with both populations overlaid. Payoffs already sustain a cooperator/exploiter split without machinery (Fig. S12); partner choice and IJMPQ reshape rather than create it. Full snowdrift grid: Fig. S13; gs = 4: Fig. S15.
-
-### <strong>Fig. S12.</strong> No-enforcement control under cooperation-cost asymmetry (snowdrift).
-
-![figS12](/home/marcelino/figures/interpretation/figS12.png)
-
-<strong>Fig. S12.</strong> No cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). Snowdrift. The two populations have the same information cost (0.001).
-
-Snowdrift counterpart of Fig. S3. Without enforcement, the sucker payoff already splits the two populations under a small cooperation-cost gap (cf. Fig. 1e–h under parameter symmetry).
-
-### <strong>Fig. S13.</strong> Full cooperation-cost asymmetry grid (snowdrift).
-
-![figS13](/home/marcelino/figures/interpretation/figS13.png)
-
-<strong>Fig. S13.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–h</strong>) Two coevolving populations. (<strong>a, b</strong>) and (<strong>e, f</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) and (<strong>g, h</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). Snowdrift. (<strong>a–d</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>e–h</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have the same information cost (0.001).
-
-Snowdrift counterpart of Fig. S4: full c₀ × c₁ coverage under partner choice (a–d) and combined IJMPQ (e–h).
-
-### <strong>Fig. S14.</strong> Parameter-symmetric vs asymmetric cooperation-cost strips (snowdrift).
-
-![figS14](/home/marcelino/figures/interpretation/figS14.png)
-
-<strong>Fig. S14.</strong> Short-memory partner choice. Frequency of cooperators and average fitness when short-memory partner choice is the only cooperation mechanism allowed. (<strong>a–d</strong>) Two coevolving populations. Snowdrift. (<strong>a, b</strong>) Cooperation costs follow c₁ = c₀ + 0.02 (red line: c₁; orange line: c₀). (<strong>c, d</strong>) Cooperation costs follow c₁ = c₀ (light green line: population with the lower frequency of cooperators; dark green line: the other). The two populations have the same information cost (0.001).
-
-Snowdrift counterpart of Fig. S5. Top row: c₁ = c₀ + 0.02 (same strip as Fig. S11). Bottom row: parameter symmetry (same data family as Fig. 1e–h).
-
-### <strong>Fig. S15.</strong> Cooperation-cost asymmetry at group size 4 (snowdrift).
-
-![figS15](/home/marcelino/figures/interpretation/figS15.png)
-
-<strong>Fig. S15.</strong> Short-memory partner choice. Frequency of cooperators and average fitness when short-memory partner choice is the only cooperation mechanism allowed. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.02 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (<em>c<sub>0</sub></em>, from 0 to <em>b</em> - 0.02). Snowdrift. The two populations have the same information cost (0.001).
-
-Snowdrift counterpart of Fig. S6: partner choice under the Fig. 2 cost gap at group size 4.
-
-### <strong>Fig. S16.</strong> Information cost under fixed cooperation-cost asymmetry (snowdrift).
-
-![figS16](/home/marcelino/figures/interpretation/figS16.png)
-
-<strong>Fig. S16.</strong> Short-memory partner choice. Frequency of cooperators and average fitness when short-memory partner choice is the only cooperation mechanism allowed. (<strong>a–d</strong>) Two coevolving populations. (<strong>a, b</strong>) Population with the higher cooperation cost (<em>c<sub>1</sub></em>, from 0.12 to <em>b</em>, the benefit to the partner). (<strong>c, d</strong>) Population with the lower cooperation cost (0.1). Snowdrift. The two populations have the same information cost (from 0 to <em>b</em> - 0.12).
-
-Snowdrift counterpart of Fig. S8. With c₀ fixed above zero, the cheap population stays near full cooperation under partner choice across the information-cost axis while the expensive population remains the exploiter.
-
-### <strong>Fig. S17.</strong> Relational information-cost strips (snowdrift).
-
-![figS17](/home/marcelino/figures/interpretation/figS17_qBSeen.png)
-
-<strong>Fig. S17.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators. (<strong>a–f</strong>) Two coevolving populations. Snowdrift. (<strong>a–c</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept; orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>b, e</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept; orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>c, f</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
-
-Snowdrift counterpart of Fig. 4: own-cost, partner-cost, and fixed-total slices under partner choice and IJMPQ. The PD near-zero-i₀ inversion regime does not appear; payoff asymmetry dominates role assignment.
-
-### <strong>Fig. S18.</strong> Near-zero-i₀ wedge under snowdrift.
-
-![figS18](/home/marcelino/figures/interpretation/figS18_qBSeen.png)
-
-<strong>Fig. S18.</strong> Partner choice and indirect reciprocity. Frequency of cooperators when partner choice and indirect reciprocity are both allowed. (<strong>a–h</strong>) Two coevolving populations. Snowdrift. (<strong>a, e</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0 while i₁ is swept (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>b, f</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0.02 while i₁ is swept (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>c, g</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0.04 while i₁ is swept (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>d, h</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0.1 while i₁ is swept (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
-
-Snowdrift counterpart of Fig. 5. The PD role-inversion wedge is absent: cooperation and fitness tracks stay payoff-ordered as i₀ rises.
-
-### <strong>Fig. S19.</strong> Fitness counterpart of Fig. S17 (relational slices, snowdrift).
-
-![figS19](/home/marcelino/figures/interpretation/figS19_wmean.png)
-
-<strong>Fig. S19.</strong> Fitness. Average fitness. (<strong>a–f</strong>) Two coevolving populations. Snowdrift. (<strong>a–c</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept; orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>b, e</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept; orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). (<strong>c, f</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies (orange line: population with cooperation cost c₀ = 0.1; red line: population with cooperation cost c₁ = 0.2). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
-
-Snowdrift counterpart of Fig. S9 / fitness twin of Fig. S17: same relational information-cost slices as Fig. 4, under snowdrift payoffs.
-
-### <strong>Fig. S20.</strong> Information-cost asymmetry at equal cooperation cost (snowdrift).
-
-![figS20](/home/marcelino/figures/interpretation/figS20.png)
-
-<strong>Fig. S20.</strong> Simulation results for different cooperation mechanisms. Frequency of cooperators and average fitness. (<strong>a–h</strong>) Two coevolving populations. (<strong>a, b</strong>) and (<strong>e, f</strong>) Population with the higher information cost (<em>i<sub>1</sub></em>, from 0 to <em>b</em> - 0.1). (<strong>c, d</strong>) and (<strong>g, h</strong>) Population with the lower information cost (<em>i<sub>0</sub></em>, from 0 to <em>b</em> - 0.1). Snowdrift. (<strong>a–d</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>e–h</strong>) When partner choice and indirect reciprocity are both allowed. The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.1).
-
-Snowdrift counterpart of Fig. S10. With c₀ = c₁, information-cost asymmetry no longer assigns or inverts roles the way it does under the prisoner's dilemma; snowdrift ecology washes out Cost-linked dq.
-
-### <strong>Fig. S21.</strong> Behaviour–mechanism decoupling at c = 0 (snowdrift).
-
-![figS21](/home/marcelino/figures/interpretation/figS21.png)
-
-<strong>Fig. S21.</strong> Simulation results for different cooperation mechanisms. Frequency of machinery allele (P1 in a; M1 in c) and frequency of cooperators. The figure shows One population.Snowdrift. (<strong>a, b</strong>) When short-memory partner choice is the only cooperation mechanism allowed. (<strong>c, d</strong>) When direct reciprocity is the only cooperation mechanism allowed. The population has the same cooperation cost (0) and the same information cost (from 0 to <em>b</em> (0.4), where <em>b</em> is the benefit to the partner).
-
-Snowdrift counterpart of Fig. 3: information cost still selects against enforcement alleles at zero cooperation cost, while cooperation remains high on unconditional cooperators (cf. Fig. S7c).
+Full i₀ × i₁ coverage behind Figs. 4–5 and S9; the main-text and fitness line panels are strips and an iso-budget cut through this square. Partner choice (a–d) and combined IJMPQ (e–h). Fixed cooperation costs c₀ = 0.10 and c₁ = 0.20. Fig. S10 is the equal-c counterpart.

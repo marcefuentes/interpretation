@@ -16,8 +16,8 @@ output directory first):
     python -m graphgen.main --study interpretation --all --groupsize 128 --output ~/figures
     python -m graphgen.main --study interpretation --report --groupsize 128 --output ~/figures
 
-The report includes main text Figs 1–5 (fig1–fig5) and supplement Figs S1–S21
-(figS1–S21) in manuscript order, with cross-references in each legend. Calibration
+The report includes main text Figs 1–5 (fig1–fig5) and supplement Figs S1–S11
+(figS1–S11) in manuscript order, with cross-references in each legend. Calibration
 panels cal1–cal2 are omitted. Outputs:
 
 - DOCX: ~/figures/interpretation/interpretation.docx
@@ -25,9 +25,9 @@ panels cal1–cal2 are omitted. Outputs:
   point at the figure output directory used for that run)
 
 The manuscript figure set lives in ../graph/graphgen/studies/interpretation/ as
-fig1–fig5 (main text) and figS1–S21 (supplement). Graphgen ids match how figures
-are called in the manuscript (Fig. 1 → fig1, Fig. S3 → figS3). Figs S11–S21 are
-snowdrift twins of PD-only cuts (same layout and parameter slice, dilemma type 2).
+fig1–fig5 (main text) and figS1–S11 (supplement). Graphgen ids match how figures
+are called in the manuscript (Fig. 1 → fig1, Fig. S3 → figS3). Fig. S11 is the
+full i₀ × i₁ heatmap behind the relational line cuts (Figs. 4–5, S9).
 Auxiliary panels cal1–cal2 (payoff-plane calibration) and aux_m_nodilemma (M under
 dilemma 0 vs PD; internal only) are in the same namespace and are not published.
 Underlying simulation export names in the pipeline config are internal and do not
@@ -42,34 +42,34 @@ attributions cited in the text but do not appear as manuscript figures. Regenera
 with `--figure cal1` or `--figure cal2` when needed; see the supplement table and
 the journal calibration analyses.
 
-Status: revised 2026-09 — graphgen ids are fig1–fig5 (main) and figS1–S21
-(supplement); S11–S21 are snowdrift twins of PD-only figures; aux_m_nodilemma and
-calibration panels cal1–cal2 are excluded. The single-population cooperation-cost
-threshold comparison was demoted to **figS1** (now also covering two populations).
-Relational reframe: Fig. 4 is the fused 2×3 (own/partner strips + fixed total); Fig. 5
-tracks the near-zero-i₀ inversion regime; cooperation after allele loss is Fig. 3.
-Main text is five line figures.
+Status: revised 2026-09 — graphgen ids are fig1–fig5 (main) and figS1–S11
+(supplement); aux_m_nodilemma and calibration panels cal1–cal2 are excluded. The
+single-population cooperation-cost threshold comparison was demoted to **figS1**
+(now also covering two populations). Relational reframe: Fig. 4 is the fused 2×3
+(own/partner strips + fixed total); Fig. 5 tracks the near-zero-i₀ inversion
+regime; cooperation after allele loss is Fig. 3; Fig. S11 publishes the full
+i₀ × i₁ square behind those cuts. Main text is five line figures.
 
 ## Setup audit (2026-09)
 
 | Figure | Renderer | Data source | Verdict |
 | ------ | -------- | ----------- | ------- |
 | fig1 | Line (PLOT) | symmetric_c pop_2, _/P | PD + snowdrift rows |
-| fig2 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P + IJMPQ at c1 = c0 + 0.02 | PD; snowdrift twin → figS11 |
-| fig3 | Line (PLOT) | symmetric_c_i_lines pop_1, P + M at c = 0 | PD; snowdrift twin → figS21 |
-| fig4 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | PD; snowdrift twin → figS17 |
-| fig5 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ | PD; snowdrift twin → figS18 |
+| fig2 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P + IJMPQ at c1 = c0 + 0.02 | PD |
+| fig3 | Line (PLOT) | symmetric_c_i_lines pop_1, P + M at c = 0 | PD |
+| fig4 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | PD; full grid → figS11 |
+| fig5 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, IJMPQ | PD; full grid → figS11 |
 | figS1 | Line (PLOT) | symmetric_c pop_1 + pop_2, _/P/M/IJMPQ | 4×4: pop_1 PD/SD above pop_2 PD/SD |
 | figS2 | Line | symmetric_c pop_1, shuffle | PD + snowdrift rows |
-| figS3 | Heatmap | asymmetric_c0_c1 pop_2, _ | PD; twin → figS12 |
-| figS4 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | PD; twin → figS13 |
-| figS5 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P | PD; twin → figS14 |
-| figS6 | Heatmap | asymmetric_c0_c1 pop_2, P, gs = 4 | PD; twin → figS15 |
+| figS3 | Heatmap | asymmetric_c0_c1 pop_2, _ | PD |
+| figS4 | Heatmap | asymmetric_c0_c1 pop_2, P + IJMPQ | PD |
+| figS5 | Line (PLOT) | asymmetric_c0_c1_lines pop_2, P | PD |
+| figS6 | Heatmap | asymmetric_c0_c1 pop_2, P, gs = 4 | PD |
 | figS7 | Heatmap | symmetric_c_i pop_1, IJMPQ | PD + snowdrift rows |
-| figS8 | Heatmap | asymmetric_c1_i pop_2, P | PD; twin → figS16 |
-| figS9 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | Fitness of Fig. 4; twin → figS19 |
-| figS10 | Heatmap | asymmetric_i0_i1 pop_2, P + IJMPQ | PD; twin → figS20 |
-| figS11–S21 | (twins) | same cuts as paired PD figures | Snowdrift (dilemma 2) |
+| figS8 | Heatmap | asymmetric_c1_i pop_2, P | PD |
+| figS9 | Line (PLOT) | asymmetric_c1_i0_i1_lines pop_2, P + IJMPQ | Fitness of Fig. 4; full grid → figS11 |
+| figS10 | Heatmap | asymmetric_i0_i1 pop_2, P + IJMPQ | PD; equal-c contrast |
+| figS11 | Heatmap | asymmetric_c1_i0_i1 pop_2, P + IJMPQ | PD; full square behind Figs. 4–5, S9 |
 | aux_m_nodilemma | Heatmap | symmetric_c_i pop_1, M, dt 0 vs 1 | Internal only |
 | cal1, cal2 | Heatmap | prisoners / snowdrift calibration | Auxiliary — not in supplement |
 
@@ -100,7 +100,7 @@ setup for the relational claim (Figs. 4–5).
 
 1. fig1: two coevolving populations at c0 = c1; columns = no enforcement then P;
    coop/fitness (`multi_trait` → 2×4). Row 0 = PD, row 1 = snowdrift.
-2. fig2: c1 = c0 + 0.02 strip, PD only in main text (snowdrift → figS11); rows = P then IJMPQ; both populations overlaid.
+2. fig2: c1 = c0 + 0.02 strip, PD only in main text; rows = P then IJMPQ; both populations overlaid.
 3. fig3: rows = P then M; columns = enforcement allele then cooperation; c = 0 slice.
 4. fig4: rows = P then IJMPQ; columns = i0 strip, i1 strip, fixed total.
 5. fig5: IJMPQ; columns = i0 held at 0, 0.02, 0.04, 0.1 while i1 is swept; row 1 = cooperation, row 2 = fitness; both rows show ±1 SD bands.
@@ -191,11 +191,11 @@ cooperation-cost gap and then cuts one line through the square. Slices get their
 Bands are opt-in per figure via a `show_band` source parameter, set only on Fig. 5 —
 elsewhere the runs sit inside a single outcome and a band would only add clutter.
 
-### Superseded: both-costs-asymmetric heatmaps
+### Full square behind the relational line cuts
 
-A full i0 × i1 square (c0 and c1 fixed) is available as imshow heatmaps in graphgen and
-remains the full-coverage evidence for the supplement, but the line reslices above now
-carry the claims in the main text.
+A full i0 × i1 square (c0 = 0.10, c1 = 0.20 fixed) is published as Fig. S11 (imshow),
+the same coverage pattern as Fig. S4 behind Fig. 2 and Fig. S7 behind Fig. 3. The
+line reslices (Figs. 4–5, S9) carry the dose-response claims; S11 is the full grid.
 
 ### Available alternative: single-population information-cost line charts at c = 0.10
 
@@ -220,17 +220,7 @@ Robustness panels from the primary sweeps only. No-enforcement control for Fig. 
 | S8 | Information cost under fixed cooperation-cost asymmetry (PD) | figS8 | `... --figure figS8 ...` | ~/figures/interpretation/figS8.png |
 | S9 | Fitness counterpart of Fig. 4 (relational slices; PD) | figS9 | `... --figure figS9 ...` | ~/figures/interpretation/figS9_wmean.png |
 | S10 | Information-cost asymmetry at equal cooperation cost (PD) | figS10 | `... --figure figS10 ...` | ~/figures/interpretation/figS10.png |
-| S11 | Snowdrift twin of Fig. 2 (asymmetric cost strip) | figS11 | `... --figure figS11 ...` | ~/figures/interpretation/figS11.png |
-| S12 | Snowdrift twin of Fig. S3 (no-enforcement asymmetric) | figS12 | `... --figure figS12 ...` | ~/figures/interpretation/figS12.png |
-| S13 | Snowdrift twin of Fig. S4 (full c₀ × c₁ grid) | figS13 | `... --figure figS13 ...` | ~/figures/interpretation/figS13.png |
-| S14 | Snowdrift twin of Fig. S5 (symmetric vs asymmetric strips) | figS14 | `... --figure figS14 ...` | ~/figures/interpretation/figS14.png |
-| S15 | Snowdrift twin of Fig. S6 (gs = 4; groupsize baked in) | figS15 | `... --figure figS15 ...` | ~/figures/interpretation/figS15.png |
-| S16 | Snowdrift twin of Fig. S8 (shared i under c-gap) | figS16 | `... --figure figS16 ...` | ~/figures/interpretation/figS16.png |
-| S17 | Snowdrift twin of Fig. 4 (relational strips) | figS17 | `... --figure figS17 ...` | ~/figures/interpretation/figS17_qBSeen.png |
-| S18 | Snowdrift twin of Fig. 5 (near-zero-i₀ wedge) | figS18 | `... --figure figS18 ...` | ~/figures/interpretation/figS18_qBSeen.png |
-| S19 | Snowdrift twin of Fig. S9 (fitness relational) | figS19 | `... --figure figS19 ...` | ~/figures/interpretation/figS19_wmean.png |
-| S20 | Snowdrift twin of Fig. S10 (equal-c i asymmetry) | figS20 | `... --figure figS20 ...` | ~/figures/interpretation/figS20.png |
-| S21 | Snowdrift twin of Fig. 3 (c = 0 decoupling) | figS21 | `... --figure figS21 ...` | ~/figures/interpretation/figS21.png |
+| S11 | Full i₀ × i₁ grid under a cooperation-cost gap (PD) | figS11 | `... --figure figS11 ...` | ~/figures/interpretation/figS11.png |
 
 ## Auxiliary figures (not in supplement)
 
@@ -259,10 +249,10 @@ Aligned with the Results write-through (2026-07). Authoritative source:
 regenerate `paper/captions.md` with `--report`.
 
 1. Fig 1. At c₀ = c₁, partner choice yields a stochastic cooperator/exploiter split absent without enforcement (PD); snowdrift already splits in the control columns. Paradox of success in the fitness panels.
-2. Fig 2. Along c₁ = c₀ + 0.02, partner choice determines a deterministic split; IJMPQ raises cooperation in the expensive population. PD in main text — snowdrift twin Fig. S11; no-enforcement Fig. S3 (snowdrift Fig. S12); full grid Fig. S4 (snowdrift Fig. S13); gs = 4 Fig. S6 (snowdrift Fig. S15).
-3. Fig 3. At c = 0, enforcement alleles fall while cooperation holds on unconditional cooperators that pay no information cost. Fig. S7 full grid; snowdrift twin Fig. S21. That pattern is priced by Figs. 4–5.
-4. Fig 4. Own- vs partner-cost strips plus fixed total: under P both populations flat in own cost, cooperate much less under partner's; under IJMPQ the pattern reverses (raising i on cheap side: partner 0.957 → 0.268, payer → 0.734). Third column: IJMPQ interior minimum (shared total worse); P monotone. Snowdrift twin Fig. S17.
-5. Fig 5. Wedge closes as i₀ rises (holds at 0, threshold at 0.02, gone by 0.04). ±1 SD bands mark bistability. Equal-c role-inversion contrast → Fig. S10 (snowdrift Fig. S20); snowdrift wedge twin Fig. S18.
+2. Fig 2. Along c₁ = c₀ + 0.02, partner choice determines a deterministic split; IJMPQ raises cooperation in the expensive population. No-enforcement Fig. S3; full grid Fig. S4; gs = 4 Fig. S6.
+3. Fig 3. At c = 0, enforcement alleles fall while cooperation holds on unconditional cooperators that pay no information cost. Fig. S7 full grid. That pattern is priced by Figs. 4–5.
+4. Fig 4. Own- vs partner-cost strips plus fixed total: under P both populations flat in own cost, cooperate much less under partner's; under IJMPQ the pattern reverses (raising i on cheap side: partner 0.957 → 0.268, payer → 0.734). Third column: IJMPQ interior minimum (shared total worse); P monotone. Full square Fig. S11.
+5. Fig 5. Wedge closes as i₀ rises (holds at 0, threshold at 0.02, gone by 0.04). ±1 SD bands mark bistability. Equal-c role-inversion contrast → Fig. S10; full square → Fig. S11.
 
 Supplement captions:
 
@@ -276,4 +266,5 @@ S7. Cost × c grid behind Fig. 3: information cost alone has a weak effect, lowe
 S8. With c₀ > 0 fixed, information cost compresses the partner-choice split (refuge gone). Complements Figs. 4–5.
 S9. Fitness counterpart of Fig. 4 on the same own-cost, partner-cost, and fixed-total slices: relational pattern reverse and fixed-total interior penalties persist in fitness.
 S10. At c₀ = c₁, i-asymmetry assigns roles under P and inverts under IJMPQ; role inversion stronger than in Figs. 4–5.
+S11. Full i₀ × i₁ square behind Figs. 4–5 and S9 (P and IJMPQ; fixed c₀ = 0.10, c₁ = 0.20).
 
