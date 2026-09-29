@@ -82,7 +82,7 @@ Fig. 2 and the matched costs of Fig. 1 on the same axes, so the deterministic an
 the stochastic split can be read side by side. The split also stays deterministic
 in groups of 4, where each population samples few partners per round (Fig. S6).
 
-**Figure 2: Deterministic role splits emerge from cooperation-cost asymmetries.** Frequency of cooperators and average fitness for two coevolving populations under the prisoner's dilemma, evaluated along the parameter strip $c_1 = c_0 + 0.02$ (with both populations overlaid). **A, B**, Short-memory partner choice (P). **C, D**, Combined mechanism IJMPQ. Both populations pay identical information costs ($0.001$). A small cooperation-cost gap allows partner choice to convert the cooperation-cost asymmetry into a stable cooperator/exploiter assignment (**A, B**); the more cooperative population earns less. Under IJMPQ both populations cooperate at similar frequencies and earn similar fitness aside from the 0.02 cost gap (**C, D**).
+**Figure 2: Deterministic role splits emerge from cooperation-cost asymmetries.** Frequency of cooperators and average fitness for two coevolving populations under the prisoner's dilemma, evaluated along the parameter strip $c_1 = c_0 + 0.02$ (with both populations overlaid). **A, B**, Short-memory partner choice (P). **C, D**, Combined mechanism IJMPQ. Both populations pay identical information costs ($0.001$). A small cooperation-cost gap allows partner choice to convert the cooperation-cost asymmetry into a stable cooperator/exploiter assignment (**A, B**); the more cooperative population earns less. Under IJMPQ both populations cooperate at similar frequencies and earn similar fitness aside from the 0.02 cost gap (**C, D**). The snowdrift counterpart of this strip is Fig. S12; under snowdrift the cost gap already splits populations without enforcement (Fig. S13).
 
 ## 3. Matched information cost
 
@@ -117,7 +117,7 @@ Fig. S8 holds the cooperation-cost gap of section 2 and raises a shared informat
 cost: the partner-choice split shrinks as that cost rises, rather than reversing.
 Direct reciprocity collapses both prisoner's-dilemma populations together once the
 information cost rises, with no residual split. IJMPQ postpones that collapse but
-does not restore the free-cooperation outcome. In snowdrift the cheap population
+does not restore the free-cooperation outcome. In snowdrift (Fig. S17) the cheap population
 stays near full cooperation under partner choice, direct reciprocity, and IJMPQ even
 at high information cost, while the expensive population remains the exploiter;
 IJMPQ raises that side at low information cost and then loses it as the cost rises.
@@ -186,7 +186,8 @@ only the high-cooperation-cost population's information cost matters, total
 cooperation is highest when that population pays none of the total. That
 non-additivity is therefore a property of reciprocity-bearing mechanisms, not of the
 total itself. The fitness counterpart of these slices shows the same cross-population
-burdens and the same interior minimum under a fixed total (Fig. S9).
+burdens and the same interior minimum under a fixed total (Fig. S9; snowdrift
+Fig. S20).
 
 The pattern that let a population keep cooperating under information cost under
 symmetry (Fig. 3) is what places a burden on its partner under asymmetry: losing
@@ -203,17 +204,18 @@ under IJMPQ they show role inversion — the expensive population's cooperation 
 the cheap one's — locally only on the i₀ ≈ 0 strip (13 cells). That role inversion is
 stronger when populations differ only in information cost (Fig. S10 shows the
 assignment under P and the inversion under IJMPQ; under IMP at the same design, the
-cooperation gap, cheap minus expensive, reaches −0.461 when i₀ = 0 and i₁ = 0.20)
-and weaker once a cooperation-cost gap is present (cooperation gap −0.100 at the same
-information-cost point). The cooperation-cost gap moves every reciprocity-bearing
-mechanism toward the cheap-cooperation-cost population, erasing the inversion
-outright for MP and MPQ.
+cooperation gap, cheap minus expensive, reaches −0.461 when i₀ = 0 and i₁ = 0.20;
+snowdrift counterpart Fig. S21) and weaker once a cooperation-cost gap is present
+(cooperation gap −0.100 at the same information-cost point). The cooperation-cost
+gap moves every reciprocity-bearing mechanism toward the cheap-cooperation-cost
+population, erasing the inversion outright for MP and MPQ.
 
 Fig. 5 shows how that inversion shrinks as the low-cooperation-cost population's
 information cost rises from zero. Each panel fixes i₀ and sweeps i₁. The inversion —
 the expensive population's curve above the cheap one's — holds throughout when
 i₀ = 0 (Fig. 5a), survives only past a threshold when i₀ = 0.02 (Fig. 5b), and is
-gone by i₀ = 0.04 and 0.1 (Fig. 5c,d). The transition into the state without
+gone by i₀ = 0.04 and 0.1 (Fig. 5c,d). The snowdrift twin (Fig. S19) does not show
+this near-zero-i₀ inversion regime. The transition into the state without
 mechanism alleles is abrupt and bistable rather than gradual: just inside this
 regime, raising population 1's information cost from 0.02 to 0.04 *raises* its
 frequency of cooperators by 0.32 as it switches from a defector-heavy mixed state

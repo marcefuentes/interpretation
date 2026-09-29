@@ -269,11 +269,11 @@ Table 3. Simulation designs.
 | --------------------------- | ---- | ---------------------- | -------------------------------------------------- | ---- | ----- | -------------- |
 | Equal-c baseline, one pop   | 1    | \_, M, P, IJMPQ       | c ∈ [0, b]                                         | 0.02 | 21    | Fig. S1; S2    |
 | Equal-c baseline, two pops  | 2    | \_, M, P, IJMPQ       | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Fig. 1; S1     |
-| Cooperation-cost asymmetry  | 2    | \_, P, IJMPQ          | c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Figs. 2, S3–S6 |
-| Symmetric information cost  | 1    | P, M, IJMPQ            | i + c ≤ b                                          | 0.02 | 231   | Figs. 3, S7    |
-| Fixed c-gap × shared i      | 2    | P                      | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Fig. S8        |
-| Per-population i, equal c   | 2    | P, IMP, IJMPQ          | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Fig. S10       |
-| Crossed c and i asymmetries | 2    | P, MP, MPQ, IMP, IJMPQ | c₀ = 0.10, c₁ = 0.20; i₀ ≤ 0.30, i₁ ≤ 0.20         | 0.02 | 176   | Figs. 4–5, S9, S11 |
+| Cooperation-cost asymmetry  | 2    | \_, P, IJMPQ          | c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Figs. 2, S3–S6; S12–S16 |
+| Symmetric information cost  | 1    | P, M, IJMPQ            | i + c ≤ b                                          | 0.02 | 231   | Figs. 3, S7; S22 |
+| Fixed c-gap × shared i      | 2    | P                      | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S8, S17  |
+| Per-population i, equal c   | 2    | P, IMP, IJMPQ          | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. S10, S21 |
+| Crossed c and i asymmetries | 2    | P, MP, MPQ, IMP, IJMPQ | c₀ = 0.10, c₁ = 0.20; i₀ ≤ 0.30, i₁ ≤ 0.20         | 0.02 | 176   | Figs. 4–5, S9, S11; S18–S20 |
 | PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
 | Snowdrift payoff plane      | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
@@ -286,9 +286,10 @@ Fig. S3; Fig. S5 places that strip beside the matched-cost case of Fig. 1), then
 information cost at equal c (Fig. 3; full grid Fig. S7).
 
 The central designs vary who pays an information cost (Fig. S8; Fig. S10; Figs. 4–5
-with fitness counterpart Fig. S9 and full i₀ × i₁ grid Fig. S11). Fig. 4's first two columns hold one population's
+with fitness counterpart Fig. S9 and full i₀ × i₁ grid Fig. S11; snowdrift twins
+Figs. S17–S21). Fig. 4's first two columns hold one population's
 information cost at zero and sweep the other's; the third holds total information cost
-fixed while the split varies.
+fixed while the split varies. The crossed design under snowdrift is Figs. S18–S20.
 
 Along the cooperation-cost axis, raising c changes several payoff gaps at once. The
 orthogonal payoff-plane sweeps vary payoffs independently of c; Table S1 reports the
