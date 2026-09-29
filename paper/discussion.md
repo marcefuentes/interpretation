@@ -29,11 +29,12 @@ I separate **parameter symmetry** (c₀ = c₁, i₀ = i₁, identical payoffs) 
 **outcome symmetry** (similar cooperation and fitness). At matched parameters,
 partner-choice populations stochastically split in the prisoner's dilemma (Fig. 1).
 When one population pays a lower cooperation cost, that population cooperates and the
-other exploits (Fig. 2). I omit a parallel asymmetric snowdrift figure because
-populations already cooperate and diverge without enforcement when the sucker payoff
-is high (Fig. 1 and Fig. S3). When populations differ only in information cost,
+other exploits (Fig. 2). The snowdrift counterpart of that asymmetric strip is Fig. S12
+(with no-enforcement, full-grid, and gs = 4 mirrors in Figs. S13–S14 and S16): payoffs
+already split roles without enforcement when the sucker payoff is high (Fig. 1e–h;
+Fig. S13). When populations differ only in information cost,
 partner choice still locks roles, while IJMPQ can invert them; snowdrift removes these
-PD locks. In all cases the more cooperative population earns less fitness, and
+PD locks (Figs. S18–S21). In all cases the more cooperative population earns less fitness, and
 reward-limited combined mechanisms shrink that gap.
 
 ## Information cost versus cooperation cost
@@ -56,7 +57,8 @@ cooperator/exploiter gap shrinks instead of only changing which genotypes carry 
 help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
-in information cost still lock or invert roles depending on mechanism (Fig. S10).
+in information cost still lock or invert roles depending on mechanism (Fig. S11;
+snowdrift Fig. S21).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and role inversion survives only on an i₀ ≈ 0 strip (Fig. 5),

@@ -9,22 +9,35 @@ are regression-checked by `ai/verify_claims.py`.
 
 | Item | Role | Main-text anchor |
 | ---- | ---- | ---------------- |
-| Fig. S1 | Cooperation-cost thresholds by mechanism at equal c, in one and two populations | Results §1–2 |
-| Fig. S2 | Short-memory / shuffle reciprocity branches | Fig. S1 |
-| Fig. S3 | No-enforcement control under cooperation-cost asymmetry | Fig. 2 |
-| Fig. S4 | Full c₀ × c₁ cooperation-cost grid | Fig. 2 |
-| Fig. S5 | Parameter-symmetric vs asymmetric line slices | Figs. 1–2 |
-| Fig. S6 | Cooperation-cost asymmetry at group size 4 | Fig. 2 |
-| Fig. S7 | Information cost × cooperation cost (single population) | Fig. 3 |
-| Fig. S8 | Information cost under fixed cooperation-cost asymmetry | Figs. 4–5 |
-| Fig. S9 | Fitness counterpart of Fig. 4 (same relational slices) | Fig. 4 |
-| Fig. S10 | Information-cost asymmetry at equal cooperation cost | Figs. 4–5 |
+| Fig. S1 | Cooperation-cost thresholds by mechanism at equal c (one and two populations; PD + snowdrift) | Results §1–2 |
+| Fig. S2 | Short-memory / shuffle reciprocity branches (PD + snowdrift) | Fig. S1 |
+| Fig. S3 | No-enforcement control under cooperation-cost asymmetry (PD) | Fig. 2 |
+| Fig. S4 | Full c₀ × c₁ cooperation-cost grid (PD) | Fig. 2 |
+| Fig. S5 | Parameter-symmetric vs asymmetric line slices (PD) | Figs. 1–2 |
+| Fig. S6 | Cooperation-cost asymmetry at group size 4 (PD) | Fig. 2 |
+| Fig. S7 | Information cost × cooperation cost (single population; PD + snowdrift) | Fig. 3 |
+| Fig. S8 | Dilemma-0 control for machinery erosion | Fig. 3 |
+| Fig. S9 | Information cost under fixed cooperation-cost asymmetry (PD) | Figs. 4–5 |
+| Fig. S10 | Fitness counterpart of Fig. 4 (relational slices; PD) | Fig. 4 |
+| Fig. S11 | Information-cost asymmetry at equal cooperation cost (PD) | Figs. 4–5 |
+| Fig. S12 | Snowdrift twin of Fig. 2 | Fig. 2 |
+| Fig. S13 | Snowdrift twin of Fig. S3 | Fig. 2 |
+| Fig. S14 | Snowdrift twin of Fig. S4 | Fig. 2 |
+| Fig. S15 | Snowdrift twin of Fig. S5 | Figs. 1–2 |
+| Fig. S16 | Snowdrift twin of Fig. S6 | Fig. 2 |
+| Fig. S17 | Snowdrift twin of Fig. S9 | Figs. 4–5 |
+| Fig. S18 | Snowdrift twin of Fig. 4 | Fig. 4 |
+| Fig. S19 | Snowdrift twin of Fig. 5 | Fig. 5 |
+| Fig. S20 | Snowdrift twin of Fig. S10 | Fig. 4 |
+| Fig. S21 | Snowdrift twin of Fig. S11 | Figs. 4–5 |
+| Fig. S22 | Snowdrift twin of Fig. 3 | Fig. 3 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S10 are in [captions.md](captions.md) (regenerated from the
-graphgen interpretation study). The panels below are not republished as main-text
-figures; they are coverage and robustness evidence for claims stated in the
-Results.
+Captions for Figs. S1–S22 are in [captions.md](captions.md) (regenerated from the
+graphgen interpretation study). Figs. S12–S22 reuse the same layout and parameter
+cuts as their PD counterparts at dilemma type 2. The panels below are not
+republished as main-text figures; they are coverage and robustness evidence for
+claims stated in the Results.
 
 ## Table S1. Payoff-gap attribution
 
@@ -47,23 +60,25 @@ Journal sources: [synthesis](../journal/synthesis.md),
 ## Cross-references from the main text
 
 **Fig. S1 cost thresholds.** One-population rows (a–h) carry the mechanism ordering of
-Results §1; two-population rows (i–p) add the mechanisms Fig. 1 omits, covering the
-matched-cost role-split claims of Results §2. Shuffle short-memory variants that can
-shift the direct-reciprocity ordering: Fig. S2.
+Results §1 under both games; two-population rows (i–p) add the matched-cost role-split
+claims of Results §2. Shuffle short-memory variants: Fig. S2.
 
-**Figs. 1–2 role split.** No-enforcement asymmetric control: Fig. S3. Deterministic
-versus stochastic strips on shared axes: Fig. S5. Full c₀ × c₁ coverage: Fig. S4.
-Small-group robustness (groups of 4): Fig. S6.
+**Figs. 1–2 role split.** No-enforcement asymmetric control: Fig. S3 (snowdrift
+Fig. S13). Deterministic versus stochastic strips on shared axes: Fig. S5
+(snowdrift Fig. S15). Full c₀ × c₁ coverage: Fig. S4 (snowdrift Fig. S14).
+Small-group robustness (groups of 4): Fig. S6 (snowdrift Fig. S16). Asymmetric
+snowdrift strip matching Fig. 2: Fig. S12.
 
 **Fig. 3: cooperation after allele loss.** Full information-cost × cooperation-cost
-surface: Fig. S7. Compression when cooperation cost is held above zero: Fig. S8.
+surface: Fig. S7. Dilemma-0 control for machinery erosion: Fig. S8. Snowdrift c = 0
+slice: Fig. S22.
 
-**Figs. 4–5 relational cost.** Equal-c information-cost asymmetry and role inversion
-(stronger inversion than under a cooperation-cost gap): Fig. S10. The full i₀ × i₁
+**Figs. 4–5 relational cost.** Equal-c information-cost asymmetry and role inversion:
+Fig. S11 (snowdrift Fig. S21). Shared-i under a cooperation-cost gap: Fig. S9
+(snowdrift Fig. S17). Fitness on the Fig. 4 relational slices: Fig. S10 (snowdrift
+Fig. S20). Snowdrift relational strips and wedge: Figs. S18–S19. The full i₀ × i₁
 square behind the line reslices remains journal-backed
-([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)); snowdrift removal of the
-near-zero-i₀ inversion regime is reported in the main text and that journal entry. Fitness on the same
-Fig. 4 relational slices is in Fig. S9.
+([crossed asymmetries](../journal/asymmetric_c1_i0_i1.md)).
 
 ## What is intentionally not in the supplement figures
 
