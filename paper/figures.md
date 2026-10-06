@@ -16,8 +16,8 @@ output directory first):
     python -m graphgen.main --study interpretation --all --groupsize 128 --output ~/figures
     python -m graphgen.main --study interpretation --report --groupsize 128 --output ~/figures
 
-The report includes main text Figs 1–4 (fig1–fig4) and supplement Figs S1–S22
-(figS1–S22) in manuscript order. Calibration panels cal1–cal2 are omitted. Outputs:
+The report includes main text Figs 1–4 (fig1–fig4) and supplement Figs S1–S24
+(figS1–S24) in manuscript order. Calibration panels cal1–cal2 are omitted. Outputs:
 
 - DOCX: ~/figures/interpretation/interpretation.docx
 - Markdown mirror: paper/captions.md
@@ -27,7 +27,7 @@ behind the Fig. 3–4 line cuts (Figs. 3–4, S15); snowdrift twin: Fig. S18.
 Shuffle short-memory branches are prose-only (no dedicated S panels).
 
 Status: revised 2026-10 — S1–S2 one-pop ceilings with coop + fitness rows; former
-shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement runs to S22.
+shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement runs to S24.
 
 ## Setup audit (2026-10)
 
@@ -36,7 +36,7 @@ shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement ru
 | fig1 | Line | asymmetric_c0_c1_lines, _/P/M/IJMPQ | PD; row0 sym, row1 gap |
 | fig2 | Line | same as fig1 | Snowdrift twin of fig1 |
 | fig3 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | PD; twin → figS19 |
-| fig4 | Line | asymmetric_c1_i0_i1_lines, IJMPQ | PD; twin → figS22 |
+| fig4 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | PD wedge; twin → figS22 |
 | figS1 | Line | symmetric_c pop_1, _/P/M/IJMPQ | PD; 2×4 coop/fitness |
 | figS2 | Line | same as figS1 | Snowdrift twin of S1 |
 | figS3 | Line | same as fig1, wmean | Fitness of Fig. 1 |
@@ -51,7 +51,8 @@ shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement ru
 | figS18 | Heatmap | twin of figS17 | Snowdrift full i₀ × i₁ square |
 | figS19 | Line | twin of fig3 | Snowdrift who-pays |
 | figS20 | Heatmap | asymmetric_i0_i1, P + IJMPQ | PD; twin → figS21 |
-| figS22 | Line | twin of fig4 | Snowdrift near-zero-i₀ wedge |
+| figS22 | Line | twin of fig4 | Snowdrift wedge P+IJMPQ |
+| figS23 | Line | wedge, wmean, P + IJMPQ | Fitness of Fig. 4; twin → figS24 |
 
 ## Main text figures
 
@@ -66,8 +67,8 @@ shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement ru
 
 1. fig1 / fig2: 2×4; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IJMPQ.
 2. figS1 / figS2: 2×4; row 0 = coop, row 1 = fitness; same mechanism columns.
-3. fig3: rows P then IJMPQ; columns i0 strip, i1 strip, fixed total.
-4. fig4: coop then fitness rows; i0 held per column.
+3. fig3: rows P then IJMPQ; column titles = cut, x-labels = swept i.
+4. fig4: same row grammar as fig3; columns hold i₀ while sweeping i₁; fitness → S23.
 
 Warm line-slice caches before regenerating Figs. 1–4 / S3–S4:
 
@@ -103,6 +104,8 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 | S20 | Equal-c i asymmetry PD | figS20 |
 | S21 | Equal-c i asymmetry snowdrift | figS21 |
 | S22 | Expensive cooperates more only if cheap-side i≈0 (snowdrift twin of Fig. 4) | figS22 |
+| S23 | Fitness of Fig. 4 | figS23 |
+| S24 | Fitness of Fig. 4 (snowdrift) | figS24 |
 
 ## Auxiliary figures (not in supplement)
 

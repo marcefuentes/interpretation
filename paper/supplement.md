@@ -31,9 +31,11 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S20 | Information-cost asymmetry at equal cooperation cost (prisoner's dilemma) | Figs. 3–4 |
 | Fig. S21 | Information-cost asymmetry at equal cooperation cost (snowdrift) | Figs. 3–4 |
 | Fig. S22 | The expensive population cooperates more only when the cheap one's information is nearly free (snowdrift) | Fig. 4 |
+| Fig. S23 | Fitness counterpart of Fig. 4 (prisoner's dilemma) | Fig. 4 |
+| Fig. S24 | Fitness counterpart of Fig. 4 (snowdrift) | Fig. 4 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S22 are in [captions.md](captions.md) (regenerated from the
+Captions for Figs. S1–S24 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). PD and snowdrift never share a figure. Shuffle
 short-memory branches (M collapse; IM and partner-choice combinations sustain; P
 nearly unchanged) are discussed in Results §1 without a dedicated figure.
@@ -73,7 +75,7 @@ surfaces: Figs. S11–S12. Snowdrift c = 0 slice: Fig. S10.
 Fig. S16). Full i₀ × i₁ square: Fig. S17 (snowdrift Fig. S18). Snowdrift twin of
 Fig. 3: Fig. S19. Equal-c information-cost asymmetry: Fig. S20 (snowdrift Fig. S21).
 Shared-i under a cooperation-cost gap: Fig. S13 (snowdrift Fig. S14). Snowdrift twin
-of Fig. 4: Fig. S22.
+of Fig. 4: Fig. S22. Fitness on the Fig. 4 wedge: Fig. S23 (snowdrift Fig. S24).
 
 ## What is intentionally not in the supplement figures
 

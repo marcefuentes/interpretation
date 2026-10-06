@@ -273,7 +273,7 @@ Table 3. Simulation designs.
 | Symmetric information cost  | 1    | P, M, IJMPQ            | i + c ≤ b                                          | 0.02 | 231   | Figs. S9–S12  |
 | Fixed c-gap × shared i      | 2    | P                      | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S13–S14  |
 | Per-population i, equal c   | 2    | P, IMP, IJMPQ          | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. S20–S21  |
-| Crossed c and i asymmetries | 2    | P, MP, MPQ, IMP, IJMPQ | c₀ = 0.10, c₁ = 0.20; i₀ ≤ 0.30, i₁ ≤ 0.20         | 0.02 | 176   | Figs. 3–4, S15–S19, S22 |
+| Crossed c and i asymmetries | 2    | P, MP, MPQ, IMP, IJMPQ | c₀ = 0.10, c₁ = 0.20; i₀ ≤ 0.30, i₁ ≤ 0.20         | 0.02 | 176   | Figs. 3–4, S15–S19, S22–S24 |
 | PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
 | Snowdrift payoff plane      | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
@@ -287,10 +287,11 @@ gs = 4 Figs. S7–S8). Decoupling at zero cooperation cost is Fig. S9 (snowdrift
 Fig. S10; full Cost × c grids Figs. S11–S12).
 
 The central designs vary who pays an information cost (Fig. S13; Fig. S20; Figs. 3–4
-with fitness counterpart Fig. S15 and full i₀ × i₁ grid Figs. S17–S18; snowdrift twins
-Figs. S14, S16, S18–S19, S21–S22). Fig. 3's first two columns hold one population's
-information cost at zero and sweep the other's; the third holds total information cost
-fixed while the split varies. The crossed design under snowdrift is Figs. S18–S19 and S22.
+with fitness counterparts Figs. S15 and S23 and full i₀ × i₁ grid Figs. S17–S18;
+snowdrift twins Figs. S14, S16, S18–S19, S21–S22, S24). Fig. 3's first two columns
+hold one population's information cost at zero and sweep the other's; the third holds
+total information cost fixed while the split varies. The crossed design under
+snowdrift is Figs. S18–S19 and S22.
 
 Along the cooperation-cost axis, raising c changes several payoff gaps at once. The
 orthogonal payoff-plane sweeps vary payoffs independently of c; Table S1 reports the
