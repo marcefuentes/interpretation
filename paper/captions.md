@@ -38,7 +38,7 @@ Top row: cooperation. Bottom row: fitness. Each column fixes i₀ on the low-coo
 
 ## Supplement figures
 
-### <strong>Fig. S1.</strong> Cooperation-cost ceilings by mechanism (one population, prisoner's dilemma).
+### <strong>Fig. S1.</strong> Cooperation in a single population (prisoner's dilemma).
 
 ![figS1](/home/marcelino/figures/interpretation/figS1.png)
 
@@ -46,7 +46,7 @@ Top row: cooperation. Bottom row: fitness. Each column fixes i₀ on the low-coo
 
 Single-population equal-c sweep. Top row: frequency of cooperators; bottom row: fitness. Columns: no enforcement, partner choice, direct reciprocity, and combined IJMPQ. Direct reciprocity collapses earlier than partner choice; IJMPQ sustains cooperation to the highest costs. Negligible information cost (0.001). Snowdrift twin: Fig. S2. Shuffle collapses direct reciprocity (M) while short-memory indirect reciprocity (IM) and partner-choice combinations (MP, IMP) still sustain cooperation; partner choice alone is nearly unchanged by shuffle. Those shuffle-only branches are not shown as separate figures.
 
-### <strong>Fig. S2.</strong> Cooperation-cost ceilings by mechanism (one population, snowdrift).
+### <strong>Fig. S2.</strong> Cooperation in a single population (snowdrift).
 
 ![figS2](/home/marcelino/figures/interpretation/figS2.png)
 

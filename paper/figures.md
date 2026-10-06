@@ -79,8 +79,8 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 
 | Supp | Message | id |
 | ---- | ------- | -- |
-| S1 | One-pop ceilings PD (coop + fitness) | figS1 |
-| S2 | One-pop ceilings snowdrift | figS2 |
+| S1 | Cooperation in a single population (PD; coop + fitness) | figS1 |
+| S2 | Cooperation in a single population (snowdrift) | figS2 |
 | S3 | Fitness twin of Fig. 1 | figS3 |
 | S4 | Fitness twin of Fig. 2 | figS4 |
 | S5 | Full c₀ × c₁ grid PD | figS5 |

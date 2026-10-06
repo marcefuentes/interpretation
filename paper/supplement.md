@@ -9,8 +9,8 @@ are regression-checked by `ai/verify_claims.py`.
 
 | Item | Role | Main-text anchor |
 | ---- | ---- | ---------------- |
-| Fig. S1 | Cooperation-cost ceilings by mechanism (one population; PD; coop + fitness) | Results §1 |
-| Fig. S2 | Cooperation-cost ceilings by mechanism (one population; snowdrift) | Results §1 |
+| Fig. S1 | Cooperation in a single population (prisoner's dilemma) | Results §1 |
+| Fig. S2 | Cooperation in a single population (snowdrift) | Results §1 |
 | Fig. S3 | Fitness counterpart of Fig. 1 (PD; matched vs gap strips) | Figs. 1–2 |
 | Fig. S4 | Fitness counterpart of Fig. 2 (snowdrift) | Figs. 1–2 |
 | Fig. S5 | Full c₀ × c₁ cooperation-cost grid (PD) | Fig. 1 |
