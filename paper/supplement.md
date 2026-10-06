@@ -1,7 +1,7 @@
 # Supplement
 
-Companion to the main text. Figure captions and PNG provenance:
-[captions.md](captions.md), [figures.md](figures.md). Payoff equations and
+Companion to the main text. Supplement figure captions:
+[captions.md](captions.md). PNG provenance: [figures.md](figures.md). Payoff equations and
 constants: [parameterization](../journal/parameterization.md). Headline numbers
 are regression-checked by `ai/verify_claims.py`.
 
@@ -30,7 +30,7 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S19 | Who pays the information cost matters more than how much (snowdrift) | Fig. 3 |
 | Fig. S20 | Information-cost asymmetry at equal cooperation cost (prisoner's dilemma) | Figs. 3–4 |
 | Fig. S21 | Information-cost asymmetry at equal cooperation cost (snowdrift) | Figs. 3–4 |
-| Fig. S22 | The expensive population cooperates more only when the cheap one's information is nearly free (snowdrift) | Fig. 4 |
+| Fig. S22 | With reciprocity, the expensive population cooperates more only when the cheap one's information is nearly free (snowdrift) | Fig. 4 |
 | Fig. S23 | Fitness counterpart of Fig. 4 (prisoner's dilemma) | Fig. 4 |
 | Fig. S24 | Fitness counterpart of Fig. 4 (snowdrift) | Fig. 4 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |

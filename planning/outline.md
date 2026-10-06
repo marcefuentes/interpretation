@@ -15,7 +15,7 @@ Section files:
 - [paper/discussion.md](../paper/discussion.md)
 - [paper/supplement.md](../paper/supplement.md) — Figs. S1–S11 + Table S1
 - [paper/figures.md](../paper/figures.md) — figure manifest (graphgen commands)
-- [paper/captions.md](../paper/captions.md) — figure legends
+- [paper/captions.md](../paper/captions.md) — supplement figure legends (S1–S24)
 - [paper/references.bib](../paper/references.bib)
 - [paper/citing.md](../paper/citing.md)
 

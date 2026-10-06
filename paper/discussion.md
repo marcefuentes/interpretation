@@ -75,7 +75,7 @@ places on its partner — a question prior work on costly punishment and monitor
 could not ask, because it levies those costs inside one population
 [@BoydRicherson1992; @FehrGachter2002; @StevensHauser2004]. Under each mechanism,
 both populations bear a burden from one population's information cost, and the two
-mechanism families place that burden on opposite populations (Fig. 3a,b,d,e). Under
+mechanism families place that burden on opposite populations (Fig. 3a,c,d,f). Under
 partner choice, populations bear the burden of the high-cooperation-cost population's
 information cost, because a swap needs a chooser on both sides and that population
 supplies fewer choosers; under reciprocity-bearing mechanisms, populations bear the

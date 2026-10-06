@@ -19,8 +19,8 @@ output directory first):
 The report includes main text Figs 1–4 (fig1–fig4) and supplement Figs S1–S24
 (figS1–S24) in manuscript order. Calibration panels cal1–cal2 are omitted. Outputs:
 
-- DOCX: ~/figures/interpretation/interpretation.docx
-- Markdown mirror: paper/captions.md
+- DOCX: ~/figures/interpretation/interpretation.docx (internal; all figures)
+- Markdown: paper/captions.md (supplement legends S1–S24 only; main-text legends live in results.md)
 
 PD and snowdrift never share a figure. Fig. S17 is the full i₀ × i₁ PD heatmap
 behind the Fig. 3–4 line cuts (Figs. 3–4, S15); snowdrift twin: Fig. S18.
@@ -103,7 +103,7 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 | S19 | Who pays (snowdrift twin of Fig. 3) | figS19 |
 | S20 | Equal-c i asymmetry PD | figS20 |
 | S21 | Equal-c i asymmetry snowdrift | figS21 |
-| S22 | Expensive cooperates more only if cheap-side i≈0 (snowdrift twin of Fig. 4) | figS22 |
+| S22 | With reciprocity, expensive cooperates more only if cheap-side i≈0 (snowdrift twin of Fig. 4) | figS22 |
 | S23 | Fitness of Fig. 4 | figS23 |
 | S24 | Fitness of Fig. 4 (snowdrift) | figS24 |
 
@@ -121,7 +121,9 @@ See [supplement.md](supplement.md).
 
 ## Draft captions
 
-Authoritative source: `graphgen/studies/interpretation/manifest.py`; regenerate
-`paper/captions.md` with `--report`. Am Nat legends should generally stay near
-≤100 words: descriptive panel text and short cross-figure pointers only;
-interpretation belongs in Results.
+Main-text legends (Figs. 1–4): hand-maintained in `results.md` (source of truth).
+Supplement legends (S1–S24): regenerate `paper/captions.md` from the interpretation
+manifest with `--report`. The DOCX at `~/figures/interpretation/interpretation.docx`
+is internal and may differ. Am Nat legends should generally stay near ≤100 words:
+descriptive panel text and short cross-figure pointers only; interpretation belongs
+in Results.

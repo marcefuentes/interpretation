@@ -70,7 +70,7 @@ Mapped to `paper/` (body) + `paper/submission/amnat/` (this venue). See
 6. **Discussion** — `discussion.md`
 7. **Literature Cited** — generated from `references.bib` via pandoc
 8. **Supplement** — `supplement.md` (online supplement; cite panels in main text)
-9. **Figure legends** — `captions.md` (for production: after Literature Cited; for review, prefer inline with figures)
+9. **Figure legends** — main text in `results.md`; supplement in `captions.md` (for production: after Literature Cited; for review, prefer inline with figures)
 
 ## Title page content (first page of manuscript)
 
@@ -179,7 +179,8 @@ Supplement references are typeset in the main Literature Cited list.
 | Acknowledgments (EM / post-acceptance) | `paper/submission/amnat/acknowledgments-submission.md` |
 | Body | `paper/introduction.md` … `paper/discussion.md` |
 | Supplement | `paper/supplement.md` |
-| Captions | `paper/captions.md` |
+| Captions (main) | `paper/results.md` (Figs. 1–4 blocks) |
+| Captions (supplement) | `paper/captions.md` |
 | Bibliography | `paper/references.bib` |
 | Figure provenance | `paper/figures.md` |
 | Internal planning | `planning/` |
