@@ -20,7 +20,7 @@ Fitness counterpart: Fig. S3. Snowdrift twin: Fig. 2. Full grid: Fig. S5; gs = 4
 
 Fitness counterpart: Fig. S4. Full grid: Fig. S6; gs = 4: Fig. S8.
 
-### <strong>Fig. 3.</strong> Information cost is relational: binding axis and budget non-convexity.
+### <strong>Fig. 3.</strong> Who pays the information cost matters more than how much.
 
 ![fig3](/home/marcelino/figures/interpretation/fig3_qBSeen.png)
 
@@ -146,7 +146,7 @@ See also Figs. S17 and 3–4. Snowdrift counterpart: Fig. S14.
 
 Snowdrift counterpart of Fig. S13.
 
-### <strong>Fig. S15.</strong> Fitness counterpart of Fig. 3 (relational information-cost slices).
+### <strong>Fig. S15.</strong> Fitness counterpart of Fig. 3.
 
 ![figS15](/home/marcelino/figures/interpretation/figS15_wmean.png)
 
@@ -154,7 +154,7 @@ Snowdrift counterpart of Fig. S13.
 
 Full grid: Fig. S19. Snowdrift counterpart: Fig. S16.
 
-### <strong>Fig. S16.</strong> Fitness counterpart of Fig. S20 (relational slices, snowdrift).
+### <strong>Fig. S16.</strong> Fitness counterpart of Fig. S20 (snowdrift).
 
 ![figS16](/home/marcelino/figures/interpretation/figS16_wmean.png)
 
@@ -186,7 +186,7 @@ Snowdrift counterpart of Fig. S17.
 
 Behind Figs. 3–4 and S17. Equal-c counterpart: Fig. S17.
 
-### <strong>Fig. S20.</strong> Relational information-cost strips (snowdrift).
+### <strong>Fig. S20.</strong> Who pays the information cost (snowdrift).
 
 ![figS20](/home/marcelino/figures/interpretation/figS20_qBSeen.png)
 

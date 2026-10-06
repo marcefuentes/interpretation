@@ -23,12 +23,12 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S12 | Information cost × cooperation cost (single population; snowdrift) | Fig. S10 |
 | Fig. S13 | Information cost under fixed cooperation-cost asymmetry (PD) | Figs. 3–4 |
 | Fig. S14 | Information cost under fixed cooperation-cost asymmetry (snowdrift) | Figs. 3–4 |
-| Fig. S15 | Fitness counterpart of Fig. 3 (relational slices; PD) | Fig. 3 |
-| Fig. S16 | Fitness counterpart of Fig. S20 (relational slices; snowdrift) | Fig. 3 |
+| Fig. S15 | Fitness counterpart of Fig. 3 (PD) | Fig. 3 |
+| Fig. S16 | Fitness counterpart of Fig. S20 (snowdrift) | Fig. 3 |
 | Fig. S17 | Information-cost asymmetry at equal cooperation cost (PD) | Figs. 3–4 |
 | Fig. S18 | Information-cost asymmetry at equal cooperation cost (snowdrift) | Figs. 3–4 |
 | Fig. S19 | Full i₀ × i₁ grid under a cooperation-cost gap (PD) | Figs. 3–4, S15 |
-| Fig. S20 | Snowdrift twin of Fig. 3 (relational strips) | Fig. 3 |
+| Fig. S20 | Snowdrift twin of Fig. 3 (who pays) | Fig. 3 |
 | Fig. S21 | Snowdrift twin of Fig. 4 (near-zero-i₀ wedge) | Fig. 4 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
@@ -69,17 +69,17 @@ Figs. S5–S6. Small-group robustness (groups of 4): Figs. S7–S8.
 **Fig. S9: cooperation after allele loss.** Full information-cost × cooperation-cost
 surfaces: Figs. S11–S12. Snowdrift c = 0 slice: Fig. S10.
 
-**Figs. 3–4 relational cost.** Equal-c information-cost asymmetry and role inversion:
+**Figs. 3–4 who-pays designs.** Equal-c information-cost asymmetry and role inversion:
 Fig. S17 (snowdrift Fig. S18). Shared-i under a cooperation-cost gap: Fig. S13
-(snowdrift Fig. S14). Fitness on the Fig. 3 relational slices: Fig. S15 (snowdrift
+(snowdrift Fig. S14). Fitness on the Fig. 3 slices: Fig. S15 (snowdrift
 Fig. S16). Full i₀ × i₁ square behind the line reslices: Fig. S19. Snowdrift
-relational strips and wedge: Figs. S20–S21.
+who-pays strips and wedge: Figs. S20–S21.
 
 ## What is intentionally not in the supplement figures
 
 - Payoff-plane calibration heatmaps — attributions only, via Table S1.
 - Dilemma-0 machinery-erosion control (`aux_m_nodilemma`) — internal only.
 - Snowdrift twin of Fig. S19 — under snowdrift the c-gap dominates the square;
-  Figs. S20–S21 already show that the PD-specific relational structure is gone.
+  Figs. S20–S21 already show that the PD-specific who-pays structure is gone.
 - Dedicated shuffle-branch panels (former S3–S4) — claim kept in Results prose.
 - Old sym-vs-asym contrast strip — absorbed into Figs. 1–2.

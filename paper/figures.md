@@ -23,7 +23,7 @@ The report includes main text Figs 1–4 (fig1–fig4) and supplement Figs S1–
 - Markdown mirror: paper/captions.md
 
 PD and snowdrift never share a figure. Fig. S19 is the full i₀ × i₁ PD heatmap
-behind the relational line cuts (Figs. 3–4, S15); there is no snowdrift twin of S19.
+behind the Fig. 3–4 line cuts (Figs. 3–4, S15); there is no snowdrift twin of S19.
 Shuffle short-memory branches are prose-only (no dedicated S panels).
 
 Status: revised 2026-10 — S1–S2 one-pop ceilings with coop + fitness rows; former
@@ -57,7 +57,7 @@ shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement ru
 | --- | ------- | --------- | ------ |
 | 1 | Matched vs gap cooperation cost (PD) | fig1 | ~/figures/interpretation/fig1.png |
 | 2 | Matched vs gap cooperation cost (snowdrift) | fig2 | ~/figures/interpretation/fig2.png |
-| 3 | Relational information cost | fig3 | ~/figures/interpretation/fig3_qBSeen.png |
+| 3 | Who pays information cost | fig3 | ~/figures/interpretation/fig3_qBSeen.png |
 | 4 | Near-zero-i₀ wedge | fig4 | ~/figures/interpretation/fig4_qBSeen.png |
 
 ### Panel order notes

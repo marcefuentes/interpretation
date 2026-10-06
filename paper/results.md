@@ -190,7 +190,7 @@ symmetry (Fig. S9) is what places a burden on its partner under asymmetry: losin
 mechanism alleles relieves the payer and removes the assortment or conditional help
 the partner needed.
 
-**Figure 3: Information cost is relational: binding axis and budget non-convexity.** Frequency of cooperators under different information-cost assignments and cooperation mechanisms. (**A–C**) Short-memory partner choice (P). (**D–F**) Combined mechanism IJMPQ. (**A, D**) Information cost falls only on the low-cooperation-cost population ($i_1 = 0$; $i_0$ swept). (**B, E**) Information cost falls only on the high-cooperation-cost population ($i_0 = 0$; $i_1$ swept). (**C, F**) Total information cost is fixed at $i_0 + i_1 = 0.2$ while the split varies. One population (orange) has $c_0 = 0.1$; the other (red) has $c_1 = 0.2$. Full grid: Fig. S19. Snowdrift: Fig. S20. Fitness: Fig. S15.
+**Figure 3: Who pays the information cost matters more than how much.** Frequency of cooperators under different information-cost assignments and cooperation mechanisms. (**A–C**) Short-memory partner choice (P). (**D–F**) Combined mechanism IJMPQ. (**A, D**) Information cost falls only on the low-cooperation-cost population ($i_1 = 0$; $i_0$ swept). (**B, E**) Information cost falls only on the high-cooperation-cost population ($i_0 = 0$; $i_1$ swept). (**C, F**) Total information cost is fixed at $i_0 + i_1 = 0.2$ while the split varies. One population (orange) has $c_0 = 0.1$; the other (red) has $c_1 = 0.2$. Full grid: Fig. S19. Snowdrift: Fig. S20. Fitness: Fig. S15.
 
 ## 5. Both information costs vary
 
