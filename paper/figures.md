@@ -67,7 +67,7 @@ shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement ru
 
 1. fig1 / fig2: 2×4; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IJMPQ.
 2. figS1 / figS2: 2×4; row 0 = coop, row 1 = fitness; same mechanism columns.
-3. fig3: rows P then IJMPQ; column titles = cut, x-labels = swept i.
+3. fig3: rows P then IJMPQ; columns tax-cheap, fixed total, tax-expensive (→ Fig. 4).
 4. fig4: same row grammar as fig3; columns hold i₀ while sweeping i₁; fitness → S23.
 
 Warm line-slice caches before regenerating Figs. 1–4 / S3–S4:

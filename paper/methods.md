@@ -288,10 +288,10 @@ Fig. S10; full Cost × c grids Figs. S11–S12).
 
 The central designs vary who pays an information cost (Fig. S13; Fig. S20; Figs. 3–4
 with fitness counterparts Figs. S15 and S23 and full i₀ × i₁ grid Figs. S17–S18;
-snowdrift twins Figs. S14, S16, S18–S19, S21–S22, S24). Fig. 3's first two columns
-hold one population's information cost at zero and sweep the other's; the third holds
-total information cost fixed while the split varies. The crossed design under
-snowdrift is Figs. S18–S19 and S22.
+snowdrift twins Figs. S14, S16, S18–S19, S21–S22, S24). Fig. 3's first column taxes
+only the cheap population, the second holds total information cost fixed while the
+split varies, and the third taxes only the expensive population (bridging to Fig. 4).
+The crossed design under snowdrift is Figs. S18–S19 and S22.
 
 Along the cooperation-cost axis, raising c changes several payoff gaps at once. The
 orthogonal payoff-plane sweeps vary payoffs independently of c; Table S1 reports the

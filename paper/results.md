@@ -168,16 +168,16 @@ choice therefore assorts at the population level — a residual chooser minority
 still sort both sides — while reciprocity protects only its carriers.
 
 The same total information cost does not yield the same cooperation: equal totals are
-neither interchangeable nor additive (Fig. 3c,f). Along a line of constant total
+neither interchangeable nor additive (Fig. 3b,e). Along a line of constant total
 information cost (0.20), every reciprocity-bearing mechanism reaches its *lowest*
 total cooperation — the sum of the two populations' frequencies of cooperators, on a
 0–2 scale — when the total is split between populations rather than paid by one side
 alone. Under IJMPQ populations that place a total of 0.20 on one side reach 1.0–1.65
-total cooperation, but only 0.39 when they split it as (0.06, 0.14) (Fig. 3f). Either
+total cooperation, but only 0.39 when they split it as (0.06, 0.14) (Fig. 3e). Either
 end leaves one population still carrying mechanism alleles, which is enough to
 sustain cooperation in both; a split reduces both populations' mechanism alleles so
 that neither remains above the threshold at which cooperation without those alleles
-takes over. Partner choice does not show that interior minimum (Fig. 3c): because
+takes over. Partner choice does not show that interior minimum (Fig. 3b): because
 only the high-cooperation-cost population's information cost matters, total
 cooperation is highest when that population pays none of the total. That
 non-additivity is therefore a property of reciprocity-bearing mechanisms, not of the
@@ -190,7 +190,7 @@ symmetry (Fig. S9) is what places a burden on its partner under asymmetry: losin
 mechanism alleles relieves the payer and removes the assortment or conditional help
 the partner needed.
 
-**Figure 3: Who pays the information cost matters more than how much (prisoner's dilemma).** Frequency of cooperators under different information-cost assignments and cooperation mechanisms. (**A–C**) Short-memory partner choice (P). (**D–F**) Combined mechanism IJMPQ. (**A, D**) Information cost falls only on the low-cooperation-cost population ($i_1 = 0$; $i_0$ swept). (**B, E**) Information cost falls only on the high-cooperation-cost population ($i_0 = 0$; $i_1$ swept). (**C, F**) Total information cost is fixed at $i_0 + i_1 = 0.2$ while the split varies. One population (orange) has $c_0 = 0.1$; the other (red) has $c_1 = 0.2$. Full grid: Figs. S17–S18. Snowdrift: Fig. S19. Fitness: Fig. S15.
+**Figure 3: Who pays the information cost matters more than how much (prisoner's dilemma).** Frequency of cooperators under different information-cost assignments and cooperation mechanisms. (**A–C**) Short-memory partner choice (P). (**D–F**) Combined mechanism IJMPQ. (**A, D**) Information cost falls only on the low-cooperation-cost population ($i_1 = 0$; $i_0$ swept). (**B, E**) Total information cost is fixed at $i_0 + i_1 = 0.2$ while the split varies. (**C, F**) Information cost falls only on the high-cooperation-cost population ($i_0 = 0$; $i_1$ swept). One population (orange) has $c_0 = 0.1$; the other (red) has $c_1 = 0.2$. Fig. 3c,f same cut as Fig. 4a,e. Full grid: Figs. S17–S18. Snowdrift: Fig. S19. Fitness: Fig. S15.
 
 ## 5. Both information costs vary
 
@@ -245,7 +245,7 @@ high-cooperation outcome. Partner choice's cooperation curve does cross above it
 partner's in three cells, but in the opposite corner of the square and while its own
 alleles are falling, not through that reciprocity free-rider route.
 
-**Figure 4: The expensive population cooperates more only when the cheap one's information is nearly free (prisoner's dilemma).** Frequency of cooperators under partner choice (P) and the combined mechanism IJMPQ, for different information costs on the cheap population. (**A–D**) Short-memory partner choice (P). (**E–H**) Combined IJMPQ. (**A, E**) $i_0 = 0$. (**B, F**) $i_0 = 0.02$. (**C, G**) $i_0 = 0.04$. (**D, H**) $i_0 = 0.1$. Cooperation costs $c_0 = 0.1$ (orange) and $c_1 = 0.2$ (red); each column holds $i_0$ constant while sweeping $i_1$. Shaded bands are $\pm 1$ SD over 30 runs. Fitness: Fig. S23. Snowdrift: Fig. S22. Equal-c contrast: Fig. S20. Full grid: Figs. S17–S18.
+**Figure 4: The expensive population cooperates more only when the cheap one's information is nearly free (prisoner's dilemma).** Frequency of cooperators under partner choice (P) and the combined mechanism IJMPQ, for different information costs on the cheap population. (**A–D**) Short-memory partner choice (P). (**E–H**) Combined IJMPQ. (**A, E**) $i_0 = 0$. (**B, F**) $i_0 = 0.02$. (**C, G**) $i_0 = 0.04$. (**D, H**) $i_0 = 0.1$. Cooperation costs $c_0 = 0.1$ (orange) and $c_1 = 0.2$ (red); each column holds $i_0$ constant while sweeping $i_1$. Shaded bands are $\pm 1$ SD over 30 runs. Fig. 4a,e same cut as Fig. 3c,f. Fitness: Fig. S23. Snowdrift: Fig. S22. Equal-c contrast: Fig. S20. Full grid: Figs. S17–S18.
 
 Snowdrift has no risk (S > P) and removes this inversion regime entirely on the same
 crossed design, identifying this cross-population burden as a property of game type

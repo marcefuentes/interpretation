@@ -24,9 +24,9 @@ Fitness counterpart: Fig. S4. Full grid: Fig. S6; gs = 4: Fig. S8.
 
 ![fig3](/home/marcelino/figures/interpretation/fig3_qBSeen.png)
 
-<strong>Fig. 3.</strong> Frequency of cooperators under different information-cost assignments and cooperation mechanisms. (<strong>a–c</strong>) When short-memory partner choice (P) is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity (IJMPQ) are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept). (<strong>b, e</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept). (<strong>c, f</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies. The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
+<strong>Fig. 3.</strong> Frequency of cooperators under different information-cost assignments and cooperation mechanisms. (<strong>a–c</strong>) When short-memory partner choice (P) is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity (IJMPQ) are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept). (<strong>b, e</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies. (<strong>c, f</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
 
-Full grid: Figs. S17–S18. Snowdrift: Fig. S19. Fitness: Fig. S15.
+Fig. 3c,f same cut as Fig. 4a,e. Full grid: Figs. S17–S18. Snowdrift: Fig. S19. Fitness: Fig. S15.
 
 ### <strong>Fig. 4.</strong> The expensive population cooperates more only when the cheap one's information is nearly free (prisoner's dilemma).
 
@@ -34,7 +34,7 @@ Full grid: Figs. S17–S18. Snowdrift: Fig. S19. Fitness: Fig. S15.
 
 <strong>Fig. 4.</strong> Frequency of cooperators under partner choice (P) and the combined mechanism IJMPQ, for different information costs on the cheap population. (<strong>a–d</strong>) When short-memory partner choice (P) is the only cooperation mechanism allowed. (<strong>e–h</strong>) When partner choice and indirect reciprocity (IJMPQ) are both allowed. (<strong>a, e</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0 while i₁ is swept. (<strong>b, f</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0.02 while i₁ is swept. (<strong>c, g</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0.04 while i₁ is swept. (<strong>d, h</strong>) Information cost on the lower-cooperation-cost population is held at i₀ = 0.1 while i₁ is swept. The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
 
-Shaded bands are ±1 SD over 30 runs. Fitness: Fig. S23. Snowdrift: Fig. S22. Equal-c contrast: Fig. S20. Full grid: Figs. S17–S18.
+Shaded bands are ±1 SD over 30 runs. Fig. 4a,e same cut as Fig. 3c,f. Fitness: Fig. S23. Snowdrift: Fig. S22. Equal-c contrast: Fig. S20. Full grid: Figs. S17–S18.
 
 ## Supplement figures
 
@@ -150,7 +150,7 @@ Snowdrift counterpart of Fig. S13.
 
 ![figS15](/home/marcelino/figures/interpretation/figS15_wmean.png)
 
-<strong>Fig. S15.</strong> Average fitness under different information-cost assignments and cooperation mechanisms. (<strong>a–c</strong>) When short-memory partner choice (P) is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity (IJMPQ) are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept). (<strong>b, e</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept). (<strong>c, f</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies. The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
+<strong>Fig. S15.</strong> Average fitness under different information-cost assignments and cooperation mechanisms. (<strong>a–c</strong>) When short-memory partner choice (P) is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity (IJMPQ) are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept). (<strong>b, e</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies. (<strong>c, f</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
 
 Full grid: Fig. S17. Snowdrift counterpart: Fig. S16.
 
@@ -158,7 +158,7 @@ Full grid: Fig. S17. Snowdrift counterpart: Fig. S16.
 
 ![figS16](/home/marcelino/figures/interpretation/figS16_wmean.png)
 
-<strong>Fig. S16.</strong> Average fitness under different information-cost assignments and cooperation mechanisms. (<strong>a–c</strong>) When short-memory partner choice (P) is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity (IJMPQ) are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept). (<strong>b, e</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept). (<strong>c, f</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies. The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
+<strong>Fig. S16.</strong> Average fitness under different information-cost assignments and cooperation mechanisms. (<strong>a–c</strong>) When short-memory partner choice (P) is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity (IJMPQ) are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept). (<strong>b, e</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies. (<strong>c, f</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
 
 Snowdrift counterpart of Fig. S15.
 
@@ -182,7 +182,7 @@ Snowdrift counterpart of Fig. S17.
 
 ![figS19](/home/marcelino/figures/interpretation/figS19_qBSeen.png)
 
-<strong>Fig. S19.</strong> Frequency of cooperators under different information-cost assignments and cooperation mechanisms. (<strong>a–c</strong>) When short-memory partner choice (P) is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity (IJMPQ) are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept). (<strong>b, e</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept). (<strong>c, f</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies. The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
+<strong>Fig. S19.</strong> Frequency of cooperators under different information-cost assignments and cooperation mechanisms. (<strong>a–c</strong>) When short-memory partner choice (P) is the only cooperation mechanism allowed. (<strong>d–f</strong>) When partner choice and indirect reciprocity (IJMPQ) are both allowed. (<strong>a, d</strong>) Information cost falls only on the population with the lower cooperation cost (i₁ = 0, i₀ swept). (<strong>b, e</strong>) Total information cost is held at i₀ + i₁ = 0.2 while the split between the populations varies. (<strong>c, f</strong>) Information cost falls only on the population with the higher cooperation cost (i₀ = 0, i₁ swept). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
 
 Snowdrift counterpart of Fig. 3.
 
