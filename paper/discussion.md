@@ -33,7 +33,7 @@ cooperates and the other exploits (Fig. 1, bottom row). Fig. 2 is the snowdrift
 counterpart of that layout: payoffs already split roles without enforcement when the
 sucker payoff is high (Fig. 2a,e; full grid Fig. S6; gs = 4 Fig. S8). When
 populations differ only in information cost, partner choice still locks roles, while
-IJMPQ can invert them; snowdrift removes these PD locks (Figs. S17–S18, S20–S21). In
+IJMPQ can invert them; snowdrift removes these PD locks (Figs. S18–S19, S21–S22). In
 all cases the more cooperative population earns less fitness, and reward-limited
 combined mechanisms shrink that gap.
 
@@ -57,8 +57,8 @@ cooperator/exploiter gap shrinks instead of only changing which genotypes carry 
 help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
-in information cost still lock or invert roles depending on mechanism (Fig. S17;
-snowdrift Fig. S18).
+in information cost still lock or invert roles depending on mechanism (Fig. S20;
+snowdrift Fig. S21).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and role inversion survives only on an i₀ ≈ 0 strip (Fig. 4),
