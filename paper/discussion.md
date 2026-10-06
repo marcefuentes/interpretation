@@ -27,15 +27,15 @@ split even under full parameter symmetry via partner choice.
 
 I separate **parameter symmetry** (c₀ = c₁, i₀ = i₁, identical payoffs) from
 **outcome symmetry** (similar cooperation and fitness). At matched parameters,
-partner-choice populations stochastically split in the prisoner's dilemma (Fig. 1).
-When one population pays a lower cooperation cost, that population cooperates and the
-other exploits (Fig. 2). The snowdrift counterpart of that asymmetric strip is Fig. S12
-(with no-enforcement, full-grid, and gs = 4 mirrors in Figs. S13–S14 and S16): payoffs
-already split roles without enforcement when the sucker payoff is high (Fig. 1e–h;
-Fig. S14). When populations differ only in information cost,
-partner choice still locks roles, while IJMPQ can invert them; snowdrift removes these
-PD locks (Figs. S18–S21). In all cases the more cooperative population earns less fitness, and
-reward-limited combined mechanisms shrink that gap.
+partner-choice populations stochastically split in the prisoner's dilemma (Fig. 1,
+top row). When one population pays a lower cooperation cost, that population
+cooperates and the other exploits (Fig. 1, bottom row). Fig. 2 is the snowdrift
+counterpart of that layout: payoffs already split roles without enforcement when the
+sucker payoff is high (Fig. 2a,e; full grid Fig. S8; gs = 4 Fig. S10). When
+populations differ only in information cost, partner choice still locks roles, while
+IJMPQ can invert them; snowdrift removes these PD locks (Figs. S19–S20, S22–S23). In
+all cases the more cooperative population earns less fitness, and reward-limited
+combined mechanisms shrink that gap.
 
 ## Information cost versus cooperation cost
 
@@ -57,11 +57,11 @@ cooperator/exploiter gap shrinks instead of only changing which genotypes carry 
 help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
-in information cost still lock or invert roles depending on mechanism (Fig. S10;
-snowdrift Fig. S21).
+in information cost still lock or invert roles depending on mechanism (Fig. S19;
+snowdrift Fig. S20).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
-cells), and role inversion survives only on an i₀ ≈ 0 strip (Fig. 5),
+cells), and role inversion survives only on an i₀ ≈ 0 strip (Fig. 4),
 weaker than in the equal-c case. Snowdrift removes this regime entirely.
 What decides whether a mechanism can be overridden at all is whether populations
 carry the reciprocity family, not how large an information cost they pay — a controlled
@@ -75,7 +75,7 @@ places on its partner — a question prior work on costly punishment and monitor
 could not ask, because it levies those costs inside one population
 [@BoydRicherson1992; @FehrGachter2002; @StevensHauser2004]. Under each mechanism,
 both populations bear a burden from one population's information cost, and the two
-mechanism families place that burden on opposite populations (Fig. 4a,b,d,e). Under
+mechanism families place that burden on opposite populations (Fig. 3a,b,d,e). Under
 partner choice, populations bear the burden of the high-cooperation-cost population's
 information cost, because a swap needs a chooser on both sides and that population
 supplies fewer choosers; under reciprocity-bearing mechanisms, populations bear the
@@ -86,7 +86,7 @@ information cost can end up with fewer *active* choosers, and a tenth of the
 cooperation, of the same population when it pays a heavy information cost itself.
 
 Equal information-cost totals are therefore neither interchangeable nor additive
-(Fig. 4c,f): both populations sharing a total cooperate less than when either pays it
+(Fig. 3c,f): both populations sharing a total cooperate less than when either pays it
 alone, since each corner leaves one population still carrying mechanism alleles while
 a split leaves neither.
 That result extends the second-order free-rider literature rather than replacing it:
