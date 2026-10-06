@@ -116,4 +116,6 @@ See [supplement.md](supplement.md).
 ## Draft captions
 
 Authoritative source: `graphgen/studies/interpretation/manifest.py`; regenerate
-`paper/captions.md` with `--report`.
+`paper/captions.md` with `--report`. Am Nat legends should generally stay near
+≤100 words: descriptive panel text and short cross-figure pointers only;
+interpretation belongs in Results.

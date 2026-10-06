@@ -23,7 +23,7 @@ general conceptual issue, illustrate it on data, and discuss broader use.
 | Main text | ≤ 7,500 words (excluding Literature Cited; including boxes) |
 | Abstract | ≤ **200 words** |
 | Figures + tables (print) | ≤ 6 |
-| Figure legends | generally ≤ 100 words each |
+| Figure legends | generally ≤ **100 words** each (descriptive; interpretation in Results) |
 | Short title (running head) | ≤ **40 characters** (including spaces) |
 
 Exceeding word limits requires justification in Editorial Manager Author Comments.
