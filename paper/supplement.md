@@ -66,8 +66,8 @@ snowdrift (S2).
 **Figs. 1–2 role split.** Fitness counterparts: Figs. S3–S4. Full c₀ × c₁ coverage:
 Figs. S5–S6. Small-group robustness (groups of 4): Figs. S7–S8.
 
-**Figs. S9–S10 matched information cost.** Cost × c surfaces under IJMPQ (PD and
-snowdrift).
+**Figs. S9–S10 matched information cost.** Cost × c surfaces under partner choice
+and IJMPQ (PD and snowdrift).
 
 **Figs. 3–4 who-pays designs.** Fitness on the Fig. 3 slices: Fig. S13 (snowdrift
 Fig. S14). Full i₀ × i₁ square: Fig. S15 (snowdrift Fig. S16). Snowdrift twin of

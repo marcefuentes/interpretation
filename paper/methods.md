@@ -270,8 +270,8 @@ Table 3. Simulation designs.
 | Equal-c baseline, one pop   | 1    | \_, P, M, IJMPQ       | c ∈ [0, b]                                         | 0.02 | 21    | Figs. S1–S2    |
 | Equal-c baseline, two pops  | 2    | \_, P, M, IJMPQ       | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Figs. 1–2; S3–S4 |
 | Cooperation-cost asymmetry  | 2    | \_, P, M, IJMPQ       | c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Figs. 1–2, S5–S8 |
-| Symmetric information cost  | 1    | IJMPQ                  | i + c ≤ b                                          | 0.02 | 231   | Figs. S9–S10  |
-| Fixed c-gap × shared i      | 2    | P                      | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S11–S12  |
+| Symmetric information cost  | 1    | P, IJMPQ               | i + c ≤ b                                          | 0.02 | 231   | Figs. S9–S10  |
+| Fixed c-gap × shared i      | 2    | P, IJMPQ               | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S11–S12  |
 | Per-population i, equal c   | 2    | P, IMP, IJMPQ          | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. S18–S19  |
 | Crossed c and i asymmetries | 2    | P, MP, MPQ, IMP, IJMPQ | c₀ = 0.10, c₁ = 0.20; i₀ ≤ 0.30, i₁ ≤ 0.20         | 0.02 | 176   | Figs. 3–4, S13–S17, S20–S22 |
 | PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
@@ -283,8 +283,8 @@ variants (M, MP, IM, IMP) are reported in Results §1 without dedicated figures.
 Figs. 1–2
 place matched-cost and c₁ = c₀ + 0.02 strips on shared axes for the prisoner's
 dilemma and snowdrift (fitness counterparts Figs. S3–S4; full grids Figs. S5–S6;
-gs = 4 Figs. S7–S8). Matched information cost under IJMPQ is Figs. S9–S10 (Cost × c
-grids; prisoner's dilemma and snowdrift).
+gs = 4 Figs. S7–S8). Matched information cost under partner choice and IJMPQ is
+Figs. S9–S10 (Cost × c grids; prisoner's dilemma and snowdrift).
 
 The central designs vary who pays an information cost (Fig. S11; Fig. S18; Figs. 3–4
 with fitness counterparts Figs. S13 and S21 and full i₀ × i₁ grid Figs. S15–S16;

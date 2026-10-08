@@ -10,11 +10,19 @@ Regenerate any manuscript figure from ~/code/graph with the venv active:
     cd ~/code/graph && . .venv/bin/activate
     python -m graphgen.main --study interpretation --figure FIG --groupsize 128 --output ~/figures
 
-Generate all manuscript PNGs and publication reports (figures must exist in the
-output directory first):
+`--groupsize` overrides every source, including figS7/figS8 (which embed
+`groupsize=4`). Regenerate those without the flag, or with `--groupsize 4`:
 
-    python -m graphgen.main --study interpretation --all --groupsize 128 --output ~/figures
-    python -m graphgen.main --study interpretation --report --groupsize 128 --output ~/figures
+    python -m graphgen.main --study interpretation --figure figS7 --output ~/figures
+    python -m graphgen.main --study interpretation --figure figS8 --output ~/figures
+
+Generate all manuscript PNGs and publication reports (figures must exist in the
+output directory first). Prefer omitting `--groupsize` for `--all` so source-
+level sizes (S7/S8) are kept; pass `--groupsize 128` only for single figures
+that should force 128:
+
+    python -m graphgen.main --study interpretation --all --output ~/figures
+    python -m graphgen.main --study interpretation --report --output ~/figures
 
 The report includes main text Figs 1–4 (fig1–fig4) and supplement Figs S1–S22
 (figS1–S22) in manuscript order. Calibration panels cal1–cal2 are omitted. Outputs:
@@ -42,15 +50,15 @@ S3–S4; Cost × c grids are S9–S10; supplement runs to S22.
 | figS2 | Line | same as figS1 | Snowdrift twin of S1 |
 | figS3 | Line | same as fig1, wmean | Fitness of Fig. 1 |
 | figS4 | Line | same as fig2, wmean | Fitness of Fig. 2 |
-| figS5 | Heatmap | asymmetric_c0_c1, P + IJMPQ | PD; twin → figS6 |
-| figS7 | Heatmap | asymmetric_c0_c1, P, gs = 4 | PD; twin → figS8 |
-| figS9 | Heatmap | symmetric_c_i, IJMPQ | PD Cost×c; twin → figS10 |
-| figS11 | Heatmap | asymmetric_c1_i, P | PD; twin → figS12 |
+| figS5 | Heatmap | asymmetric_c0_c1, P + IJMPQ | PD 2×4; twin → figS6 |
+| figS7 | Heatmap | asymmetric_c0_c1, P + IJMPQ, gs = 4 | PD 2×4; twin → figS8 |
+| figS9 | Heatmap | symmetric_c_i, P + IJMPQ | PD 2×2 Cost×c; twin → figS10 |
+| figS11 | Heatmap | asymmetric_c1_i, P + IJMPQ | PD 2×4; twin → figS12 |
 | figS13 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | Fitness of Fig. 3; twin → figS14 |
-| figS15 | Heatmap | asymmetric_c1_i0_i1, P + IJMPQ | PD full square; twin → figS16 |
-| figS16 | Heatmap | twin of figS15 | Snowdrift full i₀ × i₁ square |
+| figS15 | Heatmap | asymmetric_c1_i0_i1, P + IJMPQ | PD 2×4 full square; twin → figS16 |
+| figS16 | Heatmap | twin of figS15 | Snowdrift 2×4 full i₀ × i₁ square |
 | figS17 | Line | twin of fig3 | Snowdrift who-pays |
-| figS18 | Heatmap | asymmetric_i0_i1, P + IJMPQ | PD; twin → figS19 |
+| figS18 | Heatmap | asymmetric_i0_i1, P + IJMPQ | PD 2×4; twin → figS19 |
 | figS20 | Line | twin of fig4 | Snowdrift wedge P+IJMPQ |
 | figS21 | Line | wedge, wmean, P + IJMPQ | Fitness of Fig. 4; twin → figS22 |
 
@@ -67,8 +75,9 @@ S3–S4; Cost × c grids are S9–S10; supplement runs to S22.
 
 1. fig1 / fig2: 2×4; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IJMPQ.
 2. figS1 / figS2: 2×4; row 0 = coop, row 1 = fitness; same mechanism columns.
-3. fig3: rows P then IJMPQ (codes on the right; y-axis = frequency of cooperators); columns tax-cheap, fixed total, tax-expensive (→ Fig. 4).
-4. fig4: same row grammar as fig3; columns hold i₀ while sweeping i₁; fitness → S21.
+3. Heatmaps S5–S8, S11–S12, S15–S16, S18–S19: 2×4; rows = coop / fitness; spanning column titles P | IJMPQ; within each mechanism, cheap then expensive file set. S9–S10: 2×2 one-pop Cost×c; same row grammar; columns P | IJMPQ.
+4. fig3: rows P then IJMPQ (codes on the right; y-axis = frequency of cooperators); columns tax-cheap, fixed total, tax-expensive (→ Fig. 4).
+5. fig4: same row grammar as fig3; columns hold i₀ while sweeping i₁; fitness → S21.
 
 Warm line-slice caches before regenerating Figs. 1–4 / S3–S4:
 
