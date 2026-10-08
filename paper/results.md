@@ -83,15 +83,21 @@ grid Fig. S6; gs = 4 Fig. S8.
 ## 3. Matched information cost
 
 Individuals pay an information cost for each mechanism family they carry, whether or
-not they express it (Methods). The same numerical value is harsher as a cooperation
-cost than as an information cost: at c = 0.40 with a nearly free mechanism, partner
-choice and direct reciprocity both collapse (Fig. S1b,c), yet IJMPQ at an information
-cost of 0.20 — paying 0.40 per round because it carries both families — still
-cooperates at high frequency (Fig. S9). Where cooperation is free (c = 0, so T = R),
-information cost selects against the chooser and reciprocity alleles while populations
-keep cooperating unconditionally, so cooperation frequency and mechanism-allele
-frequency diverge; once every individual pays a cooperation cost, alleles and behavior
-fall together.
+not they express it (Methods). From here on, figures show partner choice (P) and
+IJMPQ as the two mechanism families — assortment alone versus assortment with
+reciprocity. Direct reciprocity (M) appears in Figs. 1–2 and S1–S4; under
+information cost in the prisoner's dilemma it collapses both populations together
+without a residual split (not shown). Other combinations are summarized in the text
+where they matter for the unit-cost comparison (Results §5).
+
+The same numerical value is harsher as a cooperation cost than as an information
+cost: at c = 0.40 with a nearly free mechanism, partner choice and direct reciprocity
+both collapse (Fig. S1b,c), yet IJMPQ at an information cost of 0.20 — paying 0.40
+per round because it carries both families — still cooperates at high frequency
+(Fig. S9). Where cooperation is free (c = 0, so T = R), information cost selects
+against the chooser and reciprocity alleles while populations keep cooperating
+unconditionally, so cooperation frequency and mechanism-allele frequency diverge;
+once every individual pays a cooperation cost, alleles and behavior fall together.
 
 The information cost lowers the cooperation cost a population can withstand. Under
 IJMPQ in the prisoner's dilemma, cooperation holds to high c when the mechanism is
@@ -103,12 +109,10 @@ alleles costs little.
 
 Fig. S11 holds the cooperation-cost gap of section 2 and raises a shared information
 cost: the partner-choice split shrinks as that cost rises, rather than reversing.
-Direct reciprocity collapses both prisoner's-dilemma populations together once the
-information cost rises, with no residual split. IJMPQ postpones that collapse but
-does not restore the free-cooperation outcome. In snowdrift (Fig. S12) the cheap
-population stays near full cooperation under partner choice, direct reciprocity, and
-IJMPQ even at high information cost, while the expensive population remains the
-exploiter; IJMPQ raises that side at low information cost and then loses it as the
+IJMPQ postpones that collapse but does not restore the free-cooperation outcome. In
+snowdrift (Fig. S12) the cheap population stays near full cooperation under partner
+choice and IJMPQ even at high information cost, while the expensive population remains
+the exploiter; IJMPQ raises that side at low information cost and then loses it as the
 cost rises.
 
 A matched information cost cannot separate the cost a population pays from the burden
@@ -188,59 +192,56 @@ the partner needed.
 
 Across the full i₀ × i₁ square (Fig. S15; snowdrift Fig. S16), under partner choice the
 lower-cooperation-cost population cooperates more than its partner in 170/176 cells;
-under IJMPQ they show role inversion — the expensive population's cooperation above
-the cheap one's — locally only on the i₀ ≈ 0 strip (13 cells). That role inversion is
+under IJMPQ the expensive population's cooperation exceeds the cheap one's only
+locally, on the strip where i₀ ≤ 0.02 (13 cells; as in Fig. 4e,f). That pattern is
 stronger when populations differ only in information cost (Fig. S18 shows the
-assignment under P and the inversion under IJMPQ; under IMP at the same design, the
-cooperation gap, cheap minus expensive, reaches −0.461 when i₀ = 0 and i₁ = 0.20;
-snowdrift counterpart Fig. S19) and weaker once a cooperation-cost gap is present
-(cooperation gap −0.100 at the same information-cost point). The cooperation-cost
-gap moves every reciprocity-bearing mechanism toward the cheap-cooperation-cost
-population, erasing the inversion outright for MP and MPQ.
+assignment under P and the expensive side ahead under IJMPQ; snowdrift counterpart
+Fig. S19) and weaker once a cooperation-cost gap is present (cooperation gap −0.100
+at i₀ = 0, i₁ = 0.20). The cooperation-cost gap moves every reciprocity-bearing
+mechanism toward the cheap-cooperation-cost population, so MP and MPQ never place the
+expensive side ahead once the gap is present.
 
-Fig. 4 shows how that inversion shrinks as the low-cooperation-cost population's
+Fig. 4 shows how that pattern shrinks as the low-cooperation-cost population's
 information cost rises from zero. Rows are partner choice (P; Fig. 4a–d) and
 combined IJMPQ (Fig. 4e–h); each column fixes i₀ and sweeps i₁. Under partner
 choice the cheap population stays ahead at every i₀ (Fig. 4a–d). Under IJMPQ the
-inversion — the expensive population's curve above the cheap one's — holds
-throughout when i₀ = 0 (Fig. 4e), survives only past a threshold when i₀ = 0.02
-(Fig. 4f), and is gone by i₀ = 0.04 and 0.1 (Fig. 4g,h). The snowdrift twin
-(Fig. S20) does not show this near-zero-i₀ inversion regime. The transition into
-the state without mechanism alleles is abrupt and bistable rather than gradual:
-just inside this regime, raising population 1's information cost from 0.02 to 0.04
-*raises* its frequency of cooperators by 0.32 as it switches from a defector-heavy
-mixed state into near-complete unconditional cooperation that pays no information
-cost. The ±1 SD bands locate that boundary directly — wide below the threshold
-(SD ≈ 0.25; runs diverge to different outcomes) and narrow above it (SD ≈ 0.009).
-In the fitness counterpart (Fig. S21; snowdrift Fig. S22), the same
-cooperation-fitness mismatch holds in every column: the population with higher
-cooperation is the one with lower fitness, even when the color ordering switches
-as i₀ rises.
+expensive population's curve stays above the cheap one's throughout when i₀ = 0
+(Fig. 4e), survives only past a threshold when i₀ = 0.02 (Fig. 4f), and is gone by
+i₀ = 0.04 and 0.1 (Fig. 4g,h). The snowdrift twin (Fig. S20) does not show this
+near-zero-i₀ regime. The transition into the state without mechanism alleles is
+abrupt and bistable rather than gradual: just inside this regime, raising
+population 1's information cost from 0.02 to 0.04 *raises* its frequency of
+cooperators by 0.32 as it switches from a defector-heavy mixed state into
+near-complete unconditional cooperation that pays no information cost. The ±1 SD
+bands locate that boundary directly — wide below the threshold (SD ≈ 0.25; runs
+diverge to different outcomes) and narrow above it (SD ≈ 0.009). In the fitness
+counterpart (Fig. S21; snowdrift Fig. S22), the same cooperation-fitness mismatch
+holds in every column: the population with higher cooperation is the one with lower
+fitness, even when the color ordering switches as i₀ rises.
 In this threshold regime, increasing population 1's own information cost can confer
 a fitness benefit on population 0 even while population 1 becomes slightly less fit
 (Fig. S21), showing that one population can benefit from a partner that pays more for
 enforcement alleles.
 
-The inversion appears only when the reciprocity family is present, not as a simple
-effect of how much information cost a mechanism pays. Information cost is incurred
-per family carried — one unit for partner choice, one for reciprocity — so a
-mechanism pays 0, 1 or 2 units however many loci it enables. At one unit, direct
-reciprocity and partner choice pay identically, yet reciprocity inverts in 10 cells of
-the i₀ ≈ 0 strip and partner choice in none. At two units, the four combined
-mechanisms MP, MPQ, IMP, and IJMPQ pay identically, yet invert in 3, 1, 13 and 13
-cells respectively. Every mechanism carrying the reciprocity family inverts somewhere
-in that strip; no mechanism lacking it does. Once active reciprocity alleles become
-unaffordable, populations fall back on cost-free unconditional cooperators (C1M0) —
-the second-order free-rider genotype — whereas partner choice's bilateral swap
-collapses when either side loses choosers, so P has no comparable cost-free
-high-cooperation outcome. Partner choice's cooperation curve does cross above its
-partner's in three cells, but in the opposite corner of the square and while its own
-alleles are falling, not through that reciprocity free-rider route.
+Whether the expensive population ends up cooperating more than the cheap one depends
+on whether the mechanism includes reciprocity, not on how much information cost it
+pays. Information cost is charged per family carried — one unit for partner choice,
+one for reciprocity — so partner choice and direct reciprocity each pay one unit, and
+MP, MPQ, IMP and IJMPQ each pay two (M, MP, MPQ and IMP are not shown). Yet with
+i₀ ≤ 0.02, the expensive population overtakes the cheap one somewhere under direct
+reciprocity and under every combination containing it, and nowhere under partner
+choice alone. Once active reciprocity alleles become unaffordable, populations fall
+back on cost-free unconditional cooperators (C1M0) — the second-order free-rider
+genotype — whereas partner choice's bilateral swap collapses when either side loses
+choosers, so P has no comparable cost-free high-cooperation outcome. Partner choice's
+cooperation curve does cross above its partner's in three cells, but in the opposite
+corner of the square and while its own alleles are falling, not through that
+reciprocity free-rider route.
 
 **Figure 4: With reciprocity, the expensive population cooperates more only when the cheap one's information is nearly free (prisoner's dilemma).** Frequency of cooperators under partner choice (P) and IJMPQ. (**a–d**) P. (**e–h**) IJMPQ. Columns hold $i_0$ at 0, 0.02, 0.04 and 0.1 while $i_1$ is swept. Orange $c_0 = 0.1$; red $c_1 = 0.2$. Shaded bands are $\pm 1$ SD over 30 runs. Panels a and e are identical to Fig. 3c,f. Fitness: Fig. S21. Snowdrift: Fig. S20. Equal-c contrast: Fig. S18. Full grid: Figs. S15–S16.
 
-Snowdrift has no risk (S > P) and removes this inversion regime entirely on the same
-crossed design (Fig. S20), identifying this cross-population burden as a property of
-game type rather than of the cost accounting. Shuffled partnerships leave the main
-contrasts intact (Results §1). The cooperator/exploiter split also stays deterministic
-in groups of 4 (Fig. S7).
+Snowdrift has no risk (S > P) and removes this near-zero-i₀ regime entirely on the
+same crossed design (Fig. S20), identifying this cross-population burden as a
+property of game type rather than of the cost accounting. Shuffled partnerships leave
+the main contrasts intact (Results §1). The cooperator/exploiter split also stays
+deterministic in groups of 4 (Fig. S7).

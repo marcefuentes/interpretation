@@ -33,9 +33,9 @@ cooperates and the other exploits (Fig. 1, bottom row). Fig. 2 is the snowdrift
 counterpart of that layout: payoffs already split roles without enforcement when the
 sucker payoff is high (Fig. 2a,e; full grid Fig. S6; gs = 4 Fig. S8). When
 populations differ only in information cost, partner choice still locks roles, while
-IJMPQ can invert them; snowdrift removes these PD locks (Figs. S16–S17, S19–S20). In
-all cases the more cooperative population earns less fitness, and reward-limited
-combined mechanisms shrink that gap.
+under IJMPQ the expensive population can cooperate more; snowdrift removes these PD
+locks (Figs. S16–S17, S19–S20). In all cases the more cooperative population earns
+less fitness, and reward-limited combined mechanisms shrink that gap.
 
 ## Information cost versus cooperation cost
 
@@ -57,16 +57,17 @@ cooperator/exploiter gap shrinks instead of only changing which genotypes carry 
 help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
-in information cost still lock or invert roles depending on mechanism (Fig. S18;
-snowdrift Fig. S19).
+in information cost still lock roles or place the expensive side ahead, depending on
+mechanism (Fig. S18; snowdrift Fig. S19).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
-cells), and role inversion survives only on an i₀ ≈ 0 strip (Fig. 4),
-weaker than in the equal-c case. Snowdrift removes this regime entirely.
-What decides whether a mechanism can be overridden at all is whether populations
-carry the reciprocity family, not how large an information cost they pay — a controlled
-comparison the per-family information cost makes possible, because direct reciprocity
-and partner choice pay identically, as do MP, MPQ, IMP, and IJMPQ among themselves.
+cells), and the expensive population cooperates more only on an i₀ ≈ 0 strip
+(Fig. 4), weaker than in the equal-c case. Snowdrift removes this regime entirely.
+What decides whether a mechanism can place the expensive population ahead of the cheap
+one is whether populations carry the reciprocity family, not how large an information
+cost they pay — a controlled comparison the per-family information cost makes
+possible, because direct reciprocity and partner choice pay identically, as do MP,
+MPQ, IMP, and IJMPQ among themselves (Results §5).
 
 ## Cost versus burden across populations
 
@@ -92,9 +93,10 @@ a split leaves neither.
 That result extends the second-order free-rider literature rather than replacing it:
 when individuals lose local enforcement alleles, partners across the mutualism can
 bear the burden of losing the assortment or conditional help those alleles once
-provided. One consequence is that, in the threshold role-inversion regime, a
-population can receive a benefit from a partner that pays higher information cost,
-because that partner is pushed into a more cooperative but less fit state.
+provided. One consequence is that, when the expensive population cooperates more only
+near the i₀ ≈ 0 threshold, a population can receive a benefit from a partner that
+pays higher information cost, because that partner is pushed into a more cooperative
+but less fit state.
 
 ## Limitations
 
@@ -104,9 +106,10 @@ not absolute thresholds. Single-run trajectories (nine snapshots from t = 1 to
 2^20) show that established role splits and low-cooperation states, once present,
 change little across the logged interval; snapshot spacing is too coarse to resolve
 when they first appear or to rule out low-amplitude cycling within an interval. At the
-edge of the near-zero-i₀ role-inversion regime the across-run standard deviation
-reaches 0.25, so the mean over runs describes no single run; means in that narrow band
-should be read as fractions of runs in each outcome, not equilibrium levels.
+edge of the near-zero-i₀ regime where the expensive population still cooperates more,
+the across-run standard deviation reaches 0.25, so the mean over runs describes no
+single run; means in that narrow band should be read as fractions of runs in each
+outcome, not equilibrium levels.
 Information cost is a per-family metabolic cost, not a process model of memory,
 perception, or error
 [@StevensHauser2004; @Dunbar1998]. That abstraction is what makes mechanisms

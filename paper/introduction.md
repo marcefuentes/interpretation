@@ -97,7 +97,8 @@ the two populations face the same setup (equal cooperation cost, equal informati
 cost, identical payoffs). Outcome symmetry means realized cooperation and fitness are
 similar between them. Symmetric parameters do not imply symmetric outcomes: partner
 choice at equal costs can produce a stochastic cooperator/exploiter split, and cost
-asymmetries can determine or invert that split depending on mechanism and game. Because
+asymmetries can determine that split or reverse which side cooperates more, depending
+on mechanism and game. Because
 each population carries its own cooperation cost and information cost, both axes
 can be varied independently and their relative roles compared.
 
@@ -132,9 +133,9 @@ population pays a higher information cost, its partner can bear a larger burden 
 the payer. Remove the social dilemma and populations no longer couple this way: the
 coupling belongs to the dilemma, not to the accounting.
 Throughout, populations that differ in cooperation cost keep their cooperator and
-exploiter roles; populations that differ in information cost shift those roles and
-invert them only when the low-cooperation-cost population pays near-zero information
-cost.
+exploiter roles; populations that differ in information cost shift those roles, and
+the expensive population cooperates more than the cheap one only when the
+low-cooperation-cost population pays near-zero information cost.
 
 Two consequences follow. Equal information-cost totals are neither interchangeable nor
 additive: when both populations share a total they cooperate less in total than when
@@ -147,5 +148,5 @@ cooperation-cost axis to a specific payoff gap (direct reciprocity M is risk-lim
 short-memory partner choice P is limited by the cooperation advantage, and the
 combined mechanisms MP, MPQ, IMP, and IJMPQ are reward-limited), and show that when
 both cost axes differ, populations still follow the cooperation-cost gap unless the
-low-cooperation-cost population pays near-zero information cost — a thin role-inversion
-regime that vanishes under snowdrift.
+low-cooperation-cost population pays near-zero information cost — a thin regime in
+which the expensive population cooperates more, and which vanishes under snowdrift.
