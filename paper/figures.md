@@ -16,18 +16,19 @@ output directory first):
     python -m graphgen.main --study interpretation --all --groupsize 128 --output ~/figures
     python -m graphgen.main --study interpretation --report --groupsize 128 --output ~/figures
 
-The report includes main text Figs 1–4 (fig1–fig4) and supplement Figs S1–S24
-(figS1–S24) in manuscript order. Calibration panels cal1–cal2 are omitted. Outputs:
+The report includes main text Figs 1–4 (fig1–fig4) and supplement Figs S1–S22
+(figS1–S22) in manuscript order. Calibration panels cal1–cal2 are omitted. Outputs:
 
 - DOCX: ~/figures/interpretation/interpretation.docx (internal; all figures)
-- Markdown: paper/captions.md (supplement legends S1–S24 only; main-text legends live in results.md)
+- Markdown: paper/captions.md (supplement legends S1–S22 only; main-text legends live in results.md)
 
-PD and snowdrift never share a figure. Fig. S17 is the full i₀ × i₁ PD heatmap
-behind the Fig. 3–4 line cuts (Figs. 3–4, S15); snowdrift twin: Fig. S18.
+PD and snowdrift never share a figure. Fig. S15 is the full i₀ × i₁ PD heatmap
+behind the Fig. 3–4 line cuts (Figs. 3–4, S13); snowdrift twin: Fig. S16.
 Shuffle short-memory branches are prose-only (no dedicated S panels).
 
 Status: revised 2026-10 — S1–S2 one-pop ceilings with coop + fitness rows; former
-shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement runs to S24.
+shuffle S3–S4 and c = 0 decoupling panels dropped; fitness twins of Figs. 1–2 are
+S3–S4; Cost × c grids are S9–S10; supplement runs to S22.
 
 ## Setup audit (2026-10)
 
@@ -35,24 +36,23 @@ shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement ru
 | ------ | -------- | ----------- | ------- |
 | fig1 | Line | asymmetric_c0_c1_lines, _/P/M/IJMPQ | PD; row0 sym, row1 gap |
 | fig2 | Line | same as fig1 | Snowdrift twin of fig1 |
-| fig3 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | PD; twin → figS19 |
-| fig4 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | PD wedge; twin → figS22 |
+| fig3 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | PD; twin → figS17 |
+| fig4 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | PD wedge; twin → figS20 |
 | figS1 | Line | symmetric_c pop_1, _/P/M/IJMPQ | PD; 2×4 coop/fitness |
 | figS2 | Line | same as figS1 | Snowdrift twin of S1 |
 | figS3 | Line | same as fig1, wmean | Fitness of Fig. 1 |
 | figS4 | Line | same as fig2, wmean | Fitness of Fig. 2 |
 | figS5 | Heatmap | asymmetric_c0_c1, P + IJMPQ | PD; twin → figS6 |
 | figS7 | Heatmap | asymmetric_c0_c1, P, gs = 4 | PD; twin → figS8 |
-| figS9 | Line | symmetric_c_i_lines, P + M at c = 0 | PD; twin → figS10 |
-| figS11 | Heatmap | symmetric_c_i, IJMPQ | PD Cost×c; twin → figS12 |
-| figS13 | Heatmap | asymmetric_c1_i, P | PD; twin → figS14 |
-| figS15 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | Fitness of Fig. 3; twin → figS16 |
-| figS17 | Heatmap | asymmetric_c1_i0_i1, P + IJMPQ | PD full square; twin → figS18 |
-| figS18 | Heatmap | twin of figS17 | Snowdrift full i₀ × i₁ square |
-| figS19 | Line | twin of fig3 | Snowdrift who-pays |
-| figS20 | Heatmap | asymmetric_i0_i1, P + IJMPQ | PD; twin → figS21 |
-| figS22 | Line | twin of fig4 | Snowdrift wedge P+IJMPQ |
-| figS23 | Line | wedge, wmean, P + IJMPQ | Fitness of Fig. 4; twin → figS24 |
+| figS9 | Heatmap | symmetric_c_i, IJMPQ | PD Cost×c; twin → figS10 |
+| figS11 | Heatmap | asymmetric_c1_i, P | PD; twin → figS12 |
+| figS13 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | Fitness of Fig. 3; twin → figS14 |
+| figS15 | Heatmap | asymmetric_c1_i0_i1, P + IJMPQ | PD full square; twin → figS16 |
+| figS16 | Heatmap | twin of figS15 | Snowdrift full i₀ × i₁ square |
+| figS17 | Line | twin of fig3 | Snowdrift who-pays |
+| figS18 | Heatmap | asymmetric_i0_i1, P + IJMPQ | PD; twin → figS19 |
+| figS20 | Line | twin of fig4 | Snowdrift wedge P+IJMPQ |
+| figS21 | Line | wedge, wmean, P + IJMPQ | Fitness of Fig. 4; twin → figS22 |
 
 ## Main text figures
 
@@ -67,8 +67,8 @@ shuffle S3–S4 dropped; fitness twins of Figs. 1–2 are S3–S4; supplement ru
 
 1. fig1 / fig2: 2×4; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IJMPQ.
 2. figS1 / figS2: 2×4; row 0 = coop, row 1 = fitness; same mechanism columns.
-3. fig3: rows P then IJMPQ; columns tax-cheap, fixed total, tax-expensive (→ Fig. 4).
-4. fig4: same row grammar as fig3; columns hold i₀ while sweeping i₁; fitness → S23.
+3. fig3: rows P then IJMPQ (codes on the right; y-axis = frequency of cooperators); columns tax-cheap, fixed total, tax-expensive (→ Fig. 4).
+4. fig4: same row grammar as fig3; columns hold i₀ while sweeping i₁; fitness → S21.
 
 Warm line-slice caches before regenerating Figs. 1–4 / S3–S4:
 
@@ -90,22 +90,20 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 | S6 | Full c₀ × c₁ grid snowdrift | figS6 |
 | S7 | gs = 4 asymmetry PD | figS7 |
 | S8 | gs = 4 asymmetry snowdrift | figS8 |
-| S9 | c = 0 decoupling PD | figS9 |
-| S10 | c = 0 decoupling snowdrift | figS10 |
-| S11 | Cost × c heatmap PD | figS11 |
-| S12 | Cost × c heatmap snowdrift | figS12 |
-| S13 | Shared-i under c-gap PD | figS13 |
-| S14 | Shared-i under c-gap snowdrift | figS14 |
-| S15 | Fitness of Fig. 3 | figS15 |
-| S16 | Fitness of Fig. 3 (snowdrift) | figS16 |
-| S17 | Full i₀ × i₁ grid PD | figS17 |
-| S18 | Full i₀ × i₁ grid snowdrift | figS18 |
-| S19 | Who pays (snowdrift twin of Fig. 3) | figS19 |
-| S20 | Equal-c i asymmetry PD | figS20 |
-| S21 | Equal-c i asymmetry snowdrift | figS21 |
-| S22 | With reciprocity, expensive cooperates more only if cheap-side i≈0 (snowdrift twin of Fig. 4) | figS22 |
-| S23 | Fitness of Fig. 4 | figS23 |
-| S24 | Fitness of Fig. 4 (snowdrift) | figS24 |
+| S9 | Cost × c heatmap PD | figS9 |
+| S10 | Cost × c heatmap snowdrift | figS10 |
+| S11 | Shared-i under c-gap PD | figS11 |
+| S12 | Shared-i under c-gap snowdrift | figS12 |
+| S13 | Fitness of Fig. 3 | figS13 |
+| S14 | Fitness of Fig. 3 (snowdrift) | figS14 |
+| S15 | Full i₀ × i₁ grid PD | figS15 |
+| S16 | Full i₀ × i₁ grid snowdrift | figS16 |
+| S17 | Who pays (snowdrift twin of Fig. 3) | figS17 |
+| S18 | Equal-c i asymmetry PD | figS18 |
+| S19 | Equal-c i asymmetry snowdrift | figS19 |
+| S20 | With reciprocity, expensive cooperates more only if cheap-side i≈0 (snowdrift twin of Fig. 4) | figS20 |
+| S21 | Fitness of Fig. 4 | figS21 |
+| S22 | Fitness of Fig. 4 (snowdrift) | figS22 |
 
 ## Auxiliary figures (not in supplement)
 
@@ -122,7 +120,7 @@ See [supplement.md](supplement.md).
 ## Draft captions
 
 Main-text legends (Figs. 1–4): hand-maintained in `results.md` (source of truth).
-Supplement legends (S1–S24): regenerate `paper/captions.md` from the interpretation
+Supplement legends (S1–S22): regenerate `paper/captions.md` from the interpretation
 manifest with `--report`. The DOCX at `~/figures/interpretation/interpretation.docx`
 is internal and may differ. Am Nat legends should generally stay near ≤100 words:
 descriptive panel text and short cross-figure pointers only; interpretation belongs

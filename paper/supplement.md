@@ -17,25 +17,23 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S6 | Full c₀ × c₁ cooperation-cost grid (snowdrift) | Fig. 2 |
 | Fig. S7 | Cooperation-cost asymmetry at group size 4 (prisoner's dilemma) | Fig. 1 |
 | Fig. S8 | Cooperation-cost asymmetry at group size 4 (snowdrift) | Fig. 2 |
-| Fig. S9 | Behaviour–mechanism decoupling at c = 0 (prisoner's dilemma) | Results §3 |
-| Fig. S10 | Behaviour–mechanism decoupling at c = 0 (snowdrift) | Fig. S9 |
-| Fig. S11 | Information cost × cooperation cost (single population; PD) | Fig. S9 |
-| Fig. S12 | Information cost × cooperation cost (single population; snowdrift) | Fig. S10 |
-| Fig. S13 | Information cost under fixed cooperation-cost asymmetry (prisoner's dilemma) | Figs. 3–4 |
-| Fig. S14 | Information cost under fixed cooperation-cost asymmetry (snowdrift) | Figs. 3–4 |
-| Fig. S15 | Fitness counterpart of Fig. 3 (prisoner's dilemma) | Fig. 3 |
-| Fig. S16 | Fitness counterpart of Fig. 3 (snowdrift) | Fig. 3 |
-| Fig. S17 | Full i₀ × i₁ grid under a cooperation-cost gap (prisoner's dilemma) | Figs. 3–4 |
-| Fig. S18 | Full i₀ × i₁ grid under a cooperation-cost gap (snowdrift) | Figs. 3–4 |
-| Fig. S19 | Who pays the information cost matters more than how much (snowdrift) | Fig. 3 |
-| Fig. S20 | Information-cost asymmetry at equal cooperation cost (prisoner's dilemma) | Figs. 3–4 |
-| Fig. S21 | Information-cost asymmetry at equal cooperation cost (snowdrift) | Figs. 3–4 |
-| Fig. S22 | With reciprocity, the expensive population cooperates more only when the cheap one's information is nearly free (snowdrift) | Fig. 4 |
-| Fig. S23 | Fitness counterpart of Fig. 4 (prisoner's dilemma) | Fig. 4 |
-| Fig. S24 | Fitness counterpart of Fig. 4 (snowdrift) | Fig. 4 |
+| Fig. S9 | Information cost × cooperation cost (single population; PD) | Results §3 |
+| Fig. S10 | Information cost × cooperation cost (single population; snowdrift) | Results §3 |
+| Fig. S11 | Information cost under fixed cooperation-cost asymmetry (prisoner's dilemma) | Figs. 3–4 |
+| Fig. S12 | Information cost under fixed cooperation-cost asymmetry (snowdrift) | Figs. 3–4 |
+| Fig. S13 | Fitness counterpart of Fig. 3 (prisoner's dilemma) | Fig. 3 |
+| Fig. S14 | Fitness counterpart of Fig. 3 (snowdrift) | Fig. 3 |
+| Fig. S15 | Full i₀ × i₁ grid under a cooperation-cost gap (prisoner's dilemma) | Figs. 3–4 |
+| Fig. S16 | Full i₀ × i₁ grid under a cooperation-cost gap (snowdrift) | Figs. 3–4 |
+| Fig. S17 | Who pays the information cost matters more than how much (snowdrift) | Fig. 3 |
+| Fig. S18 | Information-cost asymmetry at equal cooperation cost (prisoner's dilemma) | Figs. 3–4 |
+| Fig. S19 | Information-cost asymmetry at equal cooperation cost (snowdrift) | Figs. 3–4 |
+| Fig. S20 | With reciprocity, the expensive population cooperates more only when the cheap one's information is nearly free (snowdrift) | Fig. 4 |
+| Fig. S21 | Fitness counterpart of Fig. 4 (prisoner's dilemma) | Fig. 4 |
+| Fig. S22 | Fitness counterpart of Fig. 4 (snowdrift) | Fig. 4 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S24 are in [captions.md](captions.md) (regenerated from the
+Captions for Figs. S1–S22 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). PD and snowdrift never share a figure. Shuffle
 short-memory branches (M collapse; IM and partner-choice combinations sustain; P
 nearly unchanged) are discussed in Results §1 without a dedicated figure.
@@ -68,14 +66,14 @@ snowdrift (S2).
 **Figs. 1–2 role split.** Fitness counterparts: Figs. S3–S4. Full c₀ × c₁ coverage:
 Figs. S5–S6. Small-group robustness (groups of 4): Figs. S7–S8.
 
-**Fig. S9: cooperation after allele loss.** Full information-cost × cooperation-cost
-surfaces: Figs. S11–S12. Snowdrift c = 0 slice: Fig. S10.
+**Figs. S9–S10 matched information cost.** Cost × c surfaces under IJMPQ (PD and
+snowdrift).
 
-**Figs. 3–4 who-pays designs.** Fitness on the Fig. 3 slices: Fig. S15 (snowdrift
-Fig. S16). Full i₀ × i₁ square: Fig. S17 (snowdrift Fig. S18). Snowdrift twin of
-Fig. 3: Fig. S19. Equal-c information-cost asymmetry: Fig. S20 (snowdrift Fig. S21).
-Shared-i under a cooperation-cost gap: Fig. S13 (snowdrift Fig. S14). Snowdrift twin
-of Fig. 4: Fig. S22. Fitness on the Fig. 4 wedge: Fig. S23 (snowdrift Fig. S24).
+**Figs. 3–4 who-pays designs.** Fitness on the Fig. 3 slices: Fig. S13 (snowdrift
+Fig. S14). Full i₀ × i₁ square: Fig. S15 (snowdrift Fig. S16). Snowdrift twin of
+Fig. 3: Fig. S17. Equal-c information-cost asymmetry: Fig. S18 (snowdrift Fig. S19).
+Shared-i under a cooperation-cost gap: Fig. S11 (snowdrift Fig. S12). Snowdrift twin
+of Fig. 4: Fig. S20. Fitness on the Fig. 4 wedge: Fig. S21 (snowdrift Fig. S22).
 
 ## What is intentionally not in the supplement figures
 
@@ -83,3 +81,4 @@ of Fig. 4: Fig. S22. Fitness on the Fig. 4 wedge: Fig. S23 (snowdrift Fig. S24).
 - Dilemma-0 machinery-erosion control (`aux_m_nodilemma`) — internal only.
 - Dedicated shuffle-branch panels (former S3–S4) — claim kept in Results prose.
 - Old sym-vs-asym contrast strip — absorbed into Figs. 1–2.
+- Former c = 0 behaviour–mechanism decoupling panels — claim kept in Results §3 prose.

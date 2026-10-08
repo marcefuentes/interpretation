@@ -13,9 +13,9 @@ Section files:
 - [paper/methods.md](../paper/methods.md)
 - [paper/results.md](../paper/results.md)
 - [paper/discussion.md](../paper/discussion.md)
-- [paper/supplement.md](../paper/supplement.md) — Figs. S1–S11 + Table S1
+- [paper/supplement.md](../paper/supplement.md) — Figs. S1–S9 + Table S1
 - [paper/figures.md](../paper/figures.md) — figure manifest (graphgen commands)
-- [paper/captions.md](../paper/captions.md) — supplement figure legends (S1–S24)
+- [paper/captions.md](../paper/captions.md) — supplement figure legends (S1–S22)
 - [paper/references.bib](../paper/references.bib)
 - [paper/citing.md](../paper/citing.md)
 
@@ -86,6 +86,6 @@ per-population sweep delivers the relational result the rest supports.
 ## Status
 
 Manuscript prose written through (Introduction–Discussion), figures locked
-(Figs. 1–5, S1–S11), references and supplement table in place. Numbers cite the
+(Figs. 1–5, S1–S9), references and supplement table in place. Numbers cite the
 journal (regression-checked by `ai/verify_claims.py`). Figures are produced by the
 graphgen pipeline rather than stored here. Target: Am Nat ([paper/README.md](../paper/README.md)).

@@ -57,7 +57,7 @@ when the list is complete.
 | `results.md` | Results |
 | `discussion.md` | Discussion |
 | `supplement.md` | Supplement |
-| `captions.md` | Supplement figure legends (S1–S24) |
+| `captions.md` | Supplement figure legends (S1–S22) |
 | `abstract.md` | Abstract (if present) |
 | `figures/` | Figure images (PNG/PDF) cited anywhere in the above |
 
