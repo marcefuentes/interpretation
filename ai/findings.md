@@ -48,6 +48,27 @@ C0P1 silent carrier; dTFT/dSTFT; the per-family Cost tax in recruits.c). Treat t
 section plus `journal/parameterization.md` as the reference; re-validate against
 source if the engine changes.
 
+Locked behavioral facts for combined IJMPQ (`decide_qB.c`, `choose_partner.c`;
+Methods “Behavioral rules”):
+
+- With Q enabled, rematch uses mutual preference: Q1 ranks on lifetime cooperation,
+  P1Q0 on the last act. P1Q0’s preference criterion is unchanged by Q; do not describe
+  rematch as an algorithm-path contrast when writing Methods prose.
+- I copies the current partner’s last act whether or not the pair has met before.
+  After a rematch that act was directed at a third party (indirect reciprocity);
+  while the pair persists, the same rule is direct reciprocity. M still requires
+  `partner == oldpartner` and is silent after a rematch. J adopts lifetime
+  reputation. Precedence J1 > I1 > M1.
+
+## Manuscript conventions (paper/)
+
+- Information-cost figures (Results §§3–5, matching supplements) show **P** and
+  **IJMPQ** only. M, MP, MPQ, and IMP appear in prose for the unit-cost comparison
+  (Results §5); they are not plotted there. Figs. 1–2 retain M panels.
+- Prefer plain language (“the expensive population cooperates more”) over “role
+  inversion” / “invert” in `paper/` (abstract may say roles “reverse”). Internal
+  `planning/` and `journal/` may still use the old term.
+
 ## Analysis scripts
 
 - `ai/analyze_new_data.py` — cross-study analysis (symmetric_c, asymmetric_c0_c1).

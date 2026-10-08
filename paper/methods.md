@@ -97,17 +97,15 @@ established.
 
 Combined mechanism IJMPQ enables all five mechanism loci and is the reciprocity-
 bearing counterpart to short-memory partner choice in the information-cost figures
-(Results §§3–5). Each round, choosers rematch first under the Q rule: any carrier of
-P1 or Q1 is eligible, swaps require mutual ranking, and Q1 ranks on lifetime
-cooperation while P1 ranks on the last act — so the cooperate-against-defector
-activation rule of P alone does not apply. Reciprocity then sets acts with
-precedence J1 > I1 > M1. I copies the current partner's last act whether or not the
-pair has met before; after a swap that act was directed at a third party, so partner
-choice supplies indirect reciprocity even without shuffling, while a persisting pair
-leaves I as direct reciprocity. J adopts the partner's lifetime reputation. M still
+(Results §§3–5). Because Q is enabled, rematch follows the lifetime-locus rule above:
+a P1 individual still prefers partners by last act, a Q1 individual by lifetime
+cooperation, and a swap occurs only when both prefer each other. Reciprocity then
+sets acts with precedence J1 > I1 > M1. After a rematch, I copies an act that was
+directed at a third party (indirect reciprocity); while the pair persists, that same
+rule is direct reciprocity. J adopts the partner's lifetime reputation. M still
 requires the same partner as in the previous round and is silent after a rematch.
-IJMPQ carries both families and pays two units of information cost, matching MP, MPQ,
-and IMP.
+IJMPQ carries both families and pays two units of information cost, matching MP,
+MPQ, and IMP.
 
 ### Initialization
 
