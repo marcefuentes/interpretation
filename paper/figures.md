@@ -24,8 +24,8 @@ that should force 128:
     python -m graphgen.main --study interpretation --all --output ~/figures
     python -m graphgen.main --study interpretation --report --output ~/figures
 
-The report includes main text Figs 1–4 (fig1–fig4) and supplement Figs S1–S22
-(figS1–S22) in manuscript order. Calibration panels cal1–cal2 are omitted. Outputs:
+The report includes main text Figs 1–4 (fig1–fig4) and supplement Figs S1–S23
+(figS1–S23) in manuscript order. Calibration panels cal1–cal2 are omitted. Outputs:
 
 - DOCX: ~/figures/interpretation/interpretation.docx (internal; all figures)
 - Markdown: paper/captions.md (supplement legends S1–S22 only; main-text legends live in results.md)
@@ -36,7 +36,8 @@ Shuffle short-memory branches are prose-only (no dedicated S panels).
 
 Status: revised 2026-10 — S1–S2 one-pop ceilings with coop + fitness rows; former
 shuffle S3–S4 and c = 0 decoupling panels dropped; fitness twins of Figs. 1–2 are
-S3–S4; Cost × c grids are S9–S10; supplement runs to S22.
+S3–S4; Cost × c grids are S9–S10; supplement runs to S22; S23 is the cooperation-gap
+heatmap of the Fig. 3 i₀ × i₁ plane (provisional id).
 
 ## Setup audit (2026-10)
 
@@ -57,6 +58,7 @@ S3–S4; Cost × c grids are S9–S10; supplement runs to S22.
 | figS13 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | Fitness of Fig. 3; twin → figS14 |
 | figS15 | Heatmap | asymmetric_c1_i0_i1, P + IJMPQ | PD 2×4 full square; twin → figS16 |
 | figS16 | Heatmap | twin of figS15 | Snowdrift 2×4 full i₀ × i₁ square |
+| figS23 | Heatmap | asymmetric_c1_i0_i1, P + IJMPQ, ΔqBSeen | PD 1×2 coop gap (cheap − expensive) |
 | figS17 | Line | twin of fig3 | Snowdrift who-pays |
 | figS18 | Heatmap | asymmetric_i0_i1, P + IJMPQ | PD 2×4; twin → figS19 |
 | figS20 | Line | twin of fig4 | Snowdrift wedge P+IJMPQ |
@@ -75,7 +77,7 @@ S3–S4; Cost × c grids are S9–S10; supplement runs to S22.
 
 1. fig1 / fig2: 2×4; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IJMPQ.
 2. figS1 / figS2: 2×4; row 0 = coop, row 1 = fitness; same mechanism columns.
-3. Heatmaps S5–S8, S11–S12, S15–S16, S18–S19: 2×4; rows = coop / fitness; spanning column titles P | IJMPQ; within each mechanism, cheap then expensive file set. S9–S10: 2×2 one-pop Cost×c; same row grammar; columns P | IJMPQ.
+3. Heatmaps S5–S8, S11–S12, S15–S16, S18–S19: 2×4; rows = coop / fitness; spanning column titles P | IJMPQ; within each mechanism, cheap then expensive file set. S9–S10: 2×2 one-pop Cost×c; same row grammar; columns P | IJMPQ. S23: 1×2 cooperation gap (cheap − expensive) on the Fig. 3 i₀ × i₁ plane; columns P | IJMPQ.
 4. fig3: rows P then IJMPQ (codes on the right; y-axis = frequency of cooperators); columns tax-cheap, fixed total, tax-expensive (→ Fig. 4).
 5. fig4: same row grammar as fig3; columns hold i₀ while sweeping i₁; fitness → S21.
 
@@ -113,6 +115,7 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 | S20 | With reciprocity, expensive cooperates more only if cheap-side i≈0 (snowdrift twin of Fig. 4) | figS20 |
 | S21 | Fitness of Fig. 4 | figS21 |
 | S22 | Fitness of Fig. 4 (snowdrift) | figS22 |
+| S23 | Cooperation gap (cheap − expensive) on Fig. 3 plane | figS23 |
 
 ## Auxiliary figures (not in supplement)
 
