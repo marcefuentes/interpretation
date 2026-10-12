@@ -66,7 +66,7 @@ cells (Fig. S6k). Under IJMPQ the fitness gap mixes both signs (Fig. S6l). The s
 also stays deterministic in groups of 4, where each population samples few partners
 per round (Fig. S9f).
 
-**Figure 1: Cooperation under symmetric and asymmetric cooperation costs (prisoner's dilemma).** Frequency of cooperators under different cost symmetries and cooperation mechanisms. (**a–d**) Costs follow $c_1 = c_0$ (light green: lower cooperation frequency; dark green: the other). (**e–h**) Costs follow $c_1 = c_0 + 0.02$ (orange = $c_0$; red = $c_1$). (**a, e**) No enforcement. (**b, f**) Short-memory partner choice (P). (**c, g**) Direct reciprocity (M). (**d, h**) Partner choice with direct and indirect reciprocity (IJMPQ). Both populations pay information cost $0.001$. Shaded bands are ±1 SD over 30 runs. Fitness: Fig. S3. Snowdrift twin: Fig. 2. Full grid: Figs. S5–S6; gs = 4: Fig. S9.
+**Figure 1: Cooperation under symmetric and asymmetric cooperation costs (prisoner's dilemma).** Frequency of cooperators under different cost symmetries and cooperation mechanisms in two coevolving populations. (**a–d**) Costs follow $c_1 = c_0$ (light green: lower cooperation frequency; dark green: the other). (**e–h**) Costs follow $c_1 = c_0 + 0.02$ (orange = $c_0$; red = $c_1$). (**a, e**) No enforcement. (**b, f**) Short-memory partner choice (P). (**c, g**) Direct reciprocity (M). (**d, h**) Partner choice with direct and indirect reciprocity (IJMPQ). Both populations pay information cost $0.001$. Shaded bands are ±1 SD over 30 runs. Fitness: Fig. S3. Snowdrift twin: Fig. 2. Full grid: Figs. S5–S6; gs = 4: Fig. S9.
 
 Fig. 2 repeats the same layout under snowdrift. Without enforcement the populations
 already split stochastically on the payoffs alone, because S > P leaves no risk in
@@ -81,7 +81,7 @@ gap; above that cost a narrower split returns, narrower than without enforcement
 expensive side to 0.61 under the gap (Fig. 2d,h). Fitness counterpart: Fig. S4; full
 grid Figs. S7–S8; gs = 4 Fig. S10.
 
-**Figure 2: Cooperation under symmetric and asymmetric cooperation costs (snowdrift).** Frequency of cooperators under different cost symmetries and cooperation mechanisms (same layout as Fig. 1). Shaded bands are ±1 SD over 30 runs. Fitness counterpart: Fig. S4. Full grid: Figs. S7–S8; gs = 4: Fig. S10.
+**Figure 2: Cooperation under symmetric and asymmetric cooperation costs (snowdrift).** Frequency of cooperators under different cost symmetries and cooperation mechanisms in two coevolving populations (same layout as Fig. 1). Shaded bands are ±1 SD over 30 runs. Fitness counterpart: Fig. S4. Full grid: Figs. S7–S8; gs = 4: Fig. S10.
 
 ## 3. Matched information cost
 
@@ -133,7 +133,7 @@ the expensive population cooperates more while the cheap one earns more. Direct
 reciprocity alone places the same reverse assignment (Fig. 3c,g,k). Snowdrift removes
 these PD locks (Fig. S14; fitness Fig. S15).
 
-**Figure 3: Information-cost asymmetry at equal cooperation cost (prisoner's dilemma).** Frequency of cooperators and the information-cost gap under information-cost asymmetry at equal cooperation cost. (**a–d**) Lower-i population. (**e–h**) Higher-i population. (**i–l**) Information-cost gap (low-i − high-i). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice with direct and indirect reciprocity (IJMPQ). Snowdrift twin: Fig. S14. Fitness counterpart: Fig. S13. Crossed c-gap plane: Fig. 4. Shared-i contrast: Figs. S16–S17.
+**Figure 3: Information-cost asymmetry at equal cooperation cost (prisoner's dilemma).** Frequency of cooperators and the information-cost gap under information-cost asymmetry at equal cooperation cost in two coevolving populations. (**a–d**) Lower-i population. (**e–h**) Higher-i population. (**i–l**) Information-cost gap (low-i − high-i). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice with direct and indirect reciprocity (IJMPQ). Snowdrift twin: Fig. S14. Fitness counterpart: Fig. S13. Crossed c-gap plane: Fig. 4. Shared-i contrast: Figs. S16–S17.
 
 ## 5. Shared information cost under a cooperation-cost gap
 
@@ -190,7 +190,7 @@ under symmetry is what places a burden on its partner under asymmetry: losing
 mechanism alleles relieves the payer and removes the assortment or conditional help
 the partner needed.
 
-**Figure 4: Information-cost plane under a cooperation-cost gap (prisoner's dilemma).** Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid. (**a–d**) Lower-cost population ($c_0 = 0.1$). (**e–h**) Higher-cost population ($c_1 = 0.2$). (**i–l**) Cooperation gap (cheap − expensive). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice with direct and indirect reciprocity (IJMPQ). Snowdrift twin: Fig. S21. Fitness counterpart: Fig. S20. Fixed-total cut: Figs. S23–S24. Equal-c contrast: Fig. 3. gs = 4: Fig. S25.
+**Figure 4: Information-cost plane under a cooperation-cost gap (prisoner's dilemma).** Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid in two coevolving populations. (**a–d**) Lower-cost population ($c_0 = 0.1$). (**e–h**) Higher-cost population ($c_1 = 0.2$). (**i–l**) Cooperation gap (cheap − expensive). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice with direct and indirect reciprocity (IJMPQ). Snowdrift twin: Fig. S21. Fitness counterpart: Fig. S20. Fixed-total cut: Figs. S23–S24. Equal-c contrast: Fig. 3. gs = 4: Fig. S25.
 
 ## 7. Both information costs vary
 
