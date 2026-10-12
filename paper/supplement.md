@@ -19,28 +19,27 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S8 | Full c₀ × c₁ cooperation grid (snowdrift; fitness + gap) | Fig. 2 |
 | Fig. S9 | Group-size-4 counterpart of Fig. 1 (PD; coop) | Fig. 1 |
 | Fig. S10 | Group-size-4 counterpart of Fig. 2 (snowdrift; coop) | Fig. 2 |
-| Fig. S11 | Group-size-4 counterpart of Fig. 3 (PD; i₀ × i₁ plane) | Fig. 3 |
-| Fig. S12 | Group-size-4 counterpart of Fig. S20 (snowdrift; i₀ × i₁ plane) | Fig. S20 |
-| Fig. S13 | Information cost × cooperation cost (single population; PD) | Results §3 |
-| Fig. S14 | Information cost × cooperation cost (single population; snowdrift) | Results §3 |
-| Fig. S15 | Shared i under fixed c-gap (PD; coop + gap) | Figs. 3 and S20 |
-| Fig. S16 | Shared i under fixed c-gap (PD; fitness + gap) | Figs. 3 and S20 |
-| Fig. S17 | Shared i under fixed c-gap (snowdrift; coop + gap) | Figs. 3 and S20 |
-| Fig. S18 | Shared i under fixed c-gap (snowdrift; fitness + gap) | Figs. 3 and S20 |
-| Fig. S19 | Fitness counterpart of Fig. 3 (i₀ × i₁ plane; prisoner's dilemma) | Fig. 3 |
-| Fig. S20 | Information-cost plane under a cooperation-cost gap (snowdrift) | Fig. 3 |
-| Fig. S21 | Fitness counterpart of Fig. S20 (i₀ × i₁ plane; snowdrift) | Fig. S20 |
-| Fig. S22 | Fixed-total cut (PD; coop + fitness × —|P|M|IJMPQ) | Fig. 3 |
-| Fig. S23 | Fixed-total cut (snowdrift) | Fig. S20 |
-| Fig. S24 | Equal-c i asymmetry (PD; coop + gap) | Figs. 3 and S20 |
-| Fig. S25 | Equal-c i asymmetry (PD; fitness + gap) | Figs. 3 and S20 |
-| Fig. S26 | Equal-c i asymmetry (snowdrift; coop + gap) | Figs. 3 and S20 |
-| Fig. S27 | Equal-c i asymmetry (snowdrift; fitness + gap) | Figs. 3 and S20 |
+| Fig. S11 | Information cost × cooperation cost (single population; PD) | Results §3 |
+| Fig. S12 | Information cost × cooperation cost (single population; snowdrift) | Results §3 |
+| Fig. S13 | Fitness under equal-c i asymmetry (PD) | Fig. 3 |
+| Fig. S14 | Equal-c i asymmetry (snowdrift; coop + gap) | Fig. 3 |
+| Fig. S15 | Fitness under equal-c i asymmetry (snowdrift) | Fig. 3 |
+| Fig. S16 | Shared i under fixed c-gap (PD; coop + gap) | Results §5 |
+| Fig. S17 | Shared i under fixed c-gap (PD; fitness + gap) | Results §5 |
+| Fig. S18 | Shared i under fixed c-gap (snowdrift; coop + gap) | Results §5 |
+| Fig. S19 | Shared i under fixed c-gap (snowdrift; fitness + gap) | Results §5 |
+| Fig. S20 | Fitness counterpart of Fig. 4 (i₀ × i₁ plane; prisoner's dilemma) | Fig. 4 |
+| Fig. S21 | Information-cost plane under a cooperation-cost gap (snowdrift) | Fig. 4 |
+| Fig. S22 | Fitness counterpart of Fig. S21 (i₀ × i₁ plane; snowdrift) | Fig. S21 |
+| Fig. S23 | Fixed-total cut (PD; coop + fitness × —|P|M|IJMPQ) | Fig. 4 |
+| Fig. S24 | Fixed-total cut (snowdrift) | Fig. S21 |
+| Fig. S25 | Group-size-4 counterpart of Fig. 4 (PD; i₀ × i₁ plane) | Fig. 4 |
+| Fig. S26 | Group-size-4 counterpart of Fig. S21 (snowdrift; i₀ × i₁ plane) | Fig. S21 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S27 are in [captions.md](captions.md) (regenerated from the
+Captions for Figs. S1–S26 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). PD and snowdrift never share a figure. Two-population
-heatmaps use the Fig. 3 template (rows cheap/expensive/gap or low-i/high-i/gap;
+heatmaps use the Fig. 4 template (rows cheap/expensive/gap or low-i/high-i/gap;
 columns —|P|M|IJMPQ), with cooperation and fitness as separate figures. Shuffle
 short-memory branches (M collapse; IM and partner-choice combinations sustain; P
 nearly unchanged) are discussed in Results §1 without a dedicated figure.
@@ -72,16 +71,21 @@ snowdrift (S2).
 
 **Figs. 1–2 role split.** Fitness counterparts: Figs. S3–S4. Full c₀ × c₁ coverage:
 Figs. S5–S8 (PD coop/fitness, snowdrift coop/fitness). Group-size-4 counterparts
-of Figs. 1–3 and S20: Figs. S9–S12 (cooperation only).
+of Figs. 1–2, 4 and S21: Figs. S9–S10 and S25–S26 (cooperation only).
 
-**Figs. S13–S14 matched information cost.** Cost × c surfaces (2×4; coop/fitness
+**Figs. S11–S12 matched information cost.** Cost × c surfaces (2×4; coop/fitness
 rows; —|P|M|IJMPQ columns; PD and snowdrift).
 
-**Fig. 3 and S20 i₀ × i₁ plane.** No enforcement, P, M, and IJMPQ with cheap /
-expensive / gap rows (prisoner's dilemma Fig. 3; snowdrift twin Fig. S20). Fitness
-counterparts: Figs. S19 and S21. Fixed-total line cuts (coop + fitness): Fig. S22
-(snowdrift Fig. S23). Shared-i under a cooperation-cost gap: Figs. S15–S18. Equal-c
-information-cost asymmetry: Figs. S24–S27.
+**Fig. 3 equal-c i asymmetry.** No enforcement, P, M, and IJMPQ with low-i /
+high-i / gap rows (prisoner's dilemma). Fitness: Fig. S13. Snowdrift: Figs. S14–S15.
+
+**Figs. S16–S19 shared-i under a cooperation-cost gap.** Results §5 bridge between
+equal-c i asymmetry and the crossed plane.
+
+**Fig. 4 and S21 i₀ × i₁ plane.** No enforcement, P, M, and IJMPQ with cheap /
+expensive / gap rows (prisoner's dilemma Fig. 4; snowdrift twin Fig. S21). Fitness
+counterparts: Figs. S20 and S22. Fixed-total line cuts (coop + fitness): Fig. S23
+(snowdrift Fig. S24). gs = 4: Figs. S25–S26.
 
 ## What is intentionally not in the supplement figures
 
@@ -90,5 +94,5 @@ information-cost asymmetry: Figs. S24–S27.
 - Dedicated shuffle-branch panels (former S3–S4) — claim kept in Results prose.
 - Old sym-vs-asym contrast strip — absorbed into Figs. 1–2.
 - Former c = 0 behaviour–mechanism decoupling panels — claim kept in Results §3 prose.
-- Former P+IJMPQ-only spanning coop+fitness grids — replaced by Fig. 3-style planes
+- Former P+IJMPQ-only spanning coop+fitness grids — replaced by Fig. 4-style planes
   with separate cooperation and fitness figures.

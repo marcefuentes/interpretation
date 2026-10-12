@@ -34,14 +34,14 @@ cd paper && pandoc introduction.md methods.md results.md discussion.md -t plain 
 
 | Element | Count | Notes |
 | ------- | ----- | ----- |
-| Main figures | 3 | Figs. 1–3; inline in Results |
+| Main figures | 4 | Figs. 1–4; inline in Results |
 | Main tables | 1 | Table 1 (game types); Methods |
-| Supplement figures | 27 | Figs. S1–S27; [supplement.md](../../supplement.md) |
+| Supplement figures | 26 | Figs. S1–S26; [supplement.md](../../supplement.md) |
 | Supplement tables | 1 | Table S1 (payoff-gap attribution) |
 | Boxes | 0 | |
 | Print appendix | 0 | |
 | Online supplement | yes | Supplement PDF or inline supplement section |
 
-Print figure + table count is 6 (Am Nat Major Article limit).
+Print figure + table count is 5 (Am Nat Major Article limit is 8).
 
 Data and code: archived per [instructions.md](instructions.md); README in repository.

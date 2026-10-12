@@ -39,8 +39,8 @@ For the cross-study framework see [synthesis.md](synthesis.md).
 - Fixed cooperation costs: c0 = 0.10, c1 = 0.20.
 - Information cost: full Cost0 x Cost1 square on [0, b] x [0, b] (441 cells;
   noshuffle holds the primary Cost0 <= 0.30, Cost1 <= 0.20 rectangle of 176 cells
-  plus the noshuffle2 complement). Main-text Fig. 3, snowdrift twin S20, and fitness
-  twins S19/S21 use the full square; headline numbers below stay on the 176-cell
+  plus the noshuffle2 complement). Main-text Fig. 4, snowdrift twin S21, and fitness
+  twins S20/S22 use the full square; headline numbers below stay on the 176-cell
   rectangle.
 - Primary condition below unless noted: PD (dilemma 1), noshuffle, gs = 128.
 
