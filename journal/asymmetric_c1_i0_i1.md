@@ -37,8 +37,10 @@ For the cross-study framework see [synthesis.md](synthesis.md).
   (single-run temporal movies; both complete).
 - Population structure: pop_2 only.
 - Fixed cooperation costs: c0 = 0.10, c1 = 0.20.
-- Information cost: Cost0 in {0.00, 0.02, ..., 0.30} and Cost1 in
-  {0.00, 0.02, ..., 0.20}, giving 176 valid cells (each axis capped at b - c_p).
+- Information cost: full Cost0 x Cost1 square on [0, b] x [0, b] (441 cells;
+  noshuffle holds the primary Cost0 <= 0.30, Cost1 <= 0.20 rectangle of 176 cells
+  plus the noshuffle2 complement). Main-text Figs. 3–4 and fitness twins S13/S14 use
+  the full square; headline numbers below stay on the 176-cell rectangle.
 - Primary condition below unless noted: PD (dilemma 1), noshuffle, gs = 128.
 
 At **(Cost0, Cost1) = (0, 0)** the study reproduces asymmetric_c0_c1 at

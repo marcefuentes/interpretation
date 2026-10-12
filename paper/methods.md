@@ -211,14 +211,14 @@ Table 2. Mechanisms.
 | Label | Loci enabled     | Info-cost units | Structures                        | Where reported                        |
 | ----- | ---------------- | --------------- | --------------------------------- | ------------------------------------- |
 | \_    | none behavioral  | 0-2 if carried  | one or two pops; shuffle optional | baselines; Figs. 1a,e, 2a,e; Fig. S1a |
-| M     | C, M             | 1               | one or two pops; shuffle optional | Figs. 1c,g, 2c,g; Fig. S1c; Results §5 (not plotted) |
-| P     | C, P             | 1               | one or two pops; shuffle optional | Figs. 1–4; Figs. S1b, S5–S22         |
+| M     | C, M             | 1               | one or two pops; shuffle optional | Figs. 1c,g, 2c,g; Figs. 3–4, S1c, S13–S14; Results §5 |
+| P     | C, P             | 1               | one or two pops; shuffle optional | Figs. 1–4; Figs. S1b, S5–S20         |
 | MP    | C, M, P          | 2               | one or two pops; shuffle optional | Results §1 shuffle; Results §5 (not plotted) |
 | MPQ   | C, M, P, Q       | 2               | one or two pops; shuffle optional | Results §5 (not plotted)             |
 | IM    | C, I, M          | 1               | shuffle only                      | Results §1 shuffle; not a manuscript panel |
 | IJM   | C, I, J, M       | 1               | shuffle only                      | Results §1 shuffle; not a manuscript panel |
 | IMP   | C, I, M, P       | 2               | one or two pops; shuffle optional | Results §5 (not plotted)             |
-| IJMPQ | C, I, J, M, P, Q | 2               | one or two pops; shuffle optional | Behavioral rules (combined IJMPQ); Figs. 1–4; Figs. S1d, S5–S22 |
+| IJMPQ | C, I, J, M, P, Q | 2               | one or two pops; shuffle optional | Behavioral rules (combined IJMPQ); Figs. 1–4; Figs. S1d, S5–S20 |
 
 No enforcement (_) disables partner choice and reciprocity while the loci still mutate
 and still cost. Indirect reciprocity stands alone as a mechanism (IM, IJM) only under
@@ -284,8 +284,8 @@ Table 3. Simulation designs.
 | Cooperation-cost asymmetry  | 2    | \_, P, M, IJMPQ       | c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Figs. 1–2, S5–S8 |
 | Symmetric information cost  | 1    | P, IJMPQ               | i + c ≤ b                                          | 0.02 | 231   | Figs. S9–S10  |
 | Fixed c-gap × shared i      | 2    | P, IJMPQ               | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S11–S12  |
-| Per-population i, equal c   | 2    | P, IJMPQ               | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. S18–S19  |
-| Crossed c and i asymmetries | 2    | P, IJMPQ               | c₀ = 0.10, c₁ = 0.20; i₀ ≤ 0.30, i₁ ≤ 0.20         | 0.02 | 176   | Figs. 3–4, S13–S17, S20–S22 |
+| Per-population i, equal c   | 2    | P, IJMPQ               | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. S19–S20  |
+| Crossed c and i asymmetries | 2    | P, M, IJMPQ            | c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3–4, S13–S18 |
 | PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
 | Snowdrift payoff plane      | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
@@ -295,17 +295,18 @@ variants (M, MP, IM, IMP) are reported in Results §1 without dedicated figures.
 Figs. 1–2 place matched-cost and c₁ = c₀ + 0.02 strips on shared axes for the
 prisoner's dilemma and snowdrift and still show M beside P and IJMPQ (fitness
 counterparts Figs. S3–S4; full grids Figs. S5–S6 show P and IJMPQ; gs = 4
-Figs. S7–S8). From the information-cost designs on, figures show partner choice and
-IJMPQ; M and the other combinations enter Results §5 as text (Table 2). Matched
-information cost under partner choice and IJMPQ is Figs. S9–S10 (Cost × c grids;
-prisoner's dilemma and snowdrift).
+Figs. S7–S8). Matched information cost under partner choice and IJMPQ is
+Figs. S9–S10 (Cost × c grids; prisoner's dilemma and snowdrift).
 
-The central designs vary who pays an information cost (Fig. S11; Fig. S18; Figs. 3–4
-with fitness counterparts Figs. S13 and S21 and full i₀ × i₁ grid Figs. S15–S16;
-snowdrift twins Figs. S12, S14, S16–S17, S19–S20, S22). Fig. 3's first column taxes
-only the cheap population, the second holds total information cost fixed while the
-split varies, and the third taxes only the expensive population (bridging to Fig. 4).
-The crossed design under snowdrift is Figs. S16–S17 and S20.
+The central designs vary who pays an information cost (Fig. S11; Fig. S19). The
+crossed i₀ × i₁ plane under a fixed cooperation-cost gap is Figs. 3–4 (P, M, and
+IJMPQ; absolute cooperation and the cheap−expensive gap; prisoner's dilemma and
+snowdrift), with fitness counterparts Figs. S13–S14. Line cuts of that plane are
+Figs. S15–S16 (who-pays; cooperation and fitness) and Figs. S17–S18 (wedge;
+cooperation and fitness), with snowdrift twins of the shared-i and equal-c designs
+Figs. S12 and S20. Fig. S15's first column taxes only the cheap population, the
+second holds total information cost fixed while the split varies, and the third taxes
+only the expensive population (bridging to Fig. S17).
 
 Along the cooperation-cost axis, raising c changes several payoff gaps at once. The
 orthogonal payoff-plane sweeps vary payoffs independently of c; Table S1 reports the
@@ -324,7 +325,7 @@ archived in the repository cited on the title page.
 
 Reported values are means over 30 independent runs. Comparisons are descriptive:
 I report those means and, where useful, standard deviations, without formal
-hypothesis tests. I plotted standard deviations only in Fig. 4; elsewhere median
+hypothesis tests. I plotted standard deviations only in Fig. S17; elsewhere median
 standard deviations over the cells of a sweep are about 0.01–0.04 for cooperation and
 0.001–0.01 for fitness, too small to read on the figure scales, except near bistable
-boundaries where run-to-run SD reaches about 0.25 (Fig. 4).
+boundaries where run-to-run SD reaches about 0.25 (Fig. S17).

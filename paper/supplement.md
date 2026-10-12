@@ -21,19 +21,17 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S10 | Information cost × cooperation cost (single population; snowdrift) | Results §3 |
 | Fig. S11 | Information cost under fixed cooperation-cost asymmetry (prisoner's dilemma) | Figs. 3–4 |
 | Fig. S12 | Information cost under fixed cooperation-cost asymmetry (snowdrift) | Figs. 3–4 |
-| Fig. S13 | Fitness counterpart of Fig. 3 (prisoner's dilemma) | Fig. 3 |
-| Fig. S14 | Fitness counterpart of Fig. 3 (snowdrift) | Fig. 3 |
-| Fig. S15 | Full i₀ × i₁ grid under a cooperation-cost gap (prisoner's dilemma) | Figs. 3–4 |
-| Fig. S16 | Full i₀ × i₁ grid under a cooperation-cost gap (snowdrift) | Figs. 3–4 |
-| Fig. S17 | Who pays the information cost matters more than how much (snowdrift) | Fig. 3 |
-| Fig. S18 | Information-cost asymmetry at equal cooperation cost (prisoner's dilemma) | Figs. 3–4 |
-| Fig. S19 | Information-cost asymmetry at equal cooperation cost (snowdrift) | Figs. 3–4 |
-| Fig. S20 | With reciprocity, the expensive population cooperates more only when the cheap one's information is nearly free (snowdrift) | Fig. 4 |
-| Fig. S21 | Fitness counterpart of Fig. 4 (prisoner's dilemma) | Fig. 4 |
-| Fig. S22 | Fitness counterpart of Fig. 4 (snowdrift) | Fig. 4 |
+| Fig. S13 | Fitness counterpart of Fig. 3 (i₀ × i₁ plane; prisoner's dilemma) | Fig. 3 |
+| Fig. S14 | Fitness counterpart of Fig. 4 (i₀ × i₁ plane; snowdrift) | Fig. 4 |
+| Fig. S15 | Who-pays line cuts, coop + fitness (prisoner's dilemma) | Fig. 3 |
+| Fig. S16 | Who-pays line cuts, coop + fitness (snowdrift) | Fig. 4 |
+| Fig. S17 | Wedge line cuts, coop + fitness (prisoner's dilemma) | Fig. 3 |
+| Fig. S18 | Wedge line cuts, coop + fitness (snowdrift) | Fig. 4 |
+| Fig. S19 | Information-cost asymmetry at equal cooperation cost (prisoner's dilemma) | Figs. 3–4 |
+| Fig. S20 | Information-cost asymmetry at equal cooperation cost (snowdrift) | Figs. 3–4 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S22 are in [captions.md](captions.md) (regenerated from the
+Captions for Figs. S1–S20 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). PD and snowdrift never share a figure. Shuffle
 short-memory branches (M collapse; IM and partner-choice combinations sustain; P
 nearly unchanged) are discussed in Results §1 without a dedicated figure.
@@ -69,11 +67,12 @@ Figs. S5–S6. Small-group robustness (groups of 4): Figs. S7–S8.
 **Figs. S9–S10 matched information cost.** Cost × c surfaces under partner choice
 and IJMPQ (PD and snowdrift).
 
-**Figs. 3–4 who-pays designs.** Fitness on the Fig. 3 slices: Fig. S13 (snowdrift
-Fig. S14). Full i₀ × i₁ square: Fig. S15 (snowdrift Fig. S16). Snowdrift twin of
-Fig. 3: Fig. S17. Equal-c information-cost asymmetry: Fig. S18 (snowdrift Fig. S19).
-Shared-i under a cooperation-cost gap: Fig. S11 (snowdrift Fig. S12). Snowdrift twin
-of Fig. 4: Fig. S20. Fitness on the Fig. 4 wedge: Fig. S21 (snowdrift Fig. S22).
+**Figs. 3–4 i₀ × i₁ plane.** P, M, and IJMPQ with cheap / expensive / gap rows
+(prisoner's dilemma and snowdrift). Fitness counterparts: Figs. S13–S14. Who-pays
+line cuts (coop + fitness): Fig. S15 (snowdrift Fig. S16). Wedge line cuts
+(coop + fitness): Fig. S17 (snowdrift Fig. S18). Equal-c information-cost
+asymmetry: Fig. S19 (snowdrift Fig. S20). Shared-i under a cooperation-cost gap:
+Fig. S11 (snowdrift Fig. S12).
 
 ## What is intentionally not in the supplement figures
 
@@ -82,3 +81,5 @@ of Fig. 4: Fig. S20. Fitness on the Fig. 4 wedge: Fig. S21 (snowdrift Fig. S22).
 - Dedicated shuffle-branch panels (former S3–S4) — claim kept in Results prose.
 - Old sym-vs-asym contrast strip — absorbed into Figs. 1–2.
 - Former c = 0 behaviour–mechanism decoupling panels — claim kept in Results §3 prose.
+- Former P+IJMPQ-only coop+fitness grids behind Figs. 3–4 — absorbed into Figs. 3–4
+  and their fitness twins S13–S14.

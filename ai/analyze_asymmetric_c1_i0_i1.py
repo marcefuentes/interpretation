@@ -42,10 +42,17 @@ def study_path(study, sh, gs, mech, d, f, movie=False):
 
 
 def load_con(study, sh, gs, mech, d, f, movie=False):
-    """Load filtered .con file for a study/condition/fileset."""
+    """Load filtered .con for a study/condition/fileset.
+
+    Restricts to the primary Cost0<=0.30, Cost1<=0.20 rectangle (176 cells)
+    even when the on-disk .con holds the full 0..b square (441 cells).
+    """
     path = study_path(study, sh, gs, mech, d, f, movie=movie)
-    rows = load(path)
-    return rows if rows else []
+    rows = load(path) or []
+    return [
+        r for r in rows
+        if float(r["Cost0"]) <= 0.30 + 0.005 and float(r["Cost1"]) <= 0.20 + 0.005
+    ]
 
 
 def cell(rows, co0, co1, col="qBSeen"):

@@ -1260,9 +1260,21 @@ def c1i0i1_load_from_csv(study, sh, gs, mech, d, f, movie=False):
     return out
 
 
+def c1i0i1_in_primary_rectangle(row):
+    """Keep the original Cost0<=0.30, Cost1<=0.20 analysis rectangle (176 cells).
+
+    The figure plane is the full 0..b square (441 cells after noshuffle2 merge);
+    headline numbers stay on the primary rectangle.
+    """
+    return float(row["Cost0"]) <= 0.30 + 0.005 and float(row["Cost1"]) <= 0.20 + 0.005
+
+
 def c1i0i1_load(study, sh, gs, mech, d, f, movie=False):
     rows = load(c1i0i1path(study, sh, gs, mech, d, f, movie=movie))
-    return rows if rows else c1i0i1_load_from_csv(study, sh, gs, mech, d, f, movie=movie)
+    if not rows:
+        return c1i0i1_load_from_csv(study, sh, gs, mech, d, f, movie=movie)
+    return [r for r in rows if c1i0i1_in_primary_rectangle(r)]
+
 
 
 def c1i0i1_cell(rows, co0, co1, col="qBSeen"):
