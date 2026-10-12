@@ -63,7 +63,7 @@ mechanism (Fig. S19; snowdrift Fig. S20).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and the expensive population cooperates more only on an i₀ ≈ 0 strip
-(Fig. 3i; Fig. S17), weaker than in the equal-c case. Snowdrift removes this
+(Fig. 3l; Fig. S17), weaker than in the equal-c case. Snowdrift removes this
 regime entirely (Fig. 4).
 What decides whether a mechanism can place the expensive population ahead of the cheap
 one is whether populations carry the reciprocity family, not how large an information

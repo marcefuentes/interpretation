@@ -125,7 +125,7 @@ separates the two.
 Under partner choice, with a fixed cooperation-cost gap (c₀ = 0.1, c₁ = 0.2) and
 independent per-population information costs, a population barely bears a burden from
 its own information cost and cooperates much less under the burden of its partner's
-(Fig. S15a,c; full plane Fig. 3a,d,g). Fig. S15 takes line cuts through that plane:
+(Fig. S15a,c; full plane Fig. 3b,f,j). Fig. S15 takes line cuts through that plane:
 under each mechanism, cooperation then fitness occupy successive rows, and designs
 are columns. Its first column taxes only the cheap population, the second holds total
 information cost fixed while the split varies, and the third taxes only the expensive
@@ -140,7 +140,7 @@ a chooser to trade with, so assortment is limited by whichever population has fe
 choosers — and that is already the high-cost side before any information cost is
 applied.
 
-Under IJMPQ the pattern reverses (Fig. S15g,i; Fig. 3c,f,i). When the
+Under IJMPQ the pattern reverses (Fig. S15g,i; Fig. 3d,h,l). When the
 low-cooperation-cost population's information cost rises from i = 0 to i = 0.20, its
 partner's frequency of cooperators falls from 0.957 to 0.268 while the payer itself
 falls only to 0.734 — the partner bears a larger burden than the payer. When the
@@ -186,22 +186,23 @@ under symmetry is what places a burden on its partner under asymmetry: losing
 mechanism alleles relieves the payer and removes the assortment or conditional help
 the partner needed.
 
-**Figure 3: Information-cost plane under a cooperation-cost gap (prisoner's dilemma).** Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid. (**a–c**) Lower-cost population ($c_0 = 0.1$). (**d–f**) Higher-cost population ($c_1 = 0.2$). (**g–i**) Cooperation gap (cheap − expensive). (**a, d, g**) Short-memory partner choice (P). (**b, e, h**) Direct reciprocity (M). (**c, f, i**) Partner choice with direct and indirect reciprocity (IJMPQ). Snowdrift twin: Fig. 4. Fitness counterpart: Fig. S13. Line cuts: Figs. S15–S18.
+**Figure 3: Information-cost plane under a cooperation-cost gap (prisoner's dilemma).** Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid. (**a–d**) Lower-cost population ($c_0 = 0.1$). (**e–h**) Higher-cost population ($c_1 = 0.2$). (**i–l**) Cooperation gap (cheap − expensive). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice with direct and indirect reciprocity (IJMPQ). Snowdrift twin: Fig. 4. Fitness counterpart: Fig. S13. Line cuts: Figs. S15–S18.
 
 ## 5. Both information costs vary
 
 Across the full i₀ × i₁ square (Fig. 3; snowdrift Fig. 4), under partner choice the
 lower-cooperation-cost population cooperates more than its partner in 170/176 cells;
 under IJMPQ the expensive population's cooperation exceeds the cheap one's only
-locally, on the strip where i₀ ≤ 0.02 (13 cells; Fig. 3i; line cuts Fig. S17i,j).
+locally, on the strip where i₀ ≤ 0.02 (13 cells; Fig. 3l; line cuts Fig. S17i,j).
 That pattern is stronger when populations differ only in information cost (Fig. S19
 shows the assignment under P and the expensive side ahead under IJMPQ; snowdrift
 counterpart Fig. S20) and weaker once a cooperation-cost gap is present (cooperation
 gap −0.100 at i₀ = 0, i₁ = 0.20). The cooperation-cost gap moves every
 reciprocity-bearing mechanism toward the cheap-cooperation-cost population, so MP and
 MPQ never place the expensive side ahead once the gap is present. Direct reciprocity
-alone (Fig. 3b,e,h) places the same near-zero-i₀ flip in a thinner strip (10 cells),
-so the IJMPQ inversion tracks the M locus rather than partner choice.
+alone (Fig. 3c,g,k) places the same near-zero-i₀ flip in a thinner strip (10 cells),
+so the IJMPQ inversion tracks the M locus rather than partner choice. Without
+enforcement the plane is flat near zero (Fig. 3a,e,i).
 
 Fig. S17 shows how that pattern shrinks as the low-cooperation-cost population's
 information cost rises from zero. Under each mechanism, cooperation then fitness

@@ -67,8 +67,9 @@ Figs. S5–S6. Small-group robustness (groups of 4): Figs. S7–S8.
 **Figs. S9–S10 matched information cost.** Cost × c surfaces under partner choice
 and IJMPQ (PD and snowdrift).
 
-**Figs. 3–4 i₀ × i₁ plane.** P, M, and IJMPQ with cheap / expensive / gap rows
-(prisoner's dilemma and snowdrift). Fitness counterparts: Figs. S13–S14. Who-pays
+**Figs. 3–4 i₀ × i₁ plane.** No enforcement, P, M, and IJMPQ with cheap /
+expensive / gap rows (prisoner's dilemma and snowdrift). Fitness counterparts:
+Figs. S13–S14. Who-pays
 line cuts (coop + fitness): Fig. S15 (snowdrift Fig. S16). Wedge line cuts
 (coop + fitness): Fig. S17 (snowdrift Fig. S18). Equal-c information-cost
 asymmetry: Fig. S19 (snowdrift Fig. S20). Shared-i under a cooperation-cost gap:

@@ -285,7 +285,7 @@ Table 3. Simulation designs.
 | Symmetric information cost  | 1    | P, IJMPQ               | i + c ≤ b                                          | 0.02 | 231   | Figs. S9–S10  |
 | Fixed c-gap × shared i      | 2    | P, IJMPQ               | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S11–S12  |
 | Per-population i, equal c   | 2    | P, IJMPQ               | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. S19–S20  |
-| Crossed c and i asymmetries | 2    | P, M, IJMPQ            | c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3–4, S13–S18 |
+| Crossed c and i asymmetries | 2    | \_, P, M, IJMPQ        | c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3–4, S13–S18 |
 | PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
 | Snowdrift payoff plane      | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
@@ -299,8 +299,8 @@ Figs. S7–S8). Matched information cost under partner choice and IJMPQ is
 Figs. S9–S10 (Cost × c grids; prisoner's dilemma and snowdrift).
 
 The central designs vary who pays an information cost (Fig. S11; Fig. S19). The
-crossed i₀ × i₁ plane under a fixed cooperation-cost gap is Figs. 3–4 (P, M, and
-IJMPQ; absolute cooperation and the cheap−expensive gap; prisoner's dilemma and
+crossed i₀ × i₁ plane under a fixed cooperation-cost gap is Figs. 3–4 (_, P, M,
+and IJMPQ; absolute cooperation and the cheap−expensive gap; prisoner's dilemma and
 snowdrift), with fitness counterparts Figs. S13–S14. Line cuts of that plane are
 Figs. S15–S16 (who-pays; cooperation and fitness) and Figs. S17–S18 (wedge;
 cooperation and fitness), with snowdrift twins of the shared-i and equal-c designs

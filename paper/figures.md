@@ -35,7 +35,7 @@ on the full i₀ × i₁ square. Fitness twins are S13–S14. Line cuts (coop + 
 are S15–S16 (who-pays) and S17–S18 (wedge). Shuffle short-memory branches are
 prose-only (no dedicated S panels).
 
-Status: revised 2026-10 — Figs. 3–4 are 3×3 heatmaps (P|M|IJMPQ × cheap/expensive/gap)
+Status: revised 2026-10 — Figs. 3–4 are 3×4 heatmaps (—|P|M|IJMPQ × cheap/expensive/gap)
 on the full [0, b]×[0, b] square (441 cells). Who-pays and wedge line plots (with
 fitness rows) are S15–S18; equal-c asymmetry is S19–S20; supplement runs to S20.
 
@@ -45,8 +45,8 @@ fitness rows) are S15–S18; equal-c asymmetry is S19–S20; supplement runs to 
 | ------ | -------- | ----------- | ------- |
 | fig1 | Line | asymmetric_c0_c1_lines, _/P/M/IJMPQ | PD; row0 sym, row1 gap |
 | fig2 | Line | same as fig1 | Snowdrift twin of fig1 |
-| fig3 | Heatmap | asymmetric_c1_i0_i1, P+M+IJMPQ, qBSeen+ΔqBSeen | PD 3×3 plane; twin → fig4 |
-| fig4 | Heatmap | twin of fig3 | Snowdrift 3×3 plane |
+| fig3 | Heatmap | asymmetric_c1_i0_i1, _+P+M+IJMPQ, qBSeen+ΔqBSeen | PD 3×4 plane; twin → fig4 |
+| fig4 | Heatmap | twin of fig3 | Snowdrift 3×4 plane |
 | figS1 | Line | symmetric_c pop_1, _/P/M/IJMPQ | PD; 2×4 coop/fitness |
 | figS2 | Line | same as figS1 | Snowdrift twin of S1 |
 | figS3 | Line | same as fig1, wmean | Fitness of Fig. 1 |
@@ -66,15 +66,15 @@ fitness rows) are S15–S18; equal-c asymmetry is S19–S20; supplement runs to 
 | --- | ------- | --------- | ------ |
 | 1 | Matched vs gap cooperation cost (PD) | fig1 | ~/figures/interpretation/fig1.png |
 | 2 | Matched vs gap cooperation cost (snowdrift) | fig2 | ~/figures/interpretation/fig2.png |
-| 3 | i₀ × i₁ plane: cheap / expensive / gap (PD) | fig3 | ~/figures/interpretation/fig3.png |
-| 4 | i₀ × i₁ plane: cheap / expensive / gap (snowdrift) | fig4 | ~/figures/interpretation/fig4.png |
+| 3 | i₀ × i₁ plane: — / P / M / IJMPQ × cheap / expensive / gap (PD) | fig3 | ~/figures/interpretation/fig3.png |
+| 4 | i₀ × i₁ plane: same layout (snowdrift) | fig4 | ~/figures/interpretation/fig4.png |
 
 ### Panel order notes
 
 1. fig1 / fig2: 2×4; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IJMPQ.
 2. figS1 / figS2: 2×4; row 0 = coop, row 1 = fitness; same mechanism columns.
 3. Heatmaps S5–S8, S11–S12, S19–S20: 2×4; rows = coop / fitness; spanning column titles P | IJMPQ; within each mechanism, cheap then expensive file set. S9–S10: 2×2 one-pop Cost×c; same row grammar; columns P | IJMPQ.
-4. fig3 / fig4 / S13–S14: 3×3; columns P | M | IJMPQ; rows = cheap, expensive, gap (coop or fitness); one colorbar per row.
+4. fig3 / fig4 / S13–S14: 3×4; columns — | P | M | IJMPQ; rows = cheap, expensive, gap (coop or fitness); one colorbar per row.
 5. figS15 / S16: who-pays line cuts (4×3; rows P-coop, P-fitness, IJMPQ-coop, IJMPQ-fitness; columns tax-cheap, fixed total, tax-expensive). figS17 / S18: wedge line cuts (4×4; same row grammar; columns hold i₀ while sweeping i₁).
 
 Warm line-slice caches before regenerating Figs. 1–2 / S3–S4 / S15–S18:
