@@ -31,7 +31,7 @@ partner-choice populations stochastically split in the prisoner's dilemma (Fig. 
 top row). When one population pays a lower cooperation cost, that population
 cooperates and the other exploits (Fig. 1, bottom row). Fig. 2 is the snowdrift
 counterpart of that layout: payoffs already split roles without enforcement when the
-sucker payoff is high (Fig. 2a,e; full grid Figs. S7–S8; gs = 4 Figs. S11–S12). When
+sucker payoff is high (Fig. 2a,e; full grid Figs. S7–S8; gs = 4 Fig. S10). When
 populations differ only in information cost, partner choice still locks roles, while
 under IJMPQ the expensive population can cooperate more; snowdrift removes these PD
 locks (Figs. S26–S29; crossed-design snowdrift Figs. S23 and S25). In all cases the
@@ -78,19 +78,19 @@ places on its partner — a question prior work on costly punishment and monitor
 could not ask, because it levies those costs inside one population
 [@BoydRicherson1992; @FehrGachter2002; @StevensHauser2004]. Under each mechanism,
 both populations bear a burden from one population's information cost, and the two
-mechanism families place that burden on opposite populations (Fig. S22a,c,g,i;
-plane Fig. 3). Under partner choice, populations bear the burden of the
-high-cooperation-cost population's information cost, because a swap needs a chooser
-on both sides and that population supplies fewer choosers; under reciprocity-bearing
-mechanisms, populations bear the burden of the low-cooperation-cost population's
-information cost, because switching to unconditional cooperation hurts the pair only
-when the side that loses alleles carries the cooperation. The clearest case is that a
-population that pays no information cost can end up with fewer *active* choosers, and
-a tenth of the cooperation, of the same population when it pays a heavy information
-cost itself.
+mechanism families place that burden on opposite populations (Fig. 3b,f,j versus
+Fig. 3d,h,l; line cuts Fig. S24m–p). Under partner choice, populations bear the
+burden of the high-cooperation-cost population's information cost, because a swap
+needs a chooser on both sides and that population supplies fewer choosers; under
+reciprocity-bearing mechanisms, populations bear the burden of the
+low-cooperation-cost population's information cost, because switching to
+unconditional cooperation hurts the pair only when the side that loses alleles
+carries the cooperation. The clearest case is that a population that pays no
+information cost can end up with fewer *active* choosers, and a tenth of the
+cooperation, of the same population when it pays a heavy information cost itself.
 
 Equal information-cost totals are therefore neither interchangeable nor additive
-(Fig. S22b,h): both populations sharing a total cooperate less than when either pays
+(Fig. S22b,d): both populations sharing a total cooperate less than when either pays
 it alone, since each corner leaves one population still carrying mechanism alleles
 while a split leaves neither.
 That result extends the second-order free-rider literature rather than replacing it:

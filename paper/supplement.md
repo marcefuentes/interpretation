@@ -17,10 +17,10 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S6 | Full c₀ × c₁ cooperation grid (PD; fitness + gap) | Fig. 1 |
 | Fig. S7 | Full c₀ × c₁ cooperation grid (snowdrift; coop + gap) | Fig. 2 |
 | Fig. S8 | Full c₀ × c₁ cooperation grid (snowdrift; fitness + gap) | Fig. 2 |
-| Fig. S9 | Cooperation-cost asymmetry at group size 4 (PD; coop + gap) | Fig. 1 |
-| Fig. S10 | Cooperation-cost asymmetry at group size 4 (PD; fitness + gap) | Fig. 1 |
-| Fig. S11 | Cooperation-cost asymmetry at group size 4 (snowdrift; coop + gap) | Fig. 2 |
-| Fig. S12 | Cooperation-cost asymmetry at group size 4 (snowdrift; fitness + gap) | Fig. 2 |
+| Fig. S9 | Group-size-4 counterpart of Fig. 1 (PD; coop) | Fig. 1 |
+| Fig. S10 | Group-size-4 counterpart of Fig. 2 (snowdrift; coop) | Fig. 2 |
+| Fig. S11 | Group-size-4 counterpart of Fig. 3 (PD; i₀ × i₁ plane) | Fig. 3 |
+| Fig. S12 | Group-size-4 counterpart of Fig. S20 (snowdrift; i₀ × i₁ plane) | Fig. S20 |
 | Fig. S13 | Information cost × cooperation cost (single population; PD) | Results §3 |
 | Fig. S14 | Information cost × cooperation cost (single population; snowdrift) | Results §3 |
 | Fig. S15 | Shared i under fixed c-gap (PD; coop + gap) | Figs. 3 and S20 |
@@ -30,10 +30,10 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S19 | Fitness counterpart of Fig. 3 (i₀ × i₁ plane; prisoner's dilemma) | Fig. 3 |
 | Fig. S20 | Information-cost plane under a cooperation-cost gap (snowdrift) | Fig. 3 |
 | Fig. S21 | Fitness counterpart of Fig. S20 (i₀ × i₁ plane; snowdrift) | Fig. S20 |
-| Fig. S22 | Who-pays line cuts, coop + fitness (prisoner's dilemma) | Fig. 3 |
-| Fig. S23 | Who-pays line cuts, coop + fitness (snowdrift) | Fig. S20 |
-| Fig. S24 | Wedge line cuts, coop + fitness (prisoner's dilemma) | Fig. 3 |
-| Fig. S25 | Wedge line cuts, coop + fitness (snowdrift) | Fig. S20 |
+| Fig. S22 | Fixed-total cut (PD; coop + fitness × —|P|M|IJMPQ) | Fig. 3 |
+| Fig. S23 | Fixed-total cut (snowdrift) | Fig. S20 |
+| Fig. S24 | Fixed-i₀ cuts of the information-cost plane (PD; coop) | Fig. 3 |
+| Fig. S25 | Fixed-i₀ cuts of the information-cost plane (snowdrift) | Fig. S20 |
 | Fig. S26 | Equal-c i asymmetry (PD; coop + gap) | Figs. 3 and S20 |
 | Fig. S27 | Equal-c i asymmetry (PD; fitness + gap) | Figs. 3 and S20 |
 | Fig. S28 | Equal-c i asymmetry (snowdrift; coop + gap) | Figs. 3 and S20 |
@@ -73,16 +73,16 @@ Journal sources: [synthesis](../journal/synthesis.md),
 snowdrift (S2).
 
 **Figs. 1–2 role split.** Fitness counterparts: Figs. S3–S4. Full c₀ × c₁ coverage:
-Figs. S5–S8 (PD coop/fitness, snowdrift coop/fitness). Small-group robustness
-(groups of 4): Figs. S9–S12.
+Figs. S5–S8 (PD coop/fitness, snowdrift coop/fitness). Group-size-4 counterparts
+of Figs. 1–3 and S20: Figs. S9–S12 (cooperation only).
 
 **Figs. S13–S14 matched information cost.** Cost × c surfaces (2×4; coop/fitness
 rows; —|P|M|IJMPQ columns; PD and snowdrift).
 
 **Fig. 3 and S20 i₀ × i₁ plane.** No enforcement, P, M, and IJMPQ with cheap /
 expensive / gap rows (prisoner's dilemma Fig. 3; snowdrift twin Fig. S20). Fitness
-counterparts: Figs. S19 and S21. Who-pays line cuts (coop + fitness): Fig. S22
-(snowdrift Fig. S23). Wedge line cuts (coop + fitness): Fig. S24 (snowdrift
+counterparts: Figs. S19 and S21. Fixed-total line cuts (coop + fitness): Fig. S22
+(snowdrift Fig. S23). Wedge line cuts (coop): Fig. S24 (snowdrift
 Fig. S25). Shared-i under a cooperation-cost gap: Figs. S15–S18. Equal-c
 information-cost asymmetry: Figs. S26–S29.
 

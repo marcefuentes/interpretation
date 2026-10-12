@@ -11,10 +11,15 @@ Regenerate any manuscript figure from ~/code/graph with the venv active:
     python -m graphgen.main --study interpretation --figure FIG --groupsize 128 --output ~/figures
 
 `--groupsize` overrides every source, including figS9–figS12 (which embed
-`groupsize=4`). Regenerate those without the flag, or with `--groupsize 4`:
+`groupsize=4` as counterparts of Figs. 1–3 and S20). Regenerate those without
+the flag, or with `--groupsize 4`:
 
     python -m graphgen.main --study interpretation --figure figS9 --output ~/figures
     python -m graphgen.main --study interpretation --figure figS11 --output ~/figures
+
+Warm group-size-4 line-slice caches before regenerating S9–S10:
+
+    python -m graphgen.main --study asymmetric_c0_c1_lines --export-slices --groupsize 4
 
 Generate all manuscript PNGs and publication reports (figures must exist in the
 output directory first). Prefer omitting `--groupsize` for `--all` so source-
@@ -33,7 +38,8 @@ The report includes main text Figs 1–3 (fig1–fig3) and supplement Figs S1–
 PD and snowdrift never share a figure. Figs. 3 and S20 are a PD/SD pair (like Figs. 1–2)
 on the full i₀ × i₁ square. Two-population heatmaps use that same 3×4 template,
 with cooperation and fitness as separate figures. Fitness twins of Figs. 3 and S20 are
-S19 and S21. Line cuts (coop + fitness) are S22–S23 (who-pays) and S24–S25 (wedge).
+S19 and S21. Fixed-total line cuts (coop + fitness × —|P|M|IJMPQ) are S22–S23;
+wedge cuts (coop only) are S24–S25.
 Shuffle short-memory branches are prose-only (no dedicated S panels).
 
 Status: revised 2026-10 — Figs. 3 and S20 and most two-pop supplement heatmaps are 3×4
@@ -55,14 +61,16 @@ low-i/high-i row labels. One-pop Cost×c is 2×4 (S13–S14). Supplement runs to
 | figS4 | Line | same as fig2, wmean | Fitness of Fig. 2 |
 | figS5 | Heatmap | asymmetric_c0_c1, plane qBSeen | PD coop; twin → figS7 |
 | figS6 | Heatmap | asymmetric_c0_c1, plane wmean | PD fitness; twin → figS8 |
-| figS9 | Heatmap | asymmetric_c0_c1, gs = 4, plane qBSeen | PD coop; twin → figS11 |
-| figS10 | Heatmap | asymmetric_c0_c1, gs = 4, plane wmean | PD fitness; twin → figS12 |
+| figS9 | Line | same as fig1, gs = 4 | Fig. 1 at gs = 4; twin → figS10 |
+| figS10 | Line | same as fig2, gs = 4 | Fig. 2 at gs = 4 |
+| figS11 | Heatmap | same as fig3, gs = 4 | Fig. 3 at gs = 4; twin → figS12 |
+| figS12 | Heatmap | same as figS20, gs = 4 | S20 at gs = 4 |
 | figS13 | Heatmap | symmetric_c_i, _/P/M/IJMPQ | PD 2×4 Cost×c; twin → figS14 |
 | figS15 | Heatmap | asymmetric_c1_i, plane qBSeen | PD coop; twin → figS17 |
 | figS16 | Heatmap | asymmetric_c1_i, plane wmean | PD fitness; twin → figS18 |
 | figS19 | Heatmap | twin layout of fig3, wmean+Δwmean | Fitness plane; twin → figS21 |
-| figS22 | Line | asymmetric_c1_i0_i1_lines, P + IJMPQ | Who-pays coop+fitness; twin → figS23 |
-| figS24 | Line | wedge, qBSeen+wmean, P + IJMPQ | Wedge coop+fitness; twin → figS25 |
+| figS22 | Line | asymmetric_c1_i0_i1_lines, iso-budget, —/P/M/IJMPQ | Fixed-total coop+fitness; twin → figS23 |
+| figS24 | Line | wedge, qBSeen, —/P/M/IJMPQ | Wedge coop; twin → figS25 |
 | figS26 | Heatmap | asymmetric_i0_i1, plane qBSeen | Equal-c coop; twin → figS28 |
 | figS27 | Heatmap | asymmetric_i0_i1, plane wmean | Equal-c fitness; twin → figS29 |
 
@@ -78,9 +86,9 @@ low-i/high-i row labels. One-pop Cost×c is 2×4 (S13–S14). Supplement runs to
 
 1. fig1 / fig2: 2×4; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IJMPQ.
 2. figS1 / figS2: 2×4; row 0 = coop, row 1 = fitness; same mechanism columns.
-3. Two-pop planes S5–S12, S15–S21, S26–S29 (and Figs. 3 and S20): 3×4; columns — | P | M | IJMPQ; rows = cheap/expensive/gap (or low-i/high-i/gap for equal-c); one colorbar per row; cooperation and fitness are separate figures.
+3. Two-pop planes S5–S8, S11–S12, S15–S21, S26–S29 (and Figs. 3 and S20): 3×4; columns — | P | M | IJMPQ; rows = cheap/expensive/gap (or low-i/high-i/gap for equal-c); one colorbar per row; cooperation and fitness are separate figures. S9–S10 are line-plot counterparts of Figs. 1–2 at group size 4.
 4. S13–S14: 2×4 one-pop Cost×c; rows = coop / fitness; columns — | P | M | IJMPQ.
-5. figS22 / S23: who-pays line cuts (4×3; rows P-coop, P-fitness, IJMPQ-coop, IJMPQ-fitness; columns tax-cheap, fixed total, tax-expensive). figS24 / S25: wedge line cuts (4×4; same row grammar; columns hold i₀ while sweeping i₁).
+5. figS22 / S23: fixed-total line cuts (2×4; rows coop / fitness; columns —|P|M|IJMPQ; shared i₁ x title). figS24 / S25: wedge line cuts (4×4; rows hold i₀ descending top→bottom while sweeping i₁; same columns; coop only).
 
 Warm line-slice caches before regenerating Figs. 1–2 / S3–S4 / S22–S25:
 
@@ -102,10 +110,10 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 | S6 | Full c₀ × c₁ grid PD (fitness) | figS6 |
 | S7 | Full c₀ × c₁ grid snowdrift (coop) | figS7 |
 | S8 | Full c₀ × c₁ grid snowdrift (fitness) | figS8 |
-| S9 | gs = 4 asymmetry PD (coop) | figS9 |
-| S10 | gs = 4 asymmetry PD (fitness) | figS10 |
-| S11 | gs = 4 asymmetry snowdrift (coop) | figS11 |
-| S12 | gs = 4 asymmetry snowdrift (fitness) | figS12 |
+| S9 | Group-size-4 counterpart of Fig. 1 | figS9 |
+| S10 | Group-size-4 counterpart of Fig. 2 | figS10 |
+| S11 | Group-size-4 counterpart of Fig. 3 | figS11 |
+| S12 | Group-size-4 counterpart of Fig. S20 | figS12 |
 | S13 | Cost × c heatmap PD | figS13 |
 | S14 | Cost × c heatmap snowdrift | figS14 |
 | S15 | Shared-i under c-gap PD (coop) | figS15 |
@@ -115,9 +123,9 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 | S19 | Fitness twin of Fig. 3 | figS19 |
 | S20 | Snowdrift twin of Fig. 3 (i₀ × i₁ plane) | figS20 |
 | S21 | Fitness twin of Fig. S20 | figS21 |
-| S22 | Who-pays line cuts (PD; coop + fitness) | figS22 |
-| S23 | Who-pays line cuts (snowdrift) | figS23 |
-| S24 | Wedge line cuts (PD; coop + fitness) | figS24 |
+| S22 | Fixed-total cut (PD; coop + fitness) | figS22 |
+| S23 | Fixed-total cut (snowdrift) | figS23 |
+| S24 | Wedge line cuts (PD; coop) | figS24 |
 | S25 | Wedge line cuts (snowdrift) | figS25 |
 | S26 | Equal-c i asymmetry PD (coop) | figS26 |
 | S27 | Equal-c i asymmetry PD (fitness) | figS27 |
