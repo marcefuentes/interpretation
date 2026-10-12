@@ -34,9 +34,11 @@ counterpart of that layout: payoffs already split roles without enforcement when
 sucker payoff is high (Fig. 2a,e; full grid Figs. S7–S8; gs = 4 Fig. S10). When
 populations differ only in information cost, partner choice still locks roles, while
 under IJMPQ the expensive population can cooperate more; snowdrift removes these PD
-locks (Fig. 3; snowdrift Fig. S14; crossed-design snowdrift Fig. S21). In all cases the
-more cooperative population earns
-less fitness, and reward-limited combined mechanisms shrink that gap.
+locks (Fig. 3; snowdrift Fig. S14; crossed-design snowdrift Fig. S21). Under partner
+choice the more cooperative population earns less fitness (Figs. S5, S6j); direct
+reciprocity can reverse that fitness ranking even when the cheap side still cooperates
+more (Fig. S6k), and reward-limited combined mechanisms leave a mixed fitness gap
+(Fig. S6l).
 
 ## Information cost versus cooperation cost
 

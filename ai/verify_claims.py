@@ -247,6 +247,29 @@ check("asymmetric_c0_c1", "PC: P SD lower-fitness cells = 190", lambda: asym_exp
 check("asymmetric_c0_c1", "PC: P SD mean deficit = 0.116", lambda: asym_exploit(2)[2], 0.116)
 
 
+def asym_fitness_gap_sign_counts(mech, d=1):
+    """Count cells where cheap earns more fitness (dw > 0) on the c0×c1 triangle."""
+    r0 = load(asym_path("noshuffle", "128", mech, d, 0))
+    r1 = load(asym_path("noshuffle", "128", mech, d, 1))
+    m1 = {(round(float(x["c0"]), 4), round(float(x["c1"]), 4)): x for x in r1}
+    n_more, n = 0, 0
+    for x in r0:
+        k = (round(float(x["c0"]), 4), round(float(x["c1"]), 4))
+        if k not in m1:
+            continue
+        n += 1
+        if float(x["wmean"]) - float(m1[k]["wmean"]) > 0:
+            n_more += 1
+    return n_more, n
+
+
+# results.md: Fig. S6k — M reverses the fitness ranking on most of the triangle
+check("asymmetric_c0_c1", "RC: M PD cheap earns more fitness in 174/210",
+      lambda: asym_fitness_gap_sign_counts("M")[0], 174, None)
+check("asymmetric_c0_c1", "RC: M PD grid cells = 210",
+      lambda: asym_fitness_gap_sign_counts("M")[1], 210, None)
+
+
 def asym_m1_suppressed_total():
     total = 0
     for sh in ("noshuffle", "shuffle"):

@@ -59,9 +59,12 @@ cooperator/exploiter split: each side cooperates only as much as its partner doe
 (Fig. 1c,d,g,h). Under M and IJMPQ on the gap strip their fitness differs only by
 the 0.02 cost gap (Fig. S3g,h). Under partner choice the cheap population cooperates
 more in all 210 cells of the full grid and earns less fitness in all of them
-(cooperation and fitness gaps correlate at −0.99; Figs. S5–S6). The split also stays
-deterministic in groups of 4, where each population samples few partners per round
-(Fig. S9f).
+(cooperation and fitness gaps correlate at −0.99; Figs. S5, S6j). Direct reciprocity
+keeps the cheap side cooperating more in every cell but reverses the fitness ranking
+over most of the triangle: the cheap population earns more fitness in 174 of 210
+cells (Fig. S6k). Under IJMPQ the fitness gap mixes both signs (Fig. S6l). The split
+also stays deterministic in groups of 4, where each population samples few partners
+per round (Fig. S9f).
 
 **Figure 1: Cooperation under symmetric and asymmetric cooperation costs (prisoner's dilemma).** Frequency of cooperators under different cost symmetries and cooperation mechanisms. (**a–d**) Costs follow $c_1 = c_0$ (light green: lower cooperation frequency; dark green: the other). (**e–h**) Costs follow $c_1 = c_0 + 0.02$ (orange = $c_0$; red = $c_1$). (**a, e**) No enforcement. (**b, f**) Short-memory partner choice (P). (**c, g**) Direct reciprocity (M). (**d, h**) Partner choice with direct and indirect reciprocity (IJMPQ). Both populations pay information cost $0.001$. Shaded bands are ±1 SD over 30 runs. Fitness: Fig. S3. Snowdrift twin: Fig. 2. Full grid: Figs. S5–S6; gs = 4: Fig. S9.
 
