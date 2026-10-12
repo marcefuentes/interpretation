@@ -179,7 +179,7 @@ Supplement references are typeset in the main Literature Cited list.
 | Acknowledgments (EM / post-acceptance) | `paper/submission/amnat/acknowledgments-submission.md` |
 | Body | `paper/introduction.md` … `paper/discussion.md` |
 | Supplement | `paper/supplement.md` |
-| Captions (main) | `paper/results.md` (Figs. 1–4 blocks) |
+| Captions (main) | `paper/results.md` (Figs. 1–3 blocks) |
 | Captions (supplement) | `paper/captions.md` |
 | Bibliography | `paper/references.bib` |
 | Figure provenance | `paper/figures.md` |

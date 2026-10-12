@@ -31,10 +31,10 @@ partner-choice populations stochastically split in the prisoner's dilemma (Fig. 
 top row). When one population pays a lower cooperation cost, that population
 cooperates and the other exploits (Fig. 1, bottom row). Fig. 2 is the snowdrift
 counterpart of that layout: payoffs already split roles without enforcement when the
-sucker payoff is high (Fig. 2a,e; full grid Fig. S6; gs = 4 Fig. S8). When
+sucker payoff is high (Fig. 2a,e; full grid Figs. S7–S8; gs = 4 Figs. S11–S12). When
 populations differ only in information cost, partner choice still locks roles, while
 under IJMPQ the expensive population can cooperate more; snowdrift removes these PD
-locks (Figs. S19–S20; crossed-design snowdrift Figs. S16 and S18). In all cases the
+locks (Figs. S26–S29; crossed-design snowdrift Figs. S23 and S25). In all cases the
 more cooperative population earns
 less fitness, and reward-limited combined mechanisms shrink that gap.
 
@@ -59,12 +59,12 @@ help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
 in information cost still lock roles or place the expensive side ahead, depending on
-mechanism (Fig. S19; snowdrift Fig. S20).
+mechanism (Fig. S26; fitness Fig. S27; snowdrift Figs. S28–S29).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and the expensive population cooperates more only on an i₀ ≈ 0 strip
-(Fig. 3l; Fig. S17), weaker than in the equal-c case. Snowdrift removes this
-regime entirely (Fig. 4).
+(Fig. 3l; Fig. S24), weaker than in the equal-c case. Snowdrift removes this
+regime entirely (Fig. S20).
 What decides whether a mechanism can place the expensive population ahead of the cheap
 one is whether populations carry the reciprocity family, not how large an information
 cost they pay — a controlled comparison the per-family information cost makes
@@ -78,7 +78,7 @@ places on its partner — a question prior work on costly punishment and monitor
 could not ask, because it levies those costs inside one population
 [@BoydRicherson1992; @FehrGachter2002; @StevensHauser2004]. Under each mechanism,
 both populations bear a burden from one population's information cost, and the two
-mechanism families place that burden on opposite populations (Fig. S15a,c,g,i;
+mechanism families place that burden on opposite populations (Fig. S22a,c,g,i;
 plane Fig. 3). Under partner choice, populations bear the burden of the
 high-cooperation-cost population's information cost, because a swap needs a chooser
 on both sides and that population supplies fewer choosers; under reciprocity-bearing
@@ -90,7 +90,7 @@ a tenth of the cooperation, of the same population when it pays a heavy informat
 cost itself.
 
 Equal information-cost totals are therefore neither interchangeable nor additive
-(Fig. S15b,h): both populations sharing a total cooperate less than when either pays
+(Fig. S22b,h): both populations sharing a total cooperate less than when either pays
 it alone, since each corner leaves one population still carrying mechanism alleles
 while a split leaves neither.
 That result extends the second-order free-rider literature rather than replacing it:
