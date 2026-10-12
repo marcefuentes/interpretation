@@ -100,7 +100,7 @@ Examples:
 **asymmetric_c1_i0_i1**: crossed asymmetries (the c-gap arm of the per-population information-cost programme; its no-c-gap counterpart is asymmetric_i0_i1) — fixed cooperation-cost gap c0=0.10, c1=0.20; full Cost0×Cost1 square on [0, b]×[0, b] (441 cells; noshuffle holds the primary Cost0≤0.30, Cost1≤0.20 rectangle of 176 cells plus the noshuffle2 complement). Headline analysis stays on the 176-cell rectangle; main-text Fig. 3, its snowdrift
 twin S20, and fitness twins S19/S21 use the full square. Two-population supplement
 heatmaps follow the same 3×4 template with separate cooperation and fitness figures
-(S5–S8, S15–S18, S26–S29). Group-size-4 counterparts of Figs. 1–3 and S20
+(S5–S8, S15–S18, S24–S27). Group-size-4 counterparts of Figs. 1–3 and S20
 are S9–S12. pop_2; same ecology as other TRPS studies. graphgen:
 `asymmetric_c1_i0_i1` / `_1run`. Regenerate movie caches: `python -m graphgen.main --study asymmetric_c1_i0_i1_1run --export-slices --movie --results ~/results`. Analysis: asymmetric_c1_i0_i1.md; ai/analyze_asymmetric_c1_i0_i1.py.
 

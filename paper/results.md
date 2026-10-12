@@ -125,7 +125,7 @@ separates the two.
 Under partner choice, with a fixed cooperation-cost gap (c₀ = 0.1, c₁ = 0.2) and
 independent per-population information costs, a population barely bears a burden from
 its own information cost and cooperates much less under the burden of its partner's
-(Fig. 3b,f,j; line cut Fig. S24m–p). Along the bottom edge of that plane (i₁ = 0,
+(Fig. 3b,f,j). Along the bottom edge of that plane (i₁ = 0,
 i₀ swept) the cheap population's frequency of cooperators barely changes as its own
 information cost rises from 0 to 0.20 (0.602 → 0.585) and its partner's even rises
 (0.189 → 0.268). Along the left edge (i₀ = 0, i₁ swept) the same rise paid by the
@@ -134,7 +134,7 @@ its partner). The bilateral swap rule is why: a chooser is useless without a cho
 to trade with, so assortment is limited by whichever population has fewest choosers —
 and that is already the high-cost side before any information cost is applied.
 
-Under IJMPQ the pattern reverses (Fig. 3d,h,l; line cut Fig. S24p). When the
+Under IJMPQ the pattern reverses (Fig. 3d,h,l). When the
 low-cooperation-cost population's information cost rises from i = 0 to i = 0.20, its
 partner's frequency of cooperators falls from 0.957 to 0.268 while the payer itself
 falls only to 0.734 — the partner bears a larger burden than the payer. When the
@@ -180,17 +180,17 @@ under symmetry is what places a burden on its partner under asymmetry: losing
 mechanism alleles relieves the payer and removes the assortment or conditional help
 the partner needed.
 
-**Figure 3: Information-cost plane under a cooperation-cost gap (prisoner's dilemma).** Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid. (**a–d**) Lower-cost population ($c_0 = 0.1$). (**e–h**) Higher-cost population ($c_1 = 0.2$). (**i–l**) Cooperation gap (cheap − expensive). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice with direct and indirect reciprocity (IJMPQ). Snowdrift twin: Fig. S20. Fitness counterpart: Fig. S19. Line cuts: Figs. S22–S25. Equal-c contrast: Figs. S26–S27. gs = 4: Fig. S11.
+**Figure 3: Information-cost plane under a cooperation-cost gap (prisoner's dilemma).** Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid. (**a–d**) Lower-cost population ($c_0 = 0.1$). (**e–h**) Higher-cost population ($c_1 = 0.2$). (**i–l**) Cooperation gap (cheap − expensive). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice with direct and indirect reciprocity (IJMPQ). Snowdrift twin: Fig. S20. Fitness counterpart: Fig. S19. Fixed-total cut: Figs. S22–S23. Equal-c contrast: Figs. S24–S25. gs = 4: Fig. S11.
 
 ## 5. Both information costs vary
 
 Across the full i₀ × i₁ square (Fig. 3; snowdrift Fig. S20), under partner choice the
 lower-cooperation-cost population cooperates more than its partner in 170/176 cells;
 under IJMPQ the expensive population's cooperation exceeds the cheap one's only
-locally, on the strip where i₀ ≤ 0.02 (13 cells; Fig. 3l; line cuts Fig. S24p,l).
-That pattern is stronger when populations differ only in information cost (Fig. S26
-shows the assignment under P and the expensive side ahead under IJMPQ; fitness
-Fig. S27; snowdrift Figs. S28–S29) and weaker once a cooperation-cost gap is present (cooperation
+locally, on the strip where i₀ ≤ 0.02 (13 cells; Fig. 3l). That pattern is stronger
+when populations differ only in information cost (Fig. S24 shows the assignment under
+P and the expensive side ahead under IJMPQ; fitness Fig. S25; snowdrift
+Figs. S26–S27) and weaker once a cooperation-cost gap is present (cooperation
 gap −0.100 at i₀ = 0, i₁ = 0.20). The cooperation-cost gap moves every
 reciprocity-bearing mechanism toward the cheap-cooperation-cost population, so MP and
 MPQ never place the expensive side ahead once the gap is present. Direct reciprocity
@@ -198,27 +198,22 @@ alone (Fig. 3c,g,k) places the same near-zero-i₀ flip in a thinner strip (10 c
 so the IJMPQ inversion tracks the M locus rather than partner choice. Without
 enforcement the plane is flat near zero (Fig. 3a,e,i).
 
-Fig. S24 shows how that pattern shrinks as the low-cooperation-cost population's
-information cost rises from zero. Rows hold i₀ and columns are — / P / M / IJMPQ,
-matching Fig. 3; each panel sweeps i₁. Under partner choice the cheap population
-stays ahead at every i₀ (Fig. S24b,f,j,n). Under IJMPQ the expensive population's
-curve stays above the cheap one's throughout when i₀ = 0 (Fig. S24p), survives only
-past a threshold when i₀ = 0.02 (Fig. S24l), and is gone by i₀ = 0.04 and 0.1
-(Fig. S24h,d). The snowdrift twin (Fig. S25) does not show this near-zero-i₀
-regime. The transition into the state without mechanism alleles is abrupt and
-bistable rather than gradual: just inside this regime, raising population 1's
-information cost from 0.02 to 0.04 *raises* its frequency of cooperators by 0.32 as
-it switches from a defector-heavy mixed state into near-complete unconditional
-cooperation that pays no information cost. The ±1 SD bands locate that boundary
-directly — wide below the threshold (SD ≈ 0.25; runs diverge to different outcomes)
-and narrow above it (SD ≈ 0.009). On the fitness plane (Fig. S19; snowdrift
-Figs. S25 and S21), the same cooperation-fitness mismatch holds across the same
-cuts: the population with higher cooperation is the one with lower fitness, even
-when the color ordering switches as i₀ rises.
-In this threshold regime, increasing population 1's own information cost can confer
-a fitness benefit on population 0 even while population 1 becomes slightly less fit
-(Fig. S19), showing that one population can benefit from a partner that pays more for
-enforcement alleles.
+Under partner choice the cheap population stays ahead across the plane (Fig. 3j).
+Under IJMPQ the expensive side's lead occupies only the near-zero-i₀ strip and is
+gone once i₀ ≥ 0.04 (Fig. 3l). The snowdrift twin (Fig. S20) does not show this
+near-zero-i₀ regime. The transition into the state without mechanism alleles is
+abrupt and bistable rather than gradual: just inside this regime, raising
+population 1's information cost from 0.02 to 0.04 *raises* its frequency of
+cooperators by 0.32 as it switches from a defector-heavy mixed state into
+near-complete unconditional cooperation that pays no information cost. Run-to-run
+SD locates that boundary — wide below the threshold (SD ≈ 0.25; runs diverge to
+different outcomes) and narrow above it (SD ≈ 0.009). On the fitness plane
+(Fig. S19; snowdrift Fig. S21), the same cooperation-fitness mismatch holds: the
+population with higher cooperation is the one with lower fitness, even when the
+color ordering switches as i₀ rises. In this threshold regime, increasing
+population 1's own information cost can confer a fitness benefit on population 0
+even while population 1 becomes slightly less fit (Fig. S19), showing that one
+population can benefit from a partner that pays more for enforcement alleles.
 
 Whether the expensive population ends up cooperating more than the cheap one depends
 on whether the mechanism includes reciprocity, not on how much information cost it
@@ -236,7 +231,7 @@ corner of the square and while its own alleles are falling, not through that
 reciprocity free-rider route.
 
 Snowdrift has no risk (S > P) and removes this near-zero-i₀ regime entirely on the
-same crossed design (Fig. S20; line cuts Fig. S25), identifying this cross-population
-burden as a property of game type rather than of the cost accounting. Shuffled
-partnerships leave the main contrasts intact (Results §1). The cooperator/exploiter
-split also stays deterministic in groups of 4 (Fig. S9f).
+same crossed design (Fig. S20), identifying this cross-population burden as a
+property of game type rather than of the cost accounting. Shuffled partnerships
+leave the main contrasts intact (Results §1). The cooperator/exploiter split also
+stays deterministic in groups of 4 (Fig. S9f).

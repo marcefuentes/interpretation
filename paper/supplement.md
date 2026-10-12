@@ -32,15 +32,13 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S21 | Fitness counterpart of Fig. S20 (i₀ × i₁ plane; snowdrift) | Fig. S20 |
 | Fig. S22 | Fixed-total cut (PD; coop + fitness × —|P|M|IJMPQ) | Fig. 3 |
 | Fig. S23 | Fixed-total cut (snowdrift) | Fig. S20 |
-| Fig. S24 | Fixed-i₀ cuts of the information-cost plane (PD; coop) | Fig. 3 |
-| Fig. S25 | Fixed-i₀ cuts of the information-cost plane (snowdrift) | Fig. S20 |
-| Fig. S26 | Equal-c i asymmetry (PD; coop + gap) | Figs. 3 and S20 |
-| Fig. S27 | Equal-c i asymmetry (PD; fitness + gap) | Figs. 3 and S20 |
-| Fig. S28 | Equal-c i asymmetry (snowdrift; coop + gap) | Figs. 3 and S20 |
-| Fig. S29 | Equal-c i asymmetry (snowdrift; fitness + gap) | Figs. 3 and S20 |
+| Fig. S24 | Equal-c i asymmetry (PD; coop + gap) | Figs. 3 and S20 |
+| Fig. S25 | Equal-c i asymmetry (PD; fitness + gap) | Figs. 3 and S20 |
+| Fig. S26 | Equal-c i asymmetry (snowdrift; coop + gap) | Figs. 3 and S20 |
+| Fig. S27 | Equal-c i asymmetry (snowdrift; fitness + gap) | Figs. 3 and S20 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S29 are in [captions.md](captions.md) (regenerated from the
+Captions for Figs. S1–S27 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). PD and snowdrift never share a figure. Two-population
 heatmaps use the Fig. 3 template (rows cheap/expensive/gap or low-i/high-i/gap;
 columns —|P|M|IJMPQ), with cooperation and fitness as separate figures. Shuffle
@@ -82,9 +80,8 @@ rows; —|P|M|IJMPQ columns; PD and snowdrift).
 **Fig. 3 and S20 i₀ × i₁ plane.** No enforcement, P, M, and IJMPQ with cheap /
 expensive / gap rows (prisoner's dilemma Fig. 3; snowdrift twin Fig. S20). Fitness
 counterparts: Figs. S19 and S21. Fixed-total line cuts (coop + fitness): Fig. S22
-(snowdrift Fig. S23). Wedge line cuts (coop): Fig. S24 (snowdrift
-Fig. S25). Shared-i under a cooperation-cost gap: Figs. S15–S18. Equal-c
-information-cost asymmetry: Figs. S26–S29.
+(snowdrift Fig. S23). Shared-i under a cooperation-cost gap: Figs. S15–S18. Equal-c
+information-cost asymmetry: Figs. S24–S27.
 
 ## What is intentionally not in the supplement figures
 

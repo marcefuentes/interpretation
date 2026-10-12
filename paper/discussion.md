@@ -34,7 +34,7 @@ counterpart of that layout: payoffs already split roles without enforcement when
 sucker payoff is high (Fig. 2a,e; full grid Figs. S7–S8; gs = 4 Fig. S10). When
 populations differ only in information cost, partner choice still locks roles, while
 under IJMPQ the expensive population can cooperate more; snowdrift removes these PD
-locks (Figs. S26–S29; crossed-design snowdrift Figs. S23 and S25). In all cases the
+locks (Figs. S24–S27; crossed-design snowdrift Fig. S23). In all cases the
 more cooperative population earns
 less fitness, and reward-limited combined mechanisms shrink that gap.
 
@@ -59,11 +59,11 @@ help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
 in information cost still lock roles or place the expensive side ahead, depending on
-mechanism (Fig. S26; fitness Fig. S27; snowdrift Figs. S28–S29).
+mechanism (Fig. S24; fitness Fig. S25; snowdrift Figs. S26–S27).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and the expensive population cooperates more only on an i₀ ≈ 0 strip
-(Fig. 3l; Fig. S24), weaker than in the equal-c case. Snowdrift removes this
+(Fig. 3l), weaker than in the equal-c case. Snowdrift removes this
 regime entirely (Fig. S20).
 What decides whether a mechanism can place the expensive population ahead of the cheap
 one is whether populations carry the reciprocity family, not how large an information
@@ -79,7 +79,7 @@ could not ask, because it levies those costs inside one population
 [@BoydRicherson1992; @FehrGachter2002; @StevensHauser2004]. Under each mechanism,
 both populations bear a burden from one population's information cost, and the two
 mechanism families place that burden on opposite populations (Fig. 3b,f,j versus
-Fig. 3d,h,l; line cuts Fig. S24m–p). Under partner choice, populations bear the
+Fig. 3d,h,l). Under partner choice, populations bear the
 burden of the high-cooperation-cost population's information cost, because a swap
 needs a chooser on both sides and that population supplies fewer choosers; under
 reciprocity-bearing mechanisms, populations bear the burden of the
