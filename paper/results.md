@@ -63,7 +63,7 @@ more in all 210 cells of the full grid and earns less fitness in all of them
 deterministic in groups of 4, where each population samples few partners per round
 (Fig. S9f).
 
-**Figure 1: Cooperation under symmetric and asymmetric cooperation costs (prisoner's dilemma).** Frequency of cooperators under different cost symmetries and cooperation mechanisms. (**a–d**) Costs follow $c_1 = c_0$ (light green: lower cooperation frequency; dark green: the other). (**e–h**) Costs follow $c_1 = c_0 + 0.02$ (orange = $c_0$; red = $c_1$). (**a, e**) No enforcement. (**b, f**) Short-memory partner choice (P). (**c, g**) Direct reciprocity (M). (**d, h**) Partner choice with direct and indirect reciprocity (IJMPQ). Both populations pay information cost $0.001$. Fitness: Fig. S3. Snowdrift twin: Fig. 2. Full grid: Figs. S5–S6; gs = 4: Fig. S9.
+**Figure 1: Cooperation under symmetric and asymmetric cooperation costs (prisoner's dilemma).** Frequency of cooperators under different cost symmetries and cooperation mechanisms. (**a–d**) Costs follow $c_1 = c_0$ (light green: lower cooperation frequency; dark green: the other). (**e–h**) Costs follow $c_1 = c_0 + 0.02$ (orange = $c_0$; red = $c_1$). (**a, e**) No enforcement. (**b, f**) Short-memory partner choice (P). (**c, g**) Direct reciprocity (M). (**d, h**) Partner choice with direct and indirect reciprocity (IJMPQ). Both populations pay information cost $0.001$. Shaded bands are ±1 SD over 30 runs. Fitness: Fig. S3. Snowdrift twin: Fig. 2. Full grid: Figs. S5–S6; gs = 4: Fig. S9.
 
 Fig. 2 repeats the same layout under snowdrift. Without enforcement the populations
 already split stochastically on the payoffs alone, because S > P leaves no risk in
@@ -78,7 +78,7 @@ gap; above that cost a narrower split returns, narrower than without enforcement
 expensive side to 0.61 under the gap (Fig. 2d,h). Fitness counterpart: Fig. S4; full
 grid Figs. S7–S8; gs = 4 Fig. S10.
 
-**Figure 2: Cooperation under symmetric and asymmetric cooperation costs (snowdrift).** Frequency of cooperators under different cost symmetries and cooperation mechanisms (same layout as Fig. 1). Fitness counterpart: Fig. S4. Full grid: Figs. S7–S8; gs = 4: Fig. S10.
+**Figure 2: Cooperation under symmetric and asymmetric cooperation costs (snowdrift).** Frequency of cooperators under different cost symmetries and cooperation mechanisms (same layout as Fig. 1). Shaded bands are ±1 SD over 30 runs. Fitness counterpart: Fig. S4. Full grid: Figs. S7–S8; gs = 4: Fig. S10.
 
 ## 3. Matched information cost
 
