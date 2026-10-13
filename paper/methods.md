@@ -282,7 +282,7 @@ Table 3. Simulation designs.
 | Equal-c baseline, one pop   | 1    | \_, P, M, IJMPQ       | c ∈ [0, b]                                         | 0.02 | 21    | Figs. S1–S2    |
 | Equal-c baseline, two pops  | 2    | \_, P, M, IJMPQ       | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Figs. 1–2; S3–S4 |
 | Cooperation-cost asymmetry  | 2    | \_, P, M, IJMPQ       | c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Figs. 1–2, S5–S8; gs = 4: S9–S10 |
-| Symmetric information cost  | 1    | \_, P, M, IJMPQ       | i + c ≤ b                                          | 0.02 | 231   | Figs. S11–S12  |
+| Symmetric information cost  | 2    | \_, P, M, IJMPQ       | i + c ≤ b                                          | 0.02 | 231   | Figs. S11–S12  |
 | Fixed c-gap × shared i      | 2    | \_, P, M, IJMPQ       | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S16–S19  |
 | Per-population i, equal c   | 2    | \_, P, M, IJMPQ       | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. 3, S13–S15  |
 | Crossed c and i asymmetries | 2    | \_, P, M, IJMPQ        | c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 4, S20–S24; gs = 4: S25–S26 |
@@ -297,7 +297,7 @@ prisoner's dilemma and snowdrift and still show M beside P and IJMPQ (fitness
 counterparts Figs. S3–S4; full grids Figs. S5–S8 use the Fig. 4 template with
 separate cooperation and fitness figures; group-size-4 counterparts of Figs. 1–2,
 4 and S21 are Figs. S9–S10 and S25–S26). Matched information cost is Figs. S11–S12 (Cost × c
-grids; —|P|M|IJMPQ; prisoner's dilemma and snowdrift).
+grids in two populations; —|P|M|IJMPQ; cooperation and gap; prisoner's dilemma and snowdrift).
 
 Equal-c information-cost asymmetry is Fig. 3 (fitness Fig. S13; snowdrift
 Figs. S14–S15). Shared-i under a cooperation-cost gap is Figs. S16–S19. The

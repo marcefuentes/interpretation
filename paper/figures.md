@@ -46,7 +46,7 @@ S panels).
 Status: revised 2026-10 — Figs. 3–4 and most two-pop supplement heatmaps are 3×4
 (—|P|M|IJMPQ × cheap/expensive/gap or low-i/high-i/gap; one colorbar per row).
 Cooperation and fitness are separate figures. Fitness-gap colour scale is ±0.3.
-One-pop Cost×c is 2×4 (S11–S12). Supplement runs to S26.
+Two-pop matched Cost×c is 3×4 coop+gap (S11–S12; no fitness). Supplement runs to S26.
 
 ## Setup audit (2026-10)
 
@@ -65,7 +65,7 @@ One-pop Cost×c is 2×4 (S11–S12). Supplement runs to S26.
 | figS6 | Heatmap | asymmetric_c0_c1, plane wmean | PD fitness; twin → figS8 |
 | figS9 | Line | same as fig1, gs = 4 | Fig. 1 at gs = 4; twin → figS10 |
 | figS10 | Line | same as fig2, gs = 4 | Fig. 2 at gs = 4 |
-| figS11 | Heatmap | symmetric_c_i, _/P/M/IJMPQ | PD 2×4 Cost×c; twin → figS12 |
+| figS11 | Heatmap | symmetric_c_i pop_2, _/P/M/IJMPQ | PD 3×4 Cost×c coop+gap; twin → figS12 |
 | figS13 | Heatmap | asymmetric_i0_i1, plane wmean | Equal-c fitness; twin → figS15 |
 | figS14 | Heatmap | twin of fig3 | Equal-c snowdrift coop |
 | figS16 | Heatmap | asymmetric_c1_i, plane qBSeen | Shared-i coop; twin → figS18 |
@@ -89,7 +89,7 @@ One-pop Cost×c is 2×4 (S11–S12). Supplement runs to S26.
 1. fig1 / fig2: 2×4; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IJMPQ.
 2. figS1 / figS2: 2×4; row 0 = coop, row 1 = fitness; same mechanism columns.
 3. Two-pop planes S5–S8, S13–S22, S25–S26 (and Figs. 3–4 and S21): 3×4; columns — | P | M | IJMPQ; rows = cheap/expensive/gap (or low-i/high-i/gap for equal-c); one colorbar per row; cooperation and fitness are separate figures. S9–S10 are line-plot counterparts of Figs. 1–2 at group size 4; S25–S26 are gs=4 of Fig. 4 / S21.
-4. S11–S12: 2×4 one-pop Cost×c; rows = coop / fitness; columns — | P | M | IJMPQ.
+4. S11–S12: 3×4 two-pop matched Cost×c (coop + gap); rows = higher-/lower-coop / gap; columns — | P | M | IJMPQ.
 5. figS23 / S24: fixed-total line cuts (2×4; rows coop / fitness; columns —|P|M|IJMPQ; shared i₁ x title).
 
 Warm line-slice caches before regenerating Figs. 1–2 / S3–S4 / S23–S24:
@@ -114,8 +114,8 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 | S8 | Full c₀ × c₁ grid snowdrift (fitness) | figS8 |
 | S9 | Group-size-4 counterpart of Fig. 1 | figS9 |
 | S10 | Group-size-4 counterpart of Fig. 2 | figS10 |
-| S11 | Cost × c heatmap PD | figS11 |
-| S12 | Cost × c heatmap snowdrift | figS12 |
+| S11 | Matched Cost × c (two pops; PD coop + gap) | figS11 |
+| S12 | Matched Cost × c (two pops; snowdrift) | figS12 |
 | S13 | Fitness twin of Fig. 3 (equal-c PD) | figS13 |
 | S14 | Snowdrift twin of Fig. 3 (equal-c) | figS14 |
 | S15 | Fitness twin of Fig. S14 (equal-c snowdrift) | figS15 |

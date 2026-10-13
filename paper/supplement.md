@@ -19,8 +19,8 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S8 | Full c₀ × c₁ cooperation grid (snowdrift; fitness + gap) | Fig. 2 |
 | Fig. S9 | Group-size-4 counterpart of Fig. 1 (PD; coop) | Fig. 1 |
 | Fig. S10 | Group-size-4 counterpart of Fig. 2 (snowdrift; coop) | Fig. 2 |
-| Fig. S11 | Information cost × cooperation cost (single population; PD) | Results §3 |
-| Fig. S12 | Information cost × cooperation cost (single population; snowdrift) | Results §3 |
+| Fig. S11 | Information cost × cooperation cost (two populations; PD) | Results §3 |
+| Fig. S12 | Information cost × cooperation cost (two populations; snowdrift) | Results §3 |
 | Fig. S13 | Fitness under equal-c i asymmetry (PD) | Fig. 3 |
 | Fig. S14 | Equal-c i asymmetry (snowdrift; coop + gap) | Fig. 3 |
 | Fig. S15 | Fitness under equal-c i asymmetry (snowdrift) | Fig. 3 |
@@ -73,8 +73,9 @@ snowdrift (S2).
 Figs. S5–S8 (PD coop/fitness, snowdrift coop/fitness). Group-size-4 counterparts
 of Figs. 1–2, 4 and S21: Figs. S9–S10 and S25–S26 (cooperation only).
 
-**Figs. S11–S12 matched information cost.** Cost × c surfaces (2×4; coop/fitness
-rows; —|P|M|IJMPQ columns; PD and snowdrift).
+**Figs. S11–S12 matched information cost.** Cost × c surfaces in two populations
+(3×4; higher-/lower-coop / gap rows; —|P|M|IJMPQ columns; cooperation only; PD and
+snowdrift).
 
 **Fig. 3 equal-c i asymmetry.** No enforcement, P, M, and IJMPQ with low-i /
 high-i / gap rows (prisoner's dilemma). Fitness: Fig. S13. Snowdrift: Figs. S14–S15.

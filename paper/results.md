@@ -102,12 +102,20 @@ unconditionally, so cooperation frequency and mechanism-allele frequency diverge
 once every individual pays a cooperation cost, alleles and behavior fall together.
 
 The information cost lowers the cooperation cost a population can withstand. Under
-IJMPQ in the prisoner's dilemma, cooperation holds to high c when the mechanism is
-nearly free and collapses at far lower c once the information cost is 0.20 (Fig. S11).
-Snowdrift removes that interaction: cooperation stays high across the whole
-information-cost × c grid, including the cell where the prisoner's dilemma collapses
-(Fig. S12). Because S > P, cooperation is favored without enforcement, so losing the
-alleles costs little.
+IJMPQ in the prisoner's dilemma, both populations hold to high c when the mechanism
+is nearly free and collapse at far lower c once the information cost is 0.20
+(Fig. S11). Snowdrift softens that interaction: the higher-cooperation population
+stays high across the grid, including the cell where the prisoner's dilemma
+collapses, while the lower-cooperation population can still fall in the interior
+(Fig. S12). Because S > P, cooperation is favored without enforcement, so losing
+the alleles costs less than in the prisoner's dilemma.
+
+The gap rows show how matched costs still assign roles. In the prisoner's dilemma,
+partner choice opens a stochastic cooperation gap across much of the Cost × c plane,
+while direct reciprocity and IJMPQ keep both sides close (Fig. S11j–l). In snowdrift,
+the no-enforcement default already opens a large gap once c > 0, and partner choice
+does not change that pattern; M narrows the gap and IJMPQ shrinks it further,
+especially when information cost is low (Fig. S12i–l).
 
 A matched information cost cannot separate the cost a population pays from the burden
 that cost places on its partner. Both populations pay the same information cost in
