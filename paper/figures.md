@@ -70,8 +70,8 @@ one colorbar per row). S9, S15, S23 are five-column twins of Figs. 1–3. Cooper
 | figS13 | Heatmap | symmetric_c_i pop_2, _/P/M/IMP/IJMPQ | PD 3×5 Cost×c coop+difference; twin → figS14 |
 | figS16 | Heatmap | asymmetric_i0_i1, plane wmean | Symmetric-c fitness; twin → figS18 |
 | figS17 | Heatmap | twin of fig2 | Symmetric-c snowdrift coop |
-| figS19 | Heatmap | asymmetric_c1_i, plane qBSeen | Shared-i coop; twin → figS21 |
-| figS20 | Heatmap | asymmetric_c1_i, plane wmean | Shared-i fitness; twin → figS22 |
+| figS19 | Heatmap | asymmetric_c1_i, plane qBSeen | Symmetric-i coop; twin → figS21 |
+| figS20 | Heatmap | asymmetric_c1_i, plane wmean | Symmetric-i fitness; twin → figS22 |
 | figS24 | Heatmap | twin layout of fig3, wmean+Δwmean | Fitness plane; twin → figS26 |
 | figS27 | Line | asymmetric_c1_i0_i1_lines, iso-budget, —/P/M/IMP/IJMPQ | Fixed-total coop+fitness; twin → figS28 |
 | figS29 | Heatmap | same as fig3, gs = 4 | Fig. 3 at gs = 4; twin → figS30 |
@@ -117,22 +117,22 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 | S10 | Fitness under asymmetric cooperation costs and low symmetric i (PD) | figS10 |
 | S11 | Asymmetric cooperation costs and low symmetric i (snowdrift; coop) | figS11 |
 | S12 | Fitness under asymmetric cooperation costs and low symmetric i (snowdrift) | figS12 |
-| S13 | Symmetric information and cooperation costs (PD; coop + difference) | figS13 |
-| S14 | Symmetric information and cooperation costs (snowdrift) | figS14 |
-| S15 | Asymmetric i, symmetric c (PD) | figS15 |
-| S16 | Fitness under asymmetric i and symmetric c (PD) | figS16 |
-| S17 | Asymmetric i and symmetric c (snowdrift) | figS17 |
-| S18 | Fitness under asymmetric i and symmetric c (snowdrift) | figS18 |
-| S19 | Shared i under asymmetric cooperation costs (PD; coop) | figS19 |
-| S20 | Fitness under shared i and asymmetric cooperation costs (PD) | figS20 |
-| S21 | Shared i under asymmetric cooperation costs (snowdrift; coop) | figS21 |
-| S22 | Fitness under shared i and asymmetric cooperation costs (snowdrift) | figS22 |
-| S23 | Asymmetric i under asymmetric c (PD) | figS23 |
-| S24 | Fitness under asymmetric i and asymmetric c (PD) | figS24 |
-| S25 | Asymmetric i under asymmetric c (snowdrift) | figS25 |
-| S26 | Fitness under asymmetric i and asymmetric c (snowdrift) | figS26 |
-| S27 | Fixed-total information cost in two populations (PD; coop + fitness) | figS27 |
-| S28 | Fixed-total information cost in two populations (snowdrift) | figS28 |
+| S13 | Symmetric cooperation and information costs (PD; coop + difference) | figS13 |
+| S14 | Symmetric cooperation and information costs (snowdrift) | figS14 |
+| S15 | Symmetric c, asymmetric i (PD) | figS15 |
+| S16 | Fitness under symmetric c and asymmetric i (PD) | figS16 |
+| S17 | Symmetric c and asymmetric i (snowdrift) | figS17 |
+| S18 | Fitness under symmetric c and asymmetric i (snowdrift) | figS18 |
+| S19 | Asymmetric cooperation costs and symmetric i (PD; coop) | figS19 |
+| S20 | Fitness under asymmetric cooperation costs and symmetric i (PD) | figS20 |
+| S21 | Asymmetric cooperation costs and symmetric i (snowdrift; coop) | figS21 |
+| S22 | Fitness under asymmetric cooperation costs and symmetric i (snowdrift) | figS22 |
+| S23 | Asymmetric c and asymmetric i (PD) | figS23 |
+| S24 | Fitness under asymmetric c and asymmetric i (PD) | figS24 |
+| S25 | Asymmetric c and asymmetric i (snowdrift) | figS25 |
+| S26 | Fitness under asymmetric c and asymmetric i (snowdrift) | figS26 |
+| S27 | Asymmetric c and fixed-total i in two populations (PD; coop + fitness) | figS27 |
+| S28 | Asymmetric c and fixed-total i in two populations (snowdrift) | figS28 |
 | S29 | Asymmetric i under asymmetric c at group size 4 (PD) | figS29 |
 | S30 | Asymmetric i under asymmetric c at group size 4 (snowdrift) | figS30 |
 

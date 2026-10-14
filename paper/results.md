@@ -139,11 +139,11 @@ the expensive population cooperates more while the cheap one earns more. Direct
 reciprocity alone places the same reverse assignment (Fig. 2c,g,k). Snowdrift removes
 these PD locks (Fig. S17; fitness Fig. S18).
 
-**Figure 2: Cooperation under asymmetric information costs and symmetric cooperation costs.** Frequency of cooperators and the difference in that frequency between the two populations under asymmetric information costs and symmetric cooperation costs (c₀ = c₁ = 0.1). (**a–d**) Population 0 (lower i). (**e–h**) Population 1 (higher i). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S17. Fitness counterpart: Fig. S16. Crossed asymmetric-c plane: Fig. 3. Shared-i contrast: Figs. S19–S20. Five-column version (adds IJMPQ): Fig. S15.
+**Figure 2: Cooperation under symmetric cooperation costs and asymmetric information costs.** Frequency of cooperators and the difference in that frequency between the two populations under symmetric cooperation costs and asymmetric information costs (c₀ = c₁ = 0.1). (**a–d**) Population 0 (lower i). (**e–h**) Population 1 (higher i). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S17. Fitness counterpart: Fig. S16. Crossed asymmetric-c plane: Fig. 3. Symmetric-i contrast: Figs. S19–S20. Five-column version (adds IJMPQ): Fig. S15.
 
-## 5. Shared information cost under asymmetric cooperation costs
+## 5. Symmetric information cost under asymmetric cooperation costs
 
-Fig. S19 holds the asymmetric cooperation costs of section 2 and raises a shared information
+Fig. S19 holds the asymmetric cooperation costs of section 2 and raises a symmetric information
 cost: the partner-choice split shrinks as that cost rises, rather than reversing
 (fitness Fig. S20). IJMPQ postpones that collapse but does not restore the
 free-cooperation outcome. In snowdrift (Fig. S21; fitness Fig. S22) the cheap
@@ -196,7 +196,7 @@ under symmetry is what places a burden on its partner under asymmetry: losing
 mechanism alleles relieves the payer and removes the assortment or conditional help
 the partner needed.
 
-**Figure 3: Cooperation under asymmetric information costs and asymmetric cooperation costs.** Frequency of cooperators and the difference in that frequency between the two populations under asymmetric information costs and asymmetric cooperation costs (c₀ = 0.1, c₁ = 0.2). (**a–d**) Population 0 (lower c, $c_0 = 0.1$). (**e–h**) Population 1 (higher c, $c_1 = 0.2$). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S25. Fitness counterpart: Fig. S24. Fixed-total cut: Figs. S27–S28. Symmetric-c contrast: Fig. 2. gs = 4: Fig. S29. Five-column version (adds IJMPQ): Fig. S23.
+**Figure 3: Cooperation under asymmetric cooperation costs and asymmetric information costs.** Frequency of cooperators and the difference in that frequency between the two populations under asymmetric cooperation costs and asymmetric information costs (c₀ = 0.1, c₁ = 0.2). (**a–d**) Population 0 (lower c, $c_0 = 0.1$). (**e–h**) Population 1 (higher c, $c_1 = 0.2$). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S25. Fitness counterpart: Fig. S24. Fixed-total cut: Figs. S27–S28. Symmetric-c contrast: Fig. 2. gs = 4: Fig. S29. Five-column version (adds IJMPQ): Fig. S23.
 
 ## 7. Both information costs vary
 

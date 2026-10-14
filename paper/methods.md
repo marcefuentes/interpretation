@@ -284,7 +284,7 @@ Table 3. Simulation designs.
 | Symmetric-c baseline, two pops  | 2    | \_, P, M, IMP, IJMPQ  | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Figs. S3–S6 |
 | Cooperation-cost asymmetry      | 2    | \_, P, M, IMP[, IJMPQ]| c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1 (IMP); S3–S12, S9; gs = 4: S7–S8 |
 | Symmetric information cost      | 2    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S13–S14  |
-| Fixed asymmetric c × shared i   | 2    | \_, P, M, IMP, IJMPQ  | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S19–S22  |
+| Fixed asymmetric c × symmetric i | 2    | \_, P, M, IMP, IJMPQ  | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S19–S22  |
 | Per-population i, symmetric c   | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. 2 (IMP), S16–S18, S15  |
 | Crossed c and i asymmetries     | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3 (IMP), S24–S28, S23; gs = 4: S29–S30 |
 | PD payoff plane                 | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
@@ -302,7 +302,7 @@ Figs. S13–S14 (Cost × c grids in two populations; —|P|M|IMP|IJMPQ; cooperat
 prisoner's dilemma and snowdrift).
 
 Symmetric-c information-cost asymmetry is Fig. 2 (—|P|M|IMP; fitness Fig. S16; snowdrift
-Figs. S17–S18; five-column twin Fig. S15). Shared-i under asymmetric cooperation costs is
+Figs. S17–S18; five-column twin Fig. S15). Symmetric-i under asymmetric cooperation costs is
 Figs. S19–S22. The crossed i₀ × i₁ plane under fixed asymmetric cooperation costs is
 Figs. 3 and S25 (main Fig. 3: _, P, M, IMP; supplement adds IJMPQ; absolute
 cooperation and the cheap−expensive difference; prisoner's dilemma and snowdrift), with
