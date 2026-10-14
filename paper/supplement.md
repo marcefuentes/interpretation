@@ -32,16 +32,21 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S21 | Fitness counterpart of Fig. 3 (i₀ × i₁ plane; prisoner's dilemma) | Fig. 3 |
 | Fig. S22 | Information-cost plane under a cooperation-cost gap (snowdrift) | Fig. 3 |
 | Fig. S23 | Fitness counterpart of Fig. S22 (i₀ × i₁ plane; snowdrift) | Fig. S22 |
-| Fig. S24 | Fixed-total cut (PD; coop + fitness × —|P|M|IJMPQ) | Fig. 3 |
+| Fig. S24 | Fixed-total cut (PD; coop + fitness × —|P|M|IMP|IJMPQ) | Fig. 3 |
 | Fig. S25 | Fixed-total cut (snowdrift) | Fig. S22 |
 | Fig. S26 | Group-size-4 counterpart of Fig. 3 (PD; i₀ × i₁ plane) | Fig. 3 |
 | Fig. S27 | Group-size-4 counterpart of Fig. S22 (snowdrift; i₀ × i₁ plane) | Fig. S22 |
+| Fig. S28 | Five-column version of Fig. 1 (adds IJMPQ) | Fig. 1 |
+| Fig. S29 | Five-column version of Fig. 2 (adds IJMPQ) | Fig. 2 |
+| Fig. S30 | Five-column version of Fig. 3 (adds IJMPQ) | Fig. 3 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S27 are in [captions.md](captions.md) (regenerated from the
-graphgen interpretation study). PD and snowdrift never share a figure. Two-population
-heatmaps use the Fig. 3 template (rows cheap/expensive/gap or low-i/high-i/gap;
-columns —|P|M|IJMPQ), with cooperation and fitness as separate figures. Shuffle
+Captions for Figs. S1–S30 are in [captions.md](captions.md) (regenerated from the
+graphgen interpretation study). PD and snowdrift never share a figure. Main-text
+Figs. 1–3 use four columns (—|P|M|IMP); every supplement figure uses five
+(—|P|M|IMP|IJMPQ). Two-population heatmaps use the Fig. 3 row template
+(cheap/expensive/gap or low-i/high-i/gap), with cooperation and fitness as
+separate figures. Shuffle
 short-memory branches (M collapse; IM and partner-choice combinations sustain; P
 nearly unchanged) are discussed in Results §1 without a dedicated figure.
 The dilemma-0 machinery-erosion control remains internal (`aux_m_nodilemma`) and is
@@ -76,7 +81,7 @@ Group-size-4 counterparts of Figs. S3–S4, 3 and S22: Figs. S10–S11 and S26�
 (cooperation only).
 
 **Figs. S12–S13 matched information cost.** Cost × c surfaces in two populations
-(3×4; higher-/lower-coop / gap rows; —|P|M|IJMPQ columns; cooperation only; PD and
+(3×5; higher-/lower-coop / gap rows; —|P|M|IMP|IJMPQ columns; cooperation only; PD and
 snowdrift).
 
 **Fig. 2 equal-c i asymmetry.** No enforcement, P, M, and IJMPQ with low-i /
