@@ -93,16 +93,16 @@ much of the burden; the reverse can also occur, and sometimes the same cost bene
 a partner. Paying a cost and bearing its burden are therefore different questions.
 
 Third, **parameter symmetry** versus **outcome symmetry**. Parameter symmetry means
-the two populations face the same setup (equal cooperation cost, equal information
-cost, identical payoffs). Outcome symmetry means realized cooperation and fitness are
+the two populations face the same setup (symmetric cooperation cost, symmetric
+information cost, identical payoffs). Outcome symmetry means realized cooperation and fitness are
 similar between them. Symmetric parameters do not imply symmetric outcomes: partner
-choice at equal costs can produce a stochastic cooperator/exploiter split, and cost
+choice at symmetric costs can produce a stochastic cooperator/exploiter split, and cost
 asymmetries can determine that split or reverse which side cooperates more, depending
 on mechanism and game. Because
 each population carries its own cooperation cost and information cost, both axes
 can be varied independently and their relative roles compared.
 
-Prior work on asymmetric **cooperation costs** in mutualisms shows that unequal costs
+Prior work on asymmetric **cooperation costs** in mutualisms shows that asymmetric costs
 or evolutionary rates can assign cooperator and exploiter roles
 [@DoebeliKnowlton1998; @BergstromLachmann2003], but rarely with explicit enforcement
 alleles or an independent information-cost axis. To my knowledge, no model varies
@@ -114,9 +114,8 @@ cost places on its partner.
 I therefore vary an individual-based model across game type, cooperation cost,
 per-population information cost, group size, partner shuffling, population structure,
 and mechanism, and add orthogonal payoff-plane calibration analyses that separate the
-payoff gaps a single cooperation-cost axis joins. The single-population
-equal-cost case is the baseline; the two-population case with independently assigned
-costs is the primary biological scenario.
+payoff gaps a single cooperation-cost axis joins. The single-population case is the baseline; the two-population case with
+independently assigned costs is the primary biological scenario.
 
 ## Contribution
 
@@ -147,6 +146,6 @@ Supporting this, I attribute each mechanism's loss of cooperation along the
 cooperation-cost axis to a specific payoff gap (direct reciprocity M is risk-limited,
 short-memory partner choice P is limited by the cooperation advantage, and the
 combined mechanisms MP, MPQ, IMP, and IJMPQ are reward-limited), and show that when
-both cost axes differ, populations still follow the cooperation-cost gap unless the
+both cost axes differ, populations still follow the cooperation-cost asymmetry unless the
 low-cooperation-cost population pays near-zero information cost — a thin regime in
 which the expensive population cooperates more, and which vanishes under snowdrift.

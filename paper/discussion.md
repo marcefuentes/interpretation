@@ -26,7 +26,7 @@ or rates differ [@DoebeliKnowlton1998; @BergstromLachmann2003], here populations
 split even under full parameter symmetry via partner choice.
 
 I separate **parameter symmetry** (c₀ = c₁, i₀ = i₁, identical payoffs) from
-**outcome symmetry** (similar cooperation and fitness). At matched parameters,
+**outcome symmetry** (similar cooperation and fitness). At symmetric parameters,
 partner-choice populations stochastically split in the prisoner's dilemma (Fig. S3,
 top row). When one population pays a lower cooperation cost, that population
 cooperates and the other exploits (Fig. S3, bottom row). Fig. S5 is the snowdrift
@@ -37,7 +37,7 @@ under IJMPQ the expensive population can cooperate more; snowdrift removes these
 locks (Fig. 2; snowdrift Fig. S17; crossed-design snowdrift Fig. S25). Under partner
 choice the more cooperative population earns less fitness (Fig. 1; Fig. S10j); direct
 reciprocity can reverse that fitness ranking even when the cheap side still cooperates
-more (Fig. S10k), and reward-limited combined mechanisms leave a mixed fitness gap
+more (Fig. S10k), and reward-limited combined mechanisms leave a mixed fitness difference
 (Fig. S10l).
 
 ## Information cost versus cooperation cost
@@ -56,16 +56,16 @@ unconditional cooperation that pay no information cost enjoy assortment or punis
 supplied by others. Once one population sits above zero cooperation cost and the
 second is costlier still, populations cannot lose mechanism alleles for free at zero
 cooperation cost, so as information cost rises they cooperate less and the
-cooperator/exploiter gap shrinks instead of only changing which genotypes carry the
+cooperator/exploiter difference shrinks instead of only changing which genotypes carry the
 help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
 in information cost still lock roles or place the expensive side ahead, depending on
 mechanism (Fig. 2; fitness Fig. S16; snowdrift Figs. S17–S18).
-When both cost axes differ, populations follow the cooperation-cost gap
+When both cost axes differ, populations follow the cooperation-cost asymmetry
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and the expensive population cooperates more only on an i₀ ≈ 0 strip
-(Fig. 3l), weaker than in the equal-c case. Snowdrift removes this
+(Fig. 3l), weaker than in the symmetric-c case. Snowdrift removes this
 regime entirely (Fig. S25).
 What decides whether a mechanism can place the expensive population ahead of the cheap
 one is whether populations carry the reciprocity family, not how large an information

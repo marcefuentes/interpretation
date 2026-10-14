@@ -160,7 +160,7 @@ Q1 for partner choice, M1, I1 or J1 for reciprocity — and 0 otherwise.
 An individual therefore pays 0, 1 or 2 units of i. One family costs one unit however
 many of its loci the individual carries, so a mechanism drawn from a single family
 costs one unit and any combined mechanism costs two, whatever its locus count — which
-lets contrasts within those matched sets isolate mechanism identity from expense.
+lets contrasts within those same-cost sets isolate mechanism identity from expense.
 Loci that are behaviorally inert under a given mechanism still incur the cost, and
 losing part of a family saves nothing, so families are eliminated only as whole
 families rather than locus by locus. An individual pays no information cost only if it
@@ -241,23 +241,24 @@ active choosers (C1P1), reciprocators that copy a partner (C0M1), unconditional
 cooperators that pay no information cost (C1P0, C1M0; C1M0 is the second-order
 free-rider under reciprocity), and carriers that never choose (C0P1).
 
-For two populations I report each measure per population and the gap between them.
-Where costs differ, the gap is the lower-cooperation-cost population minus the higher;
-where costs match and populations are labeled by outcome, it is the more cooperative
-minus the less. To summarize who profits, I correlate the two gaps across the cells of
-a sweep — the Pearson correlation between the cooperation gap and the fitness gap.
-These associations are between-cell relationships across a parameter grid, not
-within-cell relationships. A value near minus one means the population that cooperates
-more earns less. Under partner choice I also correlate P1 allele frequency with
-fitness across cells of a sweep.
+For two populations I report each measure per population and the difference between
+them. Where costs differ, that difference is the lower-cooperation-cost population
+minus the higher; where costs are symmetric and populations are labeled by outcome,
+it is the more cooperative minus the less. To summarize who profits, I correlate those
+two differences across the cells of a sweep — the Pearson correlation between the
+difference in frequency of cooperators and the difference in average fitness. These
+associations are between-cell relationships across a parameter grid, not within-cell
+relationships. A value near minus one means the population that cooperates more earns
+less. Under partner choice I also correlate P1 allele frequency with fitness across
+cells of a sweep.
 
-Where costs match and both populations play the same game, the two populations start
+Where costs are symmetric and both populations play the same game, the two populations start
 interchangeable, so I label them by outcome: within each run and snapshot, the more
 cooperative population is reported first. That prevents role differences from canceling when averaged across
-runs, but it also makes the reported gap a rank statistic, which cannot be zero even
+runs, but it also makes the reported difference a rank statistic, which cannot be zero even
 without a real split. To separate that labeling artifact from a true role assignment,
-I compare each mechanism's matched-parameter gap to the gap under no enforcement,
-ranked the same way, rather than asking whether the gap differs from zero.
+I compare each mechanism's symmetric-parameter difference to the difference under no enforcement,
+ranked the same way, rather than asking whether the difference differs from zero.
 Single-replicate runs keep their original labels, so their two curves are not
 rank-ordered. Where costs differ, the labels follow the parameters. In the
 figures, orange and red curves mark parameter-asymmetric designs (orange for the
@@ -277,34 +278,34 @@ designs; the paragraphs below give the narrative order.
 
 Table 3. Simulation designs.
 
-| Design                      | Pops | Mechanisms (typical)   | Axes / ranges                                      | Step | Cells | Figures        |
-| --------------------------- | ---- | ---------------------- | -------------------------------------------------- | ---- | ----- | -------------- |
-| Equal-c baseline, one pop   | 1    | \_, P, M, IMP, IJMPQ  | c ∈ [0, b]                                         | 0.02 | 21    | Figs. S1–S2    |
-| Equal-c baseline, two pops  | 2    | \_, P, M, IMP, IJMPQ  | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Figs. S3–S6 |
-| Cooperation-cost asymmetry  | 2    | \_, P, M, IMP[, IJMPQ]| c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1 (IMP); S3–S12, S9; gs = 4: S7–S8 |
-| Symmetric information cost  | 2    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S13–S14  |
-| Fixed c-gap × shared i      | 2    | \_, P, M, IMP, IJMPQ  | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S19–S22  |
-| Per-population i, equal c   | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. 2 (IMP), S16–S18, S15  |
-| Crossed c and i asymmetries | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3 (IMP), S24–S28, S23; gs = 4: S29–S30 |
-| PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
-| Snowdrift payoff plane      | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
+| Design                          | Pops | Mechanisms (typical)   | Axes / ranges                                      | Step | Cells | Figures        |
+| ------------------------------- | ---- | ---------------------- | -------------------------------------------------- | ---- | ----- | -------------- |
+| One-population baseline         | 1    | \_, P, M, IMP, IJMPQ  | c ∈ [0, b]                                         | 0.02 | 21    | Figs. S1–S2    |
+| Symmetric-c baseline, two pops  | 2    | \_, P, M, IMP, IJMPQ  | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Figs. S3–S6 |
+| Cooperation-cost asymmetry      | 2    | \_, P, M, IMP[, IJMPQ]| c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1 (IMP); S3–S12, S9; gs = 4: S7–S8 |
+| Symmetric information cost      | 2    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S13–S14  |
+| Fixed asymmetric c × shared i   | 2    | \_, P, M, IMP, IJMPQ  | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S19–S22  |
+| Per-population i, symmetric c   | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. 2 (IMP), S16–S18, S15  |
+| Crossed c and i asymmetries     | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3 (IMP), S24–S28, S23; gs = 4: S29–S30 |
+| PD payoff plane                 | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
+| Snowdrift payoff plane          | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
-I first establish baselines under equal cooperation cost (one-population ceilings
-Fig. S1, snowdrift Fig. S2; cooperation above fitness in each). Shuffle short-memory
+I first establish one-population baselines (ceilings Fig. S1, snowdrift Fig. S2;
+cooperation above fitness in each). Shuffle short-memory
 variants (M, MP, IM, IMP) are reported in Results §1 without dedicated figures.
-Fig. 1 is the full c₀ × c₁ cooperation grid (prisoner's dilemma); its fitness and
-snowdrift twins are Figs. S10–S12. Figs. S3, S5 place matched-cost and c₁ = c₀ + 0.02
+Fig. 1 shows cooperation under asymmetric cooperation costs with low symmetric
+information cost; its fitness and snowdrift twins are Figs. S10–S12. Figs. S3, S5 place symmetric-cost and c₁ = c₀ + 0.02
 strips on shared axes for the prisoner's dilemma and snowdrift and still show M beside
 P, IMP, and IJMPQ (fitness counterparts Figs. S4, S6; group-size-4 counterparts of
-Figs. S3, S5, 3 and S25 are Figs. S7–S8 and S29–S30). Matched information cost is
-Figs. S13–S14 (Cost × c grids in two populations; —|P|M|IMP|IJMPQ; cooperation and gap;
+Figs. S3, S5, 3 and S25 are Figs. S7–S8 and S29–S30). Symmetric information cost is
+Figs. S13–S14 (Cost × c grids in two populations; —|P|M|IMP|IJMPQ; cooperation and the difference between populations;
 prisoner's dilemma and snowdrift).
 
-Equal-c information-cost asymmetry is Fig. 2 (—|P|M|IMP; fitness Fig. S16; snowdrift
-Figs. S17–S18; five-column twin Fig. S15). Shared-i under a cooperation-cost gap is
-Figs. S19–S22. The crossed i₀ × i₁ plane under a fixed cooperation-cost gap is
+Symmetric-c information-cost asymmetry is Fig. 2 (—|P|M|IMP; fitness Fig. S16; snowdrift
+Figs. S17–S18; five-column twin Fig. S15). Shared-i under asymmetric cooperation costs is
+Figs. S19–S22. The crossed i₀ × i₁ plane under fixed asymmetric cooperation costs is
 Figs. 3 and S25 (main Fig. 3: _, P, M, IMP; supplement adds IJMPQ; absolute
-cooperation and the cheap−expensive gap; prisoner's dilemma and snowdrift), with
+cooperation and the cheap−expensive difference; prisoner's dilemma and snowdrift), with
 fitness counterparts Figs. S24 and S26 and the five-column twin of Fig. 3 as
 Fig. S23. The fixed-total line cut of that plane is Figs. S27–S28 (cooperation and
 fitness; columns —|P|M|IMP|IJMPQ). Fig. S27 holds total information cost fixed at
