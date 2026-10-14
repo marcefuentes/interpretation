@@ -97,12 +97,12 @@ Examples:
 
 **asymmetric_c1_i**: extends asymmetric_c0_c1 pop_2 with the same information-cost axis but on the asymmetric branch: c0 is fixed at 0.10 for pop_0, and Cost is swept jointly with c1 over the triangle Cost+c1<=0.4 with c1>c0 (120 cells: Cost in {0,0.02,...,0.28}; c1 in {0.12,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), Runs=30 (image); asymmetric_c1_i_1run is the single-run temporal variant. Cell key is (Cost, c1). Analysis: asymmetric_c1_i.md; ai/analyze_asymmetric_c1_i.py.
 
-**asymmetric_c1_i0_i1**: crossed asymmetries (the c-gap arm of the per-population information-cost programme; its no-c-gap counterpart is asymmetric_i0_i1) — fixed cooperation-cost gap c0=0.10, c1=0.20; full Cost0×Cost1 square on [0, b]×[0, b] (441 cells; noshuffle holds the primary Cost0≤0.30, Cost1≤0.20 rectangle of 176 cells plus the noshuffle2 complement). Headline analysis stays on the 176-cell rectangle; main-text Fig. 4, its snowdrift
-twin S21, and fitness twins S20/S22 use the full square. Equal-c counterpart is
-main-text Fig. 3 (fitness S13; snowdrift S14–S15). Two-population supplement
+**asymmetric_c1_i0_i1**: crossed asymmetries (the c-gap arm of the per-population information-cost programme; its no-c-gap counterpart is asymmetric_i0_i1) — fixed cooperation-cost gap c0=0.10, c1=0.20; full Cost0×Cost1 square on [0, b]×[0, b] (441 cells; noshuffle holds the primary Cost0≤0.30, Cost1≤0.20 rectangle of 176 cells plus the noshuffle2 complement). Headline analysis stays on the 176-cell rectangle; main-text Fig. 3, its snowdrift
+twin S22, and fitness twins S21/S23 use the full square. Equal-c counterpart is
+main-text Fig. 2 (fitness S14; snowdrift S15–S16). Two-population supplement
 heatmaps follow the same 3×4 template with separate cooperation and fitness figures
-(S5–S8, S13–S15, S16–S19). Group-size-4 counterparts of Figs. 1–2, 4 and S21
-are S9–S10 and S25–S26. pop_2; same ecology as other TRPS studies. graphgen:
+(Fig. 1; S7–S9, S14–S16, S17–S20). Group-size-4 counterparts of Figs. S3–S4, 3 and S22
+are S10–S11 and S26–S27. pop_2; same ecology as other TRPS studies. graphgen:
 `asymmetric_c1_i0_i1` / `_1run`. Regenerate movie caches: `python -m graphgen.main --study asymmetric_c1_i0_i1_1run --export-slices --movie --results ~/results`. Analysis: asymmetric_c1_i0_i1.md; ai/analyze_asymmetric_c1_i0_i1.py.
 
 **asymmetric_i0_i1**: per-population information cost at symmetric cooperation cost (the no-c-gap arm; its c-gap counterpart is asymmetric_c1_i0_i1): c0=c1=c (primary c=0.10 via `csv_*_filtered_for_image.con`; secondary c=0.20 via `csv_*_c020_for_image.con`), Cost0 and Cost1 swept on a strict triangle Cost0<Cost1 with per-axis cap b-c (120 cells at c=0.10; 55 at c=0.20). pop_2 only; gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, Runs=30 (image). Cell key is (Cost0, Cost1). Regenerate slice caches: `python -m graphgen.main --study asymmetric_i0_i1 --export-slices --clean --results ~/results` (and `_1run` variant; add `--movie` for temporal). Analysis: asymmetric_i0_i1.md; ai/analyze_asymmetric_i0_i1.py.

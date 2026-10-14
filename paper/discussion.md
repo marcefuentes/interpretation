@@ -27,18 +27,18 @@ split even under full parameter symmetry via partner choice.
 
 I separate **parameter symmetry** (c₀ = c₁, i₀ = i₁, identical payoffs) from
 **outcome symmetry** (similar cooperation and fitness). At matched parameters,
-partner-choice populations stochastically split in the prisoner's dilemma (Fig. 1,
+partner-choice populations stochastically split in the prisoner's dilemma (Fig. S3,
 top row). When one population pays a lower cooperation cost, that population
-cooperates and the other exploits (Fig. 1, bottom row). Fig. 2 is the snowdrift
+cooperates and the other exploits (Fig. S3, bottom row). Fig. S4 is the snowdrift
 counterpart of that layout: payoffs already split roles without enforcement when the
-sucker payoff is high (Fig. 2a,e; full grid Figs. S7–S8; gs = 4 Fig. S10). When
+sucker payoff is high (Fig. S4a,e; full grid Figs. S8–S9; gs = 4 Fig. S11). When
 populations differ only in information cost, partner choice still locks roles, while
 under IJMPQ the expensive population can cooperate more; snowdrift removes these PD
-locks (Fig. 3; snowdrift Fig. S14; crossed-design snowdrift Fig. S21). Under partner
-choice the more cooperative population earns less fitness (Figs. S5, S6j); direct
+locks (Fig. 2; snowdrift Fig. S15; crossed-design snowdrift Fig. S22). Under partner
+choice the more cooperative population earns less fitness (Fig. 1; Fig. S7j); direct
 reciprocity can reverse that fitness ranking even when the cheap side still cooperates
-more (Fig. S6k), and reward-limited combined mechanisms leave a mixed fitness gap
-(Fig. S6l).
+more (Fig. S7k), and reward-limited combined mechanisms leave a mixed fitness gap
+(Fig. S7l).
 
 ## Information cost versus cooperation cost
 
@@ -61,12 +61,12 @@ help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
 in information cost still lock roles or place the expensive side ahead, depending on
-mechanism (Fig. 3; fitness Fig. S13; snowdrift Figs. S14–S15).
+mechanism (Fig. 2; fitness Fig. S14; snowdrift Figs. S15–S16).
 When both cost axes differ, populations follow the cooperation-cost gap
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and the expensive population cooperates more only on an i₀ ≈ 0 strip
-(Fig. 4l), weaker than in the equal-c case. Snowdrift removes this
-regime entirely (Fig. S21).
+(Fig. 3l), weaker than in the equal-c case. Snowdrift removes this
+regime entirely (Fig. S22).
 What decides whether a mechanism can place the expensive population ahead of the cheap
 one is whether populations carry the reciprocity family, not how large an information
 cost they pay — a controlled comparison the per-family information cost makes
@@ -80,8 +80,8 @@ places on its partner — a question prior work on costly punishment and monitor
 could not ask, because it levies those costs inside one population
 [@BoydRicherson1992; @FehrGachter2002; @StevensHauser2004]. Under each mechanism,
 both populations bear a burden from one population's information cost, and the two
-mechanism families place that burden on opposite populations (Fig. 4b,f,j versus
-Fig. 4d,h,l). Under partner choice, populations bear the
+mechanism families place that burden on opposite populations (Fig. 3b,f,j versus
+Fig. 3d,h,l). Under partner choice, populations bear the
 burden of the high-cooperation-cost population's information cost, because a swap
 needs a chooser on both sides and that population supplies fewer choosers; under
 reciprocity-bearing mechanisms, populations bear the burden of the
@@ -92,7 +92,7 @@ information cost can end up with fewer *active* choosers, and a tenth of the
 cooperation, of the same population when it pays a heavy information cost itself.
 
 Equal information-cost totals are therefore neither interchangeable nor additive
-(Fig. S23b,d): both populations sharing a total cooperate less than when either pays
+(Fig. S24b,d): both populations sharing a total cooperate less than when either pays
 it alone, since each corner leaves one population still carrying mechanism alleles
 while a split leaves neither.
 That result extends the second-order free-rider literature rather than replacing it:

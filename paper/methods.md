@@ -210,15 +210,15 @@ Table 2. Mechanisms.
 
 | Label | Loci enabled     | Info-cost units | Structures                        | Where reported                        |
 | ----- | ---------------- | --------------- | --------------------------------- | ------------------------------------- |
-| \_    | none behavioral  | 0-2 if carried  | one or two pops; shuffle optional | baselines; Figs. 1a,e, 2a,e; Fig. S1a; plane heatmaps |
-| M     | C, M             | 1               | one or two pops; shuffle optional | Figs. 1c,g, 2c,g; Figs. 3–4 and S21, S1c, S5–S26; Results §7 |
-| P     | C, P             | 1               | one or two pops; shuffle optional | Figs. 1–4; Figs. S1b, S5–S26         |
+| \_    | none behavioral  | 0-2 if carried  | one or two pops; shuffle optional | baselines; Figs. S3a,e, S4a,e; Fig. S1a; plane heatmaps |
+| M     | C, M             | 1               | one or two pops; shuffle optional | Figs. S3c,g, S4c,g; Figs. 1–3 and S22, S1c, S3–S27; Results §7 |
+| P     | C, P             | 1               | one or two pops; shuffle optional | Figs. 1–3; Figs. S1b, S3–S27         |
 | MP    | C, M, P          | 2               | one or two pops; shuffle optional | Results §1 shuffle; Results §7 (not plotted) |
 | MPQ   | C, M, P, Q       | 2               | one or two pops; shuffle optional | Results §7 (not plotted)             |
 | IM    | C, I, M          | 1               | shuffle only                      | Results §1 shuffle; not a manuscript panel |
 | IJM   | C, I, J, M       | 1               | shuffle only                      | Results §1 shuffle; not a manuscript panel |
 | IMP   | C, I, M, P       | 2               | one or two pops; shuffle optional | Results §7 (not plotted)             |
-| IJMPQ | C, I, J, M, P, Q | 2               | one or two pops; shuffle optional | Behavioral rules (combined IJMPQ); Figs. 1–4; Figs. S1d, S5–S26 |
+| IJMPQ | C, I, J, M, P, Q | 2               | one or two pops; shuffle optional | Behavioral rules (combined IJMPQ); Figs. 1–3; Figs. S1d, S3–S27 |
 
 No enforcement (_) disables partner choice and reciprocity while the loci still mutate
 and still cost. Indirect reciprocity stands alone as a mechanism (IM, IJM) only under
@@ -280,33 +280,34 @@ Table 3. Simulation designs.
 | Design                      | Pops | Mechanisms (typical)   | Axes / ranges                                      | Step | Cells | Figures        |
 | --------------------------- | ---- | ---------------------- | -------------------------------------------------- | ---- | ----- | -------------- |
 | Equal-c baseline, one pop   | 1    | \_, P, M, IJMPQ       | c ∈ [0, b]                                         | 0.02 | 21    | Figs. S1–S2    |
-| Equal-c baseline, two pops  | 2    | \_, P, M, IJMPQ       | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Figs. 1–2; S3–S4 |
-| Cooperation-cost asymmetry  | 2    | \_, P, M, IJMPQ       | c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Figs. 1–2, S5–S8; gs = 4: S9–S10 |
-| Symmetric information cost  | 2    | \_, P, M, IJMPQ       | i + c ≤ b                                          | 0.02 | 231   | Figs. S11–S12  |
-| Fixed c-gap × shared i      | 2    | \_, P, M, IJMPQ       | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S16–S19  |
-| Per-population i, equal c   | 2    | \_, P, M, IJMPQ       | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. 3, S13–S15  |
-| Crossed c and i asymmetries | 2    | \_, P, M, IJMPQ        | c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 4, S20–S24; gs = 4: S25–S26 |
+| Equal-c baseline, two pops  | 2    | \_, P, M, IJMPQ       | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Figs. S3–S6 |
+| Cooperation-cost asymmetry  | 2    | \_, P, M, IJMPQ       | c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1; Figs. S3–S9; gs = 4: S10–S11 |
+| Symmetric information cost  | 2    | \_, P, M, IJMPQ       | i + c ≤ b                                          | 0.02 | 231   | Figs. S12–S13  |
+| Fixed c-gap × shared i      | 2    | \_, P, M, IJMPQ       | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S17–S20  |
+| Per-population i, equal c   | 2    | \_, P, M, IJMPQ       | c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. 2, S14–S16  |
+| Crossed c and i asymmetries | 2    | \_, P, M, IJMPQ        | c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3, S21–S25; gs = 4: S26–S27 |
 | PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
 | Snowdrift payoff plane      | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
 I first establish baselines under equal cooperation cost (one-population ceilings
 Fig. S1, snowdrift Fig. S2; cooperation above fitness in each). Shuffle short-memory
 variants (M, MP, IM, IMP) are reported in Results §1 without dedicated figures.
-Figs. 1–2 place matched-cost and c₁ = c₀ + 0.02 strips on shared axes for the
-prisoner's dilemma and snowdrift and still show M beside P and IJMPQ (fitness
-counterparts Figs. S3–S4; full grids Figs. S5–S8 use the Fig. 4 template with
-separate cooperation and fitness figures; group-size-4 counterparts of Figs. 1–2,
-4 and S21 are Figs. S9–S10 and S25–S26). Matched information cost is Figs. S11–S12 (Cost × c
-grids in two populations; —|P|M|IJMPQ; cooperation and gap; prisoner's dilemma and snowdrift).
+Fig. 1 is the full c₀ × c₁ cooperation grid (prisoner's dilemma); its fitness and
+snowdrift twins are Figs. S7–S9. Figs. S3–S4 place matched-cost and c₁ = c₀ + 0.02
+strips on shared axes for the prisoner's dilemma and snowdrift and still show M beside
+P and IJMPQ (fitness counterparts Figs. S5–S6; group-size-4 counterparts of
+Figs. S3–S4, 3 and S22 are Figs. S10–S11 and S26–S27). Matched information cost is
+Figs. S12–S13 (Cost × c grids in two populations; —|P|M|IJMPQ; cooperation and gap;
+prisoner's dilemma and snowdrift).
 
-Equal-c information-cost asymmetry is Fig. 3 (fitness Fig. S13; snowdrift
-Figs. S14–S15). Shared-i under a cooperation-cost gap is Figs. S16–S19. The
-crossed i₀ × i₁ plane under a fixed cooperation-cost gap is Figs. 4 and S21 (_, P, M,
+Equal-c information-cost asymmetry is Fig. 2 (fitness Fig. S14; snowdrift
+Figs. S15–S16). Shared-i under a cooperation-cost gap is Figs. S17–S20. The
+crossed i₀ × i₁ plane under a fixed cooperation-cost gap is Figs. 3 and S22 (_, P, M,
 and IJMPQ; absolute cooperation and the cheap−expensive gap; prisoner's dilemma and
-snowdrift), with fitness counterparts Figs. S20 and S22. The fixed-total line cut of
-that plane is Figs. S23–S24 (cooperation and fitness; columns —|P|M|IJMPQ to match
-Fig. 4). Fig. S23 holds total information cost fixed at i₀ + i₁ = 0.2 while the
-split varies; who-pays edges are read from Fig. 4. Fitness plane: Figs. S20 and S22.
+snowdrift), with fitness counterparts Figs. S21 and S23. The fixed-total line cut of
+that plane is Figs. S24–S25 (cooperation and fitness; columns —|P|M|IJMPQ to match
+Fig. 3). Fig. S24 holds total information cost fixed at i₀ + i₁ = 0.2 while the
+split varies; who-pays edges are read from Fig. 3. Fitness plane: Figs. S21 and S23.
 
 Along the cooperation-cost axis, raising c changes several payoff gaps at once. The
 orthogonal payoff-plane sweeps vary payoffs independently of c; Table S1 reports the
