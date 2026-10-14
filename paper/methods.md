@@ -281,7 +281,7 @@ Table 3. Simulation designs.
 | --------------------------- | ---- | ---------------------- | -------------------------------------------------- | ---- | ----- | -------------- |
 | Equal-c baseline, one pop   | 1    | \_, P, M, IMP, IJMPQ  | c ∈ [0, b]                                         | 0.02 | 21    | Figs. S1–S2    |
 | Equal-c baseline, two pops  | 2    | \_, P, M, IMP, IJMPQ  | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Figs. S3–S6 |
-| Cooperation-cost asymmetry  | 2    | \_, P, M, IMP[, IJMPQ]| c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1 (IMP); S3–S9, S28; gs = 4: S10–S11 |
+| Cooperation-cost asymmetry  | 2    | \_, P, M, IMP[, IJMPQ]| c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1 (IMP); S3–S11, S28; gs = 4: S7–S8 |
 | Symmetric information cost  | 2    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S12–S13  |
 | Fixed c-gap × shared i      | 2    | \_, P, M, IMP, IJMPQ  | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S17–S20  |
 | Per-population i, equal c   | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. 2 (IMP), S14–S16, S29  |
@@ -293,10 +293,10 @@ I first establish baselines under equal cooperation cost (one-population ceiling
 Fig. S1, snowdrift Fig. S2; cooperation above fitness in each). Shuffle short-memory
 variants (M, MP, IM, IMP) are reported in Results §1 without dedicated figures.
 Fig. 1 is the full c₀ × c₁ cooperation grid (prisoner's dilemma); its fitness and
-snowdrift twins are Figs. S7–S9. Figs. S3–S4 place matched-cost and c₁ = c₀ + 0.02
+snowdrift twins are Figs. S9–S11. Figs. S3–S4 place matched-cost and c₁ = c₀ + 0.02
 strips on shared axes for the prisoner's dilemma and snowdrift and still show M beside
 P, IMP, and IJMPQ (fitness counterparts Figs. S5–S6; group-size-4 counterparts of
-Figs. S3–S4, 3 and S22 are Figs. S10–S11 and S26–S27). Matched information cost is
+Figs. S3–S4, 3 and S22 are Figs. S7–S8 and S26–S27). Matched information cost is
 Figs. S12–S13 (Cost × c grids in two populations; —|P|M|IMP|IJMPQ; cooperation and gap;
 prisoner's dilemma and snowdrift).
 

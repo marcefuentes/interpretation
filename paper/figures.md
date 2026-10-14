@@ -10,20 +10,20 @@ Regenerate any manuscript figure from ~/code/graph with the venv active:
     cd ~/code/graph && . .venv/bin/activate
     python -m graphgen.main --study interpretation --figure FIG --groupsize 128 --output ~/figures
 
-`--groupsize` overrides every source, including figS10–figS27 (which embed
+`--groupsize` overrides every source, including figS7–figS27 (which embed
 `groupsize=4` as counterparts of Figs. S3–S4, 3 and S22). Regenerate those without
 the flag, or with `--groupsize 4`:
 
-    python -m graphgen.main --study interpretation --figure figS10 --output ~/figures
+    python -m graphgen.main --study interpretation --figure figS7 --output ~/figures
     python -m graphgen.main --study interpretation --figure figS26 --output ~/figures
 
-Warm group-size-4 line-slice caches before regenerating S10–S11:
+Warm group-size-4 line-slice caches before regenerating S7–S8:
 
     python -m graphgen.main --study asymmetric_c0_c1_lines --export-slices --groupsize 4
 
 Generate all manuscript PNGs and publication reports (figures must exist in the
 output directory first). Prefer omitting `--groupsize` for `--all` so source-
-level sizes (S10–S11, S26–S27) are kept; pass `--groupsize 128` only for single figures
+level sizes (S7–S8, S26–S27) are kept; pass `--groupsize 128` only for single figures
 that should force 128:
 
     python -m graphgen.main --study interpretation --all --output ~/figures
@@ -36,7 +36,7 @@ The report includes main text Figs 1–3 (fig1–fig3) and supplement Figs S1–
 - Markdown: paper/captions.md (supplement legends S1–S30 only; main-text legends live in results.md)
 
 PD and snowdrift never share a figure. Fig. 1 is the full c₀×c₁ PD coop grid
-(snowdrift twin S8; fitness S7). Matched/gap strips are S3–S4 (fitness S5–S6).
+(snowdrift twin S10; fitness S9). Matched/gap strips are S3–S4 (fitness S5–S6).
 Fig. 2 is equal-c i asymmetry (snowdrift twin S15; fitness S14). Fig. 3 and S22 are
 the crossed c-gap × i₀×i₁ PD/SD pair (fitness S21/S23). Fixed-total line cuts of
 Fig. 3 are S24–S25. Two-population heatmaps use the same row template (4 columns in main text,
@@ -62,10 +62,10 @@ one colorbar per row). S28–S30 are five-column twins of Figs. 1–3. Cooperati
 | figS2 | Line | same as figS1 | Snowdrift twin of S1 |
 | figS5 | Line | same as figS3, wmean | Fitness of Fig. S3 |
 | figS6 | Line | same as figS4, wmean | Fitness of Fig. S4 |
-| fig1 | Heatmap | asymmetric_c0_c1, plane qBSeen (_/P/M/IMP) | PD coop 3×4; twin → figS8; 5-col → figS28 |
-| figS7 | Heatmap | asymmetric_c0_c1, plane wmean | PD fitness; twin → figS9 |
-| figS10 | Line | same as figS3, gs = 4 | Fig. S3 at gs = 4; twin → figS11 |
-| figS11 | Line | same as figS4, gs = 4 | Fig. S4 at gs = 4 |
+| fig1 | Heatmap | asymmetric_c0_c1, plane qBSeen (_/P/M/IMP) | PD coop 3×4; twin → figS10; 5-col → figS28 |
+| figS9 | Heatmap | asymmetric_c0_c1, plane wmean | PD fitness; twin → figS11 |
+| figS7 | Line | same as figS3, gs = 4 | Fig. S3 at gs = 4; twin → figS8 |
+| figS8 | Line | same as figS4, gs = 4 | Fig. S4 at gs = 4 |
 | figS12 | Heatmap | symmetric_c_i pop_2, _/P/M/IMP/IJMPQ | PD 3×5 Cost×c coop+gap; twin → figS13 |
 | figS14 | Heatmap | asymmetric_i0_i1, plane wmean | Equal-c fitness; twin → figS16 |
 | figS15 | Heatmap | twin of fig2 | Equal-c snowdrift coop |
@@ -86,8 +86,8 @@ one colorbar per row). S28–S30 are five-column twins of Figs. 1–3. Cooperati
 
 ### Panel order notes
 
-1. Main Figs. 1–3: 3×4; columns — | P | M | IMP. Supplement two-pop planes (S7–S9, S14–S23, S26–S30, S22): 3×5; columns — | P | M | IMP | IJMPQ; rows = cheap/expensive/gap (or low-i/high-i/gap for equal-c); one colorbar per row; cooperation and fitness are separate figures. S28–S30 are five-column twins of Figs. 1–3.
-2. figS3 / figS4: 2×5 strip line plots; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IMP, IJMPQ. S10–S11 are their gs=4 counterparts.
+1. Main Figs. 1–3: 3×4; columns — | P | M | IMP. Supplement two-pop planes (S9–S11, S14–S23, S26–S30, S22): 3×5; columns — | P | M | IMP | IJMPQ; rows = cheap/expensive/gap (or low-i/high-i/gap for equal-c); one colorbar per row; cooperation and fitness are separate figures. S28–S30 are five-column twins of Figs. 1–3.
+2. figS3 / figS4: 2×5 strip line plots; row 0 = matched costs, row 1 = c₁ = c₀ + 0.02; columns —, P, M, IMP, IJMPQ. S7–S8 are their gs=4 counterparts.
 3. figS1 / figS2: 2×5; row 0 = coop, row 1 = fitness; same mechanism columns.
 4. S12–S13: 3×5 two-pop matched Cost×c (coop + gap); rows = higher-/lower-coop / gap; columns — | P | M | IMP | IJMPQ.
 5. figS24 / S25: fixed-total line cuts (2×5; rows coop / fitness; columns —|P|M|IMP|IJMPQ; shared i₁ x title).
@@ -110,11 +110,11 @@ python -m graphgen.main --study symmetric_c_i_lines --export-slices --groupsize 
 | S4 | Matched vs gap cooperation-cost strips (snowdrift) | figS4 |
 | S5 | Fitness twin of Fig. S3 | figS5 |
 | S6 | Fitness twin of Fig. S4 | figS6 |
-| S7 | Full c₀ × c₁ grid PD (fitness) | figS7 |
-| S8 | Full c₀ × c₁ grid snowdrift (coop) | figS8 |
-| S9 | Full c₀ × c₁ grid snowdrift (fitness) | figS9 |
-| S10 | Group-size-4 counterpart of Fig. S3 | figS10 |
-| S11 | Group-size-4 counterpart of Fig. S4 | figS11 |
+| S7 | Group-size-4 counterpart of Fig. S3 | figS7 |
+| S8 | Group-size-4 counterpart of Fig. S4 | figS8 |
+| S9 | Full c₀ × c₁ grid PD (fitness) | figS9 |
+| S10 | Full c₀ × c₁ grid snowdrift (coop) | figS10 |
+| S11 | Full c₀ × c₁ grid snowdrift (fitness) | figS11 |
 | S12 | Matched Cost × c (two pops; PD coop + gap) | figS12 |
 | S13 | Matched Cost × c (two pops; snowdrift) | figS13 |
 | S14 | Fitness twin of Fig. 2 (equal-c PD) | figS14 |

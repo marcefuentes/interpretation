@@ -101,9 +101,9 @@ Examples:
 twin S22, and fitness twins S21/S23 use the full square. Equal-c counterpart is
 main-text Fig. 2 (fitness S14; snowdrift S15–S16). Two-population supplement
 heatmaps follow a shared row template (main Figs. 1–3: 3×4 —|P|M|IMP; supplement:
-3×5 —|P|M|IMP|IJMPQ) with separate cooperation and fitness figures (Fig. 1; S7–S9,
+3×5 —|P|M|IMP|IJMPQ) with separate cooperation and fitness figures (Fig. 1; S9–S11,
 S14–S16, S17–S20; five-column twins of Figs. 1–3 are S28–S30). Group-size-4
-counterparts of Figs. S3–S4, 3 and S22 are S10–S11 and S26–S27. pop_2; same ecology as other TRPS studies. graphgen:
+counterparts of Figs. S3–S4, 3 and S22 are S7–S8 and S26–S27. pop_2; same ecology as other TRPS studies. graphgen:
 `asymmetric_c1_i0_i1` / `_1run`. Regenerate movie caches: `python -m graphgen.main --study asymmetric_c1_i0_i1_1run --export-slices --movie --results ~/results`. Analysis: asymmetric_c1_i0_i1.md; ai/analyze_asymmetric_c1_i0_i1.py.
 
 **asymmetric_i0_i1**: per-population information cost at symmetric cooperation cost (the no-c-gap arm; its c-gap counterpart is asymmetric_c1_i0_i1): c0=c1=c (primary c=0.10 via `csv_*_filtered_for_image.con`; secondary c=0.20 via `csv_*_c020_for_image.con`), Cost0 and Cost1 swept on a strict triangle Cost0<Cost1 with per-axis cap b-c (120 cells at c=0.10; 55 at c=0.20). pop_2 only; gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, Runs=30 (image). Cell key is (Cost0, Cost1). Regenerate slice caches: `python -m graphgen.main --study asymmetric_i0_i1 --export-slices --clean --results ~/results` (and `_1run` variant; add `--movie` for temporal). Analysis: asymmetric_i0_i1.md; ai/analyze_asymmetric_i0_i1.py.

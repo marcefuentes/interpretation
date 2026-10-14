@@ -31,14 +31,14 @@ partner-choice populations stochastically split in the prisoner's dilemma (Fig. 
 top row). When one population pays a lower cooperation cost, that population
 cooperates and the other exploits (Fig. S3, bottom row). Fig. S4 is the snowdrift
 counterpart of that layout: payoffs already split roles without enforcement when the
-sucker payoff is high (Fig. S4a,e; full grid Figs. S8–S9; gs = 4 Fig. S11). When
+sucker payoff is high (Fig. S4a,e; full grid Figs. S10–S11; gs = 4 Fig. S8). When
 populations differ only in information cost, partner choice still locks roles, while
 under IJMPQ the expensive population can cooperate more; snowdrift removes these PD
 locks (Fig. 2; snowdrift Fig. S15; crossed-design snowdrift Fig. S22). Under partner
-choice the more cooperative population earns less fitness (Fig. 1; Fig. S7j); direct
+choice the more cooperative population earns less fitness (Fig. 1; Fig. S9j); direct
 reciprocity can reverse that fitness ranking even when the cheap side still cooperates
-more (Fig. S7k), and reward-limited combined mechanisms leave a mixed fitness gap
-(Fig. S7l).
+more (Fig. S9k), and reward-limited combined mechanisms leave a mixed fitness gap
+(Fig. S9l).
 
 ## Information cost versus cooperation cost
 

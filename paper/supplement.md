@@ -15,11 +15,11 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S4 | Matched vs gap cooperation-cost strips (snowdrift; coop) | Fig. 1; Results §2 |
 | Fig. S5 | Fitness counterpart of Fig. S3 (PD) | Figs. S3–S4 |
 | Fig. S6 | Fitness counterpart of Fig. S4 (snowdrift) | Figs. S3–S4 |
-| Fig. S7 | Full c₀ × c₁ cooperation grid (PD; fitness + gap) | Fig. 1 |
-| Fig. S8 | Full c₀ × c₁ cooperation grid (snowdrift; coop + gap) | Fig. 1 |
-| Fig. S9 | Full c₀ × c₁ cooperation grid (snowdrift; fitness + gap) | Fig. 1 |
-| Fig. S10 | Group-size-4 counterpart of Fig. S3 (PD; coop) | Fig. S3 |
-| Fig. S11 | Group-size-4 counterpart of Fig. S4 (snowdrift; coop) | Fig. S4 |
+| Fig. S7 | Group-size-4 counterpart of Fig. S3 (PD; coop) | Fig. S3 |
+| Fig. S8 | Group-size-4 counterpart of Fig. S4 (snowdrift; coop) | Fig. S4 |
+| Fig. S9 | Full c₀ × c₁ cooperation grid (PD; fitness + gap) | Fig. 1 |
+| Fig. S10 | Full c₀ × c₁ cooperation grid (snowdrift; coop + gap) | Fig. 1 |
+| Fig. S11 | Full c₀ × c₁ cooperation grid (snowdrift; fitness + gap) | Fig. 1 |
 | Fig. S12 | Information cost × cooperation cost (two populations; PD) | Results §3 |
 | Fig. S13 | Information cost × cooperation cost (two populations; snowdrift) | Results §3 |
 | Fig. S14 | Fitness under equal-c i asymmetry (PD) | Fig. 2 |
@@ -75,9 +75,9 @@ Journal sources: [synthesis](../journal/synthesis.md),
 **Figs. S1–S2 cost thresholds.** One-population PD ceilings with fitness (S1) and
 snowdrift (S2).
 
-**Fig. 1 full c₀ × c₁ grid.** Fitness counterpart: Fig. S7. Snowdrift: Figs. S8–S9.
+**Fig. 1 full c₀ × c₁ grid.** Fitness counterpart: Fig. S9. Snowdrift: Figs. S10–S11.
 Matched and gap strips (former main-text Figs. 1–2): Figs. S3–S4 (fitness S5–S6).
-Group-size-4 counterparts of Figs. S3–S4, 3 and S22: Figs. S10–S11 and S26–S27
+Group-size-4 counterparts of Figs. S3–S4, 3 and S22: Figs. S7–S8 and S26–S27
 (cooperation only).
 
 **Figs. S12–S13 matched information cost.** Cost × c surfaces in two populations
