@@ -17,28 +17,28 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S6 | Fitness under symmetric and asymmetric cooperation costs in two populations (snowdrift) | Figs. S3, S5 |
 | Fig. S7 | Cooperation under symmetric and asymmetric cooperation costs at group size 4 in two populations (PD) | Fig. S3 |
 | Fig. S8 | Cooperation under symmetric and asymmetric cooperation costs at group size 4 in two populations (snowdrift) | Fig. S5 |
-| Fig. S9 | Cooperation under asymmetric cooperation costs and low and symmetric information costs (PD) | Fig. 1 |
-| Fig. S10 | Fitness under asymmetric cooperation costs and low and symmetric information costs (PD) | Fig. 1 |
-| Fig. S11 | Cooperation under asymmetric cooperation costs and low and symmetric information costs (snowdrift) | Fig. 1 |
-| Fig. S12 | Fitness under asymmetric cooperation costs and low and symmetric information costs (snowdrift) | Fig. 1 |
+| Fig. S9 | Cooperation under asymmetric cooperation costs (PD) | Fig. 1 |
+| Fig. S10 | Fitness under asymmetric cooperation costs (PD) | Fig. 1 |
+| Fig. S11 | Cooperation under asymmetric cooperation costs (snowdrift) | Fig. 1 |
+| Fig. S12 | Fitness under asymmetric cooperation costs (snowdrift) | Fig. 1 |
 | Fig. S13 | Cooperation under symmetric cooperation and information costs (PD) | Results §3 |
 | Fig. S14 | Cooperation under symmetric cooperation and information costs (snowdrift) | Results §3 |
-| Fig. S15 | Cooperation under symmetric cooperation costs and asymmetric information costs (PD) | Fig. 2 |
-| Fig. S16 | Fitness under symmetric cooperation costs and asymmetric information costs (PD) | Fig. 2 |
-| Fig. S17 | Cooperation under symmetric cooperation costs and asymmetric information costs (snowdrift) | Fig. 2 |
-| Fig. S18 | Fitness under symmetric cooperation costs and asymmetric information costs (snowdrift) | Fig. 2 |
-| Fig. S19 | Cooperation under asymmetric cooperation costs and symmetric information costs (PD) | Results §5 |
-| Fig. S20 | Fitness under asymmetric cooperation costs and symmetric information costs (PD) | Results §5 |
-| Fig. S21 | Cooperation under asymmetric cooperation costs and symmetric information costs (snowdrift) | Results §5 |
-| Fig. S22 | Fitness under asymmetric cooperation costs and symmetric information costs (snowdrift) | Results §5 |
-| Fig. S23 | Cooperation under asymmetric cooperation costs and asymmetric information costs (PD) | Fig. 3 |
-| Fig. S24 | Fitness under asymmetric cooperation costs and asymmetric information costs (PD) | Fig. 3 |
-| Fig. S25 | Cooperation under asymmetric cooperation costs and asymmetric information costs (snowdrift) | Fig. 3 |
-| Fig. S26 | Fitness under asymmetric cooperation costs and asymmetric information costs (snowdrift) | Fig. S25 |
-| Fig. S27 | Cooperation and fitness under a fixed total information cost in two populations (PD) | Fig. 3 |
-| Fig. S28 | Cooperation and fitness under a fixed total information cost in two populations (snowdrift) | Fig. S25 |
-| Fig. S29 | Cooperation under asymmetric cooperation costs and asymmetric information costs at group size 4 (PD) | Fig. 3 |
-| Fig. S30 | Cooperation under asymmetric cooperation costs and asymmetric information costs at group size 4 (snowdrift) | Fig. S25 |
+| Fig. S15 | Cooperation under asymmetric information costs (PD) | Fig. 2 |
+| Fig. S16 | Fitness under asymmetric information costs (PD) | Fig. 2 |
+| Fig. S17 | Cooperation under asymmetric information costs (snowdrift) | Fig. 2 |
+| Fig. S18 | Fitness under asymmetric information costs (snowdrift) | Fig. 2 |
+| Fig. S19 | Cooperation under asymmetric cooperation costs and varying information costs (PD) | Results §5 |
+| Fig. S20 | Fitness under asymmetric cooperation costs and varying information costs (PD) | Results §5 |
+| Fig. S21 | Cooperation under asymmetric cooperation costs and varying information costs (snowdrift) | Results §5 |
+| Fig. S22 | Fitness under asymmetric cooperation costs and varying information costs (snowdrift) | Results §5 |
+| Fig. S23 | Cooperation under asymmetric cooperation and information costs (PD) | Fig. 3 |
+| Fig. S24 | Fitness under asymmetric cooperation and information costs (PD) | Fig. 3 |
+| Fig. S25 | Cooperation under asymmetric cooperation and information costs (snowdrift) | Fig. 3 |
+| Fig. S26 | Fitness under asymmetric cooperation and information costs (snowdrift) | Fig. S25 |
+| Fig. S27 | Cooperation and fitness under asymmetric cooperation costs in two populations (PD) | Fig. 3 |
+| Fig. S28 | Cooperation and fitness under asymmetric cooperation costs in two populations (snowdrift) | Fig. S25 |
+| Fig. S29 | Cooperation under asymmetric cooperation and information costs at group size 4 (PD) | Fig. 3 |
+| Fig. S30 | Cooperation under asymmetric cooperation and information costs at group size 4 (snowdrift) | Fig. S25 |
 | Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
 
 Captions for Figs. S1–S30 are in [captions.md](captions.md) (regenerated from the
