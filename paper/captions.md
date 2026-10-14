@@ -26,25 +26,25 @@ Shaded bands are ±1 SD over 30 runs.
 
 <strong>Fig. S3.</strong> Frequency of cooperators under different cost symmetries and cooperation mechanisms in two coevolving populations. (<strong>a–e</strong>) Cooperation costs follow c₁ = c₀ (light green line: population with the lower frequency of cooperators; dark green line: the other). (<strong>f–j</strong>) Cooperation costs follow c₁ = c₀ + 0.02 (red line: c₁; orange line: c₀). (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
 
-Shaded bands are ±1 SD over 30 runs. Fitness counterpart: Fig. S5. Snowdrift twin: Fig. S4. Full grid: Fig. 1; Fig. S9; gs = 4: Fig. S7.
+Shaded bands are ±1 SD over 30 runs. Fitness counterpart: Fig. S4. Snowdrift twin: Fig. S5. Full grid: Fig. 1; Fig. S10; gs = 4: Fig. S7.
 
-### <strong>Fig. S4.</strong> Cooperation under symmetric and asymmetric cooperation costs (snowdrift).
+### <strong>Fig. S4.</strong> Fitness counterpart of Fig. S3 (prisoner's dilemma).
 
 ![figS4](/home/marcelino/figures/interpretation/figS4.png)
 
-<strong>Fig. S4.</strong> Frequency of cooperators under different cost symmetries and cooperation mechanisms in two coevolving populations. (<strong>a–e</strong>) Cooperation costs follow c₁ = c₀ (light green line: population with the lower frequency of cooperators; dark green line: the other). (<strong>f–j</strong>) Cooperation costs follow c₁ = c₀ + 0.02 (red line: c₁; orange line: c₀). (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
-
-Shaded bands are ±1 SD over 30 runs. Fitness counterpart: Fig. S6. Full grid: Figs. S10–S11; gs = 4: Fig. S8.
-
-### <strong>Fig. S5.</strong> Fitness counterpart of Fig. S3 (prisoner's dilemma).
-
-![figS5](/home/marcelino/figures/interpretation/figS5.png)
-
-<strong>Fig. S5.</strong> Average fitness under different cost symmetries and cooperation mechanisms in two coevolving populations. (<strong>a–e</strong>) Cooperation costs follow c₁ = c₀ (light green line: population with the lower frequency of cooperators; dark green line: the other). (<strong>f–j</strong>) Cooperation costs follow c₁ = c₀ + 0.02 (red line: c₁; orange line: c₀). (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
+<strong>Fig. S4.</strong> Average fitness under different cost symmetries and cooperation mechanisms in two coevolving populations. (<strong>a–e</strong>) Cooperation costs follow c₁ = c₀ (light green line: population with the lower frequency of cooperators; dark green line: the other). (<strong>f–j</strong>) Cooperation costs follow c₁ = c₀ + 0.02 (red line: c₁; orange line: c₀). (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
 
 Shaded bands are ±1 SD over 30 runs. Snowdrift counterpart: Fig. S6.
 
-### <strong>Fig. S6.</strong> Fitness counterpart of Fig. S4 (snowdrift).
+### <strong>Fig. S5.</strong> Cooperation under symmetric and asymmetric cooperation costs (snowdrift).
+
+![figS5](/home/marcelino/figures/interpretation/figS5.png)
+
+<strong>Fig. S5.</strong> Frequency of cooperators under different cost symmetries and cooperation mechanisms in two coevolving populations. (<strong>a–e</strong>) Cooperation costs follow c₁ = c₀ (light green line: population with the lower frequency of cooperators; dark green line: the other). (<strong>f–j</strong>) Cooperation costs follow c₁ = c₀ + 0.02 (red line: c₁; orange line: c₀). (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
+
+Shaded bands are ±1 SD over 30 runs. Fitness counterpart: Fig. S6. Full grid: Figs. S11–S12; gs = 4: Fig. S8.
+
+### <strong>Fig. S6.</strong> Fitness counterpart of Fig. S5 (snowdrift).
 
 ![figS6](/home/marcelino/figures/interpretation/figS6.png)
 
@@ -66,180 +66,180 @@ Shaded bands are ±1 SD over 30 runs. Group-size-4 counterpart of Fig. S3. Snowd
 
 <strong>Fig. S8.</strong> Frequency of cooperators under different cost symmetries and cooperation mechanisms at group size 4 in two coevolving populations. (<strong>a–e</strong>) Cooperation costs follow c₁ = c₀ (light green line: population with the lower frequency of cooperators; dark green line: the other). (<strong>f–j</strong>) Cooperation costs follow c₁ = c₀ + 0.02 (red line: c₁; orange line: c₀). (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
 
-Group-size-4 counterpart of Fig. S4; snowdrift twin of Fig. S7.
+Group-size-4 counterpart of Fig. S5; snowdrift twin of Fig. S7.
 
-### <strong>Fig. S9.</strong> Fitness on the full cooperation-cost asymmetry grid (prisoner's dilemma).
+### <strong>Fig. S9.</strong> Full cooperation-cost asymmetry grid with IJMPQ (prisoner's dilemma).
 
 ![figS9](/home/marcelino/figures/interpretation/figS9.png)
 
-<strong>Fig. S9.</strong> Average fitness and the fitness gap across the full cooperation-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
+<strong>Fig. S9.</strong> Frequency of cooperators and the cooperation gap across the full cooperation-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
 
-Fitness counterpart of Fig. 1. Snowdrift twin: Fig. S11.
+Five-column version of Fig. 1 (adds IJMPQ).
 
-### <strong>Fig. S10.</strong> Full cooperation-cost asymmetry grid (snowdrift).
+### <strong>Fig. S10.</strong> Fitness on the full cooperation-cost asymmetry grid (prisoner's dilemma).
 
 ![figS10](/home/marcelino/figures/interpretation/figS10.png)
 
-<strong>Fig. S10.</strong> Frequency of cooperators and the cooperation gap across the full cooperation-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
+<strong>Fig. S10.</strong> Average fitness and the fitness gap across the full cooperation-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
 
-Snowdrift counterpart of Fig. 1.
+Fitness counterpart of Fig. 1. Snowdrift twin: Fig. S12.
 
-### <strong>Fig. S11.</strong> Fitness on the full cooperation-cost asymmetry grid (snowdrift).
+### <strong>Fig. S11.</strong> Full cooperation-cost asymmetry grid (snowdrift).
 
 ![figS11](/home/marcelino/figures/interpretation/figS11.png)
 
-<strong>Fig. S11.</strong> Average fitness and the fitness gap across the full cooperation-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
+<strong>Fig. S11.</strong> Frequency of cooperators and the cooperation gap across the full cooperation-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
 
-Fitness counterpart of Fig. S10; snowdrift twin of Fig. S9.
+Snowdrift counterpart of Fig. 1.
 
-### <strong>Fig. S12.</strong> Information cost versus cooperation cost (prisoner's dilemma).
+### <strong>Fig. S12.</strong> Fitness on the full cooperation-cost asymmetry grid (snowdrift).
 
 ![figS12](/home/marcelino/figures/interpretation/figS12.png)
 
-<strong>Fig. S12.</strong> Frequency of cooperators and the cooperation gap across information cost and cooperation cost in two coevolving populations. (<strong>a–e</strong>) Higher-cooperation population. (<strong>f–j</strong>) Lower-cooperation population. (<strong>k–o</strong>) Cooperation gap (high − low). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost.
+<strong>Fig. S12.</strong> Average fitness and the fitness gap across the full cooperation-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
 
-Snowdrift counterpart: Fig. S13.
+Fitness counterpart of Fig. S11; snowdrift twin of Fig. S10.
 
-### <strong>Fig. S13.</strong> Information cost versus cooperation cost (snowdrift).
+### <strong>Fig. S13.</strong> Information cost versus cooperation cost (prisoner's dilemma).
 
 ![figS13](/home/marcelino/figures/interpretation/figS13.png)
 
 <strong>Fig. S13.</strong> Frequency of cooperators and the cooperation gap across information cost and cooperation cost in two coevolving populations. (<strong>a–e</strong>) Higher-cooperation population. (<strong>f–j</strong>) Lower-cooperation population. (<strong>k–o</strong>) Cooperation gap (high − low). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost.
 
-Snowdrift counterpart of Fig. S12.
+Snowdrift counterpart: Fig. S14.
 
-### <strong>Fig. S14.</strong> Fitness under information-cost asymmetry at equal cooperation cost (prisoner's dilemma).
+### <strong>Fig. S14.</strong> Information cost versus cooperation cost (snowdrift).
 
 ![figS14](/home/marcelino/figures/interpretation/figS14.png)
 
-<strong>Fig. S14.</strong> Average fitness and the fitness gap under information-cost asymmetry at equal cooperation cost in two coevolving populations. (<strong>a–e</strong>) Lower-i population. (<strong>f–j</strong>) Higher-i population. (<strong>k–o</strong>) Fitness gap (low-i − high-i). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.1).
+<strong>Fig. S14.</strong> Frequency of cooperators and the cooperation gap across information cost and cooperation cost in two coevolving populations. (<strong>a–e</strong>) Higher-cooperation population. (<strong>f–j</strong>) Lower-cooperation population. (<strong>k–o</strong>) Cooperation gap (high − low). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same cooperation cost (<em>c</em>, ranging from 0 to <em>b</em>, the benefit to the partner) and the same information cost.
 
-Fitness counterpart of Fig. 2. Snowdrift twin: Fig. S16.
+Snowdrift counterpart of Fig. S13.
 
-### <strong>Fig. S15.</strong> Information-cost asymmetry at equal cooperation cost (snowdrift).
+### <strong>Fig. S15.</strong> Information-cost asymmetry at equal cooperation cost with IJMPQ (prisoner's dilemma).
 
 ![figS15](/home/marcelino/figures/interpretation/figS15.png)
 
 <strong>Fig. S15.</strong> Frequency of cooperators and the information-cost gap under information-cost asymmetry at equal cooperation cost in two coevolving populations. (<strong>a–e</strong>) Lower-i population. (<strong>f–j</strong>) Higher-i population. (<strong>k–o</strong>) Information-cost gap (low-i − high-i). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.1).
 
-Snowdrift counterpart of Fig. 2.
+Five-column version of Fig. 2 (adds IJMPQ).
 
-### <strong>Fig. S16.</strong> Fitness under information-cost asymmetry at equal cooperation cost (snowdrift).
+### <strong>Fig. S16.</strong> Fitness under information-cost asymmetry at equal cooperation cost (prisoner's dilemma).
 
 ![figS16](/home/marcelino/figures/interpretation/figS16.png)
 
 <strong>Fig. S16.</strong> Average fitness and the fitness gap under information-cost asymmetry at equal cooperation cost in two coevolving populations. (<strong>a–e</strong>) Lower-i population. (<strong>f–j</strong>) Higher-i population. (<strong>k–o</strong>) Fitness gap (low-i − high-i). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.1).
 
-Fitness counterpart of Fig. S15; snowdrift twin of Fig. S14.
+Fitness counterpart of Fig. 2. Snowdrift twin: Fig. S18.
 
-### <strong>Fig. S17.</strong> Information cost under fixed cooperation-cost asymmetry (prisoner's dilemma).
+### <strong>Fig. S17.</strong> Information-cost asymmetry at equal cooperation cost (snowdrift).
 
 ![figS17](/home/marcelino/figures/interpretation/figS17.png)
 
-<strong>Fig. S17.</strong> Frequency of cooperators and the cooperation gap with information cost under fixed cooperation-cost asymmetry in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (from 0.12 to <em>b</em>), and the same information cost (from 0 to <em>b</em> - 0.12).
+<strong>Fig. S17.</strong> Frequency of cooperators and the information-cost gap under information-cost asymmetry at equal cooperation cost in two coevolving populations. (<strong>a–e</strong>) Lower-i population. (<strong>f–j</strong>) Higher-i population. (<strong>k–o</strong>) Information-cost gap (low-i − high-i). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.1).
 
-See also Figs. 2–3 and S22. Fitness counterpart: Fig. S18. Snowdrift: Fig. S19.
+Snowdrift counterpart of Fig. 2.
 
-### <strong>Fig. S18.</strong> Fitness with information cost under fixed cooperation-cost asymmetry (prisoner's dilemma).
+### <strong>Fig. S18.</strong> Fitness under information-cost asymmetry at equal cooperation cost (snowdrift).
 
 ![figS18](/home/marcelino/figures/interpretation/figS18.png)
 
-<strong>Fig. S18.</strong> Average fitness and the fitness gap with information cost under fixed cooperation-cost asymmetry in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (from 0.12 to <em>b</em>), and the same information cost (from 0 to <em>b</em> - 0.12).
+<strong>Fig. S18.</strong> Average fitness and the fitness gap under information-cost asymmetry at equal cooperation cost in two coevolving populations. (<strong>a–e</strong>) Lower-i population. (<strong>f–j</strong>) Higher-i population. (<strong>k–o</strong>) Fitness gap (low-i − high-i). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.1).
 
-Fitness counterpart of Fig. S17. Snowdrift twin: Fig. S20.
+Fitness counterpart of Fig. S17; snowdrift twin of Fig. S16.
 
-### <strong>Fig. S19.</strong> Information cost under fixed cooperation-cost asymmetry (snowdrift).
+### <strong>Fig. S19.</strong> Information cost under fixed cooperation-cost asymmetry (prisoner's dilemma).
 
 ![figS19](/home/marcelino/figures/interpretation/figS19.png)
 
 <strong>Fig. S19.</strong> Frequency of cooperators and the cooperation gap with information cost under fixed cooperation-cost asymmetry in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (from 0.12 to <em>b</em>), and the same information cost (from 0 to <em>b</em> - 0.12).
 
-Snowdrift counterpart of Fig. S17.
+See also Figs. 2–3 and S25. Fitness counterpart: Fig. S20. Snowdrift: Fig. S21.
 
-### <strong>Fig. S20.</strong> Fitness with information cost under fixed cooperation-cost asymmetry (snowdrift).
+### <strong>Fig. S20.</strong> Fitness with information cost under fixed cooperation-cost asymmetry (prisoner's dilemma).
 
 ![figS20](/home/marcelino/figures/interpretation/figS20.png)
 
 <strong>Fig. S20.</strong> Average fitness and the fitness gap with information cost under fixed cooperation-cost asymmetry in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (from 0.12 to <em>b</em>), and the same information cost (from 0 to <em>b</em> - 0.12).
 
-Fitness counterpart of Fig. S19; snowdrift twin of Fig. S18.
+Fitness counterpart of Fig. S19. Snowdrift twin: Fig. S22.
 
-### <strong>Fig. S21.</strong> Fitness on the information-cost plane under a cooperation-cost gap (prisoner's dilemma).
+### <strong>Fig. S21.</strong> Information cost under fixed cooperation-cost asymmetry (snowdrift).
 
 ![figS21](/home/marcelino/figures/interpretation/figS21.png)
 
-<strong>Fig. S21.</strong> Average fitness and the fitness gap across the full information-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
+<strong>Fig. S21.</strong> Frequency of cooperators and the cooperation gap with information cost under fixed cooperation-cost asymmetry in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (from 0.12 to <em>b</em>), and the same information cost (from 0 to <em>b</em> - 0.12).
 
-Fitness counterpart of Fig. 3. Snowdrift twin: Fig. S23. Fixed-total cut: Figs. S24–S25. Equal-c contrast: Fig. 2. Snowdrift coop plane: Fig. S22.
+Snowdrift counterpart of Fig. S19.
 
-### <strong>Fig. S22.</strong> Information-cost plane under a cooperation-cost gap (snowdrift).
+### <strong>Fig. S22.</strong> Fitness with information cost under fixed cooperation-cost asymmetry (snowdrift).
 
 ![figS22](/home/marcelino/figures/interpretation/figS22.png)
 
-<strong>Fig. S22.</strong> Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
+<strong>Fig. S22.</strong> Average fitness and the fitness gap with information cost under fixed cooperation-cost asymmetry in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (from 0.12 to <em>b</em>), and the same information cost (from 0 to <em>b</em> - 0.12).
 
-Snowdrift twin of Fig. 3. Fitness counterpart: Fig. S23. Fixed-total cut: Fig. S25. Equal-c contrast: Figs. S15–S16. gs = 4: Fig. S27.
+Fitness counterpart of Fig. S21; snowdrift twin of Fig. S20.
 
-### <strong>Fig. S23.</strong> Fitness on the information-cost plane under a cooperation-cost gap (snowdrift).
+### <strong>Fig. S23.</strong> Information-cost plane under a cooperation-cost gap with IJMPQ (prisoner's dilemma).
 
 ![figS23](/home/marcelino/figures/interpretation/figS23.png)
 
-<strong>Fig. S23.</strong> Average fitness and the fitness gap across the full information-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
+<strong>Fig. S23.</strong> Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Fitness counterpart of Fig. S22; snowdrift twin of Fig. S21.
+Five-column version of Fig. 3 (adds IJMPQ).
 
-### <strong>Fig. S24.</strong> Equal information-cost totals are not interchangeable (prisoner's dilemma).
+### <strong>Fig. S24.</strong> Fitness on the information-cost plane under a cooperation-cost gap (prisoner's dilemma).
 
 ![figS24](/home/marcelino/figures/interpretation/figS24.png)
 
-<strong>Fig. S24.</strong> Frequency of cooperators and average fitness along a line of constant total information cost (i₀ + i₁ = 0.2) in two coevolving populations. (<strong>a–e</strong>) Frequency of cooperators. (<strong>f–j</strong>) Average fitness. (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
+<strong>Fig. S24.</strong> Average fitness and the fitness gap across the full information-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Shaded bands are ±1 SD over 30 runs. Fixed-total cut of Fig. 3 (i₀ + i₁ = 0.2; x = i₁). Who-pays edges: Fig. 3. Snowdrift: Fig. S25.
+Fitness counterpart of Fig. 3. Snowdrift twin: Fig. S26. Fixed-total cut: Figs. S27–S28. Equal-c contrast: Fig. 2. Snowdrift coop plane: Fig. S25.
 
-### <strong>Fig. S25.</strong> Equal information-cost totals are not interchangeable (snowdrift).
+### <strong>Fig. S25.</strong> Information-cost plane under a cooperation-cost gap (snowdrift).
 
 ![figS25](/home/marcelino/figures/interpretation/figS25.png)
 
-<strong>Fig. S25.</strong> Frequency of cooperators and average fitness along a line of constant total information cost (i₀ + i₁ = 0.2) in two coevolving populations. (<strong>a–e</strong>) Frequency of cooperators. (<strong>f–j</strong>) Average fitness. (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
+<strong>Fig. S25.</strong> Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Shaded bands are ±1 SD over 30 runs. Snowdrift counterpart of Fig. S24.
+Snowdrift twin of Fig. 3. Fitness counterpart: Fig. S26. Fixed-total cut: Fig. S28. Equal-c contrast: Figs. S17–S18. gs = 4: Fig. S30.
 
-### <strong>Fig. S26.</strong> Information-cost plane under a cooperation-cost gap at group size 4 (prisoner's dilemma).
+### <strong>Fig. S26.</strong> Fitness on the information-cost plane under a cooperation-cost gap (snowdrift).
 
 ![figS26](/home/marcelino/figures/interpretation/figS26.png)
 
-<strong>Fig. S26.</strong> Frequency of cooperators and the cooperation gap across the information-cost asymmetry grid at group size 4 in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
+<strong>Fig. S26.</strong> Average fitness and the fitness gap across the full information-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Fitness gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Group-size-4 counterpart of Fig. 3. Snowdrift twin: Fig. S27.
+Fitness counterpart of Fig. S25; snowdrift twin of Fig. S24.
 
-### <strong>Fig. S27.</strong> Information-cost plane under a cooperation-cost gap at group size 4 (snowdrift).
+### <strong>Fig. S27.</strong> Equal information-cost totals are not interchangeable (prisoner's dilemma).
 
 ![figS27](/home/marcelino/figures/interpretation/figS27.png)
 
-<strong>Fig. S27.</strong> Frequency of cooperators and the cooperation gap across the information-cost asymmetry grid at group size 4 in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
+<strong>Fig. S27.</strong> Frequency of cooperators and average fitness along a line of constant total information cost (i₀ + i₁ = 0.2) in two coevolving populations. (<strong>a–e</strong>) Frequency of cooperators. (<strong>f–j</strong>) Average fitness. (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
 
-Group-size-4 counterpart of Fig. S22; snowdrift twin of Fig. S26.
+Shaded bands are ±1 SD over 30 runs. Fixed-total cut of Fig. 3 (i₀ + i₁ = 0.2; x = i₁). Who-pays edges: Fig. 3. Snowdrift: Fig. S28.
 
-### <strong>Fig. S28.</strong> Full cooperation-cost asymmetry grid with IJMPQ (prisoner's dilemma).
+### <strong>Fig. S28.</strong> Equal information-cost totals are not interchangeable (snowdrift).
 
 ![figS28](/home/marcelino/figures/interpretation/figS28.png)
 
-<strong>Fig. S28.</strong> Frequency of cooperators and the cooperation gap across the full cooperation-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have the same information cost (0.001).
+<strong>Fig. S28.</strong> Frequency of cooperators and average fitness along a line of constant total information cost (i₀ + i₁ = 0.2) in two coevolving populations. (<strong>a–e</strong>) Frequency of cooperators. (<strong>f–j</strong>) Average fitness. (<strong>a, f</strong>) When no cooperation mechanisms are allowed. (<strong>b, g</strong>) When short-memory partner choice (P). (<strong>c, h</strong>) When direct reciprocity (M). (<strong>d, i</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1; orange) and <em>c<sub>1</sub></em> (0.2; red).
 
-Five-column version of Fig. 1 (adds IJMPQ).
+Shaded bands are ±1 SD over 30 runs. Snowdrift counterpart of Fig. S27.
 
-### <strong>Fig. S29.</strong> Information-cost asymmetry at equal cooperation cost with IJMPQ (prisoner's dilemma).
+### <strong>Fig. S29.</strong> Information-cost plane under a cooperation-cost gap at group size 4 (prisoner's dilemma).
 
 ![figS29](/home/marcelino/figures/interpretation/figS29.png)
 
-<strong>Fig. S29.</strong> Frequency of cooperators and the information-cost gap under information-cost asymmetry at equal cooperation cost in two coevolving populations. (<strong>a–e</strong>) Lower-i population. (<strong>f–j</strong>) Higher-i population. (<strong>k–o</strong>) Information-cost gap (low-i − high-i). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.1).
+<strong>Fig. S29.</strong> Frequency of cooperators and the cooperation gap across the information-cost asymmetry grid at group size 4 in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Five-column version of Fig. 2 (adds IJMPQ).
+Group-size-4 counterpart of Fig. 3. Snowdrift twin: Fig. S30.
 
-### <strong>Fig. S30.</strong> Information-cost plane under a cooperation-cost gap with IJMPQ (prisoner's dilemma).
+### <strong>Fig. S30.</strong> Information-cost plane under a cooperation-cost gap at group size 4 (snowdrift).
 
 ![figS30](/home/marcelino/figures/interpretation/figS30.png)
 
-<strong>Fig. S30.</strong> Frequency of cooperators and the cooperation gap across the full information-cost asymmetry grid in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
+<strong>Fig. S30.</strong> Frequency of cooperators and the cooperation gap across the information-cost asymmetry grid at group size 4 in two coevolving populations. (<strong>a–e</strong>) Lower-cost population. (<strong>f–j</strong>) Higher-cost population. (<strong>k–o</strong>) Cooperation gap (cheap − expensive). (<strong>a, f, k</strong>) When no cooperation mechanisms are allowed. (<strong>b, g, l</strong>) When short-memory partner choice (P). (<strong>c, h, m</strong>) When direct reciprocity (M). (<strong>d, i, n</strong>) When partner choice with direct and indirect reciprocity (IMP). (<strong>e, j, o</strong>) When partner choice with direct and indirect reciprocity (IJMPQ). The two populations have cooperation cost <em>c<sub>0</sub></em> (0.1) and <em>c<sub>1</sub></em> (0.2).
 
-Five-column version of Fig. 3 (adds IJMPQ).
+Group-size-4 counterpart of Fig. S25; snowdrift twin of Fig. S29.

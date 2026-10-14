@@ -211,7 +211,7 @@ Table 2. Mechanisms.
 | Label | Loci enabled     | Info-cost units | Structures                        | Where reported                        |
 | ----- | ---------------- | --------------- | --------------------------------- | ------------------------------------- |
 | \_    | none behavioral  | 0-2 if carried  | one or two pops; shuffle optional | baselines; Figs. S3a,e, S4a,e; Fig. S1a; plane heatmaps |
-| M     | C, M             | 1               | one or two pops; shuffle optional | Figs. S3c,g, S4c,g; Figs. 1–3 and S22, S1c, S3–S30; Results §7 |
+| M     | C, M             | 1               | one or two pops; shuffle optional | Figs. S3c,g, S4c,g; Figs. 1–3 and S25, S1c, S3–S30; Results §7 |
 | P     | C, P             | 1               | one or two pops; shuffle optional | Figs. 1–3; Figs. S1b, S3–S30         |
 | MP    | C, M, P          | 2               | one or two pops; shuffle optional | Results §1 shuffle; Results §7 (not plotted) |
 | MPQ   | C, M, P, Q       | 2               | one or two pops; shuffle optional | Results §7 (not plotted)             |
@@ -281,11 +281,11 @@ Table 3. Simulation designs.
 | --------------------------- | ---- | ---------------------- | -------------------------------------------------- | ---- | ----- | -------------- |
 | Equal-c baseline, one pop   | 1    | \_, P, M, IMP, IJMPQ  | c ∈ [0, b]                                         | 0.02 | 21    | Figs. S1–S2    |
 | Equal-c baseline, two pops  | 2    | \_, P, M, IMP, IJMPQ  | c₀ = c₁ ∈ [0, b]                                   | 0.02 | 21    | Figs. S3–S6 |
-| Cooperation-cost asymmetry  | 2    | \_, P, M, IMP[, IJMPQ]| c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1 (IMP); S3–S11, S28; gs = 4: S7–S8 |
-| Symmetric information cost  | 2    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S12–S13  |
-| Fixed c-gap × shared i      | 2    | \_, P, M, IMP, IJMPQ  | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S17–S20  |
-| Per-population i, equal c   | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. 2 (IMP), S14–S16, S29  |
-| Crossed c and i asymmetries | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3 (IMP), S21–S25, S30; gs = 4: S26–S27 |
+| Cooperation-cost asymmetry  | 2    | \_, P, M, IMP[, IJMPQ]| c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1 (IMP); S3–S12, S9; gs = 4: S7–S8 |
+| Symmetric information cost  | 2    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S13–S14  |
+| Fixed c-gap × shared i      | 2    | \_, P, M, IMP, IJMPQ  | c₀ = 0.10; i + c₁ ≤ b                              | 0.02 | 120   | Figs. S19–S22  |
+| Per-population i, equal c   | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = c₁ = 0.10; i₀ < i₁; each axis ≤ b − c         | 0.02 | 120   | Figs. 2 (IMP), S16–S18, S15  |
+| Crossed c and i asymmetries | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3 (IMP), S24–S28, S23; gs = 4: S29–S30 |
 | PD payoff plane             | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
 | Snowdrift payoff plane      | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
@@ -293,23 +293,23 @@ I first establish baselines under equal cooperation cost (one-population ceiling
 Fig. S1, snowdrift Fig. S2; cooperation above fitness in each). Shuffle short-memory
 variants (M, MP, IM, IMP) are reported in Results §1 without dedicated figures.
 Fig. 1 is the full c₀ × c₁ cooperation grid (prisoner's dilemma); its fitness and
-snowdrift twins are Figs. S9–S11. Figs. S3–S4 place matched-cost and c₁ = c₀ + 0.02
+snowdrift twins are Figs. S10–S12. Figs. S3, S5 place matched-cost and c₁ = c₀ + 0.02
 strips on shared axes for the prisoner's dilemma and snowdrift and still show M beside
-P, IMP, and IJMPQ (fitness counterparts Figs. S5–S6; group-size-4 counterparts of
-Figs. S3–S4, 3 and S22 are Figs. S7–S8 and S26–S27). Matched information cost is
-Figs. S12–S13 (Cost × c grids in two populations; —|P|M|IMP|IJMPQ; cooperation and gap;
+P, IMP, and IJMPQ (fitness counterparts Figs. S4, S6; group-size-4 counterparts of
+Figs. S3, S5, 3 and S25 are Figs. S7–S8 and S29–S30). Matched information cost is
+Figs. S13–S14 (Cost × c grids in two populations; —|P|M|IMP|IJMPQ; cooperation and gap;
 prisoner's dilemma and snowdrift).
 
-Equal-c information-cost asymmetry is Fig. 2 (—|P|M|IMP; fitness Fig. S14; snowdrift
-Figs. S15–S16; five-column twin Fig. S29). Shared-i under a cooperation-cost gap is
-Figs. S17–S20. The crossed i₀ × i₁ plane under a fixed cooperation-cost gap is
-Figs. 3 and S22 (main Fig. 3: _, P, M, IMP; supplement adds IJMPQ; absolute
+Equal-c information-cost asymmetry is Fig. 2 (—|P|M|IMP; fitness Fig. S16; snowdrift
+Figs. S17–S18; five-column twin Fig. S15). Shared-i under a cooperation-cost gap is
+Figs. S19–S22. The crossed i₀ × i₁ plane under a fixed cooperation-cost gap is
+Figs. 3 and S25 (main Fig. 3: _, P, M, IMP; supplement adds IJMPQ; absolute
 cooperation and the cheap−expensive gap; prisoner's dilemma and snowdrift), with
-fitness counterparts Figs. S21 and S23 and the five-column twin of Fig. 3 as
-Fig. S30. The fixed-total line cut of that plane is Figs. S24–S25 (cooperation and
-fitness; columns —|P|M|IMP|IJMPQ). Fig. S24 holds total information cost fixed at
+fitness counterparts Figs. S24 and S26 and the five-column twin of Fig. 3 as
+Fig. S23. The fixed-total line cut of that plane is Figs. S27–S28 (cooperation and
+fitness; columns —|P|M|IMP|IJMPQ). Fig. S27 holds total information cost fixed at
 i₀ + i₁ = 0.2 while the split varies; who-pays edges are read from Fig. 3.
-Fitness plane: Figs. S21 and S23.
+Fitness plane: Figs. S24 and S26.
 
 Along the cooperation-cost axis, raising c changes several payoff gaps at once. The
 orthogonal payoff-plane sweeps vary payoffs independently of c; Table S1 reports the
