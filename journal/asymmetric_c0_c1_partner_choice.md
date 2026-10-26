@@ -192,7 +192,7 @@ ratio narrows: at (c0=0.1, c1=0.40), w\_1/w\_0 = 1.11.
 | 0.30 | 0.972    | 0.061    | 0.794 | 0.879 |
 | 0.40 | 0.971    | 0.044    | 0.792 | 0.878 |
 
-The cooperation gap is far larger (16× at c1=0.30) but fitness differences
+The cooperation difference is far larger (16× at c1=0.30) but fitness differences
 are smaller and more stable across c1. Pop_1 earns more despite cooperating
 at a fraction of Pop_0's rate, because snowdrift payoffs reward the
 defecting high-cost population when paired against abundant cooperators.

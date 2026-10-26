@@ -11,11 +11,11 @@ symmetric_c and asymmetric_c0_c1 derive payoffs from a single cost parameter c
 quantities onto one axis:
 
 - temptation T − R = c
-- risk (sucker gap) P − S = c
+- risk (sucker difference) P − S = c
 - cooperation advantage R − P = b − c
 
 Because all three move together with c, symmetric_c can show *that* a mechanism
-collapses as c rises but cannot say *which* payoff gap drives the collapse.
+collapses as c rises but cannot say *which* payoff difference drives the collapse.
 The prisoners study removes that confound: it fixes T = 0.90 and S = 0.10 and
 sweeps R and P independently over an 18 × 18 grid (172 cells satisfying
 T > R > P > S). Each cell is a mean over 30 runs (see the noise-floor note in
@@ -53,7 +53,7 @@ Pop_1 (single population), PD, noshuffle, gs=128:
 | ------ | ------- | --------- | --------- | ---- | ----------- | --------------------- |
 | \_     | 0.017   | 0.006     | −0.030    | 4.90 | −0.737      | nothing (no coop)     |
 | M      | 0.730   | 0.837     | −1.447    | 1.73 | −0.601      | risk / defection P    |
-| P      | 0.898   | 0.447     | −0.399    | 0.89 | −0.274      | cooperation gap R − P |
+| P      | 0.898   | 0.447     | −0.399    | 0.89 | −0.274      | cooperation difference R − P |
 | MP     | 0.884   | 0.648     | −0.365    | 0.56 | −0.058      | reward / temptation R |
 | MPQ    | 0.906   | 0.567     | −0.319    | 0.56 | −0.053      | reward / temptation R |
 | IMP    | 0.890   | 0.642     | −0.319    | 0.50 | −0.003      | reward / temptation R |
@@ -153,7 +153,7 @@ mirroring symmetric_c collapse as R − P → 0.
 - **Direct reciprocity.** symmetric_c/asymmetric_c0_c1 could only show M collapsing near
   c = 0.40 (where both R − P → 0 and risk P − S = c is largest). Prisoners
   isolates the cause: M tracks risk P, so the symmetric_c collapse is largely a
-  rising-risk effect, not purely a vanishing cooperation gap.
+  rising-risk effect, not purely a vanishing cooperation difference.
 - **Symmetry breaking.** Prisoners pop_2 is symmetric (like symmetric_c pop_2)
   and breaks stochastically into a cooperator/defector role split, with the
   cooperating side earning less (paradox of success) — the same signature

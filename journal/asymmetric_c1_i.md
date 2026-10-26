@@ -1,10 +1,10 @@
-# asymmetric_c1_i — Information Cost on the Asymmetric Branch
+# asymmetric_c1_i — Information cost on the asymmetric branch
 
 asymmetric_c1_i extends the information-cost axis to the branch where the
 cooperator/exploiter roles are already pinned by payoff asymmetry. It uses the
 asymmetric_c0_c1 pop_2 ecology, fixes c0 = 0.10 for the low-cost population, and sweeps
-Cost jointly with c1 over the triangle Cost + c1 <= 0.40, c1 > c0. The cell key
-is therefore (Cost, c1), with pop_0 the cheap side and pop_1 the expensive side.
+i jointly with c1 over the triangle i + c₁ <= 0.40, c1 > c0. The cell key
+is therefore (i, c1), with pop_0 the cheap side and pop_1 the expensive side.
 
 This is the missing asymmetric counterpart to symmetric_c_i. At c0 = c1 (symmetric_c)
 c0 = c1, symmetric_c_i asks how the information cost interacts with the
@@ -13,18 +13,18 @@ question when the cheap population is already the natural cooperator and the
 expensive one the natural exploiter.
 
 For the cross-study payoff-axis interpretation, see [synthesis.md](synthesis.md).
-For the symmetric Cost x c sweep, see [symmetric_c_i.md](symmetric_c_i.md).
+For the symmetric i × c sweep, see [symmetric_c_i.md](symmetric_c_i.md).
 
 ## Design and sanity
 
 - Study pair: asymmetric_c1_i (Runs = 30 image summaries) and asymmetric_c1_i_1run
   (single-run temporal movies).
 - Population structure: pop_2 only.
-- Sweep: Cost in {0.00, 0.02, ..., 0.28}; for each Cost, c1 in
-  {0.12, 0.14, ..., 0.40 - Cost}. That gives 120 valid (Cost, c1) cells.
+- Sweep: i in {0.00, 0.02, ..., 0.28}; for each i, c1 in
+  {0.12, 0.14, ..., 0.40 - i}. That gives 120 valid (i, c1) cells.
 - Primary condition below unless noted: PD, noshuffle, gs = 128.
 
-Along sampled Cost = 0 cells the new study reproduces the corresponding asymmetric_c0_c1
+Along sampled i = 0 cells the new study reproduces the corresponding asymmetric_c0_c1
 slice at c0 = 0.10 within the usual noise floor: for mechanism P at c1 = 0.20,
 pop_0 is 0.603 here versus 0.599 in asymmetric_c0_c1, and pop_1 is 0.178 versus 0.187.
 At the low-asymmetry edge c1 = 0.12, the symmetric diagonal remains the right
@@ -33,18 +33,18 @@ at c = 0.10 (for IJMPQ, 0.962 / 0.961 on the diagonal versus 0.961 / 0.961 here)
 while P immediately splits into the familiar cooperator/exploiter pair
 (0.763 / 0.286).
 
-## Headline: the harmless pure-Cost edge disappears
+## Headline: the harmless pure-i edge disappears
 
 The key difference from symmetric_c_i is simple: there is no c = 0 refuge here.
 Even the cheap population always pays c0 = 0.10, so shedding the machinery is
-never harmless. In symmetric_c, Cost alone only slowly erodes cooperation because
+never harmless. In symmetric_c, i alone only slowly erodes cooperation because
 the population can fall back onto tax-free unconditional cooperators. On the
-asymmetric branch, Cost is immediately paid in behavior because the game still
+asymmetric branch, i is immediately paid in behavior because the game still
 demands enforcement.
 
 The PD means over each available c1 column show the contrast:
 
-| Mechanism | Pop | Cost=0 | Cost=0.04 | Cost=0.08 | Cost=0.12 | Cost=0.20 |
+| Mechanism | Pop | i = 0 | i = 0.04 | i = 0.08 | i = 0.12 | i = 0.20 |
 | --------- | --- | -----: | --------: | --------: | --------: | --------: |
 | M         | 0   | 0.689  | 0.336     | 0.061     | 0.056     | 0.053     |
 | M         | 1   | 0.641  | 0.283     | 0.032     | 0.031     | 0.035     |
@@ -57,23 +57,23 @@ The PD means over each available c1 column show the contrast:
 
 Two features dominate.
 
-First, Cost is much harsher here than in symmetric_c. M is the clearest example:
-its means start high at Cost = 0 (0.689 / 0.641) but by Cost = 0.08 it is already
+First, i is much harsher here than in symmetric_c. M is the clearest example:
+its means start high at i = 0 (0.689 / 0.641) but by i = 0.08 it is already
 at the control floor (0.061 / 0.032). There is no long shallow decline analogous
 to symmetric_c_i's c = 0 edge, because there is no edge where enforcement can be
 shed without consequence.
 
 Second, the combined mechanisms still rank highest, but their advantage is now
 about how long they can postpone collapse, not about surviving an otherwise benign
-Cost axis. IJMPQ remains the best mechanism at every Cost shown, but even it is
-driven to 0.080 / 0.053 by Cost = 0.20.
+i axis. IJMPQ remains the best mechanism at every i shown, but even it is
+driven to 0.080 / 0.053 by i = 0.20.
 
-## Cost lowers the c1 ceiling
+## i lowers the c1 ceiling
 
 The cleanest readout is the maximum c1 each population can tolerate while staying
 above qBSeen = 0.5:
 
-| Mechanism | Pop | Cost=0 | Cost=0.04 | Cost=0.08 | Cost=0.12 |
+| Mechanism | Pop | i = 0 | i = 0.04 | i = 0.08 | i = 0.12 |
 | --------- | --- | -----: | --------: | --------: | --------: |
 | M         | 0   | 0.34   | 0.22      | none      | none      |
 | M         | 1   | 0.32   | 0.20      | none      | none      |
@@ -85,22 +85,22 @@ above qBSeen = 0.5:
 | IJMPQ     | 1   | 0.22   | 0.18      | 0.12      | none      |
 
 This is the asymmetric version of the information-cost versus cooperation-cost interaction from symmetric_c_i:
-raising Cost retreats the demand ceiling. But the retreat is steeper here because
-the demand never falls to zero. At Cost = 0.12, IJMPQ still has a surviving cheap
+raising i retreats the demand ceiling. But the retreat is steeper here because
+the demand never falls to zero. At i = 0.12, IJMPQ still has a surviving cheap
 side at c1 = 0.12 (pop_0 = 0.570), while the expensive side is already below 0.5
 everywhere (0.331 at c1 = 0.12, 0.263 at c1 = 0.14, then lower). The cooperator
 side fails first in absolute c1, but the exploiter side loses its high-cooperation
 tail sooner.
 
-## Cost compresses the role split and softens exploitation
+## i compresses the role split and softens exploitation
 
-Under partner choice alone, asymmetric_c0_c1 at negligible Cost gives the sharpest
+Under partner choice alone, asymmetric_c0_c1 at negligible i gives the sharpest
 deterministic split: the cheap population cooperates more and earns less. That
-logic survives here, but Cost steadily compresses both faces of the asymmetry.
+logic survives here, but i steadily compresses both faces of the asymmetry.
 
-For P, the mean cooperation gap and mean fitness gap by Cost are:
+For P, the mean cooperation difference and mean fitness difference by i are:
 
-| Cost | mean qBSeen gap (pop_0 - pop_1) | mean wmean gap (pop_0 - pop_1) |
+| i | mean qBSeen difference (pop_0 - pop_1) | mean wmean difference (pop_0 - pop_1) |
 | ---: | -------------------------------: | ------------------------------: |
 | 0.00 | 0.329                            | -0.148                         |
 | 0.04 | 0.240                            | -0.108                         |
@@ -110,24 +110,24 @@ For P, the mean cooperation gap and mean fitness gap by Cost are:
 
 The paradox-of-success signal remains essentially perfect while it lasts:
 corr(dqBSeen, dwmean) = -0.998, and the higher-cooperation side has lower fitness
-in all 120 cells. What Cost changes is not who profits at a given functioning P
+in all 120 cells. What i changes is not who profits at a given functioning P
 cell, but how many functioning P cells remain. The asymmetry collapses mainly
 because both populations are pushed toward the control floor.
 
 The same compression appears in the combined mechanisms, only from a higher base.
-IJMPQ's mean cooperation gap is 0.159 at Cost = 0, grows slightly at intermediate
-Cost while pop_1 loses its tail first (0.188 at Cost = 0.08), then shrinks to
-0.027 by Cost = 0.20. Its mean fitness gap follows the same pattern but remains
-negative throughout (-0.019 at Cost = 0, -0.086 at Cost = 0.08, -0.011 at
-Cost = 0.20).
+IJMPQ's mean cooperation difference is 0.159 at i = 0, grows slightly at intermediate
+i while pop_1 loses its tail first (0.188 at i = 0.08), then shrinks to
+0.027 by i = 0.20. Its mean fitness difference follows the same pattern but remains
+negative throughout (-0.019 at i = 0, -0.086 at i = 0.08, -0.011 at
+i = 0.20).
 
-## Control decomposition: Cost erodes M1 supply-side, the dilemma decides the damage
+## Control decomposition: i erodes M1 supply-side, the dilemma decides the damage
 
 As in symmetric_c_i, mechanism \_ (enforcement off, loci still costly) isolates
 the supply-side information cost. Mechanism M is enough to show the demand-side
 contrast:
 
-| Cost | control pop_0 qB | control pop_0 M1 | PD pop_0 qB | PD pop_0 M1 |
+| i | control pop_0 qB | control pop_0 M1 | PD pop_0 qB | PD pop_0 M1 |
 | ---: | ---------------: | ---------------: | ----------: | ----------: |
 | 0.00 | 0.956            | 0.248            | 0.689       | 0.673       |
 | 0.04 | 0.968            | 0.170            | 0.336       | 0.308       |
@@ -135,7 +135,7 @@ contrast:
 | 0.20 | 0.974            | 0.040            | 0.053       | 0.026       |
 | 0.28 | 0.974            | 0.028            | 0.054       | 0.018       |
 
-The machinery story is the same as in symmetric_c: M1 is selected out as Cost
+The machinery story is the same as in symmetric_c: M1 is selected out as i
 rises even in the control, where no enforcement is needed. Across all dilemmas,
 groupsizes, shuffle settings, and both populations, M1 under M is below the dummy
 baseline in 2,001 cell-conditions. That is the supply-side effect.
@@ -157,17 +157,17 @@ For P on pop_0 at c1 = 0.20:
 
 | Cell | qBSeen | P1 | C1P0 |
 | ---- | -----: | -: | ---: |
-| Cost=0.00 | 0.603 | 0.797 | 0.071 |
-| Cost=0.08 | 0.415 | 0.374 | 0.098 |
-| Cost=0.12 | 0.048 | 0.042 | 0.046 |
+| i = 0.00 | 0.603 | 0.797 | 0.071 |
+| i = 0.08 | 0.415 | 0.374 | 0.098 |
+| i = 0.12 | 0.048 | 0.042 | 0.046 |
 
 For M on the same slice:
 
 | Cell | qBSeen | M1 | C1M0 |
 | ---- | -----: | -: | ---: |
-| Cost=0.00 | 0.867 | 0.554 | 0.408 |
-| Cost=0.08 | 0.062 | 0.068 | 0.060 |
-| Cost=0.12 | 0.056 | 0.045 | 0.054 |
+| i = 0.00 | 0.867 | 0.554 | 0.408 |
+| i = 0.08 | 0.062 | 0.068 | 0.060 |
+| i = 0.12 | 0.056 | 0.045 | 0.054 |
 
 The machinery still erodes, but the tax-free unconditional-cooperator niche does
 not inherit a stable high-cooperation regime. Once P1 or M1 is mostly gone, the
@@ -177,9 +177,9 @@ symmetric_c has a harmless-shedding region; the asymmetric branch does not.
 ## Snowdrift buffers information cost only on the cheap side
 
 Snowdrift again raises the floor, but asymmetrically. The low-cost population is
-almost Cost-proof, while the high-cost population remains stuck in the role split:
+almost i-proof, while the high-cost population remains stuck in the role split:
 
-| Mechanism | Pop | Cost=0 | Cost=0.08 | Cost=0.20 | Cost=0.28 |
+| Mechanism | Pop | i = 0 | i = 0.08 | i = 0.20 | i = 0.28 |
 | --------- | --- | -----: | --------: | --------: | --------: |
 | M         | 0   | 0.944  | 0.937     | 0.927     | 0.908     |
 | M         | 1   | 0.167  | 0.158     | 0.185     | 0.238     |
@@ -197,16 +197,16 @@ join it; the role split persists, only with a slightly softer floor.
 
 The robustness mirrors carry over cleanly.
 
-- Shuffle removes the M contribution. At Cost = 0, MP is 0.598 / 0.422 under
+- Shuffle removes the M contribution. At i = 0, MP is 0.598 / 0.422 under
   noshuffle but only 0.467 / 0.142 under shuffle, essentially reverting to the
-  partner-choice split. By Cost = 0.12 both ecologies converge near the same low
+  partner-choice split. By i = 0.12 both ecologies converge near the same low
   floor, because there is little M component left for shuffle to remove.
-- gs = 4 removes partner choice almost completely from the outset. P at Cost = 0 is
+- gs = 4 removes partner choice almost completely from the outset. P at i = 0 is
   already 0.054 / 0.025 at gs = 4 versus 0.469 / 0.140 at gs = 128. M is
-  groupsize-invariant under Cost (0.689 / 0.641 versus 0.686 / 0.637 at Cost = 0),
+  groupsize-invariant under i (0.689 / 0.641 versus 0.686 / 0.637 at i = 0),
   while IJMPQ keeps its gs = 4 penalty from the asymmetric_c0_c1 baseline
-  (0.708 / 0.549 versus 0.708 / 0.600 at Cost = 0, then 0.413 / 0.225 versus
-  0.124 / 0.065 at Cost = 0.08).
+  (0.708 / 0.549 versus 0.708 / 0.600 at i = 0, then 0.413 / 0.225 versus
+  0.124 / 0.065 at i = 0.08).
 
 ## Temporal dynamics: the verdict is set by the first snapshot
 
@@ -214,7 +214,7 @@ The single-run movies show the same absorbing-state pattern as the other studies
 Established cells are already established by the first recorded snapshot, and
 collapsed cells are already collapsed.
 
-- P at (Cost, c1) = (0.00, 0.20) reaches 0.593 / 0.180 at t = 131072 and ends at
+- P at (i, c1) = (0.00, 0.20) reaches 0.593 / 0.180 at t = 131072 and ends at
   0.664 / 0.157. The role split is in place immediately and only wobbles slightly.
 - P at (0.12, 0.20) is already collapsed at the first snapshot
   (0.043 / 0.024) and stays there through the run.
@@ -229,16 +229,16 @@ late erosion but whether a cell establishes a defended state at all.
 **Cross-study contrast.** asymmetric_i0_i1 at symmetric c shows the same early
 lock-in pattern, but the *assignment rule* differs: under P, demand asymmetry
 (asymmetric_c1_i) and supply asymmetry (asymmetric_i0_i1) both pin the cooperator
-to the cheap side (low c or low Cost), whereas IJMPQ inverts under supply
+to the cheap side (low c or low i), whereas IJMPQ inverts under supply
 asymmetry but not under demand asymmetry. See **asymmetric_i0_i1.md**.
-**asymmetric_c1_i0_i1.md** crosses both axes: the c-gap wins globally, with
-IJMPQ hitchhiking confined to a Cost0 ≈ 0 wedge.
+**asymmetric_c1_i0_i1.md** crosses both axes: the c-difference wins globally, with
+IJMPQ hitchhiking confined to a i₀ ≈ 0 wedge.
 
 ## One-line reading
 
 symmetric_c_i showed that information cost can be shed harmlessly when the game
 does not still demand enforcement. asymmetric_c1_i shows the complementary case:
 once one population is locked at c0 = 0.10 and the other is costlier still, the
-information cost is paid directly in behavior. Cost compresses the
+information cost is paid directly in behavior. i compresses the
 cooperator/exploiter split, retreats the c1 ceiling, and largely removes the
-behavior-mechanism decoupling that made the symmetric_c_i Cost axis look soft.
+behavior-mechanism decoupling that made the symmetric_c_i i axis look soft.

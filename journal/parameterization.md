@@ -14,21 +14,20 @@ between this doc and the data fails the verifier.
 | K (baseline fitness) | 0.5 | symmetric_c, asymmetric_c0_c1, symmetric_c_i | .glo `K` |
 | b (benefit) | 0.4, fixed | symmetric_c, asymmetric_c0_c1, symmetric_c_i | .glo `b` |
 | c (cooperation cost) | swept 0 to b | symmetric_c (c0 = c1), asymmetric_c0_c1 (c0 < c1) | .glo `c0`, `c1` |
-| Cost (information cost) | 0.001 default; swept 0 to 0.4 in symmetric_c_i | all studies | .glo `Cost` |
+| i (information cost) | 0.001 default; swept 0 to 0.4 in symmetric_c_i | all studies | .glo `Cost` (= i) |
 | Runs | 30 (multi-run); 1 (`*_1run`) | all studies | .glo `Runs` |
 | MutationRate | 0.01 | all studies | .glo `MutationRate` |
 
 Information cost is charged per machinery **family carried** — not per allele, and
 not per behavior expressed: once for any partner-choice locus (Choose or Choose_lt)
 plus once for any reciprocity locus (Mimic, Imimic, or Imimic_lt):
-cost = Cost × ((Choose or Choose_lt) + (Mimic or Imimic or Imimic_lt)); fitness is
+cost = i × ((Choose or Choose_lt) + (Mimic or Imimic or Imimic_lt)); fitness is
 w = max(0, payoff − cost). Each term is a boolean OR, so an individual pays 0, 1 or
-2 × Cost regardless of how many loci within a family it carries: P1Q1 and P1Q0 pay
+2×i regardless of how many loci within a family it carries: P1Q1 and P1Q0 pay
 alike, and M1I1J1, M1I1J0 and M1I0J0 pay alike. Dropping one locus of a family saves
 nothing while a sibling locus remains, so selection removes families as blocks and
 C1P0 / C1M0 are proxies rather than tax-free genotypes. Under mechanism \_, partner choice and reciprocity are
-disabled but loci still mutate and carriers still pay; at the default Cost =
-0.001 the tax is negligible. See journal/symmetric_c_i.md for the swept-Cost
+disabled but loci still mutate and carriers still pay; at the default i = 0.001 the tax is negligible. See journal/symmetric_c_i.md for the swept-i
 study.
 
 ## symmetric_c / asymmetric_c0_c1 payoffs
@@ -52,7 +51,7 @@ c0 < c1 in every plotted cell, so R0 − P0 = b − c0 > R1 − P1 = b − c1 (p
 always has the stronger cooperation incentive). Full tables in journal/symmetric_c.md
 and journal/asymmetric_c0_c1.md.
 
-Derived gaps welded onto the single cost axis (the confound the calibration sweeps
+Derived differences welded onto the single cost axis (the confound the calibration sweeps
 remove): temptation T − R = c, risk P − S = c, cooperation advantage R − P = b − c.
 
 ## Prisoners / snowdrift payoffs (payoff-plane sweeps)

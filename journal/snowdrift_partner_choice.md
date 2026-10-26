@@ -62,7 +62,7 @@ Under pop_2, the two coevolving populations break symmetry stochastically. One p
 This split represents an extreme exploitation state:
 
 - **Payoff mapping.** Since pop_2 only pairs individuals between populations, cooperating fset_0 individuals always play against defecting fset_1 individuals. The cooperator earns the sucker payoff S (w_0 ≈ S = 0.14), while the defector earns the temptation payoff T (w_1 ≈ T·qB_0 = 0.90 · 0.96 = 0.86).
-- **The paradox of success.** The cooperating population has significantly lower fitness than the defecting population (w_0 is around 0.14 vs w_1 is around 0.86). All 172 cells show this fitness inversion (where the cooperating population has lower fitness), resulting in a strong negative correlation between the cooperation gap and the fitness gap (corr = −0.437).
+- **The paradox of success.** The cooperating population has significantly lower fitness than the defecting population (w_0 is around 0.14 vs w_1 is around 0.86). All 172 cells show this fitness inversion (where the cooperating population has lower fitness), resulting in a strong negative correlation between the cooperation difference and the fitness difference (corr = −0.437).
 
 ## Pop_3: evolving vs fixed partner
 

@@ -7,10 +7,10 @@ Cross-mechanism calibration analysis for the snowdrift study. Per-mechanism deta
 symmetric_c and asymmetric_c0_c1 derive payoffs from a single cost parameter c. For dilemma 2 (Snowdrift), this means T = K + b, R = K + b − c/2, P = K, and S = K + b − c. That welds three distinct quantities onto one axis:
 
 - temptation T − R = c/2
-- risk (sucker gap) R − S = c/2
+- risk (sucker difference) R − S = c/2
 - cooperation advantage R − P = b − c/2
 
-Because all three move together with c, symmetric_c can show that a mechanism collapses as c rises but cannot say which payoff gap drives the collapse. The snowdrift calibration study removes that confound: it fixes T = 0.90 and P = 0.10 and sweeps R and S independently over an 18 × 18 grid (172 cells satisfying T > R > S > P). Each cell is a mean over 30 runs. Dilemma folder 2 (Snowdrift) is the sweep of interest; payoffs are symmetric across populations.
+Because all three move together with c, symmetric_c can show that a mechanism collapses as c rises but cannot say which payoff difference drives the collapse. The snowdrift calibration study removes that confound: it fixes T = 0.90 and P = 0.10 and sweeps R and S independently over an 18 × 18 grid (172 cells satisfying T > R > S > P). Each cell is a mean over 30 runs. Dilemma folder 2 (Snowdrift) is the sweep of interest; payoffs are symmetric across populations.
 
 ## Payoff geometry
 

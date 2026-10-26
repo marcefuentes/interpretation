@@ -13,11 +13,11 @@ split by mechanism family:
 symmetric_c is the equal-cost special case (c0 = c1); see **symmetric_c.md** (index to
 symmetric_c_partner_choice.md, symmetric_c_reciprocity.md, and symmetric_c_combined.md).
 The information-cost extension on this asymmetric branch is
-**[asymmetric_c1_i.md](asymmetric_c1_i.md)**: fixed c0 = 0.10, Cost x c1 sweep,
+**[asymmetric_c1_i.md](asymmetric_c1_i.md)**: fixed c0 = 0.10, i x c1 sweep,
 showing how information cost compresses the deterministic
 cooperator/exploiter split.
 For why the deterministic role split and the Pop_1 lift track the R − P payoff
-gap, see **[synthesis.md](synthesis.md)**.
+difference, see **[synthesis.md](synthesis.md)**.
 
 **Parameter axes.** graphgen heatmaps plot c0 horizontally and c1 vertically
 (upper triangle, c0 < c1). Markdown landscape tables in the sub-docs list c0
@@ -92,7 +92,7 @@ Typical noise floor (gs=128, PD): median wmeanSD ≈ 0.001 (control) to 0.010
 i.e. SE ≈ 0.001–0.007. SD peaks in transition cells (max wmeanSD ≈ 0.07–0.10)
 where individual runs split between cooperative and collapsed fixed points.
 
-Practical reading guide: fitness (wmean) gaps below ~0.002 and qBSeen gaps
+Practical reading guide: fitness (wmean) differences below ~0.002 and qBSeen differences
 below ~0.01–0.02 are within run-to-run noise. Cell-count claims (for example,
 the exploitation tallies) and per-cell fitness deficits should be read against
 this floor — small deficits such as 0.5000 vs 0.5008 are below the wmean

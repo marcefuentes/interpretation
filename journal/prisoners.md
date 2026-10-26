@@ -6,7 +6,7 @@ T = 0.90 and S = 0.10 and sweeps R and P independently over an 18 × 18 grid
 (172 cells with T > R > P > S). This decouples temptation (T − R), risk
 (P − S), and the cooperation advantage (R − P), which symmetric_c welds onto one
 axis — letting us attribute each mechanism's behavior to a specific payoff
-gap.
+difference.
 
 The main analysis here is the dilemma 1 (PD) payoff plane; a no-social-
 dilemma control rerun (folder 0) now also exists for the dummy control
@@ -16,7 +16,7 @@ dynamics at both groupsizes); 30 runs per cell in the
 multi-run sweep.
 
 - **[prisoners_calibration.md](prisoners_calibration.md)** — cross-mechanism
-  payoff-axis attribution (which gap limits each mechanism), the shuffle
+  payoff-axis attribution (which difference limits each mechanism), the shuffle
   decomposition, and cross-checks against symmetric_c/asymmetric_c0_c1
 - **[prisoners_partner_choice.md](prisoners_partner_choice.md)** — mechanism P:
   cooperation collapses onto R − P, genotype hitchhiking, pop_2 symmetry
@@ -54,7 +54,7 @@ of bistable outcomes rather than a single equilibrium. Bistability is localized,
 though: only 6 of the 172 M cells (pop_1, noshuffle) have qBSeenSD > 0.1, so
 almost every cited mean sits on a single stable equilibrium.
 
-Practical reading guide: per-cell qBSeen gaps below ~0.01–0.02 are within
+Practical reading guide: per-cell qBSeen differences below ~0.01–0.02 are within
 run-to-run noise. The payoff-axis −b/a ratios and mean-qBSeen figures are
 fitted/averaged over all 172 cells, so they are far tighter than any single
 cell; treat −b/a differences below ~0.03 as not meaningful.

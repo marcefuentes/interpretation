@@ -55,12 +55,12 @@ each extreme leaves one population with an intact apparatus while a split breaks
 And the escape route that makes information cost survivable under symmetry is what
 makes it destructive under asymmetry — shedding the machinery relieves the payer and
 withdraws the service the partner depended on. Supporting this, we identify the payoff
-gap limiting each mechanism (reciprocity risk-limited, partner choice limited by the
+difference limiting each mechanism (reciprocity risk-limited, partner choice limited by the
 cooperation advantage, reputation-rich mechanisms reward-limited), and show that
 parameter symmetry does not imply outcome symmetry: partner choice produces a
 cooperator/exploiter role split — stochastic under equal costs, deterministic under
 asymmetry — in which the more cooperative side is frequently the less fit one. When both
-cost axes differ, the cooperation-cost gap remains the default role assigner and
+cost axes differ, the cooperation-cost difference remains the default role assigner and
 information cost inverts roles only in a thin near-zero-i₀ regime where the cheap-cooperation-cost
 population pays nothing; the effect requires a genuine dilemma and vanishes under
 snowdrift.

@@ -1,10 +1,10 @@
-# symmetric_c_i — Information Cost of the Enforcement Apparatus
+# symmetric_c_i — Information cost of the enforcement apparatus
 
-symmetric_c fixes the information cost at Cost = 0.001 (negligible)
+symmetric_c fixes the information cost at i = 0.001 (negligible)
 and sweeps the cooperation cost c from 0 to b = 0.4. **symmetric_c_i** adds a
-second axis: it sweeps Cost jointly with c over a triangular grid, so we can ask
+second axis: it sweeps i jointly with c over a triangular grid, so we can ask
 what happens when carrying reciprocity or partner-choice machinery is itself
-expensive. Cost is the *information cost* of a mechanism — the metabolic or
+expensive. i is the *information cost* of a mechanism — the metabolic or
 cognitive overhead of being a reciprocator or a partner chooser — as opposed to
 c, the *cooperation cost* paid when you actually help a partner.
 
@@ -17,19 +17,19 @@ For how the information-cost axis sits alongside the payoff-axis attributions
 (prisoners/snowdrift) and the cooperation-cost thresholds (symmetric_c/asymmetric_c0_c1),
 see **[synthesis.md](synthesis.md)**.
 
-## What Cost does in the model
+## What i does in the model
 
 From the simulation source (recruits.c), each individual pays, per round,
-cost = Cost × ((Choose or Choose_lt) + (Mimic or Imimic or Imimic_lt)), and
-fitness is w = max(0, payoff − cost). So Cost is charged **once for carrying
+cost = i × ((Choose or Choose_lt) + (Mimic or Imimic or Imimic_lt)), and
+fitness is w = max(0, payoff − cost). So i is charged **once for carrying
 a partner-choice locus** (Choose or Choose_lt) and **once for carrying a
 reciprocity locus** (Mimic, Imimic, or Imimic_lt), whether or not that locus
 is expressed in behavior. The consequences:
 
-- **Cost is per family carried, not per allele and not per behavior expressed.**
+- **i is per family carried, not per allele and not per behavior expressed.**
   Each term is a boolean OR over its family, so P1Q1 and P1Q0 pay the same single
   unit, as do M1I1J1, M1I1J0 and M1I0J0, and no individual ever pays more than
-  2 × Cost. C0P1 (defector with a silent P1 allele) still pays if Choose = 1;
+  2×i. C0P1 (defector with a silent P1 allele) still pays if Choose = 1;
   under mechanism \_, reciprocity and partner-choice routines do not run, but P
   and M loci still mutate in and carriers still pay.
 - **A family has to go as a block before the saving arrives.** Dropping M while
@@ -37,14 +37,14 @@ is expressed in behavior. The consequences:
   locus at a time; it removes whole families.
 - **Mechanism \_ disables enforcement, not the loci.** PartnerChoice and
   Reciprocity are off, so chooser and mimic logic never runs. Machinery alleles
-  are nonetheless costly when present; at high Cost selection keeps them rare
-  (e.g. control M1 falls 0.38 → 0.02 across the Cost sweep at c = 0). At the
-  symmetric_c default Cost = 0.001 the tax is negligible and P1/M1 drift near
+  are nonetheless costly when present; at high i selection keeps them rare
+  (e.g. control M1 falls 0.38 → 0.02 across the i sweep at c = 0). At the
+  symmetric_c default i = 0.001 the tax is negligible and P1/M1 drift near
   neutral — the usual baseline for comparing active mechanisms.
-- Single-family mechanisms (M; P) enable one family and pay one unit of Cost per
+- Single-family mechanisms (M; P) enable one family and pay one unit of i per
   round when the corresponding loci are carried.
 - Combined mechanisms (MP, MPQ, IMP, IJMPQ) touch both families and pay two
-  units of Cost per round when loci from both are carried.
+  units of i per round when loci from both are carried.
 - Cooperators that shed the machinery cooperate unconditionally and pay no
   information cost. That tax-free niche drives most of the results below. Note
   that C1P0 and C1M0, the usual single-locus summaries for it, are proxies: a
@@ -55,12 +55,12 @@ is expressed in behavior. The consequences:
 
 ## The grid
 
-Triangular: Cost runs over {0, 0.02, ..., 0.40} and, for each Cost, c runs
-0 ... (0.40 − Cost) in 0.02 steps — that is, Cost + c ≤ b. 231 cells. The
+Triangular: i runs over {0, 0.02, ..., 0.40} and, for each i, c runs
+0 ... (0.40 − i) in 0.02 steps — that is, i + c ≤ b. 231 cells. The
 constraint keeps the combined burden within the cooperation benefit b; it also
 means the two axes are only ever explored together up to their shared ceiling.
 
-**Sanity check.** The Cost = 0 edge reproduces symmetric_c (Cost = 0.001)
+**Sanity check.** The i = 0 edge reproduces symmetric_c (i = 0.001)
 cell for cell: across all seven mechanisms at c = 0.0/0.1/0.2/0.4 (pop_1, PD,
 noshuffle, gs = 128) the two studies agree to within ±0.008 (the noise floor).
 The new axis is a clean extension, not a reparameterization.
@@ -68,13 +68,13 @@ The new axis is a clean extension, not a reparameterization.
 ## Headline: information cost is real but soft, and it acts through the machinery
 
 Primary condition throughout: pop_1, PD (dilemma 1), noshuffle, gs = 128,
-fset_0. Cell key is (Cost, c).
+fset_0. Cell key is (i, c).
 
 Along the **pure information-cost axis** (c = 0, so no temptation — the only
 thing biting is the information cost), cooperation erodes gently and the mechanism
 ordering is preserved:
 
-| Mechanism | families | Cost=0 | Cost=0.08 | Cost=0.20 | Cost=0.40 |
+| Mechanism | families | i = 0 | i = 0.08 | i = 0.20 | i = 0.40 |
 | --------- | :------: | -----: | --------: | --------: | --------: |
 | \_        | 0        | 0.498  | 0.495     | 0.488     | 0.517     |
 | M         | 1        | 0.942  | 0.836     | 0.686     | 0.627     |
@@ -87,29 +87,29 @@ ordering is preserved:
 Two things stand out.
 
 **Information cost is far gentler than cooperation cost.** Information cost of 0.40 on the
-Cost axis leaves IJMPQ at 0.810; the same cooperation cost of 0.40 on the c axis collapses it to
+i axis leaves IJMPQ at 0.810; the same cooperation cost of 0.40 on the c axis collapses it to
 0.378 (and P to 0.066, M to 0.079). The reason is structural: c injects
-temptation and risk into every interaction for everyone, whereas Cost only taxes
+temptation and risk into every interaction for everyone, whereas i only taxes
 the machinery carriers — and at c = 0 there is no temptation, so a population can
 shed the expensive apparatus and keep cooperating for free.
 
 **Family count does not predict the collapse.** The naive prediction — a
 two-family mechanism pays double, so it should fail first — is wrong. The
-combined mechanisms are the most Cost-robust despite paying the double information cost. If
-the information cost alone governed the outcome, a two-family mechanism at Cost = X
-should match a one-family mechanism at Cost = 2X; it does not (MP at Cost = 0.08
-is 0.907, whereas P at Cost = 0.16 — the same 0.16 paid per round — is 0.765).
-The same comparison at the top of the axis: IJMPQ at Cost = 0.20 is 0.886 against
-P at Cost = 0.40 (0.539), again the same 0.40 per round. The tax is not the whole
+combined mechanisms are the most i-robust despite paying the double information cost. If
+the information cost alone governed the outcome, a two-family mechanism at i = X
+should match a one-family mechanism at i = 2X; it does not (MP at i = 0.08
+is 0.907, whereas P at i = 0.16 — the same 0.16 paid per round — is 0.765).
+The same comparison at the top of the axis: IJMPQ at i = 0.20 is 0.886 against
+P at i = 0.40 (0.539), again the same 0.40 per round. The tax is not the whole
 story — the enforcement architecture is.
 
 ## Why the machinery erodes but cooperation survives
 
-The mechanism is visible in the genotype frequencies. Along the pure-Cost axis
+The mechanism is visible in the genotype frequencies. Along the pure-i axis
 (c = 0), the active enforcement allele is selected out, while cooperation is
 carried by tax-free unconditional cooperators:
 
-| Mechanism | metric           | Cost=0 | Cost=0.08 | Cost=0.20 | Cost=0.40 |
+| Mechanism | metric           | i = 0 | i = 0.08 | i = 0.20 | i = 0.40 |
 | --------- | ---------------- | -----: | --------: | --------: | --------: |
 | P         | qBSeen           | 0.963  | 0.878     | 0.701     | 0.539     |
 | P         | P1 (chooser)     | 0.671  | 0.193     | 0.060     | 0.020     |
@@ -118,7 +118,7 @@ carried by tax-free unconditional cooperators:
 | M         | M1 (TFT)         | 0.438  | 0.105     | 0.040     | 0.018     |
 | M         | C1M0 (free coop) | 0.534  | 0.748     | 0.659     | 0.616     |
 
-As Cost rises the chooser allele P1 falls from 0.67 to 0.02 and the TFT allele M1
+As i rises the chooser allele P1 falls from 0.67 to 0.02 and the TFT allele M1
 from 0.44 to 0.02 — the machinery is almost entirely shed. Cooperation does not
 track that collapse because the vacated niche is filled by C1P0 / C1M0 genotypes
 that cooperate unconditionally and pay no information cost. **Behavior and mechanism
@@ -133,12 +133,12 @@ and cooperators simply do well by association.)
 Dilemma 0 (folder 0) has no social dilemma at all — produce-b is dominant, so
 cooperation is favored no matter what anyone does. Runs under mechanism \_ with
 M allowed to mutate isolate the **supply-side** information cost with **zero
-demand** for enforcement: M1 erodes as Cost rises even though mimicry never
+demand** for enforcement: M1 erodes as i rises even though mimicry never
 runs. That lets us separate two things the PD alone conflates. Compare mechanism
 \_ (control columns) with mechanism M (PD columns), c = 0, noshuffle, gs = 128,
 pop_1:
 
-| Cost | control qBSeen | control M1 | control C1M0 | PD qBSeen | PD M1 |
+| i | control qBSeen | control M1 | control C1M0 | PD qBSeen | PD M1 |
 | ---: | -------------: | ---------: | -----------: | --------: | ----: |
 | 0.00 | 0.968          | 0.383      | 0.603        | 0.942     | 0.438 |
 | 0.08 | 0.977          | 0.113      | 0.868        | 0.836     | 0.105 |
@@ -150,18 +150,18 @@ Two readings, one on each side of the ledger:
 **The machinery erodes at nearly the same rate with or without a dilemma.** M1
 falls 0.38 → 0.02 in the control and 0.44 → 0.02 in the PD — essentially the same
 trajectory. Erosion is a **supply-side** effect: the tax removes the M locus at a
-rate set by Cost, almost independent of whether reciprocity is actually needed.
-The PD sits a hair above the control at low Cost (residual demand keeps a few more
+rate set by i, almost independent of whether reciprocity is actually needed.
+The PD sits a hair above the control at low i (residual demand keeps a few more
 TFT carriers around), but the curves converge and the cost dominates.
 
 **The dilemma decides whether that erosion matters for behavior.** In the control,
-qBSeen is pinned at the ~0.978 ceiling across the entire Cost range while M1
+qBSeen is pinned at the ~0.978 ceiling across the entire i range while M1
 collapses — behavior and mechanism decouple *trivially*, because no enforcement is
 needed. In the PD the identical machinery loss drags cooperation from 0.94 down to
 0.63. This is the **demand-side** half: shedding the apparatus is free when the
 game does not punish cooperation and costly when it does.
 
-So Cost sets the erosion rate of the apparatus; the dilemma sets the consequence of
+So i sets the erosion rate of the apparatus; the dilemma sets the consequence of
 shedding it. The control is the clean null for "machinery erodes but cooperation
 survives" — it shows the erosion is not a demand-side artifact, and it exhibits the
 unconditional-cooperator niche directly: as M1 vanishes, control C1M0 climbs to
@@ -169,13 +169,13 @@ unconditional-cooperator niche directly: as M1 vanishes, control C1M0 climbs to
 
 ## The interaction: information cost lowers the cooperation-cost ceiling
 
-The two axes are benign in isolation but compound in the interior. Cost thins the
+The two axes are benign in isolation but compound in the interior. i thins the
 enforcement machinery; c is exactly what that machinery exists to resist. So
-raising Cost pulls the c-collapse threshold downward — the apparatus fails at
+raising i pulls the c-collapse threshold downward — the apparatus fails at
 lower temptation because there is less of it. The IJMPQ landscape (qBSeen; blank
 = outside the triangle):
 
-| Cost \ c | 0.00 | 0.04 | 0.08 | 0.16 | 0.24 | 0.32 | 0.40 |
+| i \ c | 0.00 | 0.04 | 0.08 | 0.16 | 0.24 | 0.32 | 0.40 |
 | -------: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 0.00     | 0.968 | 0.966 | 0.967 | 0.957 | 0.945 | 0.909 | 0.378 |
 | 0.04     | 0.962 | 0.956 | 0.952 | 0.926 | 0.888 | 0.780 |       |
@@ -185,11 +185,11 @@ lower temptation because there is less of it. The IJMPQ landscape (qBSeen; blank
 | 0.30     | 0.845 | 0.501 | 0.083 |       |       |       |       |
 | 0.40     | 0.810 |       |       |       |       |       |       |
 
-Reading down any column (rising Cost at fixed c) the decline is gradual; reading
-across any row (rising c at fixed Cost) there is a cliff, and the cliff moves left
-as Cost grows. The c-threshold where cooperation crosses 0.5 retreats steadily:
+Reading down any column (rising i at fixed c) the decline is gradual; reading
+across any row (rising c at fixed i) there is a cliff, and the cliff moves left
+as i grows. The c-threshold where cooperation crosses 0.5 retreats steadily:
 
-| Cost | IJMPQ | IMP  | MP   | P    | M    |
+| i | IJMPQ | IMP  | MP   | P    | M    |
 | ---: | ----: | ---: | ---: | ---: | ---: |
 | 0.00 | 0.38  | 0.38 | 0.36 | 0.36 | 0.34 |
 | 0.08 | 0.30  | 0.24 | 0.24 | 0.22 | 0.02 |
@@ -197,29 +197,29 @@ as Cost grows. The c-threshold where cooperation crosses 0.5 retreats steadily:
 | 0.20 | 0.08  | 0.04 | 0.04 | 0.04 | 0.00 |
 
 For the robust mechanisms the exchange rate is roughly 1.5 units of tolerable c
-lost per unit of Cost added. This is not an equal-budget effect: cells with the
-same Cost + c differ enormously (at Cost + c = 0.4, IJMPQ ranges from 0.378 at
-all-c to 0.810 at all-Cost). Per unit, c is far more destructive than Cost; the
+lost per unit of i added. This is not an equal-budget effect: cells with the
+same i + c differ enormously (at i + c = 0.4, IJMPQ ranges from 0.378 at
+all-c to 0.810 at all-i). Per unit, c is far more destructive than i; the
 two simply interact where they overlap.
 
 The one-line reading: **c is the demand for enforcement (temptation to defect);
-Cost is information cost. Cooperation persists where the
+i is information cost. Cooperation persists where the
 population can afford the machinery the game demands.** With no demand (c = 0) any
 information cost is survivable — the apparatus is shed harmlessly. With free machinery
-(Cost = 0) the symmetric_c c-profile returns. The interior is where
+(i = 0) the symmetric_c c-profile returns. The interior is where
 rising information cost starves the defense that rising cooperation cost requires.
 
 ## Reciprocity vs partner choice split two ways under cost
 
 The two single-family mechanisms swap places depending on which axis is active:
 
-- **Pure information cost (c = 0):** at high Cost, M holds up better than P
-  (0.627 vs 0.539 at Cost = 0.40). With no temptation, noshuffle's stable
+- **Pure information cost (c = 0):** at high i, M holds up better than P
+  (0.627 vs 0.539 at i = 0.40). With no temptation, noshuffle's stable
   pairings keep unconditional cooperators (C1M0) locked into cooperative dyads,
   whereas partner choice needs active, taxed re-sampling to assort — so shedding
   P1 drifts P back toward the control floor faster.
 - **With temptation (c > 0):** P defends cooperation to a much higher c than M at
-  the same Cost (at Cost = 0.08, P holds qBSeen ≥ 0.5 up to c = 0.22 vs M's
+  the same i (at i = 0.08, P holds qBSeen ≥ 0.5 up to c = 0.22 vs M's
   0.02). A residual chooser minority sorts the whole population — defectors are
   abandoned and paired together — so even cheap C1P0 cooperators are protected. A
   residual TFT minority only protects itself; the C1M0 unconditional cooperators
@@ -227,15 +227,15 @@ The two single-family mechanisms swap places depending on which axis is active:
 
 This is the information-cost face of the synthesis attribution: **P is an
 assortment (population-level) mechanism, M is a history (individual-level)
-mechanism.** Cost reveals it by stripping each down to its residual and showing
+mechanism.** i reveals it by stripping each down to its residual and showing
 what the residual can still protect.
 
 ## Snowdrift buffers the information cost
 
 In the snowdrift-ordered payoffs (dilemma 2, high S), cooperation is nearly
-Cost-proof (c = 0, pop_1, noshuffle, gs = 128):
+i-proof (c = 0, pop_1, noshuffle, gs = 128):
 
-| Mechanism | d1 (PD) Cost=0.40 | d2 (SD) Cost=0.40 |
+| Mechanism | d1 (PD) i = 0.40 | d2 (SD) i = 0.40 |
 | --------- | ----------------: | ----------------: |
 | M         | 0.627             | 0.870             |
 | P         | 0.539             | 0.870             |
@@ -253,15 +253,15 @@ it barely matters.**
 At gs = 4 the chooser bottleneck and the information cost stack (c = 0, PD,
 noshuffle):
 
-| Mechanism | gs128 Cost=0 | gs128 Cost=0.08 | gs4 Cost=0 | gs4 Cost=0.08 |
+| Mechanism | gs128 i = 0 | gs128 i = 0.08 | gs4 i = 0 | gs4 i = 0.08 |
 | --------- | -----------: | --------------: | ---------: | ------------: |
 | M         | 0.942        | 0.836           | 0.940      | 0.835         |
 | P         | 0.963        | 0.878           | 0.856      | 0.522         |
 | IJMPQ     | 0.968        | 0.944           | 0.960      | 0.926         |
 
-M is groupsize-invariant under Cost (stable pairings do not care about group
+M is groupsize-invariant under i (stable pairings do not care about group
 size); P is already depressed at gs = 4 (fewer mutual-swap opportunities) and a
-small Cost then knocks it to the control floor. This mirrors the gs = 4 findings
+small i then knocks it to the control floor. This mirrors the gs = 4 findings
 in symmetric_c and synthesis: small groups remove the P component, and information
 cost finishes it off.
 
@@ -270,11 +270,11 @@ cost finishes it off.
 Single-run trajectories (nine snapshots, t = 1 ... 1.05M) show that the image
 (steady-state) values are representative:
 
-- Established cells stay put: Cost = 0, c = 0 holds about 0.96–0.97 throughout;
-  the pure high-cost corner Cost = 0.40, c = 0 sits near 0.80 (IJMPQ) with mild
+- Established cells stay put: i = 0, c = 0 holds about 0.96–0.97 throughout;
+  the pure high-cost corner i = 0.40, c = 0 sits near 0.80 (IJMPQ) with mild
   run-to-run wobble for the machinery-depleted single-family mechanisms (P
   bounces 0.50–0.65), consistent with the near-neutral selection there.
-- Interior collapse cells (Cost = 0.20, c = 0.16, and similar) are already
+- Interior collapse cells (i = 0.20, c = 0.16, and similar) are already
   collapsed at the first snapshot and never recover — the collapse is not a slow
   erosion of machinery visible at this resolution but is set during
   establishment.
@@ -289,9 +289,9 @@ to resolve.
 The symmetric_c pop_2 role split (one population ends up the cooperator, the other
 the exploiter) is a temptation-driven, paradox-of-success phenomenon. Along the
 pure information-cost axis (c = 0) it is weak — the fset_0 minus fset_1
-cooperation gap grows only mildly with Cost (P: +0.03 to +0.07; IJMPQ: +0.00 to
-+0.03 as Cost goes 0 to 0.40). With no temptation there is no strong role
-asymmetry for Cost to amplify; the split needs c, consistent with the "symmetric
+cooperation difference grows only mildly with i (P: +0.03 to +0.07; IJMPQ: +0.00 to
++0.03 as i goes 0 to 0.40). With no temptation there is no strong role
+asymmetry for i to amplify; the split needs c, consistent with the "symmetric
 payoffs split stochastically only under temptation" reading in **synthesis.md**.
 
 ## Caveats
@@ -302,9 +302,9 @@ payoffs split stochastically only under temptation" reading in **synthesis.md**.
 - **Noise floor.** Per-cell qBSeen differences below about 0.01–0.02 and
   c-threshold differences of one grid step (0.02) are within run-to-run noise;
   the mechanism ordering and the frontier retreat are well outside it.
-- **Triangular grid.** Because Cost + c ≤ 0.4, the extreme corners of a full
+- **Triangular grid.** Because i + c ≤ 0.4, the extreme corners of a full
   square are not sampled; the iso-budget comparison is therefore made along the
   hypotenuse and shorter interior diagonals, not a full square.
 - **Role in the project.** symmetric_c_i is an extension of the primary symmetric_c
   study, not a separate calibration. It answers "how expensive can the mechanism
-  be before it stops paying for itself," which the fixed-Cost studies cannot.
+  be before it stops paying for itself," which the fixed-i studies cannot.

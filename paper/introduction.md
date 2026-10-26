@@ -114,7 +114,7 @@ cost places on its partner.
 I therefore vary an individual-based model across game type, cooperation cost,
 per-population information cost, group size, partner shuffling, population structure,
 and mechanism, and add orthogonal payoff-plane calibration analyses that separate the
-payoff gaps a single cooperation-cost axis joins. The single-population case is the baseline; the two-population case with
+payoff differences a single cooperation-cost axis joins. The single-population case is the baseline; the two-population case with
 independently assigned costs is the primary biological scenario.
 
 ## Contribution
@@ -143,7 +143,7 @@ information cost under symmetry — losing mechanism alleles while switching to
 unconditional cooperation — is what harms the partner under asymmetry, because the
 payer stops providing the assortment or conditional help the partner needed.
 Supporting this, I attribute each mechanism's loss of cooperation along the
-cooperation-cost axis to a specific payoff gap (direct reciprocity M is risk-limited,
+cooperation-cost axis to a specific payoff difference (direct reciprocity M is risk-limited,
 short-memory partner choice P is limited by the cooperation advantage, and the
 combined mechanisms MP, MPQ, IMP, and IJMPQ are reward-limited), and show that when
 both cost axes differ, populations still follow the cooperation-cost asymmetry unless the

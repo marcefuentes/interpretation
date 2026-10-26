@@ -1,9 +1,9 @@
 # Cross-Study Synthesis — The Payoff Axes Behind the Thresholds
 
 symmetric_c and asymmetric_c0_c1 show *that* each mechanism collapses as the cost c rises,
-but their single cost axis cannot say *which* payoff gap drives the collapse.
+but their single cost axis cannot say *which* payoff difference drives the collapse.
 The prisoners calibration (fixed T = 0.90, S = 0.10; R and P swept
-independently) decouples the gaps and attributes each mechanism to one of them.
+independently) decouples the differences and attributes each mechanism to one of them.
 This document maps that attribution back onto the specific symmetric_c and
 asymmetric_c0_c1 thresholds, consolidating the cross-checks otherwise scattered across
 the per-study write-ups.
@@ -15,10 +15,10 @@ noise floor that bounds the comparisons below.
 ## The confound prisoners removes
 
 In symmetric_c/asymmetric_c0_c1 the four payoffs are functions of one cost c
-(T = K + b, R = K + b − c, P = K, S = K − c), which welds three gaps together:
+(T = K + b, R = K + b − c, P = K, S = K − c), which welds three differences together:
 
 - temptation T − R = c
-- risk (sucker gap) P − S = c
+- risk (sucker difference) P − S = c
 - cooperation advantage R − P = b − c
 
 A rising-c collapse is therefore simultaneously a rising-temptation,
@@ -52,7 +52,7 @@ This reinterprets two symmetric_c/asymmetric_c0_c1 results:
   symmetric_c cannot tell whether the collapse is the shrinking R − P or the
   growing risk P − S = c; prisoners attributes the bulk to risk.
 - **Snowdrift confirms it from the other side.** In snowdrift S is high
-  (S = K + b − c), so the sucker gap P − S is small — i.e. low risk. M then
+  (S = K + b − c), so the sucker difference P − S is small — i.e. low risk. M then
   sustains cooperation where it cannot in PD: at gs = 4, c = 0.40, M reaches
   0.690 in snowdrift versus 0.017 in PD (**symmetric_c_reciprocity.md**). Low
   risk, not high reward, is what rescues M. The asymmetric_c0_c1 mirror is the
@@ -80,7 +80,7 @@ studies:
   (R − P = b − c0 > b − c1) and wins the chooser bottleneck in every cell:
   Pop_0 = 0.472 vs Pop_1 = 0.146 under P (asymmetry 0.325;
   **asymmetric_c0_c1_partner_choice.md**). Partner choice converts the built-in R − P
-  gap directly into a cooperation gap.
+  difference directly into a cooperation difference.
 - **Shuffle-invariant, gs = 4-fragile** in prisoners (0.898 → 0.898 under
   shuffle; 0.898 → 0.075 at gs = 4), matching symmetric_c/asymmetric_c0_c1: shuffle
   leaves P untouched while small groups starve the mutual C1P1 swap.
@@ -149,69 +149,69 @@ prisoners pins the difference to R − P:
   the cooperator role. Same outcome, but seeded by the payoff structure rather
   than by stochastic symmetry breaking. The combined mechanisms then suppress
   the split (IMP/IJMPQ asymmetry ≈ 0.16 vs 0.325 under P in PD) precisely
-  because, being reward-led, they no longer route the R − P gap into a
-  cooperation gap.
+  because, being reward-led, they no longer route the R − P difference into a
+  cooperation difference.
 - **Asymmetric information cost splits deterministically at symmetric c.**
-  asymmetric_i0_i1 (Cost0 < Cost1 at c0 = c1; see **asymmetric_i0_i1.md**) adds a
-  supply-side route: partner choice assigns the cooperator role to the **low-Cost**
+  asymmetric_i0_i1 (i₀ < i₁ at c0 = c1; see **asymmetric_i0_i1.md**) adds a
+  supply-side route: partner choice assigns the cooperator role to the **low-i**
   population (affordable chooser machinery), while IJMPQ **inverts** the
-  assignment — the high-Cost side sheds into tax-free unconditional cooperation
-  and is exploited by the low-Cost side. Same paradox of success in both cases;
-  the Cost-to-role mapping depends on mechanism family.
+  assignment — the high-i side sheds into tax-free unconditional cooperation
+  and is exploited by the low-i side. Same paradox of success in both cases;
+  the i-to-role mapping depends on mechanism family.
 
 ## The information-cost axis: information cost vs cooperation cost
 
-Prisoners/snowdrift decompose the payoff gaps behind the c-thresholds;
-**symmetric_c_i** adds an orthogonal axis — the information cost Cost of carrying
+Prisoners/snowdrift decompose the payoff differences behind the c-thresholds;
+**symmetric_c_i** adds an orthogonal axis — the information cost i of carrying
 the machinery, charged once per round for being a partner chooser (P/Q locus) and
 once for being a reciprocator (M/I/J locus), independent of the game payoffs (see
 **symmetric_c_i.md**). It reframes enforcement as two costs:
 
 - **c is cooperation cost (demand).** Rising cooperation cost is rising temptation and risk —
   the pressure the machinery must resist.
-- **Cost is information cost.** Rising information cost falls on the machinery itself,
+- **i is information cost.** Rising information cost falls on the machinery itself,
   escapable only by shedding it.
 
 The two are benign alone and destructive together:
 
-- **Information cost is soft on its own** (c = 0): at Cost = 0.40 IJMPQ still
+- **Information cost is soft on its own** (c = 0): at i = 0.40 IJMPQ still
   holds 0.810, versus 0.378 at c = 0.40. With no temptation the population simply
   sheds the machinery under information cost — the enforcement allele collapses (P1 0.67 to 0.02;
-  M1 0.44 to 0.02 across the Cost sweep) while cooperation is carried by tax-free
+  M1 0.44 to 0.02 across the i sweep) while cooperation is carried by tax-free
   unconditional cooperators (C1P0, C1M0). **Behavior and mechanism decouple.**
 - **Information cost lowers the c-ceiling.** Because it thins the very apparatus
-  that resists temptation, adding Cost retreats the c-collapse threshold —
-  IJMPQ's half-cooperation c-threshold falls 0.38 to 0.08 as Cost goes 0 to 0.20
-  (roughly 1.5 units of tolerable c lost per unit Cost). This is not an
-  equal-budget effect: at fixed Cost + c = 0.4 cooperation ranges 0.378 (all-c)
-  to 0.810 (all-Cost); c is far more destructive per unit.
-- **On the asymmetric branch there is no harmless Cost edge.** asymmetric_c1_i fixes
-  c0 = 0.10 and sweeps Cost x c1, so even the cheap population always faces
-  nonzero demand. The result is the complement of symmetric_c_i: Cost no longer
+  that resists temptation, adding i retreats the c-collapse threshold —
+  IJMPQ's half-cooperation c-threshold falls 0.38 to 0.08 as i goes 0 to 0.20
+  (roughly 1.5 units of tolerable c lost per unit i). This is not an
+  equal-budget effect: at fixed i + c = 0.4 cooperation ranges 0.378 (all-c)
+  to 0.810 (all-i); c is far more destructive per unit.
+- **On the asymmetric branch there is no harmless i edge.** asymmetric_c1_i fixes
+  c0 = 0.10 and sweeps i x c1, so even the cheap population always faces
+  nonzero demand. The result is the complement of symmetric_c_i: i no longer
   erodes behavior softly, but immediately compresses the cooperator/exploiter split,
   retreats the c1 ceiling, and removes most of the behavior-mechanism decoupling
   that the symmetric c = 0 edge allowed.
-- **Supply-side Cost asymmetry at symmetric c.** asymmetric_i0_i1 (Cost0 < Cost1,
-  c0 = c1) assigns roles deterministically in PD — P to the low-Cost population,
+- **Supply-side i asymmetry at symmetric c.** asymmetric_i0_i1 (i₀ < i₁,
+  c0 = c1) assigns roles deterministically in PD — P to the low-i population,
   IJMPQ inverted via cross-population hitchhiking — but **snowdrift largely removes
-  that lock**: P's cooperation gap becomes Cost-uncorrelated (direction flips across
-  the triangle; both sides ≈ 0.57 at moderate Cost), while IJMPQ keeps the same
-  direction but collapses the gap magnitude (both sides ≈ 0.93+). The supply-side
+  that lock**: P's cooperation difference becomes i-uncorrelated (direction flips across
+  the triangle; both sides ≈ 0.57 at moderate i), while IJMPQ keeps the same
+  direction but collapses the difference magnitude (both sides ≈ 0.93+). The supply-side
   route to deterministic roles is therefore a **PD phenomenon**, not a universal
   information-cost law.
 - **Crossed asymmetries.** asymmetric_c1_i0_i1 fixes c0 < c1 and sweeps
-  the full Cost0 x Cost1 square (see **asymmetric_c1_i0_i1.md**). The c-gap is the
+  the full i₀ x i₁ square (see **asymmetric_c1_i0_i1.md**). The c-difference is the
   default role assigner (P: pop_0 cooperates in 170/176 cells). IJMPQ/IMP can still
-  invert locally on the Cost0 ≈ 0 strip (13 cells), but cannot overturn the cheap-c
+  invert locally on the i₀ ≈ 0 strip (13 cells), but cannot overturn the cheap-c
   side globally; snowdrift removes the wedge entirely. Single-run movies confirm
-  early lock-in at t = 131072 for both the c-gap default and the hitchhiking wedge.
-- **Cost is a relational quantity, not a private one (asymmetric_c1_i0_i1).** Only the full
+  early lock-in at t = 131072 for both the c-difference default and the hitchhiking wedge.
+- **i is a relational quantity, not a private one (asymmetric_c1_i0_i1).** Only the full
   square separates the cost a population pays from the cost its partner pays, and the
   separation matters more than the override verdict. Under P, pop_0 is nearly
-  insensitive to its own Cost (0.602 -> 0.585 across Cost0 = 0 -> 0.20) and collapses
+  insensitive to its own i (0.602 -> 0.585 across i₀ = 0 -> 0.20) and collapses
   under pop_1's (0.602 -> 0.069): the swap needs C1P1 on both sides, so the binding
   constraint is the chooser supply of whichever population has least of it. Hence
-  equal Cost budgets are non-fungible **and** non-convex — for every M-bearing
+  equal i budgets are non-fungible **and** non-convex — for every M-bearing
   mechanism, splitting a budget across both populations is worse than loading it on
   either one (IJMPQ, budget 0.20: corners 1.652 and 1.003, worst split 0.390). The
   wedge itself is gated by the reciprocity family, not by the tax paid — and because
@@ -220,16 +220,16 @@ The two are benign alone and destructive together:
   and IJMPQ all pay two units yet invert in 3, 1, 13 and 13. No mechanism lacking the
   reciprocity family inverts there at all. The
   dilemma-0 control shows the tax has **no** cross-population channel of its own
-  (corr(M1, partner Cost) = +0.05 for both populations), so the coupling is a property
+  (corr(M1, partner i) = +0.05 for both populations), so the coupling is a property
   of the dilemma, not of the cost accounting.
 - **The reward-led / assortment / risk attributions carry over.** Combined
-  reputation-rich mechanisms are the most Cost-robust despite paying the double
+  reputation-rich mechanisms are the most i-robust despite paying the double
   (two-family) tax — family count does not predict the collapse, the enforcement
   architecture does. Along c > 0, P defends cooperation to a higher c than M at
-  equal Cost (a residual chooser minority sorts the whole population; a residual
+  equal i (a residual chooser minority sorts the whole population; a residual
   TFT minority protects only itself) — the same population-level (P) vs
   individual-level (M) split seen in the payoff-axis fits.
-- **Snowdrift buffers information cost** (M/P hold about 0.87 at Cost = 0.40 in
+- **Snowdrift buffers information cost** (M/P hold about 0.87 at i = 0.40 in
   dilemma 2 vs 0.54–0.63 in PD): a high cooperation floor makes the apparatus
   optional, so taxing it barely matters — the low-risk snowdrift result, seen on
   the information-cost axis.
@@ -257,13 +257,13 @@ The two are benign alone and destructive together:
 | M survives in snowdrift                       | snowdrift has low risk (high S)            |
 | Partner choice collapses near c = 0.40        | R − P → 0 at the chooser bottleneck        |
 | asymmetric_c0_c1 deterministic role split            | c0 < c1 is an R − P asymmetry              |
-| asymmetric_i0_i1 Cost-asymmetry at symmetric c         | supply-side role split; P vs IJMPQ invert  |
-| asymmetric_c1_i0_i1 crossed c-gap + Cost square       | c-gap default; IJMPQ wedge at Cost0 ≈ 0 only |
-| P cares about its partner's Cost, not its own          | the swap needs C1P1 on both sides           |
-| Splitting a Cost budget beats neither corner           | one intact apparatus suffices; two broken ones do not |
+| asymmetric_i0_i1 i-asymmetry at symmetric c         | supply-side role split; P vs IJMPQ invert  |
+| asymmetric_c1_i0_i1 crossed c-difference + i square       | c-difference default; IJMPQ wedge at i₀ ≈ 0 only |
+| P cares about its partner's i, not its own          | the swap needs C1P1 on both sides           |
+| Splitting a i budget beats neither corner           | one intact apparatus suffices; two broken ones do not |
 | IMP / IJMPQ hold cooperation at high c        | reward-led; blind to risk P                |
 | Shuffle kills M-based cooperation             | the M term drops from the payoff-axis fit  |
 | gs = 4 kills P-based cooperation, M recovers   | the P term drops; risk-led M remains       |
-| Information cost Cost erodes cooperation slowly at c0 = c1 | machinery is shed harmlessly at c = 0; behavior decouples from mechanism |
+| Information cost i erodes cooperation slowly at c0 = c1 | machinery is shed harmlessly at c = 0; behavior decouples from mechanism |
 | ...but not on the asymmetric branch             | with c0 fixed above zero there is no harmless-shedding refuge |
-| In both cases Cost lowers the demand ceiling    | Cost thins the apparatus that c or c1 demands (information cost vs cooperation cost) |
+| In both cases i lowers the demand ceiling    | i thins the apparatus that c or c1 demands (information cost vs cooperation cost) |

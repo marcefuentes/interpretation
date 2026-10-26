@@ -33,10 +33,10 @@ risk P − S while leaving R − P to fall) drives the collapse:
 The mechanism is mechanistic: TFT's punishment outcome is mutual defection, so
 the value of retaliating is bounded by how bad mutual defection is. When P is
 high (defection comfortable), TFT cannot enforce cooperation and M decays
-toward the control. This is the payoff gap symmetric_c cannot expose on its own —
+toward the control. This is the payoff difference symmetric_c cannot expose on its own —
 symmetric_c holds P = K = 0.50 fixed and only ever moves R. It reframes the
 symmetric_c/asymmetric_c0_c1 finding that M collapses near c = 0.40 as primarily a
-rising-risk effect rather than a vanishing cooperation gap.
+rising-risk effect rather than a vanishing cooperation difference.
 
 ## Shuffle destroys direct reciprocity
 
@@ -55,7 +55,7 @@ partner's lifetime cooperation average). Mean qBSeen, shuffle, gs=128:
 | Mech | pop_1 gs=128 | pop_1 gs=4 | −b/a (pop_1, gs=128) | Limiting axis           |
 | ---- | ------------ | ---------- | -------------------- | ----------------------- |
 | M    | 0.017        | 0.116      | —                    | dead under shuffle      |
-| IM   | 0.381        | 0.521      | 0.90                 | cooperation gap R − P   |
+| IM   | 0.381        | 0.521      | 0.90                 | cooperation difference R − P   |
 | IJM  | 0.360        | 0.706      | 0.55                 | reward / temptation R   |
 
 Both recover substantial cooperation from M's collapse. Their payoff-axis

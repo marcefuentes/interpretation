@@ -82,7 +82,7 @@ Mean qBSeen across all 210 cells (noshuffle, gs=128):
 
 In PD, simple reciprocity (M) preserves the deterministic role split in every
 cell. In snowdrift, M roughly doubles Pop_1 cooperation (0.191 vs 0.091)
-but leaves a large gap below Pop_0.
+but leaves a large difference below Pop_0.
 
 ### Cooperation Boost vs. Asymmetry Effects
 

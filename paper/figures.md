@@ -30,7 +30,7 @@ The report includes main text Figs 1–3 (fig1–fig3) and supplement Figs S1–
 - DOCX: ~/figures/interpretation/interpretation.docx (internal; all figures)
 - Markdown: paper/captions.md (supplement legends S1–S30 only; main-text legends live in results.md)
 
-PD and snowdrift never share a figure. Opener S1–S6 is Cost × c. S7–S10 are
+PD and snowdrift never share a figure. Opener S1–S6 is i × c. S7–S10 are
 cooperation-cost line strips with a one-population top row (fitness twins S8/S10;
 snowdrift S9/S10). Fig. 1 is asymmetric cooperation cost with low symmetric
 information cost (snowdrift twin S13; fitness S12). Fig. 2 is asymmetric
@@ -47,9 +47,9 @@ supplement heatmaps are 3×5. S11, S15, S23 are five-column twins of Figs. 1–3
 
 | Figure | Renderer | Data source | Verdict |
 | ------ | -------- | ----------- | ------- |
-| figS1 | Heatmap | symmetric_c_i pop_1 | PD Cost×c; 2×5 coop/fitness |
+| figS1 | Heatmap | symmetric_c_i pop_1 | PD i × c; 2×5 coop/fitness |
 | figS2 | Heatmap | same as figS1 | Snowdrift twin of S1 |
-| figS3 | Heatmap | symmetric_c_i pop_2 | PD 3×5 Cost×c coop+difference |
+| figS3 | Heatmap | symmetric_c_i pop_2 | PD 3×5 i × c coop+difference |
 | figS4 | Heatmap | same as figS3, wmean | Fitness of Fig. S3 |
 | figS5 | Heatmap | twin of figS3 | Snowdrift twin of S3 |
 | figS6 | Heatmap | twin of figS4 | Fitness of Fig. S5 |
@@ -79,7 +79,7 @@ supplement heatmaps are 3×5. S11, S15, S23 are five-column twins of Figs. 1–3
 ### Panel order notes
 
 1. Main Figs. 1–3: 3×4; columns — | P | M | IMP. Supplement two-pop planes: 3×5.
-2. figS1 / figS2: 2×5 one-pop Cost×c heatmaps; y-axis i, x-axis c.
+2. figS1 / figS2: 2×5 one-pop i × c heatmaps; y-axis i, x-axis c.
 3. figS7 / figS9: 3×5 strips; row 0 = one population, row 1 = c₁ = c₀, row 2 = c₁ = c₀ + 0.02.
 4. figS27 / S28: fixed-total line cuts (2×5; rows coop / fitness).
 5. figS29 / S30: gs=4 counterparts of Figs. 3 and S25.

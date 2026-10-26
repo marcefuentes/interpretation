@@ -129,15 +129,15 @@ how their payoffs move with c.
 
 Table 1. Game types and payoffs.
 
-| Game type                | T (temptation) | R (reward)  | P (penalty) | S (sucker) | T − R (temptation gap) | P − S (risk)  | R − P (cooperation advantage)  |
+| Game type                | T (temptation) | R (reward)  | P (penalty) | S (sucker) | T − R (temptation difference) | P − S (risk)  | R − P (cooperation advantage)  |
 | ------------------------ | -------------- | ----------- | ----------- | ---------- | ---------------------- | ------------- | ------------------------------ |
 | Control (no dilemma)     | K              | K + b − c   | K           | K + b − c  | c − b (increases)      | c − b (increases) | b − c (decreases)              |
 | Prisoner's dilemma       | K + b          | K + b − c   | K           | K − c      | c (increases)          | c (increases) | b − c (decreases)              |
 | Snowdrift                | K + b          | K + b − c/2 | K           | K + b − c  | c/2 (increases slowly) | c − b (increases) | b − c/2 (decreases slowly) |
 
-Note: Columns T − R, P − S, and R − P show how each gap changes as cooperation cost c
+Note: Columns T − R, P − S, and R − P show how each difference changes as cooperation cost c
 rises. Temptation applies only when T > R, and risk only when P > S. In the control
-row both gaps are negative, so neither applies. In snowdrift S > P for all c < b, so
+row both differences are negative, so neither applies. In snowdrift S > P for all c < b, so
 there is no risk on the interior of the sweep even though P − S = c − b rises toward
 zero. In the prisoner's dilemma both temptation and risk are positive for c > 0 and
 rise with c.
@@ -210,7 +210,7 @@ Table 2. Mechanisms.
 
 | Label | Loci enabled     | Info-cost units | Structures                        | Where reported                        |
 | ----- | ---------------- | --------------- | --------------------------------- | ------------------------------------- |
-| \_    | none behavioral  | 0-2 if carried  | one or two pops; shuffle optional | baselines; Figs. S7a,f,k, S8a,f,k; Cost×c S1/S3; plane heatmaps |
+| \_    | none behavioral  | 0-2 if carried  | one or two pops; shuffle optional | baselines; Figs. S7a,f,k, S8a,f,k; i × c S1/S3; plane heatmaps |
 | M     | C, M             | 1               | one or two pops; shuffle optional | Figs. S7c,h,m, S8c,h,m; Figs. 1–3 and S25, S1c, S7–S30; Results §7 |
 | P     | C, P             | 1               | one or two pops; shuffle optional | Figs. 1–3; Figs. S1b, S7b, S7–S30         |
 | MP    | C, M, P          | 2               | one or two pops; shuffle optional | Results §1 shuffle; Results §7 (not plotted) |
@@ -224,7 +224,7 @@ No enforcement (_) disables partner choice and reciprocity while the loci still 
 and still cost. Indirect reciprocity stands alone as a mechanism (IM, IJM) only under
 shuffling, because persistent pairs leave I copying the partner's act toward the focal
 individual itself, which is direct reciprocity; alongside partner choice it appears in
-the combined mechanisms IMP and IJMPQ. Table S1 reports which payoff gap limits each
+the combined mechanisms IMP and IJMPQ. Table S1 reports which payoff difference limits each
 mechanism family in the payoff-plane attributions. The control row of Table 1 is a
 game type, not a mechanism: under it a partner's act does not change payoffs, while
 mechanisms may still be enabled or disabled as in the other games.
@@ -280,7 +280,7 @@ Table 3. Simulation designs.
 
 | Design                          | Pops | Mechanisms (typical)   | Axes / ranges                                      | Step | Cells | Figures        |
 | ------------------------------- | ---- | ---------------------- | -------------------------------------------------- | ---- | ----- | -------------- |
-| One-population Cost × c         | 1    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S1–S2    |
+| One-population i × c         | 1    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S1–S2    |
 | Cooperation-cost strips (1+2 pops) | 1–2 | \_, P, M, IMP, IJMPQ  | c ∈ [0, b]; c₁ = c₀ or c₁ = c₀ + 0.02              | 0.02 | 21    | Figs. S7–S10 |
 | Cooperation-cost asymmetry      | 2    | \_, P, M, IMP[, IJMPQ]| c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1 (IMP); S7–S14, S11 |
 | Symmetric information cost      | 2    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S3–S6  |
@@ -290,7 +290,7 @@ Table 3. Simulation designs.
 | PD payoff plane                 | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
 | Snowdrift payoff plane          | 1    | M, P, combined         | T = 0.90, P = 0.10; R, S with T > R > S > P        | 0.02 | 172   | Table S1       |
 
-I first establish one-population Cost × c baselines (Fig. S1, snowdrift Fig. S2;
+I first establish one-population i × c baselines (Fig. S1, snowdrift Fig. S2;
 cooperation above fitness in each). Shuffle short-memory variants (M, MP, IM, IMP)
 are reported in Results §1 without dedicated figures. Fig. 1 shows cooperation under
 asymmetric cooperation costs with low symmetric information cost; its fitness and
@@ -299,7 +299,7 @@ symmetric-cost and c₁ = c₀ + 0.02 strips on shared axes for the prisoner's d
 and snowdrift and still show M beside P, IMP, and IJMPQ (fitness counterparts
 Figs. S8, S10; group-size-4 counterparts of Figs. 3 and S25 are
 Figs. S29–S30). Symmetric information cost in two populations is
-Figs. S3–S6 (Cost × c grids; —|P|M|IMP|IJMPQ; cooperation and the difference between
+Figs. S3–S6 (i × c grids; —|P|M|IMP|IJMPQ; cooperation and the difference between
 populations, with fitness counterparts; prisoner's dilemma and snowdrift).
 
 Symmetric-c information-cost asymmetry is Fig. 2 (—|P|M|IMP; fitness Fig. S16; snowdrift
@@ -313,9 +313,9 @@ fitness; columns —|P|M|IMP|IJMPQ). Fig. S27 holds total information cost fixed
 i₀ + i₁ = 0.2 while the split varies; who-pays edges are read from Fig. 3.
 Fitness plane: Figs. S24 and S26.
 
-Along the cooperation-cost axis, raising c changes several payoff gaps at once. The
+Along the cooperation-cost axis, raising c changes several payoff differences at once. The
 orthogonal payoff-plane sweeps vary payoffs independently of c; Table S1 reports the
-payoff-gap attribution for each mechanism family rather than publishing the heatmaps.
+payoff-difference attribution for each mechanism family rather than publishing the heatmaps.
 
 Every run is logged at nine snapshots: the first round, then eight points spaced
 2^17 rounds apart up to 2^20. The 30-run series and the single-replicate companions

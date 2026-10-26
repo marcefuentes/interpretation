@@ -6,7 +6,7 @@ and finally vary both information costs together.
 
 ## 1. One population
 
-I start with a single population across the Cost × c triangle (Fig. S1). In the
+I start with a single population across the i × c triangle (Fig. S1). In the
 prisoner's dilemma, cooperation stays near zero irrespective of cost in the
 no-enforcement control (Fig. S1a,f). Cooperation collapses at successively higher
 cooperation costs under direct reciprocity M (Fig. S1c), short-memory partner choice P
@@ -113,7 +113,7 @@ collapses, while the lower-cooperation population can still fall in the interior
 so losing the alleles costs less than in the prisoner's dilemma.
 
 The difference rows show how symmetric costs still assign roles. In the prisoner's dilemma,
-partner choice opens a stochastic difference in cooperation across much of the Cost × c plane,
+partner choice opens a stochastic difference in cooperation across much of the i × c plane,
 while direct reciprocity and IJMPQ keep both sides close (Fig. S3j–l). In snowdrift,
 the no-enforcement default already opens a large difference once c > 0, and partner choice
 does not change that pattern; M narrows that difference and IJMPQ shrinks it further,

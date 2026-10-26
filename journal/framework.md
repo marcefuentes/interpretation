@@ -21,20 +21,20 @@ combination of them, and every study is a sweep over some subset.
   partner. In asymmetric_c0_c1 the two populations can carry different costs c0 and c1;
   the symmetric_c study sits on the equal-cost diagonal c0 = c1 = c. This is the *demand* for
   enforcement: higher c is higher temptation and higher risk.
-- **Information cost Cost.** The per-round metabolic/cognitive overhead of carrying
+- **Information cost i.** The per-round metabolic/cognitive overhead of carrying
   reciprocity or partner-choice alleles, charged once for carrying any locus of the
   partner-choice family (Choose / Choose_lt) and once for carrying any locus of the
   reciprocity family (Mimic / Imimic / Imimic_lt), whether or not the run enables
   the corresponding behavior. Each term is a boolean OR over its family, so the bill
-  is 0, 1 or 2 × Cost and is insensitive to how many loci within a family are carried. Under mechanism \_,
+  is 0, 1 or 2×i and is insensitive to how many loci within a family are carried. Under mechanism \_,
   enforcement is off but carriers still pay and selection keeps machinery alleles
-  rare when Cost is high. Swept in symmetric_c_i (symmetric c0 = c1) and
+  rare when i is high. Swept in symmetric_c_i (symmetric c0 = c1) and
   asymmetric_c1_i (fixed c0, swept c1).
 - **Ecological context.** Groupsize (4 vs 128 individuals per group), partner
   shuffling (stable pairings vs within-group re-draw each round), and population
   structure (see below).
 - **Mechanism.** Which enforcement behaviors are enabled: control (_) turns off
-  partner choice and reciprocity (loci still mutate and still incur Cost), direct
+  partner choice and reciprocity (loci still mutate and still incur i), direct
   reciprocity (M), partner choice (P), and the combined and reputation-rich
   families (MP, MPQ, IMP, IJMPQ, and the shuffle-only IM, IJM).
 
@@ -56,7 +56,7 @@ question. Comparing them is the project's spine.
 ## Outcome variables (what we measure)
 
 Keep **cost** and **burden** distinct. A cost is an independent variable a population
-pays (`c` or `i` / Cost). The burden (or benefit) is the effect of that cost on an
+pays (`c` or `i`). The burden (or benefit) is the effect of that cost on an
 outcome below. Population 0 can pay `i₀` while population 1 bears much of the burden;
 sometimes the same cost confers a benefit on a partner. Paying a cost and bearing its
 burden are different questions — the paper's central message.
@@ -70,9 +70,9 @@ The share of individuals who behave cooperatively in a given round — not C1 al
 frequency. A C0M1 reciprocator can cooperate by mimicking its partner and therefore
 counts without carrying C1. In exports this readout is qBSeen; in the manuscript and
 figures it is the frequency of cooperators. This is the primary readout everywhere:
-where each mechanism sustains cooperation, and where it collapses as c (or Cost)
+where each mechanism sustains cooperation, and where it collapses as c (or i)
 rises. The prisoners and snowdrift calibration sweeps exist to attribute a given
-collapse to a specific payoff gap (temptation, risk, or the cooperation advantage
+collapse to a specific payoff difference (temptation, risk, or the cooperation advantage
 R minus P); see synthesis.md.
 
 ### 2. Between-population asymmetry
@@ -80,8 +80,8 @@ R minus P); see synthesis.md.
 Only defined for two populations (pop_2, and pop_3's evolving-vs-fixed contrast). It
 has two faces that can point at different populations, so we track both:
 
-- **Cooperation asymmetry** — the gap in qBSeen between the two populations.
-- **Exploitation / fitness asymmetry** — the gap in fitness (wmean), i.e. which
+- **Cooperation asymmetry** — the difference in qBSeen between the two populations.
+- **Exploitation / fitness asymmetry** — the difference in fitness (wmean), i.e. which
   population actually profits. The sharper signal: under partner choice in the PD,
   carrying the chooser allele correlates with fitness at roughly minus one (the
   cooperating side is the exploited side, the paradox of success). The snowdrift
@@ -89,7 +89,7 @@ has two faces that can point at different populations, so we track both:
 
 In symmetric_c pop_2 (symmetric payoffs) the role split is stochastic; in asymmetric_c0_c1
 pop_2 (built-in c0 < c1 asymmetry) it is deterministic, with the lower-cost
-population taking the cooperator role; in asymmetric_i0_i1 (Cost0 != Cost1 at
+population taking the cooperator role; in asymmetric_i0_i1 (i₀ != i₁ at
 symmetric c) it is again deterministic but mechanism-dependent — see
 asymmetric_i0_i1.md. Three routes in total; see synthesis.md.
 
@@ -123,10 +123,10 @@ the behaviour. This captures findings invisible to level and asymmetry alone:
 | ----- | ----------------------------- | --------------- |
 | asymmetric_c0_c1 | pop_2, 2D c0 x c1 triangle, dilemmas 1/2, both groupsizes, shuffle/noshuffle, all mechanisms | Primary: two-population cooperation and asymmetry |
 | symmetric_c | pop_1/2/3, c0 = c1 sweep, dilemmas 0/1/2, both groupsizes, shuffle/noshuffle, all mechanisms | The equal-cost special case; single-population baseline |
-| symmetric_c_i | adds the Cost axis (Cost x c triangle) to symmetric_c | Information cost vs cooperation cost (symmetric) |
-| asymmetric_c1_i | pop_2, fixed c0 = 0.10, Cost x c1 triangle | Price vs demand under exploitation asymmetry |
-| asymmetric_i0_i1 | pop_2, c0 = c1, Cost0 < Cost1 triangle | Supply-side information-cost asymmetry, no c-gap |
-| asymmetric_c1_i0_i1 | pop_2, fixed c0 < c1, Cost0 x Cost1 square | Crossed c-gap and Cost asymmetry |
+| symmetric_c_i | adds the i axis (i × c triangle) to symmetric_c | Information cost vs cooperation cost (symmetric) |
+| asymmetric_c1_i | pop_2, fixed c0 = 0.10, i x c1 triangle | Price vs demand under exploitation asymmetry |
+| asymmetric_i0_i1 | pop_2, c0 = c1, i₀ < i₁ triangle | Supply-side information-cost asymmetry at equal c |
+| asymmetric_c1_i0_i1 | pop_2, fixed c0 < c1, i₀ x i₁ square | Crossed cooperation-cost and information-cost differences |
 | prisoners | (R, P) payoff-plane sweep, PD | Attribute c-collapses to temptation / risk / R minus P |
 | snowdrift | (R, S) payoff-plane sweep, snowdrift | Confirm the low-risk (high S) attribution from the other side |
 | *_1run | single-run variants of the above | Temporal dynamics (limited resolution) |

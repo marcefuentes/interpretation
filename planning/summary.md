@@ -35,8 +35,8 @@ payoff-plane calibrations (Table S1) to attribute mechanism limits.
 
 **Results.** The main finding is that a population often bears a larger burden from its
 partner's information cost than from its own. When populations differ in cooperation
-cost, that gap assigns cooperator and exploiter roles; when they differ in information
-cost, that gap shifts those roles and inverts them only if the low-cooperation-cost
+cost, that difference assigns cooperator and exploiter roles; when they differ in information
+cost, that difference shifts those roles and inverts them only if the low-cooperation-cost
 population pays near-zero information cost. Under partner choice, a population
 cooperates if its partner can afford active choosers. Under reciprocity-bearing
 mechanisms, the information cost paid by the low-cooperation-cost population can

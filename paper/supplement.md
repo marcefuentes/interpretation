@@ -39,7 +39,7 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S28 | Cooperation and fitness under asymmetric cooperation costs in two populations (snowdrift) | Fig. S25 |
 | Fig. S29 | Cooperation under asymmetric cooperation and information costs at group size 4 (PD) | Fig. 3 |
 | Fig. S30 | Cooperation under asymmetric cooperation and information costs at group size 4 (snowdrift) | Fig. S25 |
-| Table S1 | Payoff-gap attribution by mechanism family | Results §1 |
+| Table S1 | Payoff-difference attribution by mechanism family | Results §1 |
 
 Captions for Figs. S1–S30 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). PD and snowdrift never share a figure. Main-text
@@ -52,15 +52,15 @@ nearly unchanged) are discussed in Results §1 without a dedicated figure.
 The dilemma-0 machinery-erosion control remains internal (`aux_m_nodilemma`) and is
 not a manuscript figure.
 
-## Table S1. Payoff-gap attribution
+## Table S1. Payoff-difference attribution
 
 A single cooperation-cost axis joins temptation (T − R), risk (P − S), and the
 cooperation advantage (R − P) together. Orthogonal payoff-plane calibration sweeps
 (prisoner's dilemma: R and P varied at fixed T, S; snowdrift: R and S varied at
-fixed T, P) separate these gaps. The sweeps are auxiliary and are not published as
+fixed T, P) separate these differences. The sweeps are auxiliary and are not published as
 figures; the attributions they support are:
 
-| Mechanism family | Limiting payoff gap | Evidence |
+| Mechanism family | Limiting payoff difference | Evidence |
 | ---------------- | ------------------- | -------- |
 | Direct reciprocity (M) | Risk / mutual-defection payoff P | PD calibration; snowdrift confirms low-risk rescue of M |
 | Partner choice (P) | Cooperation advantage R − P | PD calibration; cooperation falls as R − P → 0 |
@@ -72,16 +72,16 @@ Journal sources: [synthesis](../journal/synthesis.md),
 
 ## Cross-references from the main text
 
-**Figs. S1–S2 Cost × c in one population.** Cooperation and fitness across the
+**Figs. S1–S2 i × c in one population.** Cooperation and fitness across the
 information-cost × cooperation-cost triangle (PD and snowdrift). Low-i line ceilings
 are the top row of Figs. S7–S10.
 
 **Fig. 1 asymmetric cooperation costs.** Fitness counterpart: Fig. S12. Snowdrift: Figs. S13–S14.
-Five-column twin (adds IJMPQ): Fig. S11. Cooperation-cost strips (one-pop + matched/gap):
+Five-column twin (adds IJMPQ): Fig. S11. Cooperation-cost strips (one-pop + matched/asymmetric):
 Figs. S7, S9 (fitness S8, S10). Group-size-4 counterparts of Figs. 3 and S25:
 Figs. S29–S30 (cooperation only).
 
-**Figs. S3–S6 symmetric information cost.** Cost × c surfaces in two populations
+**Figs. S3–S6 symmetric information cost.** i × c surfaces in two populations
 (3×5; higher-/lower-coop / difference rows; —|P|M|IMP|IJMPQ columns; PD and snowdrift;
 cooperation S3/S5, fitness S4/S6).
 

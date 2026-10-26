@@ -11,10 +11,10 @@ c), split by mechanism family:
 - **[symmetric_c_combined.md](symmetric_c_combined.md)** — mechanisms MP, MPQ, IMP,
   IJMPQ: mechanism hierarchy, IJMPQ symmetry suppression, groupsize effects
 - **[symmetric_c_i.md](symmetric_c_i.md)** — the information-cost extension:
-  Cost (information cost on carrying the machinery) swept jointly with c, and
+  i (information cost on carrying the machinery) swept jointly with c, and
   how rising information cost interacts with rising cooperation cost
 
-For asymmetric costs (c0 ≠ c1), see **asymmetric_c0_c1.md**. For which payoff gap
+For asymmetric costs (c0 ≠ c1), see **asymmetric_c0_c1.md**. For which payoff difference
 (temptation, risk, or R − P) drives each mechanism's c-collapse, and how the
 information-cost axis fits, see **[synthesis.md](synthesis.md)**.
 
@@ -27,7 +27,7 @@ the tables below are the local, self-contained copy for this study.
 | Parameter | Value         | Description                              |
 | --------- | ------------- | ---------------------------------------- |
 | b         | 0.40          | Benefit (fixed)                          |
-| c         | 0.00 – 0.40   | Cost (x-axis; 21 values in steps of 0.02) |
+| c         | 0.00 – 0.40   | i (x-axis; 21 values in steps of 0.02) |
 | K         | 0.50          | Baseline fitness (T and P floor)         |
 | groupsize | 4 and 128     | Individuals per group from each population |
 
@@ -61,7 +61,7 @@ i.e. SE ≈ 0.001–0.007. SD peaks in the transition zones (max wmeanSD ≈
 fixed point, so multi-run means there reflect a mix of bistable outcomes
 rather than a single equilibrium (see the single-run dynamics sections).
 
-Practical reading guide: fitness (wmean) gaps below ~0.002 and qBSeen gaps
+Practical reading guide: fitness (wmean) differences below ~0.002 and qBSeen differences
 below ~0.01–0.02 are within run-to-run noise. Statements like "near the noise
 floor" or "negligible" in the analysis docs refer to differences at or below
 these magnitudes.

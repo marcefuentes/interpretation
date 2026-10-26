@@ -2,7 +2,7 @@
 
 ## What limits each mechanism
 
-I attribute the fall in cooperation under each mechanism to a specific payoff gap.
+I attribute the fall in cooperation under each mechanism to a specific payoff difference.
 Direct reciprocity (M) is risk-limited: its fall tracks risk (the cost of its own
 punishment outcome, mutual defection). Partner choice (P) is limited by the
 cooperation advantage R − P (the quantity assortment uses). The combined mechanisms

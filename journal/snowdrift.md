@@ -1,10 +1,10 @@
 # Snowdrift Calibration Study
 
-Calibration study analysis for the raw Snowdrift payoff-plane sweep. Unlike symmetric_c and asymmetric_c0_c1 (which derive payoffs from a single cost c), the snowdrift sweep fixes T = 0.90 and P = 0.10 and sweeps R and S independently over an 18 × 18 grid (172 cells satisfying T > R > S > P). This decouples temptation (T − R), the sucker gap (R − S), risk (P − S), and the cooperation advantage (R − P), which symmetric_c welds onto one axis — letting us attribute each mechanism's behavior to a specific payoff gap in a snowdrift-ordered payoff space.
+Calibration study analysis for the raw Snowdrift payoff-plane sweep. Unlike symmetric_c and asymmetric_c0_c1 (which derive payoffs from a single cost c), the snowdrift sweep fixes T = 0.90 and P = 0.10 and sweeps R and S independently over an 18 × 18 grid (172 cells satisfying T > R > S > P). This decouples temptation (T − R), the sucker difference (R − S), risk (P − S), and the cooperation advantage (R − P), which symmetric_c welds onto one axis — letting us attribute each mechanism's behavior to a specific payoff difference in a snowdrift-ordered payoff space.
 
 The main analysis here is the dilemma 2 (Snowdrift) payoff plane. Payoffs are symmetric across populations; pops 1/2/3; shuffle and noshuffle; gs = 128 and gs = 4 (gs = 128 movie exports available via snowdrift_1run for temporal dynamics); 30 runs per cell in the multi-run sweep.
 
-- **[snowdrift_calibration.md](snowdrift_calibration.md)** — cross-mechanism payoff-axis attribution (which gap limits each mechanism in Snowdrift), the shuffle decomposition, and groupsize reversals
+- **[snowdrift_calibration.md](snowdrift_calibration.md)** — cross-mechanism payoff-axis attribution (which difference limits each mechanism in Snowdrift), the shuffle decomposition, and groupsize reversals
 - **[snowdrift_partner_choice.md](snowdrift_partner_choice.md)** — mechanism P: cooperation robustness, genotype structure, pop_2 symmetry breaking, and pop_3
 - **[snowdrift_reciprocity.md](snowdrift_reciprocity.md)** — mechanisms M, IM, and IJM: M is insensitive to the sucker payoff S, shuffle sensitivity, and groupsize-reversal boosts
 
