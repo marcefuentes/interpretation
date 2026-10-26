@@ -35,24 +35,24 @@ When citing an analysis doc, use its journal/ path (e.g. journal/symmetric_c_i.m
 
 ## Related Repositories (same machine)
 
-- ~/code/graph/graphgen/ (same as ../graph/graphgen/ from this repo) — figure pipeline, study manifests, mech_trait_map.csv. Run **graphgen** here to **regenerate** csv_*_for_image.con (final timestep) and csv_*_for_movie.con (multi-timestep) whenever those exports are missing from ~/results/.
-- ../trps/ or ~/code/trps/ — C simulation source code
+- ~/code/graph/graphgen/ (same as../graph/graphgen/ from this repo) — figure pipeline, study manifests, mech_trait_map.csv. Run **graphgen** here to **regenerate** csv_*_for_image.con (final timestep) and csv_*_for_movie.con (multi-timestep) whenever those exports are missing from ~/results/.
+-../trps/ or ~/code/trps/ — C simulation source code
 - ~/results/ — simulation output data
 
-Paths like ../graph/graphgen/... are relative to this repo root.
+Paths like../graph/graphgen/... are relative to this repo root.
 
-### Running graphgen to generate .con summary files
+### Running graphgen to generate.con summary files
 
 graphgen generates the csv_*_for_image.con and csv_*_for_movie.con summary files as a side effect of figure generation. Run it from ~/code/graph/ with the virtualenv activated:
 
     cd ~/code/graph
-    . .venv/bin/activate
+..venv/bin/activate
     python -m graphgen.main --study STUDY --all --output /tmp/graphgen_out
 
 Use --groupsize 4 or --groupsize 128 to target a specific groupsize (default is 128).
 Use --movie to build csv_*_for_movie.con (temporal snapshots); without it, only csv_*_for_image.con (final timestep) are written.
 Use --dilemma-type 0|1|2 to target dilemma folders other than the default (1); run once per dilemma type needed.
-Use --clean to discard cached .con files and force a rebuild from raw .csv data.
+Use --clean to discard cached.con files and force a rebuild from raw.csv data.
 Use --flat-output to write figures directly to --output without appending the study name (e.g. ~/figures/asymmetric_c0_c1/pop_3 for asymmetric_c0_c1_pop_3).
 
 Examples:
@@ -73,23 +73,23 @@ Examples:
 
 ### Verifying numeric claims (for AI agents)
 
-- Headline numbers in the analysis docs are regression-checked against the .con data by ai/verify_claims.py (shared loaders/stats in ai/trps_io.py).
+- Headline numbers in the analysis docs are regression-checked against the.con data by ai/verify_claims.py (shared loaders/stats in ai/trps_io.py).
 - Run python3 ai/verify_claims.py before committing any doc edit that changes a number; it exits non-zero on a prose/data mismatch and prints PASS/FAIL/SKIP per check.
 - When you add or change a headline number, add or update the matching check so the claim stays covered.
-- SKIP means the underlying .con is absent — generate it with graphgen to activate the check; SKIP is not a pass.
+- SKIP means the underlying.con is absent — generate it with graphgen to activate the check; SKIP is not a pass.
 - Counts aggregated over condition blocks must not silently skip missing exports and then re-lock the total. Either list the blocks the census requires and fail when one is absent, or register a separate check per block.
 
 ## Architecture
 
 ### Study Status
 
-**symmetric_c**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: symmetric_c_partner_choice.md (P), symmetric_c_reciprocity.md (M, IM, IJM), symmetric_c_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 primary with dedicated gs=4 sections.
+**symmetric_c**:.con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, all 9 mechanisms, pop_1/2/3 (image and movie). Analysis: symmetric_c_partner_choice.md (P), symmetric_c_reciprocity.md (M, IM, IJM), symmetric_c_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 primary with dedicated gs=4 sections.
 
-**asymmetric_c0_c1**: .con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, pop_2 only (image and movie). Mechanism coverage differs by shuffle setting: noshuffle has 7 mechanisms (_, M, P, MP, MPQ, IMP, IJMPQ); shuffle adds IM and IJM for 9. Analysis: asymmetric_c0_c1_partner_choice.md (P), asymmetric_c0_c1_reciprocity.md (M noshuffle; IM, IJM shuffle), asymmetric_c0_c1_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 noshuffle primary with dedicated gs=4 sections.
+**asymmetric_c0_c1**:.con exports complete — gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, pop_2 only (image and movie). Mechanism coverage differs by shuffle setting: noshuffle has 7 mechanisms (_, M, P, MP, MPQ, IMP, IJMPQ); shuffle adds IM and IJM for 9. Analysis: asymmetric_c0_c1_partner_choice.md (P), asymmetric_c0_c1_reciprocity.md (M noshuffle; IM, IJM shuffle), asymmetric_c0_c1_combined.md (MP, MPQ, IMP, IJMPQ); gs=128 noshuffle primary with dedicated gs=4 sections.
 
 **asymmetric_c0_c1 pop_3**: raw simulation data present (441 cells per complete folder); .con caches build on first graphgen run. Study asymmetric_c0_c1_pop_3 in graphgen renders a full 21×21 square grid (diagonal and lower triangle included). **Redundant with symmetric_c pop_3 for interpretation** — see asymmetric_c0_c1 Parameter Space below. Use symmetric_c pop_3 for figures and analysis; asymmetric_c0_c1_pop_3 is retained only as auxiliary figure material at ~/figures/asymmetric_c0_c1/pop_3/ (use --flat-output).
 
-**prisoners**: calibration study, re-run under the current engine (Cost=0.001, Runs=30) as a raw PD payoff-plane sweep — T=0.9 and S=0.1 fixed, R and P swept independently over an 18x18 grid (172 cells, T>R>P>S). The main analysis is dilemma 1 (PD); a dilemma 0 no-social-dilemma rerun now exists for the dummy control mechanism \_ only. Payoffs are symmetric; pops 1/2/3; shuffle and noshuffle. .con exports: gs=128 and gs=4 image for the PD sweep (noshuffle 7 mechanisms, shuffle adds IM/IJM), plus dilemma 0 control exports for \_; movie exports present for gs=128 and gs=4 (temporal via prisoners_1run: gs=128 and gs=4 complete). Cell key is (R0, P0), not c0/c1. Analysis: prisoners_calibration.md (payoff-axis attribution, gs=4 mirror of shuffle), prisoners_partner_choice.md (P), prisoners_reciprocity.md (M, IM, IJM).
+**prisoners**: calibration study, re-run under the current engine (Cost=0.001, Runs=30) as a raw PD payoff-plane sweep — T=0.9 and S=0.1 fixed, R and P swept independently over an 18x18 grid (172 cells, T>R>P>S). The main analysis is dilemma 1 (PD); a dilemma 0 no-social-dilemma rerun now exists for the dummy control mechanism \_ only. Payoffs are symmetric; pops 1/2/3; shuffle and noshuffle..con exports: gs=128 and gs=4 image for the PD sweep (noshuffle 7 mechanisms, shuffle adds IM/IJM), plus dilemma 0 control exports for \_; movie exports present for gs=128 and gs=4 (temporal via prisoners_1run: gs=128 and gs=4 complete). Cell key is (R0, P0), not c0/c1. Analysis: prisoners_calibration.md (payoff-axis attribution, gs=4 mirror of shuffle), prisoners_partner_choice.md (P), prisoners_reciprocity.md (M, IM, IJM).
 
 **snowdrift**: multi-run (snowdrift, Runs=30) now present — a snowdrift-ordered payoff sweep (T=0.9, P=0.10 fixed; R and S swept; T>R>S>P), dilemma 2, gs=128 and gs=4 image exports. Temporal from snowdrift_1run (Runs=1) movie exports (gs=128 and gs=4). Analysis: snowdrift.md (index), snowdrift_calibration.md (payoff-axis attribution), snowdrift_partner_choice.md (P), snowdrift_reciprocity.md (M, IM, IJM). Cell key is (R0, S0).
 
@@ -98,13 +98,13 @@ Examples:
 **asymmetric_c1_i**: extends asymmetric_c0_c1 pop_2 with the same information-cost axis but on the asymmetric branch: c0 is fixed at 0.10 for pop_0, and Cost is swept jointly with c1 over the triangle Cost+c1<=0.4 with c1>c0 (120 cells: Cost in {0,0.02,...,0.28}; c1 in {0.12,...,0.4-Cost}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), Runs=30 (image); asymmetric_c1_i_1run is the single-run temporal variant. Cell key is (Cost, c1). Analysis: asymmetric_c1_i.md; ai/analyze_asymmetric_c1_i.py.
 
 **asymmetric_c1_i0_i1**: crossed asymmetries (the c-gap arm of the per-population information-cost programme; its no-c-gap counterpart is asymmetric_i0_i1) — fixed cooperation-cost gap c0=0.10, c1=0.20; full Cost0×Cost1 square on [0, b]×[0, b] (441 cells; noshuffle holds the primary Cost0≤0.30, Cost1≤0.20 rectangle of 176 cells plus the noshuffle2 complement). Headline analysis stays on the 176-cell rectangle; main-text Fig. 3, its snowdrift
-twin S27, and fitness twins S26/S28 use the full square. Equal-c counterpart is
-main-text Fig. 2 (fitness S18; snowdrift S19–S20). Supplement opener S1–S6 is
+twin S25, and fitness twins S24/S26 use the full square. Equal-c counterpart is
+main-text Fig. 2 (fitness S16; snowdrift S17–S18). Supplement opener S1–S6 is
 Cost × c (one-pop then two-pop, with fitness). Two-population supplement
 heatmaps follow a shared row template (main Figs. 1–3: 3×4 —|P|M|IMP; supplement:
-3×5 —|P|M|IMP|IJMPQ) with separate cooperation and fitness figures (Fig. 1; S14–S16,
-S18–S20, S21–S24; five-column twins of Figs. 1–3 are S13, S17, S25). Group-size-4
-counterparts of Figs. S7, S9, 3 and S27 are S11–S12 and S31–S32. pop_2; same ecology as other TRPS studies. graphgen:
+3×5 —|P|M|IMP|IJMPQ) with separate cooperation and fitness figures (Fig. 1; S12–S14,
+S16–S18, S19–S22; five-column twins of Figs. 1–3 are S11, S15, S23). Group-size-4
+counterparts of Figs. 3 and S25 are S29–S30. pop_2; same ecology as other TRPS studies. graphgen:
 `asymmetric_c1_i0_i1` / `_1run`. Regenerate movie caches: `python -m graphgen.main --study asymmetric_c1_i0_i1_1run --export-slices --movie --results ~/results`. Analysis: asymmetric_c1_i0_i1.md; ai/analyze_asymmetric_c1_i0_i1.py.
 
 **asymmetric_i0_i1**: per-population information cost at symmetric cooperation cost (the no-c-gap arm; its c-gap counterpart is asymmetric_c1_i0_i1): c0=c1=c (primary c=0.10 via `csv_*_filtered_for_image.con`; secondary c=0.20 via `csv_*_c020_for_image.con`), Cost0 and Cost1 swept on a strict triangle Cost0<Cost1 with per-axis cap b-c (120 cells at c=0.10; 55 at c=0.20). pop_2 only; gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, Runs=30 (image). Cell key is (Cost0, Cost1). Regenerate slice caches: `python -m graphgen.main --study asymmetric_i0_i1 --export-slices --clean --results ~/results` (and `_1run` variant; add `--movie` for temporal). Analysis: asymmetric_i0_i1.md; ai/analyze_asymmetric_i0_i1.py.
@@ -179,8 +179,6 @@ pop_2 remains the non-redundant asymmetric_c0_c1 case: both populations evolve a
 
 The 7 base mechanisms are run for all three dilemma folders (0, 1, 2) under both shuffle and noshuffle (gs=128 and gs=4). IM and IJM are present only under the shuffle conditions (gs=128 and gs=4).
 
-
-
 ### AI Writing Rule
 
 - Do not use backticks in Markdown documentation.
@@ -238,7 +236,7 @@ Results live at ~/results/{study}/{shuffle}/{groupsize}/{mechanism}/{dilemma}/{p
 - **shuffle**: shuffle or noshuffle
 - **groupsize**: 128 or 4
 
-Cost (the per-family machinery tax) is not encoded in the path; read it from the .glo/.con metadata. It is fixed at 0.001 in every study except symmetric_c_i and the other Cost-swept studies, where it is a swept axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. once for carrying ANY partner-choice locus plus once for carrying ANY reciprocity locus, whether or not the run enables partner choice or reciprocity behavior. Because each term is a boolean OR over its family, an individual pays 0, 1 or 2 x Cost: P1Q1, P1Q0 and P0Q1 all pay the same one unit, as do M1I1J1, M1I1J0 and M1I0J0. Shedding one locus of a family saves nothing unless the whole family goes, so families are purged as blocks. CAUTION: C1P0 and C1M0 are single-locus proxies, NOT tax-free genotypes — a C1M0 individual still owes a reciprocity unit if it carries I1 or J1. The genuinely untaxed cooperator is C1I0J0M0P0Q0. See recruits.c; behavior routing in decide_qB.c and choose_partner.c.
+Cost (the per-family machinery tax) is not encoded in the path; read it from the.glo/.con metadata. It is fixed at 0.001 in every study except symmetric_c_i and the other Cost-swept studies, where it is a swept axis. Cost is distinct from MutationRate (0.01) and is charged every round as globals->cost * ((Choose||Choose_lt) + (Mimic||Imimic||Imimic_lt)) — i.e. once for carrying ANY partner-choice locus plus once for carrying ANY reciprocity locus, whether or not the run enables partner choice or reciprocity behavior. Because each term is a boolean OR over its family, an individual pays 0, 1 or 2 x Cost: P1Q1, P1Q0 and P0Q1 all pay the same one unit, as do M1I1J1, M1I1J0 and M1I0J0. Shedding one locus of a family saves nothing unless the whole family goes, so families are purged as blocks. CAUTION: C1P0 and C1M0 are single-locus proxies, NOT tax-free genotypes — a C1M0 individual still owes a reciprocity unit if it carries I1 or J1. The genuinely untaxed cooperator is C1I0J0M0P0Q0. See recruits.c; behavior routing in decide_qB.c and choose_partner.c.
 
 Example: ~/results/symmetric_c/shuffle/128/P/1/pop_2/csv_0_for_image.con
 
@@ -270,8 +268,7 @@ df['C0P1'] = df[c0p1_cols].sum(axis=1)  # defectors carrying P1 (P1 silent)
 df['C1P0'] = df[c1p0_cols].sum(axis=1)  # cooperators who don't choose
 df['P1']   = df['C1P1'] + df['C0P1']    # total P1 allele frequency
 
-
-Full mechanism → trait mapping: ../graph/graphgen/studies/trps/mech_trait_map.csv
+Full mechanism → trait mapping:../graph/graphgen/studies/trps/mech_trait_map.csv
 
 ### The C0P1 Silencing Rule
 
@@ -311,8 +308,6 @@ The Imimic locus (I, indirect reciprocity recent) copies partner->qBSeen — wha
 
 Groupsize effect on indirect reciprocity: at gs=4 the group is a small closed system of 4 fixed individuals. Reputation signals circulate within this tight pool — cooperation propagates reliably because every signal comes from someone the focal individual also interacts with. At gs=128 the fixed group has 128 members of mixed strategy; defectors produce many qBSeen=0 signals that disrupt the cascade for whoever pairs with them next. Small groups make indirect reciprocity more effective because the reputation signals are more relevant (they concern the same few individuals) and defector signals are less prevalent.
 
-
-
 In asymmetric_c0_c1 **PD** (dilemma 1), cooperation delivers benefit b to the partner (cross-benefit: b appears in T and R but not S). The focal individual pays own cost c. So:
 - Pop 0's R−P = b − c0 (receives partner's b, pays c0)
 - Pop 1's R−P = b − c1 (receives partner's b, pays c1)
@@ -323,10 +318,10 @@ In both cases b is fixed and equal for both populations, so the asymmetry betwee
 
 ## Figure Pipeline (graphgen)
 
-Figures are generated by ../graph/graphgen/studies/{study}/manifest.py. Key files:
-- ../graph/graphgen/studies/{study}/manifest.py — MAIN_ROWS defines panel layout (row → population, file_set, trait, renderer)
-- ../graph/graphgen/studies/asymmetric_c0_c1_pop_3/manifest.py — pop_3 full-square grid (reindex_full_square_matrix; no s04 theory)
-- ../graph/graphgen/studies/trps/config.py — shared trait definitions
-- ../graph/graphgen/studies/common/shared.py — common path template
+Figures are generated by../graph/graphgen/studies/{study}/manifest.py. Key files:
+-../graph/graphgen/studies/{study}/manifest.py — MAIN_ROWS defines panel layout (row → population, file_set, trait, renderer)
+-../graph/graphgen/studies/asymmetric_c0_c1_pop_3/manifest.py — pop_3 full-square grid (reindex_full_square_matrix; no s04 theory)
+-../graph/graphgen/studies/trps/config.py — shared trait definitions
+-../graph/graphgen/studies/common/shared.py — common path template
 
 Renderers: imshow for heatmaps (prisoners/asymmetric_c0_c1), plot for line plots (symmetric_c).

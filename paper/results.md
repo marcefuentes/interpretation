@@ -62,14 +62,14 @@ cooperator/exploiter split: each side cooperates only as much as its partner doe
 (Fig. S7h,i,m,n). Under M and IJMPQ on the asymmetric-cost strip their fitness differs only by
 the 0.02 cost difference (Fig. S8m,n). Under partner choice the cheap population cooperates
 more in all 210 cells of the full grid and earns less fitness in all of them
-(differences in cooperation and fitness correlate at −0.99; Fig. 1; Fig. S14j). Direct reciprocity
+(differences in cooperation and fitness correlate at −0.99; Fig. 1; Fig. S12j). Direct reciprocity
 keeps the cheap side cooperating more in every cell but reverses the fitness ranking
 over most of the triangle: the cheap population earns more fitness in 174 of 210
-cells (Fig. S14k). Under IJMPQ the fitness difference mixes both signs (Fig. S14l). The split
+cells (Fig. S12k). Under IJMPQ the fitness difference mixes both signs (Fig. S12l). The split
 also stays deterministic in groups of 4, where each population samples few partners
-per round (Fig. S11l).
+per round.
 
-**Figure 1: Cooperation under asymmetric cooperation costs.** Frequency of cooperators and the difference in that frequency between the two populations under asymmetric cooperation costs and symmetric information costs (i₀ = i₁ = 0.001). (**a–d**) Population 0 (lower c). (**e–h**) Population 1 (higher c). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Fitness counterpart: Fig. S14. Snowdrift twin: Fig. S15. Cooperation-cost strips: Figs. S7, S9; gs = 4: Fig. S11. Five-column version (adds IJMPQ): Fig. S13.
+**Figure 1: Cooperation under asymmetric cooperation costs.** Frequency of cooperators and the difference in that frequency between the two populations under asymmetric cooperation costs and symmetric information costs (i₀ = i₁ = 0.001). (**a–d**) Population 0 (lower c). (**e–h**) Population 1 (higher c). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Fitness counterpart: Fig. S12. Snowdrift twin: Fig. S13. Cooperation-cost strips: Figs. S7, S9. Five-column version (adds IJMPQ): Fig. S11.
 
 Fig. S9 repeats the same layout under snowdrift. Without enforcement the populations
 already split stochastically on the payoffs alone, because S > P leaves no risk in
@@ -82,7 +82,7 @@ while c ≤ 0.08 under symmetric costs and lifts the expensive side to 0.19 unde
 asymmetric costs; above that cost a narrower split returns, narrower than without enforcement
 (Fig. S9h,m). IJMPQ holds both near 0.96 across the symmetric-cost sweep and lifts the
 expensive side to 0.61 under asymmetric costs (Fig. S9i,n). Fitness counterpart: Fig. S10; full
-grid Figs. S15–S16; gs = 4 Fig. S12.
+grid Figs. S13–S14.
 
 ## 3. Symmetric information cost
 
@@ -131,7 +131,7 @@ When cooperation costs are symmetric (c₀ = c₁ = 0.1) and only information co
 (i₀ < i₁), which population cooperates depends on the mechanism (Fig. 2). Under
 partner choice the lower-i population cooperates more in 63/120 cells (mean difference
 +0.110; Fig. 2b,f,j): it keeps the chooser allele while the higher-i side sheds it
-and defects, yet still wins fitness (fitness Fig. S18). At (i₀, i₁) = (0, 0.20) the
+and defects, yet still wins fitness (fitness Fig. S16). At (i₀, i₁) = (0, 0.20) the
 frequencies of cooperators are 0.331 / 0.153. Without enforcement the triangle is
 flat near zero (Fig. 2a,e,i).
 
@@ -141,16 +141,16 @@ only their carriers, so the expensive side can switch to unconditional cooperati
 that pays no information cost and hitchhike on the cheap side's remaining alleles —
 the expensive population cooperates more while the cheap one earns more. Direct
 reciprocity alone places the same reverse assignment (Fig. 2c,g,k). Snowdrift removes
-these PD locks (Fig. S19; fitness Fig. S20).
+these PD locks (Fig. S17; fitness Fig. S18).
 
-**Figure 2: Cooperation under asymmetric information costs.** Frequency of cooperators and the difference in that frequency between the two populations under symmetric cooperation costs and asymmetric information costs (c₀ = c₁ = 0.1). (**a–d**) Population 0 (lower i). (**e–h**) Population 1 (higher i). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S19. Fitness counterpart: Fig. S18. Crossed asymmetric-c plane: Fig. 3. Symmetric-i contrast: Figs. S21–S22. Five-column version (adds IJMPQ): Fig. S17.
+**Figure 2: Cooperation under asymmetric information costs.** Frequency of cooperators and the difference in that frequency between the two populations under symmetric cooperation costs and asymmetric information costs (c₀ = c₁ = 0.1). (**a–d**) Population 0 (lower i). (**e–h**) Population 1 (higher i). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S17. Fitness counterpart: Fig. S16. Crossed asymmetric-c plane: Fig. 3. Symmetric-i contrast: Figs. S19–S20. Five-column version (adds IJMPQ): Fig. S15.
 
 ## 5. Symmetric information cost under asymmetric cooperation costs
 
-Fig. S21 holds the asymmetric cooperation costs of section 2 and raises a symmetric information
+Fig. S19 holds the asymmetric cooperation costs of section 2 and raises a symmetric information
 cost: the partner-choice split shrinks as that cost rises, rather than reversing
-(fitness Fig. S22). IJMPQ postpones that collapse but does not restore the
-free-cooperation outcome. In snowdrift (Fig. S23; fitness Fig. S24) the cheap
+(fitness Fig. S20). IJMPQ postpones that collapse but does not restore the
+free-cooperation outcome. In snowdrift (Fig. S21; fitness Fig. S22) the cheap
 population stays near full cooperation under partner choice and IJMPQ even at high
 information cost, while the expensive population remains the exploiter; IJMPQ raises
 that side at low information cost and then loses it as the cost rises. Because both
@@ -200,11 +200,11 @@ under symmetry is what places a burden on its partner under asymmetry: losing
 mechanism alleles relieves the payer and removes the assortment or conditional help
 the partner needed.
 
-**Figure 3: Cooperation under asymmetric cooperation and information costs.** Frequency of cooperators and the difference in that frequency between the two populations under asymmetric cooperation and information costs (c₀ = 0.1, c₁ = 0.2). (**a–d**) Population 0 (lower c, $c_0 = 0.1$). (**e–h**) Population 1 (higher c, $c_1 = 0.2$). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S27. Fitness counterpart: Fig. S26. Fixed-total cut: Figs. S29–S30. Symmetric-c contrast: Fig. 2. gs = 4: Fig. S31. Five-column version (adds IJMPQ): Fig. S25.
+**Figure 3: Cooperation under asymmetric cooperation and information costs.** Frequency of cooperators and the difference in that frequency between the two populations under asymmetric cooperation and information costs (c₀ = 0.1, c₁ = 0.2). (**a–d**) Population 0 (lower c, $c_0 = 0.1$). (**e–h**) Population 1 (higher c, $c_1 = 0.2$). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S25. Fitness counterpart: Fig. S24. Fixed-total cut: Figs. S27–S28. Symmetric-c contrast: Fig. 2. gs = 4: Fig. S29. Five-column version (adds IJMPQ): Fig. S23.
 
 ## 7. Both information costs vary
 
-Across the full i₀ × i₁ square (Fig. 3; fitness Fig. S26; snowdrift Fig. S27), under
+Across the full i₀ × i₁ square (Fig. 3; fitness Fig. S24; snowdrift Fig. S25), under
 partner choice the
 lower-cooperation-cost population cooperates more than its partner in 170/176 cells;
 under IJMPQ the expensive population's cooperation exceeds the cheap one's only
@@ -220,7 +220,7 @@ locus rather than partner choice. Without enforcement the plane is flat near zer
 
 Under partner choice the cheap population stays ahead across the plane (Fig. 3j).
 Under IJMPQ the expensive side's lead occupies only the near-zero-i₀ strip and is
-gone once i₀ ≥ 0.04 (Fig. 3l). The snowdrift twin (Fig. S27) does not show this
+gone once i₀ ≥ 0.04 (Fig. 3l). The snowdrift twin (Fig. S25) does not show this
 near-zero-i₀ regime. The transition into the state without mechanism alleles is
 abrupt and bistable rather than gradual: just inside this regime, raising
 population 1's information cost from 0.02 to 0.04 *raises* its frequency of
@@ -228,30 +228,30 @@ cooperators by 0.32 as it switches from a defector-heavy mixed state into
 near-complete unconditional cooperation that pays no information cost. Run-to-run
 SD locates that boundary — wide below the threshold (SD ≈ 0.25; runs diverge to
 different outcomes) and narrow above it (SD ≈ 0.009). On the fitness plane
-(Fig. S26; snowdrift Fig. S28), the same cooperation-fitness mismatch holds: the
+(Fig. S24; snowdrift Fig. S26), the same cooperation-fitness mismatch holds: the
 population with higher cooperation is the one with lower fitness, even when the
 color ordering switches as i₀ rises. In this threshold regime, increasing
 population 1's own information cost can confer a fitness benefit on population 0
-even while population 1 becomes slightly less fit (Fig. S26), showing that one
+even while population 1 becomes slightly less fit (Fig. S24), showing that one
 population can benefit from a partner that pays more for enforcement alleles.
 
 The same total information cost does not yield the same cooperation: equal totals are
-neither interchangeable nor additive (Fig. S29). Fig. S29 takes the fixed-total cut
+neither interchangeable nor additive (Fig. S27). Fig. S27 takes the fixed-total cut
 through Fig. 3 (i₀ + i₁ = 0.20, x = i₁); columns are — / P / M / IJMPQ. Along that cut
 every reciprocity-bearing mechanism reaches its *lowest* total cooperation — the sum
 of the two populations' frequencies of cooperators, on a 0–2 scale — when the total is
 split between populations rather than paid by one side alone. Under IJMPQ populations
 that place a total of 0.20 on one side reach 1.0–1.65 total cooperation, but only 0.39
-when they split it as (0.06, 0.14) (Fig. S29d). Either end leaves one population still
+when they split it as (0.06, 0.14) (Fig. S27d). Either end leaves one population still
 carrying mechanism alleles, which is enough to sustain cooperation in both; a split
 reduces both populations' mechanism alleles so that neither remains above the
 threshold at which cooperation without those alleles takes over. Partner choice does
-not show that interior minimum (Fig. S29b): because only the high-cooperation-cost
+not show that interior minimum (Fig. S27b): because only the high-cooperation-cost
 population's information cost matters, total cooperation is highest when that
 population pays none of the total. That non-additivity is therefore a property of
 reciprocity-bearing mechanisms, not of the total itself. The fitness row of the same
 cut shows the same cross-population burdens and the same interior minimum under a
-fixed total (Fig. S29e–h; snowdrift Fig. S30; plane Fig. S26).
+fixed total (Fig. S27e–h; snowdrift Fig. S28; plane Fig. S24).
 
 Whether the expensive population ends up cooperating more than the cheap one depends
 on whether the mechanism includes reciprocity, not on how much information cost it
@@ -269,7 +269,7 @@ corner of the square and while its own alleles are falling, not through that
 reciprocity free-rider route.
 
 Snowdrift has no risk (S > P) and removes this near-zero-i₀ regime entirely on the
-same crossed design (Fig. S27), identifying this cross-population burden as a
+same crossed design (Fig. S25), identifying this cross-population burden as a
 property of game type rather than of the cost accounting. Shuffled partnerships
 leave the main contrasts intact (Results §1). The cooperator/exploiter split also
-stays deterministic in groups of 4 (Fig. S11f).
+stays deterministic in groups of 4.
