@@ -27,18 +27,18 @@ split even under full parameter symmetry via partner choice.
 
 I separate **parameter symmetry** (c₀ = c₁, i₀ = i₁, identical payoffs) from
 **outcome symmetry** (similar cooperation and fitness). At symmetric parameters,
-partner-choice populations stochastically split in the prisoner's dilemma (Fig. S3,
-top row). When one population pays a lower cooperation cost, that population
-cooperates and the other exploits (Fig. S3, bottom row). Fig. S5 is the snowdrift
+partner-choice populations stochastically split in the prisoner's dilemma (Fig. S7,
+middle row). When one population pays a lower cooperation cost, that population
+cooperates and the other exploits (Fig. S7, bottom row). Fig. S9 is the snowdrift
 counterpart of that layout: payoffs already split roles without enforcement when the
-sucker payoff is high (Fig. S5a,e; full grid Figs. S11–S12; gs = 4 Fig. S8). When
+sucker payoff is high (Fig. S9f,k; full grid Figs. S15–S16; gs = 4 Fig. S12). When
 populations differ only in information cost, partner choice still locks roles, while
 under IJMPQ the expensive population can cooperate more; snowdrift removes these PD
-locks (Fig. 2; snowdrift Fig. S17; crossed-design snowdrift Fig. S25). Under partner
-choice the more cooperative population earns less fitness (Fig. 1; Fig. S10j); direct
+locks (Fig. 2; snowdrift Fig. S19; crossed-design snowdrift Fig. S27). Under partner
+choice the more cooperative population earns less fitness (Fig. 1; Fig. S14j); direct
 reciprocity can reverse that fitness ranking even when the cheap side still cooperates
-more (Fig. S10k), and reward-limited combined mechanisms leave a mixed fitness difference
-(Fig. S10l).
+more (Fig. S14k), and reward-limited combined mechanisms leave a mixed fitness difference
+(Fig. S14l).
 
 ## Information cost versus cooperation cost
 
@@ -61,12 +61,12 @@ help.
 
 **Which cost assigns roles?** When c₀ = c₁ but i₀ ≠ i₁, populations that differ only
 in information cost still lock roles or place the expensive side ahead, depending on
-mechanism (Fig. 2; fitness Fig. S16; snowdrift Figs. S17–S18).
+mechanism (Fig. 2; fitness Fig. S18; snowdrift Figs. S19–S20).
 When both cost axes differ, populations follow the cooperation-cost asymmetry
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and the expensive population cooperates more only on an i₀ ≈ 0 strip
 (Fig. 3l), weaker than in the symmetric-c case. Snowdrift removes this
-regime entirely (Fig. S25).
+regime entirely (Fig. S27).
 What decides whether a mechanism can place the expensive population ahead of the cheap
 one is whether populations carry the reciprocity family, not how large an information
 cost they pay — a controlled comparison the per-family information cost makes
@@ -92,7 +92,7 @@ information cost can end up with fewer *active* choosers, and a tenth of the
 cooperation, of the same population when it pays a heavy information cost itself.
 
 Equal information-cost totals are therefore neither interchangeable nor additive
-(Fig. S27b,d): both populations sharing a total cooperate less than when either pays
+(Fig. S29b,d): both populations sharing a total cooperate less than when either pays
 it alone, since each corner leaves one population still carrying mechanism alleles
 while a split leaves neither.
 That result extends the second-order free-rider literature rather than replacing it:

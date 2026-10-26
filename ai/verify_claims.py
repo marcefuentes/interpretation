@@ -263,7 +263,7 @@ def asym_fitness_gap_sign_counts(mech, d=1):
     return n_more, n
 
 
-# results.md: Fig. S7k — M reverses the fitness ranking on most of the triangle
+# results.md: Fig. S14k — M reverses the fitness ranking on most of the triangle
 check("asymmetric_c0_c1", "RC: M PD cheap earns more fitness in 174/210",
       lambda: asym_fitness_gap_sign_counts("M")[0], 174, None)
 check("asymmetric_c0_c1", "RC: M PD grid cells = 210",
