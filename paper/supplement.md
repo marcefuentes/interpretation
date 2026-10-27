@@ -35,8 +35,8 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S24 | Fitness under asymmetric cooperation and information costs (PD) | Fig. 3 |
 | Fig. S25 | Cooperation under asymmetric cooperation and information costs (snowdrift) | Fig. 3 |
 | Fig. S26 | Fitness under asymmetric cooperation and information costs (snowdrift) | Fig. S25 |
-| Fig. S27 | Cooperation and fitness under asymmetric cooperation costs in two populations (PD) | Fig. 3 |
-| Fig. S28 | Cooperation and fitness under asymmetric cooperation costs in two populations (snowdrift) | Fig. S25 |
+| Fig. S27 | Equal information-cost totals are not interchangeable (PD; coop + fitness) | Fig. 3 |
+| Fig. S28 | Equal information-cost totals are not interchangeable (snowdrift) | Fig. S25 |
 | Fig. S29 | Cooperation under asymmetric cooperation and information costs at group size 4 (PD) | Fig. 3 |
 | Fig. S30 | Cooperation under asymmetric cooperation and information costs at group size 4 (snowdrift) | Fig. S25 |
 | Table S1 | Payoff-difference attribution by mechanism family | Results §1 |

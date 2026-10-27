@@ -121,8 +121,8 @@ python -m graphgen.main --study asymmetric_c1_i0_i1_lines --export-slices --resu
 | S24 | Fitness under asymmetric cooperation and information costs (PD) | figS24 |
 | S25 | Asymmetric cooperation and information costs (snowdrift) | figS25 |
 | S26 | Fitness under asymmetric cooperation and information costs (snowdrift) | figS26 |
-| S27 | Asymmetric cooperation costs in two populations (PD; coop + fitness) | figS27 |
-| S28 | Asymmetric cooperation costs in two populations (snowdrift) | figS28 |
+| S27 | Equal information-cost totals are not interchangeable (PD; coop + fitness) | figS27 |
+| S28 | Equal information-cost totals are not interchangeable (snowdrift) | figS28 |
 | S29 | Asymmetric cooperation and information costs at group size 4 (PD) | figS29 |
 | S30 | Asymmetric cooperation and information costs at group size 4 (snowdrift) | figS30 |
 
