@@ -104,7 +104,7 @@ i × c (one-pop then two-pop, with fitness). Two-population supplement
 heatmaps follow a shared row template (main Figs. 1–3: 3×4 —|P|M|IMP; supplement:
 3×5 —|P|M|IMP|IJMPQ) with separate cooperation and fitness figures (Fig. 1; S12–S14,
 S16–S18, S19–S22; five-column twins of Figs. 1–3 are S11, S15, S23). Group-size-4
-counterparts of Figs. 3 and S25 are S29–S30. pop_2; same ecology as other TRPS studies. graphgen:
+counterparts of Figs. 3 and S25 are S27–S28. pop_2; same ecology as other TRPS studies. graphgen:
 `asymmetric_c1_i0_i1` / `_1run`. Regenerate movie caches: `python -m graphgen.main --study asymmetric_c1_i0_i1_1run --export-slices --movie --results ~/results`. Analysis: asymmetric_c1_i0_i1.md; ai/analyze_asymmetric_c1_i0_i1.py.
 
 **asymmetric_i0_i1**: per-population information cost at symmetric cooperation cost (the equal-c arm; its unequal-c counterpart is asymmetric_c1_i0_i1): c0=c1=c (primary c=0.10 via `csv_*_filtered_for_image.con`; secondary c=0.20 via `csv_*_c020_for_image.con`), i₀ and i₁ swept on a strict triangle i₀<i₁ with per-axis cap b-c (120 cells at c=0.10; 55 at c=0.20). pop_2 only; gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, Runs=30 (image). Cell key is (i₀, i₁) (export columns `Cost0`, `Cost1`). Regenerate slice caches: `python -m graphgen.main --study asymmetric_i0_i1 --export-slices --clean --results ~/results` (and `_1run` variant; add `--movie` for temporal). Analysis: asymmetric_i0_i1.md; ai/analyze_asymmetric_i0_i1.py.

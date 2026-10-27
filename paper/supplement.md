@@ -35,13 +35,11 @@ are regression-checked by `ai/verify_claims.py`.
 | Fig. S24 | Fitness under asymmetric cooperation and information costs (PD) | Fig. 3 |
 | Fig. S25 | Cooperation under asymmetric cooperation and information costs (snowdrift) | Fig. 3 |
 | Fig. S26 | Fitness under asymmetric cooperation and information costs (snowdrift) | Fig. S25 |
-| Fig. S27 | Equal information-cost totals are not interchangeable (PD; coop + fitness) | Fig. 3 |
-| Fig. S28 | Equal information-cost totals are not interchangeable (snowdrift) | Fig. S25 |
-| Fig. S29 | Cooperation under asymmetric cooperation and information costs at group size 4 (PD) | Fig. 3 |
-| Fig. S30 | Cooperation under asymmetric cooperation and information costs at group size 4 (snowdrift) | Fig. S25 |
+| Fig. S27 | Cooperation under asymmetric cooperation and information costs at group size 4 (PD) | Fig. 3 |
+| Fig. S28 | Cooperation under asymmetric cooperation and information costs at group size 4 (snowdrift) | Fig. S25 |
 | Table S1 | Payoff-difference attribution by mechanism family | Results §1 |
 
-Captions for Figs. S1–S30 are in [captions.md](captions.md) (regenerated from the
+Captions for Figs. S1–S28 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). PD and snowdrift never share a figure. Main-text
 Figs. 1–3 use four columns (—|P|M|IMP); every supplement figure uses five
 (—|P|M|IMP|IJMPQ). Two-population heatmaps use the Fig. 3 row template
@@ -79,7 +77,7 @@ are the top row of Figs. S7–S10.
 **Fig. 1 asymmetric cooperation costs.** Fitness counterpart: Fig. S12. Snowdrift: Figs. S13–S14.
 Five-column twin (adds IJMPQ): Fig. S11. Cooperation-cost strips (one-pop + matched/asymmetric):
 Figs. S7, S9 (fitness S8, S10). Group-size-4 counterparts of Figs. 3 and S25:
-Figs. S29–S30 (cooperation only).
+Figs. S27–S28 (cooperation only).
 
 **Figs. S3–S6 symmetric information cost.** i × c surfaces in two populations
 (3×5; higher-/lower-coop / difference rows; —|P|M|IMP|IJMPQ columns; PD and snowdrift;
@@ -94,8 +92,8 @@ symmetric-c i asymmetry and the crossed plane.
 
 **Fig. 3 and S25 i₀ × i₁ plane.** No enforcement, P, M, and IJMPQ with cheap /
 expensive / difference rows (prisoner's dilemma Fig. 3; snowdrift twin Fig. S25). Fitness
-counterparts: Figs. S24 and S26. Fixed-total line cuts (coop + fitness): Fig. S27
-(snowdrift Fig. S28). gs = 4: Figs. S29–S30. Five-column twin (adds IJMPQ): Fig. S23.
+counterparts: Figs. S24 and S26. gs = 4: Figs. S27–S28. Five-column twin
+(adds IJMPQ): Fig. S23.
 
 ## What is intentionally not in the supplement figures
 

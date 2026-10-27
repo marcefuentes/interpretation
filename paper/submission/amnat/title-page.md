@@ -36,7 +36,7 @@ cd paper && pandoc introduction.md methods.md results.md discussion.md -t plain 
 | ------- | ----- | ----- |
 | Main figures | 3 | Figs. 1–3; inline in Results |
 | Main tables | 1 | Table 1 (game types); Methods |
-| Supplement figures | 30 | Figs. S1–S30; [supplement.md](../../supplement.md) |
+| Supplement figures | 28 | Figs. S1–S28; [supplement.md](../../supplement.md) |
 | Supplement tables | 1 | Table S1 (payoff-difference attribution) |
 | Boxes | 0 | |
 | Print appendix | 0 | |

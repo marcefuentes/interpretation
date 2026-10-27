@@ -92,9 +92,9 @@ information cost can end up with fewer *active* choosers, and a tenth of the
 cooperation, of the same population when it pays a heavy information cost itself.
 
 Equal information-cost totals are therefore neither interchangeable nor additive
-(Fig. S27b,d): both populations sharing a total cooperate less than when either pays
-it alone, since each corner leaves one population still carrying mechanism alleles
-while a split leaves neither.
+(Fig. 3; Fig. S23): both populations sharing a total cooperate less than when either
+pays it alone, since each corner leaves one population still carrying mechanism
+alleles while a split leaves neither.
 That result extends the second-order free-rider literature rather than replacing it:
 when individuals lose local enforcement alleles, partners across the mutualism can
 bear the burden of losing the assortment or conditional help those alleles once

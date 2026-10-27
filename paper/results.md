@@ -200,7 +200,7 @@ under symmetry is what places a burden on its partner under asymmetry: losing
 mechanism alleles relieves the payer and removes the assortment or conditional help
 the partner needed.
 
-**Figure 3: Cooperation under asymmetric cooperation and information costs.** Frequency of cooperators and the difference in that frequency between the two populations under asymmetric cooperation and information costs (c₀ = 0.1, c₁ = 0.2). (**a–d**) Population 0 (lower c, $c_0 = 0.1$). (**e–h**) Population 1 (higher c, $c_1 = 0.2$). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S25. Fitness counterpart: Fig. S24. Fixed-total cut: Figs. S27–S28. Symmetric-c contrast: Fig. 2. gs = 4: Fig. S29. Five-column version (adds IJMPQ): Fig. S23.
+**Figure 3: Cooperation under asymmetric cooperation and information costs.** Frequency of cooperators and the difference in that frequency between the two populations under asymmetric cooperation and information costs (c₀ = 0.1, c₁ = 0.2). (**a–d**) Population 0 (lower c, $c_0 = 0.1$). (**e–h**) Population 1 (higher c, $c_1 = 0.2$). (**i–l**) Difference in frequency of cooperators (population 0 − population 1). (**a, e, i**) No enforcement. (**b, f, j**) Short-memory partner choice (P). (**c, g, k**) Direct reciprocity (M). (**d, h, l**) Partner choice and direct and indirect reciprocity (IMP). Snowdrift twin: Fig. S25. Fitness counterpart: Fig. S24. Symmetric-c contrast: Fig. 2. gs = 4: Fig. S27. Five-column version (adds IJMPQ): Fig. S23.
 
 ## 7. Both information costs vary
 
@@ -236,22 +236,21 @@ even while population 1 becomes slightly less fit (Fig. S24), showing that one
 population can benefit from a partner that pays more for enforcement alleles.
 
 The same total information cost does not yield the same cooperation: equal totals are
-neither interchangeable nor additive (Fig. S27). Fig. S27 takes the fixed-total cut
-through Fig. 3 (i₀ + i₁ = 0.20, x = i₁); columns are — / P / M / IJMPQ. Along that cut
-every reciprocity-bearing mechanism reaches its *lowest* total cooperation — the sum
-of the two populations' frequencies of cooperators, on a 0–2 scale — when the total is
-split between populations rather than paid by one side alone. Under IJMPQ populations
-that place a total of 0.20 on one side reach 1.0–1.65 total cooperation, but only 0.39
-when they split it as (0.06, 0.14) (Fig. S27d). Either end leaves one population still
-carrying mechanism alleles, which is enough to sustain cooperation in both; a split
-reduces both populations' mechanism alleles so that neither remains above the
-threshold at which cooperation without those alleles takes over. Partner choice does
-not show that interior minimum (Fig. S27b): because only the high-cooperation-cost
-population's information cost matters, total cooperation is highest when that
-population pays none of the total. That non-additivity is therefore a property of
-reciprocity-bearing mechanisms, not of the total itself. The fitness row of the same
-cut shows the same cross-population burdens and the same interior minimum under a
-fixed total (Fig. S27e–h; snowdrift Fig. S28; plane Fig. S24).
+neither interchangeable nor additive (Fig. 3; five-column twin Fig. S23). Along the
+iso-budget diagonal i₀ + i₁ = 0.20 of that plane, every reciprocity-bearing mechanism
+reaches its *lowest* total cooperation — the sum of the two populations' frequencies
+of cooperators, on a 0–2 scale — when the total is split between populations rather
+than paid by one side alone. Under IJMPQ populations that place a total of 0.20 on
+one side reach 1.0–1.65 total cooperation, but only 0.39 when they split it as
+(0.06, 0.14). Either end leaves one population still carrying mechanism alleles,
+which is enough to sustain cooperation in both; a split reduces both populations'
+mechanism alleles so that neither remains above the threshold at which cooperation
+without those alleles takes over. Partner choice does not show that interior
+minimum: because only the high-cooperation-cost population's information cost
+matters, total cooperation is highest when that population pays none of the total.
+That non-additivity is therefore a property of reciprocity-bearing mechanisms, not
+of the total itself. The fitness plane shows the same cross-population burdens and
+the same interior minimum under a fixed total (Fig. S24; snowdrift Fig. S26).
 
 Whether the expensive population ends up cooperating more than the cheap one depends
 on whether the mechanism includes reciprocity, not on how much information cost it
