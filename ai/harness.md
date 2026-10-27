@@ -101,8 +101,8 @@ Examples:
 twin S25, and fitness twins S24/S26 use the full square. Equal-c counterpart is
 main-text Fig. 2 (fitness S16; snowdrift S17–S18). Supplement opener S1–S6 is
 i × c (one-pop then two-pop, with fitness). Two-population supplement
-heatmaps follow a shared row template (main Figs. 1–3: 3×4 —|P|M|IMP; supplement:
-3×5 —|P|M|IMP|IJMPQ) with separate cooperation and fitness figures (Fig. 1; S12–S14,
+heatmaps follow a shared row template (main Figs. 1–3: 3×3 P|M|IMP, top two rows vs
+control; supplement: 3×5 —|P|M|IMP|IJMPQ) with separate cooperation and fitness figures (Fig. 1; S12–S14,
 S16–S18, S19–S22; five-column twins of Figs. 1–3 are S11, S15, S23). Group-size-4
 counterparts of Figs. 3 and S25 are S27–S28. pop_2; same ecology as other TRPS studies. graphgen:
 `asymmetric_c1_i0_i1` / `_1run`. Regenerate movie caches: `python -m graphgen.main --study asymmetric_c1_i0_i1_1run --export-slices --movie --results ~/results`. Analysis: asymmetric_c1_i0_i1.md; ai/analyze_asymmetric_c1_i0_i1.py.

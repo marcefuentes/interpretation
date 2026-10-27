@@ -41,8 +41,8 @@ are regression-checked by `ai/verify_claims.py`.
 
 Captions for Figs. S1–S28 are in [captions.md](captions.md) (regenerated from the
 graphgen interpretation study). PD and snowdrift never share a figure. Main-text
-Figs. 1–3 use four columns (—|P|M|IMP); every supplement figure uses five
-(—|P|M|IMP|IJMPQ). Two-population heatmaps use the Fig. 3 row template
+Figs. 1–3 use three columns (P|M|IMP; top two rows vs control); every supplement
+figure uses five (—|P|M|IMP|IJMPQ). Two-population heatmaps use the Fig. 3 row template
 (cheap/expensive/difference or low-i/high-i/difference), with cooperation and fitness as
 separate figures. Shuffle
 short-memory branches (M collapse; IM and partner-choice combinations sustain; P
@@ -75,7 +75,7 @@ information-cost × cooperation-cost triangle (PD and snowdrift). Low-i line cei
 are the top row of Figs. S7–S10.
 
 **Fig. 1 asymmetric cooperation costs.** Fitness counterpart: Fig. S12. Snowdrift: Figs. S13–S14.
-Five-column twin (adds IJMPQ): Fig. S11. Cooperation-cost strips (one-pop + matched/asymmetric):
+Controls and IJMPQ: Fig. S11. Cooperation-cost strips (one-pop + matched/asymmetric):
 Figs. S7, S9 (fitness S8, S10). Group-size-4 counterparts of Figs. 3 and S25:
 Figs. S27–S28 (cooperation only).
 
@@ -83,17 +83,17 @@ Figs. S27–S28 (cooperation only).
 (3×5; higher-/lower-coop / difference rows; —|P|M|IMP|IJMPQ columns; PD and snowdrift;
 cooperation S3/S5, fitness S4/S6).
 
-**Fig. 2 symmetric-c i asymmetry.** No enforcement, P, M, and IJMPQ with low-i /
-high-i / difference rows (prisoner's dilemma). Fitness: Fig. S16. Snowdrift: Figs. S17–S18.
-Five-column twin (adds IJMPQ): Fig. S15.
+**Fig. 2 symmetric-c i asymmetry.** P, M, and IMP with low-i / high-i / difference
+rows (prisoner's dilemma; top two rows vs control). Fitness: Fig. S16. Snowdrift:
+Figs. S17–S18. Controls and IJMPQ: Fig. S15.
 
 **Figs. S19–S22 shared-i under asymmetric cooperation costs.** Results §5 bridge between
 symmetric-c i asymmetry and the crossed plane.
 
-**Fig. 3 and S25 i₀ × i₁ plane.** No enforcement, P, M, and IJMPQ with cheap /
-expensive / difference rows (prisoner's dilemma Fig. 3; snowdrift twin Fig. S25). Fitness
-counterparts: Figs. S24 and S26. gs = 4: Figs. S27–S28. Five-column twin
-(adds IJMPQ): Fig. S23.
+**Fig. 3 and S25 i₀ × i₁ plane.** P, M, and IMP with cheap / expensive / difference
+rows (prisoner's dilemma Fig. 3; snowdrift twin Fig. S25; top two rows vs control). Fitness
+counterparts: Figs. S24 and S26. gs = 4: Figs. S27–S28. Controls and IJMPQ:
+Fig. S23.
 
 ## What is intentionally not in the supplement figures
 

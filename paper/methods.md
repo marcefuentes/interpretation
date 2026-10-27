@@ -302,13 +302,13 @@ Figs. S27–S28). Symmetric information cost in two populations is
 Figs. S3–S6 (i × c grids; —|P|M|IMP|IJMPQ; cooperation and the difference between
 populations, with fitness counterparts; prisoner's dilemma and snowdrift).
 
-Symmetric-c information-cost asymmetry is Fig. 2 (—|P|M|IMP; fitness Fig. S16; snowdrift
-Figs. S17–S18; five-column twin Fig. S15). Symmetric-i under asymmetric cooperation costs is
-Figs. S19–S22. The crossed i₀ × i₁ plane under fixed asymmetric cooperation costs is
-Figs. 3 and S25 (main Fig. 3: _, P, M, IMP; supplement adds IJMPQ; absolute
-cooperation and the cheap−expensive difference; prisoner's dilemma and snowdrift), with
-fitness counterparts Figs. S24 and S26 and the five-column twin of Fig. 3 as
-Fig. S23.
+Symmetric-c information-cost asymmetry is Fig. 2 (P|M|IMP; top two rows vs control;
+fitness Fig. S16; snowdrift Figs. S17–S18; controls and IJMPQ Fig. S15). Symmetric-i
+under asymmetric cooperation costs is Figs. S19–S22. The crossed i₀ × i₁ plane under
+fixed asymmetric cooperation costs is Figs. 3 and S25 (main Fig. 3: P, M, IMP; top two
+rows vs control; absolute cooperation and the cheap−expensive difference; prisoner's
+dilemma and snowdrift), with fitness counterparts Figs. S24 and S26 and controls plus
+IJMPQ for Fig. 3 as Fig. S23.
 
 Along the cooperation-cost axis, raising c changes several payoff differences at once. The
 orthogonal payoff-plane sweeps vary payoffs independently of c; Table S1 reports the

@@ -65,7 +65,7 @@ mechanism (Fig. 2; fitness Fig. S16; snowdrift Figs. S17–S18).
 When both cost axes differ, populations follow the cooperation-cost asymmetry
 (partner choice: the lower-cooperation-cost population cooperates more in 170/176
 cells), and the expensive population cooperates more only on an i₀ ≈ 0 strip
-(Fig. 3l), weaker than in the symmetric-c case. Snowdrift removes this
+(Fig. S23o), weaker than in the symmetric-c case. Snowdrift removes this
 regime entirely (Fig. S25).
 What decides whether a mechanism can place the expensive population ahead of the cheap
 one is whether populations carry the reciprocity family, not how large an information
@@ -80,8 +80,8 @@ places on its partner — a question prior work on costly punishment and monitor
 could not ask, because it levies those costs inside one population
 [@BoydRicherson1992; @FehrGachter2002; @StevensHauser2004]. Under each mechanism,
 both populations bear a burden from one population's information cost, and the two
-mechanism families place that burden on opposite populations (Fig. 3b,f,j versus
-Fig. 3d,h,l). Under partner choice, populations bear the
+mechanism families place that burden on opposite populations (Fig. 3a,d,g versus
+Fig. S23e,j,o). Under partner choice, populations bear the
 burden of the high-cooperation-cost population's information cost, because a swap
 needs a chooser on both sides and that population supplies fewer choosers; under
 reciprocity-bearing mechanisms, populations bear the burden of the

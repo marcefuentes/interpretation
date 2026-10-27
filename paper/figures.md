@@ -39,8 +39,8 @@ Fig. 3 and S25 are asymmetric information cost under asymmetric cooperation cost
 (fitness S24/S26). Group-size-4 counterparts of Figs. 3 and S25 are S27–S28.
 
 Status: revised 2026-10 — fixed-total line cuts dropped; supplement runs to S28.
-Main Figs. 1–3 are 3×4 (—|P|M|IMP); supplement heatmaps are 3×5. S11, S15, S23
-are five-column twins of Figs. 1–3.
+Main Figs. 1–3 are 3×3 (P|M|IMP; top two rows vs control); supplement heatmaps
+are 3×5. S11, S15, S23 are five-column twins (control + IJMPQ) of Figs. 1–3.
 
 ## Setup audit (2026-10)
 
@@ -56,11 +56,11 @@ are five-column twins of Figs. 1–3.
 | figS8 | Line | same as figS7, wmean | Fitness of Fig. S7 |
 | figS9 | Line | same as figS7 | Snowdrift twin of figS7 |
 | figS10 | Line | same as figS9, wmean | Fitness of Fig. S9 |
-| fig1 | Heatmap | asymmetric_c0_c1, plane qBSeen | PD coop 3×4; twin → figS13; 5-col → figS11 |
+| fig1 | Heatmap | asymmetric_c0_c1, plane qBSeen | PD coop 3×3; twin → figS13; 5-col → figS11 |
 | figS12 | Heatmap | asymmetric_c0_c1, plane wmean | PD fitness; twin → figS14 |
-| fig2 | Heatmap | asymmetric_i0_i1 | Symmetric-c PD 3×4; twin → figS17; 5-col → figS15 |
+| fig2 | Heatmap | asymmetric_i0_i1 | Symmetric-c PD 3×3; twin → figS17; 5-col → figS15 |
 | figS16 | Heatmap | asymmetric_i0_i1, plane wmean | Symmetric-c fitness; twin → figS18 |
-| fig3 | Heatmap | asymmetric_c1_i0_i1 | Crossed PD 3×4; twin → figS25; 5-col → figS23 |
+| fig3 | Heatmap | asymmetric_c1_i0_i1 | Crossed PD 3×3; twin → figS25; 5-col → figS23 |
 | figS24 | Heatmap | twin layout of fig3, wmean | Fitness plane; twin → figS26 |
 | figS19 | Heatmap | asymmetric_c1_i, plane qBSeen | Symmetric-i coop; twin → figS21 |
 | figS20 | Heatmap | asymmetric_c1_i, plane wmean | Symmetric-i fitness; twin → figS22 |
@@ -71,12 +71,12 @@ are five-column twins of Figs. 1–3.
 | Fig | Message | Figure id | Output |
 | --- | ------- | --------- | ------ |
 | 1 | Asymmetric cooperation costs (coop + difference) | fig1 | ~/figures/interpretation/fig1.png |
-| 2 | Asymmetric information costs: — / P / M / IMP × low-i / high-i / difference | fig2 | ~/figures/interpretation/fig2.png |
-| 3 | Asymmetric cooperation and information costs: — / P / M / IMP × cheap / expensive / difference | fig3 | ~/figures/interpretation/fig3.png |
+| 2 | Asymmetric information costs: P / M / IMP × low-i / high-i / difference | fig2 | ~/figures/interpretation/fig2.png |
+| 3 | Asymmetric cooperation and information costs: P / M / IMP × cheap / expensive / difference | fig3 | ~/figures/interpretation/fig3.png |
 
 ### Panel order notes
 
-1. Main Figs. 1–3: 3×4; columns — | P | M | IMP. Supplement two-pop planes: 3×5.
+1. Main Figs. 1–3: 3×3; columns P | M | IMP (top two rows vs control). Supplement two-pop planes: 3×5.
 2. figS1 / figS2: 2×5 one-pop i × c heatmaps; y-axis i, x-axis c.
 3. figS7 / figS9: 3×5 strips; row 0 = one population, row 1 = c₁ = c₀, row 2 = c₁ = c₀ + 0.02.
 4. figS27 / S28: gs=4 counterparts of Figs. 3 and S25.
