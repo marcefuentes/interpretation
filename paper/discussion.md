@@ -120,6 +120,19 @@ perception, or error
 [@StevensHauser2004; @Dunbar1998]. That abstraction is what makes mechanisms
 comparable; it is also a limit on psychological realism.
 
+## Biological scope
+
+The mechanisms in the model map onto named mutualisms. Partner choice is what
+legumes do when they starve non-fixing rhizobia, and what reef clients do when
+they switch cleaning stations after poor service [@Kiers2003; @BsharySchaffer2002].
+Direct reciprocity is what resident clients and cleaner wrasses enact when clients
+punish mucus feeding and cleaners then cooperate more
+[@Trivers1971; @BsharyGrutter2005]. Indirect reciprocity is what bystander clients
+use when they image-score cleaners and cleaners improve service under observation
+[@BsharyGrutter2006]. In each case one side pays a cognitive or monitoring cost to
+discriminate; the results here ask which partner bears the burden of that cost when
+both populations evolve.
+
 ## Future directions
 
 Finer temporal logging to resolve the oscillation question; explicit error-prone

@@ -21,28 +21,38 @@ partner turnover.
 
 **Reciprocity and reputation.** Direct reciprocity works when partners interact
 repeatedly and can condition on recent history [@Trivers1971; @Axelrod1984;
-@NowakSigmund1992]. Indirect reciprocity extends conditioning to third-party
-information and lifetime standing, at the price of greater cognitive and
+@NowakSigmund1992]. In a cleaning mutualism, client reef fish chase or leave a
+cleaner wrasse (*Labroides dimidiatus*) that feeds on mucus instead of
+ectoparasites, and cleaners then feed more cooperatively
+[@Trivers1971; @BsharyGrutter2005]. Indirect reciprocity extends conditioning to
+third-party information and lifetime standing, at the price of greater cognitive and
 informational demand [@NowakSigmund1998; @OhtsukiIwasa2004; @NowakSigmund2005].
-Empirical and theoretical work on reputation shows that image scoring and related
-rules can sustain public goods, but also that assessment strategies matter
+Bystander clients image-score cleaners: they prefer cleaners they have seen
+cooperate with other clients, and cleaners cooperate more when such bystanders
+watch [@BsharyGrutter2006]. Image scoring and related reputation rules can also
+sustain public goods in other settings, but assessment strategies matter
 [@MilinskiSemmannKrambeck2002; @LeimarHammerstein2001].
 
 **Partner choice and biological markets.** When individuals can choose or switch
 partners, cooperators can assort without remembering a long personal history
 [@BullRice1991; @NoeHammerstein1994; @NoeHammerstein1995]. Walk-away and choosiness
 models make the same point in evolutionary games [@Aktipis2004;
-@McNamaraBartaHouston2004]. In interspecific mutualisms, partner choice and sanctions
-are among the main proposed stabilizers [@Bronstein1994; @Sachs2004;
-@Kiers2003; @BsharyGrutter2006].
+@McNamaraBartaHouston2004]. Mutualists use this route. Legumes sanction
+non-fixing rhizobia by reducing oxygen supply to their nodules [@Kiers2003].
+Client reef fish that can reach several cleaning stations switch away from cleaners
+that provide poor service [@BsharySchaffer2002]. Partner choice and sanctions are
+among the main proposed stabilizers of interspecific mutualisms more broadly
+[@Bronstein1994; @Sachs2004].
 
 **One population versus two.** Most formal theory treats a single well-mixed
 population. Many biologically important cases are mutualisms: two distinct
 populations or species that exchange help across the divide, each with its own cost
-of cooperating [@DoebeliKnowlton1998; @BergstromLachmann2003; @Sachs2004]. Relative
-evolutionary rates and cost asymmetries can then assign roles even when the
-interaction is mutually beneficial. I treat the single population as the baseline
-and the mutualistic two-population interaction as the central case.
+of cooperating — legumes and rhizobia, cleaner wrasses and clients, and many others
+[@DoebeliKnowlton1998; @BergstromLachmann2003; @Sachs2004; @Kiers2003;
+@BsharySchaffer2002]. Relative evolutionary rates and cost asymmetries can then
+assign roles even when the interaction is mutually beneficial. I treat the single
+population as the baseline and the mutualistic two-population interaction as the
+central case.
 
 **The cost of enforcement.** Models treat reciprocity, partner choice, and
 reputation as free once the loci or strategies are present. That is an idealization.
