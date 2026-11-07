@@ -284,7 +284,7 @@ Table 3. Simulation designs.
 | Cooperation-cost strips (1+2 pops) | 1–2 | \_, P, M, IMP, IJMPQ  | c ∈ [0, b]; c₁ = c₀ or c₁ = c₀ + 0.02              | 0.02 | 21    | Figs. S7–S10 |
 | Cooperation-cost asymmetry      | 2    | \_, P, M, IMP[, IJMPQ]| c₀ < c₁; c₀ ∈ [0, 0.38], c₁ ∈ [0.02, 0.40]         | 0.02 | 210   | Fig. 1 (IMP); S7–S14, S11 |
 | Symmetric information cost      | 2    | \_, P, M, IMP, IJMPQ  | i + c ≤ b                                          | 0.02 | 231   | Figs. S3–S6  |
-| Fixed asymmetric c × symmetric i | 2    | \_, P, M, IMP, IJMPQ  | c₀ = 0.10; c₁ ∈ (c₀, b]; i ∈ [0, b]                | 0.02 | 315   | Figs. S19–S22  |
+| Fixed asymmetric c × symmetric i | 2    | \_, P, M, IMP, IJMPQ  | c₀ = 0.10; c₁ ∈ [0, b] \\ {c₀}; i ∈ [0, b]          | 0.02 | 420   | Figs. S19–S22  |
 | Per-population i, symmetric c   | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = c₁ = 0.10; i₀ < i₁ on [0, b]                   | 0.02 | 210   | Figs. 2 (IMP), S16–S18, S15  |
 | Crossed c and i asymmetries     | 2    | \_, P, M, IMP[, IJMPQ]| c₀ = 0.10, c₁ = 0.20; i₀, i₁ ∈ [0, b]; analysis on i₀ ≤ 0.30, i₁ ≤ 0.20 | 0.02 | 441 (176) | Figs. 3 (IMP), S23–S26; gs = 4: S27–S28 |
 | PD payoff plane                 | 1    | M, P, combined         | T = 0.90, S = 0.10; R, P with T > R > P > S        | 0.02 | 172   | Table S1       |
