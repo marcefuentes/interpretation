@@ -18,10 +18,9 @@ The repository separates quantitative analysis, the active manuscript, and draft
   venue-specific submission under `paper/submission/amnat/`. See `paper/README.md`.
 - **planning/** — internal drafting (outline, roadmap, structured abstract, fallback
   journal abstracts). Not part of any submission PDF.
-- **ai/** — agent harness ([ai/harness.md](ai/harness.md); entry points: [AGENTS.md](AGENTS.md),
-  [GEMINI.md](GEMINI.md), [.github/copilot-instructions.md](.github/copilot-instructions.md),
-  [.cursor/rules/harness.mdc](.cursor/rules/harness.mdc)), findings index,
-  verify_claims.py, analysis scripts.
+- **ai/** — agent harness ([ai/harness.md](ai/harness.md); pointers:
+  [AGENTS.md](AGENTS.md), [.cursor/rules/harness.mdc](.cursor/rules/harness.mdc)),
+  findings index, verify_claims.py, analysis scripts.
 
 Narrative in `paper/` cites **journal/** for every number. Figures: `paper/figures.md`
 (graphgen). Start at `paper/README.md` or `planning/outline.md`.

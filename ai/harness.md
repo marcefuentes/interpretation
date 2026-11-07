@@ -1,22 +1,12 @@
 # AI harness
 
-Operational guide for AI agents working in this repository (Cursor, Copilot, Gemini,
-Antigravity, etc.). Entry index for analytical findings: [findings.md](findings.md).
-Planning history: [../planning/archive/plan.md](../planning/archive/plan.md).
+Operational guide for AI agents working in this repository. Entry index for
+analytical findings: [findings.md](findings.md). Planning history:
+[../planning/archive/plan.md](../planning/archive/plan.md).
 
-## Harness entry points
-
-Tool-specific files are thin pointers to **this document** — edit here, not in the
-entry points.
-
-| Tool | Entry file |
-| ---- | ---------- |
-| Canonical | `ai/harness.md` (this file) |
-| Cursor | [`.cursor/rules/harness.mdc`](../.cursor/rules/harness.mdc), [AGENTS.md](../AGENTS.md) |
-| GitHub Copilot | [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) |
-| Gemini CLI | [GEMINI.md](../GEMINI.md) |
-| Antigravity | [GEMINI.md](../GEMINI.md), [AGENTS.md](../AGENTS.md) |
-| Cross-tool | [AGENTS.md](../AGENTS.md) |
+Thin pointers to this file (edit here, not there):
+[`.cursor/rules/harness.mdc`](../.cursor/rules/harness.mdc),
+[AGENTS.md](../AGENTS.md).
 
 ## Repository Purpose
 
