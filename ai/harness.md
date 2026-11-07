@@ -71,6 +71,31 @@ Examples:
 - If required exports are missing, run graphgen as above before continuing interpretation.
 - Treat missing *image.con or *movie.con summary files as a data-prep step, not an analysis failure.
 
+### Manuscript DOCX report and Google Docs upload
+
+Manuscript PNGs live in ~/figures/interpretation/. After regenerating any of those
+figures, rebuild interpretation.docx and upload it to Google Docs with graphgen
+`--report`. Upload is automatic on `--report` (needs the optional `[google]` extra
+and a valid `token.pickle` / `credentials.json` in ~/code/graph/; implementation:
+graphgen/utils/google_drive.py, folder `GOOGLE_DRIVE_FOLDER_ID`).
+
+    cd ~/code/graph
+    . .venv/bin/activate
+    # regenerate only the changed PNGs first, e.g.:
+    # python -m graphgen.main --study interpretation --figure fig2 \
+    #   --results ~/results --output ~/figures/interpretation --flat-output
+    python -m graphgen.main --study interpretation --report \
+      --results ~/results --output ~/figures
+
+Effects: writes ~/figures/interpretation/interpretation.docx; refreshes
+paper/captions.md (supplement legends only); uploads/converts the DOCX to a new
+Google Doc named `interpretation` in that Drive folder (does not overwrite older
+uploads). Success line: green `interpretation.docx uploaded`. To print the newest
+doc URL, query Drive for name=`interpretation` under `GOOGLE_DRIVE_FOLDER_ID`
+ordered by `createdTime desc` (see graphgen.utils.google_drive.get_credentials).
+
+Figure-id map and per-PNG commands: paper/figures.md.
+
 ### Verifying numeric claims (for AI agents)
 
 - Headline numbers in the analysis docs are regression-checked against the.con data by ai/verify_claims.py (shared loaders/stats in ai/trps_io.py).
@@ -95,7 +120,7 @@ Examples:
 
 **symmetric_c_i**: extends symmetric_c with a 2nd swept axis — i, the information cost (recruits.c: cost = i*((Choose||Choose_lt)+(Mimic||Imimic||Imimic_lt)); combined mechs pay 2×i when both families are carried, single-family 1x; tax is per family carried, not per allele and not per behavior expressed, including under mechanism _). Triangular i × c grid with i + c<=0.4 (231 cells: i in {0,0.02,...,0.4}, c in {0,...,0.4-i}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have dilemma 0), pops 1/2/3, Runs=30 (image); symmetric_c_i_1run is the single-run temporal variant. Cell key is (i, c0) (export column `Cost`). Analysis: symmetric_c_i.md; ai/analyze_symmetric_c_i.py.
 
-**asymmetric_c1_i**: extends asymmetric_c0_c1 pop_2 with the same information-cost axis but on the asymmetric branch: c0 is fixed at 0.10 for pop_0, and i is swept jointly with c1 over the triangle i + c₁<=0.4 with c1>c0 (120 cells: i in {0,0.02,...,0.28}; c1 in {0.12,...,0.4-i}). gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), Runs=30 (image); asymmetric_c1_i_1run is the single-run temporal variant. Cell key is (i, c1) (export column `Cost`). Analysis: asymmetric_c1_i.md; ai/analyze_asymmetric_c1_i.py.
+**asymmetric_c1_i**: extends asymmetric_c0_c1 pop_2 with the same information-cost axis but on the asymmetric branch: c0 is fixed at 0.10 for pop_0, and i is swept jointly with c1 over the rectangle c1>c0 with i,c1 in {0,0.02,...,0.4} (315 cells: c1 in {0.12,...,0.40}; i in {0,...,0.40}; the original i + c₁<=0.4 triangle is the 120-cell subset). Newer cells export equal Cost0/Cost1 instead of Cost; graphgen normalizes those to Cost. gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2 (_ and M have 0), Runs=30 (image); asymmetric_c1_i_1run is the single-run temporal variant. Cell key is (i, c1) (export column `Cost`, or shared Cost0=Cost1). Analysis: asymmetric_c1_i.md; ai/analyze_asymmetric_c1_i.py.
 
 **asymmetric_c1_i0_i1**: crossed asymmetries (the unequal-c arm of the per-population information-cost programme; its equal-c counterpart is asymmetric_i0_i1) — fixed cooperation-cost difference c0=0.10, c1=0.20; full i₀×i₁ square on [0, b]×[0, b] (441 cells; noshuffle holds the primary i₀≤0.30, i₁≤0.20 rectangle of 176 cells plus the noshuffle2 complement). Headline analysis stays on the 176-cell rectangle; main-text Fig. 3, its snowdrift
 twin S25, and fitness twins S24/S26 use the full square. Equal-c counterpart is
@@ -107,7 +132,7 @@ S16–S18, S19–S22; five-column twins of Figs. 1–3 are S11, S15, S23). Group
 counterparts of Figs. 3 and S25 are S27–S28. pop_2; same ecology as other TRPS studies. graphgen:
 `asymmetric_c1_i0_i1` / `_1run`. Regenerate movie caches: `python -m graphgen.main --study asymmetric_c1_i0_i1_1run --export-slices --movie --results ~/results`. Analysis: asymmetric_c1_i0_i1.md; ai/analyze_asymmetric_c1_i0_i1.py.
 
-**asymmetric_i0_i1**: per-population information cost at symmetric cooperation cost (the equal-c arm; its unequal-c counterpart is asymmetric_c1_i0_i1): c0=c1=c (primary c=0.10 via `csv_*_filtered_for_image.con`; secondary c=0.20 via `csv_*_c020_for_image.con`), i₀ and i₁ swept on a strict triangle i₀<i₁ with per-axis cap b-c (120 cells at c=0.10; 55 at c=0.20). pop_2 only; gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, Runs=30 (image). Cell key is (i₀, i₁) (export columns `Cost0`, `Cost1`). Regenerate slice caches: `python -m graphgen.main --study asymmetric_i0_i1 --export-slices --clean --results ~/results` (and `_1run` variant; add `--movie` for temporal). Analysis: asymmetric_i0_i1.md; ai/analyze_asymmetric_i0_i1.py.
+**asymmetric_i0_i1**: per-population information cost at symmetric cooperation cost (the equal-c arm; its unequal-c counterpart is asymmetric_c1_i0_i1): c0=c1=c (primary c=0.10 via `csv_*_filtered_for_image.con`; secondary c=0.20 via `csv_*_c020_for_image.con`), i₀ and i₁ swept on a strict triangle i₀<i₁ on [0, b] (210 cells per c slice). Primary folders hold i≤0.3 (c=0.10: 120 cells; c=0.20: 55); `noshuffle2`/`shuffle2` hold the high-i complements (graphgen merges via `shuffle_complement_suffix="2"`). pop_2 only; gs=128 and gs=4, shuffle and noshuffle, dilemmas 0/1/2, Runs=30 (image). Cell key is (i₀, i₁) (export columns `Cost0`, `Cost1`). Regenerate slice caches: `python -m graphgen.main --study asymmetric_i0_i1 --export-slices --clean --results ~/results` (and `_1run` variant; add `--movie` for temporal). Analysis: asymmetric_i0_i1.md; ai/analyze_asymmetric_i0_i1.py.
 
 ### symmetric_c Parameter Space
 

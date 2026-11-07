@@ -30,7 +30,8 @@ SAMPLE_C1 = [0.12, 0.20, 0.30, 0.40]
 
 def mc_path(study, sh, gs, mech, d, f, movie=False):
     suffix = "movie" if movie else "image"
-    return f"{BASE}/{study}/{sh}/{gs}/{mech}/{d}/pop_2/csv_{f}_for_{suffix}.con"
+    tag = "_filtered" if study == "asymmetric_c1_i" and not movie else ""
+    return f"{BASE}/{study}/{sh}/{gs}/{mech}/{d}/pop_2/csv_{f}{tag}_for_{suffix}.con"
 
 
 def asymmetric_c0_c1_path(sh, gs, mech, d, f):

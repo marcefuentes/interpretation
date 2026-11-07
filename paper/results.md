@@ -129,14 +129,14 @@ then together with asymmetric cooperation costs.
 
 When cooperation costs are symmetric (c₀ = c₁ = 0.1) and only information costs differ
 (i₀ < i₁), which population cooperates depends on the mechanism (Fig. 2). Under
-partner choice the lower-i population cooperates more in 63/120 cells (mean difference
-+0.110; Fig. 2a,d,g): it keeps the chooser allele while the higher-i side sheds it
+partner choice the lower-i population cooperates more in 63/210 cells (mean difference
++0.063; Fig. 2a,d,g): it keeps the chooser allele while the higher-i side sheds it
 and defects, yet still wins fitness (fitness Fig. S16). At (i₀, i₁) = (0, 0.20) the
 frequencies of cooperators are 0.331 / 0.153. Without enforcement the triangle is
 flat near zero (Fig. S15a,f,k).
 
 Under IJMPQ the assignment reverses: the higher-i population cooperates more in
-85/120 cells (mean difference −0.201; Fig. S15e,j,o). Reciprocity-bearing mechanisms protect
+120/210 cells (mean difference −0.160; Fig. S15e,j,o). Reciprocity-bearing mechanisms protect
 only their carriers, so the expensive side can switch to unconditional cooperation
 that pays no information cost and hitchhike on the cheap side's remaining alleles —
 the expensive population cooperates more while the cheap one earns more. Direct

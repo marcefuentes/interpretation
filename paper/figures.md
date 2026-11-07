@@ -22,12 +22,21 @@ level sizes (S27–S28) are kept; pass `--groupsize 128` only for single figures
 that should force 128:
 
     python -m graphgen.main --study interpretation --all --output ~/figures
-    python -m graphgen.main --study interpretation --report --output ~/figures
+    python -m graphgen.main --study interpretation --report --results ~/results --output ~/figures
+
+`--report` packs the PNGs into interpretation.docx and **uploads** that file to
+Google Docs (converts to a Google Doc in the Drive folder set in
+`graphgen/utils/google_drive.py`). Auth: `credentials.json` + `token.pickle` in
+~/code/graph/; optional install `pip install -e ".[google]"`. Each run adds a new
+Doc named `interpretation` (no overwrite). Agent workflow notes:
+[ai/harness.md](../ai/harness.md) (section “Manuscript DOCX report and Google Docs
+upload”).
 
 The report includes main text Figs 1–3 (fig1–fig3) and supplement Figs S1–S28
 (figS1–S28) in manuscript order. Calibration panels cal1–cal2 are omitted. Outputs:
 
 - DOCX: ~/figures/interpretation/interpretation.docx (internal; all figures)
+- Google Docs: auto-upload on `--report` (see above)
 - Markdown: paper/captions.md (supplement legends S1–S28 only; main-text legends live in results.md)
 
 PD and snowdrift never share a figure. Opener S1–S6 is i × c. S7–S10 are
@@ -136,5 +145,6 @@ See [supplement.md](supplement.md).
 
 Main-text legends (Figs. 1–3): hand-maintained in `results.md` (source of truth).
 Supplement legends (S1–S28): regenerate `paper/captions.md` from the interpretation
-manifest with `--report`. The DOCX at `~/figures/interpretation/interpretation.docx`
-is internal and may differ.
+manifest with `--report` (also rebuilds the DOCX and uploads it to Google Docs; see
+above). The DOCX at `~/figures/interpretation/interpretation.docx` is internal and
+may differ from the Google Doc copy only by conversion.

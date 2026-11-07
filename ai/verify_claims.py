@@ -684,7 +684,10 @@ check("symmetric_c_i", "IJMPQ snowdrift Cost=0.20 c=0.16 = 0.817",
 
 def mcpath(study, sh, gs, m, d, f, movie=False):
     suffix = "movie" if movie else "image"
-    return f"{BASE}/{study}/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}_for_{suffix}.con"
+    # asymmetric_c1_i normalizes Cost0=Cost1 → Cost via simulation_row_filter,
+    # which writes csv_*_filtered_for_*.con (same pattern as asymmetric_i0_i1).
+    tag = "_filtered" if study == "asymmetric_c1_i" and not movie else ""
+    return f"{BASE}/{study}/{sh}/{gs}/{m}/{d}/pop_2/csv_{f}{tag}_for_{suffix}.con"
 
 
 def mc_cell(rows, cost, c1, col="qBSeen"):
@@ -834,13 +837,13 @@ check("asymmetric_c1_i", "P mean dq at Cost=0 = 0.329",
       lambda: mc_gap_mean("P", 0.0, "qBSeen"), 0.329)
 check("asymmetric_c1_i", "P mean dw at Cost=0 = -0.148",
       lambda: mc_gap_mean("P", 0.0, "wmean"), -0.148)
-check("asymmetric_c1_i", "P mean dq at Cost=0.20 = 0.017",
-      lambda: mc_gap_mean("P", 0.20, "qBSeen"), 0.017)
-check("asymmetric_c1_i", "P mean dw at Cost=0.20 = -0.006",
-      lambda: mc_gap_mean("P", 0.20, "wmean"), -0.006)
+check("asymmetric_c1_i", "P mean dq at Cost=0.20 = 0.027",
+      lambda: mc_gap_mean("P", 0.20, "qBSeen"), 0.027)
+check("asymmetric_c1_i", "P mean dw at Cost=0.20 = -0.010",
+      lambda: mc_gap_mean("P", 0.20, "wmean"), -0.010)
 check("asymmetric_c1_i", "P corr(dq,dw) = -0.998",
       lambda: mc_corr_inv("P")[0], -0.998)
-check("asymmetric_c1_i", "P fitness-inverted cells = 120", lambda: mc_corr_inv("P")[1], 120, None)
+check("asymmetric_c1_i", "P fitness-inverted cells = 315", lambda: mc_corr_inv("P")[1], 315, None)
 
 # No soft pure-Cost edge: even modest Cost collapses M on the asymmetric branch.
 check("asymmetric_c1_i", "M mean Pop_0 at Cost=0 = 0.689",
@@ -872,12 +875,12 @@ check("asymmetric_c1_i", "M control Pop_0 mean M1 at Cost=0.20 = 0.040",
 check("asymmetric_c1_i", "M PD Pop_0 mean qB at Cost=0.20 = 0.053",
       lambda: mc_cost_mean("M", 1, 0, 0.20), 0.053)
 # Per-block M-suppression census (both file sets). Missing listed exports → -1.
-check("asymmetric_c1_i", "M suppressed noshuffle gs128 d0 = 173",
-      lambda: mc_m1_suppressed_block("noshuffle", "128", 0), 173, None)
-check("asymmetric_c1_i", "M suppressed noshuffle gs128 d1 = 109",
-      lambda: mc_m1_suppressed_block("noshuffle", "128", 1), 109, None)
-check("asymmetric_c1_i", "M suppressed noshuffle gs128 d2 = 240",
-      lambda: mc_m1_suppressed_block("noshuffle", "128", 2), 240, None)
+check("asymmetric_c1_i", "M suppressed noshuffle gs128 d0 = 406",
+      lambda: mc_m1_suppressed_block("noshuffle", "128", 0), 406, None)
+check("asymmetric_c1_i", "M suppressed noshuffle gs128 d1 = 325",
+      lambda: mc_m1_suppressed_block("noshuffle", "128", 1), 325, None)
+check("asymmetric_c1_i", "M suppressed noshuffle gs128 d2 = 630",
+      lambda: mc_m1_suppressed_block("noshuffle", "128", 2), 630, None)
 check("asymmetric_c1_i", "M suppressed noshuffle gs4 d0 = 175",
       lambda: mc_m1_suppressed_block("noshuffle", "4", 0), 175, None)
 check("asymmetric_c1_i", "M suppressed noshuffle gs4 d1 = 115",
@@ -896,14 +899,14 @@ check("asymmetric_c1_i", "M suppressed shuffle gs4 d1 = 155",
       lambda: mc_m1_suppressed_block("shuffle", "4", 1), 155, None)
 check("asymmetric_c1_i", "M suppressed shuffle gs4 d2 = 237",
       lambda: mc_m1_suppressed_block("shuffle", "4", 2), 237, None)
-check("asymmetric_c1_i", "M suppressed below control in 2001 cell-conditions",
-      mc_m1_suppressed_total, 2001, None)
+check("asymmetric_c1_i", "M suppressed below control in 2840 cell-conditions",
+      mc_m1_suppressed_total, 2840, None)
 
 # Snowdrift buffers Cost on the low-cost side but not the high-cost side.
-check("asymmetric_c1_i", "P snowdrift Pop_0 mean at Cost=0.28 = 0.917",
-      lambda: mc_cost_mean("P", 2, 0, 0.28), 0.917)
-check("asymmetric_c1_i", "P snowdrift Pop_1 mean at Cost=0.28 = 0.197",
-      lambda: mc_cost_mean("P", 2, 1, 0.28), 0.197)
+check("asymmetric_c1_i", "P snowdrift Pop_0 mean at Cost=0.28 = 0.967",
+      lambda: mc_cost_mean("P", 2, 0, 0.28), 0.967)
+check("asymmetric_c1_i", "P snowdrift Pop_1 mean at Cost=0.28 = 0.081",
+      lambda: mc_cost_mean("P", 2, 1, 0.28), 0.081)
 
 # Temporal snapshots: established and collapsed cells are already set by the first sample.
 check("asymmetric_c1_i", "1run P (0,0.20) Pop_0 final = 0.664",
@@ -1104,13 +1107,13 @@ def ai0_collapse_cells(m, c=0.10, thresh=0.15):
 
 
 # P: low-Cost side cooperates, high-Cost side profits
-check("asymmetric_i0_i1", "P mean dq (pop0-pop1) = 0.110",
-      lambda: ai0_gap_mean("P", "qBSeen"), 0.110)
-check("asymmetric_i0_i1", "P mean dw (pop0-pop1) = -0.046",
-      lambda: ai0_gap_mean("P", "wmean"), -0.046)
-check("asymmetric_i0_i1", "P corr(dq,dw) = -0.981",
-      lambda: ai0_corr_dq_dw("P"), -0.981)
-check("asymmetric_i0_i1", "P pop0 cooperates more in 63/120 cells",
+check("asymmetric_i0_i1", "P mean dq (pop0-pop1) = 0.063",
+      lambda: ai0_gap_mean("P", "qBSeen"), 0.063)
+check("asymmetric_i0_i1", "P mean dw (pop0-pop1) = -0.025",
+      lambda: ai0_gap_mean("P", "wmean"), -0.025)
+check("asymmetric_i0_i1", "P corr(dq,dw) = -0.983",
+      lambda: ai0_corr_dq_dw("P"), -0.983)
+check("asymmetric_i0_i1", "P pop0 cooperates more in 63/210 cells",
       lambda: ai0_pop0_coops("P"), 63, None)
 check("asymmetric_i0_i1", "P (0,0.20) pop0 qB = 0.331",
       lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 1, 0)),
@@ -1123,14 +1126,14 @@ check("asymmetric_i0_i1", "P (0,0.10) pop0 P1 = 0.799",
                                   0.10, 0.0, 0.10), "P1"), 0.799, 0.01)
 
 # IJMPQ: high-Cost side cooperates, low-Cost side profits (hitchhiking)
-check("asymmetric_i0_i1", "IJMPQ mean dq = -0.201",
-      lambda: ai0_gap_mean("IJMPQ", "qBSeen"), -0.201)
-check("asymmetric_i0_i1", "IJMPQ mean dw = 0.109",
-      lambda: ai0_gap_mean("IJMPQ", "wmean"), 0.109)
-check("asymmetric_i0_i1", "IJMPQ corr(gap,dq) = -0.612",
-      lambda: ai0_corr_gap_dq("IJMPQ"), -0.612)
-check("asymmetric_i0_i1", "IJMPQ corr(dq,dw) = -0.992",
-      lambda: ai0_corr_dq_dw("IJMPQ"), -0.992)
+check("asymmetric_i0_i1", "IJMPQ mean dq = -0.160",
+      lambda: ai0_gap_mean("IJMPQ", "qBSeen"), -0.160)
+check("asymmetric_i0_i1", "IJMPQ mean dw = 0.087",
+      lambda: ai0_gap_mean("IJMPQ", "wmean"), 0.087)
+check("asymmetric_i0_i1", "IJMPQ corr(gap,dq) = -0.484",
+      lambda: ai0_corr_gap_dq("IJMPQ"), -0.484)
+check("asymmetric_i0_i1", "IJMPQ corr(dq,dw) = -0.995",
+      lambda: ai0_corr_dq_dw("IJMPQ"), -0.995)
 check("asymmetric_i0_i1", "IJMPQ (0,0.20) pop0 qB = 0.681",
       lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 0)),
                        0.10, 0.0, 0.20), 0.681)
@@ -1150,10 +1153,10 @@ check("asymmetric_i0_i1", "IJMPQ (0,0.30) dq = -0.401",
 check("asymmetric_i0_i1", "IJMPQ (0,0.20) pop1 C1P0 = 0.907",
       lambda: allele(ai0_cell_row(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1)),
                                   0.10, 0.0, 0.20), "C1", "P0"), 0.907, 0.01)
-check("asymmetric_i0_i1", "IJMPQ fitness-inverted cells = 120",
-      lambda: ai0_fitness_inv("IJMPQ"), 120, None)
-check("asymmetric_i0_i1", "IJMPQ pop0 fitter in 102/120 cells",
-      lambda: ai0_pop0_fitter("IJMPQ"), 102, None)
+check("asymmetric_i0_i1", "IJMPQ fitness-inverted cells = 208",
+      lambda: ai0_fitness_inv("IJMPQ"), 208, None)
+check("asymmetric_i0_i1", "IJMPQ pop0 fitter in 151/210 cells",
+      lambda: ai0_pop0_fitter("IJMPQ"), 151, None)
 
 # IMP flip at (0, 0.20)
 check("asymmetric_i0_i1", "IMP (0,0.20) dq = -0.461",
@@ -1163,45 +1166,45 @@ check("asymmetric_i0_i1", "IMP (0,0.20) dq = -0.461",
                  0.10, 0.0, 0.20), -0.461)
 
 # Robustness
-check("asymmetric_i0_i1", "shuffle IJMPQ mean dq = -0.224",
-      lambda: ai0_gap_mean("IJMPQ", "qBSeen", sh="shuffle"), -0.224)
+check("asymmetric_i0_i1", "shuffle IJMPQ mean dq = -0.163",
+      lambda: ai0_gap_mean("IJMPQ", "qBSeen", sh="shuffle"), -0.163)
 check("asymmetric_i0_i1", "gs4 P mean dq = 0.000",
       lambda: ai0_gap_mean("P", "qBSeen", gs="4"), 0.000)
-check("asymmetric_i0_i1", "IJMPQ collapse cells (q sum < 0.15) = 19",
-      lambda: ai0_collapse_cells("IJMPQ"), 19, None)
+check("asymmetric_i0_i1", "IJMPQ collapse cells (q sum < 0.15) = 70",
+      lambda: ai0_collapse_cells("IJMPQ"), 70, None)
 
 # Snowdrift (dilemma 2): Cost-independent roles under P; IJMPQ gap shrinks
-check("asymmetric_i0_i1", "P snowdrift corr(gap,dq) = -0.074",
-      lambda: ai0_corr_gap_dq("P", d=2), -0.074)
-check("asymmetric_i0_i1", "P snowdrift pop1 cooperates more in 40/120",
-      lambda: ai0_pop1_coops("P", d=2), 40, None)
+check("asymmetric_i0_i1", "P snowdrift corr(gap,dq) = -0.051",
+      lambda: ai0_corr_gap_dq("P", d=2), -0.051)
+check("asymmetric_i0_i1", "P snowdrift pop1 cooperates more in 79/210",
+      lambda: ai0_pop1_coops("P", d=2), 79, None)
 check("asymmetric_i0_i1", "P snowdrift (0,0.20) q0 = 0.576",
       lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 2, 0)),
                        0.10, 0.0, 0.20), 0.576)
 check("asymmetric_i0_i1", "P snowdrift (0,0.20) q1 = 0.579",
       lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 2, 1)),
                        0.10, 0.0, 0.20), 0.579)
-check("asymmetric_i0_i1", "P snowdrift Cost0-rows with mixed dq signs = 12",
-      lambda: ai0_p_mixed_cost0_rows("P", d=2), 12, None)
+check("asymmetric_i0_i1", "P snowdrift Cost0-rows with mixed dq signs = 18",
+      lambda: ai0_p_mixed_cost0_rows("P", d=2), 18, None)
 check("asymmetric_i0_i1", "IJMPQ snowdrift (0,0.20) dq = -0.035",
       lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 2, 0)),
                        0.10, 0.0, 0.20)
       - ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 2, 1)),
                  0.10, 0.0, 0.20), -0.035)
-check("asymmetric_i0_i1", "IJMPQ snowdrift pop1 cooperates more in 103/120",
-      lambda: ai0_pop1_coops("IJMPQ", d=2), 103, None)
-check("asymmetric_i0_i1", "_ snowdrift corr(gap,dq) = -0.062",
-      lambda: ai0_corr_gap_dq("_", d=2), -0.062)
+check("asymmetric_i0_i1", "IJMPQ snowdrift pop1 cooperates more in 186/210",
+      lambda: ai0_pop1_coops("IJMPQ", d=2), 186, None)
+check("asymmetric_i0_i1", "_ snowdrift corr(gap,dq) = -0.148",
+      lambda: ai0_corr_gap_dq("_", d=2), -0.148)
 
 # Secondary cooperation-cost slice (c = 0.20; csv_*_c020_for_image.con)
-check("asymmetric_i0_i1", "P c=0.20 mean dq = 0.053",
-      lambda: ai0_gap_mean("P", "qBSeen", c=0.20, slice_tag="c020"), 0.053)
-check("asymmetric_i0_i1", "IJMPQ c=0.20 mean dq = -0.070",
-      lambda: ai0_gap_mean("IJMPQ", "qBSeen", c=0.20, slice_tag="c020"), -0.070)
-check("asymmetric_i0_i1", "MP c=0.20 mean dq = -0.031",
-      lambda: ai0_gap_mean("MP", "qBSeen", c=0.20, slice_tag="c020"), -0.031)
-check("asymmetric_i0_i1", "IMP c=0.20 mean dq = -0.050",
-      lambda: ai0_gap_mean("IMP", "qBSeen", c=0.20, slice_tag="c020"), -0.050)
+check("asymmetric_i0_i1", "P c=0.20 mean dq = 0.014",
+      lambda: ai0_gap_mean("P", "qBSeen", c=0.20, slice_tag="c020"), 0.014)
+check("asymmetric_i0_i1", "IJMPQ c=0.20 mean dq = -0.027",
+      lambda: ai0_gap_mean("IJMPQ", "qBSeen", c=0.20, slice_tag="c020"), -0.027)
+check("asymmetric_i0_i1", "MP c=0.20 mean dq = -0.011",
+      lambda: ai0_gap_mean("MP", "qBSeen", c=0.20, slice_tag="c020"), -0.011)
+check("asymmetric_i0_i1", "IMP c=0.20 mean dq = -0.019",
+      lambda: ai0_gap_mean("IMP", "qBSeen", c=0.20, slice_tag="c020"), -0.019)
 # P collapses at maximum Cost gap (0, 0.20) at c = 0.20
 check("asymmetric_i0_i1", "P c=0.20 (0,0.20) pop0 qB = 0.031",
       lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "P", 1, 0,
@@ -1217,10 +1220,10 @@ check("asymmetric_i0_i1", "IJMPQ c=0.20 (0,0.20) pop1 qB = 0.696",
       lambda: ai0_cell(load(ai0path("asymmetric_i0_i1", "noshuffle", "128", "IJMPQ", 1, 1,
                                     slice_tag="c020")), 0.20, 0.0, 0.20), 0.696)
 # c = 0.20 snowdrift (d=2)
-check("asymmetric_i0_i1", "P snowdrift c=0.20 mean dq = -0.003",
-      lambda: ai0_gap_mean("P", "qBSeen", c=0.20, d=2, slice_tag="c020"), -0.003)
-check("asymmetric_i0_i1", "IJMPQ snowdrift c=0.20 mean dq = -0.282",
-      lambda: ai0_gap_mean("IJMPQ", "qBSeen", c=0.20, d=2, slice_tag="c020"), -0.282)
+check("asymmetric_i0_i1", "P snowdrift c=0.20 mean dq = -0.006",
+      lambda: ai0_gap_mean("P", "qBSeen", c=0.20, d=2, slice_tag="c020"), -0.006)
+check("asymmetric_i0_i1", "IJMPQ snowdrift c=0.20 mean dq = -0.325",
+      lambda: ai0_gap_mean("IJMPQ", "qBSeen", c=0.20, d=2, slice_tag="c020"), -0.325)
 
 # Temporal: roles established by first snapshot (1run movies)
 def ai0_time_q(mech, co0, co1, pop, time, movie_study="asymmetric_i0_i1_1run"):
@@ -1827,17 +1830,17 @@ check("asymmetric_c1_i0_i1", "MPQ (0,0.20): unequal-c dq = +0.029",
 check("asymmetric_c1_i0_i1", "M (0,0.20): equal-c dq = -0.168",
       lambda: ai0_dq_at("M", 0.0, 0.20), -0.168)
 # without the c-gap, inversion is the majority outcome for every M-bearing mechanism
-check("asymmetric_c1_i0_i1", "equal-c IJMPQ pop1-favoured cells = 85/120",
-      lambda: ai0_pop1_favoured("IJMPQ"), 85, None)
-check("asymmetric_c1_i0_i1", "equal-c IMP pop1-favoured cells = 76/120",
-      lambda: ai0_pop1_favoured("IMP"), 76, None)
-check("asymmetric_c1_i0_i1", "equal-c MPQ pop1-favoured cells = 62/120",
-      lambda: ai0_pop1_favoured("MPQ"), 62, None)
-check("asymmetric_c1_i0_i1", "equal-c MP pop1-favoured cells = 57/120",
-      lambda: ai0_pop1_favoured("MP"), 57, None)
-check("asymmetric_c1_i0_i1", "equal-c M pop1-favoured cells = 44/120",
-      lambda: ai0_pop1_favoured("M"), 44, None)
-check("asymmetric_c1_i0_i1", "equal-c P pop1-favoured cells = 0/120",
+check("asymmetric_c1_i0_i1", "equal-c IJMPQ pop1-favoured cells = 120/210",
+      lambda: ai0_pop1_favoured("IJMPQ"), 120, None)
+check("asymmetric_c1_i0_i1", "equal-c IMP pop1-favoured cells = 106/210",
+      lambda: ai0_pop1_favoured("IMP"), 106, None)
+check("asymmetric_c1_i0_i1", "equal-c MPQ pop1-favoured cells = 75/210",
+      lambda: ai0_pop1_favoured("MPQ"), 75, None)
+check("asymmetric_c1_i0_i1", "equal-c MP pop1-favoured cells = 73/210",
+      lambda: ai0_pop1_favoured("MP"), 73, None)
+check("asymmetric_c1_i0_i1", "equal-c M pop1-favoured cells = 63/210",
+      lambda: ai0_pop1_favoured("M"), 63, None)
+check("asymmetric_c1_i0_i1", "equal-c P pop1-favoured cells = 0/210",
       lambda: ai0_pop1_favoured("P"), 0, None)
 
 

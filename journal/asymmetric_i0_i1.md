@@ -21,11 +21,11 @@ under i, see [asymmetric_c1_i.md](asymmetric_c1_i.md).
 - Study pair: asymmetric_i0_i1 (Runs = 30) and asymmetric_i0_i1_1run (single-run).
 - Population structure: pop_2 only.
 - Cooperation cost: c0 = c1 = c on a 0.02 grid. **Primary slice c = 0.10**
-  (120 triangle cells; `csv_*_filtered_for_image.con`); **secondary c = 0.20**
-  (55 cells; `csv_*_c020_for_image.con` — see Secondary slice).
-- Information cost: strict triangle i₀ < i₁ on a 0.02 grid, each axis capped
-  at b - c (Cmax = 0.30 at c = 0.10; 0.20 at c = 0.20). Per-axis cap, not
-  i₀ + i₁ <= b.
+  (210 triangle cells; `csv_*_filtered_for_image.con`); **secondary c = 0.20**
+  (210 cells; `csv_*_c020_for_image.con` — see Secondary slice).
+- Information cost: strict triangle i₀ < i₁ on [0, b] (0.02 grid). Primary
+  folders hold i ≤ 0.3; `noshuffle2`/`shuffle2` supply the high-i complements
+  (graphgen merges via `shuffle_complement_suffix="2"`).
 - Primary condition below unless noted: PD (dilemma 1), noshuffle, gs = 128.
 
 The control (_) shows no role split: qBSeen stays near 0.05 across the triangle
@@ -47,12 +47,12 @@ fitness**:
 
 | Metric | Value (triangle mean, c = 0.10) |
 | ------ | ------------------------------- |
-| mean qBSeen difference (pop_0 - pop_1) | +0.110 |
-| mean wmean difference (pop_0 - pop_1) | -0.046 |
-| corr(dq, dw) | -0.981 |
-| pop_0 cooperates more | 63 / 120 cells |
-| pop_1 fitter | 62 / 120 cells |
-| fitness-inverted cells | 104 / 120 |
+| mean qBSeen difference (pop_0 - pop_1) | +0.063 |
+| mean wmean difference (pop_0 - pop_1) | -0.025 |
+| corr(dq, dw) | -0.983 |
+| pop_0 cooperates more | 63 / 210 cells |
+| pop_1 fitter | 62 / 210 cells |
+| fitness-inverted cells | 167 / 210 |
 
 At i₀ = 0, i₁ = 0.20: q = 0.331 / 0.153, w = 0.528 / 0.573. Genotypes
 confirm the machinery story — pop_0 keeps P1 (0.799 at difference 0.10; 0.681 at difference
@@ -71,13 +71,13 @@ more**:
 
 | Metric | Value (triangle mean, c = 0.10) |
 | ------ | ------------------------------- |
-| mean qBSeen difference (pop_0 - pop_1) | -0.201 |
-| mean wmean difference (pop_0 - pop_1) | +0.109 |
-| corr(i difference, dq) | -0.612 |
-| corr(dq, dw) | -0.992 |
-| pop_1 cooperates more | 85 / 120 cells |
-| pop_0 fitter | 102 / 120 cells |
-| fitness-inverted cells | 120 / 120 |
+| mean qBSeen difference (pop_0 - pop_1) | -0.160 |
+| mean wmean difference (pop_0 - pop_1) | +0.087 |
+| corr(i difference, dq) | -0.484 |
+| corr(dq, dw) | -0.995 |
+| pop_1 cooperates more | 120 / 210 cells |
+| pop_0 fitter | 151 / 210 cells |
+| fitness-inverted cells | 208 / 210 |
 
 At i₀ = 0, i₁ = 0.20: q = 0.681 / 0.922, w = 0.801 / 0.642. Pop_1 has
 shed active enforcement (P1 = 0.056, M1 ≈ 0.03) and cooperates through tax-free
@@ -90,9 +90,9 @@ from P to MP is immediate: MP at (0, 0.20) gives q = 0.370 / 0.829.
 
 ### Reciprocity alone (M) — weak split, mostly collapse
 
-M shows a slight pop_1 cooperation edge (mean dq = -0.041) but **78 / 120** cells
+M shows a slight pop_1 cooperation edge (mean dq = -0.032) but **154 / 210** cells
 have total q < 0.15. The reciprocity-only apparatus does not sustain a clean
-i-driven role narrative; pop_0 is fitter in 60 / 120 cells at the control
+i-driven role narrative; pop_0 is fitter in 88 / 210 cells at the control
 floor.
 
 ## Dose-response: when does the IJMPQ hitchhiking regime turn on?
@@ -131,16 +131,14 @@ earns less. What i asymmetry changes is **which side is locked into which role**
 
 ## Robustness
 
-**Shuffle** does not change P (mean dq stays +0.110). For IJMPQ, shuffle
-**strengthens** the hitchhiking split (mean dq -0.224 vs -0.201 noshuffle; mean
-dw +0.119).
+**Shuffle** keeps the same signs (P mean dq +0.110; IJMPQ mean dq −0.163 vs
+−0.160 noshuffle).
 
 **Groupsize 4** removes the P asymmetry (mean dq ≈ 0.000) — partner choice needs
-large groups — while IJMPQ retains a weaker same-sign pattern (mean dq -0.131,
-pop_0 fitter in 93 / 120 cells).
+large groups — while IJMPQ retains a weaker same-sign pattern (mean dq −0.111).
 
-**Collapse.** At c = 0.10, cells with q0 + q1 < 0.15: P 54 / 120, M 78 / 120,
-IJMPQ 19 / 120. Combined mechanisms remain i-robust far longer than single-family
+**Collapse.** At c = 0.10, cells with q0 + q1 < 0.15: P 144 / 210, M 154 / 210,
+IJMPQ 70 / 210. Combined mechanisms remain i-robust far longer than single-family
 mechanisms.
 
 ## Snowdrift: i stops locking roles (P), hitchhiking weakens (IJMPQ)
@@ -155,35 +153,35 @@ Under P in snowdrift, **i₀ and i₁ do not predict who cooperates more**:
 
 | Metric | PD | Snowdrift |
 | ------ | -- | --------- |
-| corr(i difference, dq) | -0.225 | **-0.074** |
-| pop_0 cooperates more | 63 / 120 | 62 / 120 |
-| pop_1 cooperates more | 0 / 120 | **40 / 120** |
-| i₀-rows with both dq signs | 0 / 15 | **12 / 15** |
+| corr(i difference, dq) | -0.306 | **-0.051** |
+| pop_0 cooperates more | 63 / 210 | 102 / 210 |
+| pop_1 cooperates more | 0 / 210 | **79 / 210** |
+| i₀-rows with both dq signs | 0 / 20 | **18 / 20** |
 
 The split **flips direction** across the triangle: at (i₀, i₁) = (0, 0.20)
 q = 0.576 / 0.579 (essentially tied), whereas PD gives 0.331 / 0.153. Along
 i₀ = 0, dq wanders from +0.259 to -0.061 with no monotonic i₁ trend.
 
-Both populations sit at a **moderate, similar cooperation level** (mean q ≈ 0.57,
-range 0.568–0.583 across the triangle) — the chooser-driven i lock of PD is
-gone. This contrasts sharply with **symmetric_c pop_2** at the same c under
-snowdrift, where P is strongly asymmetric (0.972 / 0.185): symmetric
-information cost there produces a large chooser split, but **asymmetric i in
-snowdrift washes it out** into ecology-driven, i-independent wobble.
+Both populations sit at a **moderate, similar cooperation level** (mean q ≈ 0.57)
+— the chooser-driven i lock of PD is gone. This contrasts sharply with
+**symmetric_c pop_2** at the same c under snowdrift, where P is strongly
+asymmetric (0.972 / 0.185): symmetric information cost there produces a large
+chooser split, but **asymmetric i in snowdrift washes it out** into
+ecology-driven, i-independent wobble.
 
-The control (_) shows the same pattern without any machinery: dq is uncorrelated
-with i (corr(difference, dq) = -0.062), with pop_0 cooperating more in 58 / 120 and
-pop_1 in 44 / 120 — baseline snowdrift ecology already produces variable
-population asymmetry that i does not steer.
+The control (_) shows the same pattern without any machinery: dq is weakly
+correlated with i (corr(difference, dq) = -0.148), with pop_0 cooperating more
+in 84 / 210 and pop_1 in 93 / 210 — baseline snowdrift ecology already produces
+variable population asymmetry that i does not steer.
 
 Fitness under P in snowdrift is also **less paradoxical**: pop_0 is fitter in
-56 / 120 cells (versus 2 / 120 in PD), and corr(dq, dw) = -0.695 (weaker than
-PD's -0.981).
+79 / 210 cells (versus 6 / 210 in PD), and corr(dq, dw) = -0.764 (weaker than
+PD's -0.983).
 
 ### IJMPQ — direction persists, magnitude collapses at moderate i
 
 IJMPQ in snowdrift is **not** i-stochastic in direction: pop_1 cooperates
-more in 103 / 120 cells, as in PD. But the **effect size** at moderate i is
+more in 186 / 210 cells, as in PD. But the **effect size** at moderate i is
 tiny because both sides cooperate highly:
 
 | Cell (i₀, i₁) | PD q₀ / q₁ | SD q₀ / q₁ |
@@ -193,9 +191,9 @@ tiny because both sides cooperate highly:
 | (0, 0.30)           | 0.506 / 0.907 | 0.905 / 0.963 |
 
 At (0, 0.20) the PD hitchhiking difference (dq = -0.241) shrinks to **dq = -0.035** in
-snowdrift; mean |dw| = 0.028 across the triangle. The paradox of success still
-holds (120 / 120 fitness-inverted cells), but the **cooperator/exploiter
-distinction is nominal** — both populations sit near the cooperation ceiling.
+snowdrift. The paradox of success still holds (209 / 210 fitness-inverted cells),
+but the **cooperator/exploiter distinction is nominal** — both populations sit
+near the cooperation ceiling.
 
 At high total i the reciprocity mechanisms (M, IMP, IJMPQ) still show large
 i-linked dq in snowdrift (mean dq -0.219 to -0.297), driven by collapse
@@ -210,40 +208,38 @@ supply-side i route to deterministic roles is a **PD phenomenon**.
 
 ## Secondary slice: c = 0.20
 
-The c = 0.20 triangle (55 cells, Cmax = b − c = 0.20) shows the same qualitative
-signs with weaker magnitude — higher cooperation cost compresses the
-i-asymmetry signal when demand and supply both load the apparatus:
+The c = 0.20 triangle (210 cells on [0, b]) shows the same qualitative signs
+with weaker magnitude — higher cooperation cost compresses the i-asymmetry
+signal when demand and supply both load the apparatus:
 
 | Mechanism | mean dq (pop₀ − pop₁) | pop₁ cooperates more | corr(dq,dw) |
 | --------- | --------------------- | -------------------- | ----------- |
-| P         | +0.053                | 0 / 55               | -0.964      |
-| MP        | -0.031                | 16 / 55              | -0.973      |
-| IMP       | -0.050                | 22 / 55              | -0.988      |
-| IJMPQ     | -0.070                | 25 / 55              | -0.993      |
-| M         | -0.011                | 11 / 55              | -0.963      |
+| P         | +0.014                | 0 / 210              | -0.947      |
+| MP        | -0.011                | 25 / 210             | -0.968      |
+| IMP       | -0.019                | 42 / 210             | -0.988      |
+| IJMPQ     | -0.027                | 47 / 210             | -0.992      |
+| M         | -0.006                | 20 / 210             | -0.963      |
 
-All five mechanisms show fitness inversion in at least 41 / 55 cells (IJMPQ:
-55 / 55). The P low-i cooperator assignment and hitchhiking inversion (MP
-through IJMPQ) survive at c = 0.20; IMP is intermediate between MP and IJMPQ
-as at c = 0.10.
+All five mechanisms show widespread fitness inversion (IJMPQ: 199 / 210). The P
+low-i cooperator assignment and hitchhiking inversion (MP through IJMPQ) survive
+at c = 0.20; IMP is intermediate between MP and IJMPQ as at c = 0.10.
 
-**P collapses at the maximum i difference.** At c = 0.20 the i cap is
-Cmax = 0.20, so (i₀, i₁) = (0, 0.20) is already the boundary cell. P
-collapses there: q = 0.031 / 0.027 (both populations near zero). By contrast
-IJMPQ retains q = 0.463 / 0.696, dq = -0.234 at the same cell — the combined
-mechanism is cost-robust at c = 0.20 in a way that partner choice alone is not.
-For reference, at (0, 0.10) P gives q = 0.414 / 0.250, dq = +0.164, showing
-that the P role split is intact at smaller i differences even at c = 0.20.
+**P collapses at (0, 0.20).** At c = 0.20, P collapses there: q = 0.031 / 0.027
+(both populations near zero). By contrast IJMPQ retains q = 0.463 / 0.696,
+dq = -0.234 at the same cell — the combined mechanism is cost-robust at c = 0.20
+in a way that partner choice alone is not. For reference, at (0, 0.10) P gives
+q = 0.414 / 0.250, dq = +0.164, showing that the P role split is intact at
+smaller i differences even at c = 0.20.
 
 Exports: `csv_{fset}_c020_for_image.con` (graphgen `--export-slices`).
 
 ### c = 0.20 snowdrift
 
-Under snowdrift at c = 0.20 (55 cells, d = 2), P remains i-independent
-(mean dq = -0.003), consistent with the c = 0.10 snowdrift picture. IJMPQ
-shows a stronger negative difference than at c = 0.10 (mean dq = -0.282 vs -0.245),
-likely driven by greater pop₀ collapse at the expensive edge when cooperation
-cost is higher. M shows mean dq = -0.170. The PD-only character of
+Under snowdrift at c = 0.20 (210 cells, d = 2), P remains i-independent
+(mean dq = -0.006), consistent with the c = 0.10 snowdrift picture. IJMPQ
+shows a stronger negative difference than at c = 0.10 (mean dq = -0.325 vs
+−0.289), likely driven by greater pop₀ collapse at the expensive edge when
+cooperation cost is higher. M shows mean dq = -0.179. The PD-only character of
 deterministic role assignment therefore persists at c = 0.20.
 
 ## Temporal dynamics: roles fixed by the first snapshot

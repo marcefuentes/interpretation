@@ -3,10 +3,11 @@
 Analyze the asymmetric_i0_i1 study: symmetric cooperation cost (c0 = c1 = c) with
 asymmetric per-population information cost (Cost0, Cost1).
 
-Cell key is (c, Cost0, Cost1) with Cost0 < Cost1 on a strict triangle bounded by
-Cost_p <= b - c per population. Primary slice: c = 0.10 (120 cells) via
-csv_*_filtered_for_image.con; secondary c = 0.20 (55 cells) via
-csv_*_c020_for_image.con (PD and snowdrift; regenerate with graphgen --export-slices).
+Cell key is (c, Cost0, Cost1) with Cost0 < Cost1 on a strict triangle on [0, b]
+(210 cells per c slice; primary folders hold i ≤ 0.3 and noshuffle2/shuffle2 the
+high-i complements). Primary slice: c = 0.10 via csv_*_filtered_for_image.con;
+secondary c = 0.20 via csv_*_c020_for_image.con (PD and snowdrift; regenerate with
+graphgen --export-slices).
 
 Primary condition: pop_2, PD (dilemma 1), noshuffle, gs = 128.
 """
@@ -116,7 +117,7 @@ print("=" * 78)
 
 print("\n--- A. GRID ---")
 r0 = load(ai_path(STUDY, "noshuffle", "128", "IJMPQ", 1, 0))
-print(f"  filtered con cells at c=0.10: {len(r0)} (expect 120)")
+print(f"  filtered con cells at c=0.10: {len(r0)} (expect 210)")
 
 print("\n--- B. vs symmetric_c pop_2 at c=0.10 (stochastic baseline) ---")
 for mech in PRIMARY:
@@ -228,7 +229,7 @@ for mech in ["P", "M", "IJMPQ"]:
     r0 = load(ai_path(STUDY, "noshuffle", "128", mech, 1, 0))
     r1 = load(ai_path(STUDY, "noshuffle", "128", mech, 1, 1))
     n = sum(1 for a, b in triangle_pairs(r0, r1) if float(a["qBSeen"]) + float(b["qBSeen"]) < 0.15)
-    print(f"  {mech}: {n}/120")
+    print(f"  {mech}: {n}/210")
 
 print("\n--- L. SECONDARY c=0.20 (c020 .con exports, PD d=1) ---")
 for mech in ("P", "MP", "IMP", "IJMPQ", "M"):

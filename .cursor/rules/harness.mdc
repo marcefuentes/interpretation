@@ -6,7 +6,8 @@ alwaysApply: true
 # Repository harness
 
 Read **[ai/harness.md](ai/harness.md)** before substantive work: repo layout, graphgen,
-data paths, study status, writing rules, and `verify_claims.py` workflow.
+data paths, study status, writing rules, `verify_claims.py` workflow, and Google Docs
+upload of interpretation.docx via `--report`.
 
 Analytical index: [ai/findings.md](ai/findings.md).
 
