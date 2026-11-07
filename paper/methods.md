@@ -299,7 +299,7 @@ symmetric-cost and c₁ = c₀ + 0.02 strips on shared axes for the prisoner's d
 and snowdrift and still show M beside P, IMP, and IJMPQ (fitness counterparts
 Figs. S8, S10; group-size-4 counterparts of Figs. 3 and S25 are
 Figs. S27–S28). Symmetric information cost in two populations is
-Figs. S3–S6 (i × c grids; —|P|M|IMP|IJMPQ; cooperation and the difference between
+Figs. S3–S6 (i × c grids; Control|P|M|IMP|IJMPQ; cooperation and the difference between
 populations, with fitness counterparts; prisoner's dilemma and snowdrift).
 
 Symmetric-c information-cost asymmetry is Fig. 2 (P|M|IMP; top two rows vs control;
